@@ -73,6 +73,37 @@ export function getAllDocSlugs(locale: Locale, category: string): string[][] {
   }
 
   walk(dir, []);
+  // Sort slugs by their frontmatter: level (beginner->intermediate->advanced->expert), then order, then filename
+  const levelPriority: Record<string, number> = {
+    beginner: 0,
+    intermediate: 1,
+    advanced: 2,
+    expert: 3,
+  };
+
+  function readMetaForSlug(slugParts: string[]) {
+    try {
+      const filePath = path.join(contentDir, locale, category, ...slugParts.slice(0, -1), `${slugParts[slugParts.length - 1]}.mdx`);
+      if (!fs.existsSync(filePath)) return { levelPri: 0, order: 0, name: slugParts.join("/") };
+      const fileContent = fs.readFileSync(filePath, "utf-8");
+      const { data } = matter(fileContent);
+      const level = (data.level || "beginner").toLowerCase();
+      const order = Number.isFinite(Number(data.order)) ? Number(data.order) : 0;
+      const levelPri = levelPriority[level] ?? 0;
+      return { levelPri, order, name: slugParts.join("/") };
+    } catch {
+      return { levelPri: 0, order: 0, name: slugParts.join("/") };
+    }
+  }
+
+  slugs.sort((a, b) => {
+    const ma = readMetaForSlug(a);
+    const mb = readMetaForSlug(b);
+    if (ma.levelPri !== mb.levelPri) return ma.levelPri - mb.levelPri;
+    if (ma.order !== mb.order) return ma.order - mb.order;
+    return ma.name.localeCompare(mb.name);
+  });
+
   return slugs;
 }
 
@@ -132,6 +163,53 @@ function buildTree(dir: string, baseParts: string[] = []): TreeNode[] {
       if (aIdx === -1) return 1;
       if (bIdx === -1) return -1;
       return aIdx - bIdx;
+    });
+  } else {
+    // No _meta.json — sort files and directories by frontmatter level and order to present beginner->intermediate->advanced
+    const levelPriority: Record<string, number> = {
+      beginner: 0,
+      intermediate: 1,
+      advanced: 2,
+      expert: 3,
+    };
+
+    nodes.sort((a, b) => {
+      // If either is a directory (has children array), keep directories before files
+      const aIsDir = Array.isArray(a.children) && a.children.length > 0;
+      const bIsDir = Array.isArray(b.children) && b.children.length > 0;
+      if (aIsDir && !bIsDir) return -1;
+      if (!aIsDir && bIsDir) return 1;
+
+      try {
+        const aPath = path.join(dir, `${a.slug.split("/").pop()}.mdx`);
+        const bPath = path.join(dir, `${b.slug.split("/").pop()}.mdx`);
+        const aExists = fs.existsSync(aPath);
+        const bExists = fs.existsSync(bPath);
+        let aLevel = 0,
+          bLevel = 0,
+          aOrder = 0,
+          bOrder = 0;
+        if (aExists) {
+          const aContent = fs.readFileSync(aPath, "utf-8");
+          const { data: aData } = matter(aContent);
+          aOrder = Number.isFinite(Number(aData.order)) ? Number(aData.order) : 0;
+          aLevel = levelPriority[(aData.level || "beginner").toLowerCase()] ?? 0;
+        }
+        if (bExists) {
+          const bContent = fs.readFileSync(bPath, "utf-8");
+          const { data: bData } = matter(bContent);
+          bOrder = Number.isFinite(Number(bData.order)) ? Number(bData.order) : 0;
+          bLevel = levelPriority[(bData.level || "beginner").toLowerCase()] ?? 0;
+        }
+
+        if (aLevel !== bLevel) return aLevel - bLevel;
+        if (aOrder !== bOrder) return aOrder - bOrder;
+      } catch (e) {
+        // ignore and fallback to slug compare
+        console.error(e);
+      }
+
+      return a.slug.localeCompare(b.slug);
     });
   }
 
