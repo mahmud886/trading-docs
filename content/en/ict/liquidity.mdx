@@ -1,0 +1,184 @@
+---
+title: "ICT Liquidity Concepts"
+description: "Understand how liquidity drives every market move. Learn Buy-Side Liquidity (BSL), Sell-Side Liquidity (SSL), liquidity pools, engineered liquidity, and how institutions use liquidity for entries and exits."
+level: beginner
+order: 2
+lastUpdated: "2026-05-12"
+---
+
+## What is Liquidity in ICT?
+
+In ICT methodology, **liquidity** refers to resting orders in the market — primarily **stop losses** and **pending orders** that sit above swing highs and below swing lows. The market-making algorithm's PRIMARY objective is to deliver price to these liquidity pools.
+
+<Callout type="info" title="ICT Core Truth">
+"Price is always seeking liquidity. Every move, every manipulation, every displacement — it's all about liquidity." — ICT
+</Callout>
+
+---
+
+## Types of Liquidity
+
+### Buy-Side Liquidity (BSL)
+Resting orders **above** swing highs:
+- Stop losses from short sellers
+- Buy stop orders from breakout traders
+- Forms above equal highs, relative highs, and old highs
+- When swept, provides sell-side counterparty for institutions entering shorts
+
+### Sell-Side Liquidity (SSL)
+Resting orders **below** swing lows:
+- Stop losses from long traders
+- Sell stop orders from breakdown traders
+- Forms below equal lows, relative lows, and old lows
+- When swept, provides buy-side counterparty for institutions entering longs
+
+---
+
+## Liquidity Pools
+
+### Types of Liquidity Pools
+
+**1. Relative Equal Highs/Lows**
+- Multiple swing points at similar price levels
+- Creates obvious "support/resistance" that retail traders use for stops
+- Most targeted by the algorithm
+
+**2. Session Highs/Lows**
+- Asian session high/low
+- London session high/low
+- Previous day high/low (PDH/PDL)
+- Previous week high/low (PWH/PWL)
+
+**3. Old Highs/Lows**
+- Swing highs/lows from days or weeks ago
+- Larger liquidity pools = bigger institutional interest
+- Weekly/Monthly highs and lows are major targets
+
+**4. Trendline Liquidity**
+- Stop losses placed along trendlines
+- When trendline "breaks," it's sweeping this liquidity
+- Classic retail trap setup
+
+---
+
+## How Institutions Use Liquidity
+
+### The Liquidity Cycle
+1. **Identify** — Algorithm locates the nearest liquidity pool
+2. **Engineer** — Price consolidates to build more resting orders
+3. **Sweep** — Quick move to trigger stops and pending orders
+4. **Absorb** — Institution fills their position against these triggered orders
+5. **Displace** — True directional move begins
+
+### Real Example: EUR/USD
+- Price forms 3 equal lows at 1.0850 (SSL builds up)
+- Retail traders place buy stops above and sell stops below
+- Price dips to 1.0845 — sweeps SSL
+- Institutions absorb sell orders to build long positions
+- Price displaces upward to 1.0950 targeting BSL
+
+---
+
+## Liquidity Sweep vs. Liquidity Grab
+
+| Aspect | Liquidity Sweep | Liquidity Grab |
+|--------|----------------|----------------|
+| **Speed** | Quick wick, fast rejection | May hold briefly beyond level |
+| **Candle** | Long wick, small body | Can be full body then reversal |
+| **Timeframe** | Visible on LTF | Visible on all timeframes |
+| **Confirmation** | Immediate displacement opposite | MSS/CHOCH after the grab |
+| **Reliability** | Very high when aligned with HTF | High but needs confirmation |
+
+---
+
+## Engineered Liquidity
+
+Sometimes the market **creates** liquidity before sweeping it:
+
+### How It's Engineered
+1. Price creates a tight range (consolidation)
+2. Retail traders place stops above and below the range
+3. Equal highs/lows form, attracting more orders
+4. The algorithm waits until sufficient liquidity builds
+5. Then sweeps one side → reverses to sweep the other side
+
+### The "Judas Swing" Connection
+- London open often sweeps Asian range liquidity first (Judas Swing)
+- This is engineered manipulation to collect liquidity
+- After sweeping, the TRUE direction of the day begins
+
+---
+
+## Trading with Liquidity
+
+### Step-by-Step Process
+1. **Mark PDH/PDL, PWH/PWL** on your chart
+2. **Identify equal highs/lows** — these are the targets
+3. **Determine daily bias** — which liquidity pool will be targeted?
+4. **Wait for sweep** — price takes out the liquidity
+5. **Confirm reversal** — MSS on LTF after the sweep
+6. **Enter** — At OB/FVG after the sweep with stop beyond the extreme
+
+### Example: Gold Liquidity Sweep Trade
+- **PDH:** 2,050 (BSL resting above)
+- **Daily Bias:** Bearish (price in premium)
+- **Action:** Price sweeps 2,052 (takes BSL)
+- **Confirmation:** 5M MSS bearish after sweep
+- **Entry:** Sell at 2,048 (bearish OB)
+- **Stop:** 2,053 (above sweep)
+- **Target:** SSL at 2,020
+- **R:R:** 1:5.6
+- **BD Time:** 7:45 PM (NY AM Kill Zone)
+
+---
+
+## Liquidity on Multiple Timeframes
+
+| Timeframe | Liquidity Type | Significance |
+|-----------|---------------|--------------|
+| **Monthly** | Yearly highs/lows | Massive institutional interest |
+| **Weekly** | Monthly highs/lows, quarterly levels | Swing trade targets |
+| **Daily** | PWH/PWL, PDH/PDL | Day trade targets |
+| **4H** | Session highs/lows | Intraday targets |
+| **15M** | Micro swing points | Scalp targets |
+
+---
+
+## Common Mistakes
+
+<Callout type="warning" title="Liquidity Trading Errors">
+
+**❌ Fading every sweep** — Not every liquidity sweep leads to reversal. Need HTF alignment.
+
+**❌ Ignoring the draw** — Always ask "what is the draw on liquidity?" before trading.
+
+**❌ Placing stops at obvious levels** — Your stops ARE the liquidity. Place beyond manipulation zone.
+
+**❌ Trading before the sweep** — Wait for liquidity to be taken before entering.
+
+**❌ Not marking session levels** — PDH/PDL, Asian high/low are critical reference points.
+
+</Callout>
+
+---
+
+## Summary
+
+| Aspect | Details |
+|--------|---------|
+| **BSL** | Buy stops above highs — target for bearish moves |
+| **SSL** | Sell stops below lows — target for bullish moves |
+| **Key Pools** | Equal H/L, PDH/PDL, PWH/PWL, session levels |
+| **Algorithm** | Always seeks the nearest liquidity pool |
+| **Entry** | After sweep + MSS confirmation |
+| **Stop** | Beyond the sweep extreme |
+
+---
+
+## Related Topics
+
+- [Liquidity Sweep](/en/ict/liquidity-sweep) — Execution after sweeps
+- [AMD / Power of 3](/en/ict/amd) — Accumulation-Manipulation-Distribution
+- [Judas Swing](/en/ict/judas-swing) — The manipulation move
+- [ICT Kill Zones](/en/ict/ict-kill-zones) — When sweeps are most likely
+- [Daily Bias](/en/ict/daily-bias) — Predicting which liquidity gets targeted

@@ -1,0 +1,259 @@
+---
+title: "Bid, Ask & Spread Mechanics"
+description: "Understand bid and ask prices, how spreads work, and their impact on your trading profits"
+author: "Trading Academy"
+date: "2024-01-15"
+---
+
+## Bid, Ask & Spread Mechanics
+
+Understanding bid-ask spreads is fundamental to grasping how trading markets function and costs that reduce profits.
+
+### Bid Price
+
+The **bid price** is the highest price a buyer is willing to pay for an asset.
+
+**Key Points:**
+- What you receive if you SELL immediately
+- Lower than ask price
+- Set by buyers (demand)
+- Always lower side of quote
+- Determines sell entry price
+
+**Example:**
+EUR/USD bid: 1.0950
+- If you sell now, you get 1.0950
+- Market maker buys at this price
+- This is the price shown on sell orders
+
+### Ask Price
+
+The **ask price** is the lowest price a seller is willing to accept for an asset.
+
+**Key Points:**
+- What you pay if you BUY immediately
+- Higher than bid price
+- Set by sellers (supply)
+- Always higher side of quote
+- Determines buy entry price
+
+**Example:**
+EUR/USD ask: 1.0952
+- If you buy now, you pay 1.0952
+- Market maker sells at this price
+- This is the price shown on buy orders
+
+### The Spread
+
+The **spread** is the difference between bid and ask prices.
+
+**Formula:**
+Spread (pips) = Ask - Bid
+
+**Example:**
+- Bid: 1.0950
+- Ask: 1.0952
+- Spread: 2 pips (0.0002)
+
+**Spreads in different currencies:**
+```
+EUR/USD: 1.0950 / 1.0952 = 2 pips
+GBP/USD: 1.2500 / 1.2505 = 5 pips
+USD/JPY: 150.50 / 150.53 = 3 pips
+```
+
+### How Spreads Work
+
+#### 1. **Market Maker Creates Spread**
+```
+Buyers want: 1.0950 (BID)
+Sellers want: 1.0952 (ASK)
+Market maker: Profit = 2 pips per trade
+```
+
+#### 2. **Your Cost**
+When you buy and immediately sell:
+```
+Buy at ASK:  1.0952
+Sell at BID: 1.0950
+Loss:        -2 pips (spread cost)
+```
+
+You lose money just from the spread!
+
+#### 3. **Real-World Example**
+Buy 1 lot EUR/USD:
+- Cost: 1.0952 × 100,000 = 109,520
+- Immediately sell
+- Receive: 1.0950 × 100,000 = 109,500
+- **Loss: $20 (the spread cost)**
+
+### Factors Affecting Spread Size
+
+#### 1. **Liquidity**
+- **High liquidity:** Tight spreads (0.5-1.0 pips)
+- **Low liquidity:** Wide spreads (3-10+ pips)
+
+**Example:**
+- EUR/USD (most liquid): 1.0 pip spread
+- Exotic pairs: 5-10 pip spread
+- Illiquid times: 2-3x spreads
+
+#### 2. **Market Conditions**
+- **Calm markets:** Tight spreads
+- **Volatile markets:** Wide spreads
+- **News events:** Spreads widen dramatically
+
+**Example:**
+- Normal: 1.5 pip spread
+- During Fed announcement: 10-50+ pip spread
+
+#### 3. **Time of Day**
+- **Peak hours (London-NY overlap):** Tightest spreads (0.5-1.5 pips)
+- **Asian hours:** Wider (2-3 pips)
+- **Off-hours:** Widest (5-10+ pips)
+
+#### 4. **Broker Type**
+- **Market makers:** Wider spreads (2-5 pips), no commission
+- **ECN/STP:** Tight spreads (0.5-1.5 pips) + commission
+- **Prop firms:** Usually tight (0.5-1.0 pips)
+
+#### 5. **Asset Volatility**
+- **Calm assets:** Tight spreads
+- **High volatility:** Wide spreads
+- **Crypto:** Extremely wide (0.2-2% typical!)
+
+### Spread Cost Impact
+
+#### Monthly Impact Example:
+
+**Tight Spread (1.5 pips):**
+- 100 trades/month
+- Cost: 100 × 1.5 = 150 pips
+- Must win 150+ pips just to break even
+
+**Wide Spread (5 pips):**
+- 100 trades/month
+- Cost: 100 × 5 = 500 pips
+- Must win 500+ pips just to break even
+
+**Difference:** 350 pips!
+At $10 per pip = $3,500 monthly difference
+
+### Bid-Ask Spread in Different Markets
+
+| Market | Typical Spread | Range |
+|--------|---|---|
+| **Forex Major** | 1.5-2 pips | 0.5-5 pips |
+| **Forex Minor** | 3-5 pips | 2-10 pips |
+| **Stocks** | $0.01-0.05 | Varies |
+| **Futures** | 1-2 ticks | Varies |
+| **Crypto** | 0.5-2% | 0.1-5%+ |
+| **Indices** | 2-10 pips | Varies |
+
+### Calculating Spread in Money Terms
+
+**Formula:**
+Spread Cost $ = Spread (pips) × Position Size × Pip Value
+
+**Example EUR/USD:**
+- Spread: 1.5 pips
+- Position: 1 lot (100,000 units)
+- Pip value: $10
+- **Cost: 1.5 × 1 × $10 = $15 per trade**
+
+**Example EUR/USD 0.5 lots:**
+- Spread: 2 pips
+- Position: 0.5 lots (50,000 units)
+- Pip value: $5 (50% of 1 lot)
+- **Cost: 2 × 0.5 × $5 = $5 per trade**
+
+### Minimizing Spread Costs
+
+#### 1. **Trade During Peak Liquidity**
+- London open: 7-8 AM London time
+- London-US overlap: 1-5 PM London
+- US open: 2-4 PM London
+
+**Savings:** 50-70% spread reduction during peak hours
+
+#### 2. **Choose Tight Spread Brokers**
+- Compare spreads across brokers
+- ECN brokers often tighter
+- Prop firms often tightest
+- Test with small trades first
+
+**Savings:** 50-75% depending on broker
+
+#### 3. **Trade Liquid Pairs Only**
+- EUR/USD, GBP/USD, USD/JPY
+- Avoid exotic pairs for active trading
+- Or trade exotics only during peak hours
+
+**Savings:** 75-90% vs exotic pairs
+
+#### 4. **Avoid High-Risk Periods**
+- Before major news (close positions)
+- During high volatility
+- During low liquidity hours
+- Post-market hours
+
+**Savings:** 90-95% by avoiding worst times
+
+#### 5. **Batch Orders**
+- Consolidate multiple trades into one
+- Fewer transactions = lower spread cost
+- Wait for fewer, better setups
+- Quality over quantity
+
+**Savings:** 50% through trade reduction
+
+### Example: Spread Impact on Profitability
+
+**Scenario: 100 trades/month, 55% win rate, 1:2 risk-reward**
+
+**Tight Spread (1.0 pip):**
+- Spread cost: 100 pips
+- Wins (55): +2,750 pips (1:2 R:R)
+- Losses (45): -2,250 pips
+- Net before spread: +500 pips
+- **Net after spread: +400 pips**
+- Efficiency: 80%
+
+**Wide Spread (5.0 pips):**
+- Spread cost: 500 pips
+- Wins (55): +2,750 pips
+- Losses (45): -2,250 pips
+- Net before spread: +500 pips
+- **Net after spread: 0 pips (BREAK EVEN!)**
+- Efficiency: 0%
+
+Same exact strategy but with different spreads results in profit vs. break-even!
+
+### Professional Trader Approach
+
+Top traders:
+✅ Know their exact spread costs
+✅ Only trade peak liquidity hours
+✅ Use professional-grade brokers (tight spreads)
+✅ Trade only major, liquid pairs
+✅ Avoid trading pre-news or high-volatility
+✅ Consolidate unnecessary trades
+✅ Factor spread into position sizing
+
+## Summary
+
+**Bid-Ask Spread:**
+- The cost of trading
+- Difference between buy/sell prices
+- Directly reduces profits
+- Must be factored into strategy
+- Varies by market conditions, time, broker
+
+**Key Takeaways:**
+- Choose tight-spread brokers
+- Trade peak liquidity hours
+- Use major, liquid pairs
+- Factor spread into profit targets
+- Can mean difference between profit/loss
+

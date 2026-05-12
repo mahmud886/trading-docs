@@ -1,0 +1,187 @@
+---
+title: "Understanding Order Blocks in SMC"
+description: "A deep dive into how institutional order blocks form and how to identify high-probability entry zones using Smart Money Concepts."
+date: "2026-04-28"
+author: "Trading Docs"
+category: "SMC"
+tags: ["smc", "order-blocks", "institutional", "entry-zones"]
+readingTime: 12
+featured: true
+---
+
+## Why Order Blocks Changed My Trading
+
+When I first started trading, I used traditional support and resistance. It worked sometimes, but my entries were imprecise and my stops kept getting hit. Then I discovered **Order Blocks** — and everything changed.
+
+Order Blocks gave me **specific, well-defined zones** for entries instead of vague "areas." My stops became tighter, my R:R improved, and most importantly, I understood WHY price reacted at certain levels.
+
+<Callout type="info" title="What You'll Learn">
+In this article, I'll break down Order Blocks from scratch — what they are, why they form, how to identify them, and how to build a complete trading strategy around them.
+</Callout>
+
+---
+
+## What is an Order Block?
+
+An Order Block (OB) is the **last opposing candle before a significant price move** (displacement). It represents the zone where institutional traders placed their orders to initiate that move.
+
+Think of it this way:
+- Before a big bullish move, institutions need to BUY. The last red candle before that move = where they bought = **Bullish Order Block**
+- Before a big bearish move, institutions need to SELL. The last green candle before that move = where they sold = **Bearish Order Block**
+
+```
+Bullish Order Block:
+
+         ↑ Strong bullish move (displacement)
+         │
+         │
+    ████ │  ← This red candle = Bullish OB
+    ████ │     (Institutions bought here)
+         │
+    Previous candles
+```
+
+---
+
+## Why Do Order Blocks Work?
+
+The logic is rooted in **how institutions trade**:
+
+1. **Large orders can't fill at once** — A bank wanting to buy $500 million of EUR/USD can't do it in one click without massive slippage
+2. **Initial orders create the OB** — They place their first orders, creating the Order Block candle
+3. **Price moves away** — Their initial buying pushes price up
+4. **Unfilled orders remain** — Not all their orders got filled at the OB price
+5. **Price returns** — Eventually, price pulls back to the OB zone where remaining orders wait
+6. **Orders fill, price bounces** — The remaining institutional orders get filled, pushing price again
+
+This is why price "respects" Order Blocks — it's not magic, it's **unfilled institutional orders**.
+
+---
+
+## How to Identify Valid Order Blocks
+
+### Step 1: Look for Displacement
+
+Displacement = **strong, impulsive candles** with big bodies and small wicks. This shows institutional aggression. Without displacement, there's no valid OB.
+
+### Step 2: Find the Last Opposing Candle
+
+Look at the candle(s) immediately before the displacement:
+- Before bullish displacement → Last **bearish (red)** candle = Bullish OB
+- Before bearish displacement → Last **bullish (green)** candle = Bearish OB
+
+### Step 3: Check for FVG (Fair Value Gap)
+
+The best Order Blocks are accompanied by an FVG — a 3-candle gap where the wicks don't overlap. This confirms true displacement:
+
+```
+    Candle 3 low ────────
+                         │ ← FVG (gap between wick 1 high and wick 3 low)
+    Candle 1 high ───────
+```
+
+### Step 4: Premium/Discount Context
+
+An OB is only valid if it's in the correct zone:
+- **Bullish OB** should be in **discount** (below 50% EQ) = BUY zone
+- **Bearish OB** should be in **premium** (above 50% EQ) = SELL zone
+
+---
+
+## OB Trading Strategy: Step by Step
+
+### The Complete Setup:
+
+1. **Identify the trend** on 4H/Daily (HH/HL or LH/LL)
+2. **Wait for BOS** (Break of Structure confirming trend)
+3. **Mark the Order Block** that caused the BOS
+4. **Check it's in P&D alignment** (discount for bullish, premium for bearish)
+5. **Wait for price to retrace** to the OB zone
+6. **Enter on a lower TF confirmation** (5M/15M CHOCH into the OB)
+7. **Stop loss:** Beyond the OB zone (include a small buffer)
+8. **Target:** Next liquidity pool or opposing POI
+
+### Entry Refinement:
+
+Instead of placing a limit order at the OB blindly, refine your entry:
+1. Mark the OB zone on 4H/1H
+2. When price approaches the OB, drop to 15M or 5M
+3. Wait for a **lower TF CHOCH/MSS** confirming reaction at the OB
+4. Enter at the lower TF OB after the CHOCH
+5. This gives a MUCH tighter stop loss and better R:R
+
+---
+
+## Real Trade Examples
+
+### Trade 1: EUR/USD Bullish OB (4H)
+
+**Context:** 4H uptrend, price creating HH/HL
+1. BOS occurs — price breaks above previous HH
+2. The last red candle before BOS at 1.0835-1.0850 = **Bullish OB**
+3. This OB is in discount (below EQ) ✓
+4. Price retraces to OB zone
+5. 15M shows bullish CHOCH at the OB zone
+6. **Entry:** 1.0842 | **Stop:** 1.0822 (20 pips) | **Target:** 1.0920 (78 pips)
+7. **Result:** Hit TP → **+78 pips, 3.9R**
+
+### Trade 2: Gold Bearish OB (1H)
+
+**Context:** 1H downtrend after BSL sweep at $2,450
+1. Bearish MSS confirms shift
+2. Last green candle before MSS at $2,438-$2,445 = **Bearish OB**
+3. OB is in premium ✓
+4. Price retraces to $2,440 (middle of OB)
+5. 5M bearish CHOCH at the OB
+6. **Entry:** $2,441 | **Stop:** $2,448 | **Target:** $2,405
+7. **Result:** Hit TP → **+36 points, 5.1R**
+
+---
+
+## Order Block Invalidation Rules
+
+An OB is **invalidated** when:
+1. Price closes THROUGH the OB with a candle body (not just a wick)
+2. The OB has been tested multiple times (1st touch = strongest)
+3. Price approaches without any displacement/aggression
+
+When an OB is invalidated:
+- It may become a **Breaker Block** (flips to the opposite direction)
+- Don't try to trade an invalidated OB in the original direction
+- Look for new OBs formed by the invalidation move
+
+---
+
+## Common OB Mistakes
+
+<Callout type="warning" title="Avoid These">
+
+**❌ Every red candle before a green one is NOT an OB** — You need DISPLACEMENT (strong momentum). No displacement = no OB.
+
+**❌ Trading OBs against the trend** — A bullish OB in a daily downtrend is low probability. Always align with HTF direction.
+
+**❌ Trading the 3rd or 4th touch of an OB** — First touch is strongest. Each subsequent touch weakens it.
+
+**❌ Entering blindly at the OB** — Use lower TF confirmation for better entries and tighter stops.
+
+**❌ OB in the wrong zone** — Bullish OB in premium = bad. Bearish OB in discount = bad. Check P&D.
+
+</Callout>
+
+---
+
+## Key Takeaways
+
+| Aspect | Summary |
+|--------|---------|
+| **What** | Last opposing candle before displacement |
+| **Why** | Unfilled institutional orders waiting |
+| **Bullish OB** | Last red candle before strong up-move |
+| **Bearish OB** | Last green candle before strong down-move |
+| **Validation** | Displacement + FVG + P&D alignment |
+| **Entry** | Wait for retest + lower TF CHOCH confirmation |
+| **Invalidation** | Body close through the OB zone |
+
+For a complete deep-dive, check the full [Order Blocks lesson](/en/smc/order-blocks) in our SMC curriculum.
+
+Happy trading! 📊

@@ -1,0 +1,90 @@
+---
+title: "SMC Entry Confirmation"
+description: "Master entry confirmation in SMC — the specific signals that validate your trade entry. Learn CHOCH confirmation, displacement, and multi-factor entry models."
+level: intermediate
+order: 22
+lastUpdated: "2026-05-12"
+---
+
+## What is Entry Confirmation?
+
+Entry confirmation is the set of **signals that validate your trade before you click the button**. In SMC, entering without confirmation leads to random results. The confirmation process filters out false setups.
+
+---
+
+## The SMC Confirmation Checklist
+
+### Before Entry — 5 Checks
+1. ✅ **HTF Bias** — Daily/4H direction clear?
+2. ✅ **Kill Zone Timing** — Within London or NY AM window?
+3. ✅ **Liquidity Swept** — Has BSL/SSL been taken?
+4. ✅ **Structure Shift** — CHOCH or MSS on LTF (5M/15M)?
+5. ✅ **PD Array Entry** — Entering at OB, FVG, or Breaker?
+
+### Entry Model Flow
+```
+HTF Bias → Kill Zone → Liquidity Sweep → CHOCH/MSS → OB/FVG Entry
+```
+
+---
+
+## Types of Confirmation
+
+### 1. CHOCH (Change of Character)
+- First break of structure against the current LTF trend
+- Signals potential reversal after sweep
+- Look on 5M/15M
+
+### 2. Displacement
+- Strong candles with full bodies (little to no wicks)
+- Creates FVGs — these are your entry zones
+- Shows institutional COMMITMENT
+
+### 3. Engulfing Candle
+- Single candle that completely engulfs the previous candle
+- Shows strong momentum shift
+- Especially powerful at OB/FVG levels
+
+### 4. SMT Divergence
+- Correlated pair fails to confirm the move
+- Extra confluence for your entry
+- See [SMT Divergence](/en/smc/smt-divergence)
+
+---
+
+## Real Example: Full Confirmation Trade
+
+### EUR/USD Long
+1. ✅ **HTF Bias:** Daily bullish (making HH/HL, price in discount)
+2. ✅ **Kill Zone:** London session (12:30 PM BD)
+3. ✅ **Liquidity Swept:** Asian Low at 1.0855 swept to 1.0848
+4. ✅ **CHOCH:** 5M bullish CHOCH at 1.0858 — displacement candle
+5. ✅ **Entry:** Bullish OB at 1.0855, FVG at 1.0852-1.0858
+6. **Entry:** Buy at 1.0855 (OB + FVG confluence)
+7. **SL:** 1.0845 | **TP:** 1.0910
+8. **R:R:** 1:5.5
+
+---
+
+## Common Mistakes
+
+<Callout type="warning" title="Confirmation Errors">
+
+**❌ Entering without all 5 checks** — Skip a check = skip the trade
+
+**❌ CHOCH without displacement** — Weak break is not confirmation. Need strong candle
+
+**❌ Entering on LTF against HTF** — 5M CHOCH against Daily trend = losing trade
+
+**❌ No liquidity sweep** — If liquidity hasn't been swept, the manipulation isn't done
+
+</Callout>
+
+---
+
+## Related Topics
+
+- [CHOCH](/en/smc/choch) — Primary confirmation signal
+- [BOS](/en/smc/bos) — Continuation confirmation
+- [Kill Zones](/en/smc/kill-zones) — When to look for confirmation
+- [Order Blocks](/en/smc/order-blocks) — Where to enter after confirmation

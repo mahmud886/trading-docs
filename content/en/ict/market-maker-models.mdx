@@ -1,0 +1,113 @@
+---
+title: "ICT Market Maker Models"
+description: "Understand how the Market Maker algorithm delivers price. Learn the Market Maker Buy Model (MMBM) and Market Maker Sell Model (MMSM) — the complete price delivery framework."
+level: advanced
+order: 18
+lastUpdated: "2026-05-12"
+---
+
+## What are Market Maker Models?
+
+Market Maker Models describe the **complete cycle of price delivery** by the interbank algorithm. They map out how price moves from accumulation through manipulation to distribution — giving you a roadmap of where you are in the cycle and what comes next.
+
+<Callout type="info" title="The Algorithm's Pattern">
+The algorithm repeats the same pattern over and over: sweep one side, displace to the other side, retrace, then expand. Market Maker Models help you identify which stage you're in.
+</Callout>
+
+---
+
+## Market Maker Buy Model (MMBM)
+
+The blueprint for a bullish cycle:
+
+### Stages
+1. **Original Consolidation** — Price ranges at the low (accumulation)
+2. **Smart Money Reversal** — SSL sweep + MSS (manipulation)
+3. **First displacement leg up** — Creates OBs and FVGs
+4. **Re-accumulation** — Pullback to OB/FVG (this is your entry)
+5. **Second leg up** — Expansion toward BSL targets
+6. **Distribution** — Price reaches premium, starts topping out
+
+### Entry Point
+The ideal entry is during **Stage 4 (re-accumulation)**:
+- Price pulls back to the FVG/OB from Stage 3
+- This pullback often reaches OTE (62-79% retracement)
+- Enter with stop below the Stage 2 manipulation low
+
+---
+
+## Market Maker Sell Model (MMSM)
+
+The blueprint for a bearish cycle:
+
+### Stages
+1. **Original Consolidation** — Price ranges at the high (distribution)
+2. **Smart Money Reversal** — BSL sweep + MSS (manipulation)
+3. **First displacement leg down** — Creates bearish OBs and FVGs
+4. **Re-distribution** — Pullback into bearish OB/FVG (entry)
+5. **Second leg down** — Expansion toward SSL targets
+6. **Accumulation** — Price reaches discount, starts bottoming
+
+### Entry Point
+Enter during **Stage 4 (re-distribution)**:
+- Price retraces into the bearish FVG/OB from Stage 3
+- Often reaches OTE zone
+- Stop above the Stage 2 manipulation high
+
+---
+
+## Real Examples
+
+### Example 1: MMBM on EUR/USD (Daily)
+- **Stage 1:** 1.0800-1.0830 consolidation for 5 days
+- **Stage 2:** SSL sweep to 1.0785, then MSS bullish
+- **Stage 3:** Displacement to 1.0880, creating FVG at 1.0840-1.0855
+- **Stage 4:** Pullback to 1.0848 (FVG CE + OTE zone) — **ENTRY BUY**
+- **Stage 5:** Expansion to 1.0970
+- **R:R from entry:** 1:8+
+
+### Example 2: MMSM on NAS100 (4H)
+- **Stage 1:** Consolidation at 18,000-18,100
+- **Stage 2:** BSL sweep to 18,150, bearish MSS
+- **Stage 3:** Displacement to 17,900 creating OBs
+- **Stage 4:** Retracement to 18,020 (bearish OB) — **ENTRY SELL**
+- **Stage 5:** Expansion to 17,500
+- **R:R:** 1:7
+
+---
+
+## Identifying Your Position in the Model
+
+| If Price Is... | You're in Stage... | Action |
+|---------|---------|--------|
+| Ranging at support | 1 (Consolidation) | Wait for sweep |
+| Sweeping lows with displacement up | 2-3 (Reversal) | Prepare for buy |
+| Pulling back to FVG/OB after up move | 4 (Re-accumulation) | ENTER BUY |
+| Expanding toward highs | 5 (Expansion) | Hold / take partials |
+| Ranging at resistance | 6 (Distribution) | Prepare for MMSM |
+
+---
+
+## Common Mistakes
+
+<Callout type="warning" title="Market Maker Model Errors">
+
+**❌ Entering at Stage 1** — Consolidation can last days/weeks. Wait for the sweep
+
+**❌ Chasing Stage 3** — The first displacement is not the entry. Wait for Stage 4 pullback
+
+**❌ Wrong timeframe** — Use Daily/4H for the model structure, LTF for execution
+
+**❌ Forgetting it's a cycle** — MMBM ends → MMSM begins. It's continuous
+
+</Callout>
+
+---
+
+## Related Topics
+
+- [AMD](/en/ict/amd) — Market Maker Models are expanded AMD
+- [PD Arrays](/en/ict/pd-arrays) — Entry vehicles within the model
+- [OTE](/en/ict/ote) — Stage 4 pullback often reaches OTE
+- [Dealing Range](/en/ict/dealing-range) — Context for the model stages
+- [Liquidity](/en/ict/liquidity) — Sweep targets at each stage

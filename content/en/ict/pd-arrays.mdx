@@ -1,0 +1,174 @@
+---
+title: "ICT PD Arrays (Premium/Discount Arrays)"
+description: "Master the complete ICT PD Array matrix — Order Blocks, FVGs, Breaker Blocks, Mitigation Blocks, and Liquidity Voids. Learn how to identify and trade every PD Array in premium and discount zones."
+level: intermediate
+order: 10
+lastUpdated: "2026-05-12"
+---
+
+## What are PD Arrays?
+
+PD Arrays (Premium/Discount Arrays) are **institutional price levels** left behind by smart money operations. They act as magnets and entry zones, forming the backbone of ICT's entry methodology. The "PD" refers to using them in context of Premium (sell zone) or Discount (buy zone).
+
+<Callout type="info" title="The Matrix">
+ICT organizes all PD Arrays into a hierarchy. Higher-timeframe PD Arrays are more significant than lower-timeframe ones. Understanding which to prioritize is key to consistent execution.
+</Callout>
+
+---
+
+## The Complete PD Array List
+
+### Discount Arrays (Used for BUYING)
+From most to least significant:
+1. **Order Block (OB)** — Last bearish candle before bullish displacement
+2. **Bullish Fair Value Gap (BISI)** — 3-candle buy-side imbalance
+3. **Bullish Breaker Block** — Failed bearish OB now acting as support
+4. **Mitigation Block** — Partially filled OB
+5. **Liquidity Void** — Large single-candle gap
+
+### Premium Arrays (Used for SELLING)
+From most to least significant:
+1. **Order Block (OB)** — Last bullish candle before bearish displacement
+2. **Bearish Fair Value Gap (SIBI)** — 3-candle sell-side imbalance
+3. **Bearish Breaker Block** — Failed bullish OB now acting as resistance
+4. **Mitigation Block** — Partially filled OB
+5. **Liquidity Void** — Large single-candle gap
+
+---
+
+## Order Blocks (OB)
+
+The **last opposing candle** before a displacement move:
+
+### Bullish OB
+- Last BEARISH (down-close) candle before price displaces upward
+- Mark the candle's range (open to low)
+- Price returns to this zone for buy entries
+
+### Bearish OB
+- Last BULLISH (up-close) candle before price displaces downward
+- Mark the candle's range (open to high)
+- Price returns to this zone for sell entries
+
+### OB Validity Rules
+- Must have displacement (strong move creating FVG)
+- Should break structure (BOS or MSS)
+- One-touch entries preferred (first return is strongest)
+
+---
+
+## Fair Value Gaps (FVG)
+
+3-candle imbalance — covered in detail in the [FVG lesson](/en/ict/fvg).
+
+Quick reference:
+- **BISI** (Bullish): Gap between C1 high and C3 low → buy zone
+- **SIBI** (Bearish): Gap between C1 low and C3 high → sell zone
+- **CE** (Consequent Encroachment): 50% of FVG = ideal entry
+
+---
+
+## Breaker Blocks
+
+A **failed Order Block** that then acts as support/resistance from the other side:
+
+### How Breakers Form
+1. Bullish OB forms → price uses it as support
+2. Price eventually breaks DOWN through the OB (OB fails)
+3. The failed OB now acts as RESISTANCE from below
+4. This is now a **Bearish Breaker Block**
+
+### Trading Breakers
+- Enter when price returns to the breaker from the underside
+- Stronger than regular S/R because they represent a trap & reversal
+- Especially powerful when aligned with OTE zone
+
+---
+
+## Mitigation Blocks
+
+An Order Block that was **partially filled** before price moved away:
+
+### How They Work
+1. OB forms at a level
+2. Price returns to the OB but only partially fills it (doesn't trade through the full range)
+3. Price moves away again
+4. When price returns a second time, the remaining unfilled portion = Mitigation Block
+
+### Trading Approach
+- Enter at the unfilled portion of the OB
+- Tighter stop possible (only need to cover the mitigation range)
+- Slightly lower probability than fresh OBs
+
+---
+
+## PD Array Selection Rules
+
+### Rule 1: Higher Timeframe > Lower Timeframe
+A Daily OB beats a 15M OB. Always respect HTF arrays first.
+
+### Rule 2: Premium/Discount Context
+- Only use discount arrays for BUYS (price is below 50% of range)
+- Only use premium arrays for SELLS (price is above 50% of range)
+
+### Rule 3: Nearest Array First
+Price will interact with the nearest PD Array first. Don't skip arrays.
+
+### Rule 4: Confluence Stacks
+When multiple PD Arrays overlap (OB + FVG + OTE zone), the probability increases dramatically.
+
+---
+
+## Real Example: Multi-PD Array Trade
+
+### EUR/USD Long Setup
+- **HTF:** Daily in discount, bullish bias
+- **15M:** After SSL sweep during London KZ
+- **PD Arrays present at entry zone:**
+  - ✅ 15M Bullish OB at 1.0852
+  - ✅ 15M Bullish FVG at 1.0848-1.0856
+  - ✅ OTE zone (62-79%) at 1.0845-1.0855
+- **Entry:** 1.0852 (OB + FVG + OTE confluence)
+- **Stop:** 1.0840
+- **Target:** 1.0920 (BSL)
+- **R:R:** 1:5.7
+
+---
+
+## Common Mistakes
+
+<Callout type="warning" title="PD Array Errors">
+
+**❌ Trading PD Arrays against HTF bias** — Arrays only work in the direction of the trend
+
+**❌ Using premium arrays for buys** — Buying in premium = fighting institutions
+
+**❌ Ignoring the hierarchy** — OBs are stronger than FVGs in ICT's framework
+
+**❌ No displacement check** — Valid PD Arrays require displacement to form
+
+**❌ Trading old arrays** — Fresh arrays (< 20 candles) are most reliable
+
+</Callout>
+
+---
+
+## Summary
+
+| PD Array | What It Is | Entry Direction |
+|----------|-----------|-----------------|
+| **Order Block** | Last opposing candle before displacement | With displacement direction |
+| **FVG** | 3-candle imbalance | Retracement into gap |
+| **Breaker Block** | Failed OB acting as new S/R | Reversal from failed side |
+| **Mitigation Block** | Partially filled OB | At unfilled portion |
+| **Liquidity Void** | Large single-candle gap | Fill of void |
+
+---
+
+## Related Topics
+
+- [FVG](/en/ict/fvg) — Detailed Fair Value Gap guide
+- [OTE](/en/ict/ote) — Optimal Trade Entry with PD Arrays
+- [MSS](/en/ict/mss) — Structure shift that validates PD Arrays
+- [Daily Bias](/en/ict/daily-bias) — Direction determines which arrays to use
+- [Dealing Range](/en/ict/dealing-range) — Context for PD Array selection

@@ -1,0 +1,267 @@
+---
+title: "Position Sizing — Complete Guide"
+description: "Master position sizing for all markets. Learn lot size calculations, fixed fractional methods, Kelly criterion, and how to size positions for forex, gold, indices, and crypto."
+level: beginner
+order: 4
+lastUpdated: "2026-05-12"
+---
+
+## What is Position Sizing?
+
+Position sizing determines **how many units** (lots, shares, contracts) you trade on each position. It is the single most important factor in determining whether you survive long enough to become profitable.
+
+<Callout type="info" title="The Golden Rule">
+Position sizing is NOT about how much you can make — it is about how much you can afford to lose. Every trade should risk a fixed percentage of your account, regardless of how confident you feel.
+</Callout>
+
+---
+
+## Why Position Sizing Matters
+
+Consider two traders with the same strategy (60% win rate, 1:2 risk-reward):
+
+| Metric | Trader A (Random Sizing) | Trader B (Fixed 1% Risk) |
+|--------|--------------------------|--------------------------|
+| Starting Balance | $10,000 | $10,000 |
+| After 100 Trades | $3,200 (blown) | $14,800 (profitable) |
+| Max Drawdown | 78% | 12% |
+| Survival | ❌ Account blown | ✅ Consistently growing |
+
+The **only difference** is position sizing. Same strategy, same market — completely different outcomes.
+
+---
+
+## The Position Sizing Formula
+
+The universal formula for calculating position size:
+
+**Position Size = Risk Amount / Stop Loss Distance**
+
+Where:
+- **Risk Amount** = Account Balance x Risk Percentage
+- **Stop Loss Distance** = Entry Price - Stop Loss Price (in pips, points, or dollars)
+
+### Example Calculation
+
+- Account Balance: $10,000
+- Risk per trade: 1% = $100
+- Entry: 1.1050 (EUR/USD)
+- Stop Loss: 1.1020 (30 pips away)
+- Pip value for 1 standard lot: $10/pip
+
+**Position Size** = $100 / (30 pips x $10) = $100 / $300 = **0.33 lots**
+
+---
+
+## Position Sizing Methods
+
+### 1. Fixed Percentage Method (Recommended)
+
+Risk a fixed percentage of your current account balance on every trade.
+
+| Account Size | Risk % | Risk Amount | 30-pip SL | Lot Size |
+|-------------|--------|-------------|-----------|----------|
+| $1,000 | 1% | $10 | 30 pips | 0.03 |
+| $5,000 | 1% | $50 | 30 pips | 0.17 |
+| $10,000 | 1% | $100 | 30 pips | 0.33 |
+| $50,000 | 1% | $500 | 30 pips | 1.67 |
+
+**Advantages:**
+- Automatically adjusts as account grows or shrinks
+- Protects during drawdowns (smaller sizes when losing)
+- Compounds gains during winning streaks
+
+### 2. Fixed Dollar Amount
+
+Risk the same dollar amount on every trade regardless of account size.
+
+- Example: Always risk $50 per trade
+- **Problem:** Does not scale with account growth or drawdown
+- **Use case:** Very small accounts where percentage calculation is impractical
+
+### 3. Kelly Criterion
+
+A mathematical formula for optimal bet sizing:
+
+**Kelly % = W - ((1 - W) / R)**
+
+Where:
+- W = Win rate (decimal)
+- R = Average win / Average loss ratio
+
+**Example:** Win rate 55%, avg win $200, avg loss $100
+- Kelly % = 0.55 - ((1 - 0.55) / 2) = 0.55 - 0.225 = **32.5%**
+
+<Callout type="warning" title="Kelly Criterion Warning">
+Full Kelly is extremely aggressive. Most professional traders use **Quarter Kelly** (divide by 4) or **Half Kelly** (divide by 2) to reduce volatility. In this example, Quarter Kelly would be about 8% — still aggressive for most traders.
+</Callout>
+
+### 4. Fixed Ratio Method (Ryan Jones)
+
+Increases position size based on accumulated profits rather than account balance:
+- Start with 1 lot
+- Add 1 lot for every $X in profits (delta)
+- Reduces risk of giving back profits during drawdowns
+
+---
+
+## Lot Sizes in Forex
+
+| Lot Type | Units | Pip Value (USD pairs) |
+|----------|-------|----------------------|
+| **Standard** | 100,000 | $10/pip |
+| **Mini** | 10,000 | $1/pip |
+| **Micro** | 1,000 | $0.10/pip |
+| **Nano** | 100 | $0.01/pip |
+
+### Quick Reference Table
+
+For a **$1,000 account** risking **1% ($10)**:
+
+| Stop Loss | Micro Lots | Mini Lots |
+|-----------|-----------|-----------|
+| 10 pips | 1.0 micro | 0.1 mini |
+| 20 pips | 0.5 micro | 0.05 mini |
+| 30 pips | 0.33 micro | 0.033 mini |
+| 50 pips | 0.2 micro | 0.02 mini |
+
+---
+
+## Position Sizing for Different Markets
+
+### Forex
+
+- Pip value varies by pair and lot size
+- Cross pairs (EUR/GBP) have different pip values than USD pairs
+- Always check pip value before calculating
+
+**Formula:** Lot Size = Risk Amount / (SL in pips x Pip Value per lot)
+
+### Gold (XAUUSD)
+
+- Gold moves in **points**, not pips
+- 1 standard lot = 100 oz, 1 point = $1 per oz = **$100 per point**
+- Gold is highly volatile — use smaller position sizes
+
+**Example:** $10,000 account, 1% risk ($100), Stop Loss = 5 points
+- Position Size = $100 / (5 x $100) = **0.20 lots**
+
+### Indices (NAS100, US30)
+
+- Each index has different point values
+- NAS100: 1 standard lot = $1 per point (varies by broker)
+- US30: 1 standard lot = $1 per point (varies by broker)
+- Always verify contract specifications with your broker
+
+### Crypto (BTC, ETH)
+
+- Position size in units of the coin
+- Risk Amount / (Entry - Stop Loss) = Units to buy
+- Example: $5,000 account, 1% risk ($50), BTC entry $60,000, SL $59,000
+- Units = $50 / $1,000 = **0.05 BTC**
+
+---
+
+## Risk Percentage Guidelines
+
+| Trader Type | Risk per Trade | Max Open Risk |
+|------------|---------------|---------------|
+| Conservative | 0.5% | 2-3% |
+| Standard | 1% | 3-5% |
+| Moderate | 1.5% | 5-7% |
+| Aggressive | 2% | 6-10% |
+
+<Callout type="warning" title="Never Exceed 2%">
+Professional traders rarely risk more than 2% per trade. Risking 5% per trade means just 6 consecutive losses will draw your account down by 26%. At 10% risk, 6 losses = 47% drawdown.
+</Callout>
+
+---
+
+## The Math of Drawdowns
+
+Understanding how drawdowns compound:
+
+| Drawdown | Gain Needed to Recover |
+|----------|----------------------|
+| 10% | 11.1% |
+| 20% | 25% |
+| 30% | 42.9% |
+| 50% | 100% |
+| 70% | 233% |
+| 90% | 900% |
+
+This is why position sizing and risk management are **survival tools**, not optional extras.
+
+---
+
+## Scaling Strategies
+
+### Scaling In (Adding to Winners)
+
+1. Enter with 50% of planned position size
+2. Add 25% when price moves in your favor and confirms
+3. Add final 25% at the next confirmation
+4. Move stop loss to breakeven on first position
+
+### Scaling Out (Partial Profits)
+
+1. Take 50% profit at 1R (1x your risk)
+2. Move stop to breakeven
+3. Let remaining 50% run to 2R or 3R
+4. Trail stop behind structure
+
+---
+
+## Common Position Sizing Mistakes
+
+<Callout type="warning" title="Avoid These Errors">
+
+**❌ Risking too much per trade** — Even the best strategy will blow your account with 5-10% risk per trade.
+
+**❌ Not adjusting for volatility** — A 30-pip stop on EUR/USD is very different from a 30-pip stop on GBP/JPY.
+
+**❌ Ignoring correlation** — 3 trades on EUR/USD, GBP/USD, and AUD/USD are essentially 3 trades against USD. Your real risk is 3x what you think.
+
+**❌ Increasing size after losses** — This is the Martingale trap. Never double down after a loss.
+
+**❌ Calculating lot size based on feeling** — Always use the formula. No exceptions.
+
+**❌ Not accounting for gaps** — Weekend gaps or news events can blow past your stop loss.
+
+</Callout>
+
+---
+
+## Position Size Calculator Checklist
+
+Before every trade, answer these 5 questions:
+
+1. **What is my account balance right now?** (Not what it was yesterday)
+2. **What percentage am I risking?** (Should be 0.5-2%)
+3. **Where is my stop loss?** (Must be placed BEFORE calculating size)
+4. **What is the pip/point value for this instrument?** (Check broker specs)
+5. **What is the calculated position size?** (Use the formula, not feelings)
+
+---
+
+## Summary
+
+| Concept | Key Points |
+|---------|-----------|
+| **Formula** | Position Size = Risk Amount / Stop Loss Distance |
+| **Recommended Risk** | 1% per trade for most traders |
+| **Best Method** | Fixed percentage (scales automatically) |
+| **Max Open Risk** | 3-5% total across all positions |
+| **Lot Sizes** | Standard (100K), Mini (10K), Micro (1K) |
+| **Recovery Math** | 50% drawdown needs 100% gain to recover |
+| **Key Rule** | Calculate BEFORE entering, never after |
+
+---
+
+## Related Topics
+
+- [Risk Management](/en/academy/risk-management) — Capital protection strategies
+- [Trading Journal](/en/academy/journaling) — Track your position sizing decisions
+- [Margin and Leverage](/en/academy/margin-leverage) — How leverage affects position size
+- [Trading Psychology](/en/academy/trading-psychology) — Emotional discipline in sizing
+- [Advanced Money Management](/en/academy/money-management-advanced) — Portfolio-level risk

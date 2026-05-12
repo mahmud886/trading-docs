@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "home": "Home",
+    "docs": "Documentation",
+    "academy": "Academy",
+    "priceAction": "Price Action",
+    "smc": "Smart Money Concepts",
+    "ict": "ICT Concepts",
+    "forexSessions": "Forex Sessions",
+    "glossary": "Glossary",
+    "blog": "Blog",
+    "dashboard": "Dashboard",
+    "charts": "Charts",
+    "tools": "Tools",
+    "search": "Search documentation...",
+    "language": "Language",
+    "theme": "Theme"
+  },
+  "hero": {
+    "title": "Master the Markets",
+    "subtitle": "Complete trading education platform covering Price Action, Smart Money Concepts, and ICT methodology — from beginner to expert.",
+    "cta": "Start Learning",
+    "explore": "Explore Docs"
+  },
+  "levels": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "expert": "Expert"
+  },
+  "docs": {
+    "onThisPage": "On this page",
+    "previous": "Previous",
+    "next": "Next",
+    "editPage": "Edit this page",
+    "readingTime": "min read",
+    "lastUpdated": "Last updated",
+    "searchPlaceholder": "Search documentation...",
+    "noResults": "No results found.",
+    "tableOfContents": "Table of Contents"
+  },
+  "home": {
+    "featuredTitle": "Start Your Trading Journey",
+    "featuredSubtitle": "Structured learning paths from beginner to expert",
+    "statsStudents": "Students",
+    "statsLessons": "Lessons",
+    "statsTopics": "Topics",
+    "beginnerPath": "Beginner Path",
+    "beginnerDesc": "Start with the fundamentals of price action and market structure",
+    "intermediatePath": "Intermediate Path",
+    "intermediateDesc": "Dive into Smart Money Concepts and order flow",
+    "advancedPath": "Advanced Path",
+    "advancedDesc": "Master ICT methodology and advanced execution",
+    "expertPath": "Expert Path",
+    "expertDesc": "Algorithmic delivery, time theory, and institutional models"
+  },
+  "footer": {
+    "description": "A comprehensive trading education platform covering Price Action, Smart Money Concepts, and ICT methodology.",
+    "resources": "Resources",
+    "learning": "Learning",
+    "community": "Community",
+    "legal": "Legal",
+    "rights": "All rights reserved."
+  },
+  "glossary": {
+    "title": "Trading Glossary",
+    "description": "Complete A-Z trading terminology reference",
+    "searchPlaceholder": "Search terms..."
+  },
+  "dashboard": {
+    "title": "Your Dashboard",
+    "progress": "Learning Progress",
+    "bookmarks": "Bookmarked Lessons",
+    "completed": "Completed Lessons",
+    "continueLearning": "Continue Learning",
+    "noBookmarks": "No bookmarks yet",
+    "noCompleted": "No completed lessons yet"
+  }
+}
+

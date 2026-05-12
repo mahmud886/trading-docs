@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════
+   NEON GREEN VIBE — Design System
+   A premium cyberpunk-inspired trading UI
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  --background: #f6faf8;
+  --foreground: #0f1f18;
+  --card: rgba(255, 255, 255, 0.7);
+  --card-foreground: #1a2e24;
+  --border: #c8ddd3;
+  --muted: #ecf4ef;
+  --muted-foreground: #4a6358;
+  --accent-green: #00c96e;
+  --accent-green-dim: #00a85c;
+  --accent-blue: #0ea5e9;
+  --accent-orange: #f97316;
+  --accent-purple: #a855f7;
+  --code-bg: #edf5f0;
+  --sidebar-bg: rgba(244, 249, 246, 0.8);
+  --nav-bg: rgba(246, 250, 248, 0.75);
+  --glow-color: rgba(0, 201, 110, 0.15);
+  --neon-green: #00d97e;
+  --neon-line: rgba(0, 201, 110, 0.3);
+  --surface-elevated: rgba(255, 255, 255, 0.8);
+  --ring: rgba(0, 201, 110, 0.4);
+  --emerald-glow: rgba(16, 185, 129, 0.12);
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #f0f9f4;
+  --card: rgba(10, 26, 18, 0.55);
+  --card-foreground: #e2f2ea;
+  --border: rgba(0, 255, 157, 0.1);
+  --muted: rgba(10, 26, 18, 0.7);
+  --muted-foreground: #9cc4ad;
+  --accent-green: #00ff9d;
+  --accent-green-dim: #00cc7d;
+  --accent-blue: #38bdf8;
+  --accent-orange: #fb923c;
+  --accent-purple: #c084fc;
+  --code-bg: rgba(8, 20, 14, 0.85);
+  --sidebar-bg: rgba(5, 13, 9, 0.9);
+  --nav-bg: rgba(0, 0, 0, 0.82);
+  --glow-color: rgba(0, 255, 157, 0.08);
+  --neon-green: #00ff9d;
+  --neon-line: rgba(0, 255, 157, 0.18);
+  --surface-elevated: rgba(12, 30, 20, 0.75);
+  --ring: rgba(0, 255, 157, 0.5);
+  --emerald-glow: rgba(16, 185, 129, 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-green: var(--accent-green);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-purple: var(--accent-purple);
+  --color-neon-green: var(--neon-green);
+  --color-surface-elevated: var(--surface-elevated);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-bangla: var(--font-hind-siliguri);
+}
+
+/* ═══ Glassmorphism ═══ */
+.glass {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border: 1px solid var(--border);
+}
+:root .glass {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* ═══ Glass Card — frosted card effect ═══ */
+.glass-card {
+  background: var(--card);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+/* ═══ Grid background ═══ */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 217, 126, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 217, 126, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.dark .bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 255, 157, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 157, 0.03) 1px, transparent 1px);
+}
+
+/* ═══ Neon glow effects ═══ */
+.glow-green {
+  box-shadow: 0 0 40px rgba(0, 217, 126, 0.08), 0 0 80px rgba(0, 217, 126, 0.04);
+}
+.dark .glow-green {
+  box-shadow: 0 0 60px rgba(0, 255, 157, 0.12), 0 0 120px rgba(0, 255, 157, 0.06);
+}
+.glow-blue {
+  box-shadow: 0 0 40px rgba(14, 165, 233, 0.08);
+}
+.dark .glow-blue {
+  box-shadow: 0 0 60px rgba(56, 189, 248, 0.12);
+}
+.glow-orange {
+  box-shadow: 0 0 40px rgba(249, 115, 22, 0.08);
+}
+.dark .glow-orange {
+  box-shadow: 0 0 60px rgba(251, 146, 60, 0.12);
+}
+.glow-purple {
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.08);
+}
+.dark .glow-purple {
+  box-shadow: 0 0 60px rgba(192, 132, 252, 0.12);
+}
+
+/* ═══ Neon border glow on hover ═══ */
+.neon-border {
+  border: 1px solid var(--border);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.neon-border:hover {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 20px var(--glow-color), inset 0 0 20px var(--glow-color);
+}
+
+/* ═══ Neon text glow ═══ */
+.neon-text {
+  color: var(--accent-green);
+  text-shadow: 0 0 10px var(--glow-color);
+}
+.dark .neon-text {
+  text-shadow: 0 0 20px rgba(0, 255, 157, 0.4), 0 0 40px rgba(0, 255, 157, 0.2);
+}
+
+/* ═══ Neon underline ═══ */
+.neon-underline {
+  position: relative;
+}
+.neon-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-green);
+  box-shadow: 0 0 8px var(--glow-color);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.neon-underline:hover::after {
+  opacity: 1;
+}
+
+/* ═══ Scrollbar styling ═══ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #c5d4cc;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: #8aa898; }
+.dark ::-webkit-scrollbar-thumb { background: rgba(0, 255, 157, 0.15); }
+.dark ::-webkit-scrollbar-thumb:hover { background: rgba(0, 255, 157, 0.3); }
+
+/* ═══ Selection ═══ */
+::selection {
+  background: rgba(0, 217, 126, 0.2);
+  color: #0a0f0d;
+}
+.dark ::selection {
+  background: rgba(0, 255, 157, 0.25);
+  color: #fff;
+}
+
+/* ═══ Base body ═══ */
+body {
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  transition: color 0.3s ease;
+  background: transparent;
+}
+
+/* ═══ Bangla font support ═══ */
+[lang="bn"] body {
+  font-family: var(--font-bangla), var(--font-sans), system-ui, sans-serif;
+}
+
+/* ═══ Background ═══ */
+html {
+  background: var(--background);
+}
+
+/* ═══ Animation utilities ═══ */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.6; }
+}
+.animate-neon-flicker { animation: neon-flicker 4s infinite; }
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px var(--glow-color); }
+  50% { box-shadow: 0 0 40px var(--glow-color), 0 0 60px var(--glow-color); }
+}
+.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* ═══ Focus rings with neon green ═══ */
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ═══ Fancy card hover lift ═══ */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--glow-color);
+  border-color: rgba(0, 255, 157, 0.2);
+}
+.dark .card-hover:hover {
+  border-color: rgba(0, 255, 157, 0.3);
+  box-shadow: 0 8px 40px rgba(0, 255, 157, 0.08), 0 0 60px rgba(0, 255, 157, 0.04);
+}

@@ -1,0 +1,175 @@
+---
+title: "ICT Fair Value Gap (FVG)"
+description: "Master the ICT Fair Value Gap — a 3-candle price imbalance that acts as a magnet for price. Learn consequent encroachment, IFVG, BISI/SIBI, and how to trade FVGs like an institution."
+level: intermediate
+order: 6
+lastUpdated: "2026-05-12"
+---
+
+## What is a Fair Value Gap?
+
+A Fair Value Gap (FVG) is a **3-candle price imbalance** where the wicks of candle 1 and candle 3 do NOT overlap, leaving a gap created by candle 2's body. This gap represents an area where price was delivered too aggressively in one direction — an inefficiency the algorithm will likely revisit.
+
+<Callout type="info" title="ICT Definition">
+"A Fair Value Gap is the range between the high of candle 1 and the low of candle 3 (bullish) or the low of candle 1 and the high of candle 3 (bearish). It represents an imbalance in price delivery." — ICT
+</Callout>
+
+---
+
+## Bullish vs Bearish FVG
+
+### Bullish FVG (BISI — Buy-Side Imbalance, Sell-Side Inefficiency)
+- Candle 1: Any candle
+- Candle 2: Strong bullish displacement candle
+- Candle 3: Any candle
+- **Gap** = High of Candle 1 to Low of Candle 3
+- Price returns DOWN to fill this gap (buy entry)
+
+### Bearish FVG (SIBI — Sell-Side Imbalance, Buy-Side Inefficiency)
+- Candle 1: Any candle
+- Candle 2: Strong bearish displacement candle  
+- Candle 3: Any candle
+- **Gap** = Low of Candle 1 to High of Candle 3
+- Price returns UP to fill this gap (sell entry)
+
+---
+
+## Consequent Encroachment (CE)
+
+The **midpoint (50%)** of any FVG is called Consequent Encroachment. ICT teaches that:
+
+- CE is the **optimal entry point** within an FVG
+- If price trades through CE, the FVG is considered **violated**
+- A respected CE = strong institutional interest
+- Use CE as your precision entry rather than the full FVG range
+
+### How to Calculate CE
+```
+Bullish FVG CE = (High of Candle 1 + Low of Candle 3) / 2
+Bearish FVG CE = (Low of Candle 1 + High of Candle 3) / 2
+```
+
+---
+
+## Types of FVGs in ICT
+
+### 1. Standard FVG
+Regular 3-candle imbalance — most common, used for entries
+
+### 2. Implied FVG (IFVG)  
+When wicks DO slightly overlap but the bodies don't — still treated as an FVG because the body range was inefficient
+
+### 3. Inversion FVG
+A previously bearish FVG that gets fully filled and then acts as **support** (or vice versa). The FVG "inverts" its role:
+- Bearish FVG filled → becomes bullish support
+- Bullish FVG filled → becomes bearish resistance
+
+### 4. Volume Imbalance (VI)
+A gap between the close of one candle and the open of the next — different from FVG but related concept
+
+### 5. Opening Range Gap
+Gap between previous day's close and current day's open — institutional gap
+
+---
+
+## FVG Trading Rules
+
+### Entry Rules
+1. **HTF Direction** — Only trade FVGs that align with Daily/4H bias
+2. **Premium/Discount** — Bullish FVGs in discount zones, bearish FVGs in premium zones
+3. **Kill Zone Timing** — FVGs formed during Kill Zones are highest probability
+4. **Displacement** — The candle creating the FVG should show strong momentum
+5. **CE Entry** — Enter at the 50% (CE) of the FVG for optimal risk:reward
+
+### Invalidation Rules
+- FVG is **invalid** if price closes through it entirely (full body close beyond)
+- FVG is **weakened** if price trades through CE without respecting it
+- FVGs on higher timeframes override lower timeframe FVGs
+- Old FVGs (more than 40 candles back) lose significance
+
+---
+
+## Real Trading Examples
+
+### Example 1: EUR/USD — Bullish FVG Entry
+- **Date Context:** London session
+- **HTF Bias:** Daily bullish — price in discount, targeting BSL at 1.0950
+- **Setup:** 15M shows displacement up from 1.0880, creating bullish FVG (1.0885 - 1.0895)
+- **CE Level:** 1.0890
+- **Entry:** Limit buy at 1.0890 (CE)
+- **Stop Loss:** Below FVG low at 1.0882 (8 pips)
+- **Target:** BSL at 1.0950 (60 pips)
+- **R:R:** 1:7.5
+- **Time (BD):** Setup formed at 2:30 PM BD (London Kill Zone)
+
+### Example 2: Gold (XAU/USD) — Bearish FVG
+- **HTF Bias:** 4H bearish — price in premium after rally to 2,045
+- **Setup:** 5M NY AM session shows bearish FVG at 2,042-2,038 after MSS
+- **CE Level:** 2,040
+- **Entry:** Limit sell at 2,040
+- **Stop Loss:** Above FVG high at 2,043 (30 pips)
+- **Target:** SSL at 2,015 (250 pips)
+- **R:R:** 1:8.3
+- **Time (BD):** 8:00 PM BD (NY AM Kill Zone)
+
+### Example 3: NAS100 — Inversion FVG
+- **Setup:** Previous bearish FVG at 17,850-17,820 gets fully filled
+- **Price returns** to this same zone and it now acts as SUPPORT
+- **Entry:** Buy at the top of the old bearish FVG (17,850)
+- **Concept:** The algorithm rebalanced the inefficiency; now the level inverts
+
+---
+
+## Multi-Timeframe FVG Analysis
+
+| Timeframe | FVG Role | Usage |
+|-----------|----------|-------|
+| **Monthly/Weekly** | Major imbalances — price will travel to fill these | Directional bias, swing targets |
+| **Daily** | Key levels for the week | Intraday bias, area of interest |
+| **4H** | Refined entry zones | Swing trade entries |
+| **15M/5M** | Precision entries | Scalp/day trade entries |
+| **1M** | Sniper entries | Exact entry at CE |
+
+### Rule: HTF FVGs > LTF FVGs
+A 15M FVG inside a Daily FVG = very high probability. A 15M FVG opposing the Daily FVG = low probability.
+
+---
+
+## Common Mistakes
+
+<Callout type="warning" title="FVG Trading Errors">
+
+**❌ Trading every FVG** — Only trade FVGs aligned with HTF bias and in proper PD zone
+
+**❌ Ignoring CE** — Entering at the edge of FVG gives poor R:R. Use CE for precision
+
+**❌ No displacement** — Weak, small-bodied FVGs are not institutional. Look for strong candle 2
+
+**❌ Trading old FVGs** — FVGs older than 20-40 candles lose relevance
+
+**❌ Forgetting time** — FVGs created outside Kill Zones are lower probability
+
+</Callout>
+
+---
+
+## Summary
+
+| Aspect | Details |
+|--------|---------|
+| **Definition** | 3-candle imbalance with no wick overlap between C1 and C3 |
+| **Types** | Standard, Implied, Inversion, Volume Imbalance |
+| **Key Level** | Consequent Encroachment (50% of FVG) |
+| **Best Context** | In discount for buys, in premium for sells |
+| **Entry** | Limit order at CE after displacement |
+| **Invalidation** | Full body close through the FVG |
+
+---
+
+## Related Topics
+
+- [PD Arrays](/en/ict/pd-arrays) — Complete PD Array matrix
+- [OTE](/en/ict/ote) — Optimal Trade Entry using FVGs
+- [Liquidity](/en/ict/liquidity) — Why price targets liquidity after filling FVGs
+- [Daily Bias](/en/ict/daily-bias) — Determining directional bias
+- [ICT Kill Zones](/en/ict/ict-kill-zones) — When to trade FVG setups
