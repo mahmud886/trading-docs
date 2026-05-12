@@ -1,9 +1,11 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
 import { getAllDocSlugs } from "@/lib/content";
+import { getAllBlogPosts } from "@/lib/blog";
 import { CATEGORIES } from "@/lib/constants";
+import { SITE_URL } from "@/lib/constants";
 
-const BASE_URL = "https://tradingdocs.vercel.app";
+const BASE_URL = SITE_URL;
 
 function makeAlternates(path: string) {
   const languages: Record<string, string> = {};
@@ -77,6 +79,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
           alternates: makeAlternates(slugPath),
         });
       }
+    }
+
+    // Blog posts
+    for (const post of getAllBlogPosts(lang as (typeof locales)[number])) {
+      const blogPath = `/blog/${post.slug}`;
+      entries.push({
+        url: `${BASE_URL}/${lang}${blogPath}`,
+        lastModified: new Date(post.date),
+        changeFrequency: "weekly",
+        priority: 0.7,
+        alternates: makeAlternates(blogPath),
+      });
     }
   }
 

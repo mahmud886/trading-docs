@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { getDictionary, type Locale } from "@/lib/i18n";
+import { getFeaturedBlogPosts } from "@/lib/blog";
+import { FeaturedBlogs } from "@/components/blog/featured-blogs";
+import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { getDictionary, locales, type Locale } from "@/lib/i18n";
 import {
   BarChart3,
   TrendingUp,
@@ -13,6 +17,48 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+function getLocaleAlternates(path: string) {
+  return Object.fromEntries(
+    locales.map((locale) => [locale, `${SITE_URL}/${locale}${path}`])
+  );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = locales.includes(lang as Locale) ? (lang as Locale) : "en";
+  const dict = await getDictionary(locale);
+  const title = dict.hero.title;
+  const description = dict.hero.subtitle;
+  const url = `${SITE_URL}/${locale}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: getLocaleAlternates(""),
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: SITE_NAME,
+      type: "website",
+      images: ["/images/og/default.png"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/images/og/default.png"],
+    },
+  };
+}
+
 export default async function HomePage({
   params,
 }: {
@@ -20,6 +66,7 @@ export default async function HomePage({
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
+  const featuredPosts = getFeaturedBlogPosts(lang as Locale, 3);
 
   return (
     <div className="relative">
@@ -128,7 +175,7 @@ export default async function HomePage({
                 />
                 {/* Top border accent */}
                 <div
-                  className="absolute left-0 right-0 top-0 h-[2px] opacity-0 transition-opacity group-hover:opacity-100"
+                  className="absolute left-0 right-0 top-0 h-0.5 opacity-0 transition-opacity group-hover:opacity-100"
                   style={{
                     background: `linear-gradient(90deg, transparent, ${cat.color}, transparent)`,
                     boxShadow: `0 0 10px ${cat.color}40`,
@@ -287,6 +334,13 @@ export default async function HomePage({
           })}
         </div>
       </section>
+
+      {/* Featured Blog Posts */}
+      {featuredPosts.length > 0 && (
+        <section className="relative mx-auto max-w-6xl px-6 py-28">
+          <FeaturedBlogs posts={featuredPosts} locale={lang} />
+        </section>
+      )}
     </div>
   );
 }

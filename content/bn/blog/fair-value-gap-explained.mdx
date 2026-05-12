@@ -1,0 +1,104 @@
+---
+title: "Fair Value Gap ব্যাখ্যা — ইমব্যালান্স থেকে কীভাবে ট্রেড করবেন"
+description: "Fair Value Gap কী, কীভাবে সত্যিকারের মার্কেট ইমব্যালান্স চিহ্নিত করবেন, এবং SMC ও ICT কনসেপ্ট ব্যবহার করে কীভাবে নির্ভুল এন্ট্রি নেবেন তা শিখুন।"
+date: "2026-05-13"
+author: "Trading Docs"
+category: "SMC"
+tags: ["fvg", "fair-value-gap", "imbalance", "smc", "ict"]
+readingTime: 9
+featured: true
+---
+
+## Fair Value Gap কী?
+
+**Fair Value Gap (FVG)** হলো এমন একটি প্রাইস ইমব্যালান্স, যেখানে মার্কেট এত দ্রুত মুভ করে যে ক্যান্ডেলগুলোর মধ্যে কার্যকরভাবে সব অর্ডার পূরণ হয় না।
+
+সহজভাবে বললে, প্রাইস এত দ্রুত সরে যায় যে বাই ও সেল সাইড পুরোপুরি ম্যাচ হতে পারে না। এই অসমতা পরে আবার রিব্যালান্স হতে পারে।
+
+<Callout type="tip" title="FVG কেন গুরুত্বপূর্ণ">
+FVG ট্রেডারকে এমন একটি জোন দেখায় যেখানে প্রাইস আবার ফিরে এসে রিব্যালান্স করতে পারে। ICT এবং SMC-তে নির্ভুল এন্ট্রির জন্য এটি খুবই শক্তিশালী টুল।
+</Callout>
+
+---
+
+## কীভাবে ভ্যালিড FVG চিনবেন
+
+সাধারণত ভ্যালিড FVG তৈরি হয় **শক্তিশালী ডিসপ্লেসমেন্ট** এর পরে।
+
+### বুলিশ FVG
+- Candle 1 high, Candle 3 low-এর নিচে থাকে
+- মাঝের ক্যান্ডেল শক্তিশালী বুলিশ মুভ দেখায়
+- প্রাইস অনেক সময় gap-এর মধ্যে ফিরে এসে আবার উপরে যায়
+
+### বিয়ারিশ FVG
+- Candle 1 low, Candle 3 high-এর উপরে থাকে
+- মাঝের ক্যান্ডেল শক্তিশালী সেলিং প্রেশার দেখায়
+- প্রাইস পরে gap রিটেস্ট করে নিচে নামতে পারে
+
+সহজ মনে রাখার নিয়ম:
+- **Bullish imbalance** = buy-side efficiency এখনও বাকি
+- **Bearish imbalance** = sell-side efficiency এখনও বাকি
+
+---
+
+## FVG বনাম Order Block
+
+FVG এবং Order Block একসাথে কাজ করলেও, তারা এক জিনিস নয়।
+
+| কনসেপ্ট | কী বোঝায় | সেরা ব্যবহার |
+|---------|-----------|-------------|
+| **FVG** | প্রাইস ইমব্যালান্স / inefficiency | নির্ভুল retracement zone |
+| **Order Block** | ইনস্টিটিউশনাল origin candle | broader POI ও confluence |
+
+সবচেয়ে শক্তিশালী সেটআপ হয় যখন FVG **Order Block-এর ভেতরে বা কাছাকাছি** তৈরি হয়।
+
+---
+
+## সহজ FVG ট্রেডিং মডেল
+
+1. Higher-timeframe direction চিহ্নিত করুন
+2. Displacement খুঁজুন যা FVG তৈরি করেছে
+3. Gap premium/discount-এর সাথে মেলে কি না দেখুন
+4. Liquidity, BOS, বা CHOCH এর সাথে confluence দেখুন
+5. Gap-এর মধ্যে retracement এ এন্ট্রি নিন
+6. Stop invalidation-এর বাইরে রাখুন
+7. Next liquidity pool টার্গেট করুন
+
+### উদাহরণ
+
+- Daily trend: bullish
+- London session একটি local low sweep করল
+- 15M-এ শক্তিশালী bullish displacement হলো এবং FVG তৈরি হলো
+- New York-এ price gap-এর মধ্যে retrace করল
+- Confirmation পাওয়ার পর entry নেয়া হলো
+- Target ছিল previous day high
+
+এভাবেই FVG random entry-এর বদলে একটি repeatable framework দেয়।
+
+---
+
+## সাধারণ ভুল
+
+<Callout type="warning" title="এগুলো এড়িয়ে চলুন">
+
+**1. প্রতিটি ছোট gap ট্রেড করা** — সব gap meaningful নয়। Displacement দেখুন।
+
+**2. কন্টেক্সট না দেখা** — Strong downtrend-এ bullish FVG কম প্রোবাবিলিটি হতে পারে।
+
+**3. খুব তাড়াতাড়ি এন্ট্রি** — আগে প্রাইস gap পর্যন্ত আসতে দিন, তারপর reaction দেখুন।
+
+**4. Invalidation plan না রাখা** — কোন লেভেলে আইডিয়া ভুল প্রমাণিত হবে, তা আগে ঠিক করুন।
+
+</Callout>
+
+---
+
+## Key Takeaways
+
+- FVG হলো aggressive displacement থেকে তৈরি মার্কেট inefficiency
+- Trend, liquidity, এবং session context-এর সাথে এটি সবচেয়ে ভালো কাজ করে
+- Strong FVG সাধারণত Order Block-এর কাছে বা sweep-এর পরে তৈরি হয়
+- এটিকে precision entry tool হিসেবে ব্যবহার করুন, standalone signal হিসেবে নয়
+
+সম্পূর্ণ পাঠের জন্য দেখুন [Fair Value Gap পাঠ](/bn/smc/fair-value-gap)।
+
