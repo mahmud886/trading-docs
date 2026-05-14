@@ -131,7 +131,7 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
 
   const schema = generateArticleSchema(
     doc.meta,
-    `https://tradingdocs.com/${lang}/${category}/${slug.join("/")}`
+    `https://tradingdocs.vercel.app/${lang}/${category}/${slug.join("/")}`
   );
 
   return (

@@ -1,4 +1,5 @@
-export const SITE_URL = "https://tradingdocs.vercel.app";
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://tradingdocs.vercel.app";
 export const SITE_NAME = "Trading Docs";
 export const SITE_DESCRIPTION =
   "Complete trading education platform for Price Action, Smart Money Concepts, and ICT methodology.";

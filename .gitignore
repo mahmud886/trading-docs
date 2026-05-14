@@ -7,6 +7,8 @@ out/
 
 # Production
 dist/
+diffs/
+.backups/
 
 # TypeScript
 *.tsbuildinfo

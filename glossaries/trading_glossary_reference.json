@@ -1,0 +1,86 @@
+{
+  "version": "2026-05-14",
+  "description": "Canonical Trading Glossary Reference — extracted from the glossary page to ensure consistency across the site. Maps English trading terms to their Bengali definitions and notation as displayed on the website.",
+  "notes": "This glossary is the source of truth for terminology standardization. Use English acronyms and terms (liquidity, CHOCH, BOS, FVG, OB, etc.) everywhere. Bengali notation is optional; definitions are in Bengali.",
+  "glossary": [
+    {
+      "english_term": "Accumulation",
+      "bengali_notation": "অ্যাকুমুলেশন",
+      "bengali_definition": "একটি ফেজ যেখানে ইনস্টিটিউশনাল ট্রেডাররা বড় প্রাইস মুভের আগে নীরবে পজিশন তৈরি করে। প্রাইস একটি রেঞ্জে কনসলিডেট করে যখন স্মার্ট মানি লিকুইডিটি শোষণ করে।",
+      "category": "SMC"
+    },
+    {
+      "english_term": "AMD",
+      "bengali_notation": "অ্যাকুমুলেশন, ম্যানিপুলেশন, ডিস্ট্রিবিউশন",
+      "bengali_definition": "ICT কনসেপ্ট যা তিনটি ফেজ বর্ণনা করে: পজিশন তৈরি, স্টপ ট্রিগার, তারপর টার্গেটে প্রাইস ডেলিভারি।",
+      "category": "ICT"
+    },
+    {
+      "english_term": "BOS",
+      "bengali_notation": "ব্রেক অফ স্ট্রাকচার",
+      "bengali_definition": "যখন প্রাইস একটি সুইং হাই (আপট্রেন্ডে) বা সুইং লো (ডাউনট্রেন্ডে) ভেঙে দেয়, ট্রেন্ড কন্টিনিউয়েশন কনফার্ম করে। SMC-তে সবচেয়ে গুরুত্বপূর্ণ কনফার্মেশন সিগন্যাল।",
+      "category": "SMC"
+    },
+    {
+      "english_term": "bullish",
+      "bengali_notation": "বুলিশ",
+      "bengali_definition": "মার্কেটের এমন অবস্থা যা প্রাইস বৃদ্ধির ইঙ্গিত দেয়। বুলিশ ক্যান্ডেল তাদের ওপেন প্রাইসের উপরে ক্লোজ হয়।",
+      "category": "Basic"
+    },
+    {
+      "english_term": "bearish",
+      "bengali_notation": "বিয়ারিশ",
+      "bengali_definition": "মার্কেটের এমন অবস্থা যা প্রাইস পতনের ইঙ্গিত দেয়। বিয়ারিশ ক্যান্ডেল তাদের ওপেন প্রাইসের নিচে ক্লোজ হয়।",
+      "category": "Basic"
+    },
+    {
+      "english_term": "CHOCH",
+      "bengali_notation": "চেঞ্জ অফ ক্যারেক্টার",
+      "bengali_definition": "বিদ্যমান ট্রেন্ডের বিপরীতে প্রথম মার্কেট স্ট্রাকচার ব্রেক। আপট্রেন্ডে প্রথম lower low বা ডাউনট্রেন্ডে প্রথম higher high। সম্ভাব্য রিভার্সালের প্রথম চিহ্ন।",
+      "category": "SMC"
+    },
+    {
+      "english_term": "FVG",
+      "bengali_notation": "ফেয়ার ভ্যালু গ্যাপ",
+      "bengali_definition": "তিন-ক্যান্ডেল ইমব্যালেন্স যেখানে ক্যান্ডেল ১-এর হাই ও ক্যান্ডেল ৩-এর লো ওভারল্যাপ করে না (বুলিশ)। ইনস্টিটিউশনাল ইমব্যালেন্স প্রতিনিধিত্ব করে এবং প্রাইস প্রায়ই ফিরে আসে।",
+      "category": "SMC"
+    },
+    {
+      "english_term": "liquidity",
+      "bengali_notation": "লিকুইডিটি",
+      "bengali_definition": "মূল প্রাইস লেভেলে বিশ্রামরত অর্ডারের (স্টপ লস, পেন্ডিং অর্ডার) ক্লাস্টার। ইনস্টিটিউশনদের বড় পজিশন পূরণে লিকুইডিটি প্রয়োজন।",
+      "category": "SMC"
+    },
+    {
+      "english_term": "OB",
+      "bengali_notation": "অর্ডার ব্লক",
+      "bengali_definition": "একটি গুরুত্বপূর্ণ displacement move-এর আগে শেষ বিপরীত ক্যান্ডেল (বা ক্যান্ডেল গ্রুপ)। ইনস্টিটিউশনাল অর্ডার প্লেসমেন্ট জোন প্রতিনিধিত্ব করে।",
+      "category": "SMC"
+    },
+    {
+      "english_term": "OTE",
+      "bengali_notation": "অপটিমাল ট্রেড এন্ট্রি",
+      "bengali_definition": "ICT-এর প্রিমিয়াম এন্ট্রি জোন — expansion leg-এর ৬২% থেকে ৭৯% Fibonacci retracement-এর মধ্যে। রিট্রেসমেন্টে সর্বোচ্চ সম্ভাবনার এন্ট্রি।",
+      "category": "ICT"
+    },
+    {
+      "english_term": "MSS",
+      "bengali_notation": "মার্কেট স্ট্রাকচার শিফট",
+      "bengali_definition": "Displacement সহ মার্কেট স্ট্রাকচারের নির্ণায়ক ভাঙন, CHOCH-এর চেয়ে শক্তিশালী। নতুন দিকে ইনস্টিটিউশনাল প্রতিশ্রুতি ইঙ্গিত করে।",
+      "category": "SMC"
+    },
+    {
+      "english_term": "ICT",
+      "bengali_notation": "আইসিটি / ইনার সার্কেল ট্রেডার",
+      "bengali_definition": "Michael J. Huddleston-এর তৈরি ট্রেডিং মেথডলজি যা ইনস্টিটিউশনাল অর্ডার ফ্লো, টাইম-বেসড মডেল ও মার্কেট মেকার অ্যালগরিদমের উপর ফোকাস করে।",
+      "category": "ICT"
+    },
+    {
+      "english_term": "SMC",
+      "bengali_notation": "স্মার্ট মানি কনসেপ্ট",
+      "bengali_definition": "একটি ট্রেডিং মেথডলজি যা ইনস্টিটিউশনাল প্লেয়ারদের (ব্যাংক, হেজ ফান্ড) মার্কেটে কিভাবে কাজ করে তা রিভার্স-ইঞ্জিনিয়ার করে।",
+      "category": "SMC"
+    }
+  ]
+}
+
