@@ -1,0 +1,214 @@
+<svg viewBox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="500" y="35" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Order Blocks - Institutional Presence Zones
+  </text>
+
+  <!-- Define gradients -->
+  <defs>
+    <linearGradient id="bullishOB" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#81c784;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#2e7d32;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="bearishOB" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef5350;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#c62828;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- SECTION 1: BULLISH ORDER BLOCK -->
+  <g id="bullish-section">
+    <text x="250" y="80" font-size="16" font-weight="bold" fill="#2e7d32">Bullish Order Block</text>
+    <text x="250" y="98" font-size="10" fill="#666" text-anchor="middle">(Institutional Buy Zone)</text>
+
+    <!-- Chart area -->
+    <rect x="50" y="120" width="400" height="200" fill="#f5f5f5" stroke="#ccc" stroke-width="1" rx="4"/>
+
+    <!-- Y-axis -->
+    <line x1="50" y1="120" x2="50" y2="320" stroke="#333" stroke-width="1"/>
+    <line x1="50" y1="320" x2="450" y2="320" stroke="#333" stroke-width="1"/>
+
+    <!-- Price labels -->
+    <text x="35" y="130" font-size="9" fill="#666" text-anchor="end">1.1100</text>
+    <text x="35" y="220" font-size="9" fill="#666" text-anchor="end">1.1000</text>
+    <text x="35" y="310" font-size="9" fill="#666" text-anchor="end">1.0900</text>
+
+    <!-- Candle sequence showing OB formation -->
+    <!-- Strong downmove creating OB -->
+    <g id="bullish-move">
+      <!-- Initial candle (red) -->
+      <rect x="80" y="160" width="20" height="60" fill="#ef5350" stroke="#c62828" stroke-width="1"/>
+      <line x1="90" y1="140" x2="90" y2="230" stroke="#333" stroke-width="1"/>
+      <text x="90" y="340" font-size="9" text-anchor="middle" fill="#333">Down</text>
+
+      <!-- Second candle (stronger) -->
+      <rect x="120" y="145" width="20" height="75" fill="#ef5350" stroke="#c62828" stroke-width="1"/>
+      <line x1="130" y1="120" x2="130" y2="235" stroke="#333" stroke-width="1"/>
+      <text x="130" y="340" font-size="9" text-anchor="middle" fill="#333">Strong</text>
+
+      <!-- OB ZONE -->
+      <g id="ob-zone-bullish">
+        <rect x="105" y="145" width="45" height="75" fill="url(#bullishOB)" stroke="#2e7d32" stroke-width="2" stroke-dasharray="5,5"/>
+        <text x="127" y="195" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">OB</text>
+        <text x="127" y="210" font-size="9" text-anchor="middle" fill="#fff">Zone</text>
+      </g>
+
+      <!-- Recovery candle -->
+      <rect x="160" y="200" width="20" height="50" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/>
+      <line x1="170" y1="180" x2="170" y2="260" stroke="#333" stroke-width="1"/>
+      <text x="170" y="340" font-size="9" text-anchor="middle" fill="#333">Recovery</text>
+
+      <!-- Strong upturn -->
+      <rect x="200" y="140" width="20" height="60" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/>
+      <line x1="210" y1="120" x2="210" y2="210" stroke="#333" stroke-width="1"/>
+      <text x="210" y="340" font-size="9" text-anchor="middle" fill="#333">Up</text>
+
+      <!-- Next pullback -->
+      <rect x="240" y="180" width="20" height="50" fill="#ffb74d" stroke="#ff9800" stroke-width="1"/>
+      <line x1="250" y1="160" x2="250" y2="240" stroke="#333" stroke-width="1"/>
+      <text x="250" y="340" font-size="9" text-anchor="middle" fill="#333">Retest</text>
+
+      <!-- Arrow showing retest -->
+      <path d="M 250 170 L 250 200" stroke="#ff9800" stroke-width="2" fill="none"/>
+      <text x="265" y="180" font-size="10" fill="#ff9800" font-weight="bold">← Retest</text>
+    </g>
+
+    <!-- Annotation -->
+    <path d="M 127 225 L 127 280" stroke="#2e7d32" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="127" y="300" font-size="9" text-anchor="middle" fill="#2e7d32" font-weight="bold">Liquidity grab</text>
+  </g>
+
+  <!-- SECTION 2: BEARISH ORDER BLOCK -->
+  <g id="bearish-section" transform="translate(550, 0)">
+    <text x="250" y="80" font-size="16" font-weight="bold" fill="#c62828">Bearish Order Block</text>
+    <text x="250" y="98" font-size="10" fill="#666" text-anchor="middle">(Institutional Sell Zone)</text>
+
+    <!-- Chart area -->
+    <rect x="50" y="120" width="400" height="200" fill="#f5f5f5" stroke="#ccc" stroke-width="1" rx="4"/>
+
+    <!-- Y-axis -->
+    <line x1="50" y1="120" x2="50" y2="320" stroke="#333" stroke-width="1"/>
+    <line x1="50" y1="320" x2="450" y2="320" stroke="#333" stroke-width="1"/>
+
+    <!-- Price labels -->
+    <text x="35" y="130" font-size="9" fill="#666" text-anchor="end">1.1100</text>
+    <text x="35" y="220" font-size="9" fill="#666" text-anchor="end">1.1000</text>
+    <text x="35" y="310" font-size="9" fill="#666" text-anchor="end">1.0900</text>
+
+    <!-- Candle sequence showing Bearish OB -->
+    <g id="bearish-move">
+      <!-- Initial candle (green) -->
+      <rect x="80" y="180" width="20" height="60" fill="#4caf50" stroke="#2e7d32" stroke-width="1"/>
+      <line x1="90" y1="160" x2="90" y2="250" stroke="#333" stroke-width="1"/>
+      <text x="90" y="340" font-size="9" text-anchor="middle" fill="#333">Up</text>
+
+      <!-- Second candle (stronger) -->
+      <rect x="120" y="165" width="20" height="75" fill="#4caf50" stroke="#2e7d32" stroke-width="1"/>
+      <line x1="130" y1="140" x2="130" y2="255" stroke="#333" stroke-width="1"/>
+      <text x="130" y="340" font-size="9" text-anchor="middle" fill="#333">Strong</text>
+
+      <!-- OB ZONE -->
+      <g id="ob-zone-bearish">
+        <rect x="105" y="165" width="45" height="75" fill="url(#bearishOB)" stroke="#c62828" stroke-width="2" stroke-dasharray="5,5"/>
+        <text x="127" y="215" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">OB</text>
+        <text x="127" y="230" font-size="9" text-anchor="middle" fill="#fff">Zone</text>
+      </g>
+
+      <!-- Pullback candle -->
+      <rect x="160" y="210" width="20" height="40" fill="#ef5350" stroke="#c62828" stroke-width="2"/>
+      <line x1="170" y1="190" x2="170" y2="260" stroke="#333" stroke-width="1"/>
+      <text x="170" y="340" font-size="9" text-anchor="middle" fill="#333">Pullback</text>
+
+      <!-- Strong down -->
+      <rect x="200" y="160" width="20" height="60" fill="#ef5350" stroke="#c62828" stroke-width="2"/>
+      <line x1="210" y1="140" x2="210" y2="230" stroke="#333" stroke-width="1"/>
+      <text x="210" y="340" font-size="9" text-anchor="middle" fill="#333">Down</text>
+
+      <!-- Next retest -->
+      <rect x="240" y="200" width="20" height="50" fill="#ffb74d" stroke="#ff9800" stroke-width="1"/>
+      <line x1="250" y1="180" x2="250" y2="260" stroke="#333" stroke-width="1"/>
+      <text x="250" y="340" font-size="9" text-anchor="middle" fill="#333">Retest</text>
+
+      <!-- Arrow -->
+      <path d="M 250 150 L 250 195" stroke="#ff9800" stroke-width="2" fill="none"/>
+      <text x="265" y="170" font-size="10" fill="#ff9800" font-weight="bold">← Retest</text>
+    </g>
+
+    <!-- Annotation -->
+    <path d="M 127 165 L 127 110" stroke="#c62828" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="127" y="100" font-size="9" text-anchor="middle" fill="#c62828" font-weight="bold">Liquidity grab</text>
+  </g>
+
+  <!-- BOTTOM: KEY INSIGHTS -->
+  <g id="insights" transform="translate(0, 350)">
+    <!-- What is OB -->
+    <rect x="50" y="20" width="250" height="130" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="4"/>
+    <text x="175" y="40" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a1a">What is OB?</text>
+
+    <text x="60" y="60" font-size="10" fill="#333" font-weight="bold">
+      Establishment Zone:
+    </text>
+    <text x="60" y="78" font-size="9" fill="#333">
+      • Institutional traders enter position
+    </text>
+    <text x="60" y="93" font-size="9" fill="#333">
+      • They buy WHILE selling (in bearish)
+    </text>
+    <text x="60" y="108" font-size="9" fill="#333">
+      • Creates candle with specific structure
+    </text>
+    <text x="60" y="123" font-size="9" fill="#333">
+      • Price ALWAYS returns to collect stops
+    </text>
+    <text x="60" y="138" font-size="9" fill="#333">
+      • Most reliable zone in ICT strategy
+    </text>
+
+    <!-- How to trade OB -->
+    <rect x="330" y="20" width="250" height="130" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="4"/>
+    <text x="455" y="40" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Trading Strategy</text>
+
+    <text x="340" y="60" font-size="10" fill="#333" font-weight="bold">
+      Execution Method:
+    </text>
+    <text x="340" y="78" font-size="9" fill="#333">
+      1. Identify OB on 4H/Daily
+    </text>
+    <text x="340" y="93" font-size="9" fill="#333">
+      2. Wait for pullback to retest OB
+    </text>
+    <text x="340" y="108" font-size="9" fill="#333">
+      3. Confirm with 15M candle pattern
+    </text>
+    <text x="340" y="123" font-size="9" fill="#333">
+      4. Enter with stop below OB (bullish)
+    </text>
+    <text x="340" y="138" font-size="9" fill="#333">
+      5. Target = previous swing high/low
+    </text>
+
+    <!-- Real example -->
+    <rect x="610" y="20" width="340" height="130" fill="#e1f5fe" stroke="#2196f3" stroke-width="2" rx="4"/>
+    <text x="780" y="40" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Real Trade Example</text>
+
+    <text x="620" y="60" font-size="9" fill="#333">
+      🔵 Bullish OB (Buy Zone):
+    </text>
+    <text x="620" y="75" font-size="9" fill="#333">
+      • OB established at 1.0900-1.0920
+    </text>
+    <text x="620" y="90" font-size="9" fill="#333">
+      • Price retraces to 1.0895
+    </text>
+    <text x="620" y="105" font-size="9" fill="#333">
+      • Bounces back to OB zone
+    </text>
+    <text x="620" y="120" font-size="9" fill="#333">
+      • 15M bullish candle forms at OB
+    </text>
+    <text x="620" y="135" font-size="9" fill="#333">
+      • Enter @ 1.0915 | Stop @ 1.0880 | Target @ 1.0950 ✅
+    </text>
+  </g>
+</svg>
+

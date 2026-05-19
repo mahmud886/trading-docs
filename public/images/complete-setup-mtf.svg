@@ -1,0 +1,175 @@
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="500" y="35" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Complete Trading Setup: Multi-Timeframe Analysis
+  </text>
+
+  <!-- DAILY CHART -->
+  <g id="daily-section">
+    <text x="170" y="70" font-size="14" font-weight="bold" fill="#1a1a1a">Daily (Decision)</text>
+    <rect x="30" y="85" width="280" height="140" fill="#f5f5f5" stroke="#ccc" stroke-width="1" rx="4"/>
+
+    <!-- Daily candles -->
+    <!-- High of day -->
+    <rect x="50" y="105" width="20" height="50" fill="#4caf50" stroke="#2e7d32" stroke-width="1"/>
+    <text x="60" y="170" font-size="9" text-anchor="middle" fill="#333">High</text>
+    <text x="60" y="182" font-size="8" text-anchor="middle" fill="#666">1.0950</text>
+
+    <!-- Middle -->
+    <rect x="85" y="125" width="20" height="40" fill="#4caf50" stroke="#2e7d32" stroke-width="1"/>
+
+    <!-- Low of day -->
+    <rect x="120" y="145" width="20" height="30" fill="#ff5252" stroke="#c62828" stroke-width="1"/>
+    <text x="130" y="190" font-size="9" text-anchor="middle" fill="#333">Low</text>
+    <text x="130" y="202" font-size="8" text-anchor="middle" fill="#666">1.0875</text>
+
+    <!-- Supply/Demand zones -->
+    <polygon points="155,105 155,120 255,115" fill="#ffeb3b" opacity="0.3"/>
+    <text x="180" y="118" font-size="9" font-weight="bold" fill="#ff9800">Supply</text>
+
+    <polygon points="155,160 155,175 255,170" fill="#e3f2fd" opacity="0.3"/>
+    <text x="180" y="173" font-size="9" font-weight="bold" fill="#2196f3">Demand</text>
+
+    <!-- Status -->
+    <rect x="50" y="215" width="250" height="2" fill="#4caf50"/>
+    <text x="50" y="235" font-size="11" fill="#333" font-weight="bold">✓ Bullish Bias</text>
+    <text x="50" y="250" font-size="10" fill="#666">Bullish recovery setup</text>
+  </g>
+
+  <!-- 4-HOUR CHART -->
+  <g id="4h-section">
+    <text x="500" y="70" font-size="14" font-weight="bold" fill="#1a1a1a">4-Hour (Setup)</text>
+    <rect x="360" y="85" width="280" height="140" fill="#f5f5f5" stroke="#ccc" stroke-width="1" rx="4"/>
+
+    <!-- Order Block -->
+    <rect x="385" y="110" width="15" height="35" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/>
+    <text x="392" y="172" font-size="9" text-anchor="middle" fill="#333">OB</text>
+    <text x="392" y="184" font-size="8" text-anchor="middle" fill="#666">1.0900</text>
+
+    <!-- FVG Zone -->
+    <rect x="420" y="118" width="60" height="25" fill="#ffeb3b" opacity="0.4" stroke="#ff9800" stroke-width="2"/>
+    <text x="450" y="137" font-size="10" text-anchor="middle" font-weight="bold" fill="#ff9800">FVG</text>
+
+    <!-- Confluence -->
+    <circle cx="450" cy="155" r="25" fill="none" stroke="#2196f3" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="450" y="160" font-size="10" text-anchor="middle" fill="#2196f3" font-weight="bold">Confluence</text>
+
+    <!-- Pullback -->
+    <polyline points="500,125 540,145 560,135" stroke="#9c27b0" stroke-width="2" fill="none"/>
+    <text x="540" y="165" font-size="9" text-anchor="middle" fill="#9c27b0">Retest</text>
+
+    <!-- Status -->
+    <rect x="385" y="215" width="250" height="2" fill="#ff9800"/>
+    <text x="385" y="235" font-size="11" fill="#333" font-weight="bold">✓ Clear Setup</text>
+    <text x="385" y="250" font-size="10" fill="#666">OB + FVG + Confluence</text>
+  </g>
+
+  <!-- 15-MINUTE CHART -->
+  <g id="15m-section">
+    <text x="830" y="70" font-size="14" font-weight="bold" fill="#1a1a1a">15-Min (Entry)</text>
+    <rect x="690" y="85" width="280" height="140" fill="#f5f5f5" stroke="#ccc" stroke-width="1" rx="4"/>
+
+    <!-- Liquidity pool -->
+    <ellipse cx="730" cy="125" rx="15" ry="25" fill="#e3f2fd" opacity="0.5" stroke="#2196f3" stroke-width="1"/>
+    <text x="730" y="130" font-size="9" text-anchor="middle" fill="#2196f3" font-weight="bold">Liq</text>
+
+    <!-- Entry zone -->
+    <rect x="765" y="130" width="35" height="20" fill="#4caf50" opacity="0.3" stroke="#4caf50" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="782" y="144" font-size="9" text-anchor="middle" fill="#4caf50" font-weight="bold">Entry</text>
+
+    <!-- Demand zone -->
+    <rect x="820" y="145" width="30" height="15" fill="#ffb74d" opacity="0.2" stroke="#ff9800" stroke-width="1"/>
+    <text x="835" y="155" font-size="8" text-anchor="middle" fill="#ff9800">Demand</text>
+
+    <!-- Status -->
+    <rect x="715" y="215" width="250" height="2" fill="#2196f3"/>
+    <text x="715" y="235" font-size="11" fill="#333" font-weight="bold">✓ Entry Ready</text>
+    <text x="715" y="250" font-size="10" fill="#666">Demand zone + Liquidity</text>
+  </g>
+
+  <!-- CONNECTION ARROWS -->
+  <g id="arrows">
+    <defs>
+      <marker id="arrowblack" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+        <polygon points="0 0, 10 5, 0 10" fill="#333"/>
+      </marker>
+    </defs>
+
+    <!-- Daily to 4H -->
+    <path d="M 310 155 L 360 155" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowblack)"/>
+
+    <!-- 4H to 15M -->
+    <path d="M 640 155 L 690 155" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowblack)"/>
+  </g>
+
+  <!-- ENTRY FLOW -->
+  <g id="entry-flow">
+    <text x="500" y="295" font-size="14" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      Entry Execution Flow
+    </text>
+
+    <!-- Step 1 -->
+    <circle cx="100" cy="350" r="25" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+    <text x="100" y="355" font-size="12" text-anchor="middle" font-weight="bold" fill="#9c27b0">1</text>
+    <text x="100" y="385" font-size="10" text-anchor="middle" fill="#333" font-weight="bold">Trend Bias</text>
+    <text x="100" y="400" font-size="9" text-anchor="middle" fill="#666">Daily bullish</text>
+
+    <!-- Arrow -->
+    <path d="M 130 350 L 170 350" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowblack)"/>
+
+    <!-- Step 2 -->
+    <circle cx="220" cy="350" r="25" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+    <text x="220" y="355" font-size="12" text-anchor="middle" font-weight="bold" fill="#2196f3">2</text>
+    <text x="220" y="385" font-size="10" text-anchor="middle" fill="#333" font-weight="bold">Find Setup</text>
+    <text x="220" y="400" font-size="9" text-anchor="middle" fill="#666">OB + FVG</text>
+
+    <!-- Arrow -->
+    <path d="M 250 350 L 290 350" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowblack)"/>
+
+    <!-- Step 3 -->
+    <circle cx="340" cy="350" r="25" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+    <text x="340" y="355" font-size="12" text-anchor="middle" font-weight="bold" fill="#ff9800">3</text>
+    <text x="340" y="385" font-size="10" text-anchor="middle" fill="#333" font-weight="bold">Wait Zone</text>
+    <text x="340" y="400" font-size="9" text-anchor="middle" fill="#666">Demand area</text>
+
+    <!-- Arrow -->
+    <path d="M 370 350 L 410 350" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowblack)"/>
+
+    <!-- Step 4 -->
+    <circle cx="460" cy="350" r="25" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+    <text x="460" y="355" font-size="12" text-anchor="middle" font-weight="bold" fill="#4caf50">4</text>
+    <text x="460" y="385" font-size="10" text-anchor="middle" fill="#333" font-weight="bold">ENTER</text>
+    <text x="460" y="400" font-size="9" text-anchor="middle" fill="#666">Bullish candle</text>
+
+    <!-- Arrow -->
+    <path d="M 490 350 L 530 350" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowblack)"/>
+
+    <!-- Step 5 -->
+    <circle cx="580" cy="350" r="25" fill="#fce4ec" stroke="#e91e63" stroke-width="2"/>
+    <text x="580" y="355" font-size="12" text-anchor="middle" font-weight="bold" fill="#e91e63">5</text>
+    <text x="580" y="385" font-size="10" text-anchor="middle" fill="#333" font-weight="bold">Manage</text>
+    <text x="580" y="400" font-size="9" text-anchor="middle" fill="#666">Stop + Target</text>
+  </g>
+
+  <!-- RESULT BOX -->
+  <g id="result">
+    <rect x="100" y="450" width="700" height="120" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="6"/>
+
+    <text x="450" y="475" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      Expected Outcome
+    </text>
+
+    <text x="120" y="500" font-size="11" fill="#333">
+      Entry: 1.0893 | Stop: 1.0875 (18 pips) | Target: 1.0950 (57 pips)
+    </text>
+
+    <text x="120" y="520" font-size="11" fill="#333">
+      Risk: 1.8% | Reward: 5.7% | Risk/Reward: 1:3.17 ✓ EXCELLENT
+    </text>
+
+    <text x="120" y="545" font-size="10" fill="#666" font-style="italic">
+      This setup combines 3 timeframes with 5+ confluence points = High probability trade
+    </text>
+  </g>
+</svg>
+

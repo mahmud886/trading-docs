@@ -1,0 +1,163 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="450" y="35" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Supply & Demand with Liquidity Sweeps
+  </text>
+
+  <!-- SUPPLY ZONE SECTION -->
+  <g id="supply-section">
+    <text x="225" y="80" font-size="16" font-weight="bold" fill="#d84315">Supply Zone</text>
+    <text x="225" y="100" font-size="11" fill="#666" text-anchor="middle">(Bearish Strength)</text>
+
+    <!-- Chart area -->
+    <rect x="50" y="120" width="350" height="200" fill="#fff3f0" stroke="#d84315" stroke-width="2" rx="4"/>
+
+    <!-- Y-axis labels -->
+    <text x="35" y="140" font-size="10" fill="#666" text-anchor="end">1.1000</text>
+    <text x="35" y="195" font-size="10" fill="#666" text-anchor="end">1.0950</text>
+    <text x="35" y="250" font-size="10" fill="#666" text-anchor="end">1.0900</text>
+    <text x="35" y="305" font-size="10" fill="#666" text-anchor="end">1.0850</text>
+
+    <!-- Supply zone bar -->
+    <rect x="70" y="125" width="300" height="40" fill="#ffebee" stroke="#d84315" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="220" y="152" font-size="12" font-weight="bold" text-anchor="middle" fill="#d84315">
+      ⬆ Supply (Sellers waiting)
+    </text>
+
+    <!-- Price rising then rejecting -->
+    <polyline points="80,300 150,140 200,145 250,200 300,180 350,240"
+              stroke="#ff5252" stroke-width="3" fill="none" stroke-linejoin="round"/>
+
+    <!-- Annotation -->
+    <circle cx="150" cy="140" r="5" fill="#ff5252"/>
+    <text x="150" y="125" font-size="10" text-anchor="middle" fill="#ff5252" font-weight="bold">Touch</text>
+
+    <path d="M 250 180 L 250 210" stroke="#ff5252" stroke-width="2" fill="none"/>
+    <text x="260" y="195" font-size="10" fill="#ff5252">Rejected!</text>
+
+    <!-- Info box -->
+    <rect x="70" y="340" width="300" height="90" fill="#f3e5f5" stroke="#9c27b0" stroke-width="1" rx="3"/>
+    <text x="220" y="360" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      What Happens at Supply?
+    </text>
+    <text x="80" y="380" font-size="10" fill="#333">
+      • Price rises and touches Supply zone
+    </text>
+    <text x="80" y="397" font-size="10" fill="#333">
+      • Old losing sellers exit (selling pressure)
+    </text>
+    <text x="80" y="414" font-size="10" fill="#333">
+      • Price often rejects and falls
+    </text>
+  </g>
+
+  <!-- DEMAND ZONE SECTION -->
+  <g id="demand-section">
+    <text x="675" y="80" font-size="16" font-weight="bold" fill="#1565c0">Demand Zone</text>
+    <text x="675" y="100" font-size="11" fill="#666" text-anchor="middle">(Bullish Strength)</text>
+
+    <!-- Chart area -->
+    <rect x="500" y="120" width="350" height="200" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" rx="4"/>
+
+    <!-- Y-axis labels -->
+    <text x="485" y="140" font-size="10" fill="#666" text-anchor="end">1.1000</text>
+    <text x="485" y="195" font-size="10" fill="#666" text-anchor="end">1.0950</text>
+    <text x="485" y="250" font-size="10" fill="#666" text-anchor="end">1.0900</text>
+    <text x="485" y="305" font-size="10" fill="#666" text-anchor="end">1.0850</text>
+
+    <!-- Demand zone bar -->
+    <rect x="520" y="275" width="300" height="40" fill="#e1f5fe" stroke="#1565c0" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="670" y="302" font-size="12" font-weight="bold" text-anchor="middle" fill="#1565c0">
+      ⬇ Demand (Buyers waiting)
+    </text>
+
+    <!-- Price falling then bouncing -->
+    <polyline points="530,140 600,280 650,270 700,200 750,210 800,140"
+              stroke="#4caf50" stroke-width="3" fill="none" stroke-linejoin="round"/>
+
+    <!-- Annotation -->
+    <circle cx="600" cy="280" r="5" fill="#4caf50"/>
+    <text x="600" y="295" font-size="10" text-anchor="middle" fill="#4caf50" font-weight="bold">Touch</text>
+
+    <path d="M 700 200 L 700 160" stroke="#4caf50" stroke-width="2" fill="none"/>
+    <text x="735" y="180" font-size="10" fill="#4caf50">Bounced!</text>
+
+    <!-- Info box -->
+    <rect x="520" y="340" width="300" height="90" fill="#e0f2f1" stroke="#00897b" stroke-width="1" rx="3"/>
+    <text x="670" y="360" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      What Happens at Demand?
+    </text>
+    <text x="530" y="380" font-size="10" fill="#333">
+      • Price falls and touches Demand zone
+    </text>
+    <text x="530" y="397" font-size="10" fill="#333">
+      • Old losing buyers buy (buying pressure)
+    </text>
+    <text x="530" y="414" font-size="10" fill="#333">
+      • Price often bounces and rises
+    </text>
+  </g>
+
+  <!-- LIQUIDITY CONCEPT -->
+  <g id="liquidity-section" transform="translate(0, 420)">
+    <text x="450" y="25" font-size="16" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      Liquidity Sweeps & Grabs
+    </text>
+
+    <!-- Concept 1: Sweep -->
+    <g id="sweep">
+      <rect x="50" y="45" width="350" height="120" fill="#fff9c4" stroke="#ff9800" stroke-width="2" rx="4"/>
+      <text x="225" y="65" font-size="12" font-weight="bold" text-anchor="middle" fill="#ff9800">Liquidity Sweep</text>
+
+      <text x="70" y="90" font-size="10" fill="#333" font-weight="bold">
+        Smart Money tactic:
+      </text>
+      <text x="70" y="108" font-size="9" fill="#333">
+        1. Retail traders place stops near Swing Lows
+      </text>
+      <text x="70" y="123" font-size="9" fill="#333">
+        2. Institutions push price down to collect stops
+      </text>
+      <text x="70" y="138" font-size="9" fill="#333">
+        3. They get cheap liquidity, then push back up
+      </text>
+      <text x="70" y="153" font-size="9" fill="#333">
+        💡 Result: Fast momentum move after sweep
+      </text>
+    </g>
+
+    <!-- Concept 2: Grab -->
+    <g id="grab">
+      <rect x="500" y="45" width="350" height="120" fill="#f0f4c3" stroke="#558b2f" stroke-width="2" rx="4"/>
+      <text x="675" y="65" font-size="12" font-weight="bold" text-anchor="middle" fill="#558b2f">Liquidity Grab</text>
+
+      <text x="520" y="90" font-size="10" fill="#333" font-weight="bold">
+        Supply/Demand target:
+      </text>
+      <text x="520" y="108" font-size="9" fill="#333">
+        1. Price approaches Supply or Demand zone
+      </text>
+      <text x="520" y="123" font-size="9" fill="#333">
+        2. Breaks through to grab liquidity
+      </text>
+      <text x="520" y="138" font-size="9" fill="#333">
+        3. Quick reversal (trapped stops on other side)
+      </text>
+      <text x="520" y="153" font-size="9" fill="#333">
+        💡 Result: Explosive move in original direction
+      </text>
+    </g>
+  </g>
+
+  <!-- TRADING STRATEGY BOX -->
+  <g id="strategy" transform="translate(0, 550)">
+    <rect x="50" y="0" width="800" height="50" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="4"/>
+    <text x="450" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      Trading Strategy: Wait for Supply/Demand zone interaction + Liquidity sweep confirmation = HIGH PROBABILITY ENTRY
+    </text>
+    <text x="450" y="38" font-size="10" text-anchor="middle" fill="#666">
+      Example: Price sweeps Demand zone (grabs stops), bullish candle forms at Demand = STRONG BUY signal
+    </text>
+  </g>
+</svg>
+
