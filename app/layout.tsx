@@ -1,8 +1,25 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#00c96e" },
+    { media: "(prefers-color-scheme: dark)", color: "#00ff9d" },
+  ],
+};
+
 export const metadata: Metadata = {
+  applicationName: SITE_NAME,
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "TradingDocs",
+  },
+  formatDetection: {
+    telephone: false,
+  },
   title: {
     default: `${SITE_NAME} — Master the Markets Like Institutional Traders | Free Trading Education`,
     template: `%s | ${SITE_NAME}`,

@@ -1,6 +1,7 @@
 import { Noto_Sans, Noto_Sans_Bengali, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
+import { SerwistProvider } from "@serwist/turbopack/react";
 import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -60,14 +61,16 @@ export default async function LangLayout({
         />
         <div className="bg-grid pointer-events-none fixed inset-0 z-0" />
 
-        <Providers>
-          <div className="relative z-10">
-            <ReadingProgress />
-            <Navbar lang={lang as Locale} />
-            <main className="flex-1">{children}</main>
-            <Footer lang={lang as Locale} />
-          </div>
-        </Providers>
+        <SerwistProvider swUrl="/serwist/sw.js">
+          <Providers>
+            <div className="relative z-10">
+              <ReadingProgress />
+              <Navbar lang={lang as Locale} />
+              <main className="flex-1">{children}</main>
+              <Footer lang={lang as Locale} />
+            </div>
+          </Providers>
+        </SerwistProvider>
       </body>
     </html>
   );

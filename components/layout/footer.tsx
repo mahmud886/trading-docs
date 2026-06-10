@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { type Locale, getDictionary } from "@/lib/i18n";
-import { BarChart3 } from "lucide-react";
+import { LogoMark } from "@/components/brand/logo-mark";
 
 export async function Footer({ lang }: { lang: Locale }) {
   const dict = await getDictionary(lang);
@@ -15,9 +15,7 @@ export async function Footer({ lang }: { lang: Locale }) {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href={`/${lang}`} className="flex items-center gap-2.5 text-lg font-bold text-foreground">
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent-green/10">
-                <BarChart3 size={14} className="text-accent-green" />
-              </div>
+              <LogoMark className="h-7 w-7 rounded-lg xl:h-7 xl:w-7" />
               Trading<span className="neon-text">Docs</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">{dict.footer.description}</p>

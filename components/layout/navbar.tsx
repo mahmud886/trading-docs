@@ -6,7 +6,7 @@ import { SearchModal } from "@/components/search-modal";
 import { MobileMenuProvider, MobileMenuTrigger, MobileMenuPanel } from "@/components/layout/mobile-menu";
 import { NavbarContent } from "@/components/layout/navbar-content";
 import { NavbarWrapper } from "@/components/layout/navbar-wrapper";
-import { BarChart3 } from "lucide-react";
+import { LogoMark } from "@/components/brand/logo-mark";
 
 export async function Navbar({ lang }: { lang: Locale }) {
   const dict = await getDictionary(lang);
@@ -31,10 +31,7 @@ export async function Navbar({ lang }: { lang: Locale }) {
             href={`/${lang}`}
             className="flex items-center gap-1.5 text-base font-bold text-foreground transition-opacity hover:opacity-80 md:text-sm xl:gap-2.5 xl:text-xl"
           >
-            <div className="flex h-6 w-6 items-center justify-center rounded-md bg-accent-green/10 xl:h-8 xl:w-8 xl:rounded-lg">
-              <BarChart3 size={14} className="text-accent-green xl:hidden" />
-              <BarChart3 size={18} className="hidden text-accent-green xl:block" />
-            </div>
+            <LogoMark />
             <span>
               Trading<span className="neon-text">Docs</span>
             </span>

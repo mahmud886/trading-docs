@@ -4,4 +4,5 @@ out
 build
 coverage
 package-lock.json
+public/icons/*.png
 scripts/rewrite-pa-en.mjs
