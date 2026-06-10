@@ -1,76 +1,72 @@
 ---
-title: "Price Action Risk Management"
-description: "Master risk management for Price Action trading — position sizing, stop placement using price structure, and professional risk frameworks."
-level: beginner
-order: 23
-lastUpdated: "2026-05-12"
+title: "Risk Management in Price Action — Complete Guide"
+description: "Master risk management for Price Action trading. Learn proper stop placement, position sizing with structure, and drawdown management rules."
+level: intermediate
+order: 25
+lastUpdated: "2026-06-10"
 ---
 
-## Risk Management is Non-Negotiable
+## Risk Management for PA Traders
 
-Without risk management, even the best Price Action analysis will result in account loss. Risk management is the ONLY thing separating professional traders from gamblers.
+Risk management in Price Action trading uses **structural stop placement** — stops go beyond swing points, Order Blocks, or liquidity levels rather than arbitrary pip distances.
 
 ---
 
-## Position Sizing
+## Stop Loss Placement Rules
 
-### The 1-2% Rule
-Never risk more than 1-2% of your account on a single trade.
+| Setup Type | Stop Location |
+|-----------|---------------|
+| Order Block entry | Beyond the OB (body) |
+| Fibonacci entry | Beyond 78.6% or swing point |
+| S/R bounce | Beyond the zone + buffer |
+| Trendline bounce | Beyond the trendline |
+| CHOCH entry | Beyond the CHOCH swing point |
+| Liquidity sweep | Beyond the sweep wick |
+
+---
+
+## Position Sizing Formula
 
 ```
-Position Size = (Account × Risk %) / (Entry - Stop Loss)
+Lot Size = (Account × Risk%) ÷ (Stop Loss pips × Pip Value)
 
-Example: $10,000 account, 1% risk, 20-pip stop
-Position = ($10,000 × 0.01) / 20 pips = $100 / 20 = $5/pip = 0.5 lots
+Example:
+- Account: $10,000
+- Risk: 1% = $100
+- Stop: Structure-based = 35 pips
+- Pip value: $10 (standard lot)
+- Lot size: $100 ÷ (35 × $10) = 0.29 lots
 ```
 
 ---
 
-## Stop Loss Placement in Price Action
+## Risk Rules for Price Action
 
-### Where to Place Stops
-| Setup | Stop Placement |
-|-------|---------------|
-| **Pin Bar** | Beyond the pin bar's wick |
-| **Engulfing** | Beyond the engulfing candle's range |
-| **Breakout** | Below the breakout level (buys) |
-| **Pullback** | Below the pullback low (buys) |
-| **Support bounce** | Below the support zone + buffer |
-
-### The Buffer Rule
-Always add a buffer beyond the obvious level:
-- Forex: 5-10 pips
-- Gold: 50-100 pips (30-50 cents)
-- Indices: 10-20 points
+1. **1-2% max per trade** — non-negotiable
+2. **Stop BEYOND structure** — not at structure (give buffer)
+3. **Wider stop = smaller position** (not no stop)
+4. **Max 3 correlated positions** — EUR/USD + GBP/USD = correlated
+5. **Daily loss limit: 3%** — stop trading for the day
+6. **Weekly loss limit: 5%** — reduce size next week
+7. **Max drawdown: 10%** — full strategy review
 
 ---
 
-## Risk:Reward Framework
+## Structural vs. Fixed Stops
 
-| Minimum R:R | Trade Type |
-|-------------|-----------|
-| 1:2 | Scalping |
-| 1:3 | Day Trading |
-| 1:4+ | Swing Trading |
+| Method | Description | Pro | Con |
+|--------|-------------|-----|-----|
+| Structural | Beyond swing/OB/zone | Logical, less random SL hit | Sometimes wide |
+| Fixed pip | Always X pips | Simple, consistent size | May be inside structure |
+| ATR-based | 1.5-2× ATR | Volatility-adjusted | Doesn't respect structure |
 
-### Rule: Never take a trade with R:R below 1:2
-
----
-
-## Daily Risk Limits
-
-| Rule | Limit |
-|------|-------|
-| Max risk per trade | 1-2% |
-| Max daily loss | 3-5% |
-| Max weekly loss | 5-8% |
-| Max monthly loss | 10% |
-| After 2 consecutive losses | Take a break |
+**Best approach: Structural stop, then calculate position size to fit your risk %.**
 
 ---
 
 ## Related Topics
 
-- [Entry Models](/en/price-action/entry-models) — Entry before risk
-- [Exit Models](/en/price-action/exit-models) — Exit strategies
-- [Trade Management](/en/price-action/trade-management) — Managing positions
+- [Position Sizing](/en/academy/position-sizing) — Detailed calculations
+- [Trade Management](/en/price-action/trade-management) — Active management
+- [Entry Models](/en/price-action/entry-models) — Stop placement per model
+- [Support & Resistance](/en/price-action/support-resistance) — Levels for stops

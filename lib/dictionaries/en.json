@@ -7,6 +7,11 @@
     "smc": "Smart Money Concepts",
     "ict": "ICT Concepts",
     "forexSessions": "Forex Sessions",
+    "orderFlow": "Order Flow",
+    "intermarket": "Intermarket",
+    "quantitative": "Quantitative",
+    "wyckoff": "Wyckoff",
+    "auctionMarket": "Auction Market",
     "glossary": "Glossary",
     "blog": "Blog",
     "dashboard": "Dashboard",
@@ -18,7 +23,7 @@
   },
   "hero": {
     "title": "Master the Markets",
-    "subtitle": "Complete trading education platform covering Price Action, Smart Money Concepts, and ICT methodology — from beginner to expert.",
+    "subtitle": "Complete trading education platform covering Price Action, Smart Money Concepts, and ICT methodology — from beginner to expert. Learn how institutional traders, banks, and hedge funds move the markets.",
     "cta": "Start Learning",
     "explore": "Explore Docs"
   },
@@ -41,21 +46,21 @@
   },
   "home": {
     "featuredTitle": "Start Your Trading Journey",
-    "featuredSubtitle": "Structured learning paths from beginner to expert",
+    "featuredSubtitle": "Structured learning paths from beginner to expert — think like institutional traders",
     "statsStudents": "Students",
     "statsLessons": "Lessons",
     "statsTopics": "Topics",
     "beginnerPath": "Beginner Path",
     "beginnerDesc": "Start with the fundamentals of price action and market structure",
     "intermediatePath": "Intermediate Path",
-    "intermediateDesc": "Dive into Smart Money Concepts and order flow",
+    "intermediateDesc": "Dive into Smart Money Concepts and institutional order flow",
     "advancedPath": "Advanced Path",
-    "advancedDesc": "Master ICT methodology and advanced execution",
+    "advancedDesc": "Master ICT methodology and bank-level execution",
     "expertPath": "Expert Path",
-    "expertDesc": "Algorithmic delivery, time theory, and institutional models"
+    "expertDesc": "Algorithmic delivery, time theory, and institutional models used by top banks"
   },
   "footer": {
-    "description": "A comprehensive trading education platform covering Price Action, Smart Money Concepts, and ICT methodology.",
+    "description": "A comprehensive trading education platform covering Price Action, Smart Money Concepts, and ICT methodology — built for traders who want to understand how banks and institutions move the markets.",
     "resources": "Resources",
     "learning": "Learning",
     "community": "Community",
@@ -69,12 +74,60 @@
   },
   "dashboard": {
     "title": "Your Dashboard",
+    "subtitle": "Track your learning progress and manage bookmarks",
     "progress": "Learning Progress",
+    "overallProgress": "Overall Progress",
     "bookmarks": "Bookmarked Lessons",
     "completed": "Completed Lessons",
+    "completedCount": "Completed",
+    "bookmarkedCount": "Bookmarked",
+    "progressPercent": "Progress",
     "continueLearning": "Continue Learning",
-    "noBookmarks": "No bookmarks yet",
-    "noCompleted": "No completed lessons yet"
+    "noBookmarks": "No bookmarks yet. Save lessons for later!",
+    "noCompleted": "No completed lessons yet. Start learning!",
+    "lessonsOf": "of ~200 lessons completed"
+  },
+  "charts": {
+    "title": "Live Charts",
+    "subtitle": "Interactive TradingView charts for analysis and practice",
+    "popularInstruments": "Popular Instruments",
+    "institutionalPairs": "Institutional Favorites",
+    "selectSymbol": "Select a symbol to analyze"
+  },
+  "tools": {
+    "title": "Trading Tools",
+    "subtitle": "Professional-grade calculators used by institutional traders and bank desks",
+    "positionSizing": "Position Size Calculator",
+    "positionSizingDesc": "Calculate the exact lot size based on your account balance, risk percentage, and stop loss distance",
+    "riskReward": "Risk/Reward Calculator",
+    "riskRewardDesc": "Calculate your risk-to-reward ratio and expected value per trade",
+    "pipValue": "Pip Value Calculator",
+    "pipValueDesc": "Calculate the monetary value of each pip for any currency pair and lot size",
+    "accountBalance": "Account Balance",
+    "riskPercent": "Risk Per Trade (%)",
+    "stopLossPips": "Stop Loss (pips)",
+    "lotSize": "Lot Size",
+    "riskAmount": "Risk Amount",
+    "entryPrice": "Entry Price",
+    "stopLoss": "Stop Loss",
+    "takeProfit": "Take Profit",
+    "ratio": "R:R Ratio",
+    "calculate": "Calculate",
+    "result": "Result",
+    "pair": "Currency Pair",
+    "lotSizeInput": "Lot Size",
+    "pipValueResult": "Pip Value",
+    "standardLot": "Standard Lot",
+    "miniLot": "Mini Lot",
+    "microLot": "Micro Lot"
+  },
+  "institutional": {
+    "bankFlow": "Bank Order Flow",
+    "darkPool": "Dark Pool Activity",
+    "interbank": "Interbank Levels",
+    "centralBank": "Central Bank Watch",
+    "fixings": "London Fix / NY Fix",
+    "optionExpiry": "Option Expiry Levels"
   }
 }
 

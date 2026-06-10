@@ -1,50 +1,101 @@
 ---
-title: "সুইং হাই ও সুইং লো"
-description: "সুইং হাই ও সুইং লো চিহ্নিত করুন — প্রাইস অ্যাকশনের সবচেয়ে মৌলিক বিল্ডিং ব্লক। ৩/৫ ক্যান্ডেল নিয়ম, SFP, ফ্র্যাক্টাল কনসেপ্ট।"
+title: "Swing High ও Low — সম্পূর্ণ গাইড"
+description: "Swing High ও Low চিহ্নিতকরণ আয়ত্ত করুন। Fractal Concept, Swing Failure Pattern এবং Structure Analysis-এ Swing Point কীভাবে ব্যবহার করবেন শিখুন।"
 level: beginner
-order: 36
-lastUpdated: "2026-05-12"
+order: 7
+lastUpdated: "2026-06-10"
 ---
 
-## সুইং হাই/লো কী?
+## Swing High ও Swing Low কী?
 
-- **সুইং হাই:** একটি ক্যান্ডেলের হাই যা তার ডান ও বাম পাশের ক্যান্ডেলের হাই এর চেয়ে উঁচু
-- **সুইং লো:** একটি ক্যান্ডেলের লো যা তার ডান ও বাম পাশের ক্যান্ডেলের লো এর চেয়ে নিচু
+Swing Point হলো **Market Structure-এর Building Block**। Swing High হলো এমন একটি Price Peak যার দুই পাশে নিচু High আছে। Swing Low হলো এমন একটি Price Trough যার দুই পাশে উচ্চু Low আছে। এগুলো চিহ্নিত করে কোথায় Price Direction পরিবর্তন করেছে এবং Trend, Support/Resistance ও Structure Break চিহ্নিতকরণের ভিত্তি।
 
----
-
-## ৩-ক্যান্ডেল নিয়ম
-
-সুইং পয়েন্ট শনাক্তকরণের সহজতম পদ্ধতি:
-- **সুইং হাই:** মাঝের ক্যান্ডেলের হাই দুই পাশের ক্যান্ডেলের চেয়ে উঁচু
-- **সুইং লো:** মাঝের ক্যান্ডেলের লো দুই পাশের ক্যান্ডেলের চেয়ে নিচু
-
-### ৫-ক্যান্ডেল নিয়ম
-আরও নির্ভরযোগ্য সুইং পয়েন্টের জন্য:
-- মাঝের ক্যান্ডেলের প্রতি পাশে ২টি ক্যান্ডেল
-- কম ফলস সিগন্যাল, বেশি গুরুত্বপূর্ণ সুইং পয়েন্ট
+<Callout type="info" title="সবকিছুর ভিত্তি">
+সঠিকভাবে Swing High ও Low চিহ্নিত না করে আপনি Trend নির্ধারণ, Trendline আঁকা, BOS/CHOCH চিহ্নিত বা কোনো Price Action Strategy Trade করতে পারবেন না। এই Concept প্রথমে আয়ত্ত করুন — বাকি সবকিছু এর উপর তৈরি।
+</Callout>
 
 ---
 
-## সুইং পয়েন্ট ব্যবহার
+## Swing Point কীভাবে চিহ্নিত করবেন
 
-### মার্কেট স্ট্রাকচার নির্ধারণ
-- HH + HL = আপট্রেন্ড
-- LH + LL = ডাউনট্রেন্ড
-- সুইং পয়েন্ট ছাড়া স্ট্রাকচার পড়া অসম্ভব
+### 3-Candle Rule (Standard)
+- **Swing High**: যে Candle-এর HIGH তার আগের ও পরের Candle-এর High-এর চেয়ে উচ্চ
+- **Swing Low**: যে Candle-এর LOW তার আগের ও পরের Candle-এর Low-এর চেয়ে নিম্ন
 
-### লিকুইডিটি চিহ্নিতকরণ
-- প্রতিটি সুইং হাই এর উপরে BSL (বাই স্টপ)
-- প্রতিটি সুইং লো এর নিচে SSL (সেল স্টপ)
+```
+Swing High (3-Candle):
+      ┃ ← এই Candle-এর High সর্বোচ্চ
+    ┃ ┃ ┃
+    ┃ ┃ ┃ ← দুই পাশের Candle-এর High নিচু
 
-### SFP (Swing Failure Pattern)
-- প্রাইস আগের সুইং হাই/লো ভাঙে কিন্তু ক্লোজ ভেতরে ফিরে আসে
-- শক্তিশালী রিভার্সাল সিগন্যাল
+Swing Low (3-Candle):
+    ┃ ┃ ┃ ← দুই পাশের Candle-এর Low উচ্চু
+    ┃ ┃ ┃
+      ┃ ← এই Candle-এর Low সর্বনিম্ন
+```
+
+### 5-Candle Rule (শক্তিশালী Swing)
+- দুই পাশে ২টি করে Candle (মোট ৫) — আরো নির্ভরযোগ্য
+- Higher Timeframe-এ Significant Swing Point
+
+---
+
+## Swing Point ও Market Structure
+
+### Bullish Structure:
+```
+HH (Higher High) → প্রতিটি Swing High আগেরটির চেয়ে উচ্চ
+HL (Higher Low)  → প্রতিটি Swing Low আগেরটির চেয়ে উচ্চ
+= UPTREND
+
+      SH3 (HH)
+     ╱
+    ╱   SH2 (HH)
+   ╱   ╱
+  SL2(HL)
+ ╱    SH1
+SL1(HL)
+```
+
+### Bearish Structure:
+```
+LH (Lower High) → প্রতিটি Swing High আগেরটির চেয়ে নিম্ন
+LL (Lower Low)  → প্রতিটি Swing Low আগেরটির চেয়ে নিম্ন
+= DOWNTREND
+```
+
+---
+
+## Swing Point-এর গুরুত্ব
+
+| ব্যবহার | কীভাবে |
+|---------|--------|
+| **Trend চিহ্নিতকরণ** | HH/HL = Uptrend, LH/LL = Downtrend |
+| **BOS চিহ্নিতকরণ** | Swing High/Low-এর বাইরে Break |
+| **CHOCH চিহ্নিতকরণ** | Trend-এর বিরুদ্ধে Swing Point Break |
+| **Support/Resistance** | পূর্ববর্তী Swing Point = S/R Level |
+| **Stop Loss Placement** | Swing Point-এর বাইরে Stop |
+| **Target Setting** | পরবর্তী Swing Point = Target |
+| **Fibonacci Drawing** | Swing Low → Swing High (বা উল্টো) |
+
+---
+
+## সাধারণ ভুল
+
+| ভুল | সমাধান |
+|------|--------|
+| প্রতিটি ছোট Wick-কে Swing মনে করা | 3-Candle বা 5-Candle Rule ব্যবহার করুন |
+| ভুল Timeframe | আপনার Trading TF-এ Swing চিহ্নিত করুন |
+| Subjective চিহ্নিতকরণ | নিয়ম-ভিত্তিক পদ্ধতি ব্যবহার করুন |
+| Minor ও Major Swing গুলিয়ে ফেলা | HTF = Major, LTF = Minor |
+| Swing Point Update না করা | নতুন Candle-এ নতুন Swing হতে পারে |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [মার্কেট স্ট্রাকচার](/bn/price-action/market-structure) — সুইং পয়েন্ট দিয়ে স্ট্রাকচার
-- [সাপোর্ট ও রেজিস্ট্যান্স](/bn/price-action/support-resistance) — সুইং পয়েন্ট S/R
-- [লিকুইডিটি](/bn/price-action/liquidity) — সুইং পয়েন্টে লিকুইডিটি
+- [Market Structure](/bn/price-action/market-structure) — Swing-ভিত্তিক Structure
+- [Trend Analysis](/bn/price-action/trend-analysis) — Swing দিয়ে Trend চিহ্নিত
+- [Support ও Resistance](/bn/price-action/support-resistance) — Swing = S/R Level
+- [Breakouts](/bn/price-action/breakouts) — Swing Break = Breakout
+- [Pullbacks](/bn/price-action/pullbacks) — Swing Low-এ Pullback Entry

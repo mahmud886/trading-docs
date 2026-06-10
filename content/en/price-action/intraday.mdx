@@ -1,66 +1,85 @@
 ---
-title: "Intraday Price Action Trading"
-description: "Master intraday trading with Price Action — complete framework for day trading using 15M-1H charts with session awareness and BD time references."
+title: "Intraday Trading with Price Action — Complete Guide"
+description: "Master intraday Price Action trading. Learn session-based setups, kill zone entries, daily bias determination, and intraday trade management."
 level: intermediate
-order: 29
-lastUpdated: "2026-05-12"
+order: 24
+lastUpdated: "2026-06-10"
 ---
 
 ## What is Intraday Trading?
 
-Intraday trading means opening and closing all positions within the same day. No overnight risk. Price Action intraday traders use 15M-1H charts for entries with 4H/Daily for bias.
+Intraday trading means opening and closing all positions **within the same trading day**. Using Price Action on M15-H1, intraday traders focus on high-volume sessions (kill zones) for 30-100 pip moves.
+
+<Callout type="info" title="Intraday Edge">
+Intraday trading eliminates overnight risk and provides daily income potential. Combined with session analysis and higher-timeframe bias, it offers repeatable daily opportunities.
+</Callout>
 
 ---
 
-## Intraday Trading Framework
+## Kill Zones
 
-### Pre-Session Routine (Before 12:00 PM BD)
-1. Check Daily candle — bias for today (bullish/bearish PO3?)
-2. Mark 4H key levels (S/R, OBs, FVGs)
-3. Mark Asian range (high/low)
-4. Mark PDH/PDL
-5. Determine bias and target
-
-### During Session (12:00 PM - 10:00 PM BD)
-1. **London (12-3 PM):** Watch for Asian range sweep + reversal setup
-2. **NY AM (5-8 PM):** Continue London setup or enter fresh
-3. **NY PM (after 10 PM):** Close any remaining positions or trail tight
-
-### End of Day
-- Close all positions by 11:00 PM BD (before NY Lunch)
-- Journal the day's trades
-- Review performance
+| Kill Zone | Time (EST) | Character |
+|-----------|-----------|----------|
+| **London Open** | 2:00-5:00 AM | Trend initiation |
+| **NY Open** | 7:00-10:00 AM | Continuation/reversal |
+| **London Close** | 10:00-12:00 PM | Profit-taking |
 
 ---
 
-## Intraday Timeframe Usage
+## Daily Bias Determination
 
-| Timeframe | Purpose |
-|-----------|---------|
-| **Daily** | Bias determination |
-| **4H** | Key levels, S/R zones |
-| **1H** | Session structure, swing direction |
-| **15M** | Entry timeframe, confirmation |
-| **5M** | Precision entry (optional) |
+```
+1. D1 candle direction (bullish/bearish)
+2. H4 structure (HH/HL or LH/LL)
+3. Price position relative to D1 levels
+4. Previous session behavior
+
+Bias = most likely direction for today
+Only trade aligned with this bias.
+```
 
 ---
 
-## Real Example: Full Intraday Trade
+## Intraday Entry Methods
 
-- **Daily Bias:** Bullish (yesterday's bullish PO3 candle)
-- **4H Level:** Support at 1.0855
-- **Asian Range:** 1.0860-1.0878
-- **London (12:20 PM BD):** Sweeps Asian Low at 1.0856
-- **15M Confirmation:** Bullish engulfing at 1.0860
-- **Entry:** Buy at 1.0862
-- **SL:** 1.0848 | **TP:** 1.0910
-- **R:R:** 1:3.4
-- **Close:** Hit TP at 7:30 PM BD during NY AM
+### Session High/Low Sweep:
+1. Identify previous session range (Asian H/L)
+2. Wait for new session to sweep one side
+3. Enter on reversal after sweep
+4. Stop: Beyond sweep wick
+5. Target: Opposite session extreme
+
+### Bias + Order Block:
+1. Determine daily bias
+2. Mark H1 Order Blocks aligned with bias
+3. Wait for pullback to OB during kill zone
+4. Enter on M15 confirmation
+5. Target: D1 key level or daily extreme
+
+### FVG Fill Entry:
+1. London creates impulse (leaves FVG)
+2. NY session retraces to fill FVG
+3. Enter at FVG with bias
+4. Target: London extreme or beyond
+
+---
+
+## Intraday Rules
+
+1. **Only trade during kill zones**
+2. **One direction per day**
+3. **Maximum 3 trades per day**
+4. **Close all by end of NY session**
+5. **Daily loss limit: 2%**
+6. **Align with D1/H4 bias**
+7. **Avoid 15 min before/after high-impact news**
 
 ---
 
 ## Related Topics
 
-- [Session Analysis](/en/price-action/session-analysis) — Session timing
-- [Scalping](/en/price-action/scalping) — Faster intraday approach
-- [Swing Trading](/en/price-action/swing-trading) — Multi-day alternative
+- [Session Analysis](/en/price-action/session-analysis) — Kill zone details
+- [Scalping](/en/price-action/scalping) — Faster approach
+- [Entry Models](/en/price-action/entry-models) — Entry timing
+- [Multi-Timeframe Analysis](/en/price-action/multi-timeframe-analysis) — Daily bias
+- [Trade Management](/en/price-action/trade-management) — Managing positions

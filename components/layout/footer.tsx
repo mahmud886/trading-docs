@@ -63,6 +63,7 @@ export async function Footer({ lang }: { lang: Locale }) {
                 { href: `/${lang}/blog`, label: dict.nav.blog },
                 { href: `/${lang}/charts`, label: dict.nav.charts },
                 { href: `/${lang}/tools`, label: dict.nav.tools },
+                { href: `/${lang}/dashboard`, label: dict.nav.dashboard },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

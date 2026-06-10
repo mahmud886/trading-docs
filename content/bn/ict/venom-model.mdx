@@ -1,55 +1,95 @@
 ---
 title: "ICT Venom Model"
-description: "ICT Venom Model মাস্টার করুন — লিকুইডিটি সুইপের পর আক্রমণাত্মক ডিসপ্লেসমেন্ট ব্যবহার করে সর্বোচ্চ প্রিসিশন ও সর্বনিম্ন রিস্কে এন্ট্রি।"
+description: "ICT Venom Model Master করুন — Liquidity Sweep এর পর Aggressive Displacement ব্যবহার করে সর্বোচ্চ Precision ও সর্বনিম্ন Risk এ Entry নেওয়ার Advanced Execution Model।"
 level: advanced
 order: 17
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-09"
 ---
 
 ## Venom Model কী?
 
-Venom Model হলো ICT এর একটি **অ্যাডভান্সড এক্সিকিউশন মডেল** যা লিকুইডিটি সুইপের ঠিক পরে আক্রমণাত্মক ডিসপ্লেসমেন্ট থেকে এন্ট্রি নেয়। "Venom" মানে মারাত্মক প্রিসিশন — একবারে একটি আঘাত।
+Venom Model হলো ICT এর একটি **Advanced Execution Model** যা Liquidity Sweep এর ঠিক পরে Aggressive Displacement থেকে Entry নেয়। "Venom" বলতে বোঝায় মারাত্মক Precision — একবারে একটি আঘাত।
+
+<Callout type="info" title="Strike Once">
+Venom Model হলো Smart Money Liquidity Sweep এর পর Capital Deploy করার সঠিক মুহূর্ত ধরা। এটি খুব Tight Stop ও Explosive R:R Potential সহ Surgical Entry।
+</Callout>
 
 ---
 
-## Venom Model সেটআপ
+## Venom Model Setup
 
-### সিকুয়েন্স
-1. **লিকুইডিটি টার্গেট** — BSL বা SSL চিহ্নিত করুন
-2. **সুইপ** — Kill Zone এ প্রাইস লিকুইডিটি নেয়
-3. **ডিসপ্লেসমেন্ট** — সুইপের ঠিক পরে আক্রমণাত্মক রিভার্সাল ক্যান্ডেল
-4. **FVG + OB** — ডিসপ্লেসমেন্ট দুটোই তৈরি করে
-5. **এন্ট্রি** — প্রথম রিট্রেসমেন্টে FVG (CE) বা OB তে
-6. **SL** — সুইপ এক্সট্রিমের বাইরে (টাইট)
-7. **TP** — বিপরীত লিকুইডিটি পুল
+### Sequence
+1. **Liquidity Target** — BSL বা SSL চিহ্নিত করুন যা Sweep হবে
+2. **Sweep** — Kill Zone এ Price Liquidity নিয়ে নেয়
+3. **Displacement** — Sweep এর ঠিক পরে Aggressive Reversal Candle
+4. **FVG + OB** — Displacement দুটোই তৈরি করে
+5. **Entry** — প্রথম Retracement এ FVG (CE) বা OB তে Entry
+6. **Stop** — Tight, Sweep Extreme এর বাইরে
+7. **Target** — বিপরীত Liquidity Pool
+
+### কী একে "Venom" করে
+- Entry হয় FVG/OB তে Retrace করা প্রথম Candle এ
+- একাধিক Retracement এর জন্য অপেক্ষা নেই
+- Displacement এর গতি ও আক্রমণাত্মকতা = "Venom"
+- একটি সিদ্ধান্তমূলক Entry, Scale In নেই
 
 ---
 
-## বাস্তব উদাহরণ: বুলিশ Venom — Gold
+## বাস্তব উদাহরণ
 
-- **SSL টার্গেট:** ইকুয়াল লো 2,020
-- **Kill Zone:** লন্ডন (দুপুর ১:১৫ BD)
-- **সুইপ:** প্রাইস 2,016 এ নামে (SSL সুইপ)
-- **ডিসপ্লেসমেন্ট:** 2,016 → 2,032 ম্যাসিভ বুলিশ ক্যান্ডেল
-- **FVG:** 2,022-2,028, OB: 2,020
-- **এন্ট্রি:** 2,025 তে বাই (FVG CE) — প্রথম টাচ
-- **SL:** 2,015 | **TP:** 2,060
+### উদাহরণ ১: Bullish Venom — Gold
+- **SSL Target:** Equal Lows 2,020 এ
+- **Kill Zone:** London (দুপুর 1:15 BD)
+- **Sweep:** Price 2,016 এ নামে (SSL Sweep)
+- **Displacement:** 2,016 → 2,032 Massive Bullish Candle (FVG 2,022-2,028, OB 2,020)
+- **1M Entry:** Price 2,025 এ নামে (FVG CE) — Buy Entry
+- **Stop:** 2,015 (Sweep এর নিচে)
+- **Target:** 2,060 (উপরে BSL)
 - **R:R:** 1:3.5
+- **মূল:** FVG এর First Touch = Venom Entry
+
+### উদাহরণ ২: Bearish Venom — EUR/USD
+- **BSL Target:** PDH 1.0940
+- **Kill Zone:** NY AM (সন্ধ্যা 6:00 BD)
+- **Sweep:** Price 1.0948 পর্যন্ত Spike (BSL Sweep)
+- **Displacement:** 3টি Bearish Candle FVG তৈরি করে 1.0935-1.0928
+- **Entry:** 1.0932 তে Sell (FVG CE)
+- **Stop:** 1.0950
+- **Target:** 1.0870
+- **R:R:** 1:3.4
 
 ---
 
-## Venom বনাম অন্য মডেল
+## Venom vs অন্য Model
 
-| মডেল | মূল বৈশিষ্ট্য | টাইমিং |
-|------|-------------|--------|
-| **Venom** | সুইপের ঠিক পরে এন্ট্রি | প্রথম রিট্রেসমেন্ট |
-| **Unicorn** | Breaker + FVG ওভারল্যাপ | বিলম্বিত রিট্রেসমেন্ট |
-| **Silver Bullet** | সময়-নির্দিষ্ট FVG | SB উইন্ডোর মধ্যে |
+| Model | মূল বৈশিষ্ট্য | Timing |
+|-------|-------------|--------|
+| **Venom** | Sweep এর ঠিক পরে Entry | প্রথম Retracement |
+| **Unicorn** | Breaker + FVG Overlap | বিলম্বিত Retracement |
+| **Silver Bullet** | Time-Specific FVG | SB Window এর মধ্যে |
+| **Standard OB** | যেকোনো OB Entry | একাধিক Retracement OK |
+
+---
+
+## সাধারণ ভুল
+
+<Callout type="warning" title="Venom Model এ ভুল">
+
+**❌ Sweep চলাকালীন Entry** — Sweep এর পর Displacement এর জন্য অপেক্ষা করুন, সময় নয়
+
+**❌ Kill Zone Timing ছাড়া** — Session Context ছাড়া Venom = অনির্ভরযোগ্য
+
+**❌ Displacement Chase করা** — FVG তে Retracement এ Entry করুন, Mid-Displacement এ নয়
+
+**❌ বেশি Wide Stop** — Venom এর মূল কথা Tight Stop। Stop বড় হলে এটি Venom নয়
+
+</Callout>
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [লিকুইডিটি সুইপ](/bn/ict/liquidity-sweep) — Venom ট্রিগার
-- [FVG](/bn/ict/fvg) — এন্ট্রি পয়েন্ট
-- [Unicorn Model](/bn/ict/unicorn-model) — আরেকটি অ্যাডভান্সড মডেল
+- [Liquidity Sweep](/bn/ict/liquidity-sweep) — Venom Trigger করা Sweep
+- [FVG](/bn/ict/fvg) — Venom Model এর Entry Vehicle
+- [Unicorn Model](/bn/ict/unicorn-model) — আরেকটি Advanced Execution Model
+- [MSS](/bn/ict/mss) — Displacement Confirmation

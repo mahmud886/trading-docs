@@ -1,80 +1,174 @@
 ---
-title: "ICT PD Arrays (প্রিমিয়াম/ডিসকাউন্ট অ্যারে)"
-description: "সম্পূর্ণ ICT PD Array ম্যাট্রিক্স — Order Block, FVG, Breaker Block, Mitigation Block, Liquidity Void। প্রিমিয়াম ও ডিসকাউন্ট জোনে চিহ্নিত ও ট্রেড করুন।"
+title: "ICT PD Arrays (Premium/Discount Arrays)"
+description: "সম্পূর্ণ ICT PD Array Matrix আয়ত্ত করুন — Order Block, FVG, Breaker Block, Mitigation Block এবং Liquidity Void। Premium ও Discount Zone এ প্রতিটি PD Array চিহ্নিত ও Trade করতে শিখুন।"
 level: intermediate
 order: 10
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-09"
 ---
 
 ## PD Arrays কী?
 
-PD Arrays (Premium/Discount Arrays) হলো স্মার্ট মানি অপারেশনের **ইনস্টিটিউশনাল প্রাইস লেভেল**। এগুলো এন্ট্রি জোন ও ম্যাগনেট হিসেবে কাজ করে। "PD" মানে প্রিমিয়াম (সেল জোন) বা ডিসকাউন্ট (বাই জোন) এর প্রেক্ষাপটে ব্যবহার।
+PD Arrays (Premium/Discount Arrays) হলো Smart Money Operation এর পেছনে ফেলে যাওয়া **Institutional Price Level**। এগুলো Magnet ও Entry Zone হিসেবে কাজ করে, ICT এর Entry Methodology এর মেরুদণ্ড তৈরি করে। "PD" বলতে এগুলোকে Premium (Sell Zone) বা Discount (Buy Zone) এর Context এ ব্যবহার করা বোঝায়।
+
+<Callout type="info" title="The Matrix">
+ICT সমস্ত PD Arrays একটি Hierarchy তে সাজায়। Higher Timeframe PD Arrays Lower Timeframe এর তুলনায় বেশি গুরুত্বপূর্ণ। কোনটি Prioritize করবেন তা বোঝাই Consistent Execution এর চাবিকাঠি।
+</Callout>
 
 ---
 
 ## সম্পূর্ণ PD Array তালিকা
 
-### ডিসকাউন্ট অ্যারে (বাই করার জন্য)
-1. **Order Block (OB)** — ডিসপ্লেসমেন্টের আগের শেষ বিপরীত ক্যান্ডেল
-2. **বুলিশ FVG (BISI)** — ৩-ক্যান্ডেল ইমব্যালান্স
-3. **বুলিশ Breaker Block** — ব্যর্থ বেয়ারিশ OB এখন সাপোর্ট
-4. **Mitigation Block** — আংশিক পূরণ OB
-5. **Liquidity Void** — বড় একক-ক্যান্ডেল গ্যাপ
+### Discount Arrays (Buy করার জন্য)
+সবচেয়ে বেশি থেকে কম গুরুত্বপূর্ণ:
+1. **Order Block (OB)** — Bullish Displacement এর আগে শেষ Bearish (Down-Close) Candle
+2. **Bullish Fair Value Gap (BISI)** — 3-Candle Buy-Side Imbalance
+3. **Bullish Breaker Block** — ব্যর্থ Bearish OB এখন Support হিসেবে কাজ করছে
+4. **Mitigation Block** — আংশিকভাবে পূর্ণ OB
+5. **Liquidity Void** — বড় একক-Candle Gap
 
-### প্রিমিয়াম অ্যারে (সেল করার জন্য)
-1. **Order Block (OB)** — ডিসপ্লেসমেন্টের আগের শেষ বুলিশ ক্যান্ডেল
-2. **বেয়ারিশ FVG (SIBI)** — ৩-ক্যান্ডেল ইমব্যালান্স
-3. **বেয়ারিশ Breaker Block** — ব্যর্থ বুলিশ OB এখন রেজিস্ট্যান্স
-4. **Mitigation Block** — আংশিক পূরণ OB
-5. **Liquidity Void** — বড় একক-ক্যান্ডেল গ্যাপ
-
----
-
-## PD Array নির্বাচন নিয়ম
-
-### নিয়ম ১: উচ্চ টাইমফ্রেম > নিম্ন টাইমফ্রেম
-ডেইলি OB সবসময় 15M OB কে বিট করে।
-
-### নিয়ম ২: প্রিমিয়াম/ডিসকাউন্ট প্রেক্ষাপট
-- ডিসকাউন্ট অ্যারে শুধু বাই এর জন্য (রেঞ্জের ৫০% এর নিচে)
-- প্রিমিয়াম অ্যারে শুধু সেল এর জন্য (রেঞ্জের ৫০% এর উপরে)
-
-### নিয়ম ৩: কনফ্লুয়েন্স স্ট্যাক
-OB + FVG + OTE জোন ওভারল্যাপ করলে সম্ভাবনা অনেক বাড়ে।
+### Premium Arrays (Sell করার জন্য)
+সবচেয়ে বেশি থেকে কম গুরুত্বপূর্ণ:
+1. **Order Block (OB)** — Bearish Displacement এর আগে শেষ Bullish (Up-Close) Candle
+2. **Bearish Fair Value Gap (SIBI)** — 3-Candle Sell-Side Imbalance
+3. **Bearish Breaker Block** — ব্যর্থ Bullish OB এখন Resistance হিসেবে কাজ করছে
+4. **Mitigation Block** — আংশিকভাবে পূর্ণ OB
+5. **Liquidity Void** — বড় একক-Candle Gap
 
 ---
 
-## বাস্তব উদাহরণ: মাল্টি-PD Array ট্রেড
+## Order Blocks (OB)
 
-### EUR/USD লং সেটআপ
-- **HTF:** ডেইলি ডিসকাউন্ট, বুলিশ বায়াস
-- **এন্ট্রি জোনে PD Arrays:**
-  - ✅ 15M বুলিশ OB 1.0852 এ
-  - ✅ 15M বুলিশ FVG 1.0848-1.0856
-  - ✅ OTE জোন (৬২-৭৯%) 1.0845-1.0855
-- **এন্ট্রি:** 1.0852 (OB + FVG + OTE কনফ্লুয়েন্স)
-- **SL:** 1.0840 | **TP:** 1.0920
+Displacement Move এর আগে **শেষ বিপরীত Candle**:
+
+### Bullish OB
+- Bullish Displacement এর আগে শেষ Bearish (Down-Close) Candle
+- Candle এর Range চিহ্নিত করুন (Open থেকে Low)
+- Price এই Zone এ ফিরে আসলে Buy Entry
+
+### Bearish OB
+- Bearish Displacement এর আগে শেষ Bullish (Up-Close) Candle
+- Candle এর Range চিহ্নিত করুন (Open থেকে High)
+- Price এই Zone এ ফিরে আসলে Sell Entry
+
+### OB Validity Rules
+- Displacement থাকতে হবে (FVG তৈরি করে শক্তিশালী Move)
+- Structure Break করা উচিত (BOS বা MSS)
+- One-Touch Entry সবচেয়ে ভালো (প্রথম Return সবচেয়ে শক্তিশালী)
+
+---
+
+## Fair Value Gaps (FVG)
+
+3-Candle Imbalance — বিস্তারিত [FVG Lesson](/bn/ict/fvg) এ আছে।
+
+Quick Reference:
+- **BISI** (Bullish): C1 High ও C3 Low এর মধ্যে Gap → Buy Zone
+- **SIBI** (Bearish): C1 Low ও C3 High এর মধ্যে Gap → Sell Zone
+- **CE** (Consequent Encroachment): FVG এর 50% = আদর্শ Entry
+
+---
+
+## Breaker Blocks
+
+একটি **ব্যর্থ Order Block** যা পরবর্তীতে অন্য দিক থেকে Support/Resistance হিসেবে কাজ করে:
+
+### Breaker কীভাবে তৈরি হয়
+1. Bullish OB তৈরি হয় → Price এটিকে Support হিসেবে ব্যবহার করে
+2. Price শেষ পর্যন্ত OB এর নিচে ভেঙে পড়ে (OB ব্যর্থ)
+3. ব্যর্থ OB এখন নিচ থেকে Resistance হিসেবে কাজ করে
+4. এটি এখন **Bearish Breaker Block**
+
+### Breaker Trading
+- নিচের দিক থেকে Price যখন Breaker এ ফিরে আসে তখন Entry
+- সাধারণ S/R থেকে শক্তিশালী কারণ এগুলো Trap ও Reversal প্রতিনিধিত্ব করে
+- OTE Zone এর সাথে Align হলে বিশেষভাবে শক্তিশালী
+
+---
+
+## Mitigation Blocks
+
+একটি Order Block যা **আংশিকভাবে পূর্ণ** হওয়ার পর Price সরে গেছে:
+
+### কীভাবে কাজ করে
+1. একটি Level এ OB তৈরি হয়
+2. Price OB তে ফিরে আসে কিন্তু আংশিকভাবে Fill করে (পুরো Range Trade Through করে না)
+3. Price আবার সরে যায়
+4. দ্বিতীয়বার Price ফিরলে, অবশিষ্ট Unfilled অংশ = Mitigation Block
+
+### Trading Approach
+- OB এর Unfilled অংশে Entry
+- Tighter Stop সম্ভব (শুধু Mitigation Range Cover করতে হয়)
+- Fresh OB এর তুলনায় সামান্য কম Probability
+
+---
+
+## PD Array নির্বাচন Rules
+
+### Rule 1: Higher Timeframe > Lower Timeframe
+Daily OB সবসময় 15M OB কে Beat করে। সর্বদা HTF Arrays প্রথমে Respect করুন।
+
+### Rule 2: Premium/Discount Context
+- শুধু Discount Arrays Buy এর জন্য (Price Range এর 50% এর নিচে)
+- শুধু Premium Arrays Sell এর জন্য (Price Range এর 50% এর উপরে)
+
+### Rule 3: Nearest Array First
+Price সবসময় নিকটতম PD Array এর সাথে আগে Interact করবে। Array Skip করবেন না।
+
+### Rule 4: Confluence Stacks
+একাধিক PD Array Overlap করলে (OB + FVG + OTE Zone), Probability অনেক বেড়ে যায়।
+
+---
+
+## বাস্তব উদাহরণ: Multi-PD Array Trade
+
+### EUR/USD Long Setup
+- **HTF:** Daily Discount এ, Bullish Bias
+- **15M:** London KZ এ SSL Sweep এর পর
+- **Entry Zone এ PD Arrays:**
+  - ✅ 15M Bullish OB 1.0852 তে
+  - ✅ 15M Bullish FVG 1.0848-1.0856
+  - ✅ OTE Zone (62-79%) 1.0845-1.0855
+- **Entry:** 1.0852 (OB + FVG + OTE Confluence)
+- **Stop:** 1.0840
+- **Target:** 1.0920 (BSL)
 - **R:R:** 1:5.7
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="PD Array ভুল">
+<Callout type="warning" title="PD Array এ ভুল">
 
-**❌ HTF বায়াসের বিরুদ্ধে PD Array ট্রেড** — Array শুধু ট্রেন্ডের দিকে কাজ করে
+**❌ HTF Bias এর বিরুদ্ধে PD Array Trade করা** — Array শুধু Trend এর দিকে কাজ করে
 
-**❌ প্রিমিয়ামে বাই করা** — প্রিমিয়ামে কেনা = ইনস্টিটিউশনের বিরুদ্ধে
+**❌ Premium Arrays Buy এর জন্য ব্যবহার করা** — Premium এ Buy করা = Institution এর বিরুদ্ধে যাওয়া
 
-**❌ হায়ারার্কি উপেক্ষা** — ICT ফ্রেমওয়ার্কে OB FVG এর চেয়ে শক্তিশালী
+**❌ Hierarchy উপেক্ষা করা** — ICT Framework এ OB, FVG এর চেয়ে শক্তিশালী
+
+**❌ Displacement Check ছাড়া** — Valid PD Arrays তৈরি হতে Displacement দরকার
+
+**❌ পুরনো Arrays Trade করা** — Fresh Array (20 Candle) সবচেয়ে নির্ভরযোগ্য
 
 </Callout>
 
 ---
 
+## সারসংক্ষেপ
+
+| PD Array             | এটি কী                                | Entry Direction          |
+|----------------------|---------------------------------------|--------------------------|
+| **Order Block**      | Displacement এর আগে শেষ বিপরীত Candle | Displacement এর দিকে     |
+| **FVG**              | 3-Candle Imbalance                    | Gap এ Retracement        |
+| **Breaker Block**    | ব্যর্থ OB নতুন S/R হিসেবে             | ব্যর্থ দিক থেকে Reversal |
+| **Mitigation Block** | আংশিকভাবে পূর্ণ OB                    | Unfilled অংশে            |
+| **Liquidity Void**   | বড় একক-Candle Gap                    | Void Fill                |
+
+---
+
 ## সম্পর্কিত বিষয়
 
-- [FVG](/bn/ict/fvg) — বিস্তারিত Fair Value Gap গাইড
-- [OTE](/bn/ict/ote) — PD Array সহ Optimal Trade Entry
-- [MSS](/bn/ict/mss) — PD Array ভ্যালিডেট করে
-- [Dealing Range](/bn/ict/dealing-range) — PD Array নির্বাচনের প্রেক্ষাপট
+- [FVG](/bn/ict/fvg) — বিস্তারিত Fair Value Gap Guide
+- [OTE](/bn/ict/ote) — PD Arrays সহ Optimal Trade Entry
+- [MSS](/bn/ict/mss) — PD Arrays Validate করে Structure Shift
+- [Daily Bias](/bn/ict/daily-bias) — Direction নির্ধারণ করে কোন Array ব্যবহার করবেন
+- [Dealing Range](/bn/ict/dealing-range) — PD Array নির্বাচনের Context

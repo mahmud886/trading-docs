@@ -1,285 +1,111 @@
 ---
-title: "Bollinger Bands Trading"
-description: "Master Bollinger Bands for identifying volatility, overbought/oversold conditions, and trading setups"
-author: "Trading Academy"
-date: "2024-01-15"
+title: "Bollinger Bands Trading — Complete Guide"
+description: "Master Bollinger Bands for trading: band squeeze breakouts, mean reversion, walking the bands, and combining Bollinger Bands with other indicators."
+level: intermediate
+order: 26
+lastUpdated: "2026-06-10"
 ---
 
-## Bollinger Bands Trading
+## What Are Bollinger Bands?
 
-Bollinger Bands are a volatility indicator that helps identify support, resistance, overbought, and oversold conditions.
+Bollinger Bands are a **volatility indicator** consisting of three lines: a middle band (SMA) and two outer bands that expand and contract based on price volatility. Created by John Bollinger, they adapt to market conditions automatically.
 
-### Understanding Bollinger Bands
+---
 
-**Components:**
-- **Middle Band:** 20-period Simple Moving Average
-- **Upper Band:** Middle Band + (2 × 20-period Standard Deviation)
-- **Lower Band:** Middle Band - (2 × 20-period Standard Deviation)
-- **Bandwidth:** Distance between upper and lower bands
+## Components
 
-**Default Settings:**
-- Period: 20 days/candles
-- Standard Deviation: 2
+| Component | Calculation | Purpose |
+|-----------|------------|---------|
+| **Middle Band** | 20-period SMA | Trend direction and mean |
+| **Upper Band** | SMA + (2 × Standard Deviation) | Overbought/resistance area |
+| **Lower Band** | SMA - (2 × Standard Deviation) | Oversold/support area |
+| **Band Width** | (Upper - Lower) ÷ Middle | Volatility measurement |
 
-### What Bollinger Bands Tell You
+### Key Properties:
+- ~95% of price action stays within the bands (2 SD)
+- Bands expand during high volatility
+- Bands contract during low volatility (squeeze)
+- Price touching bands is NOT automatically a signal
 
-#### 1. **Volatility Measurement**
-- **Wide Bands:** High volatility
-- **Narrow Bands:** Low volatility
-- **Expanding Bands:** Volatility increasing
-- **Contracting Bands:** Volatility decreasing
+---
 
-#### 2. **Support & Resistance**
-- **Upper Band:** Acts as resistance
-- **Lower Band:** Acts as support
-- **Middle MA:** Acts as mid-line support/resistance
+## Trading Strategies
 
-#### 3. **Overbought/Oversold**
-- **Price at Upper Band:** Potentially overbought
-- **Price at Lower Band:** Potentially oversold
-- **Not guaranteed reversal signals**
-- **In strong trends, can stay extended for long periods**
+### Strategy 1: Bollinger Band Squeeze (Breakout)
 
-#### 4. **Squeeze Pattern**
-- **Bands contract together:** "Squeeze"
-- **Indicates low volatility**
-- **Typically followed by breakout**
-- **Largest moves follow biggest squeezes**
+When bands squeeze tight (low volatility), a big move is coming:
 
-### Bollinger Bands Trading Strategies
+```
+Setup:
+1. Identify BB squeeze (narrowest bands in 50+ periods)
+2. Wait for price to break above upper band OR below lower band
+3. Confirm with volume increase
+4. Enter in breakout direction
 
-#### Strategy 1: Band Bounce Trading
+Entry: Close above upper band (long) or below lower band (short)
+Stop: Middle band (SMA 20)
+Target: 1.5-2× the band width
+```
 
-Trade bounces from the bands in ranging markets.
+### Strategy 2: Mean Reversion (Band Bounce)
 
-**Setup:**
-- Identify flat trend (bands not expanding)
-- Chart is range-bound
-- Price touches lower band
-- Setup forms for buying into support
+```
+In RANGING markets:
+- Price touches upper band → potential sell (mean reversion to middle)
+- Price touches lower band → potential buy (mean reversion to middle)
+- Target: Middle band (20 SMA)
+- Stop: Beyond the band
 
-**Entry:**
-- Buy at lower band
-- Or buy after bounce confirmation from lower band
-- Wait for price action signal
+WARNING: Don't use in trending markets (price can "walk the bands")
+```
 
-**Stop Loss:**
-- Below the lower band
-- Or below recent swing low
-- Usually 10-20 pips
+### Strategy 3: Walking the Bands (Trend)
 
-**Target:**
-- Middle band (first target)
-- Upper band (second target)
-- Half position at middle, half at upper band
+In strong trends, price consistently touches/exceeds one band:
+- Strong uptrend: Price walks along upper band (don't sell!)
+- Strong downtrend: Price walks along lower band (don't buy!)
+- Trade pullbacks to middle band in trend direction
 
-**Risk-Reward:** Typically 1:1.5 to 1:2
+### Strategy 4: Double Bollinger Bands
 
-#### Strategy 2: Breakout from Squeeze
+Use two sets: Standard (2 SD) + Inner (1 SD):
+```
+- Price between upper 1SD and 2SD = Strong bullish trend
+- Price between lower 1SD and 2SD = Strong bearish trend
+- Price between +1SD and -1SD = Neutral/ranging
+- Crossing from neutral to trend zone = entry signal
+```
 
-Trade breakouts that occur after a squeeze.
+---
 
-**Setup:**
-1. Bands contract significantly (squeeze)
-2. Volatility is very low
-3. Price is consolidated in middle
-4. Preparation for major move
+## BB + RSI Combination
 
-**Trigger:**
-- Price breaks above upper band = Long signal
-- Price breaks below lower band = Short signal
-- Look for closing outside band, not just wick
+| BB Signal | RSI Confirmation | Action |
+|-----------|-----------------|--------|
+| Touch upper band | RSI > 70 + divergence | Sell signal |
+| Touch lower band | RSI < 30 + divergence | Buy signal |
+| Squeeze breakout up | RSI crossing above 50 | Confirmed long |
+| Squeeze breakout down | RSI crossing below 50 | Confirmed short |
+| Walking upper band | RSI 60-80 range | Stay long, trend is strong |
 
-**Entry:**
-- Enter on break with volume confirmation
-- Or wait for pullback to band after break
+---
 
-**Stop Loss:**
-- Below lower band (for long breaks)
-- Above upper band (for short breaks)
+## Common Mistakes
 
-**Target:**
-- Often extends 1-3x the previous squeeze width
-- Use ATR for distance measurement
-- Take partial profits on strong moves
-
-#### Strategy 3: Mean Reversion
-
-Revert to the middle band when price extends too far.
-
-**Setup:**
-- Price is at or beyond upper/lower band
-- Extended away from middle band
-- Overbought or oversold condition
-
-**Entry Signal:**
-- Price touches band and starts reversing
-- Or candle closes back inside bands
-- Momentum oscillator confirms reversal
-
-**Target:**
-- Middle band is primary target
-- Further targets at opposite band
-
-**Risk Management:**
-- This is less reliable in strong trends
-- Confirm with other indicators
-- Keep stops tight
-
-#### Strategy 4: Confirmation with Bollinger Bands
-
-Use BB to confirm other trading signals.
-
-**Example:** Price Action + Bollinger Bands
-- Support level found at lower band = Stronger
-- Resistance level found at upper band = Stronger
-- Breakout from support above middle = Confirmed
-- Pullback to middle band = Strong support/resistance
-
-### Bollinger Bands with Other Indicators
-
-#### BB + RSI
-- RSI at 70+ AND price at upper band = Strong overbought
-- RSI at 30- AND price at lower band = Strong oversold
-- Better for reversals than bands alone
-
-#### BB + MACD
-- MACD positive divergence at lower band = Strong buy
-- MACD negative divergence at upper band = Strong sell
-- Confluence improves signal quality
-
-#### BB + Volume
-- Band touch with high volume = Stronger signal
-- Band touch with low volume = Weaker, likely bounce
-- Volume confirms band strength
-
-#### BB + Moving Averages
-- Price at lower band + above 200 MA = Stronger buy
-- Price at upper band + below 200 MA = Stronger sell
-- Longer-term trend confirmation
-
-### Bollinger Bands Settings Optimization
-
-**For Different Timeframes:**
-
-**Weekly Charts:**
-- Period: 20 (standard)
-- S.D.: 2 (standard)
-- Wide bands, strong signals
-
-**Daily Charts:**
-- Period: 20 (standard)
-- S.D.: 2 (standard)
-- Most commonly used settings
-
-**1-Hour Charts:**
-- Period: 20 (or try 10)
-- S.D.: 2 (or try 1.5)
-- More responsive to intraday moves
-
-**5-Minute Charts:**
-- Period: 10-12
-- S.D.: 1.5-2
-- Faster response to price changes
-
-### Professional Bollinger Bands Usage
-
-#### 1. **Volatility Regime Identification**
-Monitor bandwidth over time:
-- Increasing bandwidth = Trending market
-- Decreasing bandwidth = Consolidation
-- Affects strategy selection
-- Squeeze = Expect breakout soon
-
-#### 2. **Predicting Volatility Changes**
-- Squeeze period = Low volatility
-- After squeeze = Expect volatility expansion
-- Time position sizes accordingly
-- Widen stops when expansion happens
-
-#### 3. **Multi-Timeframe Analysis**
-- Daily BB shows major trend
-- 1H BB shows entry points
-- 5M BB shows precise entries
-- Better confluence = Better trades
-
-#### 4. **Volatility Breakouts**
-Watch for squeeze-to-breakout sequences:
-- Long squeeze phase
-- Sudden expansion
-- Large move in one direction
-- Ride the volatility expansion
-
-### Common Bollinger Bands Mistakes
-
-1. **Thinking Price at Upper Band = Sell**
-   - In uptrends, price stays at upper band
-   - Not always a sell signal
-   - Needs confirmation from other factors
-
-2. **Not Considering Trend Direction**
-   - More likely bounce from lower band in uptrend
-   - More likely bounce from upper band in downtrend
-   - Trade with trend, not against it
-
-3. **Ignoring Volume**
-   - Band touch with no volume = False signal
-   - Band touch with high volume = Strong signal
-   - Volume confirms band significance
-
-4. **Tight Stops at Bands**
-   - Bands aren't hard barriers
-   - Price wicks beyond often
-   - Add buffer (5-10 pips) outside band
-
-5. **Fixed Settings for All Markets**
-   - Different markets need different settings
-   - Adjust period for volatility
-   - Test before using live
-
-6. **Over-Trading Band Bounces**
-   - Not all band touches work
-   - Need other confirmation factors
-   - Trade higher probability setups only
-
-### Bollinger Bands Band Walk
-
-A "Band Walk" is when price moves along the band consistently.
-
-**Characteristics:**
-- Price touches band multiple times
-- Moves in same direction
-- Indicates strong trend
-- Band acts as dynamic support/resistance
-
-**Trading Band Walks:**
-- Add to winners in trending markets
-- Trail stop along lower band (for uptrend)
-- Scalp partial profits after each band touch
-- Very profitable in strong trends
-
-### Advanced: Bollinger Bands %B
-
-The %B indicator shows where price is within the bands:
-- **%B > 1.0:** Price above upper band
-- **%B = 1.0:** Price at upper band
-- **%B = 0.5:** Price at middle band
-- **%B = 0.0:** Price at lower band
-- **%B < 0.0:** Price below lower band
-
-**Usage:**
-- Confirms overbought/oversold conditions
-- Better than just visual interpretation
-- Add as secondary confirmation
-
-## Summary
-
-Bollinger Bands are powerful for:
-- **Identifying volatility:** Wide vs. narrow bands
-- **Support & Resistance:** Bands act as dynamic levels
-- **Mean reversion:** Price reverts to middle band
-- **Breakouts:** Squeeze precedes large moves
-- **Confirmation:** Enhances other signals
-
-Key to success: Use BB with trend analysis and other confirmations. Bands alone generate false signals. Combine with volume, price action, and other indicators for best results.
+| Mistake | Reality |
+|---------|---------|
+| Selling every upper band touch | In trends, price walks the band |
+| Buying every lower band touch | In downtrends, price stays at lower band |
+| Ignoring squeeze context | Squeeze direction depends on prior trend |
+| Using wrong settings | Default 20,2 works for most cases |
+| Trading BB alone | Always combine with trend/momentum |
 
+---
+
+## Related Topics
+
+- [Volatility Analysis](/en/academy/volatility-analysis) — Volatility context
+- [Technical Indicators](/en/academy/technical-indicators) — Combine with BB
+- [Support & Resistance](/en/academy/support-resistance-advanced) — BB as dynamic S/R
+- [Chart Patterns](/en/academy/chart-patterns) — Patterns within BB
+- [Trading Plan](/en/academy/trading-plan) — BB rules in your plan

@@ -1,39 +1,68 @@
 ---
-title: "ইন্টার্নাল ও এক্সটার্নাল লিকুইডিটি"
-description: "SMC তে ইন্টার্নাল ও এক্সটার্নাল লিকুইডিটি মাস্টার করুন — মাইক্রো-লেভেল রিট্রেসমেন্ট লিকুইডিটি ও ম্যাক্রো-লেভেল সুইং লিকুইডিটি টার্গেটের পার্থক্য।"
+title: "Internal ও External Liquidity — সম্পূর্ণ গাইড"
+description: "SMC-তে Internal vs External Liquidity আয়ত্ত করুন। Price কীভাবে FVG/OB (Internal) ও Swing Point (External)-এর মধ্যে চলে বুঝুন।"
 level: intermediate
-order: 19
-lastUpdated: "2026-05-12"
+order: 21
+lastUpdated: "2026-06-10"
 ---
 
-## ইন্টার্নাল বনাম এক্সটার্নাল লিকুইডিটি কী?
+## Internal vs. External Liquidity
 
-- **এক্সটার্নাল লিকুইডিটি** — মেজর সুইং হাই/লো, PDH/PDL, ইকুয়াল H/L (বড় টার্গেট)
-- **ইন্টার্নাল লিকুইডিটি** — FVG, Order Block, একটি মুভের মধ্যে মাইক্রো সুইং পয়েন্ট (রিট্রেসমেন্ট টার্গেট)
+SMC-তে Liquidity দুই রূপে আছে:
+- **External Liquidity:** Swing High/Low-এর বাইরে বসে থাকা Order (TARGET)
+- **Internal Liquidity:** Range-এর মধ্যে FVG, Order Block (ENTRY)
 
-<Callout type="info" title="সাইকেল">
-প্রাইস এক্সটার্নাল লিকুইডিটি সুইপ ও ইন্টার্নাল লিকুইডিটি পূরণের মধ্যে ঘুরতে থাকে। এক্সটার্নাল সুইপ → ইন্টার্নাল ফিল (রিট্রেসমেন্ট) → পরবর্তী এক্সটার্নাল সুইপ।
+<Callout type="info" title="প্রবাহ">
+Price Internal Liquidity থেকে External Liquidity-তে যায়, তারপর ফেরে। এই প্রবাহ বুঝলে জানবেন Price পরবর্তীতে কোথায় যাচ্ছে।
 </Callout>
 
 ---
 
-## ইন্টার্নাল/এক্সটার্নাল সাইকেল
+## সংজ্ঞা
+
+| ধরন | অবস্থান | উদাহরণ | উদ্দেশ্য |
+|------|---------|---------|----------|
+| **External** | Swing H/L-এর বাইরে | EQH, EQL, Swing Point | TARGET (Price কোথায় যাচ্ছে) |
+| **Internal** | Range-এর ভিতরে | FVG, OB, Breaker | ENTRY (Price কোথা থেকে ঢোকে) |
+
+---
+
+## Price Cycle
 
 ```
-এক্সটার্নাল SSL সুইপ → ইন্টার্নাল FVG/OB তে রিট্রেস → এক্সটার্নাল BSL এ কন্টিনিউ
-                           (আপনার এন্ট্রি)
+Price এই Cycle অনুসরণ করে:
+
+1. EXTERNAL Liquidity নেয় (High/Low Sweep)
+2. INTERNAL Liquidity-তে ফেরে (FVG/OB Retracement)
+3. Internal থেকে React → পরবর্তী EXTERNAL-এ যায়
+4. পুনরাবৃত্তি
+
+উদাহরণ:
+1. Price EQH Sweep করে (External BSL নেওয়া)
+2. Price নিচের FVG Fill করতে নামে (Internal)
+3. FVG থেকে Bullish React? না → Reversal
+4. Price EQL-এর দিকে যায় (External SSL = পরবর্তী Target)
+5. Cycle চলতে থাকে...
 ```
 
-### বাস্তব উদাহরণ: EUR/USD
-1. **এক্সটার্নাল:** লন্ডনে SSL 1.0830 সুইপ
-2. **ইন্টার্নাল:** 15M বুলিশ FVG 1.0855 তে রিট্রেস (আপনার এন্ট্রি)
-3. **এক্সটার্নাল:** BSL 1.0920 এ কন্টিনিউ
-4. **এন্ট্রি:** 1.0855 (ইন্টার্নাল), টার্গেট 1.0920 (এক্সটার্নাল), R:R 1:4+
+---
+
+## Trading Application
+
+### External TARGET হিসেবে:
+- Draw on Liquidity = পরবর্তী Unfilled External Level
+- EQH/EQL, Session H/L, Swing Point TP হিসেবে ব্যবহার
+
+### Internal ENTRY হিসেবে:
+- External নেওয়ার পর Internal Entry খুঁজুন
+- FVG বা OB Retracement-এ Enter
+- সেরা R:R দেয়
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [লিকুইডিটি পুল](/bn/smc/liquidity-pools) — এক্সটার্নাল লিকুইডিটি টার্গেট
-- [Fair Value Gap](/bn/smc/fair-value-gap) — ইন্টার্নাল লিকুইডিটি জোন
-- [Order Blocks](/bn/smc/order-blocks) — ইন্টার্নাল এন্ট্রি জোন
+- [Liquidity Pools](/bn/smc/liquidity-pools) — External Liquidity বিস্তারিত
+- [Fair Value Gap](/bn/smc/fair-value-gap) — Internal Liquidity (FVG)
+- [Order Blocks](/bn/smc/order-blocks) — Internal Liquidity (OB)
+- [Session Liquidity](/bn/smc/session-liquidity) — Session-based External

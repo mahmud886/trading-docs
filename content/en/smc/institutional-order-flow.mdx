@@ -1,97 +1,81 @@
 ---
-title: "SMC Institutional Order Flow"
-description: "Understand how institutional order flow drives market movements. Learn to read the footprint of banks and hedge funds through price action, volume, and SMC concepts."
+title: "Institutional Order Flow in SMC — Complete Guide"
+description: "Understand how banks and funds execute. Learn time and price delivery, weekly/daily bias, and identifying institutional footprints."
 level: advanced
 order: 18
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-10"
 ---
 
-## What is Institutional Order Flow?
+## Understanding Institutional Order Flow
 
-Institutional order flow is the **aggregate buying and selling activity** of banks, hedge funds, and large financial institutions. In SMC, we read this flow through price action — every candle tells a story about what institutions are doing.
-
-<Callout type="info" title="Reading the Tape">
-You don't need a Bloomberg terminal to see institutional order flow. SMC teaches you to read it directly from the chart through Order Blocks, displacement, and volume patterns.
-</Callout>
+Institutional Order Flow is the study of **HOW large players (banks, hedge funds, central banks) execute orders** and how their activity creates predictable patterns in price delivery.
 
 ---
 
-## Signs of Institutional Activity
+## How Institutions Execute
 
-### 1. Displacement
-- Large-bodied candles with minimal wicks
-- Multiple candles in the same direction
-- Creates FVGs and Order Blocks
-- This is institutions COMMITTING capital
-
-### 2. Absorption
-- Price tests a level multiple times without breaking
-- Each test has strong rejection (long wicks)
-- Institutions are absorbing opposing orders
-- Precedes a displacement move
-
-### 3. Accumulation Pattern
-- Tight range with decreasing volatility
-- Stop hunts on both sides of the range
-- Increasing volume on the eventual breakout
-- Institutions are building positions
-
-### 4. Distribution Pattern
-- Price makes new highs but momentum decreases
-- Decreasing volume on upswings
-- Increasing volume on downswings
-- Institutions are offloading positions
+| Factor | Retail | Institutional |
+|--------|--------|---------------|
+| Size | Small (0.01-1 lot) | Massive (100-10,000+ lots) |
+| Fill | Instant | Requires liquidity over time |
+| Impact | None | Moves markets |
+| Strategy | Chase price | Engineer liquidity, then fill |
+| Timeframe | Minutes | Days to weeks |
 
 ---
 
-## How to Align with Institutional Flow
+## Time and Price Delivery
 
-### Step 1: Identify the HTF Direction
-- What are institutions doing on the Daily/Weekly? (accumulation or distribution?)
-- Are they building longs (bullish OBs, bullish FVGs) or shorts?
+```
+Institutions deliver price in a predictable manner:
 
-### Step 2: Look for Displacement
-- Where is the most recent strong move?
-- This displacement tells you where institutions just entered
+1. WEEKLY candle shows overall intention
+   - Bullish weekly = price targets highs
+   - Bearish weekly = price targets lows
 
-### Step 3: Wait for Retracement
-- After displacement, price retraces to fill FVGs
-- This is where you enter WITH institutional flow
+2. DAILY candle refines the delivery
+   - Which days does price push?
+   - Which days does it retrace?
+   - Tuesday/Wednesday = highest probability moves
 
-### Step 4: Target Institutional Targets
-- Where is the next liquidity pool?
-- Where are unfilled HTF imbalances?
-
----
-
-## Real Example: GBP/USD Institutional Order Flow
-
-- **Weekly:** Displacement up from 1.2500 to 1.2700 (institutional buying confirmed)
-- **Daily:** Pullback to 4H bullish OB at 1.2580 (retracement)
-- **Institutional Flow:** Clearly bullish — buy the pullback
-- **Entry:** Buy at 1.2580 (4H OB + FVG confluence)
-- **SL:** 1.2540 | **TP:** 1.2750
-- **R:R:** 1:4.25
+3. SESSION timing determines entry
+   - London initiates, NY continues
+   - Kill Zones = institutional activity
+```
 
 ---
 
-## Common Mistakes
+## Identifying Institutional Footprints
 
-<Callout type="warning" title="Order Flow Errors">
+- **Displacement:** Large body candles = institutional commitment
+- **Fair Value Gaps:** Created by institutional urgency
+- **Order Blocks:** Last opposing candle before institutional move
+- **Liquidity Sweeps:** Institutional order filling method
+- **Time alignment:** Moves during Kill Zones
 
-**❌ Fighting displacement** — Strong displacement = institutional commitment. Don't counter-trade it
+---
 
-**❌ Confusing consolidation with trend change** — Consolidation after displacement = continuation likely
+## Weekly Bias Determination
 
-**❌ Ignoring volume context** — High-volume displacement > low-volume breakout
+```
+1. Where did last week close relative to its range?
+   - Upper 25% = bullish continuation likely
+   - Lower 25% = bearish continuation likely
+   - Middle 50% = look for other cues
 
-</Callout>
+2. Where is draw on liquidity?
+   - Unswept weekly highs/lows = targets
+   - Previous week H/L = immediate targets
+
+3. Is there HTF imbalance to fill?
+   - Monthly/weekly FVGs = directional bias
+```
 
 ---
 
 ## Related Topics
 
-- [Order Blocks](/en/smc/order-blocks) — Institutional entry footprints
-- [Accumulation](/en/smc/accumulation) — Building institutional positions
-- [Distribution](/en/smc/distribution) — Offloading institutional positions
-- [Wyckoff Relation](/en/smc/wyckoff-relation) — Classical order flow theory
+- [Kill Zones](/en/smc/kill-zones) — When institutions are active
+- [Manipulation](/en/smc/manipulation) — How they engineer fills
+- [Premium & Discount](/en/smc/premium-discount) — Where they buy/sell
+- [SMT Divergence](/en/smc/smt-divergence) — Institutional clues

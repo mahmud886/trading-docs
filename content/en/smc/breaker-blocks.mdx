@@ -1,88 +1,81 @@
 ---
-title: "SMC Breaker Blocks"
-description: "Master breaker blocks in SMC — failed Order Blocks that flip from support to resistance (or vice versa). Learn how breakers form, why they work, and how to trade them."
-level: advanced
-order: 10
-lastUpdated: "2026-05-12"
+title: "Breaker Blocks in SMC — Complete Guide"
+description: "Master Breaker Blocks — failed Order Blocks that flip polarity and become powerful entry zones in the new direction."
+level: intermediate
+order: 7
+lastUpdated: "2026-06-10"
 ---
 
 ## What is a Breaker Block?
 
-A Breaker Block is an **Order Block that FAILED** — price traded completely through the OB, invalidating it. But instead of being useless, this failed OB now acts as support/resistance from the OTHER side. The OB "breaks" and becomes a new zone.
+A Breaker Block is a **failed Order Block that flips polarity**. When an Order Block gets broken (violated), it doesn't disappear — it transforms into a Breaker Block that now acts as support/resistance from the opposite direction.
 
-<Callout type="info" title="From Failure to Opportunity">
-A bullish OB that fails (price drops through it) becomes a BEARISH Breaker Block — now acting as resistance from above. The trapped traders who bought at the OB create the selling pressure when price returns.
+<Callout type="info" title="Failed OB = New Opportunity">
+When a bullish OB fails (price breaks below it), the entire OB zone becomes a bearish Breaker Block. Price often returns to this zone before continuing lower — giving you an entry.
 </Callout>
 
 ---
 
 ## How Breaker Blocks Form
 
-### Bearish Breaker (from failed Bullish OB)
-1. Bullish OB forms (last bearish candle before up move)
-2. Price initially uses it as support (respects it once)
-3. Price then breaks DOWN through the OB aggressively
-4. The failed bullish OB is now a **Bearish Breaker Block**
-5. When price retraces UP to this level — SELL opportunity
+```
+Bullish Breaker Block:
+1. Bearish Order Block exists (last green candle before drop)
+2. Price drops, creating lower lows
+3. Then price REVERSES and breaks ABOVE the bearish OB
+4. The broken bearish OB = Bullish Breaker Block
+5. Price returns to test this zone as SUPPORT
+6. Entry: Long at the Breaker Block retest
 
-### Bullish Breaker (from failed Bearish OB)
-1. Bearish OB forms (last bullish candle before down move)
-2. Price initially uses it as resistance (respects it once)
-3. Price then breaks UP through the OB aggressively
-4. The failed bearish OB is now a **Bullish Breaker Block**
-5. When price retraces DOWN to this level — BUY opportunity
-
----
-
-## Why Breakers Work
-
-1. **Trapped traders** — Traders who entered at the original OB are now underwater
-2. **Breakeven exits** — When price returns to the breaker, trapped traders exit
-3. **Their exits fuel your entry** — Their selling (at a bullish breaker) provides YOUR buy liquidity
-4. **Institutional logic** — Smart money uses breakers as re-entry points
+Bearish Breaker Block:
+1. Bullish Order Block exists (last red candle before rally)
+2. Price rallies, creating higher highs
+3. Then price REVERSES and breaks BELOW the bullish OB
+4. The broken bullish OB = Bearish Breaker Block
+5. Price returns to test this zone as RESISTANCE
+6. Entry: Short at the Breaker Block retest
+```
 
 ---
 
-## Real Example: Gold Bearish Breaker
+## Identification Rules
 
-- **Bullish OB** at 2,035-2,040 was acting as support
-- Buyers entered long at 2,037 expecting bounce
-- **Price breaks through** 2,035 with displacement (OB fails)
-- Price drops to 2,015, then retraces
-- **Bearish Breaker** at 2,035-2,040 (now resistance)
-- **Entry:** Sell at 2,037 (breaker level)
-- **SL:** 2,042 | **TP:** 2,005
-- **R:R:** 1:6.4
-- Trapped buyers exit at breakeven → fuels the next leg down
+| Rule | Requirement |
+|------|------------|
+| Origin | Must be a valid Order Block first |
+| Break | OB must be completely violated (candle close beyond) |
+| Flip | Old OB now acts as opposite S/R |
+| Retest | Price returns to test the broken zone |
+| Confirmation | Rejection candle at the Breaker |
 
 ---
 
-## Breaker vs Mitigation Block
+## Breaker vs. Order Block
 
-| Feature | Breaker Block | Mitigation Block |
-|---------|--------------|------------------|
-| **OB Status** | Fully failed (broken through) | Partially filled |
-| **Role Change** | Support → Resistance (or vice versa) | Same direction, refined zone |
-| **Entry Direction** | OPPOSITE to original OB | SAME as original OB |
+| Feature | Order Block | Breaker Block |
+|---------|------------|---------------|
+| Status | Active, unbroken | Broken, flipped |
+| Direction | Same as original | Opposite to original |
+| Trade | With original direction | With new direction |
+| Reliability | Fresh = strongest | After clear break = strong |
 
 ---
 
-## Common Mistakes
+## Trading Breaker Blocks
 
-<Callout type="warning" title="Breaker Errors">
-
-**❌ Confusing with mitigation** — Breaker = OB fully failed. Mitigation = OB partially filled
-
-**❌ No displacement through the OB** — The break must be aggressive to create a valid breaker
-
-**❌ Trading breakers against HTF** — Breakers still need HTF alignment
-
-</Callout>
+```
+1. Identify Order Block that has been clearly broken
+2. Mark the broken OB zone = Breaker Block
+3. Wait for price to return to the Breaker zone
+4. Enter in the NEW direction (opposite to original OB)
+5. Stop: Beyond the Breaker Block zone
+6. Target: Next liquidity or structural level
+```
 
 ---
 
 ## Related Topics
 
-- [Order Blocks](/en/smc/order-blocks) — What becomes a breaker when it fails
-- [Mitigation Blocks](/en/smc/mitigation-blocks) — Partially filled OBs (different concept)
-- [CHOCH](/en/smc/choch) — Often occurs when OBs fail and become breakers
+- [Order Blocks](/en/smc/order-blocks) — What becomes a Breaker
+- [Mitigation Blocks](/en/smc/mitigation-blocks) — Partially tested OBs
+- [CHOCH](/en/smc/choch) — Structure break creates Breakers

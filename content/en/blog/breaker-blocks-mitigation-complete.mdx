@@ -1,0 +1,224 @@
+---
+title: "Breaker Blocks & Mitigation — Complete SMC Guide"
+description: "Master Breaker Blocks and Mitigation Blocks in Smart Money Concepts. Learn how failed Order Blocks transform into powerful trading opportunities."
+date: "2026-05-19"
+author: "Trading Docs"
+category: "SMC"
+tags: ["breaker-blocks", "mitigation", "smc", "order-blocks", "advanced-setup"]
+readingTime: 22
+featured: true
+---
+
+## What Are Breaker Blocks?
+
+A **Breaker Block** is a failed Order Block that gets violated and then acts as support/resistance from the opposite direction. When an Order Block fails (price closes through it with displacement), it doesn't become worthless — it transforms into a Breaker Block.
+
+<Callout type="info" title="The Transformation">
+Order Block FAILS → Becomes Breaker Block → Now works from the OPPOSITE direction. This is one of the most powerful concepts in SMC because it shows you exactly where institutions shifted their positions.
+</Callout>
+
+---
+
+## Why Do Breaker Blocks Form?
+
+The logic behind Breaker Blocks is rooted in institutional order flow:
+
+1. **Institutions create an Order Block** — They place initial orders, pushing price in one direction
+2. **Price moves as expected** — Other traders join the move
+3. **Counter-institutions step in** — Bigger players or opposing flow overwhelms the original OB
+4. **The OB gets violated** — Price closes through the OB with displacement
+5. **Original orders are now underwater** — The institutions who created the OB are now in losing positions
+6. **Price returns to the broken OB** — When price comes back, those underwater traders close at breakeven or small loss
+7. **Their closing creates reaction** — This exit order flow causes price to bounce off the Breaker Block
+
+---
+
+## Identifying Breaker Blocks
+
+### Bullish Breaker Block:
+
+```
+Step 1: Bearish OB forms (last green candle before drop)
+Step 2: Price drops, then REVERSES and breaks ABOVE the Bearish OB
+Step 3: The violated Bearish OB = NOW a Bullish Breaker Block
+Step 4: When price returns to this zone, it acts as SUPPORT
+
+    Price breaks above OB ↑
+    ─────────────────────
+    │  Former Bearish OB  │  ← Now Bullish Breaker (support)
+    ─────────────────────
+    Price dropped from here initially
+```
+
+### Bearish Breaker Block:
+
+```
+Step 1: Bullish OB forms (last red candle before rally)
+Step 2: Price rallies, then REVERSES and breaks BELOW the Bullish OB
+Step 3: The violated Bullish OB = NOW a Bearish Breaker Block
+Step 4: When price returns to this zone, it acts as RESISTANCE
+
+    Price initially rallied from here
+    ─────────────────────
+    │  Former Bullish OB  │  ← Now Bearish Breaker (resistance)
+    ─────────────────────
+    Price breaks below OB ↓
+```
+
+---
+
+## Breaker Block Validation Criteria
+
+Not every failed OB becomes a valid Breaker Block. Check these criteria:
+
+| Criteria | Required | Why |
+|----------|----------|-----|
+| **Displacement through OB** | ✅ Yes | Candle body must close through, not just wick |
+| **FVG created during break** | ✅ Preferred | Shows institutional commitment to the new direction |
+| **Trend alignment** | ✅ Yes | Breaker must align with HTF direction |
+| **Premium/Discount** | ✅ Yes | Bullish Breaker in discount, Bearish in premium |
+| **First touch** | ✅ Preferred | First retest is strongest |
+
+---
+
+## What Are Mitigation Blocks?
+
+A **Mitigation Block** is the zone where institutions return to "mitigate" (close out) their losing positions from a previous failed move. It's similar to a Breaker Block but specifically refers to the zone where trapped traders exit.
+
+### Key Difference:
+- **Breaker Block** = The failed OB zone itself (structural)
+- **Mitigation Block** = The specific area where institutions will close losing trades (functional)
+
+In practice, many traders use these terms interchangeably, but understanding the nuance helps with precision:
+
+```
+Original move creates OB at Zone A
+↓
+Price violates Zone A (OB fails)
+↓
+Zone A becomes Breaker/Mitigation Block
+↓
+When price RETURNS to Zone A:
+  - Trapped longs EXIT (mitigation) = selling pressure
+  - New shorts ENTER (breaker reaction) = more selling
+  - Combined effect = strong rejection from the zone
+```
+
+---
+
+## Trading Strategy: Breaker Block Entries
+
+### Step-by-Step Process:
+
+1. **Identify a valid Order Block on HTF (4H/1H)**
+2. **Wait for the OB to be VIOLATED** — Price must close through it with a strong candle
+3. **Mark the violated OB as a Breaker Block**
+4. **Confirm direction** — The break direction is your new bias
+5. **Wait for price to retrace** back to the Breaker Block zone
+6. **Enter on LTF confirmation** — 15M/5M CHOCH at the Breaker zone
+7. **Stop loss** — Beyond the Breaker Block zone (the far side)
+8. **Target** — Next liquidity pool in the direction of the break
+
+### Entry Refinement on Lower Timeframe:
+
+When price approaches the Breaker Block:
+1. Drop to 15M or 5M chart
+2. Wait for a lower-timeframe CHOCH/MSS confirming the Breaker reaction
+3. Enter at the LTF OB created during the CHOCH
+4. This gives you a much tighter stop and better R:R
+
+---
+
+## Real Trade Examples
+
+### Trade 1: EUR/USD Bullish Breaker (4H)
+
+**Context:** Daily uptrend, 4H pullback violated a Bearish OB
+
+1. **4H Bearish OB** at 1.0880-1.0895 (last green candle before the drop)
+2. Price dropped to 1.0820, then reversed with strong displacement
+3. **OB violated** — 4H candle closed above 1.0895 with an FVG
+4. **Breaker Block marked** at 1.0880-1.0895 (now bullish support)
+5. Price pulled back to 1.0888 (middle of Breaker)
+6. **15M bullish CHOCH** at the Breaker zone
+7. **Entry:** 1.0885 | **Stop:** 1.0870 (15 pips) | **Target:** 1.0960 (75 pips)
+8. **Result:** TP hit → **+75 pips, 5.0R** ✅
+
+### Trade 2: Gold Bearish Breaker (1H)
+
+**Context:** Gold failed to hold above $2,450, previous Bullish OB violated
+
+1. **1H Bullish OB** at $2,435-$2,445 (last red candle before previous rally)
+2. Gold rallied to $2,480, then crashed back through $2,435 with displacement
+3. **OB violated** — 1H candle closed below $2,435 with massive FVG
+4. **Breaker Block marked** at $2,435-$2,445 (now bearish resistance)
+5. Price retraced up to $2,440 (into the Breaker zone)
+6. **5M bearish CHOCH** with rejection wick
+7. **Entry:** $2,441 | **Stop:** $2,448 ($7) | **Target:** $2,400 ($41)
+8. **Result:** TP hit → **+$41, 5.9R** ✅
+
+---
+
+## Mitigation Block Trading
+
+### When to Use Mitigation Blocks:
+
+Mitigation Blocks are particularly useful after:
+- **Failed breakouts** — Price breaks a level, traps traders, then reverses
+- **Liquidity sweeps** — Price sweeps above/below a level, creating trapped traders
+- **Trend reversals** — Major shifts where previous positions become underwater
+
+### Mitigation Block Strategy:
+
+1. Identify where traders got trapped (the failed move's origin)
+2. Wait for price to return to that zone
+3. Enter in the direction of the NEW trend when price reaches the mitigation zone
+4. Those trapped traders exiting add fuel to your trade direction
+
+---
+
+## Common Mistakes
+
+<Callout type="warning" title="Avoid These Breaker Block Errors">
+
+**❌ Trading every failed OB as a Breaker** — The failure must have displacement and ideally create an FVG. Weak violations don't create valid Breakers.
+
+**❌ Ignoring trend context** — A Bullish Breaker in a Daily downtrend is low probability. Always align with HTF.
+
+**❌ Entering without LTF confirmation** — Don't blindly limit order at the Breaker. Wait for price action confirmation on lower timeframes.
+
+**❌ Trading the 3rd+ touch** — Like Order Blocks, first touch of a Breaker is strongest. Multiple touches weaken it.
+
+**❌ Confusing with regular S/R** — Breaker Blocks have specific criteria (failed OB + displacement). Not every support/resistance flip is a Breaker.
+
+</Callout>
+
+---
+
+## Breaker vs Order Block: When to Use Which
+
+| Scenario | Use |
+|----------|-----|
+| Fresh OB, first touch, trend aligned | **Order Block** entry |
+| OB has been violated with displacement | **Breaker Block** entry (opposite direction) |
+| Previous move trapped traders | **Mitigation Block** entry |
+| Multiple confluences at same zone | **Highest probability** — combine all |
+
+---
+
+## Key Takeaways
+
+| Concept | Summary |
+|---------|---------|
+| **Breaker Block** | Failed Order Block that acts as S/R from opposite side |
+| **Formation** | OB violated with displacement + FVG |
+| **Bullish Breaker** | Former Bearish OB → now support |
+| **Bearish Breaker** | Former Bullish OB → now resistance |
+| **Mitigation Block** | Zone where trapped traders exit positions |
+| **Entry** | Wait for LTF confirmation at the Breaker zone |
+| **Best Context** | Aligned with HTF trend + in correct P&D zone |
+
+For the complete lesson, see [Breaker Blocks](/en/smc/breaker-blocks) and [Mitigation Blocks](/en/smc/mitigation-blocks) in our SMC curriculum.
+
+Happy trading! 📊
+

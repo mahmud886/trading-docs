@@ -1,51 +1,278 @@
 ---
-title: "Premium vs Discount Trading Guide — Trade with Value Zones"
-description: "Master premium and discount concepts to find high-probability order entries, align with market structure, and improve risk-reward using SMC principles."
+title: "Premium vs Discount Trading Guide — Complete Institutional Value Zone Framework"
+description: "Master premium and discount concepts to find high-probability entries, align with institutional order flow, and improve risk-reward. Includes OTE zones, Fibonacci integration, multi-timeframe analysis, and professional entry models."
 date: "2026-05-13"
 author: "Trading Docs"
 category: "SMC"
-tags: ["premium-discount", "p&d", "smc", "order-blocks"]
-readingTime: 8
-featured: false
+tags: ["premium-discount", "p&d", "smc", "order-blocks", "fibonacci", "institutional", "value-zones"]
+readingTime: 22
+featured: true
 ---
 
-## What is Premium and Discount?
+## What is Premium and Discount? — Institutional Foundation
 
-Premium and discount are context tools that tell you whether price is above (premium) or below (discount) a fair reference point — often the equilibrium (50% EQ) or a moving average.
+Premium and Discount are context tools that tell you whether price is above (Premium) or below (Discount) a fair reference point. This is **the most fundamental concept in institutional trading** — because Smart Money always **buys in Discount and sells in Premium**.
 
-- **Discount** = favorable buy area (value below fair price)
-- **Premium** = favorable sell area (value above fair price)
+- **Discount Zone** = Below fair value — favorable for buyers (cheap price)
+- **Premium Zone** = Above fair value — favorable for sellers (expensive price)
+- **Equilibrium (EQ)** = 50% level — fair value / middle point
 
-<Callout type="tip" title="Why it helps">
-Trading into discount/premium improves probability because you align entries with where institutional orders prefer to execute.
+```
+Price Range Visualization:
+
+100% ─────── Swing High (Extreme Premium)
+ 80% ─────── Premium Zone (Sell Here in Downtrend)
+ 70% ───────
+ 50% ─────── EQUILIBRIUM (EQ) ← Fair Value
+ 30% ───────
+ 20% ─────── Discount Zone (Buy Here in Uptrend)
+  0% ─────── Swing Low (Extreme Discount)
+```
+
+<Callout type="tip" title="Why This Works">
+Institutional traders never buy in Premium or sell in Discount. They always enter at value zones. If you want to trade like them, you must respect Premium/Discount alignment.
 </Callout>
 
+### Why Institutions Trade at Value Zones
+
+```
+Institutional Reality:
+- Bank wants to buy $500M EUR/USD
+- Current Price: 1.0900 (at Equilibrium)
+- Premium: 1.0950 (Too Expensive)
+- Discount: 1.0850 (Good Value)
+
+Strategy:
+- WAIT for Price to reach Discount (1.0850)
+- Or ENGINEER price down (Liquidity Sweep)
+- Buy at Discount = Better Average Entry = More Profit
+
+Retail traders who buy Premium provide exit liquidity for institutions.
+```
+
 ---
 
-## How to Use P&D with Order Blocks and FVGs
+## How to Calculate Premium/Discount
 
-1. Identify HTF bias
-2. Mark key POIs: OBs, FVGs, session highs/lows
-3. Ask whether the POI is in premium or discount relative to EQ or structure
-4. Prefer entries that align: buy in discount, sell in premium
+### Method 1: Fibonacci Tool (Most Popular)
+
+```
+Step 1: Identify last significant Swing Low
+Step 2: Identify last significant Swing High
+Step 3: Draw Fibonacci Tool (Low to High for Bullish)
+
+Key Levels:
+- 0% = Swing Low (Full Discount)
+- 50% = Equilibrium (EQ)
+- 100% = Swing High (Full Premium)
+
+Discount Zone: 0% - 50% (Below EQ)
+Premium Zone: 50% - 100% (Above EQ)
+
+Optimal Trade Entry (OTE): 62% - 79% Retracement
+Sweet Spot: 70.5% Level (ICT Favorite)
+```
+
+### Method 2: Manual 50% Calculation
+
+```
+EQ = (Swing High + Swing Low) ÷ 2
+
+Example:
+- Swing High: 1.0900
+- Swing Low: 1.0800
+- EQ (50%): 1.0850
+
+Above 1.0850 = Premium
+Below 1.0850 = Discount
+```
+
+### Method 3: Multiple Timeframe EQ
+
+```
+Weekly EQ: Broad Direction Context
+Daily EQ: Day Trading Direction
+4H EQ: Intraday Bias
+
+Rule:
+- Weekly Discount + Daily Discount = Strongest Buy Zone
+- Weekly Premium + Daily Premium = Strongest Sell Zone
+- Conflicting TF P&D = Lower Probability (Skip)
+```
 
 ---
 
-## Example
+## Premium/Discount with Order Blocks
 
-- HTF bias: bullish
-- OB lies below current price (discount) — higher probability for buys on retrace
-- If OB is in premium, skip or treat as contrarian with smaller size
+### The Golden Rule
+
+```
+✅ HIGH PROBABILITY:
+- Bullish OB in DISCOUNT → BUY ✓
+- Bearish OB in PREMIUM → SELL ✓
+
+❌ LOW PROBABILITY:
+- Bullish OB in PREMIUM → SKIP ✗
+- Bearish OB in DISCOUNT → SKIP ✗
+
+Why: OB in correct zone = aligned with institutional logic
+Even valid OBs can fail in the wrong zone.
+```
+
+### Practical Example
+
+```
+Bullish Market (4H Uptrend):
+- Swing Low: 1.0750, Swing High: 1.0900
+- EQ: 1.0825
+
+OBs Found:
+- OB #1: 1.0780-1.0790 (Discount ✓) → TRADE
+- OB #2: 1.0810-1.0820 (Discount ✓) → TRADE
+- OB #3: 1.0860-1.0870 (Premium ✗) → SKIP
+
+Entry at OB #2 with Stop Below, Target New High
+```
 
 ---
 
-## Pitfalls
+## Optimal Trade Entry (OTE): The Sweet Spot
 
-<Callout type="warning" title="Avoid These Mistakes">
+### OTE Zone (62% - 79% Retracement)
 
-**1. Using P&D in isolation** — Must combine with structure and liquidity
+```
+Why 62-79%?
 
-**2. Rigidly using 50% EQ** — Use it as a guide, not a strict rule
+Statistical Edge:
+- Entries at 50% EQ: ~55% Win Rate
+- Entries at 62-79% OTE: ~62-68% Win Rate
+- Entries at 80%+: Higher WR but often missed
+
+The 70.5% Level = ICT Sweet Spot
+- Best balance of hit rate vs win rate
+- Where institutions prefer to fill orders
+```
+
+### Perfect Setup: OTE + OB + FVG
+
+```
+Maximum Probability When:
+1. Price in Discount (Below EQ) ✓
+2. OB in OTE Zone (62-79%) ✓
+3. FVG Within OB ✓
+4. Liquidity Swept Before ✓
+5. LTF CHOCH Confirmation ✓
+
+Expected Win Rate: 70-80%
+Expected R:R: 1:3 to 1:5
+```
+
+---
+
+## Multi-Timeframe Premium/Discount
+
+### HTF → LTF Alignment
+
+```
+STRONG LONG:
+Weekly Discount + Daily Discount + 4H BOS Up + OB in Discount
+= Maximum Bullish Confluence
+
+STRONG SHORT:
+Weekly Premium + Daily Premium + 4H BOS Down + OB in Premium
+= Maximum Bearish Confluence
+
+CONFLICTING (Skip):
+Weekly Discount + Daily Premium + No Clear 4H Direction
+= Wait for alignment
+```
+
+### Workflow
+
+```
+1. Weekly: Where is price? → Sets weekly bias
+2. Daily: P&D zone → Confirms direction
+3. 4H: Structure + POIs → Identifies entries
+4. 15M/5M: LTF Confirmation → Executes with tight stop
+```
+
+---
+
+## P&D with Liquidity
+
+### Complete Model
+
+```
+Bullish (Discount Buy):
+1. Price in Weekly/Daily Discount ✓
+2. SSL Below = Sweep Target
+3. Price Sweeps SSL → Deep Discount
+4. OB/FVG Created After Sweep
+5. Enter at OB/FVG
+6. Target: BSL Above (Premium Zone)
+
+Bearish (Premium Sell):
+1. Price in Weekly/Daily Premium ✓
+2. BSL Above = Sweep Target
+3. Price Sweeps BSL → Extreme Premium
+4. OB/FVG Created After Sweep
+5. Enter at OB/FVG
+6. Target: SSL Below (Discount Zone)
+```
+
+---
+
+## Real-World Examples
+
+### Example 1: EUR/USD Long in Discount
+
+```
+- Weekly: Bullish, price in Discount
+- Swing: 1.0750 (Low) to 1.0950 (High)
+- EQ: 1.0850
+- 4H OB: 1.0790-1.0805 (Deep Discount ✓)
+- Equal Lows below at 1.0780 (SSL)
+
+Execution:
+- Price sweeps 1.0777 (SSL taken)
+- 15M Bullish CHOCH
+- Entry: 1.0798, Stop: 1.0772 (26 pips)
+- Target: 1.0900+ (100+ pips, R:R 1:4)
+```
+
+### Example 2: Gold Short in Premium
+
+```
+- Daily: Bearish after failed BSL
+- Swing: $2,380 (Low) to $2,450 (High)
+- EQ: $2,415
+- 4H Bearish OB: $2,435-$2,442 (Premium ✓)
+- BSL above at $2,445
+
+Execution:
+- Price sweeps $2,445
+- 15M Bearish CHOCH
+- Entry: $2,440, Stop: $2,448 ($8)
+- Target: $2,400 ($40, R:R 1:5)
+```
+
+---
+
+## Common Mistakes
+
+<Callout type="warning" title="Avoid These">
+
+**1. Using P&D in isolation** — Must combine with structure and liquidity.
+
+**2. Rigidly treating 50% EQ** — It's a guide, not a wall. Price can react at 48%.
+
+**3. Wrong timeframe** — 5M P&D is meaningless against 4H direction.
+
+**4. Blindly buying Discount** — Confirmation required. Discount alone ≠ trade signal.
+
+**5. Chasing missed OTE** — If price doesn't reach your zone, SKIP. Don't chase.
+
+**6. Ignoring trend direction** — In a downtrend, "Discount" means "could go lower." P&D only works WITH the trend.
 
 </Callout>
 
@@ -53,9 +280,15 @@ Trading into discount/premium improves probability because you align entries wit
 
 ## Key Takeaways
 
-- Premium/Discount gives context to POIs
-- Use it with OBs, FVGs, and structure for higher probability trades
-- Prefer buying in discount and selling in premium within the HTF bias
+| Concept         | Details                                |
+|-----------------|----------------------------------------|
+| **Discount**    | Below 50% EQ — Buy zone in uptrend     |
+| **Premium**     | Above 50% EQ — Sell zone in downtrend  |
+| **OTE**         | 62-79% retracement — optimal entry     |
+| **Sweet Spot**  | 70.5% level                            |
+| **Best Setup**  | OB + FVG + OTE + Correct P&D + Sweep   |
+| **Multi-TF**    | All TFs should agree on direction      |
+| **Golden Rule** | Never buy Premium, never sell Discount |
+| **Patience**    | Wait for price to come to YOU          |
 
 See the lesson: [Premium/Discount](/en/smc/premium-discount).
-

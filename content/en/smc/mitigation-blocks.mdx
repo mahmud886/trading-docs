@@ -1,72 +1,71 @@
 ---
-title: "SMC Mitigation Blocks"
-description: "Master mitigation blocks in SMC — partially filled Order Blocks that are revisited for a second time. Learn identification, entry rules, and real examples."
-level: advanced
-order: 9
-lastUpdated: "2026-05-12"
+title: "Mitigation Blocks in SMC — Complete Guide"
+description: "Master Mitigation Blocks — Order Blocks that have been partially filled/tested. Learn when they still hold value and when to avoid them."
+level: intermediate
+order: 8
+lastUpdated: "2026-06-10"
 ---
 
 ## What is a Mitigation Block?
 
-A Mitigation Block is an **Order Block that was partially filled** on its first revisit but not fully traded through. When price returns a second time, the REMAINING unfilled portion of the OB acts as a refined entry zone — the "mitigation" zone.
+A Mitigation Block is an **Order Block that has already been tested/touched by price** but didn't fully break. When price returns to an OB and reacts (partially fills), the OB becomes "mitigated" — its remaining power is reduced.
 
-<Callout type="info" title="Second Chance Entry">
-Think of a mitigation block as a "second chance" entry at an OB that was already tested once. The unfilled portion still holds institutional interest.
+<Callout type="warning" title="Mitigated = Weaker">
+Fresh, unmitigated Order Blocks are STRONGEST. Each time price returns and reacts, the OB loses significance. After 2-3 mitigations, the level is likely exhausted.
 </Callout>
 
 ---
 
-## How Mitigation Blocks Form
+## Fresh vs. Mitigated
 
-### The Process
-1. **OB forms** — Last opposing candle before displacement
-2. **First Return** — Price retraces to the OB, enters partially, then moves away
-3. **The OB is NOT fully filled** — Price only wicked into 50-70% of the OB
-4. **Second Return** — Price comes back again to the remaining unfilled portion
-5. **This unfilled portion = Mitigation Block**
-
----
-
-## Mitigation Block vs Order Block
-
-| Feature | Order Block | Mitigation Block |
-|---------|------------|------------------|
-| **Touch Count** | First touch (fresh) | Second touch (mitigated) |
-| **Strength** | Strongest | Slightly weaker |
-| **Stop Width** | Full OB range | Only unfilled portion |
-| **R:R Potential** | Standard | Tighter stop = better R:R |
+| Status | Description | Trade Quality |
+|--------|------------|---------------|
+| **Fresh (Unmitigated)** | Never been retested | Highest quality |
+| **1x Mitigated** | Tested once, held | Still tradeable |
+| **2x Mitigated** | Tested twice | Weak — caution |
+| **3x+ Mitigated** | Tested 3+ times | Avoid — likely to break |
 
 ---
 
-## Real Example: EUR/USD Mitigation Block
+## How Mitigation Works
 
-- **15M Bullish OB** at 1.0845 - 1.0855
-- **First return:** Price dips to 1.0851 then rallies (OB partially filled)
-- **Second return:** Price dips to 1.0847 (the unfilled lower portion)
-- **Mitigation Block:** 1.0845 - 1.0847 (remaining portion)
-- **Entry:** Buy at 1.0847
-- **SL:** 1.0842 (only 5 pips — much tighter than full OB)
-- **TP:** 1.0900 (BSL target)
-- **R:R:** 1:10.6
+```
+1. Bullish OB forms at 1.1000 (fresh)
+2. Price rallies, then pulls back to OB
+3. Price touches OB, bounces = 1st mitigation
+4. Some institutional orders filled, but not all
+5. Price rallies again, pulls back to OB again
+6. 2nd touch = 2nd mitigation (weaker now)
+7. Eventually: OB breaks (all orders filled/exhausted)
+
+Rule: Trade the FIRST touch. Avoid 3rd+ touch.
+```
 
 ---
 
-## Common Mistakes
+## Mitigation vs. Breaker
 
-<Callout type="warning" title="Mitigation Block Errors">
+| Feature | Mitigation Block | Breaker Block |
+|---------|-----------------|---------------|
+| OB status | Tested but holding | Completely broken |
+| Direction | Same as original | Flipped (opposite) |
+| Trade | Same direction (weakening) | New direction |
+| What happened | Price touched but respected | Price violated completely |
 
-**❌ Treating all second touches as mitigation** — The OB must have been only PARTIALLY filled first time
+---
 
-**❌ Using weak OBs** — Only valid OBs (with displacement) create valid mitigation blocks
+## Trading Rules
 
-**❌ No HTF alignment** — Mitigation blocks still need HTF bias confirmation
-
-</Callout>
+1. **Always prefer fresh OBs** over mitigated ones
+2. **1st mitigation** = still valid if reaction was strong
+3. **2nd mitigation** = only trade with strong confluence
+4. **3+ mitigations** = avoid entirely
+5. **If price barely reacts** at mitigation = OB is dying
 
 ---
 
 ## Related Topics
 
-- [Order Blocks](/en/smc/order-blocks) — The foundation of mitigation blocks
-- [Breaker Blocks](/en/smc/breaker-blocks) — Failed OBs (different concept)
-- [Fair Value Gap](/en/smc/fair-value-gap) — FVGs within mitigation zones
+- [Order Blocks](/en/smc/order-blocks) — Fresh OB entries
+- [Breaker Blocks](/en/smc/breaker-blocks) — When OBs break
+- [Fair Value Gap](/en/smc/fair-value-gap) — FVG within OBs

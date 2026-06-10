@@ -1,6 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import { CopyButton } from "./copy-button";
 import { Callout } from "./callout";
+import { ICTGlossaryCards } from "./ict-glossary-cards";
 import { SessionTimeline } from "@/components/trading/session-timeline";
 import { WorldMarketClock } from "@/components/trading/world-market-clock";
 import { SessionCardsGrid } from "@/components/trading/session-card";
@@ -119,6 +120,7 @@ export function createMdxComponents(): MDXComponents {
     <img className="mt-6 rounded-xl border border-border" alt="" loading="lazy" {...props} />
     ),
     Callout,
+    ICTGlossaryCards,
     SessionTimeline,
     WorldMarketClock,
     SessionCardsGrid,

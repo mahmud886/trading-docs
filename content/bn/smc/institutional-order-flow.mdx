@@ -1,52 +1,78 @@
 ---
-title: "SMC ইনস্টিটিউশনাল অর্ডার ফ্লো"
-description: "ইনস্টিটিউশনাল অর্ডার ফ্লো কীভাবে মার্কেট চালায় বুঝুন। প্রাইস অ্যাকশন ও SMC কনসেপ্ট দিয়ে ব্যাংক ও হেজ ফান্ডের ফুটপ্রিন্ট পড়ুন।"
+title: "SMC-তে Institutional Order Flow — সম্পূর্ণ গাইড"
+description: "Bank ও Fund কীভাবে Execute করে বুঝুন। Time ও Price Delivery, Weekly/Daily Bias এবং Institutional Footprint চিহ্নিত করা শিখুন।"
 level: advanced
 order: 18
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-10"
 ---
 
-## ইনস্টিটিউশনাল অর্ডার ফ্লো কী?
+## Institutional Order Flow বোঝা
 
-ইনস্টিটিউশনাল অর্ডার ফ্লো হলো ব্যাংক, হেজ ফান্ড ও বড় আর্থিক প্রতিষ্ঠানের **সামগ্রিক কেনা-বেচা কার্যক্রম**। SMC তে আমরা প্রাইস অ্যাকশন থেকে এই ফ্লো পড়ি — প্রতিটি ক্যান্ডেল ইনস্টিটিউশন কী করছে তার গল্প বলে।
-
----
-
-## ইনস্টিটিউশনাল কার্যক্রমের লক্ষণ
-
-### ১. ডিসপ্লেসমেন্ট
-- ন্যূনতম উইক সহ বড় বডির ক্যান্ডেল
-- একই দিকে একাধিক ক্যান্ডেল
-- FVG ও OB তৈরি করে
-- ইনস্টিটিউশন মূলধন কমিট করছে
-
-### ২. অ্যাবসোরপশন
-- প্রাইস একটি লেভেল বারবার টেস্ট করে ভাঙে না
-- শক্তিশালী রিজেকশন (লম্বা উইক)
-- ইনস্টিটিউশন বিপরীত অর্ডার শোষণ করছে
-
-### ৩. Accumulation প্যাটার্ন
-- কমতে থাকা ভোলাটিলিটি সহ টাইট রেঞ্জ
-- রেঞ্জের দুই দিকে স্টপ হান্ট
-
-### ৪. Distribution প্যাটার্ন
-- নতুন হাই তৈরি হচ্ছে কিন্তু মোমেন্টাম কমছে
-- আপসুইংয়ে ভলিউম কমছে, ডাউনসুইংয়ে বাড়ছে
+Institutional Order Flow হলো **বড় Player (Bank, Hedge Fund, Central Bank) কীভাবে Order Execute করে** এবং তাদের Activity কীভাবে Price Delivery-তে পূর্বানুমানযোগ্য Pattern তৈরি করে তার অধ্যয়ন।
 
 ---
 
-## ইনস্টিটিউশনাল ফ্লোর সাথে অ্যালাইন করা
+## Institution কীভাবে Execute করে
 
-1. **HTF দিক চিহ্নিত** — ডেইলি/উইকলিতে ইনস্টিটিউশন কী করছে?
-2. **ডিসপ্লেসমেন্ট খুঁজুন** — সাম্প্রতিক শক্তিশালী মুভ কোথায়?
-3. **রিট্রেসমেন্ট অপেক্ষা** — ডিসপ্লেসমেন্টের পর FVG পূরণে রিট্রেস
-4. **ইনস্টিটিউশনাল টার্গেট লক্ষ্য** — পরবর্তী লিকুইডিটি পুল কোথায়?
+| বিষয় | Retail | Institutional |
+|--------|--------|---------------|
+| Size | ছোট (0.01-1 Lot) | বিশাল (100-10,000+ Lot) |
+| Fill | তাৎক্ষণিক | সময়ের সাথে Liquidity প্রয়োজন |
+| Impact | কিছু না | Market Move করে |
+| Strategy | Price Chase | Liquidity Engineer, তারপর Fill |
+| Timeframe | মিনিট | দিন থেকে সপ্তাহ |
+
+---
+
+## Time ও Price Delivery
+
+```
+Institution পূর্বানুমানযোগ্য পদ্ধতিতে Price Deliver করে:
+
+1. WEEKLY Candle সামগ্রিক Intention দেখায়
+   - Bullish Weekly = Price High Target করে
+   - Bearish Weekly = Price Low Target করে
+
+2. DAILY Candle Delivery Refine করে
+   - কোন দিন Price Push করে?
+   - কোন দিন Retrace করে?
+   - Tuesday/Wednesday = সর্বোচ্চ Probability Move
+
+3. SESSION Timing Entry নির্ধারণ করে
+   - London শুরু করে, NY Continue করে
+   - Kill Zone = Institutional Activity
+```
+
+---
+
+## Institutional Footprint চিহ্নিত
+
+- **Displacement:** বড় Body Candle = Institutional Commitment
+- **Fair Value Gap:** Institutional Urgency-তে তৈরি
+- **Order Block:** Institutional Move-এর আগে শেষ Opposing Candle
+- **Liquidity Sweep:** Institutional Order Fill পদ্ধতি
+- **Time Alignment:** Kill Zone-এ Move
+
+---
+
+## Weekly Bias নির্ধারণ
+
+```
+1. গত সপ্তাহ Range-এর তুলনায় কোথায় Close?
+   - Upper 25% = Bullish Continuation সম্ভব
+   - Lower 25% = Bearish Continuation সম্ভব
+   - Middle 50% = অন্যান্য Cue খুঁজুন
+
+2. Draw on Liquidity কোথায়?
+   - Unswept Weekly High/Low = Target
+   - Previous Week H/L = তাৎক্ষণিক Target
+```
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Order Blocks](/bn/smc/order-blocks) — ইনস্টিটিউশনাল এন্ট্রি ফুটপ্রিন্ট
-- [Accumulation](/bn/smc/accumulation) — পজিশন তৈরি
-- [Distribution](/bn/smc/distribution) — পজিশন বিক্রি
-- [Wyckoff সম্পর্ক](/bn/smc/wyckoff-relation) — ক্লাসিক্যাল অর্ডার ফ্লো থিওরি
+- [Kill Zones](/bn/smc/kill-zones) — কখন Institution Active
+- [Manipulation](/bn/smc/manipulation) — কীভাবে Fill Engineer করে
+- [Premium ও Discount](/bn/smc/premium-discount) — কোথায় Buy/Sell করে
+- [SMT Divergence](/bn/smc/smt-divergence) — Institutional Clue

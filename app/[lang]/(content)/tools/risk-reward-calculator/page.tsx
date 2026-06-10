@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 export default function RiskRewardCalculator() {
   const pathname = usePathname();
   const lang = pathname.split("/")[1] || "en";
+  const isBn = lang === "bn";
 
   const [entryPrice, setEntryPrice] = useState<number>(1.0900);
   const [stopLossPrice, setStopLossPrice] = useState<number>(1.0850);
@@ -45,13 +46,17 @@ export default function RiskRewardCalculator() {
         className="flex items-center gap-2 text-muted-foreground hover:text-accent-green mb-6 transition-colors"
       >
         <ArrowLeft size={18} />
-        Back to Tools
+        {isBn ? "টুলসে ফিরে যান" : "Back to Tools"}
       </Link>
 
       <div className="bg-card border border-border rounded-2xl backdrop-blur-xl p-8">
-        <h1 className="text-3xl font-bold text-foreground">Risk-Reward Ratio Calculator</h1>
+        <h1 className="text-3xl font-bold text-foreground">
+          {isBn ? "রিস্ক-রিওয়ার্ড রেশিও ক্যালকুলেটর" : "Risk-Reward Ratio Calculator"}
+        </h1>
         <p className="text-muted-foreground mt-2">
-          Analyze your trade setup and determine break-even win rate requirements
+          {isBn
+            ? "আপনার ট্রেড সেটআপ বিশ্লেষণ করুন এবং ব্রেক-ইভেন উইন রেট নির্ণয় করুন — ব্যাংকরা সর্বনিম্ন ১:৩ R:R প্রয়োজন করে"
+            : "Analyze your trade setup and determine break-even win rate — banks require minimum 1:3 R:R for execution"}
         </p>
 
         <div className="mt-8 space-y-6">

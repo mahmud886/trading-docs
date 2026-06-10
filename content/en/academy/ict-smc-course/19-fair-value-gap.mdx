@@ -1,0 +1,115 @@
+---
+title: "Fair Value Gap (FVG)"
+description: "Master Fair Value Gaps — 3-candle price imbalances that act as magnets for price. Learn Consequent Encroachment, Inversion FVG, and institutional FVG trading."
+order: 19
+level: intermediate
+lastUpdated: "2026-06-09"
+---
+
+
+### Definition
+
+A Fair Value Gap (FVG) is a **3-candle price imbalance** where the wicks of Candle 1 and Candle 3 do NOT overlap, leaving a gap created by Candle 2's displacement. This gap represents inefficient price delivery — an area where price moved too aggressively in one direction, and the algorithm will likely return to "fill" or "rebalance" this imbalance.
+
+- **Bullish FVG (BISI):** Gap between Candle 1's HIGH and Candle 3's LOW → Price returns DOWN to fill (Buy zone)
+- **Bearish FVG (SIBI):** Gap between Candle 1's LOW and Candle 3's HIGH → Price returns UP to fill (Sell zone)
+
+**Consequent Encroachment (CE):** The 50% midpoint of any FVG — the optimal entry point within the gap.
+
+### Why It Matters
+
+- FVGs are your PRECISION entry tool — tighter than Order Blocks
+- The algorithm is programmed to return and fill imbalances
+- FVGs created by displacement = Institutional footprints
+- CE (50% of FVG) provides the highest probability entry within the gap
+- FVGs confirm the validity of Order Blocks (OB + FVG overlap = best entry)
+
+### How It Works
+
+**Bullish FVG Formation:**
+1. Candle 1: Any candle (note its HIGH)
+2. Candle 2: Strong BULLISH displacement candle (creates the gap)
+3. Candle 3: Any candle (note its LOW)
+4. Gap = Candle 1 HIGH to Candle 3 LOW (if C3 Low > C1 High = FVG exists)
+5. Price returns to this gap = Buy opportunity
+
+**Bearish FVG Formation:**
+1. Candle 1: Any candle (note its LOW)
+2. Candle 2: Strong BEARISH displacement candle
+3. Candle 3: Any candle (note its HIGH)
+4. Gap = Candle 1 LOW to Candle 3 HIGH (if C3 High < C1 Low = FVG exists)
+5. Price returns to this gap = Sell opportunity
+
+**FVG Entry Methods:**
+| Method | Entry Point | Risk Level |
+|--------|------------|------------|
+| Full gap fill | Bottom of Bullish FVG / Top of Bearish FVG | Conservative |
+| CE (50%) | Midpoint of FVG | Optimal (recommended) |
+| Partial fill | First touch of FVG edge | Aggressive |
+
+### Institutional Logic
+
+**Why FVGs exist:**
+- Institutional displacement is SO aggressive that price cannot deliver efficiently
+- The algorithm MUST return to fill these gaps for efficient price delivery
+- Unfilled FVGs act as magnets — price is drawn to them
+- Filled FVGs lose their magnetic pull (already rebalanced)
+
+**FVG as entry vehicle:**
+- Smart Money creates FVGs during displacement
+- They EXPECT price to return to the FVG before continuing
+- The FVG is where they place their limit orders for re-entry
+- CE (50%) is the mathematical sweet spot for institutional fills
+
+### Trading Application
+
+**Trading Bullish FVG:**
+1. Identify displacement UP that creates a gap (C1 High < C3 Low)
+2. Mark the FVG zone (C1 High to C3 Low)
+3. Calculate CE: (C1 High + C3 Low) / 2
+4. Set Buy Limit at CE
+5. Stop Loss: Below C1 High (or below the OB if one exists beneath FVG)
+6. Target: Next BSL above
+
+**FVG Quality Assessment:**
+- FVG created during Kill Zone = High quality
+- FVG that creates BOS/CHOCH = Institutional
+- FVG within OTE zone of a larger move = Best context
+- FVG on HTF (4H, Daily) = More significant than LTF FVG
+- Multiple FVGs stacked = Price likely fills the deepest one
+
+**Inversion FVG:**
+- When a Bullish FVG gets fully traded through (becomes resistance) = Bearish signal
+- When a Bearish FVG gets fully traded through (becomes support) = Bullish signal
+- Inverted FVGs provide re-entry opportunities in the NEW direction
+
+### Common Mistakes
+
+- ❌ Trading every FVG — Only trade FVGs with HTF alignment and proper context
+- ❌ Entering at the edge instead of CE — CE gives better R:R
+- ❌ Not distinguishing institutional FVG from retail FVG — Must have displacement + structure break
+- ❌ Expecting all FVGs to fill — Some remain open (price is too strong to retrace)
+- ❌ Trading FVGs against the trend — Only trade FVGs in your bias direction
+
+### Advanced Notes
+
+- **BISI** (Buy-Side Imbalance, Sell-Side Inefficiency) = Bullish FVG
+- **SIBI** (Sell-Side Imbalance, Buy-Side Inefficiency) = Bearish FVG
+- **Consequent Encroachment** = 50% of FVG. If price trades THROUGH CE → FVG is likely to be fully filled
+- **Implied FVG** = When wicks DO slightly overlap but bodies don't — treated as FVG because body range was inefficient
+- **FVG as invalidation** = If price closes through the FULL FVG → Setup is invalid
+- **Time-based FVG** = FVGs created during Kill Zones are most reliable
+
+### Example
+
+**EUR/USD — Bullish FVG CE Entry:**
+
+1. **Context:** 4H Bullish. 15M shows displacement up creating FVG
+2. **FVG:** C1 High = 1.0885, C3 Low = 1.0895. Gap = 1.0885-1.0895
+3. **CE:** (1.0885 + 1.0895) / 2 = 1.0890
+4. **Entry:** Buy Limit at 1.0890 (CE)
+5. **Stop Loss:** 1.0882 (below FVG / below OB beneath)
+6. **Target:** 1.0940 (BSL above)
+7. **R:R:** 1:6.25, +50 pips on 8 pip risk
+
+---

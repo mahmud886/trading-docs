@@ -1,182 +1,168 @@
 ---
-title: "Order Types Explained"
-description: "Complete guide to different order types used in trading including market, limit, stop, and advanced orders"
-author: "Trading Academy"
-date: "2024-01-15"
+title: "Order Types Explained — Complete Guide"
+description: "Master all trading order types: Market, Limit, Stop, Stop-Limit, Trailing Stop, OCO, and advanced orders. Learn when and how to use each type effectively."
+level: beginner
+order: 19
+lastUpdated: "2026-06-10"
 ---
 
-## Order Types Explained
+## Understanding Order Types
 
-An order is an instruction to buy or sell a security. Understanding different order types is essential for executing your trading plan effectively.
+An order is an instruction to your broker to buy or sell an asset. Different order types give you control over **when**, **at what price**, and **under what conditions** your trade executes. Mastering order types is essential for precise trade execution.
 
-### Basic Order Types
+<Callout type="info" title="Why Orders Matter">
+The difference between a profitable and losing trade can come down to execution. Using the right order type means better entries, tighter risk management, and avoiding slippage during volatile conditions.
+</Callout>
 
-#### 1. **Market Order**
-A market order executes immediately at the current market price.
+---
 
-**Characteristics:**
-- Executed instantly
-- Guaranteed execution
-- Price not guaranteed (slippage possible)
-- Best for entering/exiting positions quickly
+## Basic Order Types
 
-**When to Use:**
-- Need to enter/exit immediately
-- During high volatility
-- When price is moving fast
-- Large position that needs quick execution
+### 1. Market Order
 
-**Example:**
-Buying 1 lot of EUR/USD at market price = execute immediately at current price
+Executes **immediately** at the best available price.
 
-#### 2. **Limit Order**
-A limit order specifies the maximum price you'll pay to buy or minimum price you'll accept to sell.
+| Aspect | Detail |
+|--------|--------|
+| Speed | Instant execution |
+| Price | Current market price (may slip) |
+| Guarantee | Execution guaranteed, price not guaranteed |
+| Best For | When you MUST enter/exit NOW |
+| Risk | Slippage during volatile conditions |
 
-**Characteristics:**
-- Not guaranteed to execute
-- Fills only at specified price or better
-- Useful for precise entry/exit points
-- Can sit unfilled if price doesn't reach level
+**Use When:** Closing a losing position, entering during fast breakouts, or when exact price matters less than being in the trade.
 
-**Buy Limit Order:**
-- Placed below current market price
-- Executes when price falls to or below limit price
-- Good for buying on dips
+### 2. Limit Order
 
-**Sell Limit Order:**
-- Placed above current market price
-- Executes when price rises to or above limit price
-- Good for taking profits at target levels
+Executes only at your **specified price or better**.
 
-**Example:**
-Buying EUR/USD at 1.0950 limit = execute only if price reaches 1.0950 or lower
+| Type | Description |
+|------|-------------|
+| **Buy Limit** | Buy at specified price or LOWER (below current price) |
+| **Sell Limit** | Sell at specified price or HIGHER (above current price) |
 
-#### 3. **Stop Order (Stop-Loss)**
-A stop order executes a market order when price reaches a specified level.
+**Use When:** You want a specific entry price, buying at support, selling at resistance, or taking profit.
 
-**Characteristics:**
-- Provides risk protection
-- Converts to market order at trigger price
-- Execution price may differ from stop price (slippage)
-- Essential for risk management
+### 3. Stop Order (Stop Market)
 
-**Stop-Loss Order:**
-- Below entry price for long positions
-- Above entry price for short positions
-- Prevents large losses
+Becomes a market order when price reaches your **trigger price**.
 
-**Trailing Stop:**
-- Automatically adjusts as price moves favorably
-- Locks in profits while allowing for price movement
-- Useful for trending markets
+| Type | Description |
+|------|-------------|
+| **Buy Stop** | Triggers buy when price rises ABOVE specified level |
+| **Sell Stop** | Triggers sell when price falls BELOW specified level |
 
-**Example:**
-Buy at 1.0950, place stop at 1.0920 = if price falls to 1.0920, sell immediately to limit losses
+**Use When:** Stop losses, breakout entries, or protecting profits.
 
-#### 4. **Stop-Limit Order**
-Combines stop order and limit order functionality.
+### 4. Stop-Limit Order
 
-**Characteristics:**
-- Triggers at stop price
-- Fills at limit price or better
-- Provides control but no execution guarantee
-- Two price points needed
+Becomes a limit order (not market) when price reaches the trigger level.
 
-**How It Works:**
-1. Set stop price (trigger)
-2. Set limit price (execution price)
-3. When price reaches stop, limit order activates
-4. Order fills only at limit price or better
+**Use When:** You want stop-loss protection but need price control. Risk: may not fill during gaps.
 
-**Example:**
-Buy stop-limit: stop at 1.1000, limit at 1.1005
-- Triggers when price touches 1.1000
-- Only executes at 1.1005 or lower
-- Won't execute if price jumps to 1.1010
+---
 
-### Advanced Order Types
+## Advanced Order Types
 
-#### 5. **One-Cancels-Other (OCO) Order**
-Two orders where execution of one automatically cancels the other.
+### 5. Trailing Stop
 
-**Use Case:**
-- Profit taking at resistance + stop loss below support
-- If price rises and hits profit target, stop loss cancels automatically
-- If price falls and hits stop loss, profit target cancels automatically
+A stop loss that **moves with price** to lock in profits.
 
-#### 6. **One-Triggers-Other (OTO) Order**
-Executing one order automatically triggers another order.
+```
+Example (Long position, 50-pip trailing stop):
+- Entry: 1.1000
+- Price moves to 1.1050 → Stop moves to 1.1000 (break even)
+- Price moves to 1.1100 → Stop moves to 1.1050 (+50 pips locked)
+- Price moves to 1.1150 → Stop moves to 1.1100 (+100 pips locked)
+- Price reverses to 1.1100 → CLOSED at +100 pips profit
+```
 
-**Use Case:**
-- Enter position with OTO order
-- Entry order triggers, automatically places stop loss and take profit
-- Ensures risk management automatically
+**Best For:** Trending markets where you want to ride the move but protect gains.
 
-#### 7. **Iceberg Order**
-A large order divided into smaller visible portions.
+### 6. OCO (One-Cancels-Other)
 
-**Characteristics:**
-- Only a portion visible to market
-- Rest hidden until visible portion fills
-- Useful for large position entries
-- Reduces market impact
+Two orders linked together — when one fills, the other is automatically cancelled.
 
-### Order Placement Best Practices
+**Use When:** Setting both a take profit AND stop loss, or placing entries above and below a consolidation.
 
-#### 1. **Set Stop Loss First**
-- Never trade without a stop loss
-- Place at logical levels based on support/resistance
-- Consider volatility when setting distance
+### 7. Take Profit (TP)
 
-#### 2. **Risk-Reward Ratio**
-- Target profit should be 2:1 or better
-- Example: Risk $100 to make $200 (2:1)
-- Improves long-term profitability
+Automatically closes your position at a specified profit level.
 
-#### 3. **Use Limit Orders for Entries**
-- More precise entry prices
-- Often get better fills
-- Risk missing the trade
-- Good for planned setups
+### 8. Stop Loss (SL)
 
-#### 4. **Use Market Orders for Exits**
-- Guarantee execution when hitting targets
-- Avoid leaving money on the table
-- Accept slight slippage risk
+Automatically closes your position at a specified loss level.
 
-#### 5. **Time in Force**
-Different duration options for orders:
-- **Day Order:** Cancels at end of trading day
-- **Good-Till-Canceled (GTC):** Remains until filled or canceled
-- **Immediate or Cancel (IOC):** Fills immediately or cancels
-- **Fill or Kill (FOK):** All or nothing, executes immediately
+---
 
-### Common Order Mistakes
+## Order Type Summary Table
 
-1. **No Stop Loss:** Never trade without one
-2. **Stop Too Close:** Gets hit by normal volatility
-3. **Huge Risk Per Trade:** Ruins account over time
-4. **Chasing Entries:** Market orders at bad prices
-5. **Moving Stops Against You:** Converts winners to losers
-6. **Not Using Limits on Targets:** Leaves profits on table
+| Order Type | Execution | Price Control | Best Use Case |
+|-----------|-----------|---------------|---------------|
+| Market | Immediate | None | Urgent entry/exit |
+| Limit | At price or better | Full | Planned entries at S/R |
+| Stop Market | At trigger → market | Trigger only | Stop losses, breakouts |
+| Stop-Limit | At trigger → limit | Full | Controlled stops |
+| Trailing Stop | Moves with price | Dynamic | Riding trends |
+| OCO | One triggers, other cancels | Both orders | SL + TP combo |
 
-### Order Management Checklist
+---
 
-- [ ] Stop loss placed immediately
-- [ ] Risk-reward ratio favorable (2:1+)
-- [ ] Position size appropriate
-- [ ] Orders placed at logical levels
-- [ ] Multiple timeframes confirmed
-- [ ] Trade aligned with current trend
+## Practical Examples
 
-## Summary
+### Scenario 1: Buying at Support
+```
+Current price: 1.1050
+Support level: 1.1000
+Plan: Buy at support
 
-Different order types serve different purposes:
-- **Market Orders:** Quick execution
-- **Limit Orders:** Precise pricing
-- **Stop Orders:** Risk control
-- **Stop-Limit:** Control with risk
-- **Advanced Orders:** Automation and strategy execution
+Order: Buy Limit at 1.1000
+Stop Loss: 1.0970 (30 pips below support)
+Take Profit: 1.1100 (100 pips above entry)
+R:R = 1:3.3
+```
 
-Master order types to execute your trading plan with precision and discipline.
+### Scenario 2: Breakout Entry
+```
+Current price: 1.1000
+Resistance: 1.1050
+Plan: Buy if price breaks above resistance
 
+Order: Buy Stop at 1.1055 (above resistance)
+Stop Loss: 1.1020 (below resistance)
+Take Profit: 1.1150 (measured move)
+R:R = 1:2.7
+```
+
+### Scenario 3: Protecting Profits
+```
+Entry: 1.1000 (Long)
+Current price: 1.1080 (+80 pips)
+Plan: Protect profits but stay in trade
+
+Option A: Move SL to 1.1050 (lock +50 pips)
+Option B: Set trailing stop at 30 pips
+Option C: Close 50%, trail rest
+```
+
+---
+
+## Common Mistakes
+
+| Mistake | Consequence | Solution |
+|---------|-------------|----------|
+| Market order in low liquidity | Massive slippage | Use limit orders instead |
+| No stop loss | Unlimited loss potential | ALWAYS set SL |
+| Stop too tight | Stopped out by noise | Give room based on ATR |
+| Limit too far from price | Never fills | Set realistic levels |
+| Moving stop loss further | Larger loss than planned | Accept original risk |
+
+---
+
+## Related Topics
+
+- [Bid, Ask & Spread](/en/academy/bid-ask-spread) — How orders fill at bid/ask
+- [Risk Management](/en/academy/risk-management) — Using stops effectively
+- [Position Sizing](/en/academy/position-sizing) — Calculate lot size with SL
+- [Trading Plan](/en/academy/trading-plan) — Order strategy in your plan
+- [Margin & Leverage](/en/academy/margin-leverage) — Margin and order types

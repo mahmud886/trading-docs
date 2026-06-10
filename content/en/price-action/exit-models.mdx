@@ -1,54 +1,73 @@
 ---
-title: "Price Action Exit Models"
-description: "Master exit strategies — when and how to close trades using Price Action signals. Learn trailing stops, partial profits, and target-based exits."
+title: "Price Action Exit Models — Complete Guide"
+description: "Master trade exits: fixed targets, trailing stops, structural exits, partial profits, and time-based exits for maximum profitability."
 level: intermediate
-order: 22
-lastUpdated: "2026-05-12"
+order: 28
+lastUpdated: "2026-06-10"
 ---
 
-## Why Exits Matter More Than Entries
+## Exit Strategy Matters
 
-A perfect entry with a poor exit = mediocre trade. Exit strategy determines your actual profit. Price Action provides clear exit signals.
-
----
-
-## Exit Models
-
-### Model 1: Target-Based Exit
-- Set fixed target at next key S/R level
-- Set and forget — purely mechanical
-- Best for: Day trades, news trades
-
-### Model 2: Trailing Stop
-- Move stop loss as price moves in your favor
-- Trail behind swing lows (buys) or swing highs (sells)
-- Best for: Trend-following, swing trades
-
-### Model 3: Partial Profit Taking
-1. TP1 at 1:2 R:R → move SL to breakeven, take 50%
-2. TP2 at 1:4 R:R → take 30% more
-3. Runner → trail remaining 20% to max target
-
-### Model 4: Signal-Based Exit
-Exit when Price Action shows opposing signal:
-- Reversal candle against your position (engulfing, pin bar)
-- Structure break against your trade (CHOCH)
-- Momentum exhaustion (decreasing candle size)
+Your exit determines **actual profit**. A perfect entry with bad exit = mediocre results.
 
 ---
 
-## Real Example: Partial Profit + Trailing Stop
+## Exit Types
 
-- **Entry:** Buy EUR/USD at 1.0860
-- **SL:** 1.0840 (20 pip risk)
-- **TP1 (1:2):** 1.0900 → take 50%, SL to breakeven
-- **TP2 (1:4):** 1.0940 → take 30%
-- **Runner:** Trail behind 1H swing lows → eventually stopped at 1.0925
+### 1. Fixed Target
+- Next S/R level
+- Measured move (pattern height)
+- Fibonacci extension (127.2%, 161.8%)
+- Risk multiple (always 2R or 3R)
+
+### 2. Structural Exit
+- Next opposing swing high/low
+- Opposing Order Block
+- Liquidity pool (equal H/L)
+- Previous session H/L
+
+### 3. Trailing Stop
+- Behind each new swing point
+- Behind 20 EMA
+- ATR-based (1.5× ATR distance)
+- Break-even after 1R
+
+### 4. Partial Exit (Scaling Out)
+- 50% at 1:1 R:R → move SL to BE
+- 30% at 1:2 R:R
+- 20% trailing to final target
+
+### 5. Time-Based
+- End of session (intraday)
+- 24-48 hours post-entry (swing)
+- Stale trades rarely become winners
+
+---
+
+## Style Recommendations
+
+| Style | Best Exit |
+|-------|----------|
+| Scalping | Fixed target (5-20 pips) |
+| Intraday | Structural + time |
+| Swing | Partial + trailing |
+| Position | Structural + trailing |
+
+---
+
+## Exit Rules
+
+1. Plan exit BEFORE entry
+2. Never move TP further away
+3. Partial profits reduce pressure
+4. Respect opposing levels
+5. Time stops work for stale trades
 
 ---
 
 ## Related Topics
 
-- [Risk Management](/en/price-action/risk-management) — Stop placement
-- [Trade Management](/en/price-action/trade-management) — Managing open trades
-- [Trend Analysis](/en/price-action/trend-analysis) — When trend is ending
+- [Entry Models](/en/price-action/entry-models)
+- [Trade Management](/en/price-action/trade-management)
+- [Risk Management](/en/price-action/risk-management)
+- [Support & Resistance](/en/price-action/support-resistance)

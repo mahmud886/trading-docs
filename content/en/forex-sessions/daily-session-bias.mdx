@@ -1,40 +1,65 @@
 ---
-title: "Daily Session Bias"
-description: "How to determine your daily trading bias based on session analysis. Using HTF structure, previous session behavior, and kill zone timing."
+title: "Daily Session Bias — Complete Guide"
+description: "Master how to determine daily directional bias before the session starts. Use higher timeframe analysis to predict session direction."
 level: intermediate
 order: 12
-lastUpdated: "2026-05-10"
+lastUpdated: "2026-06-10"
 ---
-## Determining Daily Bias
-Daily bias is your **directional expectation** for the trading day — bullish or bearish. Correct bias alignment dramatically improves win rate.
-## Bias Determination Process (BD Time)
-### Step 1: HTF Analysis (Before 1:00 PM BD)
-- Check Daily and 4H chart for overall trend
-- Identify the nearest liquidity targets (daily highs/lows, weekly levels)
-- Determine if price is in premium or discount
-### Step 2: Asian Session Analysis (5:00 AM - 1:00 PM BD)
-- Was the Asian session bullish or bearish?
-- Where are the Asian range highs/lows relative to the previous day?
-- Is price above or below the previous day's close?
-### Step 3: London Kill Zone Confirmation (1:00 PM - 4:00 PM BD)
-- Did London sweep the Asian high (bearish signal) or low (bullish signal)?
-- Did a MSS confirm the bias?
-- If bias confirms, trade in that direction during NY Kill Zone
-## Bias Rules
-| Condition | Bias |
-|-----------|------|
-| Price above prev day close + London sweeps Asian low | **Bullish** |
-| Price below prev day close + London sweeps Asian high | **Bearish** |
-| Price in discount zone + bullish London sweep | **Strong Bullish** |
-| Price in premium zone + bearish London sweep | **Strong Bearish** |
-<Callout type="warning" title="Bias Conflicts">
-If your bias analysis gives mixed signals, **don't trade**. Wait for the next day. Clarity over activity.
-</Callout>
-## Weekly Bias Framework
-| Day | Typical Behavior |
-|-----|-----------------|
-| Monday | Range setting, avoid aggressive trades |
-| Tuesday | Weekly direction often established |
-| Wednesday | Weekly high or low often forms |
-| Thursday | Continuation or reversal of weekly trend |
-| Friday | Profit taking, reduced trading after London |
+
+## What is Daily Session Bias?
+
+Daily Session Bias is determining the **most likely direction** for today's trading BEFORE the session begins. By analyzing D1/H4 structure and key levels, you can predict whether today will be bullish or bearish — and only take trades in that direction.
+
+---
+
+## How to Determine Bias
+
+```
+Step 1: Check D1 candle
+- Previous D1 closed bullish? → Bullish bias today
+- Previous D1 closed bearish? → Bearish bias today
+- D1 at key level? → Potential reversal day
+
+Step 2: Check H4 structure
+- HH/HL forming? → Bullish bias
+- LH/LL forming? → Bearish bias
+- Range? → Wait for break
+
+Step 3: Identify draw on liquidity
+- Unswept highs above? → Bullish target
+- Unswept lows below? → Bearish target
+- PDH/PDL as immediate targets
+
+Step 4: Weekly candle context
+- Where is price within weekly range?
+- Upper 25% → look for shorts
+- Lower 25% → look for longs
+```
+
+---
+
+## Applying Bias to Sessions
+
+| Bias | London Action | NY Action |
+|------|-------------|-----------|
+| Bullish | Sweep Asian LOW, then rally | Continue higher or hold gains |
+| Bearish | Sweep Asian HIGH, then sell | Continue lower or hold losses |
+| Neutral | Wait for London to show direction | Follow London's lead |
+
+---
+
+## Rules
+
+1. **Determine bias BEFORE market opens** — not after
+2. **Only trade in bias direction** — skip counter-bias setups
+3. **Re-evaluate if CHOCH occurs** against your bias on H4
+4. **No bias? No trade.** — Unclear = sit out
+5. **Tuesday-Thursday** have most reliable bias continuation
+
+---
+
+## Related Topics
+
+- [London Open Manipulation](/en/forex-sessions/london-open-manipulation) — Bias determines which side gets swept
+- [Kill Zones](/en/forex-sessions/kill-zones) — When to execute bias trades
+- [Session Strategies](/en/forex-sessions/session-strategies) — Strategy per bias

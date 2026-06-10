@@ -1,48 +1,142 @@
 ---
-title: "প্রাইস অ্যাকশন কন্টিনিউয়েশন প্যাটার্ন"
-description: "কন্টিনিউয়েশন প্যাটার্ন মাস্টার করুন — ফ্ল্যাগ, পেন্যান্ট, ওয়েজ যা সংকেত দেয় ট্রেন্ড বিরতির পর আবার চালু হবে।"
+title: "Price Action-এ Continuation Pattern — সম্পূর্ণ গাইড"
+description: "Price Action Continuation Pattern আয়ত্ত করুন। Flag, Pennant, Trend-এর মধ্যে Consolidation, BOS Confirmation এবং সুনির্দিষ্টভাবে Continuation Trade-এ Entry শিখুন।"
 level: intermediate
-order: 15
-lastUpdated: "2026-05-12"
+order: 13
+lastUpdated: "2026-06-10"
 ---
 
-## কন্টিনিউয়েশন প্যাটার্ন কী?
+## Continuation Pattern কী?
 
-কন্টিনিউয়েশন প্যাটার্ন হলো ট্রেন্ডের মধ্যে **সাময়িক বিরতি** যা ট্রেন্ডের দিকেই রিজলভ হয়। মার্কেট "নিঃশ্বাস নিচ্ছে" কন্টিনিউ করার আগে।
+Continuation Pattern হলো **বিদ্যমান Trend-এর মধ্যে তৈরি হওয়া Price Structure** যার পর Price একই দিকে চলতে থাকে। এগুলো সাময়িক বিরতি (বিশ্রামের সময়) প্রতিনিধিত্ব করে যেখানে Market পরবর্তী Impulse Move-এর আগে Consolidate করে।
 
----
-
-## মূল কন্টিনিউয়েশন প্যাটার্ন
-
-### ১. বুল/বেয়ার ফ্ল্যাগ
-- **আকৃতি:** শক্তিশালী মুভের পর হালকা পুলব্যাক চ্যানেল
-- **এন্ট্রি:** ফ্ল্যাগের উপরে ব্রেক (বুল) বা নিচে (বেয়ার)
-- **টার্গেট:** "পোল" (প্রাথমিক মুভ) পরিমাপ করে ব্রেকআউট থেকে প্রজেক্ট
-
-### ২. পেন্যান্ট
-- **আকৃতি:** শক্তিশালী মুভের পর কনভার্জিং ত্রিভুজ
-- **এন্ট্রি:** ট্রেন্ড দিকে পেন্যান্ট ব্রেক
-- **মূল:** দ্রুত তৈরি হওয়া উচিত (সর্বোচ্চ ৫-১৫ ক্যান্ডেল)
-
-### ৩. ইনসাইড বার
-- **আকৃতি:** আগের ক্যান্ডেলের রেঞ্জের মধ্যে থাকা ক্যান্ডেল
-- **সিগন্যাল:** কনসলিডেশন → ট্রেন্ড দিকে ব্রেকআউট
-- **সেরা:** একাধিক ইনসাইড বার = শক্তিশালী ব্রেকআউট
+<Callout type="info" title="কেন Continuation সেরা">
+Continuation Trade Reversal Trade-এর চেয়ে নিরাপদ কারণ আপনি Trend-এর সাথে Trade করছেন। Market ইতিমধ্যে তার Direction দেখিয়েছে — আপনি শুধু বিরতির সময় ভালো Price-এ Enter করছেন।
+</Callout>
 
 ---
 
-## বাস্তব উদাহরণ: Gold বুল ফ্ল্যাগ
+## Trend কেন থামে
 
-- **পোল:** Gold ২ ঘণ্টায় 2,000 থেকে 2,040 এ র‍্যালি
-- **ফ্ল্যাগ:** ৪ ঘণ্টায় 2,030 এ পুলব্যাক
-- **ব্রেক:** 2,040 এর উপরে বুলিশ ক্যান্ডেল
-- **এন্ট্রি:** 2,041 তে বাই | **SL:** 2,028 | **TP:** 2,080
-- **R:R:** 1:3
+Trend সরলরেখায় চলে না। থামে কারণ:
+1. **Profit-taking** — প্রাথমিক Trader লাভ Lock করছে
+2. **Counter-trend Trader** — Move-এর বিরুদ্ধে Enter করছে
+3. **Order Absorption** — বড় Order ধীরে ধীরে Fill হচ্ছে
+4. **সময়-ভিত্তিক** — Session/News Catalyst-এর অপেক্ষা
+5. **Rebalancing** — Price Fair Value-তে ফিরছে
+
+---
+
+## Continuation Structure-এর ধরন
+
+### ১. Flag (সবচেয়ে সাধারণ)
+```
+শক্তিশালী Impulse Up (Flagpole)
+   │
+   │  ╲ ╲ ╲  ← সামান্য নিম্নমুখী Channel (Flag)
+   │  ╱ ╱ ╱     ৩-১০ Candle, Shallow
+   │
+   │  Flag-এর উপরে Breakout = CONTINUATION
+   │
+   │  Target: Breakout থেকে Flagpole-এর দৈর্ঘ্য
+```
+
+**নিয়ম:**
+- Flag Impulse-এর 23.6%-50% Retrace করবে
+- Flag Duration: Impulse-এর চেয়ে ছোট
+- Flag-এ Volume কমে, Break-এ বাড়ে
+- 61.8%-এর বেশি = সম্ভবত Flag নয় (Reversal Risk)
+
+### ২. Inside Bar Continuation
+```
+শক্তিশালী Bullish Candle
+   │
+   [Inside Bar] ← আগের Candle-এর Range-এর ভিতরে ছোট Candle
+   │
+   Inside Bar High-এর উপরে Break = Continuation Long
+   Stop: Inside Bar Low-এর নিচে
+```
+
+### ৩. Order Block Pullback (ICT/SMC)
+```
+1. শক্তিশালী Impulse BOS (Break of Structure) তৈরি করে
+2. Price শেষ Opposing Candle-এ (Order Block) Pull Back
+3. Price Order Block থেকে React করে
+4. মূল Direction-এ Continuation
+5. Target: পরবর্তী Liquidity বা Opposing OB
+```
+
+---
+
+## Continuation Confirmation হিসেবে BOS
+
+**Break of Structure (BOS)** Trend চলছে তা Confirm করে:
+
+### Bullish BOS:
+- Price সাম্প্রতিক Swing High-এর উপরে ভাঙে
+- Higher High Confirm করে → Trend অক্ষত
+- BOS-এর পর Pullback Entry খুঁজুন
+
+### Bearish BOS:
+- Price সাম্প্রতিক Swing Low-এর নিচে ভাঙে
+- Lower Low Confirm করে → Trend অক্ষত
+- BOS-এর পর Pullback Entry খুঁজুন
+
+---
+
+## Continuation Entry Strategy
+
+### Strategy ১: Flag Breakout
+```
+1. শক্তিশালী Impulse Move চিহ্নিত করুন (স্পষ্ট Flagpole)
+2. Consolidation-এর জন্য অপেক্ষা (Flag/Pennant)
+3. Flag Boundary-র Breakout-এ Enter
+4. Stop: Flag Low-এর নিচে (Bullish) বা Flag High-এর উপরে (Bearish)
+5. Target: Measured Move (Flagpole Distance)
+6. R:R: সাধারণত 1:2 থেকে 1:3
+```
+
+### Strategy ২: BOS + OB-তে Pullback
+```
+1. BOS ঘটে (Trend Continuation Confirmed)
+2. Order Block চিহ্নিত করুন (BOS-এর আগে শেষ Opposing Candle)
+3. Price OB Zone-এ Pull Back করার অপেক্ষা
+4. OB-তে Confirmation Candle দিয়ে Enter
+5. Stop: OB-এর নিচে (Bullish) বা উপরে (Bearish)
+6. Target: পরবর্তী Swing High/Low বা Liquidity
+```
+
+---
+
+## Continuation vs. Reversal — কীভাবে বুঝবেন
+
+| বিষয় | Continuation (Trade করুন) | Reversal (এড়িয়ে চলুন) |
+|--------|------------------------|--------------------------|
+| Trend বয়স | নতুন Trend (কম Swing) | বিস্তৃত (অনেক Swing) |
+| Pullback গভীরতা | 23.6%-61.8% | 78.6%-এর বেশি |
+| Pullback গতি | ধীর, Corrective | দ্রুত, Impulsive |
+| Volume | Pullback-এ কমছে | Pullback-এ বাড়ছে |
+| Structure | HH/HL অক্ষত | CHOCH তৈরি হচ্ছে |
+| HTF Alignment | HTF-এর সাথে একই Direction | HTF-এর বিরুদ্ধে |
+
+---
+
+## সাধারণ ভুল
+
+| ভুল | সমাধান |
+|------|--------|
+| Impulse-এর সময় Enter (Chase) | বিরতি/Pullback-এর জন্য অপেক্ষা |
+| Flag খুব গভীর (আসলে Reversal) | Continuation-এ সর্বোচ্চ 61.8% Retracement |
+| Trend Confirmation (BOS) নেই | শুধু BOS-এর পর Continuation Trade |
+| Break Confirmation-এর আগে Enter | Structure-এর বাইরে Candle Close অপেক্ষা |
+| Higher Timeframe উপেক্ষা | Continuation HTF Trend-এর সাথে মিলতে হবে |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [ট্রেন্ড বিশ্লেষণ](/bn/price-action/trend-analysis) — ট্রেন্ড দিক
-- [ব্রেকআউট](/bn/price-action/breakouts) — কন্টিনিউয়েশন প্যাটার্ন থেকে ব্রেকআউট
-- [পুলব্যাক](/bn/price-action/pullbacks) — ট্রেন্ডে পুলব্যাক এন্ট্রি
+- [Pullbacks](/bn/price-action/pullbacks) — Retracement-এ Entry
+- [Market Structure](/bn/price-action/market-structure) — BOS Confirmation
+- [Trend Trading](/bn/price-action/trend-trading) — Trend-এর সাথে Trading
+- [Breakouts](/bn/price-action/breakouts) — Flag/Pennant Breakout
+- [Entry Models](/bn/price-action/entry-models) — সুনির্দিষ্ট Entry Technique

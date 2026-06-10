@@ -1,53 +1,70 @@
 ---
-title: "SMC ইমব্যালান্স (প্রাইস ইনইফিশিয়েন্সি)"
-description: "SMC তে ইমব্যালান্স মাস্টার করুন — প্রাইস একদিকে খুব দ্রুত চলে গেলে যে অদক্ষতা তৈরি হয়, মার্কেট সম্ভবত সেখানে ফিরবে।"
+title: "SMC-তে Price Imbalance — সম্পূর্ণ গাইড"
+description: "Price Imbalance আয়ত্ত করুন — Candle-এর মধ্যে Gap যা Institutional Aggression দেখায় ও Price ফিরে Fill করবে।"
 level: intermediate
-order: 17
-lastUpdated: "2026-05-12"
+order: 10
+lastUpdated: "2026-06-10"
 ---
 
-## ইমব্যালান্স কী?
+## Price Imbalance কী?
 
-ইমব্যালান্স হলো চার্টের এমন এলাকা যেখানে প্রাইস **একদিকে খুব আক্রমণাত্মকভাবে চলে**, একটি অদক্ষতা তৈরি করে। মার্কেট এই এলাকায় "রিব্যালান্স" করতে ফিরে আসে — গ্যাপ পূরণ করে কন্টিনিউ করার আগে।
+Price Imbalance (Inefficiency-ও বলে) ঘটে যখন Price একদিকে এত আক্রমণাত্মকভাবে চলে যে **Candle Wick-এর মধ্যে Gap** তৈরি হয় — যেখানে দুই-পক্ষীয় Trading হয়নি। এই Gap Institutional Urgency প্রতিনিধিত্ব করে এবং Price সাধারণত ফিরে এসে Fill করে।
 
----
-
-## ইমব্যালান্সের ধরন
-
-### ১. Fair Value Gap (FVG)
-- ৩-ক্যান্ডেল গঠন, C1 ও C3 উইক ওভারল্যাপ করে না
-- সবচেয়ে সাধারণ ও সবচেয়ে বেশি ট্রেড করা ইমব্যালান্স
-
-### ২. Liquidity Void
-- কম উইক সহ একক বড় ক্যান্ডেল
-- FVG এর চেয়ে বড় ইমব্যালান্স — শক্তিশালী আকর্ষণ
-
-### ৩. Volume Imbalance
-- এক ক্যান্ডেলের ক্লোজ ও পরের ক্যান্ডেলের ওপেনের মধ্যে গ্যাপ
-
-### ৪. Opening Gap
-- শুক্রবারের ক্লোজ ও সোমবারের ওপেনের গ্যাপ
+<Callout type="info" title="Imbalance = চুম্বক">
+Price Imbalance-এর দিকে চুম্বকের মতো আকৃষ্ট। Unfilled Imbalance Target হিসেবে কাজ করে — Price প্রায় সবসময় Continue করার আগে ফিরে Fill করে। Entry ও Target-এ এই জ্ঞান ব্যবহার করুন।
+</Callout>
 
 ---
 
-## SMC তে ইমব্যালান্স ব্যবহার
+## Imbalance-এর ধরন
 
-### এন্ট্রি জোন হিসেবে
-1. ইম্পালস মুভের পর ইমব্যালান্স তৈরি হয়
-2. প্রাইস রিট্রেস করে ইমব্যালান্স পূরণ করে
-3. ইমব্যালান্স জোনে এন্ট্রি (বুলিশে বাই, বেয়ারিশে সেল)
+### Fair Value Gap (FVG) — সবচেয়ে সাধারণ
+- ৩-Candle Pattern যেখানে Middle Candle Gap তৈরি করে
+- Candle 1 High Candle 3 Low-এর সাথে Overlap করে না (Bullish)
 
-### বাস্তব উদাহরণ: Gold
-- **4H:** বুলিশ ক্যান্ডেল FVG তৈরি করে 2,025-2,035
-- **রিট্রেসমেন্ট:** FVG তে প্রাইস ফিরে আসে
-- **এন্ট্রি:** 2,030 তে বাই (FVG ৫০%)
-- **SL:** 2,022 | **TP:** 2,065
-- **R:R:** 1:4.4
+### Volume Imbalance
+- পরপর Candle Body-র মধ্যে Gap
+- এক Candle Close ও পরেরটি ভিন্ন Price-এ Open
+- Session Open-এ সাধারণ
+
+### Liquidity Void
+- প্রায় কোনো Wick ছাড়া বড় Single Candle
+- একতরফা Movement প্রতিনিধিত্ব করে
+- Price Body Fill করতে ফেরে
+
+---
+
+## কেন Price Imbalance-এ ফেরে
+
+| কারণ | ব্যাখ্যা |
+|------|--------|
+| Unfilled Order | Gap-এ Limit Order বসে আছে |
+| Fair Value Seeking | Market Equilibrium খোঁজে |
+| Institutional Re-entry | Smart Money ভালো Price-এ Re-enter |
+| Efficiency | Market Inefficiency পছন্দ করে না |
+
+---
+
+## Imbalance Trade করা
+
+### FVG Fill-এ Entry:
+```
+1. FVG চিহ্নিত (C1 ও C3-এর মধ্যে Gap)
+2. Price FVG Zone-এ ফেরার অপেক্ষা
+3. মূল Impulse-এর Direction-এ Enter
+4. Stop: FVG-এর বাইরে (Full Candle Range)
+5. Target: পরবর্তী Structural Level বা Liquidity
+```
+
+### সব Imbalance Fill হয় না:
+- শক্তিশালী Trend-এ HTF Imbalance দিন/সপ্তাহ Fill নাও হতে পারে
+- শক্তিশালী Trend-এ Counter-trend FVG প্রায়ই Fill হয় না
+- HTF Trend-এর সাথে Aligned Imbalance সর্বোচ্চ Probability
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Fair Value Gap](/bn/smc/fair-value-gap) — সবচেয়ে সাধারণ ইমব্যালান্স
-- [Order Blocks](/bn/smc/order-blocks) — ইমব্যালান্সের সাথে ওভারল্যাপ
-- [প্রিমিয়াম ও ডিসকাউন্ট](/bn/smc/premium-discount) — ইমব্যালান্স ট্রেডিংয়ের প্রেক্ষাপট
+- [Fair Value Gap](/bn/smc/fair-value-gap) — বিস্তারিত FVG Guide
+- [Order Blocks](/bn/smc/order-blocks) — Imbalance-এর কাছে OB
+- [Premium ও Discount](/bn/smc/premium-discount) — Discount-এ Imbalance

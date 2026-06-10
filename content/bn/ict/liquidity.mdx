@@ -1,100 +1,182 @@
 ---
-title: "ICT লিকুইডিটি কনসেপ্ট"
-description: "লিকুইডিটি কীভাবে মার্কেটের প্রতিটি মুভ চালায় বুঝুন। BSL, SSL, লিকুইডিটি পুল, ইঞ্জিনিয়ার্ড লিকুইডিটি শিখুন।"
+title: "ICT Liquidity Concepts"
+description: "Liquidity কীভাবে Market এর প্রতিটি Move চালায় বুঝুন। Buy-Side Liquidity (BSL), Sell-Side Liquidity (SSL), Liquidity Pool, Engineered Liquidity এবং Institution কীভাবে Entry ও Exit এর জন্য Liquidity ব্যবহার করে শিখুন।"
 level: beginner
 order: 2
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-09"
 ---
 
-## ICT তে লিকুইডিটি কী?
+## ICT তে Liquidity কী?
 
-ICT মেথডলজিতে **লিকুইডিটি** হলো মার্কেটে থাকা রেস্টিং অর্ডার — প্রধানত **স্টপ লস** এবং **পেন্ডিং অর্ডার** যা সুইং হাই এর উপরে ও সুইং লো এর নিচে থাকে। অ্যালগরিদমের প্রধান কাজ হলো এই লিকুইডিটি পুলে প্রাইস পৌঁছে দেওয়া।
+ICT Methodology তে **Liquidity** হলো Market এ থাকা Resting Order — প্রধানত **Stop Loss** এবং **Pending Order** যা Swing High এর উপরে ও Swing Low এর নিচে থাকে। Market-Making Algorithm এর প্রধান কাজ হলো এই Liquidity Pool এ Price পৌঁছে দেওয়া।
 
 <Callout type="info" title="ICT মূল সত্য">
-"প্রাইস সবসময় লিকুইডিটি খুঁজছে। প্রতিটি মুভ, প্রতিটি ম্যানিপুলেশন, প্রতিটি ডিসপ্লেসমেন্ট — সবকিছু লিকুইডিটির জন্য।" — ICT
+"Price সবসময় Liquidity খুঁজছে। প্রতিটি Move, প্রতিটি Manipulation, প্রতিটি Displacement — সবকিছু Liquidity এর জন্য।" — ICT
 </Callout>
 
 ---
 
-## লিকুইডিটির প্রকারভেদ
+## Liquidity এর প্রকারভেদ
 
 ### Buy-Side Liquidity (BSL)
-সুইং হাই এর **উপরে** থাকা অর্ডার:
-- শর্ট সেলারদের স্টপ লস
-- ব্রেকআউট ট্রেডারদের বাই স্টপ
-- ইকুয়াল হাই, রিলেটিভ হাই এর উপরে তৈরি হয়
-- সুইপ হলে ইনস্টিটিউশনকে শর্ট এন্ট্রির কাউন্টারপার্টি দেয়
+Swing High এর **উপরে** থাকা Resting Order:
+- Short Seller দের Stop Loss
+- Breakout Trader দের Buy Stop Order
+- Equal Highs, Relative Highs এবং Old Highs এর উপরে তৈরি হয়
+- Sweep হলে Institution কে Short Entry এর Sell-Side Counterparty দেয়
 
 ### Sell-Side Liquidity (SSL)
-সুইং লো এর **নিচে** থাকা অর্ডার:
-- লং ট্রেডারদের স্টপ লস
-- ব্রেকডাউন ট্রেডারদের সেল স্টপ
-- ইকুয়াল লো, রিলেটিভ লো এর নিচে তৈরি হয়
-- সুইপ হলে ইনস্টিটিউশনকে লং এন্ট্রির কাউন্টারপার্টি দেয়
+Swing Low এর **নিচে** থাকা Resting Order:
+- Long Trader দের Stop Loss
+- Breakdown Trader দের Sell Stop Order
+- Equal Lows, Relative Lows এবং Old Lows এর নিচে তৈরি হয়
+- Sweep হলে Institution কে Long Entry এর Buy-Side Counterparty দেয়
 
 ---
 
-## লিকুইডিটি পুলের ধরন
+## Liquidity Pool এর ধরন
 
-### ১. ইকুয়াল হাই/লো
-- একই প্রাইসে একাধিক সুইং পয়েন্ট
-- রিটেইল ট্রেডাররা এখানে স্টপ রাখে
-- অ্যালগরিদমের টপ টার্গেট
+### ১. Relative Equal Highs/Lows
+- একই Price এ একাধিক Swing Point
+- Retail Trader রা এখানে Stop রাখে ("Support/Resistance" হিসেবে ব্যবহার করে)
+- Algorithm এর সবচেয়ে বেশি Target করা
 
-### ২. সেশন হাই/লো
-- এশিয়ান সেশন হাই/লো
-- লন্ডন সেশন হাই/লো
-- PDH/PDL (আগের দিনের হাই/লো)
-- PWH/PWL (আগের সপ্তাহের হাই/লো)
+### ২. Session Highs/Lows
+- Asian Session High/Low
+- London Session High/Low
+- PDH/PDL (Previous Day High/Low)
+- PWH/PWL (Previous Week High/Low)
 
-### ৩. পুরনো সুইং পয়েন্ট
-- কয়েক দিন/সপ্তাহ আগের সুইং হাই/লো
-- বড় লিকুইডিটি পুল = বড় ইনস্টিটিউশনাল আগ্রহ
+### ৩. Old Highs/Lows
+- কয়েক দিন/সপ্তাহ আগের Swing High/Low
+- বড় Liquidity Pool = বড় Institutional Interest
+- Weekly/Monthly High ও Low Major Target
 
----
-
-## ইনস্টিটিউশন কীভাবে লিকুইডিটি ব্যবহার করে
-
-### লিকুইডিটি সাইকেল
-1. **চিহ্নিত** — অ্যালগরিদম নিকটতম লিকুইডিটি পুল খুঁজে
-2. **ইঞ্জিনিয়ার** — প্রাইস কনসলিডেট করে আরও অর্ডার তৈরি করে
-3. **সুইপ** — দ্রুত মুভে স্টপ ও পেন্ডিং অর্ডার ট্রিগার করে
-4. **শোষণ** — ইনস্টিটিউশন এই অর্ডারের বিপরীতে পজিশন পূরণ করে
-5. **ডিসপ্লেস** — সত্যিকার দিকে মুভ শুরু হয়
+### ৪. Trendline Liquidity
+- Trendline বরাবর রাখা Stop Loss
+- যখন Trendline "ভাঙে", এটি আসলে এই Liquidity Sweep করছে
+- Classic Retail Trap Setup
 
 ---
 
-## বাস্তব উদাহরণ
+## Institution কীভাবে Liquidity ব্যবহার করে
 
-### Gold লিকুইডিটি সুইপ ট্রেড
-- **PDH:** 2,050 (এর উপরে BSL)
-- **ডেইলি বায়াস:** বেয়ারিশ (প্রিমিয়ামে)
-- **অ্যাকশন:** প্রাইস 2,052 সুইপ করে (BSL নেয়)
-- **কনফার্মেশন:** 5M বেয়ারিশ MSS
-- **এন্ট্রি:** 2,048 তে সেল (বেয়ারিশ OB)
-- **SL:** 2,053 | **TP:** 2,020
+### Liquidity Cycle
+1. **Identify** — Algorithm নিকটতম Liquidity Pool খোঁজে বের করে
+2. **Engineer** — Price Consolidate করে আরও Resting Order তৈরি করে
+3. **Sweep** — দ্রুত Move এ Stop ও Pending Order Trigger করে
+4. **Absorb** — Institution এই Trigger হওয়া Order এর বিপরীতে Position পূরণ করে
+5. **Displace** — সত্যিকার Directional Move শুরু হয়
+
+### বাস্তব উদাহরণ: EUR/USD
+- Price 1.0850 তে ৩টি Equal Lows তৈরি করে (SSL জমে)
+- Retail Trader রা উপরে Buy Stop ও নিচে Sell Stop রাখে
+- Price 1.0845 এ নামে — SSL Sweep করে
+- Institution Sell Order Absorb করে Long Position তৈরি করে
+- Price Displace করে 1.0950 পর্যন্ত BSL Target করে
+
+---
+
+## Liquidity Sweep vs Liquidity Grab
+
+| বিষয় | Liquidity Sweep | Liquidity Grab |
+|-------|----------------|----------------|
+| **গতি** | দ্রুত Wick, দ্রুত Rejection | সংক্ষিপ্তভাবে Level এর বাইরে থাকতে পারে |
+| **Candle** | লম্বা Wick, ছোট Body | পূর্ণ Body হতে পারে তারপর Reversal |
+| **Timeframe** | LTF তে দৃশ্যমান | সব Timeframe এ দৃশ্যমান |
+| **Confirmation** | বিপরীত দিকে তাৎক্ষণিক Displacement | Grab এর পর MSS/CHOCH |
+| **নির্ভরযোগ্যতা** | HTF Alignment এ খুব বেশি | উচ্চ কিন্তু Confirmation প্রয়োজন |
+
+---
+
+## Engineered Liquidity
+
+কখনো কখনো Market Sweep এর আগে Liquidity **তৈরি** করে:
+
+### কীভাবে Engineer হয়
+1. Price একটি Tight Range তৈরি করে (Consolidation)
+2. Retail Trader রা Range এর উপরে ও নিচে Stop রাখে
+3. Equal Highs/Lows তৈরি হয়, আরও Order আকর্ষণ করে
+4. Algorithm পর্যাপ্ত Liquidity জমা না হওয়া পর্যন্ত অপেক্ষা করে
+5. তারপর এক দিক Sweep করে → Reverse করে অন্য দিক Sweep করে
+
+### "Judas Swing" সংযোগ
+- London Open প্রায়ই প্রথমে Asian Range Liquidity Sweep করে (Judas Swing)
+- এটি Liquidity সংগ্রহের জন্য Engineered Manipulation
+- Sweep এর পর, দিনের সত্যিকার Direction শুরু হয়
+
+---
+
+## Liquidity দিয়ে Trading
+
+### ধাপে ধাপে প্রক্রিয়া
+1. **PDH/PDL, PWH/PWL** Chart এ চিহ্নিত করুন
+2. **Equal Highs/Lows চিহ্নিত করুন** — এগুলো Target
+3. **Daily Bias নির্ধারণ করুন** — কোন Liquidity Pool Target হবে?
+4. **Sweep এর জন্য অপেক্ষা করুন** — Price Liquidity নিয়ে নেয়
+5. **Reversal Confirm করুন** — Sweep এর পর LTF তে MSS
+6. **Entry** — Sweep এর পর OB/FVG তে, Stop Extreme এর বাইরে
+
+### উদাহরণ: Gold Liquidity Sweep Trade
+- **PDH:** 2,050 (এর উপরে BSL Resting)
+- **Daily Bias:** Bearish (Price Premium এ)
+- **Action:** Price 2,052 Sweep করে (BSL নেয়)
+- **Confirmation:** 5M Bearish MSS Sweep এর পর
+- **Entry:** 2,048 তে Sell (Bearish OB)
+- **Stop:** 2,053 (Sweep এর উপরে)
+- **Target:** SSL 2,020
 - **R:R:** 1:5.6
 - **BD সময়:** রাত ৭:৪৫ (NY AM Kill Zone)
 
 ---
 
+## Multiple Timeframe এ Liquidity
+
+| Timeframe   | Liquidity এর ধরন                    | গুরুত্ব                      |
+|-------------|-------------------------------------|------------------------------|
+| **Monthly** | Yearly Highs/Lows                   | বিশাল Institutional Interest |
+| **Weekly**  | Monthly Highs/Lows, Quarterly Level | Swing Trade Target           |
+| **Daily**   | PWH/PWL, PDH/PDL                    | Day Trade Target             |
+| **4H**      | Session Highs/Lows                  | Intraday Target              |
+| **15M**     | Micro Swing Points                  | Scalp Target                 |
+
+---
+
 ## সাধারণ ভুল
 
-<Callout type="warning" title="লিকুইডিটি ভুল">
+<Callout type="warning" title="Liquidity Trading এ ভুল">
 
-**❌ প্রতিটি সুইপে ট্রেড করা** — HTF অ্যালাইনমেন্ট দরকার
+**❌ প্রতিটি Sweep এ Trade করা** — প্রতিটি Liquidity Sweep Reversal দেয় না। HTF Alignment দরকার।
 
-**❌ "draw on liquidity" উপেক্ষা করা** — ট্রেডের আগে জিজ্ঞেস করুন "লিকুইডিটি কোন দিকে?"
+**❌ "Draw on Liquidity" উপেক্ষা করা** — Trade এর আগে সবসময় জিজ্ঞেস করুন "Liquidity তে Draw কোন দিকে?"
 
-**❌ স্পষ্ট লেভেলে স্টপ রাখা** — আপনার স্টপ-ই লিকুইডিটি। ম্যানিপুলেশন জোনের বাইরে রাখুন
+**❌ স্পষ্ট Level এ Stop রাখা** — আপনার Stop-ই Liquidity। Manipulation Zone এর বাইরে রাখুন।
+
+**❌ Sweep এর আগে Trade করা** — Liquidity নেওয়ার জন্য অপেক্ষা করুন Entry এর আগে।
+
+**❌ Session Level চিহ্নিত না করা** — PDH/PDL, Asian High/Low গুরুত্বপূর্ণ Reference Point।
 
 </Callout>
 
 ---
 
+## সারসংক্ষেপ
+
+| বিষয় | বিবরণ |
+|-------|--------|
+| **BSL** | High এর উপরে Buy Stop — Bearish Move এর Target |
+| **SSL** | Low এর নিচে Sell Stop — Bullish Move এর Target |
+| **মূল Pool** | Equal H/L, PDH/PDL, PWH/PWL, Session Level |
+| **Algorithm** | সবসময় নিকটতম Liquidity Pool খোঁজে |
+| **Entry** | Sweep + MSS Confirmation এর পর |
+| **Stop** | Sweep Extreme এর বাইরে |
+
+---
+
 ## সম্পর্কিত বিষয়
 
-- [লিকুইডিটি সুইপ](/bn/ict/liquidity-sweep) — সুইপের পর এক্সিকিউশন
-- [AMD](/bn/ict/amd) — Accumulation-Manipulation-Distribution
-- [জুডাস সুইং](/bn/ict/judas-swing) — ম্যানিপুলেশন মুভ
-- [ICT Kill Zones](/bn/ict/ict-kill-zones) — কখন সুইপ হয়
+- [Liquidity Sweep](/bn/ict/liquidity-sweep) — Sweep এর পর Execution
+- [AMD / Power of 3](/bn/ict/amd) — Accumulation-Manipulation-Distribution
+- [Judas Swing](/bn/ict/judas-swing) — Manipulation Move
+- [ICT Kill Zones](/bn/ict/ict-kill-zones) — কখন Sweep সবচেয়ে বেশি হয়
+- [Daily Bias](/bn/ict/daily-bias) — কোন Liquidity Target হবে ভবিষ্যদ্বাণী

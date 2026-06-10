@@ -1,0 +1,296 @@
+---
+title: "Risk Management & Position Sizing — Advanced Masterclass"
+description: "Go beyond the basics of risk management. Master advanced position sizing, portfolio heat, correlation risk, and the mathematical edge that keeps professional traders alive."
+date: "2026-05-19"
+author: "Trading Docs"
+category: "Academy"
+tags: ["risk-management", "position-sizing", "advanced", "portfolio", "professional"]
+readingTime: 22
+featured: true
+---
+
+## Beyond Basic Risk Management
+
+Most traders know "risk 1-2% per trade." But professional risk management goes far deeper. This guide covers the advanced concepts that separate funded traders from account-blowers.
+
+<Callout type="info" title="The Professional Standard">
+Prop firms don't just look at per-trade risk. They monitor daily drawdown, weekly drawdown, maximum drawdown, correlation exposure, and win-rate adjusted expectancy. Master these and you'll pass any prop firm challenge.
+</Callout>
+
+---
+
+## The Complete Risk Framework
+
+### Level 1: Per-Trade Risk
+
+| Account Size | Recommended Risk | Max Risk (Aggressive) |
+|-------------|-----------------|----------------------|
+| $1,000 - $5,000 | 1% | 1.5% |
+| $5,000 - $25,000 | 0.5% - 1% | 1.5% |
+| $25,000 - $100,000 | 0.5% | 1% |
+| $100,000+ | 0.25% - 0.5% | 0.75% |
+
+**Why smaller accounts can risk slightly more:** You need growth. But NEVER exceed 2%.
+
+### Level 2: Daily Risk Cap
+
+Your total daily loss limit should be **3-5% maximum**:
+
+```
+Daily Risk Cap = Max 3% of account
+
+If account = $10,000:
+- Daily max loss = $300
+- At 1% per trade = maximum 3 losing trades before stopping
+
+If you lose 3 trades in a row → STOP TRADING FOR THE DAY
+No exceptions. No "one more trade." Done.
+```
+
+### Level 3: Weekly Risk Cap
+
+Maximum weekly drawdown: **5-8%**
+
+```
+Weekly Risk Cap = Max 5% of account
+
+If account = $10,000:
+- Weekly max loss = $500
+- If hit by Wednesday → No more trading until Monday
+- Use remaining days for study and review
+```
+
+### Level 4: Maximum Drawdown
+
+Total drawdown before reassessment: **10-15%**
+
+```
+If you hit 10% drawdown from peak equity:
+1. Stop trading IMMEDIATELY
+2. Review all trades from the drawdown period
+3. Identify the root cause (strategy? psychology? execution?)
+4. Paper trade / demo for minimum 1 week
+5. Return with HALF position size until new equity high
+```
+
+---
+
+## Advanced Position Sizing Formulas
+
+### Formula 1: Fixed Percentage (Standard)
+
+```
+Position Size (lots) = (Account × Risk%) ÷ (Stop Loss pips × Pip Value)
+
+Example: $10,000 account, 1% risk, 25-pip stop, EUR/USD
+= ($10,000 × 0.01) ÷ (25 × $10)
+= $100 ÷ $250
+= 0.40 lots
+```
+
+### Formula 2: ATR-Based Position Sizing
+
+Uses Average True Range to adjust for volatility:
+
+```
+Stop Loss = 1.5 × ATR(14)
+Position Size = (Account × Risk%) ÷ (ATR-Stop × Pip Value)
+
+Example: $10,000 account, 1% risk, ATR(14) = 80 pips
+Stop = 1.5 × 80 = 120 pips
+Position = ($10,000 × 0.01) ÷ (120 × $10)
+= $100 ÷ $1,200
+= 0.083 lots (use 0.08)
+```
+
+**Why ATR-based is better:** Automatically reduces size in volatile markets and increases in calm markets.
+
+### Formula 3: Kelly Criterion (Advanced)
+
+Mathematically optimal bet size based on your actual statistics:
+
+```
+Kelly % = W - [(1-W) / R]
+
+Where:
+W = Win rate (decimal)
+R = Average win / Average loss (R:R)
+
+Example: 55% win rate, 1:2.5 average R:R
+Kelly = 0.55 - [(1-0.55) / 2.5]
+Kelly = 0.55 - 0.18
+Kelly = 0.37 (37%)
+
+NEVER use full Kelly! Use Quarter Kelly for safety:
+Recommended: 37% ÷ 4 = 9.25% → Use 5-8%
+```
+
+<Callout type="warning" title="Kelly Criterion Warning">
+Full Kelly is extremely aggressive and assumes perfect execution with zero psychological factors. ALWAYS use Quarter Kelly (÷4) or less. Most professionals use 1-2% which is well below even Quarter Kelly.
+</Callout>
+
+---
+
+## Portfolio Heat: Managing Multiple Positions
+
+**Portfolio Heat** = Total risk across all open positions
+
+### Rules:
+
+| Rule | Details |
+|------|---------|
+| **Max portfolio heat** | 5% (never have more than 5% total at risk) |
+| **Max correlated positions** | 2 (e.g., max 2 USD pairs in same direction) |
+| **Max positions** | 3-4 total open |
+| **Same direction max** | 3% exposure in one direction |
+
+### Example:
+
+```
+Account: $50,000 | Max Heat: 5% = $2,500 total risk
+
+Position 1: EUR/USD long — risking 1% ($500) ✓
+Position 2: GBP/USD long — risking 1% ($500) ⚠️ (correlated with #1)
+Position 3: Gold long — risking 1% ($500) ✓
+Position 4: USD/JPY short — risking 0.5% ($250) ✓
+
+Total heat: 3.5% ✓ (under 5%)
+But: EUR/USD + GBP/USD = both USD shorts = correlated ⚠️
+Action: Reduce one to 0.5% or skip one entirely
+```
+
+---
+
+## Correlation Risk
+
+Correlated trades multiply your risk unknowingly:
+
+### High Correlation Pairs (move together):
+
+| Pair 1 | Pair 2 | Correlation |
+|--------|--------|-------------|
+| EUR/USD | GBP/USD | +0.85 |
+| EUR/USD | AUD/USD | +0.70 |
+| USD/CHF | USD/JPY | +0.65 |
+| Gold | Silver | +0.90 |
+| NAS100 | S&P500 | +0.92 |
+
+### Negative Correlation (move opposite):
+
+| Pair 1 | Pair 2 | Correlation |
+|--------|--------|-------------|
+| EUR/USD | USD/CHF | -0.90 |
+| EUR/USD | DXY | -0.95 |
+| Gold | DXY | -0.80 |
+
+**Rule:** If trading two positively correlated instruments in the same direction, count it as ONE position with DOUBLE the risk.
+
+---
+
+## The Expectancy Formula
+
+Know your mathematical edge:
+
+```
+Expectancy = (Win Rate × Average Win) - (Loss Rate × Average Loss)
+
+Example:
+Win rate: 55%, Average win: $150 (1.5R), Average loss: $100 (1R)
+Expectancy = (0.55 × $150) - (0.45 × $100)
+Expectancy = $82.50 - $45.00
+Expectancy = +$37.50 per trade
+
+Over 100 trades: 100 × $37.50 = +$3,750
+```
+
+**If your expectancy is negative, NO position sizing will save you.** Fix your strategy first.
+
+### Minimum Sample Size:
+
+- Need **minimum 30 trades** for any statistical significance
+- Ideally **100+ trades** before trusting your numbers
+- Re-calculate every month as market conditions change
+
+---
+
+## Scaling Strategies
+
+### Scaling In (Adding to Winners):
+
+```
+Initial Entry: 0.5% risk at OB
+Price confirms direction (BOS on LTF):
+Add: 0.3% risk at new OB (stop moved to breakeven on first)
+Price continues:
+Add: 0.2% risk at next OB (stops trailed)
+
+Total max risk at any time: Still 1% (because stops trail)
+But position size has GROWN with the trend
+```
+
+### Scaling Out (Partial Takes):
+
+```
+Entry at OB: Full position (1% risk)
+Hit 1R: Take 33% profit, move stop to breakeven
+Hit 2R: Take 33% profit, trail stop to 1R
+Let final 33% run: Target 3-5R with trailing stop
+
+Result: Guaranteed breakeven minimum + potential for large R on runner
+```
+
+---
+
+## Prop Firm Risk Rules (Reference)
+
+| Rule | Typical Prop Firm | Your Personal Rule |
+|------|------------------|-------------------|
+| Daily drawdown | 5% max | 3% max (stricter) |
+| Total drawdown | 10% max | 8% max (stricter) |
+| Per-trade risk | Not specified | 0.5-1% |
+| Position limit | 10-20% margin used | Max 3-4 positions |
+| News trading | Often restricted | Skip high-impact news |
+
+<Callout type="tip" title="Pro Tip">
+Always trade stricter than the prop firm rules. If they allow 5% daily, your limit is 3%. If they allow 10% total, yours is 8%. This buffer protects you from being cut on a bad day.
+</Callout>
+
+---
+
+## The Mathematical Proof: Why 1% Works
+
+Starting with $10,000, risking 1% per trade at 1:3 R:R with 50% win rate:
+
+```
+100 trades:
+- 50 wins × $300 (3R) = +$15,000
+- 50 losses × $100 (1R) = -$5,000
+- Net profit: +$10,000 (100% return!)
+
+Maximum drawdown (10 consecutive losses):
+- 10 × 1% = ~9.6% drawdown (compounded)
+- Easily recoverable
+
+Same scenario at 5% risk:
+- 10 consecutive losses = ~40% drawdown
+- Need +67% just to recover
+- Emotional spiral almost guaranteed
+```
+
+---
+
+## Key Takeaways
+
+| Concept | Rule |
+|---------|------|
+| **Per-trade risk** | 0.5-1% (NEVER exceed 2%) |
+| **Daily max loss** | 3% then STOP |
+| **Weekly max loss** | 5% then STOP until Monday |
+| **Max drawdown** | 10% → reassess everything |
+| **Portfolio heat** | Max 5% total open risk |
+| **Correlation** | Max 2 correlated positions |
+| **Position sizing** | Calculate EVERY trade — no exceptions |
+| **Scaling** | Add to winners only, with trailing stops |
+
+Full lesson: [Risk Management](/en/academy/risk-management) and [Position Sizing](/en/academy/position-sizing)
+

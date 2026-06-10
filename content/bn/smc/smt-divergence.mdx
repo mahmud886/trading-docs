@@ -1,57 +1,68 @@
 ---
-title: "SMT ডাইভারজেন্স (Smart Money Technique)"
-description: "SMT ডাইভারজেন্স মাস্টার করুন — যখন সম্পর্কিত পেয়ার একই হাই/লো তৈরি করতে ব্যর্থ হয়, স্মার্ট মানির পজিশনিং প্রকাশ করে।"
+title: "SMT Divergence — সম্পূর্ণ গাইড"
+description: "SMT (Smart Money Technique) Divergence আয়ত্ত করুন — Institutional Direction Confirm করতে Correlated Pair-এর আচরণ ব্যবহার।"
 level: advanced
-order: 21
-lastUpdated: "2026-05-12"
+order: 19
+lastUpdated: "2026-06-10"
 ---
 
-## SMT ডাইভারজেন্স কী?
+## SMT Divergence কী?
 
-SMT ডাইভারজেন্স হয় যখন **সম্পর্কিত অ্যাসেট একই হাই বা লো তৈরি করতে ব্যর্থ হয়**। যেমন EUR/USD নতুন হাই তৈরি করে কিন্তু GBP/USD করে না — এটি স্মার্ট মানির পজিশনিং প্রকাশ করে।
-
----
-
-## সম্পর্কিত পেয়ার
-
-| পেয়ার ১ | পেয়ার ২ | সম্পর্ক |
-|---------|---------|---------|
-| EUR/USD | GBP/USD | পজিটিভ |
-| DXY | EUR/USD | নেগেটিভ |
-| Gold | Silver | পজিটিভ |
-| ES (S&P) | NQ (Nasdaq) | পজিটিভ |
-
-### বুলিশ SMT ডাইভারজেন্স
-- পেয়ার A নতুন **লোয়ার লো** তৈরি করে
-- পেয়ার B (সম্পর্কিত) **হায়ার লো** তৈরি করে
-- সিগন্যাল: বুলিশ রিভার্সাল প্রত্যাশিত
-
-### বেয়ারিশ SMT ডাইভারজেন্স
-- পেয়ার A নতুন **হায়ার হাই** তৈরি করে
-- পেয়ার B **লোয়ার হাই** তৈরি করে
-- সিগন্যাল: বেয়ারিশ রিভার্সাল প্রত্যাশিত
+SMT (Smart Money Technique) Divergence ঘটে যখন **Correlated Pair ভিন্ন Price Structure দেখায়** — একটি নতুন High/Low করে অন্যটি করে না। এটি প্রকাশ করে Smart Money আসলে কোন Direction-এ Positioned।
 
 ---
 
-## বাস্তব উদাহরণ: EUR/USD ও GBP/USD
+## SMT কীভাবে কাজ করে
 
-- **EUR/USD:** লন্ডন KZ তে নতুন লো 1.0820
-- **GBP/USD:** শুধু 1.2540 পৌঁছায় (আগের লো 1.2530 — নতুন লো তৈরি হয়নি)
-- **ডাইভারজেন্স:** GBP/USD শক্তিশালী (হায়ার লো)
-- **সিগন্যাল:** USD দুর্বলতা শেষ হচ্ছে → দুই পেয়ারই র‍্যালি করবে
-- **ট্রেড:** নতুন লো তে OB কনফার্মেশন সহ EUR/USD বাই
+```
+Correlated Pair একসাথে চলার কথা।
+Diverge করলে, একটি প্রকৃত Direction দেখাচ্ছে।
+
+উদাহরণ (EUR/USD vs GBP/USD):
+- উভয় সাধারণত একই Direction-এ চলে
+- EUR/USD নতুন Low করে → GBP/USD নতুন Low করে না
+- এই Divergence = Smart Money Bearish নয়
+- Bullish Reversal আশা করুন
+
+উদাহরণ (DXY vs EUR/USD):
+- DXY ও EUR/USD বিপরীত Correlated
+- DXY নতুন High করে → EUR/USD নতুন Low করে না
+- Divergence = DXY Strength ভুয়া
+- EUR/USD Bullish Move আশা করুন
+```
 
 ---
 
-## SMT নিয়ম
+## সাধারণ SMT Pair
 
-1. **সম্পর্কিত পেয়ার ব্যবহার করুন** — পজিটিভ/নেগেটিভ সম্পর্কিত হতে হবে
-2. **একই টাইমফ্রেম** — 15M এর সাথে 15M তুলনা করুন
-3. **কনফার্মেশন হিসেবে ব্যবহার করুন** — একক এন্ট্রি সিগন্যাল নয়
+| Pair 1 | Pair 2 | Correlation |
+|--------|--------|------------|
+| EUR/USD | GBP/USD | Positive |
+| EUR/USD | DXY | Inverse |
+| Gold | DXY | Inverse |
+| ES (S&P) | NQ (Nasdaq) | Positive |
+| US30 | US100 | Positive |
+
+---
+
+## SMT Divergence Trade করা
+
+```
+1. একই Timeframe-এ Correlated Pair Monitor
+2. Structural Divergence খুঁজুন (একটিতে নতুন H/L, অন্যটিতে নয়)
+3. যে Pair নতুন Extreme করতে ব্যর্থ = প্রকৃত Direction
+4. Non-confirming Pair-এর Direction-এ Enter
+5. Standard SMC Entry ব্যবহার (OB, FVG, CHOCH)
+6. Target: বিপরীত Liquidity
+
+SMT CONFLUENCE যোগ করে — একা Trade করবেন না।
+SMC Setup-এর অতিরিক্ত Confirmation হিসেবে ব্যবহার করুন।
+```
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [মার্কেট স্ট্রাকচার শিফট](/bn/smc/market-structure-shift) — SMT কনফার্মেশনের পর MSS
-- [এন্ট্রি কনফার্মেশন](/bn/smc/entry-confirmation) — এন্ট্রি মডেলে SMT ব্যবহার
+- [Institutional Order Flow](/bn/smc/institutional-order-flow) — Institutional Bias বোঝা
+- [Manipulation](/bn/smc/manipulation) — False Move SMT তৈরি করে
+- [Liquidity Pools](/bn/smc/liquidity-pools) — Divergent Liquidity Targeting

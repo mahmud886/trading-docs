@@ -1,0 +1,122 @@
+---
+title: "Mitigation Block"
+description: "Understand Mitigation Blocks — Order Blocks that were partially filled and return for remaining institutional orders. Learn the difference between Mitigation and Breaker Blocks."
+order: 18
+level: intermediate
+lastUpdated: "2026-06-09"
+---
+
+
+### Definition
+
+A Mitigation Block is an **Order Block that was previously tested (partially filled) and failed to hold completely, but where price returns to fill remaining institutional orders**. Unlike a Breaker Block (where the OB is completely broken through), a Mitigation Block is an OB that was "dipped into" without fully failing, leaving unfilled orders that the algorithm will return to.
+
+**Key concept:** Institutions rarely fill 100% of their intended orders on the first touch of an OB. When price returns to the same OB zone after the initial reaction, it's "mitigating" — filling the remaining orders that weren't completed the first time.
+
+- **Bullish Mitigation Block:** A previously tested Bullish OB where price returns to fill remaining Buy orders
+- **Bearish Mitigation Block:** A previously tested Bearish OB where price returns to fill remaining Sell orders
+
+### Why It Matters
+
+- Mitigation Blocks provide SECOND CHANCE entries if you missed the first OB touch
+- They explain why "broken support becomes resistance" (and vice versa) from an institutional perspective
+- They have slightly lower probability than fresh OBs but still offer valid institutional entries
+- Understanding Mitigation prevents you from dismissing "used" OBs that still have value
+- They show where institutions have UNFILLED orders remaining
+
+### How It Works
+
+**Bullish Mitigation Block Process:**
+1. Bullish OB forms (last bearish candle before up displacement)
+2. Price rises after OB forms (first move away)
+3. Price returns to OB → Partially fills orders → Bounces (first reaction)
+4. Price moves up but DOESN'T reach the full target
+5. Price returns AGAIN to the OB zone → This is the Mitigation touch
+6. Remaining orders fill → Price moves more aggressively now
+7. This second (or third) touch of an OB = Mitigation Block entry
+
+**Bearish Mitigation Block Process:**
+1. Bearish OB forms (last bullish candle before down displacement)
+2. Price drops → Returns to OB → First reaction (partial fill)
+3. Price drops again but doesn't reach full target
+4. Price returns to OB zone AGAIN → Mitigation
+5. Remaining Sell orders fill → Full distribution move follows
+
+**Mitigation vs Other Concepts:**
+| Concept | Description | Key Difference |
+|---------|-------------|----------------|
+| **Fresh OB** | Never touched after creation | Highest probability |
+| **Mitigation Block** | Touched but not broken through | Second-chance entry |
+| **Breaker Block** | Broken through completely, role flipped | Used for reversal trades |
+
+### Institutional Logic
+
+**Why Mitigation occurs:**
+
+1. **Partial fills:** First touch may only fill 30-50% of intended orders (market depth wasn't sufficient)
+2. **Position sizing:** Institutions build positions over time, not all at once
+3. **Risk management:** They test the level first with a smaller fill, then commit more on confirmation
+4. **Algorithmic design:** The IPDA is programmed to return to unfilled order zones
+5. **Break-even traders:** Traders who entered at the OB and are now at breakeven will EXIT on the second touch, providing fresh Liquidity
+
+**Institutional order lifecycle at a Mitigation Block:**
+- First visit: Fill 40% → Price moves → Returns
+- Second visit (Mitigation): Fill remaining 60% → Full move commences
+- The Mitigation touch often produces a STRONGER move because more orders fill
+
+### Trading Application
+
+**Identifying Mitigation Blocks:**
+1. Find an OB that has been touched ONCE (price went into it and bounced)
+2. Verify the first touch didn't completely break the OB (price didn't close through)
+3. Note: After first touch, price moved but didn't reach full target → Suggesting more orders remain
+4. When price returns to the OB zone again → This is your Mitigation Block entry
+
+**Entry at Mitigation Block:**
+1. Mark the original OB zone
+2. Wait for first touch + reaction (partial fill)
+3. Wait for price to return to the OB zone (second visit)
+4. Enter at the OB zone on the SECOND touch:
+   - Entry: At OB body or midpoint
+   - Stop Loss: Below/above OB extreme (same as fresh OB)
+   - Target: Full extension to Liquidity pool
+
+**Quality factors for Mitigation Block entries:**
+- HTF alignment (must be with the trend)
+- Kill Zone timing (second touch during KZ = better)
+- FVG within the Mitigation zone = Extra confluence
+- Clear Liquidity target beyond the Mitigation zone
+
+### Common Mistakes
+
+- ❌ **Trading an OB on the THIRD or FOURTH touch** — Mitigation is usually the second touch. Third+ = OB is spent
+- ❌ **Confusing Mitigation with Breaker** — If price CLOSES through the OB = Breaker. If it only wicks in = Mitigation
+- ❌ **Expecting same reaction strength** — Mitigation touch may have weaker initial reaction than fresh OB
+- ❌ **Not having HTF context** — Mitigation without trend alignment is unreliable
+- ❌ **Ignoring the reason for return** — Price returns to mitigate because there are UNFILLED orders. If the OB was fully filled first time, it won't come back
+
+### Advanced Notes
+
+- **Mitigation + FVG** — If an FVG exists within the Mitigation zone, enter at FVG CE for precision
+- **Time between visits** — Longer time between first and second visit = More reliable (orders remained waiting)
+- **Mitigation in OTE zone** — If the Mitigation Block aligns with OTE (62-79%) = Enhanced probability
+- **Mitigation failure** — If the second touch breaks through the OB → It becomes a Breaker Block
+- **HTF Mitigation → LTF entry** — 4H OB being mitigated? Use 15M/5M for precise entry within it
+- **After Mitigation** — Once fully mitigated, the OB is DONE. Don't trade it again
+
+### Example
+
+**GBP/USD — Bullish Mitigation Block Trade:**
+
+1. **Original OB:** 4H Bullish OB at 1.2650-1.2670 (formed by displacement up)
+2. **First Touch:** Price returns to 1.2660 → Bounces to 1.2720 (partial fill)
+3. **Incomplete move:** Price only reaches 1.2720, fails to reach BSL at 1.2780
+4. **Return for Mitigation:** Next day, price comes back to 1.2655 (inside OB again)
+5. **This is the Mitigation Block entry:**
+   - Entry: Buy at 1.2658
+   - Stop Loss: 1.2645 (below OB low)
+   - Target: 1.2780 (BSL — full target this time)
+   - R:R: 1:9.4, +122 pips
+6. **Result:** After Mitigation touch, price drives to 1.2790 → Full target achieved
+
+---

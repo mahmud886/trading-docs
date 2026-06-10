@@ -1,44 +1,203 @@
 ---
-title: "মার্জিন এবং লিভারেজ - ঝুঁকি ব্যাখ্যা"
-description: "মার্জিন ঋণ, লিভারেজ এবং কীভাবে নিরাপদে ট্রেডিংয়ে মার্জিন ব্যবহার করতে হবে তা বুঝুন"
-author: "ট্রেডিং একাডেমি"
-date: "2024-01-15"
+title: "Margin ও Leverage — সম্পূর্ণ Risk গাইড"
+description: "Trading-এ Margin ও Leverage কীভাবে কাজ করে বুঝুন। Leverage Ratio, Margin Requirement, Margin Call এবং Account না উড়িয়ে নিরাপদে Leverage ব্যবহার শিখুন।"
+level: beginner
+order: 6
+lastUpdated: "2026-06-10"
 ---
 
-## মার্জিন এবং লিভারেজ - ঝুঁকি ব্যাখ্যা
+## Margin ও Leverage ব্যাখ্যা
 
-মার্জিন আপনার ব্রোকারের কাছ থেকে উদ্ধৃত অর্থ যা আপনাকে আপনার অ্যাকাউন্ট আকারের চেয়ে বড় অবস্থান নিতে দেয়।
+Leverage হলো Trading-এর **সবচেয়ে শক্তিশালী এবং সবচেয়ে বিপজ্জনক** হাতিয়ার। এটি আপনার Profit বাড়াতে পারে — কিন্তু সমানভাবে Loss-ও বাড়াতে পারে। Capital Preservation-এর জন্য Margin ও Leverage বোঝা অপরিহার্য।
 
-### মার্জিন কী?
+<Callout type="warning" title="গুরুত্বপূর্ণ সতর্কতা">
+Leverage হলো Retail Trader-দের Account Blow করার #১ কারণ। $1,000 Account-এ 100:1 Leverage ব্যবহারকারী একজন Trader মাত্র ১% বিপরীত Movement-এ সবকিছু হারাতে পারেন। দায়িত্বের সাথে Leverage ব্যবহার করুন।
+</Callout>
 
-**মার্জিন** হল আপনার ব্রোকার থেকে ঋণের অর্থ।
+---
 
-**মূল ধারণা:**
-- আপনার অর্থ = ইক্যুইটি
-- ব্রোকার অর্থ = মার্জিন/লিভারেজ
-- মোট অবস্থান = ইক্যুইটি + মার্জিন
+## Leverage কী?
 
-### লিভারেজ অনুপাত
+Leverage আপনাকে আপনার Broker থেকে ধার নিয়ে **প্রকৃত Capital-এর চেয়ে বড় Position Control** করতে দেয়।
 
-- **10:1 = 1 ডলার নিয়ন্ত্রণ করে 10 ডলার**
-- **50:1 = 1 ডলার নিয়ন্ত্রণ করে 50 ডলার**
-- **100:1 = 1 ডলার নিয়ন্ত্রণ করে 100 ডলার**
+### কীভাবে কাজ করে:
 
-লিভারেজ যত বড় হয়, লাভ এবং ক্ষতি উভয়ই বড় হয়।
+```
+Leverage ছাড়া (1:1):
+- আপনার Capital: $10,000
+- Position Size: $10,000
+- 1% Move = $100 Profit/Loss (Account-এর 1%)
 
-### মার্জিন কল
+100:1 Leverage-সহ:
+- আপনার Capital: $10,000
+- Position Size: $1,000,000
+- 1% Move = $10,000 Profit/Loss (Account-এর 100%!)
+```
 
-**মার্জিন কল** ঘটে যখন আপনার অ্যাকাউন্ট প্রয়োজনীয় প্রান্তির নিচে পড়ে।
+### Leverage Ratio:
 
-**ফলাফল:**
-- ব্রোকার সতর্কতা জারি করে
-- আপনি তহবিল যোগ করতে পারেন
-- বা অবস্থান স্বয়ংক্রিয়ভাবে বন্ধ হয়
+| Leverage | প্রয়োজনীয় Margin | $1,000 Control করে | ১% Move-এর প্রভাব |
+|----------|-------------------|-------------------|-------------------|
+| 1:1 | 100% | $1,000 | $10 (1%) |
+| 5:1 | 20% | $5,000 | $50 (5%) |
+| 10:1 | 10% | $10,000 | $100 (10%) |
+| 50:1 | 2% | $50,000 | $500 (50%) |
+| 100:1 | 1% | $100,000 | $1,000 (100%) |
+| 500:1 | 0.2% | $500,000 | $5,000 (500%!) |
+
+---
+
+## Margin কী?
+
+Margin হলো Leveraged Position Open ও Maintain করতে আপনার Broker-এর প্রয়োজনীয় **জামানত Deposit**। এটি Fee নয় — এটি একটি Security Deposit যা Position Close করলে ফেরত আসে।
+
+### Margin-এর প্রকারভেদ:
+
+| Term | সংজ্ঞা |
+|------|--------|
+| **Required Margin** | নির্দিষ্ট Position Open করতে প্রয়োজনীয় পরিমাণ |
+| **Used Margin** | Open Position-এ বর্তমানে আটকে থাকা মোট Margin |
+| **Free Margin** | নতুন Position-এর জন্য উপলব্ধ Capital (Equity - Used Margin) |
+| **Margin Level** | (Equity ÷ Used Margin) × 100% |
+| **Margin Call** | Margin Level Broker-এর Threshold-এর নিচে গেলে সতর্কতা |
+| **Stop Out** | Margin অত্যন্ত কম হলে Broker জোর করে Position Close করে |
+
+### Margin গণনা:
+
+```
+Required Margin = Position Size ÷ Leverage
+
+উদাহরণ:
+- 1 Lot EUR/USD at 100:1 = $100,000 ÷ 100 = $1,000 Margin
+- 0.5 Lot EUR/USD at 50:1 = $50,000 ÷ 50 = $1,000 Margin
+- 0.1 Lot EUR/USD at 100:1 = $10,000 ÷ 100 = $100 Margin
+```
+
+---
+
+## Margin Call ও Stop Out
+
+### Margin Call:
+আপনার Broker-এর সতর্কতা যে Margin Level একটি নির্দিষ্ট Threshold-এর (সাধারণত ১০০% বা ৮০%) নিচে নেমে গেছে।
+
+### Stop Out:
+Margin Level আরও কমলে (সাধারণত ৫০% বা ২০%), Broker স্বয়ংক্রিয়ভাবে আপনার Losing Position Close করে দেয় Negative Balance রোধ করতে।
+
+### উদাহরণ:
+
+```
+Account: $5,000
+Position: 2 Standard Lot EUR/USD (Leverage 100:1)
+Required Margin: $2,000
+Free Margin: $3,000
+
+Price আপনার বিরুদ্ধে 50 Pip যায়:
+Loss = 50 Pip × $10 × 2 Lot = $1,000
+Equity: $5,000 - $1,000 = $4,000
+Margin Level: ($4,000 ÷ $2,000) × 100 = 200% ✅ নিরাপদ
+
+Price আপনার বিরুদ্ধে 150 Pip যায়:
+Loss = 150 × $10 × 2 = $3,000
+Equity: $5,000 - $3,000 = $2,000
+Margin Level: ($2,000 ÷ $2,000) × 100 = 100% ⚠️ MARGIN CALL
+
+Price আপনার বিরুদ্ধে 200 Pip যায়:
+Loss = 200 × $10 × 2 = $4,000
+Equity: $5,000 - $4,000 = $1,000
+Margin Level: ($1,000 ÷ $2,000) × 100 = 50% 🛑 STOP OUT
+```
+
+---
+
+## নিরাপদ Leverage ব্যবহার
+
+### Real Leverage সূত্র:
+
+```
+Effective Leverage = মোট Position Value ÷ Account Equity
+
+উদাহরণ:
+- Account: $10,000
+- Position: 0.5 Lot EUR/USD = $50,000
+- Effective Leverage: $50,000 ÷ $10,000 = 5:1
+
+এটি নিরাপদ Leverage (যদিও Broker 100:1 অফার করে)
+```
+
+### সুপারিশকৃত Effective Leverage:
+
+| Trader Level | সর্বোচ্চ Effective Leverage | কারণ |
+|-------------|---------------------------|------|
+| Beginner | 2:1 থেকে 3:1 | শেখার পর্যায়, ভুলের সুযোগ |
+| Intermediate | 3:1 থেকে 5:1 | প্রমাণিত System, আত্মবিশ্বাস তৈরি |
+| Advanced | 5:1 থেকে 10:1 | ধারাবাহিক Track Record |
+| Professional | 10:1 থেকে 20:1 | শক্তিশালী Risk Management |
+
+### সোনালী নিয়ম:
+> **আপনার Broker 500:1 Leverage অফার করলেই যে ব্যবহার করতে হবে তা নয়।** Available Leverage-কে Emergency Reserve হিসেবে ভাবুন, দৈনিক Tool হিসেবে নয়।
+
+---
+
+## Risk Management-এ Leverage-এর প্রভাব
+
+### সঠিক Position Sizing ছাড়া:
+
+```
+Account: $1,000, Leverage: 100:1
+খারাপ Trader: 1 Standard Lot Open করেন ($100,000)
+- ১০০% Available Leverage ব্যবহার
+- 10 Pip Stop Loss = $100 Loss = Account-এর 10%
+- 50 Pip বিপরীত Move = $500 = Account-এর 50%
+- 100 Pip বিপরীত Move = ACCOUNT BLOWN
+```
+
+### সঠিক Position Sizing-সহ:
+
+```
+Account: $1,000, Leverage: 100:1
+স্মার্ট Trader: 0.02 Lot Open করেন ($2,000)
+- 2:1 Effective Leverage ব্যবহার
+- 50 Pip Stop Loss = $10 Loss = Account-এর 1%
+- পরপর 50টি Loss সহ্য করতে পারবেন
+- সঠিক Sizing-এর জন্য এখনো Leverage উপলব্ধ
+```
+
+---
+
+## ব্যবহারিক Leverage Framework
+
+### $5,000 Account-এর জন্য:
+
+| Risk Level | Lot Size | Effective Leverage | 50-Pip SL খরচ | % Risk |
+|-----------|----------|-------------------|---------------|--------|
+| Conservative | 0.05 | 1:1 | $25 | 0.5% |
+| Standard | 0.10 | 2:1 | $50 | 1.0% |
+| Moderate | 0.20 | 4:1 | $100 | 2.0% |
+| Aggressive | 0.50 | 10:1 | $250 | 5.0% |
+| বিপজ্জনক | 1.00 | 20:1 | $500 | 10% ⚠️ |
+
+<Callout type="info" title="সুপারিশকৃত পদ্ধতি">
+"Standard" সারি দিয়ে শুরু করুন (প্রতি Trade-এ ১% Risk, 2:1 Effective Leverage)। এটি আপনার Account-এর ৫০% হারানোর আগে ৫০ বার ভুল হওয়ার সুযোগ দেয় — শিখতে ও উন্নতি করতে যথেষ্ট।
+</Callout>
+
+---
 
 ## সারসংক্ষেপ
 
-নিরাপদ মার্জিন ব্যবহার:
-- সর্বোচ্চ 5:1 লিভারেজ (খুব বেশি ঝুঁকি নয়)
-- প্রতি ট্রেডে 1-2% ঝুঁকি
-- সর্বদা স্টপ লস ব্যবহার করুন
+- **Leverage** Profit এবং Loss উভয়ই বাড়ায়
+- **Margin** হলো জামানত, Fee নয়
+- **Margin Call** হলো সতর্কতা; **Stop Out** হলো জোরপূর্বক Closure
+- **Available Leverage ≠ ব্যবহার করা উচিত এমন Leverage**
+- বেশিরভাগ Trader-এর জন্য **2:1 থেকে 5:1 Effective Leverage** নিরাপদ
+- **Position Sizing** আপনার প্রকৃত Leverage নির্ধারণ করে, Broker-এর Maximum নয়
+- Available Leverage নির্বিশেষে **প্রতি Trade-এ ১-২% Risk**
 
+---
+
+## সম্পর্কিত বিষয়
+
+- [Risk Management](/bn/academy/risk-management) — সম্পূর্ণ Capital সুরক্ষা গাইড
+- [Position Sizing](/bn/academy/position-sizing) — সুনির্দিষ্ট Lot Size গণনা
+- [Pip ও Terminology](/bn/academy/pips-points-terminology) — পরিমাপ বোঝা
+- [Forex Basics](/bn/academy/forex-basics) — Market Fundamental
+- [Trading Psychology](/bn/academy/trading-psychology) — Leverage Temptation এড়ান

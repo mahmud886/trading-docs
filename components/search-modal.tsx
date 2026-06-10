@@ -43,6 +43,11 @@ const CATEGORY_CONFIG: Record<
     color: "text-accent-blue",
     label: "Sessions",
   },
+  "order-flow": { icon: BarChart3, color: "text-red-400", label: "Order Flow" },
+  intermarket: { icon: TrendingUp, color: "text-accent-blue", label: "Intermarket" },
+  quantitative: { icon: Zap, color: "text-accent-purple", label: "Quantitative" },
+  wyckoff: { icon: BookOpen, color: "text-accent-orange", label: "Wyckoff" },
+  "auction-market": { icon: BarChart3, color: "text-accent-green", label: "Auction Market" },
   blog: { icon: FileText, color: "text-muted-foreground", label: "Blog" },
 };
 
@@ -158,14 +163,14 @@ export function SearchModal() {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="group flex items-center gap-1.5 rounded-full border border-border bg-card p-1.5 text-sm text-muted-foreground transition-all duration-300 hover:border-accent-green/40 hover:bg-accent-green/5 hover:shadow-[0_0_20px_rgba(0,255,157,0.06)] sm:gap-2 sm:px-3.5 sm:py-1.5"
+        className="group flex items-center gap-0.5 rounded-full border border-border bg-card p-0.5 text-[8px] text-muted-foreground transition-all duration-300 hover:border-accent-green/40 hover:bg-accent-green/5 hover:shadow-[0_0_20px_rgba(0,255,157,0.06)] xl:gap-2 xl:px-3.5 xl:py-1.5 xl:text-sm"
       >
         <Search
-          size={14}
-          className="text-accent-green/60 transition-colors group-hover:text-accent-green"
+          size={10}
+          className="text-accent-green/60 transition-colors group-hover:text-accent-green xl:h-3.5 xl:w-3.5"
         />
-        <span className="hidden sm:inline">Search...</span>
-        <kbd className="ml-1 hidden rounded-md border border-border bg-muted/60 px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground sm:inline">
+        {/*<span className="hidden xl:inline">Search...</span>*/}
+        <kbd className="ml-0.5 hidden rounded border border-border bg-muted/60 px-0.5 py-px font-mono text-[7px] text-muted-foreground md:inline xl:ml-1 xl:rounded-md xl:px-1.5 xl:py-0.5 xl:text-[10px]">
           ⌘K
         </kbd>
       </button>

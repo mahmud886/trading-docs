@@ -1,54 +1,72 @@
 ---
-title: "প্রাইস অ্যাকশন রিস্ক ম্যানেজমেন্ট"
-description: "প্রাইস অ্যাকশন ট্রেডিংয়ের জন্য রিস্ক ম্যানেজমেন্ট মাস্টার করুন — পজিশন সাইজিং, প্রাইস স্ট্রাকচার ব্যবহার করে SL প্লেসমেন্ট।"
-level: beginner
-order: 23
-lastUpdated: "2026-05-12"
+title: "Price Action-এ Risk Management — সম্পূর্ণ গাইড"
+description: "Price Action Trading-এ Risk Management আয়ত্ত করুন। সঠিক Stop Placement, Structure-সহ Position Sizing এবং Drawdown Management নিয়ম শিখুন।"
+level: intermediate
+order: 25
+lastUpdated: "2026-06-10"
 ---
 
-## ১-২% নিয়ম
+## PA Trader-দের জন্য Risk Management
 
-একটি ট্রেডে কখনো অ্যাকাউন্টের ১-২% এর বেশি রিস্ক নেবেন না।
+Price Action Trading-এ Risk Management **Structural Stop Placement** ব্যবহার করে — Stop যথেচ্ছ Pip Distance-এর বদলে Swing Point, Order Block বা Liquidity Level-এর বাইরে যায়।
+
+---
+
+## Stop Loss Placement নিয়ম
+
+| Setup Type | Stop অবস্থান |
+|-----------|---------------|
+| Order Block Entry | OB-এর বাইরে (Body) |
+| Fibonacci Entry | 78.6% বা Swing Point-এর বাইরে |
+| S/R Bounce | Zone-এর বাইরে + Buffer |
+| Trendline Bounce | Trendline-এর বাইরে |
+| CHOCH Entry | CHOCH Swing Point-এর বাইরে |
+| Liquidity Sweep | Sweep Wick-এর বাইরে |
+
+---
+
+## Position Sizing সূত্র
 
 ```
-পজিশন সাইজ = (অ্যাকাউন্ট × রিস্ক %) / (এন্ট্রি - SL)
+Lot Size = (Account × Risk%) ÷ (Stop Loss Pip × Pip Value)
 
-উদাহরণ: $10,000 অ্যাকাউন্ট, ১% রিস্ক, ২০-পিপ SL
-পজিশন = ($10,000 × 0.01) / 20 = $5/পিপ = 0.5 লট
+উদাহরণ:
+- Account: $10,000
+- Risk: 1% = $100
+- Stop: Structure-based = 35 Pip
+- Pip Value: $10 (Standard Lot)
+- Lot Size: $100 ÷ (35 × $10) = 0.29 Lot
 ```
 
 ---
 
-## প্রাইস অ্যাকশনে SL প্লেসমেন্ট
+## Price Action-এর জন্য Risk নিয়ম
 
-| সেটআপ | SL প্লেসমেন্ট |
-|-------|--------------|
-| **পিন বার** | পিন বারের উইকের বাইরে |
-| **এনগালফিং** | এনগালফিং ক্যান্ডেলের রেঞ্জের বাইরে |
-| **ব্রেকআউট** | ব্রেকআউট লেভেলের নিচে (বাই) |
-| **পুলব্যাক** | পুলব্যাক লো এর নিচে (বাই) |
-| **সাপোর্ট বাউন্স** | সাপোর্ট জোন + বাফার এর নিচে |
-
-### বাফার নিয়ম
-- Forex: ৫-১০ পিপ
-- Gold: ৫০-১০০ পিপ
-- ইনডিসেস: ১০-২০ পয়েন্ট
+1. **প্রতি Trade-এ সর্বোচ্চ ১-২%** — আলোচনাযোগ্য নয়
+2. **Structure-এর বাইরে Stop** — Structure-তে নয় (Buffer দিন)
+3. **চওড়া Stop = ছোট Position** (Stop না দেওয়া নয়)
+4. **সর্বোচ্চ ৩ Correlated Position** — EUR/USD + GBP/USD = Correlated
+5. **দৈনিক Loss Limit: 3%** — দিনের জন্য Trading বন্ধ
+6. **সাপ্তাহিক Loss Limit: 5%** — পরবর্তী সপ্তাহে Size কমান
+7. **Max Drawdown: 10%** — সম্পূর্ণ Strategy Review
 
 ---
 
-## দৈনিক রিস্ক সীমা
+## Structural vs. Fixed Stop
 
-| নিয়ম | সীমা |
-|------|-----|
-| ট্রেড প্রতি সর্বোচ্চ রিস্ক | ১-২% |
-| দৈনিক সর্বোচ্চ লস | ৩-৫% |
-| সাপ্তাহিক সর্বোচ্চ লস | ৫-৮% |
-| পরপর ২ লসের পর | বিরতি নিন |
+| পদ্ধতি | বর্ণনা | সুবিধা | অসুবিধা |
+|--------|--------|---------|--------|
+| Structural | Swing/OB/Zone-এর বাইরে | যৌক্তিক, কম Random SL Hit | কখনো চওড়া |
+| Fixed Pip | সবসময় X Pip | সহজ, ধারাবাহিক Size | Structure-এর ভিতরে হতে পারে |
+| ATR-based | 1.5-2× ATR | Volatility-adjusted | Structure সম্মান করে না |
+
+**সেরা পদ্ধতি: Structural Stop, তারপর Risk%-এ মানানসই Position Size গণনা।**
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [এন্ট্রি মডেল](/bn/price-action/entry-models) — রিস্কের আগে এন্ট্রি
-- [এক্সিট মডেল](/bn/price-action/exit-models) — এক্সিট কৌশল
-- [ট্রেড ম্যানেজমেন্ট](/bn/price-action/trade-management) — পজিশন ম্যানেজ
+- [Position Sizing](/bn/academy/position-sizing) — বিস্তারিত গণনা
+- [Trade Management](/bn/price-action/trade-management) — Active Management
+- [Entry Models](/bn/price-action/entry-models) — Model অনুযায়ী Stop Placement
+- [Support ও Resistance](/bn/price-action/support-resistance) — Stop-এর জন্য Level

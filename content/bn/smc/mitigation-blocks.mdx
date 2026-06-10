@@ -1,41 +1,70 @@
 ---
-title: "SMC Mitigation Block"
-description: "SMC তে mitigation block মাস্টার করুন — আংশিকভাবে পূরণ Order Block যা দ্বিতীয়বার পরিদর্শন হয়। চিহ্নিতকরণ, এন্ট্রি নিয়ম, বাস্তব উদাহরণ।"
-level: advanced
-order: 9
-lastUpdated: "2026-05-12"
+title: "SMC-তে Mitigation Block — সম্পূর্ণ গাইড"
+description: "Mitigation Block আয়ত্ত করুন — আংশিকভাবে Fill/Test হওয়া Order Block। কখন এখনো মূল্যবান ও কখন এড়াবেন শিখুন।"
+level: intermediate
+order: 8
+lastUpdated: "2026-06-10"
 ---
 
 ## Mitigation Block কী?
 
-Mitigation Block হলো এমন **Order Block যা প্রথম পরিদর্শনে আংশিকভাবে পূরণ হয়েছে** কিন্তু সম্পূর্ণভাবে ভেদ হয়নি। দ্বিতীয়বার ফিরে আসলে OB এর অপূর্ণ অংশ একটি পরিশোধিত এন্ট্রি জোন — "mitigation" জোন।
+Mitigation Block হলো একটি **Order Block যা ইতিমধ্যে Price দ্বারা Test/Touch হয়েছে** কিন্তু সম্পূর্ণ ভাঙেনি। Price OB-তে ফিরে React করলে (আংশিক Fill), OB "Mitigated" হয় — এর অবশিষ্ট শক্তি কমে যায়।
+
+<Callout type="warning" title="Mitigated = দুর্বল">
+Fresh, Unmitigated Order Block সবচেয়ে শক্তিশালী। Price প্রতিবার ফিরে React করলে OB গুরুত্ব হারায়। ২-৩ Mitigation-এর পর Level সম্ভবত Exhausted।
+</Callout>
 
 ---
 
-## Mitigation Block কীভাবে তৈরি হয়
+## Fresh vs. Mitigated
 
-1. **OB তৈরি হয়** — ডিসপ্লেসমেন্টের আগের শেষ বিপরীত ক্যান্ডেল
-2. **প্রথম ফিরে আসা** — প্রাইস OB তে রিট্রেস, আংশিকভাবে প্রবেশ, তারপর চলে যায়
-3. **OB সম্পূর্ণ পূরণ হয়নি** — প্রাইস ৫০-৭০% OB তে ছিল
-4. **দ্বিতীয় ফিরে আসা** — অবশিষ্ট অপূর্ণ অংশে প্রাইস ফেরে
-5. **এই অপূর্ণ অংশ = Mitigation Block**
+| Status | বর্ণনা | Trade Quality |
+|--------|--------|---------------|
+| **Fresh (Unmitigated)** | কখনো Retest হয়নি | সর্বোচ্চ মান |
+| **1x Mitigated** | একবার Test, ধরেছে | এখনো Tradeable |
+| **2x Mitigated** | দুবার Test | দুর্বল — সতর্কতা |
+| **3x+ Mitigated** | ৩+ বার Test | এড়িয়ে চলুন — ভাঙবে |
 
 ---
 
-## বাস্তব উদাহরণ: EUR/USD
+## Mitigation কীভাবে কাজ করে
 
-- **15M বুলিশ OB** 1.0845-1.0855 এ
-- **প্রথম ফিরে আসা:** প্রাইস 1.0851 পর্যন্ত নামে তারপর র‍্যালি (আংশিক পূরণ)
-- **দ্বিতীয় ফিরে আসা:** প্রাইস 1.0847 পর্যন্ত নামে (অপূর্ণ নিচের অংশ)
-- **Mitigation Block:** 1.0845-1.0847
-- **এন্ট্রি:** 1.0847 তে বাই
-- **SL:** 1.0842 (শুধু ৫ পিপ — পুরো OB এর চেয়ে অনেক টাইট)
-- **TP:** 1.0900
-- **R:R:** 1:10.6
+```
+1. 1.1000-এ Bullish OB তৈরি (Fresh)
+2. Price Rally, তারপর OB-তে Pull Back
+3. Price OB Touch করে, Bounce = 1st Mitigation
+4. কিছু Institutional Order Fill, কিন্তু সব নয়
+5. Price আবার Rally, আবার OB-তে Pull Back
+6. 2nd Touch = 2nd Mitigation (এখন দুর্বল)
+7. অবশেষে: OB Break (সব Order Fill/Exhausted)
+
+নিয়ম: প্রথম Touch Trade করুন। 3rd+ Touch এড়িয়ে চলুন।
+```
+
+---
+
+## Mitigation vs. Breaker
+
+| বৈশিষ্ট্য | Mitigation Block | Breaker Block |
+|-----------|-----------------|---------------|
+| OB Status | Test হয়েছে কিন্তু ধরেছে | সম্পূর্ণ ভেঙেছে |
+| Direction | মূলের মতো | Flip (বিপরীত) |
+| Trade | একই Direction (দুর্বল হচ্ছে) | নতুন Direction |
+
+---
+
+## Trading নিয়ম
+
+1. **সবসময় Fresh OB পছন্দ করুন** Mitigated-এর চেয়ে
+2. **1st Mitigation** = Reaction শক্তিশালী হলে Valid
+3. **2nd Mitigation** = শুধু শক্তিশালী Confluence-সহ
+4. **3+ Mitigation** = সম্পূর্ণ এড়িয়ে চলুন
+5. **Mitigation-এ সামান্য React** করলে = OB মরছে
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Order Blocks](/bn/smc/order-blocks) — Mitigation block এর ভিত্তি
-- [Breaker Blocks](/bn/smc/breaker-blocks) — ব্যর্থ OB (ভিন্ন কনসেপ্ট)
+- [Order Blocks](/bn/smc/order-blocks) — Fresh OB Entry
+- [Breaker Blocks](/bn/smc/breaker-blocks) — OB ভাঙলে কী হয়
+- [Fair Value Gap](/bn/smc/fair-value-gap) — OB-র মধ্যে FVG

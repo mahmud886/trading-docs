@@ -1,82 +1,70 @@
 ---
-title: "Internal & External Liquidity"
-description: "Master internal and external liquidity in SMC — understand the difference between micro-level retracement liquidity and macro-level swing liquidity targets."
+title: "Internal & External Liquidity — Complete Guide"
+description: "Master internal vs external liquidity in SMC. Understand how price moves between FVGs/OBs (internal) and swing points (external)."
 level: intermediate
-order: 19
-lastUpdated: "2026-05-12"
+order: 21
+lastUpdated: "2026-06-10"
 ---
 
-## What is Internal vs External Liquidity?
+## Internal vs. External Liquidity
 
-In SMC, liquidity exists at two levels:
-- **External Liquidity** — Major swing highs/lows, PDH/PDL, equal highs/lows (the BIG targets)
-- **Internal Liquidity** — FVGs, Order Blocks, and micro swing points WITHIN a move (retracement targets)
+In SMC, liquidity exists in two forms:
+- **External Liquidity:** Resting orders beyond swing highs/lows (the TARGET)
+- **Internal Liquidity:** FVGs, Order Blocks within the range (the ENTRY)
 
-<Callout type="info" title="The Cycle">
-Price alternates between sweeping external liquidity and filling internal liquidity. External sweep → internal fill (retracement) → next external sweep.
+<Callout type="info" title="The Flow">
+Price moves FROM internal liquidity TO external liquidity, then back. Understanding this flow tells you where price is going next.
 </Callout>
 
 ---
 
-## External Liquidity
+## Definitions
 
-### What It Is
-- Resting orders at major swing highs (BSL) and swing lows (SSL)
-- Equal highs/lows, PDH/PDL, PWH/PWL
-- Trendline liquidity
-
-### How It's Used
-- External liquidity is the DESTINATION — where price is heading
-- Smart money drives price to external liquidity to fill orders
-- Once external liquidity is swept, price retraces to internal liquidity
+| Type | Location | Examples | Purpose |
+|------|----------|---------|----------|
+| **External** | Beyond swing H/L | EQH, EQL, Swing points | TARGET (where price is going) |
+| **Internal** | Within the range | FVGs, OBs, Breakers | ENTRY (where price enters from) |
 
 ---
 
-## Internal Liquidity
-
-### What It Is
-- Fair Value Gaps within a move
-- Order Blocks left behind by displacement
-- Minor swing points within a larger move
-
-### How It's Used
-- Internal liquidity is where price RETRACES to after sweeping external
-- This is your ENTRY zone — buy/sell at FVG/OB during retracement
-- After filling internal liquidity, price heads to the next external target
-
----
-
-## The Internal/External Cycle
+## The Price Cycle
 
 ```
-External SSL swept → Price retraces to internal FVG/OB → Continues to external BSL
-                         (YOUR ENTRY)
-```
+Price follows this cycle:
 
-### Real Example: EUR/USD
-1. **External:** SSL at 1.0830 swept during London
-2. **Internal:** Price retraces UP to 15M bullish FVG at 1.0855 (your entry)
-3. **External:** Price continues UP to BSL at 1.0920
-4. **Entry:** Buy at 1.0855 (internal), Target 1.0920 (external), R:R 1:4+
+1. Takes EXTERNAL liquidity (sweeps high/low)
+2. Returns to INTERNAL liquidity (FVG/OB retracement)
+3. Reacts from internal → goes to next EXTERNAL
+4. Repeat
+
+Example:
+1. Price sweeps EQH (external BSL taken)
+2. Price drops to fill FVG below (internal)
+3. Price reacts from FVG bullishly? No → reversal
+4. Price heads to EQL (external SSL = next target)
+5. Price reaches EQL, sweeps it
+6. Price rallies to FVG above (internal)
+7. Cycle continues...
+```
 
 ---
 
-## Common Mistakes
+## Trading Application
 
-<Callout type="warning" title="Liquidity Errors">
+### Using External as TARGET:
+- Draw on liquidity = next unfilled external level
+- Use EQH/EQL, session H/L, swing points as TP
 
-**❌ Confusing internal and external** — FVGs are INTERNAL (entry zones), swing H/L are EXTERNAL (targets)
-
-**❌ Entering at external levels** — External is where the sweep happens, not your entry zone
-
-**❌ Ignoring the cycle** — Price alternates: external → internal → external. Trade the rhythm
-
-</Callout>
+### Using Internal as ENTRY:
+- After external is taken, look for internal entry
+- Enter at FVG or OB retracement
+- This gives you the best R:R
 
 ---
 
 ## Related Topics
 
-- [Liquidity Pools](/en/smc/liquidity-pools) — External liquidity targets
-- [Fair Value Gap](/en/smc/fair-value-gap) — Internal liquidity zones
-- [Order Blocks](/en/smc/order-blocks) — Internal entry zones
+- [Liquidity Pools](/en/smc/liquidity-pools) — External liquidity detail
+- [Fair Value Gap](/en/smc/fair-value-gap) — Internal liquidity (FVG)
+- [Order Blocks](/en/smc/order-blocks) — Internal liquidity (OB)
+- [Session Liquidity](/en/smc/session-liquidity) — Session-based external

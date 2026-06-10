@@ -1,21 +1,184 @@
 ---
-title: "চার্ট প্যাটার্ন গাইড"
-description: "মাথা এবং কাঁধ, দ্বিগুণ শীর্ষ/তল, ত্রিভুজ, ওয়েজ এবং পতাকা সহ ক্লাসিক চার্ট প্যাটার্ন আয়ত্ত করুন"
-author: "ট্রেডিং একাডেমি"
-date: "2024-01-15"
+title: "Chart Pattern — সম্পূর্ণ Trading গাইড"
+description: "সব প্রধান Chart Pattern আয়ত্ত করুন: Head & Shoulders, Double Top/Bottom, Triangle, Wedge, Flag এবং Cup & Handle। Entry Rule, Target ও Pattern Trading Strategy শিখুন।"
+level: beginner
+order: 15
+lastUpdated: "2026-06-10"
 ---
 
-## চার্ট প্যাটার্ন গাইড
+## Chart Pattern কী?
 
-চার্ট প্যাটার্ন হল ভিজ্যুয়াল গঠন যা নির্ভরযোগ্যভাবে পুনরাবৃত্তি হয় এবং সঠিক নিশ্চিতকরণ সহ উচ্চ-সম্ভাব্যতা ট্রেডিং সেটআপ প্রদান করে।
+Chart Pattern হলো Price Chart-এ **চিনতে পারা Formation** যা সম্ভাব্য ভবিষ্যৎ Price Movement-এর Signal দেয়। এগুলো Market Participant-দের Psychology — ভয়, লোভ, Accumulation ও Distribution — Price-এর মাধ্যমে দৃশ্যমান করে।
 
-### চার্ট প্যাটার্ন বোঝা
+<Callout type="info" title="Pattern Trading-এর সত্য">
+Pattern নিশ্চিতভাবে ভবিষ্যৎ Predict করে না। এগুলো Probabilistic Edge দেয় — এমন পরিস্থিতি যেখানে Price একটি নির্দিষ্ট দিকে যাওয়ার সম্ভাবনা বেশি। সবসময় Risk Management-এর সাথে মিলিয়ে ব্যবহার করুন।
+</Callout>
 
-চার্ট প্যাটার্ন কাজ করে কারণ:
-- **মনোবৈজ্ঞানিক স্তর:** ট্রেডাররা এই প্যাটার্ন স্বীকার এবং ট্রেড করে
-- **ঐতিহাসিক পুনরাবৃত্তি:** সমান প্যাটার্ন সমান ফলাফল উৎপাদন করে
-- **সরবরাহ/চাহিদা ভিজ্যুয়ালাইজেশন:** জমা এবং বিতরণ দেখান
-- **ব্রেকআউট সুযোগ:** পরিষ্কার প্রবেশ এবং প্রস্থান পয়েন্ট প্রদান
+---
 
-এটি একটি সংক্ষিপ্ত বাংলা সংস্করণ। সম্পূর্ণ বিষয়বস্তুর জন্য ইংরেজি সংস্করণ দেখুন।
+## Pattern-এর শ্রেণিবিভাগ
 
+| শ্রেণি | কী Signal দেয় | উদাহরণ |
+|--------|---------------|---------|
+| **Reversal Pattern** | Trend Direction পরিবর্তন হতে পারে | Head & Shoulders, Double Top/Bottom |
+| **Continuation Pattern** | Trend সম্ভবত চলবে | Flag, Pennant, Triangle |
+| **Bilateral Pattern** | যেকোনো দিকে Break হতে পারে | Symmetric Triangle, Rectangle |
+
+---
+
+## Reversal Pattern
+
+### Head & Shoulders (H&S)
+
+সবচেয়ে নির্ভরযোগ্য Reversal Pattern। Market Top-এ Bearish Reversal-এর Signal দেয়।
+
+```
+গঠন:
+    Head
+   /    \
+  /      \    Right
+Left      \  Shoulder
+Shoulder   \/
+  \      /
+   \    /
+   Neckline
+      |
+   BREAK = Entry
+
+Entry: Neckline-এর নিচে Break
+Stop Loss: Right Shoulder-এর উপরে
+Target: Head থেকে Neckline-এর দূরত্ব, নিচে Project
+```
+
+**Inverse Head & Shoulders** = Market Bottom-এ Bullish Reversal (উল্টো Version)
+
+### Double Top
+
+প্রায় একই Level-এ দুটি Peak, Bearish Reversal-এর Signal।
+
+| উপাদান | বর্ণনা |
+|---------|--------|
+| প্রথম Peak | Price Resistance Hit করে ও Pull Back |
+| Valley | Peak-এর মধ্যে Pullback (Support/Neckline) |
+| দ্বিতীয় Peak | Price একই Resistance-এ ফেরে, আবার ব্যর্থ |
+| Neckline Break | Entry Trigger |
+| Target | Peak থেকে Neckline-এর দূরত্ব, নিচে Project |
+
+### Double Bottom
+
+প্রায় একই Level-এ দুটি Valley, Bullish Reversal-এর Signal।
+- Double Top-এর Mirror Image
+- Neckline উপরে Break-এ Entry
+- দ্বিতীয় Bottom-এ Volume বাড়লে বেশি নির্ভরযোগ্য
+
+---
+
+## Continuation Pattern
+
+### Bull Flag
+```
+শক্তিশালী Move Up (Flagpole)
+   |
+   |  ╲ ╲ ╲  ← Flag (সামান্য Pullback, Parallel Channel)
+   |  ╱ ╱ ╱
+   |
+   | Flag-এর উপরে Breakout = ENTRY
+   |
+Target: Breakout থেকে Flagpole-এর দৈর্ঘ্য Project
+```
+
+### Bear Flag
+- Bull Flag-এর Mirror (শক্তিশালী Move Down + সামান্য Pullback Up)
+- Flag-এর নিচে Breakout = Short Entry
+
+### Ascending Triangle
+- সমতল Resistance + ক্রমবর্ধমান Support (Higher Low)
+- Bullish Bias — সাধারণত উপরে Break হয়
+- Entry: Volume-সহ সমতল Resistance-এর উপরে Break
+- Target: Triangle-এর উচ্চতা উপরে Project
+
+### Descending Triangle
+- সমতল Support + ক্রমহ্রাসমান Resistance (Lower High)
+- Bearish Bias — সাধারণত নিচে Break হয়
+- Entry: সমতল Support-এর নিচে Break
+- Target: Triangle-এর উচ্চতা নিচে Project
+
+### Symmetric Triangle
+- সংকীর্ণ হওয়া Trendline (Lower High + Higher Low)
+- Bilateral — যেকোনো দিকে Break হতে পারে
+- Breakout Direction-এ Trade করুন
+- প্রায়ই পূর্ববর্তী Trend-এর দিকে Resolve হয়
+
+---
+
+## Wedge Pattern
+
+### Rising Wedge (Bearish)
+- উভয় Trendline ঊর্ধ্বমুখী, কিন্তু Converge করছে
+- Price Higher High ও Higher Low করছে, কিন্তু ধীর হচ্ছে
+- সাধারণত নিচে BREAK হয়
+
+### Falling Wedge (Bullish)
+- উভয় Trendline নিম্নমুখী, কিন্তু Converge করছে
+- Price Lower High ও Lower Low করছে, কিন্তু ধীর হচ্ছে
+- সাধারণত উপরে BREAK হয়
+
+---
+
+## Cup & Handle
+
+একটি Rounded Bottom (Cup) ও তারপর ছোট Consolidation (Handle), Bullish Continuation-এর Signal।
+
+```
+Target: Breakout থেকে Cup-এর গভীরতা Project
+Timeframe: সাধারণত সপ্তাহ/মাসে তৈরি হয় (D1 Chart)
+```
+
+---
+
+## Pattern Trading নিয়ম
+
+### Entry নিয়ম:
+1. **Confirmation অপেক্ষা করুন** — Pattern Complete হওয়ার আগে Enter করবেন না
+2. **Volume Confirmation** — Breakout-এ Volume বাড়া উচিত
+3. **Retest Entry** — প্রায়ই Price Breakout Level Retest করে (ভালো Entry)
+4. **Multiple Timeframe** — H4+ এ Pattern M15-এর চেয়ে বেশি নির্ভরযোগ্য
+
+### Stop Loss Placement:
+| Pattern | Stop Loss অবস্থান |
+|---------|-------------------|
+| Head & Shoulders | Right Shoulder-এর উপরে |
+| Double Top | Peak-এর উপরে |
+| Double Bottom | Valley-র নিচে |
+| Flag/Pennant | Flag-এর নিচে (Bullish) বা উপরে (Bearish) |
+| Triangle | বিপরীত Trendline-এর বাইরে |
+
+### Target গণনা:
+বেশিরভাগ Pattern **Measured Move Technique** ব্যবহার করে:
+- Pattern-এর উচ্চতা পরিমাপ করুন
+- Breakout Point থেকে সেই দূরত্ব Project করুন
+- এটি আপনার ন্যূনতম Target
+
+---
+
+## Pattern Failure
+
+<Callout type="warning" title="গুরুত্বপূর্ণ">
+Pattern ঘন ঘন FAIL করে (৩০-৪০% সময়)। এজন্যই Stop Loss অপরিহার্য। Failed Pattern প্রায়ই বিপরীত দিকে শক্তিশালী Move ঘটায় (Trapped Trader Exit করে)।
+</Callout>
+
+### Pattern কখন Fail করে:
+- শক্তিশালী Higher-timeframe Trend-এর বিরুদ্ধে Trade
+- কম Volume Breakout (Conviction নেই)
+- News Event Technical Setup-কে আচ্ছন্ন করে
+- Pattern সবার কাছে দৃশ্যমান (Crowded Trade)
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Support ও Resistance](/bn/academy/support-resistance-advanced) — মূল Level-এ Pattern তৈরি হয়
+- [Trendline ও Channel](/bn/academy/trendlines-channels) — Trend Boundary আঁকা
+- [Technical Indicator](/bn/academy/technical-indicators) — Pattern Confirm করুন
+- [Fibonacci Trading](/bn/academy/fibonacci-trading) — Retracement পরিমাপ
+- [Risk Management](/bn/academy/risk-management) — Pattern Trade ম্যানেজ

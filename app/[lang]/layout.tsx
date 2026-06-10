@@ -1,25 +1,29 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import { Hind_Siliguri } from "next/font/google";
+import { Noto_Sans, Noto_Sans_Bengali, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
 import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ReadingProgress } from "@/components/docs/reading-progress";
+import { generateWebsiteSchema, generateOrganizationSchema } from "@/lib/schema";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-const hindSiliguri = Hind_Siliguri({
-  variable: "--font-hind-siliguri",
+const notoSansBengali = Noto_Sans_Bengali({
+  variable: "--font-noto-sans-bengali",
   weight: ["300", "400", "500", "600", "700"],
-  subsets: ["bengali", "latin"],
+  subsets: ["bengali"],
 });
 
 // Combine font CSS variables into a single, server-stable class string
-const fontClasses = `${geistSans.variable} ${geistMono.variable} ${hindSiliguri.variable}`;
+const fontClasses = `${notoSans.variable} ${geistMono.variable} ${notoSansBengali.variable}`;
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -36,9 +40,22 @@ export default async function LangLayout({
 
   if (!locales.includes(lang as Locale)) notFound();
 
+  const websiteSchema = generateWebsiteSchema();
+  const orgSchema = generateOrganizationSchema();
+
   return (
-    <html lang={lang} suppressHydrationWarning={true} data-scroll-behavior="smooth">
-      <body suppressHydrationWarning={true} className={`${fontClasses} relative min-h-screen text-foreground antialiased`}>
+    <html lang={lang} suppressHydrationWarning={true} data-scroll-behavior="smooth" className={fontClasses}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+      </head>
+      <body suppressHydrationWarning={true} className="relative min-h-screen text-foreground antialiased">
         {/* Emerald Depths background */}
         <div
           className="pointer-events-none fixed inset-0 z-0"

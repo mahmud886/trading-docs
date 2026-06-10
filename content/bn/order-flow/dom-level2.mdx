@@ -1,0 +1,142 @@
+---
+title: "DOM ও Level 2 ডেটা রিডিং — সম্পূর্ণ গাইড"
+description: "ডেপথ অফ মার্কেট (DOM) ও Level 2 ডেটা রিডিং মাস্টার করুন। ইনস্টিটিউশনাল অর্ডার, স্পুফিং, অ্যাবসর্পশন এবং রিয়েল-টাইম সাপ্লাই/ডিমান্ড ইমব্যালেন্স চিনতে শিখুন।"
+level: intermediate
+order: 2
+lastUpdated: "2026-06-10"
+---
+
+## What is DOM (Depth of Market)?
+
+The Depth of Market (DOM), also known as Level 2, the Order Book, or the Ladder, shows all **pending limit orders** at each price level in real-time. It's the closest you can get to seeing institutional intent before price moves.
+
+<Callout type="info" title="Level 1 vs Level 2">
+**Level 1** = Best bid/ask price only. **Level 2** = Full order book depth showing ALL pending orders at every price level. Professional traders need Level 2 for edge.
+</Callout>
+
+---
+
+## DOM Structure
+
+```
+PRICE    |  BID (Buy Limits)  |  ASK (Sell Limits)
+---------|--------------------|-----------------
+1.0955   |                    |  450 contracts
+1.0954   |                    |  320 contracts
+1.0953   |                    |  180 contracts  ← Best Ask
+1.0952   |  220 contracts     |                 ← Best Bid
+1.0951   |  380 contracts     |
+1.0950   |  850 contracts     |                 ← Large support
+1.0949   |  290 contracts     |
+```
+
+---
+
+## Reading the DOM
+
+### Key Observations
+
+1. **Thick levels**: Large order clusters = potential support/resistance
+2. **Thin levels**: Few orders = price can move through quickly
+3. **Refreshing orders**: Orders that keep appearing = institutional algo
+4. **Pulling orders**: Orders disappearing before being hit = spoofing
+
+### Bid/Ask Imbalance
+
+- **More bids than asks** = bullish pressure building
+- **More asks than bids** = bearish pressure building
+- **Sudden disappearance** of one side = imminent move
+
+---
+
+## DOM Trading Patterns
+
+### 1. Absorption
+
+When a large limit order "absorbs" aggressive orders without price moving:
+
+```
+Scenario: 500-lot limit buy at 1.0950
+- Market sellers hit it: 100 lots... 200 lots... 300 lots...
+- Price STAYS at 1.0950 (the limit order absorbs selling)
+- Eventually sellers exhaust → price bounces UP
+
+Interpretation: Strong institutional buyer at that level
+```
+
+### 2. Iceberg Orders
+
+Large orders hidden as small visible quantities:
+
+```
+Visible: 10 lots at 1.0950
+Reality: 500 lots total, showing only 10 at a time
+Sign: The same level keeps "refreshing" after being hit
+```
+
+### 3. Spoofing / Layering
+
+Fake orders placed to manipulate perception:
+
+```
+Spoofer places 1000 lots on bid side (looks like strong support)
+Retail/algos see this and buy
+Spoofer cancels bids AND sells into the buying
+Price drops — spoofer profits
+```
+
+<Callout type="warning" title="Spoofing is Illegal">
+Spoofing is illegal in regulated markets (fined by SEC/CFTC). However, it still occurs in crypto and less regulated venues. Learn to identify it to avoid being trapped.
+</Callout>
+
+### 4. Stacking
+
+Multiple limit orders placed in sequence to create a "wall":
+
+```
+1.0960: 200 lots
+1.0959: 200 lots
+1.0958: 200 lots
+1.0957: 200 lots  ← "Stacked" sell wall
+
+This creates resistance. If price breaks through = strong signal.
+```
+
+---
+
+## DOM Trading Rules
+
+### For Scalping
+1. Identify levels with unusual order size (3x+ average)
+2. Watch if aggressive orders can break through
+3. If absorbed → fade the aggressor
+4. If broken → join the breakout
+
+### For Confirmation
+1. Have your SMC/ICT bias first (HTF direction)
+2. Drop to DOM at your entry level
+3. Confirm institutional presence (absorption, iceberg, stacking)
+4. Enter with confidence when DOM confirms
+
+---
+
+## DOM Limitations
+
+- **Only shows LIMIT orders** — market orders are invisible until executed
+- **Orders can be cancelled** — what you see may not execute
+- **Crypto DOM is fragmented** — multiple exchanges = incomplete picture
+- **Speed required** — DOM changes in milliseconds
+- **Not suitable for swing trading** — short-term tool only
+
+---
+
+## Recommended Platforms for DOM
+
+| Platform | Best For | Cost |
+|----------|----------|------|
+| Sierra Chart | Futures DOM | $26/month |
+| Bookmap | Visual DOM heatmap | $39/month |
+| Jigsaw Trading | DOM analysis | $37/month |
+| Quantower | Multi-asset DOM | Free/Premium |
+| ATAS | Futures + Crypto | $69/month |
+

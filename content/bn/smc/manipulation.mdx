@@ -1,62 +1,88 @@
 ---
-title: "SMC ম্যানিপুলেশন"
-description: "SMC তে মার্কেট ম্যানিপুলেশন বুঝুন — স্মার্ট মানি কীভাবে ভুয়া মুভ তৈরি করে রিটেইল ট্রেডারদের ফাঁসায় এবং ইনস্টিটিউশনাল এন্ট্রির জন্য লিকুইডিটি তৈরি করে।"
+title: "SMC Manipulation — সম্পূর্ণ গাইড"
+description: "Institution কীভাবে Price Manipulate করে আয়ত্ত করুন। Stop Hunt, False Breakout, News Manipulation এবং Engineered Move থেকে Profit শিখুন।"
 level: intermediate
-order: 15
-lastUpdated: "2026-05-12"
+order: 13
+lastUpdated: "2026-06-10"
 ---
 
-## SMC তে ম্যানিপুলেশন কী?
+## SMC-তে Manipulation কী?
 
-ম্যানিপুলেশন হলো স্মার্ট মানির তৈরি **ইচ্ছাকৃত ভুয়া মুভ** যা রিটেইল ট্রেডারদের মার্কেটের ভুল দিকে ফাঁসায়। এর মাধ্যমে ইনস্টিটিউশন বড় পজিশন পূরণের জন্য প্রয়োজনীয় কাউন্টারপার্টি লিকুইডিটি তৈরি করে।
+Manipulation হলো Retail Stop Loss Trigger, Liquidity তৈরি ও Optimal Price-এ বড় Order Fill করতে Institution-এর **ইচ্ছাকৃত Price Move Engineering**। এটি অবৈধ নয় — Institution-এর Execution-এ Liquidity প্রয়োজনের স্বাভাবিক ফলাফল।
 
-<Callout type="info" title="কেন ম্যানিপুলেশন হয়">
-ব্যাংক একসাথে ৫০০ মিলিয়ন EUR/USD কিনতে পারে না — এত লিকুইডিটি নেই। তাদের কাউকে সেল করাতে হবে। সাপোর্টের নিচে প্রাইস ঠেলে (সেল স্টপ ট্রিগার করে), তারা সেল অর্ডার পায় যাতে বাই করতে পারে।
+<Callout type="warning" title="Manipulation = সুযোগ">
+Institution কোথায় ও কখন Manipulate করে বুঝলে, শিকার থেকে Profiteer হবেন। প্রতিটি Stop Hunt সচেতন Trader-এর Entry Signal।
 </Callout>
 
 ---
 
-## ম্যানিপুলেশনের ধরন
+## Manipulation-এর ধরন
 
-### ১. স্টপ হান্ট (লিকুইডিটি সুইপ)
-- প্রাইস মূল লেভেলের বাইরে গিয়ে স্টপ ট্রিগার করে
-- দ্রুত উইক, তারপর রিভার্সাল
+### ১. Liquidity Sweep (Stop Hunt)
+```
+1. Price সুস্পষ্ট High/Low তৈরি (Retail Stop রাখে)
+2. Price Level-এর বাইরে Sweep (Stop Trigger)
+3. Institution Triggered Stop Order দিয়ে Fill
+4. প্রকৃত Direction-এ তাৎক্ষণিক Reversal
+```
 
-### ২. ভুয়া ব্রেকআউট
-- প্রাইস রেজিস্ট্যান্স ভাঙে বা সাপোর্ট ভাঙে
-- ব্রেকআউট ট্রেডাররা এন্ট্রি নেয় → ফাঁদে পড়ে
-- প্রাইস আক্রমণাত্মকভাবে উল্টে যায়
+### ২. False Breakout (Inducement)
+```
+1. স্পষ্ট S/R Level তৈরি (Retail Breakout-এর জন্য অপেক্ষা)
+2. Price Break Out (Retail Enter)
+3. Breakout Fail — Price ভিতরে ফিরে Reverse
+4. Breakout Trader Stop Out হয় (Liquidity দেয়)
+5. প্রকৃত Move বিপরীত Direction-এ
+```
 
-### ৩. ইন্ডিউসমেন্ট
-- ছোট মুভ যা ট্রেডারদের খারাপ পজিশনে টানে
-- "স্পষ্ট" প্যাটার্ন তৈরি করে (ট্রেন্ডলাইন, চ্যানেল)
-- তারপর প্যাটার্ন ভেঙে আগের এন্ট্রিগুলো স্টপ আউট করে
+### ৩. News Manipulation
+```
+1. High-impact News Release
+2. Price উভয় Direction-এ দ্রুত Spike
+3. উভয় দিকে Stop Hit = সর্বোচ্চ Liquidity সংগৃহীত
+4. ১৫-৩০ মিনিট পর প্রকৃত Direction প্রকাশ
+5. Chaos-এ Institution Fill হয়েছে
+```
 
 ---
 
-## ম্যানিপুলেশন কীভাবে চিহ্নিত করবেন
+## কোথায় Manipulation ঘটে
 
-### ম্যানিপুলেশনের লক্ষণ
-- **লম্বা উইক** — মূল লেভেলে রিজেকশন ক্যান্ডেল
-- **দ্রুত রিভার্সাল** — প্রাইস লেভেলের বাইরে টিকে না
-- **Kill Zone টাইমিং** — ম্যানিপুলেশন লন্ডন/NY ওপেনে হয়
-- **আগে রেঞ্জ** — সাধারণত কনসলিডেশনের (accumulation) পরে হয়
+| অবস্থান | ধরন | কী ঘটে |
+|---------|------|--------|
+| Equal High | BSL Sweep | উপরে ভাঙে, নিচে Reverse |
+| Equal Low | SSL Sweep | নিচে ভাঙে, উপরে Reverse |
+| Session H/L | Session Sweep | নতুন Session পূর্ববর্তী Target করে |
+| News Event | উভয় দিক | Double-side Sweep |
+| সুস্পষ্ট S/R | False Break | Breakout Trader Trap ও Trigger |
 
 ---
 
-## বাস্তব উদাহরণ: EUR/USD স্টপ হান্ট
+## Manipulation Trade করা
 
-- **সাপোর্ট:** 1.0850 (ইকুয়াল লো — ৩ বার ছোঁয়া)
-- **ম্যানিপুলেশন:** লন্ডন ওপেনে প্রাইস 1.0842 এ নামে (SSL সুইপ)
-- **ঘটনা:** 1.0850 এর নিচে সেল স্টপ ট্রিগার
-- **স্মার্ট মানি:** সেল অর্ডার শোষণ করে লং পজিশন তৈরি
-- **ফলাফল:** প্রাইস 1.0930 এ রিভার্স (৮০+ পিপ)
-- **BD সময়:** দুপুর ১২:১৫ (লন্ডন Kill Zone)
+### নিয়ম:
+1. **সুস্পষ্ট Level-এ Stop রাখবেন না** — সবসময় Buffer দিন
+2. **Sweep-এর জন্য অপেক্ষা** — Initial Break Trade নয়
+3. **Manipulation সম্পন্ন হওয়ার পর Reversal Trade**
+4. **Sweep-এর পর LTF-এ CHOCH খুঁজুন**
+5. **Manipulation = Entry Signal** — Sweep-ই আপনার Setup
+
+### সম্পূর্ণ Setup:
+```
+1. সুস্পষ্ট Liquidity Level চিহ্নিত (Equal H/L, স্পষ্ট S/R)
+2. Price Level Sweep করার অপেক্ষা
+3. তাৎক্ষণিক Reversal দেখুন (শক্তিশালী Rejection Candle)
+4. LTF CHOCH Smart Money Direction Confirm করে
+5. Manipulation Direction-এর বিপরীতে Enter
+6. Stop: Sweep Wick-এর বাইরে
+7. Target: বিপরীত Liquidity Pool
+```
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [ইন্ডিউসমেন্ট](/bn/smc/inducement) — অ্যাডভান্সড ম্যানিপুলেশন
-- [লিকুইডিটি পুল](/bn/smc/liquidity-pools) — ম্যানিপুলেশনের টার্গেট
-- [CHOCH](/bn/smc/choch) — ম্যানিপুলেশনের পর কনফার্মেশন
+- [Inducement](/bn/smc/inducement) — Trap Setup করা
+- [Liquidity Pools](/bn/smc/liquidity-pools) — Manipulation কোথায় Target করে
+- [Equal Highs ও Lows](/bn/smc/equal-highs-lows) — মূল Manipulation Target
+- [Kill Zones](/bn/smc/kill-zones) — সবচেয়ে বেশি কখন ঘটে

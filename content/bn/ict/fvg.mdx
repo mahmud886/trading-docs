@@ -1,107 +1,152 @@
 ---
 title: "ICT Fair Value Gap (FVG)"
-description: "ICT Fair Value Gap সম্পূর্ণ গাইড। ৩-ক্যান্ডেল প্রাইস ইমব্যালান্স, Consequent Encroachment, Inversion FVG, BISI/SIBI শিখুন।"
+description: "ICT Fair Value Gap সম্পূর্ণ Guide। 3-Candle Price Imbalance, Consequent Encroachment, Inversion FVG, BISI/SIBI শিখুন এবং Institution এর মতো FVG Trade করুন।"
 level: intermediate
 order: 6
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-09"
 ---
 
 ## Fair Value Gap কী?
 
-Fair Value Gap (FVG) হলো **৩টি ক্যান্ডেলের প্রাইস ইমব্যালান্স** যেখানে ক্যান্ডেল ১ এবং ক্যান্ডেল ৩ এর উইক ওভারল্যাপ করে না, ক্যান্ডেল ২ এর বডি দ্বারা তৈরি একটি গ্যাপ থাকে। এই গ্যাপ দেখায় প্রাইস একদিকে খুব দ্রুত চলে গেছে — অ্যালগরিদম সম্ভবত এটা পুনরায় পূরণ করবে।
+Fair Value Gap (FVG) হলো **3টি Candle এর Price Imbalance** যেখানে Candle 1 এবং Candle 3 এর Wick Overlap করে না, Candle 2 এর Body দ্বারা তৈরি একটি Gap থাকে। এই Gap দেখায় Price একদিকে খুব দ্রুত চলে গেছে — Algorithm সম্ভবত এটা পুনরায় পূরণ করবে।
 
 <Callout type="info" title="ICT সংজ্ঞা">
-FVG হলো ক্যান্ডেল ১ এর হাই ও ক্যান্ডেল ৩ এর লো এর মধ্যবর্তী রেঞ্জ (বুলিশ) অথবা ক্যান্ডেল ১ এর লো ও ক্যান্ডেল ৩ এর হাই এর মধ্যবর্তী রেঞ্জ (বেয়ারিশ)।
+"Fair Value Gap হলো Candle 1 এর High ও Candle 3 এর Low এর মধ্যবর্তী Range (Bullish) অথবা Candle 1 এর Low ও Candle 3 এর High এর মধ্যবর্তী Range (Bearish)। এটি Price Delivery তে Imbalance প্রতিনিধিত্ব করে।" — ICT
 </Callout>
 
 ---
 
-## বুলিশ বনাম বেয়ারিশ FVG
+## Bullish vs Bearish FVG
 
-### বুলিশ FVG (BISI — Buy-Side Imbalance, Sell-Side Inefficiency)
-- ক্যান্ডেল ২: শক্তিশালী বুলিশ ডিসপ্লেসমেন্ট ক্যান্ডেল
-- **গ্যাপ** = ক্যান্ডেল ১ এর হাই থেকে ক্যান্ডেল ৩ এর লো
-- প্রাইস এই গ্যাপে ফিরে আসলে বাই এন্ট্রি
+### Bullish FVG (BISI — Buy-Side Imbalance, Sell-Side Inefficiency)
+- Candle 1: যেকোনো Candle
+- Candle 2: শক্তিশালী Bullish Displacement Candle
+- Candle 3: যেকোনো Candle
+- **Gap** = Candle 1 এর High থেকে Candle 3 এর Low
+- Price এই Gap এ নিচে ফিরে আসলে Buy Entry
 
-### বেয়ারিশ FVG (SIBI — Sell-Side Imbalance, Buy-Side Inefficiency)
-- ক্যান্ডেল ২: শক্তিশালী বেয়ারিশ ডিসপ্লেসমেন্ট ক্যান্ডেল
-- **গ্যাপ** = ক্যান্ডেল ১ এর লো থেকে ক্যান্ডেল ৩ এর হাই
-- প্রাইস এই গ্যাপে ফিরে আসলে সেল এন্ট্রি
+### Bearish FVG (SIBI — Sell-Side Imbalance, Buy-Side Inefficiency)
+- Candle 1: যেকোনো Candle
+- Candle 2: শক্তিশালী Bearish Displacement Candle
+- Candle 3: যেকোনো Candle
+- **Gap** = Candle 1 এর Low থেকে Candle 3 এর High
+- Price এই Gap এ উপরে ফিরে আসলে Sell Entry
 
 ---
 
 ## Consequent Encroachment (CE)
 
-FVG এর **মিডপয়েন্ট (৫০%)** কে Consequent Encroachment বলে:
-- CE হলো **সেরা এন্ট্রি পয়েন্ট**
-- প্রাইস CE ভেদ করে গেলে FVG দুর্বল হয়
-- CE সম্মান করলে = শক্তিশালী ইনস্টিটিউশনাল আগ্রহ
+যেকোনো FVG এর **Midpoint (50%)** কে Consequent Encroachment বলে। ICT শেখায় যে:
 
-### CE গণনা
+- CE হলো FVG এর মধ্যে **Optimal Entry Point**
+- Price CE ভেদ করে Trade করলে, FVG **Violated** বলে গণ্য
+- CE Respect করলে = শক্তিশালী Institutional Interest
+- পুরো FVG Range এর বদলে CE ব্যবহার করুন Precision Entry এর জন্য
+
+### CE কীভাবে Calculate করবেন
 ```
-বুলিশ FVG CE = (ক্যান্ডেল ১ হাই + ক্যান্ডেল ৩ লো) / ২
-বেয়ারিশ FVG CE = (ক্যান্ডেল ১ লো + ক্যান্ডেল ৩ হাই) / ২
+Bullish FVG CE = (Candle 1 High + Candle 3 Low) / 2
+Bearish FVG CE = (Candle 1 Low + Candle 3 High) / 2
 ```
 
 ---
 
-## FVG এর প্রকারভেদ
+## ICT তে FVG এর প্রকারভেদ
 
-### ১. স্ট্যান্ডার্ড FVG
-সাধারণ ৩-ক্যান্ডেল ইমব্যালান্স — সবচেয়ে সাধারণ
+### ১. Standard FVG
+সাধারণ 3-Candle Imbalance — সবচেয়ে Common, Entry এর জন্য ব্যবহৃত
 
 ### ২. Implied FVG (IFVG)
-উইক সামান্য ওভারল্যাপ করলেও বডি ওভারল্যাপ করে না — তবুও FVG হিসেবে গণ্য
+Wick সামান্য Overlap করলেও Body Overlap করে না — তবুও FVG হিসেবে গণ্য কারণ Body Range Inefficient ছিল
 
 ### ৩. Inversion FVG
-পূরণ হওয়া FVG ভূমিকা পরিবর্তন করে:
-- বেয়ারিশ FVG পূরণ হলে → বুলিশ সাপোর্ট হয়
-- বুলিশ FVG পূরণ হলে → বেয়ারিশ রেজিস্ট্যান্স হয়
+আগে Bearish FVG সম্পূর্ণ Fill হয়ে এখন **Support** হিসেবে কাজ করে (বা উল্টোটা)। FVG তার ভূমিকা "Invert" করে:
+- Bearish FVG Filled → Bullish Support হয়ে যায়
+- Bullish FVG Filled → Bearish Resistance হয়ে যায়
+
+### ৪. Volume Imbalance (VI)
+একটি Candle এর Close ও পরবর্তী Candle এর Open এর মধ্যে Gap — FVG থেকে ভিন্ন কিন্তু সম্পর্কিত Concept
+
+### ৫. Opening Range Gap
+আগের দিনের Close ও বর্তমান দিনের Open এর মধ্যে Gap — Institutional Gap
 
 ---
 
-## FVG ট্রেডিং নিয়ম
+## FVG Trading Rules
 
-1. **HTF দিক** — শুধু Daily/4H বায়াসের সাথে মেলে এমন FVG ট্রেড করুন
-2. **প্রিমিয়াম/ডিসকাউন্ট** — ডিসকাউন্টে বুলিশ FVG, প্রিমিয়ামে বেয়ারিশ FVG
-3. **Kill Zone টাইমিং** — Kill Zone এ তৈরি FVG সর্বোচ্চ সম্ভাবনাপূর্ণ
-4. **CE এন্ট্রি** — ভালো R:R এর জন্য FVG এর ৫০% এ এন্ট্রি করুন
+### Entry Rules
+1. **HTF Direction** — শুধু Daily/4H Bias এর সাথে মেলে এমন FVG Trade করুন
+2. **Premium/Discount** — Discount Zone এ Bullish FVG, Premium Zone এ Bearish FVG
+3. **Kill Zone Timing** — Kill Zone এ তৈরি FVG সর্বোচ্চ Probability
+4. **Displacement** — FVG তৈরিকারী Candle এ শক্তিশালী Momentum থাকা উচিত
+5. **CE Entry** — সেরা Risk:Reward এর জন্য FVG এর 50% (CE) এ Entry করুন
+
+### Invalidation Rules
+- Price পুরোপুরি FVG ভেদ করে Body Close করলে FVG **Invalid**
+- Price CE ভেদ করে Respect না করলে FVG **Weakened**
+- Higher Timeframe FVG Lower Timeframe FVG কে Override করে
+- পুরনো FVG (40+ Candle এর বেশি পুরনো) Significance হারায়
 
 ---
 
-## বাস্তব উদাহরণ
+## বাস্তব Trading উদাহরণ
 
-### উদাহরণ ১: EUR/USD — বুলিশ FVG
-- **HTF বায়াস:** ডেইলি বুলিশ — BSL টার্গেট 1.0950
-- **সেটআপ:** 15M ডিসপ্লেসমেন্ট, বুলিশ FVG (1.0885 - 1.0895)
-- **CE:** 1.0890
-- **এন্ট্রি:** 1.0890 তে বাই
-- **SL:** 1.0882 (৮ পিপ) | **TP:** 1.0950 (৬০ পিপ)
+### উদাহরণ ১: EUR/USD — Bullish FVG Entry
+- **HTF Bias:** Daily Bullish — Price Discount এ, BSL Target 1.0950
+- **Setup:** 15M Displacement উপরে, Bullish FVG (1.0885 - 1.0895)
+- **CE Level:** 1.0890
+- **Entry:** 1.0890 তে Limit Buy (CE)
+- **Stop Loss:** FVG Low এর নিচে 1.0882 (8 Pips)
+- **Target:** BSL 1.0950 (60 Pips)
 - **R:R:** 1:7.5
-- **সময় (BD):** দুপুর ২:৩০ (লন্ডন Kill Zone)
+- **সময় (BD):** দুপুর ২:৩০ (London Kill Zone)
 
-### উদাহরণ ২: Gold — বেয়ারিশ FVG
-- **HTF বায়াস:** 4H বেয়ারিশ — প্রিমিয়ামে
-- **সেটআপ:** 5M NY AM, বেয়ারিশ FVG (2,042-2,038)
-- **CE:** 2,040
-- **এন্ট্রি:** 2,040 তে সেল
-- **SL:** 2,043 | **TP:** 2,015
+### উদাহরণ ২: Gold (XAU/USD) — Bearish FVG
+- **HTF Bias:** 4H Bearish — Price Premium এ 2,045 এ Rally এর পর
+- **Setup:** 5M NY AM Session, MSS এর পর Bearish FVG (2,042-2,038)
+- **CE Level:** 2,040
+- **Entry:** 2,040 তে Limit Sell
+- **Stop Loss:** FVG High এর উপরে 2,043 (30 Pips)
+- **Target:** SSL 2,015 (250 Pips)
 - **R:R:** 1:8.3
 - **সময় (BD):** রাত ৮:০০ (NY AM Kill Zone)
+
+### উদাহরণ ৩: NAS100 — Inversion FVG
+- **Setup:** 17,850-17,820 তে আগের Bearish FVG সম্পূর্ণ Filled হয়
+- **Price ফিরে আসে** এই একই Zone এ এবং এখন Support হিসেবে কাজ করে
+- **Entry:** পুরনো Bearish FVG এর Top এ Buy (17,850)
+- **Concept:** Algorithm Inefficiency Rebalance করেছে; এখন Level Invert হয়েছে
+
+---
+
+## Multi-Timeframe FVG Analysis
+
+| Timeframe          | FVG ভূমিকা                                   | ব্যবহার                         |
+|--------------------|----------------------------------------------|---------------------------------|
+| **Monthly/Weekly** | Major Imbalance — Price এগুলো Fill করতে যাবে | Directional Bias, Swing Target  |
+| **Daily**          | সপ্তাহের জন্য মূল Level                      | Intraday Bias, Area of Interest |
+| **4H**             | Refined Entry Zone                           | Swing Trade Entry               |
+| **15M/5M**         | Precision Entry                              | Scalp/Day Trade Entry           |
+| **1M**             | Sniper Entry                                 | CE তে Exact Entry               |
+
+### Rule: HTF FVG > LTF FVG
+Daily FVG এর মধ্যে 15M FVG = খুব বেশি Probability। Daily FVG এর বিপরীতে 15M FVG = কম Probability।
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="FVG ভুল">
+<Callout type="warning" title="FVG Trading এ ভুল">
 
-**❌ প্রতিটি FVG ট্রেড করা** — শুধু HTF বায়াসের সাথে মেলে এমন FVG নিন
+**❌ প্রতিটি FVG Trade করা** — শুধু HTF Bias এর সাথে মেলে এবং সঠিক PD Zone এ আছে এমন FVG নিন
 
-**❌ CE উপেক্ষা** — FVG এর প্রান্তে এন্ট্রি করলে R:R খারাপ হয়
+**❌ CE উপেক্ষা করা** — FVG এর Edge এ Entry করলে Poor R:R হয়। Precision এর জন্য CE ব্যবহার করুন
 
-**❌ ডিসপ্লেসমেন্ট ছাড়া** — দুর্বল FVG ইনস্টিটিউশনাল নয়
+**❌ Displacement ছাড়া** — দুর্বল, Small-Body FVG Institutional নয়। শক্তিশালী Candle 2 খুঁজুন
 
-**❌ পুরনো FVG** — ২০-৪০ ক্যান্ডেলের বেশি পুরনো FVG কম কার্যকর
+**❌ পুরনো FVG** — 20-40 Candle এর বেশি পুরনো FVG Relevance হারায়
+
+**❌ Time ভুলে যাওয়া** — Kill Zone এর বাইরে তৈরি FVG কম Probability
 
 </Callout>
 
@@ -109,19 +154,21 @@ FVG এর **মিডপয়েন্ট (৫০%)** কে Consequent Encroa
 
 ## সারসংক্ষেপ
 
-| বিষয় | বিবরণ |
-|-------|--------|
-| **সংজ্ঞা** | ৩-ক্যান্ডেল ইমব্যালান্স, C1 ও C3 উইক ওভারল্যাপ নেই |
-| **প্রকার** | স্ট্যান্ডার্ড, Implied, Inversion |
-| **মূল লেভেল** | Consequent Encroachment (FVG এর ৫০%) |
-| **সেরা প্রেক্ষাপট** | ডিসকাউন্টে বাই, প্রিমিয়ামে সেল |
-| **অবৈধ** | প্রাইস সম্পূর্ণভাবে FVG ভেদ করে বন্ধ হলে |
+| বিষয়            | বিবরণ                                            |
+|------------------|--------------------------------------------------|
+| **সংজ্ঞা**       | 3-Candle Imbalance, C1 ও C3 Wick Overlap নেই     |
+| **প্রকার**       | Standard, Implied, Inversion, Volume Imbalance   |
+| **মূল Level**    | Consequent Encroachment (FVG এর 50%)             |
+| **সেরা Context** | Discount এ Buy, Premium এ Sell                   |
+| **Entry**        | Displacement এর পর CE তে Limit Order             |
+| **Invalidation** | Price সম্পূর্ণভাবে FVG Body Close দিয়ে ভেদ করলে |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [PD Arrays](/bn/ict/pd-arrays) — সম্পূর্ণ PD Array ম্যাট্রিক্স
-- [OTE](/bn/ict/ote) — FVG ব্যবহার করে অপটিমাল এন্ট্রি
-- [Liquidity](/bn/ict/liquidity) — FVG পূরণের পর লিকুইডিটি টার্গেট
-- [Daily Bias](/bn/ict/daily-bias) — দিক নির্ধারণ
+- [PD Arrays](/bn/ict/pd-arrays) — সম্পূর্ণ PD Array Matrix
+- [OTE](/bn/ict/ote) — FVG ব্যবহার করে Optimal Trade Entry
+- [Liquidity](/bn/ict/liquidity) — FVG Fill এর পর Liquidity Target
+- [Daily Bias](/bn/ict/daily-bias) — Directional Bias নির্ধারণ
+- [ICT Kill Zones](/bn/ict/ict-kill-zones) — কখন FVG Setup Trade করবেন

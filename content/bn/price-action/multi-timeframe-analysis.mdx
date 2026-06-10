@@ -1,47 +1,126 @@
 ---
-title: "মাল্টি-টাইমফ্রেম বিশ্লেষণ"
-description: "মাল্টি-টাইমফ্রেম বিশ্লেষণ মাস্টার করুন — তিন-টাইমফ্রেম ফ্রেমওয়ার্ক, টপ-ডাউন পদ্ধতি।"
+title: "Multi-Timeframe Analysis — সম্পূর্ণ গাইড"
+description: "Multi-Timeframe Analysis আয়ত্ত করুন। Top-down পদ্ধতি, Timeframe Correlation এবং HTF Bias-এর সাথে LTF Entry কীভাবে Align করবেন শিখুন।"
 level: intermediate
-order: 35
-lastUpdated: "2026-05-12"
+order: 14
+lastUpdated: "2026-06-10"
 ---
 
-## তিন-টাইমফ্রেম ফ্রেমওয়ার্ক
+## Multi-Timeframe Analysis কী?
 
-### HTF (Higher Timeframe) — বায়াস
-- **ডেইলি/উইকলি** ট্রেন্ড দিক নির্ধারণ
-- শুধু এই দিকে ট্রেড করুন
+Multi-Timeframe Analysis (MTA) হলো একটি সম্পূর্ণ চিত্র পেতে একই Instrument-কে **একাধিক Timeframe-এ** বিশ্লেষণ করার অভ্যাস। Higher Timeframe আপনাকে **Direction** (Bias) দেয়, এবং Lower Timeframe আপনাকে **Entry** (Precision) দেয়।
 
-### MTF (Medium Timeframe) — স্ট্রাকচার
-- **4H/1H** মূল লেভেল ও সুইং পয়েন্ট চিহ্নিত
-- এন্ট্রি জোন নির্ধারণ
-
-### LTF (Lower Timeframe) — এন্ট্রি
-- **15M/5M** সুনির্দিষ্ট এন্ট্রি টাইমিং
-- কনফার্মেশন ক্যান্ডেল খুঁজুন
+<Callout type="info" title="Top-Down পদ্ধতি">
+Professional Trader কখনো একটি Timeframe থেকে Trade করেন না। তারা সবসময় Direction-এর জন্য সর্বোচ্চ প্রাসঙ্গিক Timeframe থেকে শুরু করেন, তারপর Entry-র জন্য নিচে নামেন। এই একটি অভ্যাসই Profitable Trader-কে Struggling Trader থেকে আলাদা করে।
+</Callout>
 
 ---
 
-## ট্রেডিং স্টাইল অনুযায়ী TF
+## Three-Timeframe Framework
 
-| স্টাইল | HTF (বায়াস) | MTF (স্ট্রাকচার) | LTF (এন্ট্রি) |
-|--------|------------|-----------------|--------------|
-| স্ক্যাল্পিং | 1H | 15M | 1M/5M |
-| ডে ট্রেডিং | ডেইলি | 4H/1H | 15M |
-| সুইং | উইকলি | ডেইলি | 4H |
+| ভূমিকা | Timeframe উদাহরণ | উদ্দেশ্য |
+|--------|-----------------|----------|
+| **HTF (Bias)** | Weekly / Daily | সামগ্রিক Trend Direction |
+| **MTF (Structure)** | 4H / 1H | Setup চিহ্নিতকরণ, Key Level |
+| **LTF (Entry)** | 15M / 5M | সুনির্দিষ্ট Entry ও Stop Placement |
+
+### সাধারণ Timeframe Combination:
+
+| Trading Style | HTF | MTF | LTF |
+|--------------|-----|-----|-----|
+| Position | Monthly | Weekly | Daily |
+| Swing | Weekly | Daily | H4 |
+| Intraday | Daily | H4/H1 | M15/M5 |
+| Scalping | H4 | H1 | M5/M1 |
 
 ---
 
-## মূল নিয়ম
+## Top-Down Process
 
-1. **HTF এর বিরুদ্ধে ট্রেড করবেন না** — ডেইলি বুলিশ হলে শুধু বাই খুঁজুন
-2. **MTF লেভেল সম্মান করুন** — 4H S/R 15M S/R কে বিট করে
-3. **LTF শুধু এন্ট্রির জন্য** — 5M DMI আপনার ডেইলি বায়াস পরিবর্তন করে না
+### ধাপ ১: HTF Bias (Weekly/Daily)
+```
+প্রশ্ন: সামগ্রিক Direction কী?
+- Bullish: HH/HL Structure, Price above key MAs
+- Bearish: LH/LL Structure, Price below key MAs
+- Ranging: No clear structure
+
+ফলাফল: শুধু এই Direction-এ Trade নিন!
+```
+
+### ধাপ ২: MTF Setup (H4/H1)
+```
+প্রশ্ন: কোথায় Entry Zone?
+- Key Level চিহ্নিত (S/R, OB, FVG)
+- Structure Point Mark করুন
+- Fibonacci Level আঁকুন
+- সম্ভাব্য Entry Zone নির্ধারণ করুন
+
+ফলাফল: Trade-এর জন্য নির্দিষ্ট Zone পেলেন
+```
+
+### ধাপ ৩: LTF Entry (M15/M5)
+```
+প্রশ্ন: Entry-র Trigger কী?
+- MTF Zone-এ Price পৌঁছালে LTF-এ নামুন
+- LTF Structure Shift (CHOCH) খুঁজুন
+- Confirmation Candle অপেক্ষা করুন
+- সুনির্দিষ্ট Entry ও Tight Stop সেট করুন
+
+ফলাফল: Optimal R:R-সহ সুনির্দিষ্ট Entry
+```
+
+---
+
+## MTA নিয়ম
+
+### মূল নিয়ম:
+1. **HTF Bias-এর বিরুদ্ধে কখনো Trade নয়** — D1 Bearish হলে M15-এ Long নেবেন না
+2. **প্রতিটি Trade-এ কমপক্ষে ২ TF মিলতে হবে** — Bias + Entry minimum
+3. **HTF Level > LTF Level** — D1 S/R M15 S/R-কে Override করে
+4. **LTF Confirmation ছাড়া Enter নয়** — HTF Zone-এ পৌঁছালেই কিনবেন না
+5. **Conflicting Signal = No Trade** — HTF Bullish কিন্তু MTF Bearish = অপেক্ষা করুন
+
+### Timeframe Conflict সমাধান:
+| HTF | MTF | LTF | Decision |
+|-----|-----|-----|----------|
+| Bullish | Bullish | Bullish | ✅ শক্তিশালী Long |
+| Bullish | Pullback | Bullish shift | ✅ Long Entry |
+| Bullish | Bearish | - | ⚠️ অপেক্ষা করুন |
+| Bearish | Bullish | - | ❌ No Long Trade |
+
+---
+
+## ব্যবহারিক উদাহরণ
+
+### Swing Trade (D1 → H4 → H1):
+```
+1. D1: Bullish Trend (HH/HL), Key Support Level 1.0850 এ
+2. H4: Price 1.0850 Zone-এ পৌঁছেছে, Bullish OB আছে
+3. H1: Bullish CHOCH দেখা দিয়েছে, Engulfing Candle
+4. Entry: 1.0860 (H1 Confirmation পর)
+5. Stop: 1.0830 (D1 OB-এর নিচে) — 30 Pip
+6. Target: 1.0950 (D1 Swing High) — 90 Pip
+7. R:R = 1:3
+```
+
+---
+
+## সাধারণ MTA ভুল
+
+| ভুল | সমাধান |
+|------|--------|
+| শুধু LTF দেখে Trade | সবসময় HTF Bias আগে Check |
+| অনেক বেশি TF দেখা (৫+) | সর্বোচ্চ ৩টি TF ব্যবহার করুন |
+| HTF-এর বিরুদ্ধে LTF Trade | HTF Direction-ই চূড়ান্ত সত্য |
+| Confirmation ছাড়া HTF Zone-এ Enter | LTF Shift অপেক্ষা করুন |
+| TF Conflict-এ জোর করে Trade | Conflict = No Trade |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [ট্রেন্ড বিশ্লেষণ](/bn/price-action/trend-analysis) — HTF ট্রেন্ড চিহ্নিতকরণ
-- [কনফ্লুয়েন্স](/bn/price-action/confluence) — HTF অ্যালাইনমেন্ট
-- [সেশন বিশ্লেষণ](/bn/price-action/session-analysis) — প্রতি সেশনে TF
+- [Market Structure](/bn/price-action/market-structure) — প্রতিটি TF-এ Structure
+- [Trend Analysis](/bn/price-action/trend-analysis) — HTF Trend Direction
+- [Entry Models](/bn/price-action/entry-models) — LTF Entry Technique
+- [Confluence](/bn/price-action/confluence) — Multiple TF Confluence
+- [Intraday](/bn/price-action/intraday) — Intraday MTA Application

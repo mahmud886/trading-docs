@@ -1,0 +1,132 @@
+---
+title: "VWAP — Volume Weighted Average Price (Institutional Anchor)"
+description: "Master VWAP — the single most important institutional benchmark. Learn how banks use VWAP for execution, how to identify institutional positioning, and VWAP trading strategies."
+level: intermediate
+order: 4
+lastUpdated: "2026-06-10"
+---
+
+## What is VWAP?
+
+VWAP (Volume Weighted Average Price) is the **average price weighted by volume** — it shows the true average price at which a security has traded throughout the session. It's the #1 benchmark used by institutional traders to evaluate execution quality.
+
+<Callout type="info" title="The Institutional Benchmark">
+When a portfolio manager tells their execution desk to buy 1 million shares, the desk's performance is measured against VWAP. If they bought below VWAP = good execution. Above VWAP = poor execution. This is why price gravitates toward VWAP.
+</Callout>
+
+---
+
+## VWAP Formula
+
+```
+VWAP = Σ (Price × Volume) / Σ (Volume)
+
+For each period:
+Typical Price = (High + Low + Close) / 3
+Cumulative TP×V = Running total of (Typical Price × Volume)
+Cumulative Volume = Running total of Volume
+VWAP = Cumulative TP×V / Cumulative Volume
+```
+
+---
+
+## Why VWAP Matters
+
+### For Institutions
+- **Execution benchmark**: Buy below VWAP, sell above VWAP
+- **Algorithm anchor**: TWAP and VWAP algos use it as target
+- **Performance measurement**: Trading desks evaluated against VWAP
+- **Order flow magnet**: Large orders cluster around VWAP
+
+### For Retail Traders
+- **Institutional presence indicator**: Where big money is active
+- **Dynamic support/resistance**: Intraday S/R level
+- **Trend filter**: Above VWAP = bullish intraday, below = bearish
+- **Mean reversion target**: Price deviates → returns to VWAP
+
+---
+
+## VWAP Trading Strategies
+
+### Strategy 1: VWAP as Trend Filter
+- **Price > VWAP**: Only look for longs (institutions buying)
+- **Price < VWAP**: Only look for shorts (institutions selling)
+- **Price at VWAP**: Wait — no clear institutional direction
+
+### Strategy 2: VWAP Bounce
+1. Price pulls back to VWAP during trend
+2. Confluence with OB/FVG at VWAP level
+3. Enter at VWAP with stop below recent swing
+4. Target: Previous high/VWAP standard deviation band
+
+### Strategy 3: VWAP Cross
+- Price crosses ABOVE VWAP with displacement = bullish shift
+- Price crosses BELOW VWAP with displacement = bearish shift
+- Best when aligned with HTF bias (kill zone timing)
+
+### Strategy 4: Anchored VWAP
+- Anchor VWAP to specific event (earnings, FOMC, swing high/low)
+- Shows average cost basis of all traders since that event
+- If price > anchored VWAP from swing low = longs in profit
+
+---
+
+## VWAP Standard Deviation Bands
+
+```
++2 SD  ─────────────────  Extremely overbought (institutional selling zone)
++1 SD  ─────────────────  Moderately overbought
+VWAP   ═════════════════  Fair value (institutional benchmark)
+-1 SD  ─────────────────  Moderately oversold
+-2 SD  ─────────────────  Extremely oversold (institutional buying zone)
+```
+
+- **±1 SD**: Normal deviation, expect rotation
+- **±2 SD**: Extreme deviation, high probability reversal
+- **±3 SD**: Rare — only during high-impact news
+
+---
+
+## VWAP + ICT/SMC Integration
+
+| Scenario | Interpretation | Action |
+|----------|---------------|--------|
+| Price above VWAP + Bullish OB below | Strong bullish confirmation | Buy at OB near VWAP |
+| Price below VWAP + Bearish OB above | Strong bearish confirmation | Sell at OB near VWAP |
+| FVG forms at VWAP | Institutional commitment | High-probability trade |
+| Liquidity sweep + VWAP reclaim | False breakout confirmed | Counter-trend entry |
+
+---
+
+## Types of VWAP
+
+### Session VWAP (Standard)
+- Resets daily — most common for intraday
+- Shows TODAY's institutional average
+
+### Weekly VWAP
+- Resets weekly — for swing traders
+- Shows weekly institutional positioning
+
+### Monthly VWAP
+- Resets monthly — for position traders
+- Major institutional reference level
+
+### Anchored VWAP
+- Starts from any point YOU choose
+- Most flexible — anchor to key events
+
+---
+
+## VWAP Limitations
+
+- Resets each session (standard VWAP) — no overnight context
+- Less useful in low-volume markets (crypto weekends)
+- Lags during high volatility (like all averages)
+- Best for intraday — less useful on weekly/monthly charts
+- Requires volume data — doesn't work on forex spot (use futures)
+
+<Callout type="warning" title="Forex VWAP Note">
+Spot forex has no centralized volume. For accurate VWAP on forex, use futures data (6E for EUR/USD, 6B for GBP/USD) or broker-level tick volume as a proxy.
+</Callout>
+

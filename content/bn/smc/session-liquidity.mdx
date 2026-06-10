@@ -1,46 +1,63 @@
 ---
-title: "SMC সেশন লিকুইডিটি"
-description: "SMC তে সেশন লিকুইডিটি মাস্টার করুন — প্রতিটি সেশন কীভাবে লিকুইডিটি তৈরি ও টার্গেট করে।"
+title: "SMC-তে Session Liquidity — সম্পূর্ণ গাইড"
+description: "Session-based Liquidity আয়ত্ত করুন। Session কীভাবে পূর্ববর্তী Session-এর H/L Target করে ও PDH/PDL Draw on Liquidity হিসেবে ব্যবহার শিখুন।"
 level: intermediate
 order: 20
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-10"
 ---
 
-## সেশন লিকুইডিটি কী?
+## Session Liquidity কী?
 
-প্রতিটি ট্রেডিং সেশন লিকুইডিটি (হাই/লো) তৈরি করে যা পরবর্তী সেশন টার্গেট করে।
-
----
-
-## সেশন লিকুইডিটি ম্যাপ
-
-### এশিয়ান → লিকুইডিটি তৈরি করে
-- রেঞ্জ (হাই ও লো) তৈরি করে
-- এশিয়ান হাই ও লো তে স্টপ লস জমা হয়
-
-### লন্ডন → এশিয়ান লিকুইডিটি সুইপ করে
-- লন্ডন ওপেন এশিয়ান রেঞ্জের একদিক সুইপ করে
-- দৈনিক হাই বা লো তৈরি করে
-
-### নিউ ইয়র্ক → দীর্ঘ-পরিসর লিকুইডিটি টার্গেট করে
-- লন্ডন সুইপের পর NY সত্যিকার দিক অব্যাহত রাখে
-- PDH/PDL, ইকুয়াল H/L, বা HTF লেভেল টার্গেট
+Session Liquidity বলতে বোঝায় **পূর্ববর্তী Session-এর High ও Low** পরবর্তী Session-এর Liquidity Target হিসেবে কাজ করা। SMC-তে প্রতিটি নতুন Session পূর্ববর্তী-র রেখে যাওয়া Liquidity নিতে চায়।
 
 ---
 
-## মার্ক করার লেভেল
+## মূল Session Liquidity Level
 
-| লেভেল | অর্থ |
-|-------|------|
-| **এশিয়ান হাই (AH)** | লন্ডন বেয়ারদের BSL টার্গেট |
-| **এশিয়ান লো (AL)** | লন্ডন বুলদের SSL টার্গেট |
-| **PDH** | মেজর BSL টার্গেট |
-| **PDL** | মেজর SSL টার্গেট |
+| Level | সংক্ষেপ | তাৎপর্য |
+|-------|---------|----------|
+| Previous Day High | PDH | প্রধান BSL Target |
+| Previous Day Low | PDL | প্রধান SSL Target |
+| Previous Week High | PWH | Weekly BSL Target |
+| Previous Week Low | PWL | Weekly SSL Target |
+| Asian Session High | ASH | London-এর Target |
+| Asian Session Low | ASL | London-এর Target |
+
+---
+
+## Session কীভাবে Liquidity Target করে
+
+```
+Liquidity Chain:
+1. Asian Session Range তৈরি (ASH/ASL)
+2. London Asian H বা L Sweep করে (Liquidity নেয়)
+3. London নিজের H/L তৈরি করে
+4. NY London-এর H/L Continue বা Sweep করতে পারে
+5. পরের দিন: PDH/PDL নতুন Target হয়
+
+Daily Cycle:
+PDL/PDH → আজকের Target
+ASH/ASL → London-এর Target
+London H/L → NY-র Target
+```
+
+---
+
+## Session Liquidity Trade করা
+
+### Strategy: PDH/PDL Draw on Liquidity হিসেবে
+```
+1. Daily Bias চিহ্নিত (Bullish বা Bearish)
+2. Bullish হলে: PDH হলো Draw (উপরে Target)
+3. Bearish হলে: PDL হলো Draw (নিচে Target)
+4. Discount-এ (Bullish) বা Premium-এ (Bearish) Entry খুঁজুন
+5. Target: Take Profit হিসেবে PDH/PDL
+```
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Kill Zones](/bn/smc/kill-zones) — প্রতি সেশনে কখন ট্রেড করবেন
-- [ম্যানিপুলেশন](/bn/smc/manipulation) — সেশন-ভিত্তিক ম্যানিপুলেশন
-- [ইন্টার্নাল/এক্সটার্নাল লিকুইডিটি](/bn/smc/internal-external-liquidity) — সেশন লেভেল
+- [Kill Zones](/bn/smc/kill-zones) — কখন Session Active
+- [Internal ও External Liquidity](/bn/smc/internal-external-liquidity) — Liquidity ধরন
+- [Manipulation](/bn/smc/manipulation) — Session-based Manipulation

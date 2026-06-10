@@ -1,22 +1,142 @@
 ---
-title: "পারফরম্যান্স ট্র্যাকিং এবং বিশ্লেষণ"
-description: "পারফরম্যান্স ট্র্যাকিং এবং বিশ্লেষণ আয়ত্ত করুন ট্রেডিং ফলাফল পরিমাপ এবং উন্নতির ক্ষেত্র খুঁজে বের করতে"
-author: "ট্রেডিং একাডেমি"
-date: "2024-01-15"
+title: "Performance Tracking ও Analytics — সম্পূর্ণ গাইড"
+description: "Trading Performance Tracking আয়ত্ত করুন। মূল Metric, ফলাফল বিশ্লেষণ, শক্তি ও দুর্বলতা চিহ্নিতকরণ এবং ক্রমাগত Trading উন্নতির পদ্ধতি শিখুন।"
+level: beginner
+order: 23
+lastUpdated: "2026-06-10"
 ---
 
-## পারফরম্যান্স ট্র্যাকিং এবং বিশ্লেষণ
+## কেন Performance Track করবেন?
 
-সফল ট্রেডাররা তাদের সংখ্যায় আবেগপ্রবণ। আপনি যা পরিমাপ করেন না তা উন্নত করতে পারবেন না। ট্র্যাকিং হল ট্রেডিং এবং ক্রমাগত উন্নতির মধ্যে সেতু।
+Performance Tracking Trading-কে Gambling থেকে একটি **Data-driven Profession**-এ রূপান্তরিত করে। ফলাফল পরিমাপ না করলে আপনি কী কাজ করে, কী করে না এবং কোথায় উন্নতি করবেন তা চিহ্নিত করতে পারবেন না।
 
-### সবকিছু ট্র্যাক করা কেন গুরুত্বপূর্ণ?
+<Callout type="info" title="Professional Standard">
+প্রতিটি Professional Trader, Hedge Fund ও Prop Firm সূক্ষ্মভাবে Performance Track করে। Trading নিয়ে সিরিয়াস হলে আপনার Journal ও Analytics আপনার Strategy-র মতোই গুরুত্বপূর্ণ।
+</Callout>
 
-- **প্যাটার্ন চিহ্নিত করুন:** কোন সেটআপগুলি সবচেয়ে লাভজনক তা খুঁজুন
-- **দুর্বলতা প্রকাশ করুন:** আবিষ্কার করুন কী আপনার টাকা খরচ করে
-- **অগ্রগতি পরিমাপ করুন:** দেখুন আপনি আসলে উন্নতি করছেন কি না
-- **জবাবদিহিতা:** সৎ ডেটা আপনাকে বাস্তবতার মুখোমুখি করে
+---
 
-"আপনি যদি ট্র্যাক না করেন, আপনি গুরুতর নন ট্রেডিংয়ে।" - পেশাদার ট্রেডার
+## মূল Performance Metric
 
-এটি একটি সংক্ষিপ্ত বাংলা সংস্করণ। আরও বিস্তারিত জানতে ইংরেজি সংস্করণ দেখুন।
+| Metric | সূত্র | স্বাস্থ্যকর Range |
+|--------|-------|-------------------|
+| **Win Rate** | Winning Trade ÷ মোট Trade | ৪০-৬০% |
+| **Risk:Reward** | গড় Win ÷ গড় Loss | 1.5:1 থেকে 3:1 |
+| **Profit Factor** | Gross Profit ÷ Gross Loss | 1.5-এর উপরে |
+| **Expectancy** | (WR × গড় Win) - (LR × গড় Loss) | Positive |
+| **Max Drawdown** | বৃহত্তম Peak-to-trough পতন | ২০%-এর নিচে |
+| **Sharpe Ratio** | (Return - Risk-free) ÷ Std Deviation | 1.0-এর উপরে |
+| **Recovery Factor** | Net Profit ÷ Max Drawdown | 3.0-এর উপরে |
 
+---
+
+## Expectancy সূত্র
+
+```
+Expectancy = (Win% × গড় Win) - (Loss% × গড় Loss)
+
+উদাহরণ:
+- Win Rate: 55%
+- গড় Win: $150
+- গড় Loss: $100
+
+Expectancy = (0.55 × $150) - (0.45 × $100)
+           = $82.50 - $45.00
+           = $37.50 প্রতি Trade
+
+100 Trade-এ: $37.50 × 100 = $3,750 প্রত্যাশিত Profit
+```
+
+---
+
+## কী Track করবেন (Journal Field)
+
+### প্রতি Trade:
+| Field | কেন |
+|-------|-----|
+| তারিখ/সময় | সেরা Trading সময় চিহ্নিত |
+| Pair/Instrument | সেরা Performing Market খুঁজুন |
+| Direction (Long/Short) | Directional Bias চিহ্নিত |
+| Entry Price | Analysis-এর জন্য Record |
+| Stop Loss | R:R গণনা |
+| Take Profit | Target Achievement পরিমাপ |
+| Lot Size | Position Sizing Review |
+| ফলাফল (P&L) | Performance Measurement |
+| R-multiple | কত R Gain/Loss |
+| Setup Type | সেরা Setup চিহ্নিত |
+| আবেগ | Psychological State Track |
+| Note | গুণগত পর্যবেক্ষণ |
+| Screenshot | Review-র জন্য Visual Record |
+
+---
+
+## Data বিশ্লেষণ
+
+### মাসিক যে প্রশ্নগুলো করবেন:
+
+1. **সেরা Performing Setup?** → এগুলো বেশি Trade করুন
+2. **সবচেয়ে খারাপ Setup?** → বাদ দিন বা উন্নত করুন
+3. **সেরা সপ্তাহের দিন?** → Trading দিন ফোকাস করুন
+4. **সেরা Session?** → সময়সূচি Optimize করুন
+5. **গড় R Gain?** → Strategy Efficiency মূল্যায়ন
+6. **নিয়ম লঙ্ঘন?** → শৃঙ্খলার Gap চিহ্নিত
+7. **আবেগের Pattern?** → Psychological সমস্যা সমাধান
+8. **Drawdown গভীরতা?** → Risk Management মূল্যায়ন
+
+---
+
+## Performance Review Process
+
+### সাপ্তাহিক Review (৩০ মিনিট):
+```
+□ সাপ্তাহিক Stats গণনা (Win Rate, P&L, গড় R)
+□ সেরা ও সবচেয়ে খারাপ Trade চিহ্নিত
+□ নিয়ম লঙ্ঘন নোট করুন
+□ Trading Plan অনুসরণ হয়েছে কি Check
+□ পরবর্তী সপ্তাহের জন্য ১টি উন্নতি লক্ষ্য সেট
+```
+
+### মাসিক Review (২ ঘণ্টা):
+```
+□ সম্পূর্ণ Metric গণনা
+□ পূর্ববর্তী মাসের সাথে তুলনা
+□ Pattern চিহ্নিত (সেরা/খারাপ Setup, দিন, সময়)
+□ Emotional Journal Entry Review
+□ Strategy কার্যকারিতা মূল্যায়ন
+□ প্রয়োজনে সমন্বয় পরিকল্পনা
+□ মাসিক লক্ষ্য সেট
+```
+
+---
+
+## Tracking-এর Tool
+
+| Tool | ধরন | উপযুক্ত |
+|------|------|----------|
+| **Spreadsheet** (Excel/Sheets) | Manual | সম্পূর্ণ Customization |
+| **Myfxbook** | Automated (Forex) | MT4/MT5 Integration |
+| **TradingView** | Manual + Chart | Visual Journaling |
+| **Edgewonk** | Dedicated Journal | Professional Analytics |
+| **Notion/Trello** | Flexible | Custom Workflow |
+
+---
+
+## সাধারণ Tracking ভুল
+
+| ভুল | প্রভাব | সমাধান |
+|------|---------|--------|
+| একেবারেই Track না করা | যা পরিমাপ করেন না তা উন্নত করতে পারেন না | আজই শুরু করুন, মৌলিক হলেও |
+| শুধু P&L Track করা | কেন জেতেন/হারেন তা মিস | সব Field Track করুন |
+| Data Review না করা | Analysis ছাড়া Data অকেজো | সাপ্তাহিক Review Schedule করুন |
+| খুব ঘন ঘন Strategy পরিবর্তন | কী কাজ করে জানা যায় না | Strategy-কে ৫০+ Trade দিন |
+| আবেগ উপেক্ষা | Psychology Execution নির্ধারণ করে | Emotional State Log করুন |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Journaling](/bn/academy/journaling) — বিস্তারিত Trade Journal গাইড
+- [Trading Plan](/bn/academy/trading-plan) — Plan Performance Criteria
+- [Risk Management](/bn/academy/risk-management) — Risk Metric Tracking
+- [Trading Psychology](/bn/academy/trading-psychology) — Emotional Tracking
+- [Money Management](/bn/academy/money-management-advanced) — Sizing Optimization

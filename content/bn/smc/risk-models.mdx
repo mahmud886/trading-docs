@@ -1,67 +1,67 @@
 ---
-title: "SMC রিস্ক ম্যানেজমেন্ট মডেল"
-description: "SMC ট্রেডিংয়ের জন্য রিস্ক ম্যানেজমেন্ট মাস্টার করুন — পজিশন সাইজিং, R:R ফ্রেমওয়ার্ক, ড্রডাউন নিয়ম, ধারাবাহিক লাভের জন্য ইনস্টিটিউশনাল রিস্ক মডেল।"
+title: "SMC Risk Model — সম্পূর্ণ গাইড"
+description: "SMC-তে Risk Management আয়ত্ত করুন। Structural Stop Placement, Invalidation-based Stop, Position Sizing ও Setup Grade অনুযায়ী Risk শিখুন।"
 level: intermediate
-order: 25
-lastUpdated: "2026-05-12"
+order: 16
+lastUpdated: "2026-06-10"
 ---
 
-## রিস্ক ম্যানেজমেন্ট কেন #১
+## SMC Risk Management
 
-সেরা SMC বিশ্লেষণ দিয়েও হারানো ট্রেড হবে। রিস্ক ম্যানেজমেন্ট নির্ধারণ করে সেই লসগুলো ছোট ধাক্কা নাকি অ্যাকাউন্ট শেষ করার আঘাত।
-
----
-
-## SMC রিস্ক ফ্রেমওয়ার্ক
-
-### পজিশন সাইজিং নিয়ম
-| অ্যাকাউন্ট | ট্রেড প্রতি সর্বোচ্চ রিস্ক | দৈনিক সর্বোচ্চ রিস্ক |
-|-----------|----------------------|------------------|
-| $1,000 | $10-20 (1-2%) | $30 (3%) |
-| $5,000 | $50-100 (1-2%) | $150 (3%) |
-| $10,000 | $100-200 (1-2%) | $300 (3%) |
-
-### R:R মিনিমাম
-| সেটআপ ধরন | মিনিমাম R:R | সাধারণ R:R |
-|-----------|-----------|---------|
-| স্ক্যাল্প (5M এন্ট্রি) | 1:2 | 1:3-5 |
-| ডে ট্রেড (15M এন্ট্রি) | 1:3 | 1:4-7 |
-| সুইং ট্রেড (4H এন্ট্রি) | 1:3 | 1:5-10+ |
+SMC-তে Risk Management যথেচ্ছ Pip Distance-এর বদলে **Structural Invalidation** ব্যবহার করে। Stop যায় সেখানে যেখানে আপনার Thesis ভুল — Setup Invalidate করার Structural Level-এর বাইরে।
 
 ---
 
-## SMC তে SL প্লেসমেন্ট
+## SMC-তে Stop Placement
 
-### কোথায় SL রাখবেন
-1. **লিকুইডিটি সুইপের পর** — সুইপ এক্সট্রিমের বাইরে
-2. **OB এর নিচে/উপরে** — OB রেঞ্জের বাইরে
-3. **FVG এর বাইরে** — কিছু বাফার সহ (Forex ৫-১০ পিপ, Gold ৫০-১০০ পিপ)
-
-### কোথায় SL রাখবেন না
-- স্পষ্ট সুইং হাই/লো তে (সেখানেই লিকুইডিটি থাকে!)
-- বাফার ছাড়া রাউন্ড নম্বরে
-- খুব টাইট (ম্যানিপুলেশনের জায়গা দরকার)
+| Setup Type | Stop অবস্থান | কারণ |
+|-----------|-------------|------|
+| OB Entry | OB-এর বাইরে (Body, Wick নয়) | OB Violate = Thesis ভুল |
+| FVG Entry | FVG Range-এর বাইরে | FVG ভাঙা = Imbalance Fill |
+| Sweep Entry | Sweep Wick-এর বাইরে | নতুন Low/High = Sweep নয় |
+| CHOCH Entry | CHOCH Swing Point-এর বাইরে | Structure আসলে Shift হয়নি |
+| Breaker Entry | Breaker Zone-এর বাইরে | Breaker ব্যর্থ |
 
 ---
 
-## সাধারণ ভুল
+## Position Sizing সূত্র
 
-<Callout type="warning" title="রিস্ক ম্যানেজমেন্ট ভুল">
+```
+Lot Size = (Account × Risk%) ÷ (Stop Pip × Pip Value)
 
-**❌ ২% এর বেশি রিস্ক** — একটি খারাপ দিনে সপ্তাহের লাভ শেষ
+উদাহরণ:
+- Account: $10,000
+- Risk: 1% = $100
+- Stop: 25 Pip (OB Width + Buffer)
+- Pip Value: $10/Lot
+- Size: $100 ÷ (25 × $10) = 0.40 Lot
+```
 
-**❌ SL ছাড়া ট্রেড** — সবসময় পূর্বনির্ধারিত এক্সিট রাখুন
+---
 
-**❌ রিভেঞ্জ ট্রেডিং** — লসের পর বিরতি নিন, সাইজ ডাবল করবেন না
+## Setup Grade অনুযায়ী Risk
 
-**❌ জার্নাল না রাখা** — প্রতিটি ট্রেড ট্র্যাক করুন
+| Grade | পূর্ণ Criteria | Risk |
+|-------|-------------|------|
+| A+ | ৫/৫ Confluence, Kill Zone, CHOCH Confirmed | ১-২% |
+| B | ৩-৪ Confluence, ভালো কিন্তু Perfect নয় | ০.৫-১% |
+| C | ২-৩ Confluence, অনিশ্চিত | ০.২৫-০.৫% বা SKIP |
 
-</Callout>
+---
+
+## নিয়ম
+
+1. **প্রতি Trade-এ সর্বোচ্চ ১-২%** — আলোচনাযোগ্য নয়
+2. **দৈনিক সর্বোচ্চ ৩% Loss** — দিনের জন্য থামুন
+3. **সাপ্তাহিক সর্বোচ্চ ৫% Loss** — পরবর্তী সপ্তাহে Size কমান
+4. **Correlated Pair** একটি Risk Unit হিসেবে গণনা
+5. **চওড়া Stop = ছোট Size** (Stop সরাবেন না)
+6. **১R Gain-এর পর Break-even**
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [এন্ট্রি কনফার্মেশন](/bn/smc/entry-confirmation) — রিস্ক ম্যানেজমেন্টের আগে এন্ট্রি
-- [Order Blocks](/bn/smc/order-blocks) — OB রিলেটিভ SL প্লেসমেন্ট
-- [অ্যাডভান্সড এক্সিকিউশন](/bn/smc/advanced-execution-models) — সম্পূর্ণ সিস্টেম
+- [Entry Confirmation](/bn/smc/entry-confirmation) — Quality Grading
+- [Order Blocks](/bn/smc/order-blocks) — OB-based Stop
+- [Advanced Execution](/bn/smc/advanced-execution-models) — Entry Model Risk প্রভাবিত করে

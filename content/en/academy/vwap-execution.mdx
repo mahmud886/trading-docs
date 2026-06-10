@@ -1,0 +1,60 @@
+---
+title: "VWAP Execution Algorithms — Institutional Order Filling"
+description: "Master VWAP execution algorithms used by institutional desks. Learn how funds benchmark execution against VWAP and strategies for VWAP-based order filling."
+level: expert
+order: 66
+lastUpdated: "2026-06-10"
+---
+
+## VWAP Execution Algorithms
+
+Master VWAP execution algorithms used by institutional desks. Learn how funds benchmark execution against VWAP and strategies for VWAP-based order filling.
+
+<Callout type="info" title="Execution is Edge">
+Most retail traders focus exclusively on ENTRY signals. Institutions know that HOW you execute is as important as WHAT you trade. A 10-pip improvement in execution across 200 trades/year = significant P&L difference.
+</Callout>
+
+---
+
+## Why Execution Matters
+
+| Factor | Retail Approach | Institutional Approach |
+|--------|----------------|----------------------|
+| Entry | Market order | Limit order at specific level |
+| Sizing | Full position at once | Scaled entry in 2-4 parts |
+| Slippage | Accepted as cost | Minimized via algorithms |
+| Timing | When signal fires | Optimized for liquidity |
+| Exit | Single take-profit | Scaled exit at multiple targets |
+
+---
+
+## Core Principles
+
+### 1. Minimize Market Impact
+- Large orders move price — scale to reduce footprint
+- Use limit orders where possible
+- Trade during high-liquidity windows (kill zones)
+
+### 2. Optimize for Spread
+- Trade major pairs during London/NY overlap (tightest spreads)
+- Avoid execution during news release (spreads 5-50x normal)
+- Account for spread in your risk calculations
+
+### 3. Execution Consistency
+- Same execution process every trade
+- Pre-plan entry type, size, and timing
+- Remove emotion from execution
+
+---
+
+## Practical Tips
+
+- Always use limit orders at your ICT/SMC levels (not market orders)
+- Set alerts at 80% of level, manually execute at level
+- Never chase price — missed entries are part of trading
+- Scale into positions: 50% at entry, 25% at confirmation, 25% at pullback
+- Scale out: 50% at 1R, 25% at 2R, trail 25% to structure
+
+<Callout type="warning" title="Execution Cost Reality">
+If your average trade is 30 pips of profit but you lose 3 pips to slippage + spread each trade, that's 10% of your profits going to execution costs. Institutional traders obsess over reducing these costs — you should too.
+</Callout>

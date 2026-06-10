@@ -1,228 +1,188 @@
 ---
-title: "Advanced Money Management"
-description: "Master money management techniques to protect and grow your trading capital consistently"
-author: "Trading Academy"
-date: "2024-01-15"
+title: "Advanced Money Management — Complete Guide"
+description: "Master advanced money management: Kelly Criterion, anti-martingale, scaling in/out, portfolio heat, drawdown management, and capital allocation strategies for traders."
+level: intermediate
+order: 20
+lastUpdated: "2026-06-10"
 ---
 
 ## Advanced Money Management
 
-Money management is about protecting your capital and maximizing profits over time. It's more important than having a winning strategy.
+Beyond basic risk management (1-2% per trade), advanced money management strategies help you **optimize returns while protecting capital** through sophisticated position sizing, scaling, and allocation techniques.
 
-### The Importance of Money Management
+<Callout type="info" title="Key Principle">
+Money management is the difference between a strategy that makes money and one that doesn't — even with identical win rates. Two traders with the same strategy can have vastly different results based solely on how they manage position sizes.
+</Callout>
 
-Even with a winning trading strategy:
-- Poor money management leads to account blowups
-- Good money management ensures long-term survival
-- Compounding growth requires consistent preservation
+---
 
-### Core Principles
+## Fixed Fractional Method
 
-#### 1. **Risk Per Trade (RPT)**
-The maximum amount you're willing to lose on a single trade.
+The most common method: Risk a **fixed percentage** of current equity per trade.
 
-**Recommendation:** 1-2% of total account per trade
+```
+Position Size = (Account Balance × Risk%) ÷ (Stop Loss × Pip Value)
 
-**Example:**
-- Account: $10,000
-- RPT: 1% = $100 per trade
-- RPT: 2% = $200 per trade
+Benefits:
+- Risk decreases as account shrinks (survival)
+- Risk increases as account grows (compounding)
+- Self-adjusting and simple
 
-**Calculation:**
-RPT = Account Size × Risk Percentage
+Example:
+- Account: $10,000, Risk: 1%
+- Dollar risk: $100
+- Stop: 40 pips, Pip value: $10
+- Size: $100 ÷ (40 × $10) = 0.25 lots
+```
 
-#### 2. **Position Sizing**
-Determines how many units to trade based on your stop loss and risk.
+---
 
-**Formula:**
-Position Size = Risk Amount ÷ (Stop Loss Distance × Pip Value)
+## Kelly Criterion
 
-**Example:**
-- Account: $10,000 (risk 1% = $100)
-- Stop Loss: 50 pips below entry
-- EUR/USD pip value: $10
-- Position Size = $100 ÷ (50 × $10) = 0.2 lots
+An optimal sizing formula that maximizes long-term growth rate.
 
-#### 3. **Risk-Reward Ratio**
-Relationship between potential loss and potential profit.
-
-**Minimum Ratio:** 1:2 (risk $100, target $200)
-**Better Ratio:** 1:3 or 1:4 (superior risk-reward)
-
-**Quality Check:**
-- Don't enter trades with poor risk-reward
-- Pass on trades with less than 1:2
-- Look for 1:3+ opportunities
-
-### Portfolio Allocation
-
-#### 1. **Account Segmentation**
-Divide account into different portions:
-- **Aggressive:** High-risk, high-reward setups (30-40%)
-- **Core:** Moderate-risk, reliable setups (40-50%)
-- **Conservative:** Low-risk, high-probability setups (20-30%)
-
-**Benefits:**
-- Reduces overall portfolio volatility
-- Allows risk flexibility
-- Prevents over-concentration
-
-#### 2. **Currency Pair Diversification**
-- Don't trade only one pair
-- Different correlations and volatility
-- Spreads risk across markets
-
-**Example Portfolio:**
-- 30% EUR/USD (major pair)
-- 25% GBP/USD (major pair)
-- 20% USD/JPY (safe haven)
-- 15% EUR/GBP (exotic pair)
-- 10% Gold or indices
-
-### Position Scaling
-
-#### 1. **Pyramiding (Adding Winners)**
-Increase position size as trade moves in your favor.
-
-**Method:**
-- Start with base position
-- Add 50% of base after first target
-- Add 25% of base after second target
-- Continue if market allows
-
-**Advantages:**
-- Increases profits from strong trends
-- Reduces average entry price
-
-**Disadvantages:**
-- Requires excellent trend identification
-- Can lock in profits prematurely
-
-#### 2. **Averaging Down (Risky)**
-Adding to losing positions hoping for recovery.
-
-**Not Recommended:**
-- Increases losses if trade fails
-- Violates risk management rules
-- Reserve this for very specific situations
-
-#### 3. **Scaling Out**
-Closing portions of positions at different levels.
-
-**Method:**
-- Close 50% at first target (lock profits)
-- Move stop to breakeven or 1:1 risk-reward
-- Let remaining 50% run for bigger profits
-
-**Advantages:**
-- Locks in profits immediately
-- Reduces risk on remaining position
-- Combines security with profit potential
-
-### Maximum Concurrent Positions
-
-Limit the number of open trades:
-- **Conservative:** 1-2 positions max
-- **Moderate:** 3-4 positions max
-- **Aggressive:** 5-6 positions max
-
-**Benefits:**
-- Better monitoring of each trade
-- Prevents over-leverage
-- Easier risk management
-
-### Daily Loss Limits
-
-Stop trading after certain losses in a day:
-- **Soft Stop:** After losing 2-3% of account
-- **Hard Stop:** After losing 5% of account
-- **Emergency Stop:** After losing 10% of account
-
-**Purpose:**
-- Prevents emotional trading
-- Stops the bleeding during bad days
-- Preserves capital for recovery
-
-### Correlation Risk Management
-
-Manage risk across correlated pairs:
-- **Positive Correlation:** EUR/USD & GBP/USD move together
-- **Negative Correlation:** USD/JPY & EUR/USD move opposite
-- **Impact:** Correlated positions amplify losses
-
-**Strategy:**
-- Never hold multiple similar pairs (EUR/USD + EUR/GBP)
-- Use negative correlated pairs as hedges
-- Check correlation before entering
-
-### Leverage Management
-
-Leverage magnifies both gains and losses:
-- **1:1 Leverage:** No leverage, slow but stable
-- **1:2 Leverage:** Moderate, good for stability
-- **1:5-10:1 Leverage:** High risk, for experienced traders
-- **Higher Leverage:** Account killer for most traders
-
-**Key Points:**
-- Available leverage ≠ Required leverage
-- Higher leverage not necessary for profits
-- Conservative leverage = Survival
-
-### Account Growth Strategy
-
-#### Phase 1: Survival (0-$10,000)
-- Focus on not losing the account
-- 1% risk per trade
-- Build track record and confidence
-- No leverage or minimal
-
-#### Phase 2: Growth ($10,000-$50,000)
-- Increase conviction trades to 1.5% risk
-- Test position scaling methods
-- Build trading consistency
-- Moderate leverage if needed
-
-#### Phase 3: Acceleration ($50,000+)
-- Can risk up to 2% on high-conviction trades
-- Optimize position sizing
-- Multiple strategies deployed
-- Advanced portfolio allocation
-
-### Money Management Checklist
-
-- [ ] Know your account size and daily loss limits
-- [ ] Apply 1-2% risk per trade consistently
-- [ ] Calculate position sizes before entering
-- [ ] Verify minimum 1:2 risk-reward
-- [ ] Monitor correlation between positions
-- [ ] Use leverage conservatively
-- [ ] Scale out of profitable trades
-- [ ] Have daily loss limits in place
-- [ ] Review monthly for optimization
-- [ ] Never deviate from rules based on emotion
-
-### Kelly Criterion (Advanced)
-
-For very experienced traders:
-
-**Formula:** f = (bp - q) / b
+```
+Kelly % = W - [(1-W) / R]
 
 Where:
-- f = fraction of account to bet
-- b = odds received
-- p = probability of winning
-- q = probability of losing (1-p)
+W = Win rate (as decimal)
+R = Average win/average loss ratio
 
-**Note:** Kelly Criterion requires accurate win probability. Only use if your system's statistics are solid.
+Example:
+- Win rate: 55% (W = 0.55)
+- Average win: $200, Average loss: $100 (R = 2.0)
+- Kelly = 0.55 - [(1-0.55) / 2.0] = 0.55 - 0.225 = 0.325 = 32.5%
 
-## Summary
+Half-Kelly (recommended): 16.25% per trade
+Quarter-Kelly (conservative): 8.1% per trade
+```
 
-Money management is the foundation of long-term success:
-- Consistent position sizing prevents account blowups
-- Risk per trade of 1-2% allows for sustainable growth
-- Risk-reward ratio of at least 1:2 improves odds
-- Portfolio diversification reduces volatility
-- Scaling positions optimizes profit potential
+<Callout type="warning" title="Full Kelly Warning">
+Full Kelly is extremely aggressive. Most professionals use Half-Kelly or Quarter-Kelly to reduce volatility while still capturing most of the growth benefit.
+</Callout>
 
-Without proper money management, even the best trading system will fail. Make it your priority.
+---
 
+## Scaling In and Out
+
+### Scaling In (Adding to Winners):
+```
+Strategy: Add to position as trade moves in your favor
+
+Entry 1: 0.5 lots at 1.1000 (initial entry)
+Entry 2: 0.3 lots at 1.1050 (confirming move)
+Entry 3: 0.2 lots at 1.1100 (strong trend)
+
+Average entry: weighted average of all entries
+Stop: Move to break even on earliest entries
+Result: Larger position in confirmed trend
+```
+
+### Scaling Out (Partial Profits):
+```
+Strategy: Close portions at different targets
+
+Position: 1.0 lot
+Close 50% at 1:1 RR (lock some profit, move SL to BE)
+Close 30% at 1:2 RR (more profit locked)
+Close 20% at 1:3 RR or trailing (run the trade)
+
+Benefits: Guaranteed some profit, reduces pressure
+Downside: Smaller overall profit if trade hits full target
+```
+
+---
+
+## Portfolio Heat
+
+**Portfolio Heat** = Total risk across ALL open positions.
+
+```
+Rule: Never exceed 5-6% total portfolio heat
+
+Example:
+- Trade 1: 1.5% risk (open)
+- Trade 2: 2.0% risk (open)
+- Trade 3: 1.5% risk (open)
+- Total heat: 5% ← Maximum reached, NO new trades
+
+If Trade 1 and 2 are correlated (same pair or sector):
+- Effective risk is even higher
+- Count correlated trades as combined risk
+```
+
+---
+
+## Drawdown Management
+
+### Maximum Drawdown Rules:
+
+| Level | Action |
+|-------|--------|
+| 5% drawdown | Review recent trades, check for pattern |
+| 10% drawdown | Reduce position size by 50% |
+| 15% drawdown | Stop trading, full strategy review |
+| 20% drawdown | Extended break, back to demo |
+
+### Recovery After Drawdown:
+```
+Drawdown → Required Recovery:
+-10% → Need +11.1% to recover
+-20% → Need +25% to recover
+-30% → Need +42.9% to recover
+-50% → Need +100% to recover
+-75% → Need +300% to recover
+
+Key insight: Preventing drawdowns is MUCH easier than recovering.
+```
+
+---
+
+## Anti-Martingale Strategy
+
+Increase position size after WINS, decrease after LOSSES.
+
+```
+Standard approach:
+- After each win: Increase risk by 0.25-0.5%
+- After each loss: Decrease risk by 0.25-0.5%
+- Maximum: 3% per trade
+- Minimum: 0.5% per trade
+
+Example progression (starting 1%):
+Win → 1.25%
+Win → 1.5%
+Win → 1.75%
+Loss → 1.25%
+Loss → 1.0%
+
+Benefit: Larger when winning, smaller when losing
+```
+
+---
+
+## Capital Allocation Strategies
+
+### The Bucket Approach:
+```
+Total Capital: $50,000
+├── Active Trading (40%): $20,000
+│   ├── Forex Account: $10,000
+│   └── Crypto Account: $10,000
+├── Swing/Position (30%): $15,000
+│   └── Stock Swing Account: $15,000
+├── Investment (20%): $10,000
+│   └── ETF/Index: $10,000
+└── Reserve (10%): $5,000
+    └── Emergency/Opportunity: $5,000
+```
+
+---
+
+## Related Topics
+
+- [Risk Management](/en/academy/risk-management) — Foundation of money management
+- [Position Sizing](/en/academy/position-sizing) — Calculate exact sizes
+- [Trading Plan](/en/academy/trading-plan) — Integrate money management
+- [Trading Psychology](/en/academy/trading-psychology) — Emotional aspects of sizing
+- [Performance Tracking](/en/academy/performance-tracking) — Measure effectiveness

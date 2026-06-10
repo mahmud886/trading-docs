@@ -1,44 +1,79 @@
 ---
-title: "ইন্ট্রাডে প্রাইস অ্যাকশন ট্রেডিং"
-description: "প্রাইস অ্যাকশন দিয়ে ইন্ট্রাডে ট্রেডিং মাস্টার করুন — 15M-1H চার্ট ব্যবহার করে ডে ট্রেডিংয়ের সম্পূর্ণ ফ্রেমওয়ার্ক। বাংলাদেশ সময় সহ।"
+title: "Price Action দিয়ে Intraday Trading — সম্পূর্ণ গাইড"
+description: "Intraday Price Action Trading আয়ত্ত করুন। Session-based Setup, Kill Zone Entry, Daily Bias নির্ধারণ এবং Intraday Trade Management শিখুন।"
 level: intermediate
-order: 29
-lastUpdated: "2026-05-12"
+order: 24
+lastUpdated: "2026-06-10"
 ---
 
-## ইন্ট্রাডে ট্রেডিং ফ্রেমওয়ার্ক
+## Intraday Trading কী?
 
-### প্রি-সেশন রুটিন (দুপুর ১২:০০ BD এর আগে)
-1. ডেইলি ক্যান্ডেল চেক — আজকের বায়াস
-2. 4H মূল লেভেল মার্ক (S/R, OB, FVG)
-3. এশিয়ান রেঞ্জ (হাই/লো) মার্ক
-4. PDH/PDL মার্ক
+Intraday Trading মানে **একই Trading Day-এ** সব Position Open ও Close করা। M15-H1-এ Price Action ব্যবহার করে, High-volume Session-এ (Kill Zone) ৩০-১০০ Pip Move Trade করা।
 
-### সেশনের সময় (দুপুর ১২:০০ - রাত ১০:০০ BD)
-1. **লন্ডন (১২-৩ PM):** এশিয়ান রেঞ্জ সুইপ + রিভার্সাল সেটআপ
-2. **NY AM (৫-৮ PM):** লন্ডন কন্টিনিউ বা নতুন এন্ট্রি
-3. **NY PM (১০ PM পর):** বাকি পজিশন ক্লোজ বা টাইট ট্রেইল
-
-### দিন শেষে
-- রাত ১১:০০ BD এর মধ্যে সব পজিশন ক্লোজ
-- দিনের ট্রেড জার্নাল করুন
+<Callout type="info" title="Intraday Edge">
+Intraday Trading Overnight Risk দূর করে এবং দৈনিক Income Potential দেয়। Session Analysis ও Higher-timeframe Bias-এর সাথে একত্রে পুনরাবৃত্তিযোগ্য সুযোগ দেয়।
+</Callout>
 
 ---
 
-## ইন্ট্রাডে টাইমফ্রেম ব্যবহার
+## Kill Zone
 
-| টাইমফ্রেম | উদ্দেশ্য |
-|-----------|---------|
-| **ডেইলি** | বায়াস নির্ধারণ |
-| **4H** | মূল লেভেল, S/R জোন |
-| **1H** | সেশন স্ট্রাকচার |
-| **15M** | এন্ট্রি টাইমফ্রেম |
-| **5M** | প্রিসিশন এন্ট্রি (ঐচ্ছিক) |
+| Kill Zone | সময় (EST) | চরিত্র |
+|-----------|-----------|--------|
+| **London Open** | 2:00-5:00 AM | Trend শুরু |
+| **NY Open** | 7:00-10:00 AM | Continuation/Reversal |
+| **London Close** | 10:00-12:00 PM | Profit-taking |
+
+---
+
+## Daily Bias নির্ধারণ
+
+```
+1. D1 Candle Direction (Bullish/Bearish)
+2. H4 Structure (HH/HL বা LH/LL)
+3. D1 Level-এর তুলনায় Price অবস্থান
+4. আগের Session আচরণ
+
+Bias = আজ সম্ভবত কোন Direction
+শুধু Bias-এর সাথে Aligned Trade নিন।
+```
+
+---
+
+## Intraday Entry পদ্ধতি
+
+### Session High/Low Sweep:
+1. পূর্ববর্তী Session Range চিহ্নিত (Asian H/L)
+2. নতুন Session এক দিক Sweep করার অপেক্ষা
+3. Sweep-এর পর Reversal-এ Enter
+4. Stop: Sweep Wick-এর বাইরে
+5. Target: বিপরীত Session Extreme
+
+### Bias + Order Block:
+1. Daily Bias নির্ধারণ
+2. Bias-এর সাথে Aligned H1 OB Mark
+3. Kill Zone-এ OB-তে Pullback-এর অপেক্ষা
+4. M15 Confirmation-এ Enter
+5. Target: D1 Key Level বা Daily Extreme
+
+---
+
+## Intraday নিয়ম
+
+1. **শুধু Kill Zone-এ Trade**
+2. **দিনে একটি Direction**
+3. **দিনে সর্বোচ্চ ৩ Trade**
+4. **NY Session শেষে সব Close**
+5. **দৈনিক Loss Limit: 2%**
+6. **D1/H4 Bias-এর সাথে মিলান**
+7. **High-impact News-এর আগে/পরে ১৫ মিনিট এড়িয়ে চলুন**
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [সেশন বিশ্লেষণ](/bn/price-action/session-analysis) — সেশন টাইমিং
-- [স্ক্যাল্পিং](/bn/price-action/scalping) — দ্রুত ইন্ট্রাডে পদ্ধতি
-- [সুইং ট্রেডিং](/bn/price-action/swing-trading) — বহু-দিনের বিকল্প
+- [Session Analysis](/bn/price-action/session-analysis) — Kill Zone বিস্তারিত
+- [Scalping](/bn/price-action/scalping) — দ্রুত পদ্ধতি
+- [Entry Models](/bn/price-action/entry-models) — Entry Timing
+- [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — Daily Bias
+- [Trade Management](/bn/price-action/trade-management) — Position Manage

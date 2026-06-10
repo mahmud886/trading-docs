@@ -1,0 +1,153 @@
+---
+title: "Footprint Charts & Cluster Analysis — Complete Guide"
+description: "Master footprint charts — see inside every candle with bid/ask volume, delta, and imbalances. Learn cluster analysis used by institutional traders for precision entries."
+level: advanced
+order: 6
+lastUpdated: "2026-06-10"
+---
+
+## What are Footprint Charts?
+
+Footprint charts (also called cluster charts or bid/ask charts) show the **exact volume traded at each price level within each candle**, separated by buying volume (at ask) and selling volume (at bid). They let you see INSIDE every candle.
+
+<Callout type="info" title="X-Ray Vision for Candles">
+A regular candle shows Open, High, Low, Close. A footprint candle shows you the exact buying and selling battle at EVERY price tick within that candle. It's like having X-ray vision.
+</Callout>
+
+---
+
+## Footprint Chart Structure
+
+```
+         Bid × Ask
+         (Sells)  (Buys)
+─────────────────────────
+1.0960:  45  ×  120   ← Buying imbalance (institutional buying)
+1.0959:  80  ×  85    ← Balanced
+1.0958:  90  ×  92    ← Balanced
+1.0957:  150 ×  40    ← Selling imbalance (institutional selling)
+1.0956:  60  ×  55    ← Balanced
+─────────────────────────
+Delta: +62 (net buying)
+```
+
+---
+
+## Key Footprint Patterns
+
+### 1. Imbalance (Stacked Imbalances)
+
+When one side has 200-400%+ more volume than the other at consecutive prices:
+
+```
+1.0960:  20  ×  180  ← 9:1 buy imbalance
+1.0959:  25  ×  200  ← 8:1 buy imbalance
+1.0958:  30  ×  150  ← 5:1 buy imbalance
+= STACKED BUY IMBALANCE = Strong institutional buying
+= This area becomes future support
+```
+
+### 2. Exhaustion
+
+High volume at extreme prices with diminishing delta:
+
+```
+At the TOP of a move:
+1.0980:  10  ×  5    ← Volume dying
+1.0979:  15  ×  12   ← Losing momentum
+1.0978:  20  ×  40   ← Last aggressive buyers
+1.0977:  80  ×  200  ← Peak buying (exhaustion)
+= Buyers used all energy at 1.0977 = likely reversal
+```
+
+### 3. Absorption
+
+Large passive orders absorbing aggressive orders:
+
+```
+1.0950:  500  ×  50   ← 500 aggressive sells hitting...
+1.0950:  500  ×  50   ...but price NOT dropping!
+= Someone is absorbing 500 lots of selling
+= Large institutional limit buy at 1.0950
+= Bullish signal
+```
+
+### 4. Unfinished Auction
+
+When a price level has volume on only one side:
+
+```
+1.0940:  0  ×  45    ← Only buyers, no sellers = unfinished business
+= Price likely returns to complete the auction at this level
+```
+
+---
+
+## Footprint Trading Strategies
+
+### Strategy 1: Stacked Imbalance Entry
+1. Identify stacked imbalances (3+ consecutive levels with 3:1+ ratio)
+2. Mark the zone as institutional interest
+3. Wait for price to retrace to that zone
+4. Enter at the imbalance zone with stop below
+
+### Strategy 2: Exhaustion Reversal
+1. At a key level (OB, FVG, VP POC), watch for exhaustion
+2. High volume + diminishing delta at the extreme
+3. This signals the aggressor is running out of orders
+4. Counter-trade with stop beyond the exhaustion wick
+
+### Strategy 3: Absorption Confirmation
+1. At your entry level (ICT/SMC setup), watch footprint
+2. If you see absorption (high volume, no price movement)
+3. The absorbing side = smart money
+4. Enter in direction of the absorber
+
+---
+
+## Footprint + ICT/SMC Integration
+
+### At Order Blocks
+- Look for stacked imbalances within the OB candle
+- The imbalance zone = EXACT institutional entry price
+- Refine your OB entry to the specific imbalance level
+
+### At FVG
+- FVG forms with stacked imbalances = STRONG FVG
+- FVG forms without imbalances = Weaker, may fill completely
+- Use footprint to grade FVG quality
+
+### At Liquidity Sweeps
+- After a sweep, look for absorption in footprint
+- Absorption at the sweep level = smart money present
+- No absorption = just a stop hunt, continuation likely
+
+---
+
+## Reading Speed
+
+Footprint reading requires practice:
+
+| Skill Level | Focus | Timeframe |
+|-------------|-------|-----------|
+| Beginner | Identify imbalances only | 5M-15M |
+| Intermediate | Imbalances + absorption | 1M-5M |
+| Advanced | All patterns in real-time | 1M and below |
+| Expert | Combine with DOM flow | Tick charts |
+
+---
+
+## Recommended Setup
+
+### Chart Configuration
+- Timeframe: 5M or 15M for swing, 1M for scalping
+- Filter: Show imbalances at 200%+ ratio
+- Color: Highlight stacked imbalances (3+ consecutive)
+- Delta: Show per-bar delta below footprint
+
+### Platform Requirements
+- Sierra Chart (best for futures)
+- ATAS (best for crypto)
+- Quantower (multi-asset)
+- Exocharts (crypto-focused)
+

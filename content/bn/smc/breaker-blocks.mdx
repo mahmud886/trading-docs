@@ -1,55 +1,69 @@
 ---
-title: "SMC Breaker Block"
-description: "SMC তে breaker block মাস্টার করুন — ব্যর্থ Order Block যা সাপোর্ট থেকে রেজিস্ট্যান্সে ফ্লিপ করে (বা উল্টো)। গঠন, কারণ, ট্রেডিং পদ্ধতি।"
-level: advanced
-order: 10
-lastUpdated: "2026-05-12"
+title: "SMC-তে Breaker Block — সম্পূর্ণ গাইড"
+description: "Breaker Block আয়ত্ত করুন — ব্যর্থ Order Block যা Polarity Flip করে নতুন Direction-এ শক্তিশালী Entry Zone হয়।"
+level: intermediate
+order: 7
+lastUpdated: "2026-06-10"
 ---
 
 ## Breaker Block কী?
 
-Breaker Block হলো এমন **Order Block যা ব্যর্থ হয়েছে** — প্রাইস সম্পূর্ণভাবে OB ভেদ করে গেছে। কিন্তু অকেজো হওয়ার বদলে, এই ব্যর্থ OB অন্য দিক থেকে সাপোর্ট/রেজিস্ট্যান্স হিসেবে কাজ করে।
+Breaker Block হলো একটি **ব্যর্থ Order Block যা Polarity Flip করে**। Order Block ভেঙে গেলে (Violate) এটি অদৃশ্য হয় না — Breaker Block-এ রূপান্তরিত হয় যা এখন বিপরীত Direction থেকে Support/Resistance হিসেবে কাজ করে।
 
-<Callout type="info" title="ব্যর্থতা থেকে সুযোগ">
-বুলিশ OB ব্যর্থ হলে (প্রাইস তার মধ্য দিয়ে নামে) সেটি বেয়ারিশ Breaker Block হয় — উপর থেকে রেজিস্ট্যান্স। OB তে যারা বাই করেছিল তারা ফাঁদে পড়ে সেলিং প্রেশার তৈরি করে।
+<Callout type="info" title="ব্যর্থ OB = নতুন সুযোগ">
+Bullish OB ব্যর্থ হলে (Price নিচে Break), পুরো OB Zone Bearish Breaker Block হয়। Price প্রায়ই নিচে Continue করার আগে এই Zone-এ ফিরে আসে — আপনাকে Entry দেয়।
 </Callout>
 
 ---
 
 ## Breaker Block কীভাবে তৈরি হয়
 
-### বেয়ারিশ Breaker (ব্যর্থ বুলিশ OB থেকে)
-1. বুলিশ OB তৈরি হয়
-2. প্রাইস প্রথমে সাপোর্ট হিসেবে ব্যবহার করে
-3. প্রাইস আক্রমণাত্মকভাবে OB ভেদ করে নিচে যায়
-4. ব্যর্থ বুলিশ OB এখন **বেয়ারিশ Breaker Block**
-5. প্রাইস এই লেভেলে ফিরে আসলে → সেল সুযোগ
+```
+Bullish Breaker Block:
+1. Bearish Order Block আছে (Drop-এর আগে শেষ Green Candle)
+2. Price Drop করে, Lower Low তৈরি
+3. তারপর Price REVERSE করে Bearish OB-এর উপরে BREAK
+4. ভাঙা Bearish OB = Bullish Breaker Block
+5. Price এই Zone SUPPORT হিসেবে Test করতে ফেরে
+6. Entry: Breaker Block Retest-এ Long
 
-### বুলিশ Breaker (ব্যর্থ বেয়ারিশ OB থেকে)
-1. বেয়ারিশ OB তৈরি হয়
-2. প্রাইস রেজিস্ট্যান্স হিসেবে ব্যবহার করে
-3. প্রাইস আক্রমণাত্মকভাবে OB ভেদ করে উপরে যায়
-4. ব্যর্থ বেয়ারিশ OB এখন **বুলিশ Breaker Block**
-5. প্রাইস নিচে ফিরে আসলে → বাই সুযোগ
+Bearish Breaker Block:
+1. Bullish Order Block আছে (Rally-র আগে শেষ Red Candle)
+2. Price Rally করে, Higher High তৈরি
+3. তারপর Price REVERSE করে Bullish OB-এর নিচে BREAK
+4. ভাঙা Bullish OB = Bearish Breaker Block
+5. Price এই Zone RESISTANCE হিসেবে Test করতে ফেরে
+6. Entry: Breaker Block Retest-এ Short
+```
 
 ---
 
-## বাস্তব উদাহরণ: Gold বেয়ারিশ Breaker
+## Breaker vs. Order Block
 
-- **বুলিশ OB** 2,035-2,040 সাপোর্ট হিসেবে ছিল
-- ক্রেতারা 2,037 এ লং এন্ট্রি নিয়েছিল
-- **প্রাইস ভেদ করে** 2,035 এর নিচে ডিসপ্লেসমেন্ট সহ
-- প্রাইস 2,015 এ নামে, তারপর রিট্রেস
-- **বেয়ারিশ Breaker** 2,035-2,040 (এখন রেজিস্ট্যান্স)
-- **এন্ট্রি:** 2,037 তে সেল
-- **SL:** 2,042 | **TP:** 2,005
-- **R:R:** 1:6.4
-- ফাঁদে পড়া ক্রেতারা ব্রেকইভেনে বের হয় → পরবর্তী লেগ নিচে ফুয়েল
+| বৈশিষ্ট্য | Order Block | Breaker Block |
+|-----------|------------|---------------|
+| Status | Active, অভঙ্গ | ভাঙা, Flip হয়েছে |
+| Direction | মূলের মতো | মূলের বিপরীত |
+| Trade | মূল Direction-এ | নতুন Direction-এ |
+| নির্ভরযোগ্যতা | Fresh = সবচেয়ে শক্তিশালী | স্পষ্ট Break-এর পর = শক্তিশালী |
+
+---
+
+## Breaker Block Trade করা
+
+```
+1. স্পষ্টভাবে ভাঙা Order Block চিহ্নিত
+2. ভাঙা OB Zone Mark = Breaker Block
+3. Price Breaker Zone-এ ফেরার অপেক্ষা
+4. নতুন Direction-এ Enter (মূল OB-এর বিপরীত)
+5. Stop: Breaker Block Zone-এর বাইরে
+6. Target: পরবর্তী Liquidity বা Structural Level
+```
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Order Blocks](/bn/smc/order-blocks) — ব্যর্থ হলে breaker হয়
-- [Mitigation Blocks](/bn/smc/mitigation-blocks) — আংশিক পূরণ OB (ভিন্ন কনসেপ্ট)
-- [CHOCH](/bn/smc/choch) — OB ব্যর্থ হলে প্রায়ই CHOCH ঘটে
+- [Order Blocks](/bn/smc/order-blocks) — যা Breaker হয়
+- [Mitigation Blocks](/bn/smc/mitigation-blocks) — আংশিক Test হওয়া OB
+- [CHOCH](/bn/smc/choch) — Structure Break Breaker তৈরি করে

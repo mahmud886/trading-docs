@@ -1,94 +1,140 @@
 ---
-title: "মার্কেট স্ট্রাকচার — সম্পূর্ণ গাইড"
-description: "মার্কেট স্ট্রাকচার অ্যানালাইসিস আয়ত্ত করুন। সুইং হাই/লো, HH/HL/LH/LL প্যাটার্ন, BOS, CHOCH শিখুন।"
+title: "Market Structure — সম্পূর্ণ গাইড"
+description: "Market Structure Analysis আয়ত্ত করুন। Swing High/Low, HH/HL/LH/LL Pattern, BOS, CHOCH এবং Trend চিহ্নিতকরণের জন্য Internal vs External Structure শিখুন।"
 level: beginner
 order: 4
-lastUpdated: "2026-05-11"
+lastUpdated: "2026-06-10"
 ---
 
-## মার্কেট স্ট্রাকচার কী?
+## Market Structure কী?
 
-মার্কেট স্ট্রাকচার হলো **প্রাইস অ্যাকশন ট্রেডিংয়ের মেরুদণ্ড**। এটি সুইং হাই ও সুইং লো এর প্যাটার্ন বিশ্লেষণ করে ট্রেন্ড চিহ্নিত করে।
+Market Structure হলো **Price Action Trading-এর মেরুদণ্ড**। এটি বলতে বোঝায় Price সময়ের সাথে চলার সময় যে Swing High ও Swing Low-এর Pattern তৈরি করে। এই Swing Point বিশ্লেষণ করে আপনি নির্ধারণ করতে পারেন:
+- Market **Trending** (Bullish/Bearish) না **Ranging**
+- কোথায় **Momentum Shift** ঘটে (CHOCH/BOS)
+- আপনার পরবর্তী Trade-এর জন্য **সবচেয়ে কম প্রতিরোধের Direction**
 
-### চারটি স্ট্রাকচার প্যাটার্ন
-1. **HH + HL = আপট্রেন্ড** — বায়াররা নিয়ন্ত্রণে
-2. **LH + LL = ডাউনট্রেন্ড** — সেলাররা নিয়ন্ত্রণে
-3. **CHOCH** — ট্রেন্ড পরিবর্তনের প্রথম সিগন্যাল
-4. **BOS** — ট্রেন্ড কন্টিনিউয়েশন কনফার্মেশন
-
-### ইন্টারনাল বনাম এক্সটার্নাল স্ট্রাকচার
-- **এক্সটার্নাল**: Daily/4H এর মেজর সুইং পয়েন্ট
-- **ইন্টারনাল**: এক্সটার্নাল লেগের মধ্যে মাইনর সুইং
-- এক্সটার্নালের সাথে ট্রেড করুন, এন্ট্রির জন্য ইন্টারনাল ব্যবহার করুন
-
-<Callout type="info" title="মূল কনসেপ্ট">
-মার্কেট স্ট্রাকচার বোঝা যেকোনো সিরিয়াস ট্রেডারের জন্য অপরিহার্য। এই কনসেপ্ট প্রাইস অ্যাকশনের মৌলিক জ্ঞানের উপর ভিত্তি করে এবং রিয়েল মার্কেটে আরও ভালো ট্রেডিং সিদ্ধান্ত নিতে সাহায্য করে।
+<Callout type="info" title="Structure-ই সবকিছু">
+Market Structure না বুঝে আপনি অন্ধভাবে Trade করছেন। Structure বলে কে নিয়ন্ত্রণে — Buyer না Seller — এবং কখন নিয়ন্ত্রণ বদল হয়। SMC, ICT ও Price Action-এর প্রতিটি Strategy প্রথম Filter হিসেবে Structure-র উপর নির্ভর করে।
 </Callout>
 
 ---
 
-## বাস্তব ট্রেডিং উদাহরণ
+## Bullish Market Structure
 
-### উদাহরণ ১: EUR/USD ট্রেড
-- **টাইমফ্রেম:** 4H চার্ট
-- **সেটআপ:** মার্কেট স্ট্রাকচার সিগন্যাল 1.0880 লেভেলে
-- **এন্ট্রি:** 1.0885 | **স্টপ:** 1.0855 | **টার্গেট:** 1.0950
-- **R:R:** 2.2:1 | **ফলাফল:** +65 পিপস ✅
+```
+Higher High (HH) ও Higher Low (HL) = UPTREND
 
-### উদাহরণ ২: গোল্ড (XAU/USD) ট্রেড
-- **সেটআপ:** ,400 লেভেলে মার্কেট স্ট্রাকচার সেটআপ
-- **এন্ট্রি:** ,402 | **স্টপ:** ,388 | **টার্গেট:** ,435
-- **R:R:** 2.4:1 | **ফলাফল:** +3 ✅
+        HH3
+       ╱
+      ╱    HH2
+     ╱    ╱
+    HL2  ╱
+     ╲  ╱    HH1
+      ╲╱    ╱
+       HL1 ╱
+        ╲ ╱
+         ╲╱
 
-### উদাহরণ ৩: NAS100 ট্রেড (বাংলাদেশ সময়)
-- **সেশন:** NY ওপেন (রাত ৭:৩০ বাংলাদেশ সময়)
-- **সেটআপ:** 18,280 লেভেলে মার্কেট স্ট্রাকচার সিগন্যাল
-- **ফলাফল:** +90 পয়েন্ট, 3R ✅
+Buyer নিয়ন্ত্রণে: প্রতিটি Push আগেরটির চেয়ে উচ্চ যায়
+প্রতিটি Pullback আগের Low-এর উপরে থাকে
+```
 
 ---
 
-## সেশন টাইমিং (বাংলাদেশ সময়)
+## Bearish Market Structure
 
-| সেশন | বাংলাদেশ সময় | গুরুত্ব |
-|------|-------------|--------|
-| **এশিয়ান** | রাত ২:০০-সকাল ১০:০০ | কম ভোলাটিলিটি — সেটআপ তৈরি হয় |
-| **লন্ডন** | দুপুর ১:০০-রাত ১০:০০ | EUR/GBP সেটআপের জন্য সেরা |
-| **নিউ ইয়র্ক** | রাত ৭:৩০-ভোর ৪:০০ | USD/গোল্ড/ইন্ডাইসেসের জন্য সেরা |
-| **ওভারল্যাপ** | রাত ৭:৩০-১০:০০ | সর্বোচ্চ ভলিউম — শক্তিশালী সিগন্যাল |
+```
+Lower High (LH) ও Lower Low (LL) = DOWNTREND
+
+╲╱
+ LH1 ╲
+      ╲    LL1
+       ╲  ╱
+    LH2 ╲╱
+         ╲    LL2
+          ╲  ╱
+       LH3 ╲╱
+              ╲ LL3
+
+Seller নিয়ন্ত্রণে: প্রতিটি Push আগেরটির চেয়ে নিচে যায়
+প্রতিটি Rally আগের High-এর নিচে থাকে
+```
+
+---
+
+## Break of Structure (BOS)
+
+BOS ঘটে যখন Price Trend-এর Direction-এ সাম্প্রতিক Swing Point ভাঙে — **Trend Continuation Confirm করে**।
+
+| Trend | BOS Condition | অর্থ |
+|-------|-------------|-------|
+| Bullish | সাম্প্রতিক Swing High-এর উপরে ভাঙে | নতুন HH = Uptrend অব্যাহত |
+| Bearish | সাম্প্রতিক Swing Low-এর নিচে ভাঙে | নতুন LL = Downtrend অব্যাহত |
+
+**BOS-এর পর:** Pullback-এ Entry খুঁজুন (OB, FVG, Fib)
+
+---
+
+## Change of Character (CHOCH)
+
+CHOCH ঘটে যখন Price Trend-এর **বিরুদ্ধে** সাম্প্রতিক Swing Point ভাঙে — **সম্ভাব্য Reversal Signal করে**।
+
+| Trend | CHOCH Condition | অর্থ |
+|-------|---------------|-------|
+| Bullish → Bearish | সাম্প্রতিক HL-এর নিচে ভাঙে | Uptrend শেষ হতে পারে |
+| Bearish → Bullish | সাম্প্রতিক LH-এর উপরে ভাঙে | Downtrend শেষ হতে পারে |
+
+**CHOCH-এর পর:** নতুন Direction-এ Entry খুঁজুন
+
+---
+
+## Internal vs. External Structure
+
+| ধরন | সংজ্ঞা | ব্যবহার |
+|------|---------|---------|
+| **External** | Major Swing Point (HTF দৃশ্যমান) | Bias ও Direction |
+| **Internal** | Minor Swing (LTF, Range-এর ভিতরে) | Entry Timing |
+
+```
+External Structure: ━━━━ HH ━━━━━━━━━━━━━━━ HH ━━━━
+                         ╲      ╱╲    ╱╲  ╱
+Internal Structure:       ╲    ╱  ╲  ╱  ╲╱ ← Minor swings
+                           ╲  ╱    ╲╱
+                    ━━━━ HL ━━━━━━━━━━━ HL ━━━━━━━━
+
+External Bullish (HH/HL) = Overall Bias Long
+Internal may be temporarily bearish (pullback) = Entry Zone
+```
+
+---
+
+## Structure-Based Trading
+
+### কীভাবে Structure ব্যবহার করবেন:
+1. **D1/H4-এ External Structure** চিহ্নিত করুন → Bias নির্ধারণ
+2. **BOS Confirm** করলে Trend অব্যাহত → Pullback Entry খুঁজুন
+3. **CHOCH দেখলে** → সতর্ক হন, নতুন Direction-এ Entry খুঁজুন
+4. **Entry-র জন্য Internal Structure** ব্যবহার করুন → LTF-এ CHOCH/BOS
+5. **Stop Placement** → শেষ Significant Swing Point-এর বাইরে
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="এড়িয়ে চলুন">
-
-**❌ HTF কন্টেক্সট ছাড়া ট্রেড করা** — সেটআপ অবশ্যই বড় ছবির সাথে মিলতে হবে।
-
-**❌ কনফার্মেশন উপেক্ষা করা** — এন্ট্রি নেওয়ার আগে ক্যান্ডেল সিগন্যাল বা LTF স্ট্রাকচার শিফটের জন্য অপেক্ষা করুন।
-
-**❌ দুর্বল রিস্ক ম্যানেজমেন্ট** — সর্বোচ্চ ১-২% রিস্ক ব্যবহার করুন।
-
-**❌ অতিরিক্ত জটিল করা** — আপনার অ্যানালাইসিস সহজ ও পরিষ্কার রাখুন।
-
-</Callout>
+| ভুল | সমাধান |
+|------|--------|
+| প্রতিটি ছোট Swing-কে Structure মনে করা | শুধু Clear, Obvious Swing Count করুন |
+| BOS ও CHOCH গুলিয়ে ফেলা | BOS = Trend সাথে, CHOCH = Trend বিরুদ্ধে |
+| একটি TF-এ Structure দেখা | HTF Structure-ই চূড়ান্ত সত্য |
+| CHOCH-এ তাৎক্ষণিক Trade | Confirmation ও Pullback অপেক্ষা |
+| Ranging Market-এ Structure খোঁজা | Range-এ Structure কম নির্ভরযোগ্য |
 
 ---
 
-## সারসংক্ষেপ
+## সম্পর্কিত বিষয়
 
-| বিষয় | বিবরণ |
-|-------|--------|
-| **কনসেপ্ট** | মার্কেট স্ট্রাকচার |
-| **লেভেল** | beginner |
-| **সেরা TF** | অ্যানালাইসিসের জন্য 4H, এন্ট্রির জন্য 15M |
-| **মূল নিয়ম** | সর্বদা স্ট্রাকচার ও ক্যান্ডেল সিগন্যাল দিয়ে কনফার্ম করুন |
-| **রিস্ক** | প্রতি ট্রেডে সর্বোচ্চ ১-২% |
-
----
-
-## সম্পর্কিত টপিক
-
-- [মার্কেট স্ট্রাকচার](/bn/price-action/market-structure) — সব PA কনসেপ্টের ভিত্তি
-- [ট্রেন্ড অ্যানালাইসিস](/bn/price-action/trend-analysis) — ট্রেন্ড কন্টেক্সট
-- [কনফার্মেশন](/bn/price-action/confirmation) — এন্ট্রি যাচাইকরণ
-- [রিস্ক ম্যানেজমেন্ট](/bn/price-action/risk-management) — মূলধন সুরক্ষা
+- [Swing High ও Low](/bn/price-action/swing-high-low) — Structure-এর Building Block
+- [Trend Analysis](/bn/price-action/trend-analysis) — Structure-ভিত্তিক Trend
+- [Reversal Concepts](/bn/price-action/reversal-concepts) — CHOCH ও Reversal
+- [Continuation](/bn/price-action/continuation) — BOS ও Continuation
+- [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — MTF Structure

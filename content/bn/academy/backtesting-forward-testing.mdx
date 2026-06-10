@@ -1,23 +1,139 @@
 ---
-title: "ব্যাকটেস্টিং এবং ফরোয়ার্ড টেস্টিং গাইড"
-description: "নির্ভরযোগ্য পারফরম্যান্স মেট্রিক্সের জন্য ব্যাকটেস্টিং ট্রেডিং কৌশল এবং ফরোয়ার্ড টেস্টিং দিয়ে যাচাই করতে শিখুন"
-author: "ট্রেডিং একাডেমি"
-date: "2024-01-15"
+title: "Backtesting ও Forward Testing — সম্পূর্ণ গাইড"
+description: "Trading Strategy কীভাবে Backtest ও Forward Test করবেন শিখুন। Real Capital Risk করার আগে Strategy Validate করার সঠিক পদ্ধতি বুঝুন।"
+level: intermediate
+order: 27
+lastUpdated: "2026-06-10"
 ---
 
-## ব্যাকটেস্টিং এবং ফরোয়ার্ড টেস্টিং গাইড
+## কেন Strategy Test করবেন?
 
-ব্যাকটেস্টিং ঐতিহাসিক ডেটায় আপনার ট্রেডিং কৌশল পরীক্ষা করার প্রক্রিয়া। ফরোয়ার্ড টেস্টিং (কাগজ ট্রেডিং) প্রকৃত অর্থের ঝুঁকি ছাড়াই লাইভ ডেটায় ফলাফল যাচাই করে।
+Testing Professional Trader-কে Gambler থেকে আলাদা করে। Real Money Risk করার আগে আপনাকে **প্রমাণ করতে হবে যে Strategy কাজ করে** — Historical Data (Backtesting) ও Real-time Simulation (Forward Testing/Demo)-এর মাধ্যমে।
 
-### ব্যাকটেস্টিং কেন গুরুত্বপূর্ণ
+<Callout type="warning" title="কঠিন সত্য">
+কমপক্ষে ১০০+ Historical Trade-এ Test না করা Strategy-র কোনো প্রমাণিত Edge নেই। এটি Live Trade করা Gambling, Trading নয়। টাকা দেওয়ার আগে পরিশ্রম করুন।
+</Callout>
 
-- **ক্ষতি প্রতিরোধ করে:** পুঁজি ঝুঁকিতে ফেলার আগে কৌশল যাচাই করুন
-- **আত্মবিশ্বাস তৈরি করে:** ট্রেডিং শুরুর আগে আপনার সুবিধা জানুন
-- **দুর্বলতা চিহ্নিত করে:** বিভিন্ন বাজার পরিস্থিতিতে ত্রুটি খুঁজুন
-- **পরামিতি অপ্টিমাইজ করে:** কৌশল সেটিংস সূক্ষ্ম সুর করুন
-- **পরিসংখ্যানগত তাপর্য:** বৈধতার জন্য ন্যূনতম 100+ ট্রেড প্রয়োজন
+---
 
-### ব্যাকটেস্টিং ভিত্তি
+## Backtesting
 
-আমি সংক্ষিপ্ত প্রবর্তনী অংশ যোগ করেছি আরো জানতে ইংরেজি সংস্করণ দেখুন। এটি একটি অনুবাদ নমুনা।
+### Backtesting কী?
+**Historical Price Data**-এর বিপরীতে আপনার Strategy Test করা — এটি অতীতে কেমন Perform করত তা দেখতে।
 
+### Manual Backtesting Process:
+```
+ধাপ ১: সুনির্দিষ্ট Rule সংজ্ঞায়িত (Entry, Exit, SL, TP)
+ধাপ ২: Timeframe ও Market নির্বাচন
+ধাপ ৩: শুরুর Point-এ পিছনে Scroll করুন
+ধাপ ৪: Candle-by-candle সামনে এগিয়ে যান
+ধাপ ৫: Setup দেখা গেলে Trade Record করুন
+ধাপ ৬: Entry, SL, TP ও Result নোট করুন
+ধাপ ৭: ন্যূনতম ১০০+ Trade পর্যন্ত চালিয়ে যান
+ধাপ ৮: Statistics গণনা (Win Rate, গড় R, Expectancy)
+```
+
+### ন্যূনতম Sample Size:
+- **৫০ Trade:** প্রাথমিক মূল্যায়ন
+- **১০০ Trade:** যুক্তিসঙ্গত আত্মবিশ্বাস
+- **২০০+ Trade:** Statistical Significance
+- **৫০০+ Trade:** উচ্চ আত্মবিশ্বাস
+
+---
+
+## Backtesting Metric গণনা
+
+```
+১০০+ Backtest Trade-এর পর গণনা করুন:
+
+Win Rate: Win ÷ মোট Trade
+গড় Win (R): Win-এর যোগফল ÷ Win সংখ্যা
+গড় Loss (R): Loss-এর যোগফল ÷ Loss সংখ্যা
+Profit Factor: Gross Profit ÷ Gross Loss
+Expectancy: (WR × গড় Win) - (LR × গড় Loss)
+সর্বোচ্চ পরপর Loss: দীর্ঘতম Losing Streak
+Max Drawdown: বৃহত্তম Peak-to-trough পতন
+
+ন্যূনতম কার্যকর STRATEGY:
+✅ Win Rate > 40% with R:R > 1.5
+✅ Positive Expectancy
+✅ Profit Factor > 1.3
+✅ Max Drawdown < 20%
+✅ সর্বোচ্চ পরপর Loss মানসিকভাবে সহ্য করা যায়
+```
+
+---
+
+## Forward Testing (Demo Trading)
+
+### Forward Testing কী?
+Backtest Result Validate করতে **Real-time Market Condition-এ Demo Account-এ** Strategy Trade করা।
+
+### Backtesting-এর পর কেন Forward Test?
+
+| Backtesting | Forward Testing |
+|-------------|-----------------|
+| Hindsight Bias সম্ভব | Real-time সিদ্ধান্ত |
+| Perfect Entry (কী হয় দেখেন) | ভবিষ্যৎ জ্ঞান ছাড়া সিদ্ধান্ত |
+| কোনো Emotional উপাদান নেই | Emotional Execution Test করে |
+| Slippage/Spread সমস্যা নেই | বাস্তব Execution Condition |
+| অতীত Market Condition | বর্তমান Market Condition |
+
+### Forward Testing নিয়ম:
+1. **ন্যূনতম সময়কাল:** ৩-৬ মাস
+2. **ন্যূনতম Trade:** ৫০-১০০
+3. **Real হিসেবে Treat করুন** — একই আবেগ, একই শৃঙ্খলা
+4. **সব Metric Track করুন** — Backtest Result-এর সাথে তুলনা
+5. **Rule পরিবর্তন করবেন না** — ঠিক একই Strategy Test করুন
+
+---
+
+## Backtesting ফাঁদ
+
+| ফাঁদ | বর্ণনা | সমাধান |
+|------|---------|--------|
+| **Curve Fitting** | অতীত Data-র জন্য অতিরিক্ত Optimize | Rule সহজ রাখুন, একাধিক Market-এ Test |
+| **Hindsight Bias** | ভবিষ্যৎ Candle জানা সিদ্ধান্ত প্রভাবিত করে | ভবিষ্যৎ Candle ঢাকুন, সামনে এগিয়ে যান |
+| **ছোট Sample** | Significance-এর জন্য পর্যাপ্ত Trade নেই | ন্যূনতম ১০০ Trade |
+| **Cost উপেক্ষা** | Spread/Commission অন্তর্ভুক্ত নয় | সবসময় বাস্তবসম্মত খরচ অন্তর্ভুক্ত করুন |
+| **Cherry Picking** | শুধু অনুকূল Setup গণনা | প্রতিটি Setup Record করুন, Win বা Lose |
+
+---
+
+## সম্পূর্ণ Validation Process
+
+```
+Phase 1: BACKTEST (২-৪ সপ্তাহ)
+├── সুনির্দিষ্ট Rule সংজ্ঞায়িত
+├── ১০০+ Historical Trade-এ Test
+├── সব Metric গণনা
+├── Pass? → চালিয়ে যান। Fail? → Modify ও Retest।
+
+Phase 2: FORWARD TEST / DEMO (৩-৬ মাস)
+├── Real-time Data-তে Demo Trade
+├── ৫০-১০০ Trade Track করুন
+├── Backtest Result-এর সাথে তুলনা
+├── Pass? → চালিয়ে যান। Fail? → Phase 1-এ ফিরুন।
+
+Phase 3: ছোট LIVE (৩-৬ মাস)
+├── সম্ভাব্য সবচেয়ে ছোট Real Size-এ Trade
+├── Execution-এ ফোকাস, Profit নয়
+├── Psychology সামলাতে পারছে Confirm
+├── Pass? → Scale Up। Fail? → Phase 2-এ ফিরুন।
+
+Phase 4: পূর্ণ LIVE
+├── স্বাভাবিক Position Size-এ Trade
+├── ক্রমাগত Tracking ও উন্নতি
+├── Quarterly Strategy Review
+└── Market বিবর্তনের সাথে Adapt
+```
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Trading Plan](/bn/academy/trading-plan) — Test করা Strategy Document করুন
+- [Performance Tracking](/bn/academy/performance-tracking) — Live Result Track
+- [Risk Management](/bn/academy/risk-management) — Risk Rule Validate
+- [Trading Psychology](/bn/academy/trading-psychology) — Demo থেকে Live Transition
+- [Journaling](/bn/academy/journaling) — Test Result Record

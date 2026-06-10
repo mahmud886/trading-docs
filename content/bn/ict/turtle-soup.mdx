@@ -1,51 +1,96 @@
 ---
 title: "ICT Turtle Soup"
-description: "ICT Turtle Soup মাস্টার করুন — মূল লেভেলের বাইরে ভুয়া ব্রেকআউটের বিরুদ্ধে ট্রেড করার কৌশল। লিকুইডিটি সুইপের পর হাই-R:R রিভার্সাল এন্ট্রি।"
+description: "ICT Turtle Soup Master করুন — Key Level এর বাইরে False Breakout Fade করার Strategy। বিখ্যাত Turtle Trader দের নামে, এই Reversal Setup Liquidity Sweep কে High-R:R Entry তে পরিণত করে।"
 level: advanced
 order: 15
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-09"
 ---
 
 ## Turtle Soup কী?
 
-Turtle Soup হলো একটি **রিভার্সাল কৌশল** যা গুরুত্বপূর্ণ হাই ও লো এর বাইরে ভুয়া ব্রেকআউটের বিপরীতে ট্রেড করে। বিখ্যাত Turtle Traders (যারা ব্রেকআউট ট্রেড করতো) এর নামে রাখা — ICT এর Turtle Soup তাদের বিপরীত কাজ করে।
+Turtle Soup হলো একটি **Reversal Strategy** যা Significant High ও Low এর বাইরে False Breakout Fade করে। বিখ্যাত Turtle Trading System (যা Breakout Trade করত) এর নামে ব্যঙ্গাত্মকভাবে নামকরণ করা, ICT এর Turtle Soup ঠিক বিপরীত কাজ করে — Liquidity Sweep এর পর Breakout এর বিরুদ্ধে Entry নেয়।
+
+<Callout type="info" title="নামের উৎপত্তি">
+Turtle Trader রা Breakout Buy করে বিখ্যাত হয়েছিল। ICT এই Strategy এর নাম "Turtle Soup" রেখেছে কারণ এটি সেই Breakout Fade করে এবং Profit করে যা Turtle-Style Trader দের ফাঁদে ফেলে।
+</Callout>
 
 ---
 
-## কীভাবে কাজ করে
+## Turtle Soup কীভাবে কাজ করে
 
-### সেটআপ
-1. প্রাইস একটি **গুরুত্বপূর্ণ হাই বা লো** এর কাছে আসে
-2. প্রাইস লেভেলের **বাইরে ব্রেক করে** — ব্রেকআউট ট্রেডারদের এন্ট্রি ও স্টপ ট্রিগার হয়
-3. প্রাইস দ্রুত **উল্টে যায়** লেভেলের ভেতরে
-4. এই রিভার্সাল = আপনার এন্ট্রি সিগন্যাল
-5. ব্রেকআউট ছিল ভুয়া — এটা ছিল লিকুইডিটি সুইপ
+### Setup
+1. Price একটি **Significant High বা Low** এর কাছে আসে (PDH/PDL, Equal H/L, Old Swing Point)
+2. Price Level এর **বাইরে Break** করে — Breakout Trader দের Entry ও Stop Order Trigger করে
+3. Price দ্রুত **Reverse** করে Level এর নিচে/উপরে ফিরে আসে
+4. এই Reversal = আপনার Entry Signal
+5. Breakout FALSE ছিল — এটি একটি Liquidity Sweep
+
+### Bullish Turtle Soup (False Breakdown Fade করা)
+- Price একটি Key Low এর নিচে Break করে (SSL Sweep)
+- তারপর Low এর উপরে Reverse করে ফিরে আসে
+- Entry LONG, Stop Sweep Extreme এর নিচে
+
+### Bearish Turtle Soup (False Breakout Fade করা)
+- Price একটি Key High এর উপরে Break করে (BSL Sweep)
+- তারপর High এর নিচে Reverse করে ফিরে আসে
+- Entry SHORT, Stop Sweep Extreme এর উপরে
+
+---
+
+## চিহ্নিতকরণের নিয়ম
+
+1. **Significant Level** — অবশ্যই উল্লেখযোগ্য High/Low হতে হবে (Random Swing নয়)
+2. **Clean Sweep** — Price Level এর বাইরে কমপক্ষে কয়েক Pips Trade করা উচিত
+3. **Quick Reversal** — Entry TF এ আদর্শভাবে 1-3 Candle এর মধ্যে
+4. **Displacement** — Reversal আক্রমণাত্মক হওয়া উচিত (ধীর Drift নয়)
+5. **Kill Zone Timing** — Kill Zone এ Turtle Soup = সর্বোচ্চ Probability
+6. **HTF Alignment** — False Breakout HTF Bias এর বিরুদ্ধে হওয়া উচিত
 
 ---
 
 ## বাস্তব উদাহরণ
 
-### বেয়ারিশ Turtle Soup — EUR/USD
-- **মূল লেভেল:** আগের সপ্তাহের হাই 1.0950
-- **সেটআপ:** NY AM (সন্ধ্যা ৬:৩০ BD), প্রাইস 1.0958 এ স্পাইক
-- **ব্রেকআউট ট্রেডাররা** লং এন্ট্রি নেয়
-- **রিভার্সাল:** শক্তিশালী বেয়ারিশ ক্যান্ডেল 1.0945 এর নিচে ক্লোজ
-- **এন্ট্রি:** 1.0945 তে সেল
-- **SL:** 1.0960 | **TP:** 1.0880
+### উদাহরণ ১: Bearish Turtle Soup — EUR/USD
+- **Key Level:** Previous Week High 1.0950
+- **Setup:** NY AM (সন্ধ্যা 6:30 BD) এ, Price 1.0958 পর্যন্ত Spike করে
+- **Breakout Trader** রা Long Enter করে, Stop Trigger হয়
+- **Reversal:** শক্তিশালী Bearish Candle 1.0945 এর নিচে Close করে
+- **Entry:** 1.0945 তে Sell
+- **Stop:** 1.0960 (Sweep এর উপরে)
+- **Target:** 1.0880 (নিচে SSL)
 - **R:R:** 1:4.3
 
-### বুলিশ Turtle Soup — Gold
-- **মূল লেভেল:** ইকুয়াল লো 2,020 (তিনবার ছুঁয়েছে)
-- **সেটআপ:** লন্ডন KZ (দুপুর ১:০০ BD), প্রাইস 2,015 এ নামে
-- **রিভার্সাল:** বুলিশ ডিসপ্লেসমেন্ট, 5M MSS
-- **এন্ট্রি:** 2,022 তে বাই
-- **SL:** 2,013 | **TP:** 2,055
+### উদাহরণ ২: Bullish Turtle Soup — Gold
+- **Key Level:** 2,020 এ Equal Lows (তিনটি Touch)
+- **Setup:** London KZ (দুপুর 1:00 BD), Price 2,015 এ নামে
+- **Breakdown Trader** রা Sell করে, Stop Hit হয়
+- **Reversal:** Bullish Displacement, 5M এ MSS
+- **Entry:** 2,022 তে Buy
+- **Stop:** 2,013
+- **Target:** 2,055
 - **R:R:** 1:3.7
+
+---
+
+## সাধারণ ভুল
+
+<Callout type="warning" title="Turtle Soup এ ভুল">
+
+**❌ প্রতিটি Breakout Fade করা** — শুধু তখনই Fade করুন যখন HTF Bias Breakout Direction এর বিরুদ্ধে
+
+**❌ Reversal Confirm এর আগে Entry** — Range এর ভেতরে Displacement Back হওয়ার জন্য অপেক্ষা করুন
+
+**❌ খুব ছোট Stop** — Sweep Extreme এর বাইরে Stop রাখতে হবে টিকে থাকতে
+
+**❌ Time উপেক্ষা করা** — Kill Zone এর বাইরে Turtle Soup কম Probability
+
+</Callout>
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [লিকুইডিটি সুইপ](/bn/ict/liquidity-sweep) — সুইপ এন্ট্রি ট্রিগার
-- [জুডাস সুইং](/bn/ict/judas-swing) — সেশন-ওপেনিং Turtle Soup
-- [MSS](/bn/ict/mss) — ভুয়া ব্রেকআউটের পর কনফার্মেশন
+- [Liquidity Sweep](/bn/ict/liquidity-sweep) — Sweep হলো Entry Trigger
+- [Judas Swing](/bn/ict/judas-swing) — Session-Opening Turtle Soup Pattern
+- [AMD](/bn/ict/amd) — Turtle Soup Manipulation Phase ক্যাপচার করে
+- [MSS](/bn/ict/mss) — False Breakout এর পর Confirmation

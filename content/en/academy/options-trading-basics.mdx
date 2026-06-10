@@ -1,267 +1,151 @@
 ---
-title: "Options Trading Basics"
-description: "Introduction to options trading concepts, strategies, and how to trade options effectively"
-author: "Trading Academy"
-date: "2024-01-15"
+title: "Options Trading Basics — Complete Guide"
+description: "Learn options trading fundamentals: calls, puts, strike prices, expiration, premium, Greeks, and basic options strategies for beginners."
+level: intermediate
+order: 24
+lastUpdated: "2026-06-10"
 ---
 
-## Options Trading Basics
+## What Are Options?
 
-Options are derivative instruments that give traders the right to buy or sell an underlying asset at a specified price by a certain date.
+An option is a **contract giving you the RIGHT (but not obligation)** to buy or sell an asset at a specific price within a specific time period. You pay a premium for this right.
 
-### Understanding Options
+<Callout type="info" title="Key Advantage">
+Options offer unique benefits no other instrument provides: defined maximum risk, leveraged exposure, ability to profit from time decay, and strategies that profit in ANY market direction (up, down, or sideways).
+</Callout>
 
-**What is an Option?**
-An option is a contract giving the holder the right, but not the obligation, to:
-- **Call Option:** Buy the underlying asset at a specific price
-- **Put Option:** Sell the underlying asset at a specific price
+---
 
-**Key Terminology:**
-- **Strike Price:** The agreed-upon price to buy/sell
-- **Expiration Date:** Last day the option can be exercised
-- **Premium:** Price paid to buy the option
-- **Underlying Asset:** The asset the option is based on (EUR/USD, S&P 500, etc.)
+## Call vs. Put Options
 
-### Call Options
+| | Call Option | Put Option |
+|--|-------------|------------|
+| **Right** | Buy asset at strike price | Sell asset at strike price |
+| **Buyer Profits** | When price goes UP | When price goes DOWN |
+| **Seller Profits** | When price stays below strike | When price stays above strike |
+| **Max Loss (Buyer)** | Premium paid | Premium paid |
+| **Max Loss (Seller)** | Unlimited (calls) / Large (puts) | Strike price - premium |
 
-A call option gives the right to buy the underlying asset.
+---
 
-**When to Buy Calls:**
-- Expect the price to rise
-- Limited risk (premium paid)
-- Unlimited profit potential
-- Leverage on capital
+## Key Options Terminology
 
-**When to Sell Calls:**
-- Expect the price to stay flat or fall
-- Collect premium immediately
-- Unlimited risk (in theory)
-- Limited profit (premium received)
+| Term | Definition |
+|------|-----------|
+| **Strike Price** | Price at which option can be exercised |
+| **Premium** | Price paid to buy the option contract |
+| **Expiration** | Date when option contract expires |
+| **In-the-Money (ITM)** | Option has intrinsic value |
+| **At-the-Money (ATM)** | Strike ≈ current price |
+| **Out-of-the-Money (OTM)** | Option has no intrinsic value |
+| **Intrinsic Value** | Difference between strike and market price |
+| **Time Value** | Premium - Intrinsic value (decays over time) |
+| **Exercise** | Using your right to buy/sell |
+| **Assignment** | Being obligated to fulfill the contract |
 
-**Example:**
-- EUR/USD trading at 1.0950
-- Buy call option: strike 1.1000, premium 50 pips
-- Cost: $500 (50 pips × $10 per pip)
-- Profit if above 1.1050 at expiration
-- Loss limited to $500
+---
 
-### Put Options
+## How Options Pricing Works
 
-A put option gives the right to sell the underlying asset.
+### Option Premium = Intrinsic Value + Time Value
 
-**When to Buy Puts:**
-- Expect the price to fall
-- Limited risk (premium paid)
-- Profit from downward moves
-- Insurance against losses
+```
+Example:
+Stock Price: $150
+Call Strike: $145
+Premium: $8
 
-**When to Sell Puts:**
-- Expect the price to stay flat or rise
-- Collect premium
-- Unlimited risk if falls significantly
-- Limited profit (premium received)
+Intrinsic Value: $150 - $145 = $5 (in-the-money)
+Time Value: $8 - $5 = $3 (time until expiry)
+```
 
-**Example:**
-- EUR/USD trading at 1.0950
-- Buy put option: strike 1.0900, premium 40 pips
-- Cost: $400
-- Profit if below 1.0860 at expiration
-- Loss limited to $400
+### What Affects Premium:
 
-### Option Greeks (Risk Metrics)
+| Factor | Calls | Puts |
+|--------|-------|------|
+| Stock price rises | Premium ↑ | Premium ↓ |
+| Stock price falls | Premium ↓ | Premium ↑ |
+| More time to expiry | Premium ↑ | Premium ↑ |
+| Higher volatility | Premium ↑ | Premium ↑ |
+| Higher interest rates | Premium ↑ | Premium ↓ |
 
-#### Delta
-Measures how much the option price changes with each 1-pip move in the underlying.
-- **Call Delta:** 0 to 1.0
-- **Put Delta:** -1.0 to 0
-- At-the-money (ATM) options: ~0.5 delta
-- Deep in-the-money: Delta approaches 1.0
-- Deep out-of-the-money: Delta approaches 0
+---
 
-#### Gamma
-Measures how quickly delta changes.
-- ATM options have highest gamma
-- OTM and ITM options have lower gamma
-- High gamma = fast price changes
+## The Greeks (Brief Overview)
 
-#### Theta (Time Decay)
-Measures how much value the option loses with each day passing.
-- Positive theta when selling options (time works for you)
-- Negative theta when buying options (time works against you)
-- Accelerates closer to expiration
+| Greek | Measures | Practical Meaning |
+|-------|----------|-------------------|
+| **Delta** | Price sensitivity | How much option moves per $1 stock move |
+| **Gamma** | Delta change rate | How fast delta changes |
+| **Theta** | Time decay | How much value lost per day |
+| **Vega** | Volatility sensitivity | Impact of volatility change |
+| **Rho** | Interest rate sensitivity | Impact of rate changes |
 
-#### Vega
-Measures sensitivity to volatility changes.
-- Higher vega = more sensitive to volatility
-- Positive vega for long options (profit from volatility increase)
-- Negative vega for short options (profit from volatility decrease)
+### Delta Guide:
+- ATM Call: ~0.50 delta (moves $0.50 per $1 stock move)
+- Deep ITM Call: ~0.90-1.00 delta (moves almost like stock)
+- OTM Call: ~0.10-0.30 delta (small movement)
 
-### Option Strategies for Different Market Views
+---
 
-#### 1. **Bullish Strategies**
+## Basic Options Strategies
 
-**Long Call:**
-- Buy call option
-- Profit if price rises above strike + premium
-- Limited risk, unlimited profit
-- Best for: Expect strong directional move up
+### 1. Long Call (Bullish)
+- Buy a call option
+- Profit: Unlimited upside potential
+- Risk: Limited to premium paid
+- Best when: Expecting strong upward move
 
-**Call Spread:**
-- Buy lower strike call
-- Sell higher strike call
-- Limited risk and limited profit
-- Lower cost than long call
-- Best for: Moderate bullish view
+### 2. Long Put (Bearish)
+- Buy a put option
+- Profit: Large downside potential (to zero)
+- Risk: Limited to premium paid
+- Best when: Expecting strong downward move
 
-**Covered Call:**
-- Own underlying asset or long position
-- Sell call option
-- Collect premium, capped upside
-- Best for: Generate income on owned positions
+### 3. Covered Call (Income)
+- Own stock + sell call against it
+- Profit: Premium received + stock appreciation to strike
+- Risk: Stock decline (offset by premium)
+- Best when: Neutral to slightly bullish
 
-#### 2. **Bearish Strategies**
+### 4. Protective Put (Insurance)
+- Own stock + buy put for protection
+- Profit: Unlimited upside, protected downside
+- Risk: Premium cost reduces returns
+- Best when: Want downside protection
 
-**Long Put:**
-- Buy put option
-- Profit if price falls below strike - premium
-- Limited risk, unlimited profit
-- Best for: Expect strong downward move
+---
 
-**Put Spread:**
-- Buy higher strike put
-- Sell lower strike put
-- Limited risk and profit
-- Lower cost than long put
-- Best for: Moderate bearish view
+## Options vs. Stock/Forex Trading
 
-**Protective Put:**
-- Buy protective put
-- Protects against downside
-- Like insurance policy
-- Best for: Protect long positions
+| Factor | Options | Stock/Forex |
+|--------|---------|-------------|
+| Risk | Defined (buyers) | Can be large |
+| Leverage | Built-in | Margin required |
+| Time | Works for/against you | Neutral |
+| Complexity | Higher | Lower |
+| Profit Ways | Up, down, sideways | Up or down only |
+| Capital | Lower | Higher |
 
-#### 3. **Neutral Strategies**
+---
 
-**Iron Condor:**
-- Sell OTM call spread
-- Sell OTM put spread
-- Profit from price staying in range
-- Limited risk and profit
-- Best for: Range-bound markets
+## Getting Started with Options
 
-**Short Straddle:**
-- Sell ATM call and put
-- Profit from no movement
-- High risk, collects premium
-- Best for: Low volatility environments
+### Steps:
+1. Learn terminology and basics thoroughly
+2. Understand risk/reward profiles
+3. Paper trade for 2-3 months minimum
+4. Start with simple strategies (long calls/puts, covered calls)
+5. Small position sizes (1-2 contracts max)
+6. Avoid selling naked options as beginner
+7. Focus on liquid options (high volume, tight spreads)
 
-### Basic Option Trading Rules
+---
 
-#### 1. **Position Sizing**
-- Risk only what you can afford to lose
-- Start with small positions
-- Each option contract = 100 units of underlying (typically)
-- Adjust contract size for account size
+## Related Topics
 
-#### 2. **Time Value Decay**
-- Buying options loses time value daily (theta)
-- Selling options gains time value daily
-- Close option trades with 2-3 weeks to expiration
-- Never hold options to expiration (if first trade)
-
-#### 3. **Profit Taking**
-- Close winners at 50% profit
-- Let winners run if strong momentum
-- Cut losses at 20-30% loss
-- Don't hold short-term options for years
-
-#### 4. **Volatility Awareness**
-- Buy options during low volatility
-- Sell options during high volatility
-- Check implied volatility before entering
-- Volatility expansion can end trades early
-
-### Options Trading Process
-
-**Step 1: Choose Underlying Asset**
-- Stock, ETF, Index, Forex, or Cryptocurrency
-- Liquid markets preferred (tight bid-ask spread)
-
-**Step 2: Determine Market View**
-- Bullish = Buy Call or Sell Put
-- Bearish = Buy Put or Sell Call
-- Neutral = Iron Condor or Straddle
-
-**Step 3: Select Strike Price**
-- ATM (At The Money) = Balanced risk/reward
-- ITM (In The Money) = Higher probability, lower profit
-- OTM (Out of The Money) = Lower probability, higher profit
-
-**Step 4: Choose Expiration Date**
-- Short-term: 7-30 days
-- Medium-term: 30-60 days
-- Long-term: 60+ days
-- Avoid final week (fastest decay)
-
-**Step 5: Analyze Price**
-- Is premium reasonable?
-- Check IV (implied volatility)
-- Compare bid-ask spread
-- Calculate risk-reward
-
-**Step 6: Set Exits**
-- Profit target (usually 50% gain)
-- Stop loss (usually 20-30% loss)
-- Expiration date (automatic exit)
-- Time stop (exit if no movement)
-
-### Greeks in Action Example
-
-**Short Straddle Setup:**
-- EUR/USD at 1.0950
-- Sell call at 1.1000 (ATM): Premium 40
-- Sell put at 1.0900 (ATM): Premium 40
-- Total premium collected: 80 pips ($800)
-
-**Greeks:**
-- Delta: ~0 (neutral position)
-- Theta: Positive (time decay helps)
-- Vega: Negative (volatility hurts)
-
-**Profit Scenario:**
-- EUR/USD stays between 1.0900-1.1000
-- Both options expire worthless
-- Keep entire 80 pips premium
-
-### Common Options Trading Mistakes
-
-1. **Buying Far OTM Options:** Low probability, high loss
-2. **Ignoring Time Decay:** Theta accelerates near expiration
-3. **Holding to Expiration:** Creates unnecessary risk
-4. **Over-Leveraging:** Options can move 10%+ daily
-5. **Not Following Greeks:** Price movement ≠ profit
-6. **Trading Illiquid Pairs:** Wide spreads destroy profits
-7. **Selling Unlimited Risk:** Sell puts/calls only if prepared
-8. **Chasing Premium:** Don't overpay for options
-
-### Paper Trading Options
-
-Before real money:
-1. Paper trade 20-30 trades
-2. Track actual costs (bid-ask spreads)
-3. Monitor Greeks throughout trade
-4. Test strategy in different market conditions
-5. Refine timing and strike selection
-
-## Summary
-
-Options Trading:
-- **Call:** Bet on price rising
-- **Put:** Bet on price falling
-- **Premium:** Cost to buy, reward for selling
-- **Greeks:** Risk metrics guiding decisions
-- **Strategies:** Combine options for different views
-- **Key:** Understand time decay and volatility impact
-
-Start with simple strategies (long calls/puts), master the Greeks, and progress to spreads. Options offer leverage and defined risk when used properly.
-
+- [Stock Market Basics](/en/academy/stock-market-basics) — Underlying asset knowledge
+- [Risk Management](/en/academy/risk-management) — Options risk management
+- [Volatility Analysis](/en/academy/volatility-analysis) — Vega and volatility
+- [Technical Indicators](/en/academy/technical-indicators) — Time entries
+- [Trading Plan](/en/academy/trading-plan) — Options in your plan

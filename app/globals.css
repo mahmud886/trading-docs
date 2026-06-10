@@ -67,9 +67,9 @@
   --color-accent-purple: var(--accent-purple);
   --color-neon-green: var(--neon-green);
   --color-surface-elevated: var(--surface-elevated);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-noto-sans);
   --font-mono: var(--font-geist-mono);
-  --font-bangla: var(--font-hind-siliguri);
+  --font-bangla: var(--font-noto-sans-bengali);
 }
 
 /* ═══ Glassmorphism ═══ */

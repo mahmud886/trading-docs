@@ -1,120 +1,213 @@
 ---
-title: "Technical Indicators Guide"
-description: "Learn about essential technical indicators used in trading including moving averages, RSI, MACD, and Bollinger Bands"
-author: "Trading Academy"
-date: "2024-01-15"
+title: "Technical Indicators — Complete Guide"
+description: "Master essential technical indicators: RSI, MACD, Moving Averages, Stochastic, ADX, and Volume indicators. Learn how to use them for trading signals and confirmations."
+level: intermediate
+order: 13
+lastUpdated: "2026-06-10"
 ---
 
-## Technical Indicators Guide
+## What Are Technical Indicators?
 
-Technical indicators are mathematical calculations based on price and volume data that help traders identify trends, momentum, and potential trading opportunities.
+Technical indicators are **mathematical calculations** applied to price and/or volume data that help traders identify trends, momentum, volatility, and potential reversal points. They are tools — not crystal balls.
 
-### Types of Technical Indicators
+<Callout type="warning" title="Important Reality">
+No single indicator is reliable on its own. Professional traders use indicators for CONFIRMATION, not as primary entry signals. Price action and market structure come first; indicators confirm what you already see.
+</Callout>
 
-#### 1. **Trend Indicators**
-Trend indicators help identify the direction and strength of market movements:
-- Moving Averages (SMA, EMA, WMA)
-- MACD (Moving Average Convergence Divergence)
-- ADX (Average Directional Index)
+---
 
-#### 2. **Momentum Indicators**
-Momentum indicators measure the speed and magnitude of price changes:
-- RSI (Relative Strength Index)
-- Stochastic Oscillator
-- Rate of Change (ROC)
-- CCI (Commodity Channel Index)
+## Moving Averages (MA)
 
-#### 3. **Volatility Indicators**
-These measure the rate of price change:
-- Bollinger Bands
-- ATR (Average True Range)
-- Standard Deviation
-- Keltner Channels
+### Simple Moving Average (SMA):
+The average closing price over N periods.
 
-#### 4. **Volume Indicators**
-Volume-based indicators analyze trading activity:
-- On-Balance Volume (OBV)
-- Volume Rate of Change (VROC)
-- Money Flow Index (MFI)
-- Accumulation/Distribution
+```
+SMA(20) = Sum of last 20 closes ÷ 20
+```
 
-### Moving Averages
+### Exponential Moving Average (EMA):
+Gives more weight to recent prices, reacts faster.
 
-**Simple Moving Average (SMA)**
-- Calculates the average closing price over a specified period
-- Gives equal weight to all prices
-- Useful for identifying long-term trends
+### Key Moving Averages:
 
-**Exponential Moving Average (EMA)**
-- Gives more weight to recent prices
-- Responds faster to price changes
-- Better for short-term trading
+| MA Period | Use Case | Timeframe |
+|-----------|----------|-----------|
+| EMA 9/10 | Short-term momentum | M15-H1 |
+| EMA 20/21 | Dynamic S/R, trend filter | H1-H4 |
+| SMA/EMA 50 | Medium-term trend | H4-D1 |
+| SMA/EMA 100 | Intermediate trend | D1 |
+| SMA/EMA 200 | Long-term trend (institutional) | D1-W1 |
 
-**Weighted Moving Average (WMA)**
-- Assigns specific weights to prices
-- More responsive than SMA
+### Trading Signals:
 
-### RSI (Relative Strength Index)
+| Signal | Meaning | Action |
+|--------|---------|--------|
+| Price above 200 MA | Bullish long-term trend | Look for longs |
+| Price below 200 MA | Bearish long-term trend | Look for shorts |
+| Golden Cross (50 MA crosses above 200 MA) | Bullish shift | Buy signal |
+| Death Cross (50 MA crosses below 200 MA) | Bearish shift | Sell signal |
+| Price pulls back to 20 EMA | Dynamic support in uptrend | Buy the dip |
+| MAs fanning apart | Strong trend | Stay with trend |
+| MAs converging | Trend weakening | Prepare for change |
 
-The RSI measures the magnitude of price changes to evaluate momentum:
-- **Range:** 0-100
-- **Overbought:** 70 or above (potential sell signal)
-- **Oversold:** 30 or below (potential buy signal)
-- **Calculation Period:** Typically 14 periods
+---
 
-### MACD (Moving Average Convergence Divergence)
+## RSI (Relative Strength Index)
 
-MACD identifies trend changes and momentum:
-- Consists of the MACD line, signal line, and histogram
-- **Buy Signal:** MACD crosses above the signal line
-- **Sell Signal:** MACD crosses below the signal line
-- **Divergence:** Can indicate weakening momentum
+### What It Measures:
+Momentum — speed and magnitude of price changes on a 0-100 scale.
 
-### Bollinger Bands
+### Settings:
+- Default period: 14
+- Overbought: above 70
+- Oversold: below 30
 
-Bollinger Bands consist of three lines:
-- **Middle Band:** 20-period SMA
-- **Upper Band:** Middle Band + (2 × Standard Deviation)
-- **Lower Band:** Middle Band - (2 × Standard Deviation)
+### RSI Trading Strategies:
 
-**Uses:**
-- Identifying overbought/oversold conditions
-- Support and resistance levels
-- Volatility measurement
-- Breakout identification
+| Strategy | Condition | Action |
+|----------|-----------|--------|
+| **Overbought/Oversold** | RSI > 70 or < 30 | Wait for reversal confirmation |
+| **Divergence** | Price makes new high, RSI makes lower high | Potential reversal |
+| **Centerline Crossover** | RSI crosses above/below 50 | Trend direction shift |
+| **Hidden Divergence** | Price pullback, RSI holds trend | Trend continuation |
+| **Range Shift** | RSI stays 40-80 (bullish) or 20-60 (bearish) | Confirms trend bias |
 
-### Stochastic Oscillator
+### RSI Divergence:
+```
+Bearish Divergence:
+- Price: Higher High
+- RSI: Lower High
+- Signal: Momentum fading, potential drop
 
-The Stochastic Oscillator measures momentum:
-- **Range:** 0-100
-- **Fast Stochastic:** Responsive but generates false signals
-- **Slow Stochastic:** Smoother, more reliable
-- **Overbought:** Above 80
-- **Oversold:** Below 20
+Bullish Divergence:
+- Price: Lower Low
+- RSI: Higher Low
+- Signal: Selling pressure fading, potential rise
+```
 
-### ATR (Average True Range)
+<Callout type="info" title="Pro Tip">
+In a strong uptrend, RSI can stay overbought (>70) for extended periods. Don't blindly sell because RSI is high — use it in context with market structure. Divergence is more reliable than overbought/oversold levels alone.
+</Callout>
 
-ATR measures market volatility:
-- Helps determine stop-loss placement
-- Identifies periods of high/low volatility
-- Used for position sizing
+---
 
-## Important Considerations
+## MACD (Moving Average Convergence Divergence)
 
-1. **No Single Perfect Indicator:** Combine multiple indicators for confirmation
-2. **False Signals:** All indicators can generate false signals
-3. **Market Conditions:** Indicators work better in trending markets
-4. **Confirmation:** Use price action and structure along with indicators
+### Components:
+- **MACD Line:** EMA(12) - EMA(26)
+- **Signal Line:** EMA(9) of MACD Line
+- **Histogram:** MACD Line - Signal Line
 
-## Best Practices
+### MACD Signals:
 
-- Use 2-3 indicators for confirmation
-- Understand the limitations of each indicator
-- Test indicators on historical data
-- Combine with support/resistance and price action
-- Adjust parameters based on your trading timeframe
+| Signal | Condition | Meaning |
+|--------|-----------|---------|
+| Bullish Crossover | MACD crosses above Signal | Momentum shifting bullish |
+| Bearish Crossover | MACD crosses below Signal | Momentum shifting bearish |
+| Histogram Growing | Bars getting taller | Trend strengthening |
+| Histogram Shrinking | Bars getting shorter | Trend weakening |
+| Zero Line Cross | MACD crosses above/below zero | Trend direction change |
+| Divergence | MACD diverges from price | Potential reversal |
 
-## Summary
+### MACD Best Practices:
+- Use on H4/D1 for most reliable signals
+- Combine with price action (don't trade MACD alone)
+- Histogram direction change = early warning
+- Zero line acts as trend filter (above = bullish bias, below = bearish)
 
-Technical indicators are tools to assist decision-making, not standalone trading systems. Successful traders use indicators to confirm their analysis rather than relying on them exclusively.
+---
 
+## Stochastic Oscillator
+
+### What It Measures:
+Where current price is relative to its high-low range over N periods.
+
+### Settings:
+- Fast Stochastic: %K(14), %D(3)
+- Slow Stochastic: Smoothed version (less noise)
+- Overbought: above 80
+- Oversold: below 20
+
+### Stochastic Signals:
+
+| Signal | Condition | Action |
+|--------|-----------|--------|
+| Bullish | %K crosses above %D below 20 | Potential buy |
+| Bearish | %K crosses below %D above 80 | Potential sell |
+| Divergence | Price vs. Stochastic diverge | Reversal warning |
+| Double bottom | Stochastic dips twice below 20 | Strong buy setup |
+
+---
+
+## ADX (Average Directional Index)
+
+### What It Measures:
+**Trend strength** (not direction) on a 0-100 scale.
+
+### ADX Levels:
+
+| ADX Value | Meaning | Trading Approach |
+|-----------|---------|-----------------|
+| 0-20 | No trend (ranging) | Range/mean reversion strategies |
+| 20-25 | Weak trend emerging | Watch for breakout |
+| 25-50 | Strong trend | Trend following strategies |
+| 50-75 | Very strong trend | Stay with trend, don't counter |
+| 75-100 | Extreme trend (rare) | Trend may exhaust soon |
+
+### ADX + DI Lines:
+- **+DI above -DI:** Bullish bias
+- **-DI above +DI:** Bearish bias
+- **ADX rising:** Trend strengthening
+- **ADX falling:** Trend weakening
+
+---
+
+## Volume Indicators
+
+### On-Balance Volume (OBV):
+- Cumulative volume (adds on up days, subtracts on down days)
+- Rising OBV confirms uptrend
+- Falling OBV confirms downtrend
+- OBV divergence = potential reversal
+
+### Volume Moving Average:
+- Compare current volume to average
+- Above average = significant move (likely to continue)
+- Below average = weak move (may reverse)
+
+### Volume Profile (Advanced):
+- Shows volume at each price level
+- High Volume Nodes (HVN) = support/resistance zones
+- Low Volume Nodes (LVN) = price moves quickly through
+- Point of Control (POC) = highest traded level
+
+---
+
+## Combining Indicators
+
+### The Confluence Approach:
+```
+Strong Buy Signal = Multiple confirmations:
+1. Price above 200 EMA (bullish trend) ✅
+2. RSI above 50 but below 70 (room to grow) ✅
+3. MACD crossing above signal (momentum shift) ✅
+4. ADX above 25 (trend present) ✅
+5. Volume above average (real participation) ✅
+= HIGH PROBABILITY SETUP
+```
+
+### Avoid Over-Analysis:
+- Maximum 2-3 indicators per chart
+- All indicators should serve different purposes
+- Don't use 3 momentum indicators together (redundant)
+- Best combination: Trend + Momentum + Volume
+
+---
+
+## Related Topics
+
+- [Support & Resistance](/en/academy/support-resistance-advanced) — Key price levels
+- [Chart Patterns](/en/academy/chart-patterns) — Pattern recognition
+- [Fibonacci Trading](/en/academy/fibonacci-trading) — Key retracement levels
+- [Bollinger Bands](/en/academy/bollinger-bands-trading) — Volatility indicator
+- [Trading Plan](/en/academy/trading-plan) — System development

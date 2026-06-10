@@ -1,47 +1,140 @@
 ---
-title: "প্রাইস অ্যাকশনে লিকুইডিটি"
-description: "প্রাইস মুভমেন্টে লিকুইডিটির ভূমিকা বুঝুন। লিকুইডিটি পুল, স্টপ হান্ট চিহ্নিত করুন এবং প্রাইস অ্যাকশন ট্রেডিংয়ে ব্যবহার শিখুন।"
+title: "Price Action-এ Liquidity — সম্পূর্ণ গাইড"
+description: "Price Action Trading-এ Liquidity Concept আয়ত্ত করুন। Smart Money কীভাবে Liquidity Pool Target করে, Stop Hunt, Liquidity Sweep এবং Institutional Order Flow-এর সাথে Trade করা শিখুন।"
 level: intermediate
-order: 13
-lastUpdated: "2026-05-12"
+order: 15
+lastUpdated: "2026-06-10"
 ---
 
-## প্রাইস অ্যাকশনে লিকুইডিটি কী?
+## Liquidity কী?
 
-লিকুইডিটি হলো মার্কেটে থাকা **রেস্টিং অর্ডার** — স্টপ লস, পেন্ডিং অর্ডার, লিমিট অর্ডার যা পূর্বানুমানযোগ্য লেভেলে জমা হয়। প্রাইস লিকুইডিটির দিকে যায় কারণ বড় পজিশন পূরণের জন্য সেখানে অর্ডার লাগে।
+Price Action Trading-এ Liquidity বলতে বোঝায় পূর্বানুমানযোগ্য Price Level-এ বসে থাকা **Pending Order-এর Cluster** (Stop Loss, Limit Order)। Smart Money (Institution) তাদের বড় Order Fill করতে এই Pool-গুলো Target করে। Liquidity বোঝা হলো Price কেন নির্দিষ্ট Level-এ যায় এবং তারপর Reverse করে — তা বোঝার চাবিকাঠি।
+
+<Callout type="info" title="Smart Money-র রহস্য">
+Institution-দের বড় Position-এ Entry ও Exit করতে Liquidity প্রয়োজন। তারা সহজে Market-এ ৫০০ Lot কিনতে পারে না — তাদের কারো কাছ থেকে কেনা দরকার। Retail Trader-দের Stop Loss সেই Liquidity সরবরাহ করে। এজন্যই Price প্রায়ই সুস্পষ্ট Level "Hunt" করে তারপর Move করে।
+</Callout>
 
 ---
 
-## লিকুইডিটির ধরন
+## Liquidity-র প্রকারভেদ
 
 ### Buy-Side Liquidity (BSL)
-- সুইং হাই এর উপরে শর্ট সেলারদের স্টপ লস
-- ইকুয়াল হাই, PDH, সেশন হাই এর উপরে জমা হয়
+Swing High, Equal High ও Resistance Level-এর **উপরে** বসে থাকা Order:
+- SHORT Position-এর Stop Loss
+- Breakout Trader-দের Buy Stop Order
+- Institution-দের SELL করার জন্য জ্বালানি সরবরাহ করে
 
 ### Sell-Side Liquidity (SSL)
-- সুইং লো এর নিচে লং ট্রেডারদের স্টপ লস
-- ইকুয়াল লো, PDL, সেশন লো এর নিচে জমা হয়
+Swing Low, Equal Low ও Support Level-এর **নিচে** বসে থাকা Order:
+- LONG Position-এর Stop Loss
+- Breakdown Trader-দের Sell Stop Order
+- Institution-দের BUY করার জন্য জ্বালানি সরবরাহ করে
+
+### দৃশ্যমান:
+```
+         BSL (Buy-Side Liquidity)
+─────────── Equal High / Swing High ───────────
+         ↑ Short-দের Stop Loss এখানে বসে
+         ↑ Breakout Trader-দের Buy Stop
+
+    PRICE ACTION এখানে ঘটে
+    (Fair Value / Trading Range)
+
+         ↓ Long-দের Stop Loss এখানে বসে
+         ↓ Breakdown Trader-দের Sell Stop
+─────────── Equal Low / Swing Low ───────────
+         SSL (Sell-Side Liquidity)
+```
 
 ---
 
-## লিকুইডিটি ট্রেডিং পদ্ধতি
+## যেখানে Liquidity Pool তৈরি হয়
 
-1. **স্পষ্ট লেভেল মার্ক করুন** — ইকুয়াল H/L, PDH/PDL
-2. **Draw চিহ্নিত করুন** — নিকটতম লিকুইডিটি পুল কোনটি?
-3. **সুইপ অপেক্ষা** — প্রাইস লিকুইডিটি নেবে
-4. **রিভার্সাল কনফার্ম** — পিন বার, এনগালফিং, বা স্ট্রাকচার শিফট
-5. **এন্ট্রি** — সুইপের বিপরীত দিকে
+| অবস্থান | ধরন | কেন Retail এখানে Order রাখে |
+|---------|------|------------------------------|
+| **Swing High** | BSL | "সুস্পষ্ট Resistance" — Short-রা উপরে SL রাখে |
+| **Swing Low** | SSL | "সুস্পষ্ট Support" — Long-রা নিচে SL রাখে |
+| **Equal High** | BSL | Double/Triple Top — বিপুল Stop উপরে |
+| **Equal Low** | SSL | Double/Triple Bottom — বিপুল Stop নিচে |
+| **Trendline Touch** | উভয় | Trendline ব্যবহারকারীরা Tight Stop রাখে |
+| **Round Number** | উভয় | Psychological Level Order আকর্ষণ করে |
+| **Previous Day/Week H/L** | উভয় | Institutional Reference Point |
 
-### উদাহরণ: EUR/USD
-- **ইকুয়াল লো:** 1.0850 (SSL নিচে)
-- **সুইপ:** লন্ডনে প্রাইস 1.0843 এ নামে
-- **কনফার্ম:** 1.0848 এ বুলিশ এনগালফিং
-- **এন্ট্রি:** 1.0852 তে বাই | **SL:** 1.0840 | **TP:** 1.0900
-- **R:R:** 1:4
+---
+
+## Liquidity Sweep (Stop Hunt)
+
+Liquidity Sweep ঘটে যখন Price সাময়িকভাবে একটি Key Level **ভেদ করে** Resting Order Trigger করে, তারপর Reverse করে। এভাবে Institution তাদের Position Fill করে।
+
+### Sweep-এর বিশ্লেষণ:
+```
+1. 1.1000-এ Equal Low তৈরি হয় (সুস্পষ্ট Support)
+2. Retail Trader 1.1000-এ Buy Limit রাখে, SL 1.0990-এর নিচে
+3. 1.0990-এর নিচে হাজার হাজার Sell Stop জমা হয়
+4. Smart Money Price-কে 1.0990-এর নিচে ঠেলে দেয় (Sell Stop Trigger)
+5. Smart Money সেই Sell Stop কিনে নেয় (Long Position Fill)
+6. Price তাৎক্ষণিক 1.1000-এর উপরে ফিরে আসে
+7. Retail Trader Stop Out হলো; Institution Fill হলো
+
+এটাই "Stop Hunt" — এটি Manipulation নয়,
+Institution-দের বড় Order Fill করতে Liquidity প্রয়োজন।
+```
+
+---
+
+## Liquidity Sweep Trade করা
+
+### Setup: Sweep and Reverse
+```
+Entry Criteria:
+1. সুস্পষ্ট Liquidity Pool চিহ্নিত করুন (Equal High/Low, Swing Point)
+2. Price Level-এর বাইরে Sweep করার অপেক্ষা করুন (Wick/Spike)
+3. তাৎক্ষণিক Rejection খুঁজুন (ভিতরে শক্তিশালী Close)
+4. Sweep-এর বাইরে Stop দিয়ে Reversal-এ Enter
+
+Long উদাহরণ:
+- 1.1000-এ Equal Low
+- Price 1.0985-এ নামে (Liquidity Sweep)
+- শক্তিশালী Bullish Candle 1.1000-এর উপরে Close
+- 1.1005-এ Long Enter
+- Stop: 1.0980-এর নিচে (Sweep-এর বাইরে)
+- Target: উপরের পরবর্তী BSL (Buy-side Liquidity)
+```
+
+---
+
+## Liquidity Cycle
+
+```
+Price পূর্বানুমানযোগ্য Cycle-এ Liquidity খোঁজে:
+
+1. Buy-Side Liquidity নেয় (High Sweep করে)
+2. Sell-Side Liquidity-র দিকে Reverse করে
+3. Sell-Side Liquidity নেয় (Low Sweep করে)
+4. Buy-Side Liquidity-র দিকে Reverse করে
+5. পুনরাবৃত্তি
+
+এই Cycle বোঝা বলে দেয় Price পরবর্তীতে কোথায় যাচ্ছে।
+```
+
+---
+
+## সাধারণ ভুল
+
+| ভুল | সমাধান |
+|------|--------|
+| Initial Break-কে Breakout হিসেবে Trade | Sweep + Rejection দিয়ে Confirm করুন যে Hunt |
+| Liquidity কোথায় বসে চিহ্নিত না করা | প্রতিটি Chart-এ Equal H/L, Swing Point Mark করুন |
+| Sweep Direction-এর বিরুদ্ধে লড়াই | Sweep-ই সুযোগ — Reversal Trade করুন |
+| Higher-timeframe Liquidity উপেক্ষা | D1/W1 Liquidity M15 Liquidity-কে Override করে |
+| Sweep সম্পন্ন হওয়ার আগে Enter | Candle Close Confirmation অপেক্ষা করুন |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [সাপোর্ট ও রেজিস্ট্যান্স](/bn/price-action/support-resistance) — যেখানে লিকুইডিটি জমা হয়
-- [ফেকআউট](/bn/price-action/fakeouts) — লিকুইডিটি সুইপ ফেকআউট তৈরি করে
+- [Market Structure](/bn/price-action/market-structure) — Sweep-এর জন্য Structure Context
+- [Fakeouts](/bn/price-action/fakeouts) — Fakeout হলো Liquidity Sweep
+- [Reversal Concepts](/bn/price-action/reversal-concepts) — Sweep-এর পর Reversal
+- [Support ও Resistance](/bn/price-action/support-resistance) — যেখানে Liquidity বসে
+- [Entry Models](/bn/price-action/entry-models) — Sweep-based Entry

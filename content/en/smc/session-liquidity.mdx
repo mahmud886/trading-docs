@@ -1,78 +1,70 @@
 ---
-title: "SMC Session Liquidity"
-description: "Master session liquidity in SMC — how each trading session creates and targets liquidity. Learn Asian, London, and New York session liquidity patterns."
+title: "Session Liquidity in SMC — Complete Guide"
+description: "Master session-based liquidity. Learn how sessions target previous session's H/L and use PDH/PDL as draw on liquidity."
 level: intermediate
 order: 20
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-10"
 ---
 
 ## What is Session Liquidity?
 
-Each trading session creates liquidity (highs/lows) that subsequent sessions target. Understanding which session creates the target and which session sweeps it is fundamental to SMC day trading.
+Session Liquidity refers to the **previous session's highs and lows** acting as liquidity targets for the next session. In SMC, each new session seeks to take the liquidity left by the previous one.
 
 ---
 
-## Session Liquidity Map
+## Key Session Liquidity Levels
 
-### Asian Session → Creates Liquidity
-- Forms a range (high and low)
-- Stop losses accumulate above Asian High and below Asian Low
-- This is the "bait" for London
-
-### London Session → Sweeps Asian Liquidity
-- London open typically sweeps one side of the Asian range
-- This sweep forms the daily high OR low
-- Provides the manipulation phase
-
-### New York Session → Targets Long-Range Liquidity
-- After London sweep, NY continues the true direction
-- Targets PDH/PDL, equal H/L, or HTF levels
-- Delivers the distribution/expansion
+| Level | Abbreviation | Significance |
+|-------|-------------|---------------|
+| Previous Day High | PDH | Major BSL target |
+| Previous Day Low | PDL | Major SSL target |
+| Previous Week High | PWH | Weekly BSL target |
+| Previous Week Low | PWL | Weekly SSL target |
+| Asian Session High | ASH | London target |
+| Asian Session Low | ASL | London target |
 
 ---
 
-## Session Liquidity Levels to Mark
+## How Sessions Target Liquidity
 
-| Level | Meaning |
-|-------|---------|
-| **Asian High (AH)** | BSL target for London bears |
-| **Asian Low (AL)** | SSL target for London bulls |
-| **Previous Day High (PDH)** | Major BSL target |
-| **Previous Day Low (PDL)** | Major SSL target |
-| **London High** | Potential NY sweep target |
-| **London Low** | Potential NY sweep target |
-| **Previous Week H/L** | Major swing targets |
+```
+The Liquidity Chain:
+1. Asian session creates a range (ASH/ASL)
+2. London sweeps Asian H or L (takes liquidity)
+3. London creates its own H/L
+4. NY may continue or sweep London's H/L
+5. Next day: PDH/PDL become new targets
 
----
-
-## Real Example: Session Liquidity Play — Gold
-
-- **Asian Range (6-12 PM BD):** 2,038 - 2,044
-- **London (12:15 PM BD):** Sweeps Asian Low at 2,035 (SSL taken)
-- **Confirmation:** 15M bullish CHOCH after sweep
-- **Entry:** Buy at 2,039 (bullish OB within Asian range)
-- **Target 1:** Asian High 2,044 (quick target)
-- **Target 2:** PDH 2,055 (extended target)
-- **SL:** 2,033 | **R:R:** 1:3.7
+Daily Cycle:
+PDL/PDH → Today's target
+ASH/ASL → London's target
+London H/L → NY's target
+```
 
 ---
 
-## Common Mistakes
+## Trading Session Liquidity
 
-<Callout type="warning" title="Session Errors">
+### Strategy: PDH/PDL as Draw on Liquidity
+```
+1. Identify daily bias (bullish or bearish)
+2. If bullish: PDH is the draw (target above)
+3. If bearish: PDL is the draw (target below)
+4. Look for entries at discount (bullish) or premium (bearish)
+5. Target: PDH/PDL as take profit
 
-**❌ Not marking session levels** — Mark AH/AL and PDH/PDL before each session
-
-**❌ Trading the Asian breakout** — Asian "breakout" is usually London manipulation
-
-**❌ Ignoring the session order** — Asian → London → NY. Trade the sequence, don't skip
-
-</Callout>
+Example (Bullish Day):
+- Yesterday's high = 1.1050 (PDH)
+- Price currently at 1.1000
+- Daily bias: Bullish
+- Entry: OB pullback at 1.0980
+- Target: PDH at 1.1050
+```
 
 ---
 
 ## Related Topics
 
-- [Kill Zones](/en/smc/kill-zones) — When to trade each session
+- [Kill Zones](/en/smc/kill-zones) — When sessions are active
+- [Internal & External Liquidity](/en/smc/internal-external-liquidity) — Liquidity types
 - [Manipulation](/en/smc/manipulation) — Session-based manipulation
-- [Internal/External Liquidity](/en/smc/internal-external-liquidity) — Session levels as external targets

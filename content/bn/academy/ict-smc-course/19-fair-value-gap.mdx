@@ -1,0 +1,93 @@
+---
+title: "Fair Value Gap (FVG)"
+description: "Master Fair Value Gaps — 3-candle price imbalances that act as magnets for price. Learn Consequent Encroachment, Inversion FVG, and institutional FVG trading."
+order: 19
+level: intermediate
+lastUpdated: "2026-06-09"
+---
+
+
+### Definition
+
+Fair Value Gap (FVG) হলো **3-Candle Price Imbalance** যেখানে Candle 1 ও Candle 3 এর Wick Overlap করে না, Candle 2 এর Displacement দ্বারা একটি Gap রেখে যায়। এই Gap দেখায় Price একদিকে খুব আক্রমণাত্মকভাবে Move করেছে, এবং Algorithm সম্ভবত এই Imbalance "Fill" বা "Rebalance" করতে ফিরবে।
+
+- **Bullish FVG (BISI):** Candle 1 এর HIGH ও Candle 3 এর LOW এর মধ্যে Gap → Price নিচে ফিরে Fill করে (Buy Zone)
+- **Bearish FVG (SIBI):** Candle 1 এর LOW ও Candle 3 এর HIGH এর মধ্যে Gap → Price উপরে ফিরে Fill করে (Sell Zone)
+
+**Consequent Encroachment (CE):** যেকোনো FVG এর 50% Midpoint — Gap এর মধ্যে Optimal Entry Point।
+
+### Why It Matters
+
+- FVG আপনার PRECISION Entry Tool — Order Block থেকে Tighter
+- Algorithm Imbalance ফিরে Fill করতে Program করা
+- Displacement দ্বারা তৈরি FVG = Institutional Footprint
+- CE (FVG এর 50%) Gap এর মধ্যে সর্বোচ্চ Probability Entry দেয়
+- FVG Order Block এর Validity Confirm করে (OB + FVG Overlap = সেরা Entry)
+
+### How It Works
+
+**Bullish FVG গঠন:**
+1. Candle 1: যেকোনো Candle (এর HIGH নোট করুন)
+2. Candle 2: শক্তিশালী BULLISH Displacement Candle (Gap তৈরি করে)
+3. Candle 3: যেকোনো Candle (এর LOW নোট করুন)
+4. Gap = Candle 1 HIGH থেকে Candle 3 LOW (C3 Low > C1 High হলে FVG বিদ্যমান)
+5. Price এই Gap এ ফিরলে = Buy সুযোগ
+
+**Entry Methods:**
+| পদ্ধতি | Entry Point | Risk Level |
+|--------|------------|------------|
+| Full Gap Fill | Bullish FVG এর নিচ / Bearish FVG এর উপর | Conservative |
+| CE (50%) | FVG এর Midpoint | Optimal (recommended) |
+| Partial Fill | FVG Edge এর প্রথম Touch | Aggressive |
+
+### Institutional Logic
+
+**FVG কেন বিদ্যমান:**
+- Institutional Displacement এতো আক্রমণাত্মক যে Price দক্ষভাবে Deliver করতে পারে না
+- Algorithm অবশ্যই দক্ষ Price Delivery এর জন্য এই Gap Fill করতে ফিরবে
+- Unfilled FVG Magnet হিসেবে কাজ করে — Price এদের দিকে আকৃষ্ট
+- Filled FVG তাদের Magnetic Pull হারায় (ইতিমধ্যে Rebalance হয়েছে)
+
+### Trading Application
+
+**Bullish FVG Trading:**
+1. UP Displacement চিহ্নিত করুন যা Gap তৈরি করে (C1 High < C3 Low)
+2. FVG Zone Mark করুন (C1 High থেকে C3 Low)
+3. CE Calculate করুন: (C1 High + C3 Low) / 2
+4. CE তে Buy Limit সেট করুন
+5. Stop Loss: C1 High এর নিচে (বা FVG এর নিচে OB থাকলে তার নিচে)
+6. Target: উপরে পরবর্তী BSL
+
+**Inversion FVG:**
+- Bullish FVG সম্পূর্ণ Trade Through হলে (Resistance হয়ে যায়) = Bearish Signal
+- Bearish FVG সম্পূর্ণ Trade Through হলে (Support হয়ে যায়) = Bullish Signal
+- Inverted FVG নতুন Direction এ Re-Entry সুযোগ দেয়
+
+### Common Mistakes
+
+- ❌ প্রতিটি FVG Trade করা — শুধু HTF Alignment ও সঠিক Context সহ FVG Trade করুন
+- ❌ Edge এর বদলে CE তে Entry না করা — CE ভালো R:R দেয়
+- ❌ Institutional ও Retail FVG পার্থক্য না করা — অবশ্যই Displacement + Structure Break থাকতে হবে
+- ❌ সব FVG Fill হবে আশা করা — কিছু Open থাকে (Price Retrace করতে খুব শক্তিশালী)
+- ❌ Trend এর বিরুদ্ধে FVG Trade — শুধু Bias Direction এ FVG Trade করুন
+
+### Advanced Notes
+
+- **BISI** (Buy-Side Imbalance, Sell-Side Inefficiency) = Bullish FVG
+- **SIBI** (Sell-Side Imbalance, Buy-Side Inefficiency) = Bearish FVG
+- **Consequent Encroachment** = FVG এর 50%। Price CE Trade Through করলে → FVG সম্পূর্ণ Fill হওয়ার সম্ভাবনা
+- **Implied FVG** = Wick সামান্য Overlap করলেও Body করে না — Body Range Inefficient ছিল তাই FVG হিসেবে গণ্য
+- **FVG Invalidation** = Price পূর্ণ FVG Close Through করলে → Setup Invalid
+- **Time-Based FVG** = Kill Zone এ তৈরি FVG সবচেয়ে Reliable
+
+### Example
+
+**EUR/USD — Bullish FVG CE Entry:**
+
+1. **Context:** 4H Bullish। 15M Displacement Up FVG তৈরি করে
+2. **FVG:** C1 High = 1.0885, C3 Low = 1.0895। Gap = 1.0885-1.0895
+3. **CE:** (1.0885 + 1.0895) / 2 = 1.0890
+4. **Entry:** 1.0890 তে Buy Limit (CE)
+5. **Stop Loss:** 1.0882 (FVG এর নিচে / নিচের OB এর নিচে)
+6. **Target:** 1.0940 (উপরে BSL)
+7. **R:R:** 1:6.25, 8 Pip Risk এ +50 Pips

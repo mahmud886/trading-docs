@@ -1,51 +1,67 @@
 ---
-title: "প্রাইস অ্যাকশন কনফার্মেশন"
-description: "প্রাইস অ্যাকশনে ট্রেড কনফার্মেশন মাস্টার করুন — নির্দিষ্ট ক্যান্ডেল প্যাটার্ন ও স্ট্রাকচার ব্রেক যা আপনার এন্ট্রি ভ্যালিডেট করে।"
+title: "Confirmation Technique — সম্পূর্ণ গাইড"
+description: "Trade Confirmation আয়ত্ত করুন: Candlestick, Structural, Volume ও Multi-timeframe Confirmation পদ্ধতি।"
 level: intermediate
-order: 20
-lastUpdated: "2026-05-12"
+order: 29
+lastUpdated: "2026-06-10"
 ---
 
-## কনফার্মেশন কী?
+## Confirmation কী?
 
-কনফার্মেশন হলো **প্রমাণ যা এন্ট্রির আগে আপনার ট্রেড আইডিয়া ভ্যালিডেট করে**। কনফার্মেশন আসে ক্যান্ডেলস্টিক প্যাটার্ন, স্ট্রাকচার ব্রেক, ও মোমেন্টাম সিগন্যাল থেকে।
-
----
-
-## কনফার্মেশনের ধরন
-
-### ১. ক্যান্ডেলস্টিক কনফার্মেশন
-| প্যাটার্ন | কী কনফার্ম করে |
-|----------|---------------|
-| **পিন বার** | মূল লেভেলে রিজেকশন |
-| **এনগালফিং** | মোমেন্টাম শিফট |
-| **ইনসাইড বার ব্রেকআউট** | কম্প্রেশনের পর দিক |
-
-### ২. স্ট্রাকচার কনফার্মেশন
-- **BOS** — ট্রেন্ড দিকে স্ট্রাকচার ভাঙে = কন্টিনিউয়েশন
-- **CHOCH** — ট্রেন্ডের বিরুদ্ধে ভাঙে = রিভার্সাল
-
-### ৩. মোমেন্টাম কনফার্মেশন
-- শক্তিশালী ডিসপ্লেসমেন্ট ক্যান্ডেল
-- একই দিকে ফলো-থ্রু ক্যান্ডেল
+Confirmation হলো Entry-র আগে Trade Idea Validate করে এমন **অতিরিক্ত প্রমাণ**। High-probability Trade-কে Gamble থেকে আলাদা করে।
 
 ---
 
-## কনফার্মেশন নিয়ম
+## Confirmation-এর ধরন
 
-### কী কনফার্মেশন হিসেবে গণ্য
-- ✅ ক্যান্ডেল মূল লেভেলের বাইরে **ক্লোজ** হয় (শুধু উইক নয়)
-- ✅ ফলো-থ্রু ক্যান্ডেল দিক সমর্থন করে
-- ✅ Kill Zone এ ঘটে (লন্ডন/NY)
+### ১. Candlestick Confirmation
+- Bullish: Engulfing, Hammer, Morning Star, Inside Bar Break Up
+- Bearish: Engulfing, Shooting Star, Evening Star, Inside Bar Break Down
+- Candle CLOSE অপেক্ষা করুন — Wick ধোঁকা দিতে পারে
 
-### কী কনফার্মেশন নয়
-- ❌ লেভেলের বাইরে একটি উইক (ফলস ব্রেক হতে পারে)
-- ❌ ফলো-থ্রু ছাড়া ছোট বডির ক্যান্ডেল
+### ২. Structural Confirmation (LTF)
+```
+HTF Zone-এ পৌঁছে LTF-এ নামুন এবং খুঁজুন:
+- আপনার Trade Direction-এ CHOCH
+- Momentum Shift Confirm করে BOS
+- LTF Order Block Respect
+
+উদাহরণ:
+H4 Zone পৌঁছেছে → M15 Bullish CHOCH দেখায় → CONFIRMED
+```
+
+### ৩. Volume Confirmation
+- High-volume Rejection = শক্তিশালী
+- High-volume Breakout = সত্যিকার
+- Low-volume Break = সম্ভবত Fakeout
+
+### ৪. Multi-Timeframe Confirmation
+```
+সবচেয়ে শক্তিশালী: সব Timeframe একমত
+D1: Bullish ✓
+H4: Key Level-এ ✓
+H1: CHOCH তৈরি হচ্ছে ✓
+M15: Entry Pattern ✓
+= সর্বোচ্চ CONFIDENCE
+```
+
+---
+
+## নিয়ম
+
+1. কমপক্ষে ১ Confirmation ছাড়া কখনো Enter নয় (২ পছন্দনীয়)
+2. HTF Confirmation > LTF Confirmation
+3. Structural > Candlestick
+4. Volume Conviction Confirm করে
+5. ধৈর্য — Move মিস হলেও অপেক্ষা
+6. False Confirmation আছে — সবসময় Stop ব্যবহার
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [ক্যান্ডেলস্টিক বেসিক](/bn/price-action/candlestick-basics) — কনফার্মেশন প্যাটার্ন
-- [কনফ্লুয়েন্স](/bn/price-action/confluence) — কনফার্মেশন + কনফ্লুয়েন্স
-- [এন্ট্রি মডেল](/bn/price-action/entry-models) — সম্পূর্ণ এন্ট্রি প্রক্রিয়া
+- [Entry Models](/bn/price-action/entry-models)
+- [Candlestick Basics](/bn/price-action/candlestick-basics)
+- [Market Structure](/bn/price-action/market-structure)
+- [Volume](/bn/price-action/volume)
+- [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis)

@@ -1,27 +1,115 @@
 ---
-title: "ট্রেডিং খরচ এবং স্প্রেড প্রভাব"
-description: "ট্রেডিং খরচ, স্প্রেড এবং কমিশন কীভাবে লাভজনকতা প্রভাবিত করে এবং সেগুলি কীভাবে কমানো যায় তা বুঝুন"
-author: "ট্রেডিং একাডেমি"
-date: "2024-01-15"
+title: "Trading Cost ও Spread — সম্পূর্ণ বিশ্লেষণ"
+description: "সব Trading Cost বুঝুন: Spread, Commission, Swap, Slippage এবং গোপন Fee। খরচ কমানো ও Net Profitability সর্বোচ্চ করা শিখুন।"
+level: beginner
+order: 22
+lastUpdated: "2026-06-10"
 ---
 
-## ট্রেডিং খরচ এবং স্প্রেড প্রভাব
+## Trading Cost বোঝা
 
-অনেক ট্রেডার ট্রেডিং খরচ উপেক্ষা করে, কিন্তু তারা সময়ের সাথে লাভজনকতা নাটকীয়ভাবে প্রভাবিত করতে পারে। 100 ট্রেডের 1% খরচ উল্লেখযোগ্য হারিয়ে যাওয়া পুঁজি।
+আপনার করা প্রতিটি Trade-এ খরচ থাকে যা Profit কমায়। এই খরচ বোঝা ও কমানো অত্যন্ত জরুরি — বিশেষত Active Trader-দের জন্য যেখানে শত শত Trade-এ খরচ Compound হয়।
 
-### ট্রেডিং খরচের প্রকার
+---
 
-#### 1. **স্প্রেড**
-বিড এবং আস্ক মূল্যের মধ্যে পার্থক্য।
+## Trading Cost-এর ধরন
 
-**EUR/USD স্প্রেড উদাহরণ:**
-- টাইট স্প্রেড: 1.0 পিপস (শক্ত প্রতিযোগিতা, উচ্চ তরলতা)
-- গড় স্প্রেড: 1.5-2.0 পিপস (স্বাভাবিক পরিস্থিতি)
-- বিস্তৃত স্প্রেড: 3-5+ পিপস (কম তরলতা, উচ্চ অস্থিরতা)
+| Cost Type | বর্ণনা | প্রভাব মাত্রা |
+|-----------|--------|-------------|
+| **Spread** | Bid-Ask পার্থক্য | বেশি (প্রতিটি Trade) |
+| **Commission** | Broker-এর প্রতি-Lot Fee | মধ্যম-বেশি |
+| **Swap/Rollover** | Overnight Holding Fee | মধ্যম (Swing Trader) |
+| **Slippage** | প্রত্যাশিত vs. প্রকৃত Fill-এর পার্থক্য | পরিবর্তনশীল |
+| **Deposit/Withdrawal** | Transfer Fee | কম |
+| **Inactivity Fee** | নিষ্ক্রিয় Account-এ চার্জ | কম |
 
-**খরচ গণনা:**
-- স্প্রেড খরচ = স্প্রেড (পিপস) × অবস্থান আকার × পিপ মূল্য
-- EUR/USD 1 লট, 1.5 পিপস স্প্রেড = 1.5 × 100,000 × 0.0001 = $15
+---
 
-এটি একটি সংক্ষিপ্ত বাংলা সংস্করণ। সম্পূর্ণ বিবরণের জন্য ইংরেজি সংস্করণ দেখুন।
+## Spread Cost (সবচেয়ে গুরুত্বপূর্ণ)
 
+### Trading Style অনুযায়ী বাৎসরিক প্রভাব:
+
+| Style | দৈনিক Trade | গড় Spread Cost | বাৎসরিক Spread Cost |
+|-------|-----------|-----------------|-------------------|
+| Scalper (1 Lot) | ২০ | $12/Trade | $60,480 |
+| Day Trader (1 Lot) | ৫ | $12/Trade | $15,120 |
+| Swing Trader (1 Lot) | ১/দিন | $12/Trade | $3,024 |
+| Position Trader | ১/সপ্তাহ | $12/Trade | $624 |
+
+### Spread Cost কমানোর উপায়:
+1. High-liquidity Session-এ Trade করুন (London/NY Overlap)
+2. ECN/Raw Spread Account ব্যবহার করুন
+3. Major Pair-এ ফোকাস করুন (সংকীর্ণ Spread)
+4. News Event-এ Trading এড়িয়ে চলুন
+5. সম্ভব হলে Limit Order ব্যবহার করুন
+
+---
+
+## Swap/Rollover Cost
+
+Overnight Position ধরে রাখলে চার্জ হয়। Currency-র মধ্যে Interest Rate পার্থক্যের ভিত্তিতে।
+
+### Swing Trader-এ Swap-এর প্রভাব:
+```
+উদাহরণ: EUR/USD Short, Swap = -$7.50 প্রতি Lot প্রতি রাত
+
+৫ দিন ধরে রাখলে: -$7.50 × 5 = -$37.50 প্রতি Lot
+২০ দিন ধরে রাখলে: -$7.50 × 20 = -$150 প্রতি Lot
+
+বুধবার Triple Swap: -$22.50 (Weekend-এর জন্য 3×)
+```
+
+---
+
+## Slippage
+
+আপনার প্রত্যাশিত Execution Price ও প্রকৃত Fill Price-এর পার্থক্য।
+
+### Slippage কমানোর উপায়:
+- সম্ভব হলে Limit Order ব্যবহার করুন
+- Major News Release-এর সময় Trading এড়িয়ে চলুন
+- Active Session-এ Liquid Instrument Trade করুন
+- পাতলা Market-এ Position Size কমান
+
+---
+
+## মোট Cost বিশ্লেষণ
+
+```
+প্রতি Trade মোট Cost = Spread + Commission + Slippage
+
+উদাহরণ (1 Standard Lot EUR/USD):
+- Spread: 1.0 Pip = $10
+- Commission: $7 Round-trip
+- গড় Slippage: 0.3 Pip = $3
+- মোট: $20 প্রতি Round-trip Trade
+
+দিনে ৫টি Trade করলে:
+- দৈনিক খরচ: $100
+- মাসিক খরচ: $2,200 (22 দিন)
+- বাৎসরিক খরচ: $26,400
+
+এর মানে শুধু খরচে BREAK EVEN করতে
+আপনাকে >$26,400 Gross Profit করতে হবে।
+```
+
+---
+
+## Cost-effective Trading টিপ
+
+1. **সঠিক Broker বেছে নিন** — মোট খরচ তুলনা করুন (Spread + Commission)
+2. **কম Trade, ভালো Trade** — Quality over Quantity খরচ কমায়
+3. **সঠিক সময়** — Active Session = সংকীর্ণ Spread
+4. **উপযুক্ত Account Type** — Active-দের জন্য ECN, Casual-দের জন্য Standard
+5. **Swap বিবেচনা** — Overnight Hold-এর আগে Swap Rate Check করুন
+6. **সব খরচ Track করুন** — Journal-এ অন্তর্ভুক্ত করুন
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Bid, Ask ও Spread](/bn/academy/bid-ask-spread) — Spread Mechanics
+- [Order Types](/bn/academy/order-types) — Limit Order-এ Slippage কমান
+- [Position Sizing](/bn/academy/position-sizing) — খরচ হিসাবে নিন
+- [Performance Tracking](/bn/academy/performance-tracking) — Net Result Track
+- [Forex Basics](/bn/academy/forex-basics) — Market Cost Structure

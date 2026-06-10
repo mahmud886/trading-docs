@@ -1,56 +1,305 @@
 ---
-title: "ICT Dealing Range"
-description: "ICT Dealing Range মাস্টার করুন — দুই বিপরীত লিকুইডিটি পুলের মধ্যবর্তী প্রাইস রেঞ্জ। প্রিমিয়াম/ডিসকাউন্ট বিশ্লেষণ ও বায়াস নির্ধারণে ব্যবহার শিখুন।"
+title: "ICT Dealing Range — সম্পূর্ণ Guide"
+description: "ICT Dealing Range Concept আয়ত্ত করুন — দুটি বিপরীত Liquidity Pool এর মধ্যবর্তী Price Range। Premium/Discount Zone, Equilibrium, Nested Dealing Range এবং Institutional Bias নির্ধারণ শিখুন।"
 level: intermediate
 order: 12
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-09"
 ---
 
 ## Dealing Range কী?
 
-Dealing Range হলো **সবচেয়ে সাম্প্রতিক গুরুত্বপূর্ণ সুইং হাই ও সুইং লো এর মধ্যবর্তী প্রাইস রেঞ্জ**। এই রেঞ্জের ইকুইলিব্রিয়াম (৫০%) প্রাইসকে প্রিমিয়াম (সেল জোন) ও ডিসকাউন্ট (বাই জোন) এ ভাগ করে।
+Dealing Range হলো **সবচেয়ে সাম্প্রতিক গুরুত্বপূর্ণ Swing High এবং Swing Low এর মধ্যবর্তী Price Range**। এটি সেই "খেলার মাঠ" নির্ধারণ করে যেখানে Price বর্তমানে কাজ করছে। এই Range এর Equilibrium (50%) Price কে Premium (Sell Zone) এবং Discount (Buy Zone) এ ভাগ করে।
+
+<Callout type="info" title="Institutional Framework">
+Dealing Range আপনার প্রতিটি Trade এর Context দেয়। আপনি কি Discount এ Buy করছেন? Premium এ Sell করছেন? Dealing Range না জানলে Premium vs Discount নির্ধারণ করা সম্ভব নয়। এটি ঠিক সেভাবে কাজ করে যেভাবে JP Morgan, Goldman Sachs এবং Citadel তাদের Directional Risk Frame করে।
+</Callout>
 
 ---
 
-## Dealing Range চিহ্নিতকরণ
+## Dealing Range কীভাবে চিহ্নিত করবেন
 
-1. সবচেয়ে সাম্প্রতিক **গুরুত্বপূর্ণ সুইং হাই** খুঁজুন
-2. সবচেয়ে সাম্প্রতিক **গুরুত্বপূর্ণ সুইং লো** খুঁজুন
-3. এদের মধ্যবর্তী রেঞ্জ = আপনার Dealing Range
-4. **৫০% ইকুইলিব্রিয়াম** মার্ক করুন
-5. যেকোনো প্রান্ত ভাঙলে আপডেট করুন
+### ধাপসমূহ
+1. সবচেয়ে সাম্প্রতিক **গুরুত্বপূর্ণ Swing High** খুঁজুন (উপরে BSL Target)
+2. সবচেয়ে সাম্প্রতিক **গুরুত্বপূর্ণ Swing Low** খুঁজুন (নিচে SSL Target)
+3. এদের মধ্যবর্তী Range = আপনার Dealing Range
+4. **50% Equilibrium** চিহ্নিত করুন — এটি Premium ও Discount ভাগ করে
+5. যখন কোনো Extreme ভাঙে তখন Update করুন (নতুন Dealing Range তৈরি হয়)
+
+### Timeframe Hierarchy
+- **Monthly Dealing Range** — Macro Context (Central Bank, Sovereign Wealth Fund)
+- **Weekly Dealing Range** — Swing Trade Context (Hedge Fund, Prop Desk)
+- **Daily Dealing Range** — Day Trading Context (Institutional Day Desk)
+- **4H Dealing Range** — Intraday Precision (Prop Firm Trader)
+- **Session Dealing Range** — Scalping Context
+
+### "গুরুত্বপূর্ণ" Swing কী করে?
+- এর উপরে/নিচে BSL বা SSL তৈরি করে (Resting Order আছে)
+- এটা থেকে দূরে সরার সময় Displacement হয়
+- আপনি যে Timeframe এ Analyze করছেন সেখানে দৃশ্যমান
+- কাছাকাছি একাধিক Touch বা Equal Highs/Lows আছে
+- Kill Zone বা গুরুত্বপূর্ণ Session এ তৈরি হয়েছে
 
 ---
 
-## প্রিমিয়াম বনাম ডিসকাউন্ট
+## Premium, Discount ও Equilibrium
 
-### প্রিমিয়াম জোন (৫০% এর উপরে)
-- শুধু **সেল সেটআপ** — ইনস্টিটিউশন প্রিমিয়ামে সেল করে
-- বেয়ারিশ PD Array খুঁজুন (OB, SIBI FVG)
+### তিনটি Zone
 
-### ডিসকাউন্ট জোন (৫০% এর নিচে)
-- শুধু **বাই সেটআপ** — ইনস্টিটিউশন ডিসকাউন্টে বাই করে
-- বুলিশ PD Array খুঁজুন (OB, BISI FVG)
+| Zone | Range | Action | Institutional Logic |
+|------|-------|--------|-------------------|
+| **Premium** | 50% থেকে 100% (Swing High) | শুধু Sell Setup | Bank রা এখানে Position Distribute/Sell করে |
+| **Equilibrium** | ঠিক 50% | নিরপেক্ষ — Entry এড়িয়ে চলুন | Fair Value — কোনো পক্ষের Edge নেই |
+| **Discount** | 0% (Swing Low) থেকে 50% | শুধু Buy Setup | Bank রা এখানে Position Accumulate/Buy করে |
 
-### ইকুইলিব্রিয়াম (৫০%)
-- মিডপয়েন্ট = "ফেয়ার ভ্যালু"
-- এন্ট্রির জন্য আদর্শ নয় — নিউট্রাল জোন
+### কীভাবে Calculate করবেন
+
+```
+Equilibrium = (Swing High + Swing Low) / 2
+Premium Zone = Equilibrium to Swing High
+Discount Zone = Swing Low to Equilibrium
+```
+
+### উদাহরণ Calculation
+- Swing High: 1.1000
+- Swing Low: 1.0800
+- Equilibrium: (1.1000 + 1.0800) / 2 = **1.0900**
+- Premium: 1.0900 – 1.1000 (Sell Zone)
+- Discount: 1.0800 – 1.0900 (Buy Zone)
+
+### Fibonacci Overlay
+ICT Dealing Range এ Fibonacci Level ব্যবহার করে Precision এর জন্য:
+- **0%** = Swing Low (Extreme Discount — সবচেয়ে গভীর Buy Zone)
+- **25%** = Deep Discount (Bank দের আদর্শ Accumulation Zone)
+- **50%** = Equilibrium (Dealing Range এর CE — Fair Value)
+- **62%-79%** = OTE Zone (Premium এ Sell এর জন্য Optimal Trade Entry)
+- **75%** = Premium (Bank দের আদর্শ Distribution Zone)
+- **100%** = Swing High (Extreme Premium — সবচেয়ে গভীর Sell Zone)
 
 ---
 
-## বাস্তব উদাহরণ: EUR/USD
+## Nested Dealing Range (Fractal প্রকৃতি)
 
-- **Dealing Range:** সুইং লো 1.0800 — সুইং হাই 1.0950
-- **ইকুইলিব্রিয়াম:** 1.0875 (৫০%)
-- **বর্তমান প্রাইস:** 1.0830 → ডিসকাউন্ট জোন
-- **অ্যাকশন:** শুধু বাই খুঁজুন
-- **সেটআপ:** লন্ডন KZ এ SSL সুইপ → MSS → OB তে বাই
-- **R:R:** 1:13
+Market **Fractal** — Dealing Range এর মধ্যে Dealing Range থাকে। এই Hierarchy বোঝাই Institutional Trader দের Retail থেকে আলাদা করে:
+
+### Macro Dealing Range (Monthly/Weekly)
+- বড় ছবির Directional Bias নির্ধারণ করে
+- Bank ও Central Bank প্রাথমিকভাবে এই Level এ কাজ করে
+- পুরোপুরি Traverse করতে সপ্তাহ থেকে মাস লাগে
+- এই Range ভাঙা = Major Trend Change
+
+### Internal Dealing Range (Daily/4H)
+- Macro Range এর ভেতরে থাকে
+- যেখানে Institutional Day Desk ও Swing Trader রা কাজ করে
+- বৃহত্তর Context এর মধ্যে আপনার Daily Bias নির্ধারণ করে
+
+### Micro Dealing Range (1H/15M)
+- শুধু Precision Entry Timing এর জন্য
+- Internal Range এর মধ্যে আপনার Execution Framework
+- যেখানে আপনি আসলে Limit Order বসান
+
+### Alignment Rule
+**সব Timeframe Dealing Range একই দিকে Agree করলে = সর্বোচ্চ Probability:**
+- Weekly Discount এ + Daily Discount এ + 4H Bullish MSS = Strong Buy
+- Weekly Premium এ + Daily Premium এ + 4H Bearish MSS = Strong Sell
+- Timeframe এর মধ্যে Conflict = অপেক্ষা করুন বা Size কমান
+
+---
+
+## Dealing Range ও Institutional Bias
+
+### Bank রা কীভাবে Dealing Range ব্যবহার করে
+
+1. **Discount এ Accumulation** — Bank রা সস্তায় Buy করে (50% এর নিচে)। SSL Sweep ব্যবহার করে ভালো Price এ Fill পায়।
+2. **Premium এ Distribution** — Bank রা দামিতে Sell করে (50% এর উপরে)। BSL Sweep ব্যবহার করে ভালো Price এ Sell করে।
+3. **Manipulation Equilibrium Cross করে** — Stop Hunt 50% পার করে উভয় পক্ষের Resting Order Trigger করে।
+4. **Expansion বিপরীত Liquidity Target করে** — Discount এ Accumulation এর পর, Price Premium এ BSL Target করে।
+
+### Dealing Range থেকে Daily Bias
+
+**যদি Price HTF Dealing Range এর Discount এ থাকে:**
+- LTF তে Buy Setup খুঁজুন
+- Target: Equilibrium এর উপরে BSL
+- Asian Range এর নিচে Manipulation আশা করুন Move এর আগে
+- সেরা সময়: London বা NY AM Kill Zone
+
+**যদি Price HTF Dealing Range এর Premium এ থাকে:**
+- LTF তে Sell Setup খুঁজুন
+- Target: Equilibrium এর নিচে SSL
+- Move এর আগে উপরে Manipulation আশা করুন
+- সেরা সময়: London বা NY AM Kill Zone
+
+**যদি Price Equilibrium (50%) এ থাকে:**
+- Trade করবেন না — এক পক্ষে Commitment এর জন্য অপেক্ষা করুন
+- Equilibrium "No Man's Land" — কোনো Institutional Edge নেই
+
+---
+
+## Dealing Range এর মধ্যে PD Arrays
+
+### Discount এ (Buy Zone) — Bullish PD Arrays খুঁজুন:
+- Bullish Order Block (Rally এর আগে শেষ Bearish Candle)
+- Bullish FVG / BISI (উর্ধ্বমুখী Displacement থেকে Imbalance)
+- Bullish Breaker Block (ব্যর্থ Bearish OB Inverted)
+- Mitigation Block (আগের ব্যর্থ Long Break Even)
+
+### Premium এ (Sell Zone) — Bearish PD Arrays খুঁজুন:
+- Bearish Order Block (Drop এর আগে শেষ Bullish Candle)
+- Bearish FVG / SIBI (নিম্নমুখী Displacement থেকে Imbalance)
+- Bearish Breaker Block (ব্যর্থ Bullish OB Inverted)
+- Mitigation Block (আগের ব্যর্থ Short Break Even)
+
+### Confluence Rule (Institutional Grade)
+সর্বোচ্চ Probability Setup হয় যখন:
+1. PD Array সঠিক Zone এ (Discount এ Buy, Premium এ Sell)
+2. PD Array HTF Dealing Range Direction এর সাথে Align
+3. PD Array এ পৌঁছানোর আগে Liquidity Sweep হয়েছে
+4. LTF তে MSS Direction Change Confirm করছে
+5. সময় Kill Zone এর মধ্যে (London: দুপুর 12-3 BD / NY: বিকাল 5-8 BD)
+6. FVG + OB Overlap (Unicorn Setup)
+
+---
+
+## বাস্তব Trading উদাহরণ
+
+### উদাহরণ ১: EUR/USD — Discount এ Buy
+
+**Macro Context:**
+- Weekly Dealing Range: 1.0750 (Low) থেকে 1.0950 (High)
+- Equilibrium: 1.0850
+- বর্তমান Price: 1.0780 → Discount এ ✓
+
+**Trade Setup:**
+- Daily Bias: Bullish (Price Equilibrium এর নিচে, BSL এ Move আশা)
+- Price SSL Sweep করে 1.0765 এ London শুরুতে
+- 15M Bullish MSS Displacement সহ দেখায়
+- Bullish FVG 1.0785-1.0795 তৈরি হয়
+- Entry: Buy Limit 1.0790 (FVG এর CE)
+- Stop Loss: Sweep এর নিচে 1.0760 (30 Pips Risk)
+- TP1: Equilibrium 1.0850 (+60 Pips, 1:2 R:R)
+- TP2: BSL 1.0950 (+160 Pips, 1:5.3 R:R)
+
+**BD সময়:** দুপুর 1:30 (London Kill Zone)
+
+### উদাহরণ ২: Gold (XAU/USD) — Premium এ Sell
+
+**Macro Context:**
+- Daily Dealing Range: 2,000 (Low) থেকে 2,080 (High)
+- Equilibrium: 2,040
+- বর্তমান Price: 2,065 → Premium এ ✓
+
+**Trade Setup:**
+- HTF Bias: Bearish (Price Premium এ, SSL এ Move আশা)
+- Price BSL Sweep করে 2,072 এ NY AM Session এ
+- 5M Bearish MSS Displacement সহ FVG তৈরি করে
+- Bearish FVG 2,068-2,062
+- Entry: Sell Limit 2,065 (CE)
+- Stop Loss: BSL Sweep এর উপরে 2,075 (100 Pips)
+- TP1: Equilibrium 2,040 (250 Pips, 1:2.5 R:R)
+- TP2: SSL 2,000 (650 Pips, 1:6.5 R:R)
+
+**BD সময়:** সন্ধ্যা 6:30 (NY AM Kill Zone)
+
+### উদাহরণ ৩: NAS100 — Nested Dealing Range Alignment
+
+**Nested Analysis:**
+- Weekly Range: 17,500 - 18,200 → Equilibrium: 17,850
+- Daily Range: 17,750 - 18,000 → Equilibrium: 17,875
+- বর্তমান Price: 17,780
+
+**Confluence Check:**
+- Weekly Range এর Discount এ ✓ (17,850 এর নিচে)
+- Daily Range এর Discount এ ✓ (17,875 এর নিচে)
+- উভয় Timeframe Agree করছে = High Probability Long Setup
+- 17,780-17,800 Zone এ 15M MSS + FVG এর জন্য অপেক্ষা করুন
+- Target: Daily Equilibrium (17,875) তারপর Weekly Equilibrium (17,850+)
+
+---
+
+## Dealing Range Lifecycle
+
+### Phase 1: Formation
+- শক্তিশালী Swing High ও Swing Low প্রতিষ্ঠিত হয়
+- High এর উপরে (BSL) ও Low এর নিচে (SSL) Liquidity জমে
+- Range স্পষ্টভাবে সংজ্ঞায়িত — এটি নতুন "খেলার মাঠ"
+
+### Phase 2: Internal Activity (বেশিরভাগ Trading এখানে হয়)
+- Price Premium ও Discount এর মধ্যে দোদুল্যমান
+- **Internal Liquidity** (Range এর মধ্যে ছোট Swing) আগে Sweep হয়
+- Algorithm External এর আগে Internal Liquidity খোঁজে
+- Range এর মধ্যে একাধিক PO3 Cycle হয়
+- Range দিন (Daily DR) থেকে সপ্তাহ (Weekly DR) পর্যন্ত চলতে পারে
+
+### Phase 3: Expansion (Range Break)
+- Internal Liquidity শেষ হওয়ার পর
+- Price **External Liquidity** তে Break Out করে (BSL বা SSL)
+- পুরানো Dealing Range Violated — আর Valid নয়
+- Breakout Extreme ব্যবহার করে নতুন Dealing Range তৈরি হয়
+- এখানেই সবচেয়ে বড় Move ঘটে
+
+### কখন Update করবেন
+- যখন Price Swing High **Close করে ভাঙে** = নতুন DR তে Update (Bullish Expansion)
+- যখন Price Swing Low **Close করে ভাঙে** = নতুন DR তে Update (Bearish Expansion)
+- শুধু Wick পার হলে গণনা হয় না — Body Close প্রয়োজন
+- Break এর পরপরই সবসময় নতুন Dealing Range চিহ্নিত করুন
+
+---
+
+## Advanced: Dealing Range + Time
+
+### Dealing Range Reversal এর সেরা সময় (BD সময়)
+- **দুপুর 12:00 - 3:00 BD** (London KZ) — Premium/Discount থেকে সবচেয়ে সাধারণ Reversal
+- **বিকাল 5:00 - 8:00 BD** (NY AM KZ) — Reversal এর জন্য দ্বিতীয় সেরা
+- **সকাল 6:00 - 10:00 BD** (Asian) — Range Formation, Reversal নয়
+
+### Dealing Range + Power of 3
+- **Accumulation** → Price Discount এ থাকে (বা Sell এর জন্য Premium এ)
+- **Manipulation** → Price সংক্ষিপ্তভাবে Equilibrium Cross করে (Fake Breakout)
+- **Distribution** → Price Dealing Range এর বিপরীত Extreme এ Expand করে
+
+---
+
+## সাধারণ ভুল
+
+<Callout type="warning" title="Dealing Range এ ভুল">
+
+**❌ সঠিক Dealing Range চিহ্নিত না করা** — গুরুত্বপূর্ণ Swing এর বদলে ছোট Swing ব্যবহার করা। Swing অবশ্যই Liquidity তৈরি করেছে।
+
+**❌ Premium এ Buy করা** — Price 50% এর উপরে থাকলে শুধু Sell খুঁজুন। এটি মূল নিয়ম।
+
+**❌ Discount এ Sell করা** — Price 50% এর নিচে থাকলে শুধু Buy খুঁজুন।
+
+**❌ HTF Dealing Range উপেক্ষা করা** — আপনার LTF Dealing Range HTF এর সাথে মিলতে হবে।
+
+**❌ Break এর পর Update না করা** — Dealing Range Extreme Body Close এ ভাঙলে সাথে সাথে নতুন Range চিহ্নিত করুন।
+
+**❌ Internal vs External Liquidity গুলিয়ে ফেলা** — Internal = Range এর মধ্যে ছোট Swing; External = Range Extreme নিজে।
+
+**❌ Equilibrium এ Trade করা** — 50% Level এ কোনো Edge নেই। Premium বা Discount এ Commitment এর জন্য অপেক্ষা করুন।
+
+</Callout>
+
+---
+
+## সারসংক্ষেপ
+
+| বিষয়           | বিবরণ                                                      |
+|-----------------|------------------------------------------------------------|
+| **সংজ্ঞা**      | গুরুত্বপূর্ণ Swing High ও Swing Low এর মধ্যবর্তী Range     |
+| **মূল Level**   | 50% Equilibrium (Premium/Discount ভাগ করে)                 |
+| **Buy Zone**    | 50% এর নিচে (Discount) — Bank রা এখানে Accumulate করে      |
+| **Sell Zone**   | 50% এর উপরে (Premium) — Bank রা এখানে Distribute করে       |
+| **Nested**      | একাধিক Timeframe Dealing Range একই সাথে বিদ্যমান           |
+| **Update Rule** | Extreme Body Close এ ভাঙলে নতুন Dealing Range তৈরি হয়     |
+| **সেরা Entry**  | সঠিক Zone এ PD Array + Kill Zone Timing + MSS Confirmation |
+| **Alignment**   | HTF + LTF Dealing Range Agree করলে = সর্বোচ্চ Probability  |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [OTE](/bn/ict/ote) — Dealing Range প্রেক্ষাপটে অপটিমাল এন্ট্রি
-- [PD Arrays](/bn/ict/pd-arrays) — প্রিমিয়াম ও ডিসকাউন্ট জোনে Array
-- [লিকুইডিটি](/bn/ict/liquidity) — BSL ও SSL রেঞ্জের প্রান্ত নির্ধারণ করে
+- [PD Arrays](/bn/ict/pd-arrays) — Dealing Range এর মধ্যে Institutional Level
+- [OTE](/bn/ict/ote) — Dealing Range এর মধ্যে 62-79% Retracement Zone
+- [Liquidity](/bn/ict/liquidity) — Range Extreme এ BSL ও SSL
+- [Daily Bias](/bn/ict/daily-bias) — Dealing Range Context থেকে Direction নির্ধারণ
+- [Power of 3](/bn/ict/power-of-3) — কীভাবে AMD Dealing Range এর মধ্যে কাজ করে
+- [MSS](/bn/ict/mss) — সঠিক Zone এ Entry এর আগে Confirmation

@@ -1,87 +1,132 @@
 ---
-title: "ICT লিকুইডিটি সুইপ"
-description: "ICT লিকুইডিটি সুইপ মাস্টার করুন — প্রাইস যখন স্টপ লস ট্রিগার করে ইনস্টিটিউশনাল এন্ট্রি ফুয়েল করে। সুইপ চিহ্নিতকরণ, কনফার্মেশন, এবং হাই-R:R এন্ট্রি।"
+title: "ICT Liquidity Sweep"
+description: "ICT Liquidity Sweep Master করুন — যে মুহূর্তে Price Stop Loss নিয়ে নেয় Institutional Entry এর জ্বালানি হিসেবে। Sweep Identification, Confirmation এবং High-R:R Entry Model শিখুন।"
 level: intermediate
 order: 9
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-09"
 ---
 
-## লিকুইডিটি সুইপ কী?
+## Liquidity Sweep কী?
 
-লিকুইডিটি সুইপ হয় যখন প্রাইস **সংক্ষেপে একটি মূল লেভেলের বাইরে ট্রেড করে** (সুইং হাই/লো, ইকুয়াল H/L, সেশন লেভেল) রেস্টিং স্টপ-লস ও পেন্ডিং অর্ডার ট্রিগার করে, তারপর দ্রুত উল্টে যায়।
+Liquidity Sweep ঘটে যখন Price **সংক্ষিপ্তভাবে একটি Key Level এর বাইরে Trade** করে (Swing High/Low, Equal H/L, Session Level) Resting Stop-Loss Order ও Pending Order Trigger করার জন্য, তারপর দ্রুত Reverse করে। এটি AMD এর "Manipulation" Phase — Counterparty Liquidity এর জন্য Institutional Fishing Expedition।
 
-<Callout type="info" title="সুইপ হলো সেটআপ">
-"সুইপ-ই সেটআপ। লিকুইডিটি নেওয়া হলে স্মার্ট মানির অর্ডার পূরণ হয়ে যায় এবং সত্যিকার মুভ শুরু হয়।"
+<Callout type="info" title="Sweep-ই Setup">
+"Sweep-ই Setup। একবার Liquidity নেওয়া হলে, Smart Money তাদের Order Fill করেছে এবং True Move শুরু হয়।" — ICT
 </Callout>
 
 ---
 
-## সুইপের ধরন
+## Liquidity Sweep এর প্রকারভেদ
 
-### ১. সেশন লেভেল সুইপ
-- লন্ডনে এশিয়ান হাই/লো সুইপ
-- NY তে লন্ডন হাই/লো সুইপ
-- PDH/PDL সুইপ
+### 1. Session Level Sweep
+- London এ Asian High/Low Sweep
+- NY তে London High/Low Sweep
+- PDH/PDL (Previous Day High/Low) Sweep
 
-### ২. সুইং পয়েন্ট সুইপ
-- সাম্প্রতিক সুইং হাই বা লো এর বাইরে যাওয়া
-- দ্রুত উইক, তারপর রিভার্সাল
-- বিপরীত দিকে ডিসপ্লেসমেন্ট দরকার
+### 2. Swing Point Sweep
+- Price একটি সাম্প্রতিক Swing High বা Swing Low নিয়ে নেয়
+- দ্রুত Wick বাইরে, তারপর Reversal
+- বিপরীত দিকে Displacement অনুসরণ করতে হবে
 
-### ৩. ইকুয়াল হাই/লো সুইপ
-- একই লেভেলে একাধিক টাচ "ম্যাগনেট" তৈরি করে
-- সুইপ স্পষ্ট — সাধারণত ৫-১৫ পিপ বাইরে ট্রেড
-- রিভার্সালের সর্বোচ্চ সম্ভাবনা
+### 3. Equal High/Low Sweep
+- একই Level এ একাধিক Touch "Magnet" তৈরি করে
+- Sweep স্পষ্ট — সাধারণত 5-15 Pips বাইরে Trade করে
+- Sweep এর পর Reversal এর খুব বেশি Probability
 
----
-
-## সুইপ কনফার্মেশন চেকলিস্ট
-
-1. ✅ প্রাইস লিকুইডিটি লেভেলের বাইরে ট্রেড করেছে
-2. ✅ রিজেকশন ক্যান্ডেল তৈরি হয়েছে (লম্বা উইক, ছোট বডি)
-3. ✅ LTF এ MSS — বিপরীত দিকে ডিসপ্লেসমেন্ট
-4. ✅ FVG এবং/বা OB তৈরি হয়েছে
-5. ✅ Kill Zone টাইমিং মিলছে
+### 4. Trendline Sweep
+- Trendline বরাবর রাখা Stop Loss
+- "Breakout" Stop নিয়ে নেয়, তারপর Reverse করে
+- Classic Retail Trap
 
 ---
 
-## বাস্তব উদাহরণ
+## Sweep Confirmation
 
-### PDH সুইপ — EUR/USD সেল
+Sweep একা Trade করার জন্য যথেষ্ট নয়। Confirmation দরকার:
+
+### Confirmation Checklist
+1. ✅ Price Liquidity Level এর বাইরে Trade করে
+2. ✅ Rejection Candle তৈরি হয় (লম্বা Wick, ছোট Body)
+3. ✅ LTF (5M/15M) এ MSS — বিপরীত দিকে Displacement
+4. ✅ Displacement এর সময় FVG এবং/অথবা OB তৈরি হয়
+5. ✅ Kill Zone Timing Align করে
+
+### কী Sweep Invalidate করে
+- Price Level এর বাইরে শক্তভাবে Close করে (শুধু Wick নয়)
+- MSS অনুসরণ করে না — Price Sweep Direction এ Continue করে
+- একাধিক Candle বাইরে Close = Genuine Breakout, Sweep নয়
+
+---
+
+## বাস্তব Trading উদাহরণ
+
+### উদাহরণ ১: PDH Sweep — EUR/USD Sell
 - **PDH:** 1.0920
-- **সেটআপ:** NY AM (বিকাল ৫:৪৫ BD), প্রাইস 1.0928 এ স্পাইক
-- **কনফার্ম:** 5M বেয়ারিশ MSS, FVG 1.0915-1.0920
-- **এন্ট্রি:** 1.0918 তে সেল
-- **SL:** 1.0930 | **TP:** 1.0870
+- **Setup:** NY AM Open, Price 1.0928 পর্যন্ত Spike করে (PDH Sweep)
+- **Confirmation:** 5M Bearish MSS 1.0918 এ, FVG 1.0915-1.0920 এ
+- **Entry:** 1.0918 তে Sell (FVG CE)
+- **Stop:** 1.0930 (Sweep এর উপরে)
+- **Target:** PDL 1.0870
 - **R:R:** 1:4
+- **BD সময়:** বিকাল 5:45
 
-### ইকুয়াল লো সুইপ — Gold বাই
-- **ইকুয়াল লো:** তিনবার 2,025 ছুঁয়েছে
-- **দুপুর ১:৩০ BD:** প্রাইস 2,022 এ নামে (সুইপ)
-- **কনফার্ম:** 15M বুলিশ MSS
-- **এন্ট্রি:** 2,027 তে বাই
-- **SL:** 2,020 | **TP:** 2,060
+### উদাহরণ ২: Equal Lows Sweep — Gold Buy
+- **Equal Lows:** 2,025 এ তিনটি Touch
+- **Setup:** London KZ, Price 2,022 এ নামে (Equal Lows Sweep)
+- **Confirmation:** 15M Bullish MSS, 2,027 এ Bullish OB
+- **Entry:** 2,027 তে Buy
+- **Stop:** 2,020
+- **Target:** BSL 2,060
 - **R:R:** 1:4.7
+- **BD সময়:** দুপুর 1:30
+
+---
+
+## Sweep Trading Model
+
+### 4-Step Process
+1. **Anticipate** — Session এর আগে সব Liquidity Level Mark করুন
+2. **Wait** — Price Liquidity তে আসতে দিন (Chase করবেন না)
+3. **Confirm** — Sweep এর পর MSS + Displacement
+4. **Execute** — OB/FVG তে Entry, Stop Sweep Extreme এর বাইরে
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="সুইপ ভুল">
+<Callout type="warning" title="Sweep এ ভুল">
 
-**❌ প্রতিটি লেভেল টাচে ফেড করা** — টাচ নয়, সুইপ (বাইরে ট্রেড) অপেক্ষা করুন
+**❌ প্রতিটি Level Touch এ Fade করা** — শুধু Touch নয়, SWEEP (Level এর বাইরে Trade) এর জন্য অপেক্ষা করুন
 
-**❌ সুইপের সময় এন্ট্রি** — সুইপের পর MSS কনফার্মেশন অপেক্ষা করুন
+**❌ Sweep এর সময় Entry** — Sweep এর পর MSS Confirmation এর জন্য অপেক্ষা করুন
 
-**❌ HTF অ্যালাইনমেন্ট ছাড়া** — HTF বায়াসের বিরুদ্ধে সুইপ = কন্টিনিউয়েশন
+**❌ HTF Alignment ছাড়া** — HTF Bias এর বিরুদ্ধে Sweep = Continuation, Reversal নয়
+
+**❌ খুব Tight Stop** — Level নিজে তে নয়, Sweep Extreme এর বাইরে Stop রাখুন
+
+**❌ Session Context উপেক্ষা করা** — Kill Zone এ Sweep অনেক বেশি Reliable
 
 </Callout>
 
 ---
 
+## সারসংক্ষেপ
+
+| বিষয়            | বিবরণ                                            |
+|------------------|--------------------------------------------------|
+| **সংজ্ঞা**       | Price Key Level এর বাইরে Trade করে তারপর Reverse |
+| **উদ্দেশ্য**     | Stop Trigger = Institutional Order Fill          |
+| **Confirmation** | MSS + Displacement + FVG Creation                |
+| **Entry**        | Sweep Confirmation এর পর OB/FVG তে               |
+| **Stop**         | Sweep Extreme এর বাইরে                           |
+| **সেরা Level**   | PDH/PDL, Equal H/L, Session Level                |
+
+---
+
 ## সম্পর্কিত বিষয়
 
-- [লিকুইডিটি](/bn/ict/liquidity) — লিকুইডিটি পুল বোঝা
-- [MSS](/bn/ict/mss) — সুইপের পর কনফার্মেশন
-- [AMD](/bn/ict/amd) — সুইপ ম্যানিপুলেশন ফেজ
-- [জুডাস সুইং](/bn/ict/judas-swing) — সেশন-ওপেনিং সুইপ
+- [Liquidity](/bn/ict/liquidity) — Liquidity Pool বোঝা
+- [MSS](/bn/ict/mss) — Sweep এর পর Confirmation
+- [AMD](/bn/ict/amd) — Sweep হলো Manipulation Phase
+- [Judas Swing](/bn/ict/judas-swing) — Session-Opening Sweep
+- [ICT Kill Zones](/bn/ict/ict-kill-zones) — কখন Sweep সবচেয়ে Reliable

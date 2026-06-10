@@ -1,64 +1,88 @@
 ---
-title: "Price Action Trade Management"
-description: "Master trade management — how to manage open positions using Price Action signals. Includes trailing stops, adding to winners, and cutting losers."
+title: "Trade Management — Complete Guide"
+description: "Master active trade management. Learn when to move stops, take partials, trail positions, and handle different trade scenarios after entry."
 level: intermediate
-order: 32
-lastUpdated: "2026-05-12"
+order: 26
+lastUpdated: "2026-06-10"
 ---
 
 ## What is Trade Management?
 
-Trade management is everything that happens AFTER you enter — moving stops, taking partials, trailing, and knowing when to exit. Poor management can turn winners into losers.
+Trade management is everything that happens **between entry and exit** — moving stops, taking partials, trailing, and decision-making while in a live position.
 
 ---
 
-## Management Rules
+## Management Framework
 
-### Rule 1: Move to Breakeven at 1:1
-Once price reaches 1:1 R:R, move your stop to entry (breakeven). This eliminates risk and gives you a "free trade."
+### Phase 1: Initial (After Entry)
+- Hands off — let the trade develop
+- Don't move stop for at least 1-2 candles
+- Trust your analysis
 
-### Rule 2: Partial Profits
-Take 30-50% off at 1:2 R:R. This locks in profit and reduces emotional pressure on the remaining position.
+### Phase 2: Break-Even
+- Move SL to entry price after gaining 1R
+- This makes the trade "risk-free"
+- Only do this if structure supports it
 
-### Rule 3: Trailing Stop
-Trail your stop behind swing structure:
-- **Buys:** Trail behind 1H/4H swing lows
-- **Sells:** Trail behind 1H/4H swing highs
-- Never trail too tight — give the trade room
+### Phase 3: Lock Profit
+- Trail stop behind new swing points
+- Take 50% partial at 1:2 R:R
+- Let remainder run to full target
 
-### Rule 4: Honor Your Stop
-If price hits your stop → accept the loss. NEVER widen your stop or remove it.
-
----
-
-## Adding to Winners (Pyramiding)
-
-### When to Add
-- Only add when trade is in profit (at least 1:1)
-- Add at the NEXT pullback entry within the trend
-- New position must have its own valid SL
-- Total risk never exceeds 3% (combined positions)
-
-### When NOT to Add
-- Trade is in drawdown
-- Near your take-profit zone
-- News events approaching
+### Phase 4: Final Exit
+- Hit take profit target
+- OR trailing stop triggered
+- OR thesis invalidated by new structure
 
 ---
 
-## Real Example: Managing a EUR/USD Long
+## Partial Profit Strategy
 
-- **Entry:** 1.0860 | **SL:** 1.0840 (20 pip risk)
-- **1:1 (1.0880):** Move SL to 1.0860 (breakeven)
-- **1:2 (1.0900):** Take 50% off, trail SL to 1.0880
-- **Pullback to 1.0890:** Add 30% position, SL at 1.0880
-- **1:4 (1.0940):** Take 30% more, trail SL to 1.0910
-- **Runner:** Trail behind 1H swing lows until stopped
+```
+Position: 1.0 lot
+
+At 1:1 R:R → Close 0.5 lot (50%) → Move SL to BE
+At 1:2 R:R → Close 0.3 lot (30%)
+At 1:3 R:R or target → Close 0.2 lot (20%)
+
+Result: Guaranteed some profit once 1:1 hit
+Psychological benefit: Huge pressure relief
+```
+
+---
+
+## When to Move Stop Loss
+
+| Move SL When... | Move SL To... |
+|-----------------|---------------|
+| Trade gained 1R | Entry (break-even) |
+| New swing forms in your direction | Behind new swing |
+| Price creates new BOS | Behind BOS candle |
+| Approaching major opposing level | Lock more profit |
+
+### NEVER move SL when:
+- Trade is in initial phase (first 1-2 candles)
+- Based on emotion (fear/greed)
+- Against your original plan
+
+---
+
+## Scenario Handling
+
+| Scenario | Action |
+|----------|--------|
+| Price goes immediately to target | Great — take full profit |
+| Price consolidates near entry | Wait — give it time |
+| Price goes against you | Trust your stop — don't widen it |
+| Price hits 1R then stalls | Take partial, trail rest |
+| News event approaching | Tighten stop or close before |
+| Higher TF changes direction | Close immediately |
 
 ---
 
 ## Related Topics
 
-- [Risk Management](/en/price-action/risk-management) — Pre-trade risk
-- [Exit Models](/en/price-action/exit-models) — When to close
-- [Trend Trading](/en/price-action/trend-trading) — Managing trend trades
+- [Exit Models](/en/price-action/exit-models) — Exit strategies
+- [Risk Management](/en/price-action/risk-management) — Stop placement
+- [Entry Models](/en/price-action/entry-models) — Initial setup
+- [Trading Psychology](/en/academy/trading-psychology) — Management emotions

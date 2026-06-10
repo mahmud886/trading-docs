@@ -1,114 +1,165 @@
 ---
-title: "ICT মেথডলজি পরিচিতি"
-description: "ICT (Inner Circle Trader) মেথডলজি সম্পর্কে সম্পূর্ণ পরিচিতি। মাইকেল জে. হাডলস্টনের তৈরি ইন্টারব্যাংক ট্রেডিং ফ্রেমওয়ার্ক শিখুন।"
+title: "ICT Methodology পরিচিতি"
+description: "ICT (Inner Circle Trader) Methodology সম্পর্কে সম্পূর্ণ পরিচিতি। Michael J. Huddleston এর তৈরি Interbank Price Delivery, Algorithmic Market Theory এবং Smart Money কীভাবে কাজ করে তা শিখুন।"
 level: beginner
 order: 1
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-09"
 ---
 
-## ICT মেথডলজি কী?
+## ICT Methodology কী?
 
-ICT (Inner Circle Trader) হলো **মাইকেল জে. হাডলস্টন** এর তৈরি একটি ট্রেডিং ফ্রেমওয়ার্ক যা ইন্টারব্যাংক মার্কেট মেকিং অ্যালগরিদম কীভাবে প্রাইস ডেলিভার করে তা বোঝায়। রিটেইল ট্রেডিং পদ্ধতি থেকে সম্পূর্ণ ভিন্ন, ICT প্রতিটি মার্কেট মুভের পেছনের **ইনস্টিটিউশনাল লজিক** বোঝায়।
+ICT (Inner Circle Trader) হলো **Michael J. Huddleston** এর তৈরি একটি Trading Framework যা Interbank Market Making Algorithm কীভাবে Price Deliver করে তা প্রকাশ করে। Retail Trading পদ্ধতি যা Lagging Indicator এর উপর নির্ভর করে তার বিপরীতে, ICT প্রতিটি Market Move এর পেছনের **Institutional Logic** বোঝার উপর Focus করে।
 
 <Callout type="info" title="মূল দর্শন">
-"মার্কেট র‍্যান্ডম নয়। এটি একটি অ্যালগরিদম যা লিকুইডিটি খোঁজে এবং প্রিমিয়াম ও ডিসকাউন্ট অ্যারের মধ্যে প্রাইস ডেলিভার করে।" — ICT
+"Market random নয়। এটি একটি Algorithm যা Liquidity খোঁজে এবং Premium ও Discount Array এর মধ্যে Price Deliver করে।" — ICT
 </Callout>
+
+---
+
+## ICT এর ইতিহাস
+
+Michael Huddleston ২০১০ সালে YouTube-এ তাঁর Methodology শেয়ার করা শুরু করেন। বছরের পর বছর তিনি প্রকাশ করেছেন:
+
+- **২০১৬-২০১৭ Mentorship** — প্রথম কাঠামোগত Paid Mentorship — PD Arrays, Kill Zones, OTE কভার করে
+- **২০২০ Pandemic Content** — COVID-19 এর সময় Free YouTube শিক্ষা
+- **২০২২ Mentorship** — সবচেয়ে বিস্তৃত Revision — Algorithmic Price Delivery Theory
+- **২০২৩-২০২৪ Updates** — Unicorn Model, Venom Model, Refined Execution Concepts
+
+ICT এর Framework SMC (Smart Money Concepts) থেকে আলাদা — যা অন্য শিক্ষকদের দ্বারা ICT ধারণার সরলীকৃত ব্যাখ্যা। ICT Methodology আরো সূক্ষ্ম এবং Time-Centric।
 
 ---
 
 ## ICT এর ৫টি স্তম্ভ
 
-### স্তম্ভ ১: অ্যালগরিদমিক প্রাইস ডেলিভারি
-- মার্কেট IPDA (Interbank Price Delivery Algorithm) দ্বারা নিয়ন্ত্রিত
-- হাই এর উপরে ও লো এর নিচে লিকুইডিটি খোঁজে
-- FVG (ইমব্যালান্স) পূরণ করে
-- নির্দিষ্ট সময়সূচী অনুসরণ করে
+### স্তম্ভ ১: Algorithmic Price Delivery
+Market IPDA (Interbank Price Delivery Algorithm) দ্বারা নিয়ন্ত্রিত। এই Algorithm:
+- High এর উপরে ও Low এর নিচে Liquidity খোঁজে
+- FVG (Imbalance) পূরণ করতে Price Deliver করে
+- পূর্বানুমানযোগ্য Time Schedule অনুসরণ করে
+- Price এ Inefficiency Rebalance করে
 
-### স্তম্ভ ২: টাইম-বেসড ট্রেডিং
-ICT এর সবচেয়ে ইউনিক বৈশিষ্ট্য — **টাইম** প্রাইসের চেয়ে গুরুত্বপূর্ণ:
-- **Kill Zones** — নির্দিষ্ট সময়ে সেটআপ তৈরি হয়
-- **সেশন ওপেন** — মিডনাইট, লন্ডন, নিউ ইয়র্ক
-- **ICT Macro** — :৫০ থেকে :১০ মিনিটে ডিসপ্লেসমেন্ট
-- **সিজনাল টেন্ডেন্সি** — মাসিক/ত্রৈমাসিক প্যাটার্ন
+### স্তম্ভ ২: Time-Based Trading
+ICT Price এর চেয়ে **Time** এর উপর জোর দেওয়ায় অনন্য। মূল Time Concept:
+- **Kill Zones** — সর্বোচ্চ Probability Setup এর নির্দিষ্ট সময়
+- **Session Opens** — Midnight, London, New York Setup তৈরি করে
+- **ICT Macro Times** — নির্দিষ্ট ঘণ্টার :50 থেকে :10 মিনিটে Displacement দেখায়
+- **Seasonal Tendencies** — Monthly ও Quarterly Bias Pattern
 
-### স্তম্ভ ৩: লিকুইডিটি থিওরি
-- **BSL** — সুইং হাই এর উপরে স্টপ লস
-- **SSL** — সুইং লো এর নিচে স্টপ লস
-- **ইঞ্জিনিয়ার্ড লিকুইডিটি** — ইকুয়াল হাই/লো
-- অ্যালগরিদম সবসময় পরবর্তী লিকুইডিটি পুলে যায়
+### স্তম্ভ ৩: Liquidity Theory
+Market এর সবকিছু Liquidity কে ঘিরে ঘোরে:
+- **Buy-Side Liquidity (BSL)** — Swing High এর উপরে Stop Loss
+- **Sell-Side Liquidity (SSL)** — Swing Low এর নিচে Stop Loss
+- **Engineered Liquidity** — Equal Highs/Lows সুস্পষ্ট Target তৈরি করে
+- Algorithm সবসময় পরবর্তী Liquidity Pool এ যায়
 
-### স্তম্ভ ৪: প্রিমিয়াম ও ডিসকাউন্ট
-- **প্রিমিয়াম (৫০% এর উপরে)** — সেল করার জন্য আদর্শ
-- **ডিসকাউন্ট (৫০% এর নিচে)** — বাই করার জন্য আদর্শ
-- **ইকুইলিব্রিয়াম (৫০%)** — ফেয়ার ভ্যালু পয়েন্ট
+### স্তম্ভ ৪: Premium & Discount Framework
+Price Equilibrium এর সাপেক্ষে দুটি Zone এ কাজ করে:
+- **Premium (50% এর উপরে)** — Sell করার জন্য আদর্শ
+- **Discount (50% এর নিচে)** — Buy করার জন্য আদর্শ
+- **Equilibrium (50%)** — FVG এর CE, Range এর Midpoint
+- Premium এ PD Arrays = Sell Setup; Discount এ PD Arrays = Buy Setup
 
-### স্তম্ভ ৫: Power of 3 (AMD সাইকেল)
-প্রতিটি মুভ তিন ফেজে হয়:
-1. **Accumulation** — স্মার্ট মানি পজিশন তৈরি করে
-2. **Manipulation** — ভুয়া মুভ (জুডাস সুইং) রিটেইলকে ফাঁসায়
-3. **Distribution** — সত্যিকার দিকে মুভ
+### স্তম্ভ ৫: Power of 3 (AMD Cycle)
+প্রতিটি Move তিন Phase এ হয়:
+1. **Accumulation** — Smart Money একটি Range এ Position তৈরি করে
+2. **Manipulation** — False Move (Judas Swing) Retail কে ফাঁদে ফেলে
+3. **Distribution** — Manipulation এর পর সত্যিকার দিকে Move
 
 ---
 
-## ICT বনাম রিটেইল ট্রেডিং
+## ICT vs Retail Trading
 
-| বিষয় | রিটেইল পদ্ধতি | ICT পদ্ধতি |
+| বিষয় | Retail পদ্ধতি | ICT পদ্ধতি |
 |-------|-------------|------------|
-| **ইন্ডিকেটর** | RSI, MACD, MA | কিছুই না — শুধু প্রাইস + টাইম |
-| **এন্ট্রি** | ব্রেকআউট, ক্রসওভার | OB/FVG রিট্রেসমেন্ট |
-| **স্টপ লস** | সুইং এর নিচে | ম্যানিপুলেশন এক্সট্রিম এর বাইরে |
-| **টার্গেট** | ফিক্সড পিপস | বিপরীত লিকুইডিটি পুল |
-| **টাইমিং** | যেকোনো সময় | শুধু Kill Zone এ |
+| **Indicator** | RSI, MACD, Moving Average | কিছুই না — শুধু Price Action + Time |
+| **Entry** | Breakout, Crossover | Manipulation এর পর OB/FVG Retracement |
+| **Stop Loss** | সাম্প্রতিক Swing এর নিচে | Manipulation Extreme এর বাইরে |
+| **Target** | Fixed Pips বা R:R | বিপরীত Liquidity Pool |
+| **Timing** | যেকোনো সময় | শুধু Kill Zone এ |
+| **Bias** | Indicator ভিত্তিক | HTF Structure + PO3 Candle Analysis |
 
 ---
 
-## বাংলাদেশ সময় রেফারেন্স
+## ICT মূল Concept Overview
 
-| ICT সেশন | EST সময় | বাংলাদেশ সময় |
-|----------|---------|--------------|
-| এশিয়ান রেঞ্জ | রাত ৮-১২ | সকাল ৬-১০ |
-| লন্ডন Kill Zone | রাত ২-৫ AM | দুপুর ১২-৩ টা |
-| NY AM Kill Zone | সকাল ৭-১০ | বিকাল ৫-৮ টা |
-| NY লাঞ্চ (এড়িয়ে চলুন) | দুপুর ১২-১:৩০ | রাত ১০-১১:৩০ |
-| NY PM | দুপুর ১:৩০-৪ | রাত ১১:৩০-২ AM |
+### PD Arrays (Premium/Discount Arrays)
+Chart এ Institutional Footprint:
+- **Order Blocks (OB)** — Displacement এর আগে শেষ বিপরীত Candle
+- **Fair Value Gaps (FVG)** — 3-Candle Imbalance
+- **Breaker Blocks** — ব্যর্থ OB যা Support/Resistance হয়ে যায়
+- **Mitigation Blocks** — আংশিকভাবে পূর্ণ OB
+- **Liquidity Voids** — বড় একক-Candle Inefficiency
+
+### Time Concepts
+- **Kill Zones** — London (2:00-5:00 AM EST), NY (7:00-10:00 AM EST)
+- **Silver Bullet** — 10:00-11:00 AM, 2:00-3:00 PM, 3:00-4:00 AM EST Window
+- **ICT Macros** — নির্দিষ্ট ঘণ্টার :50 থেকে :10
+- **Power of 3 Candle** — Daily/4H Candle Structure (Open → Low → High → Close)
+
+### Market Structure
+- **Market Structure Shift (MSS)** — নিশ্চিত Trend Change
+- **Change of Character (CHOCH)** — Reversal এর প্রথম চিহ্ন
+- **Displacement** — শক্তিশালী Momentum দিক নিশ্চিত করে
+- **Break of Structure (BOS)** — Continuation Signal
 
 ---
 
-## শেখার পথ
+## শেখার পথ — ICT দিয়ে শুরু করুন
 
-### ফেজ ১: ফাউন্ডেশন (সপ্তাহ ১-৪)
-1. মার্কেট স্ট্রাকচার শিখুন (সুইং হাই/লো, BOS, CHOCH)
-2. লিকুইডিটি বুঝুন (BSL, SSL)
-3. PO3 ক্যান্ডেল আইডেন্টিফাই করুন
-4. Kill Zone টাইমিং শিখুন
+### Phase 1: Foundation (সপ্তাহ ১-৪)
+1. Market Structure শিখুন (Swing High/Low, BOS, CHOCH)
+2. Liquidity বুঝুন (BSL, SSL, Equal Highs/Lows)
+3. Daily Chart এ PO3 Candle Identify করুন
+4. Kill Zone Timing শিখুন (আপনার Timezone এ Convert করুন)
 
-### ফেজ ২: কোর কনসেপ্ট (সপ্তাহ ৫-৮)
+### Phase 2: Core Concepts (সপ্তাহ ৫-৮)
 1. FVG ও Order Block চিহ্নিত করুন
-2. প্রিমিয়াম/ডিসকাউন্ট বিশ্লেষণ শিখুন
-3. HTF PO3 দিয়ে ডেইলি বায়াস নির্ধারণ করুন
-4. লন্ডন/NY Kill Zone এ পেপার ট্রেড করুন
+2. Premium/Discount এ PD Array Identification Practice করুন
+3. HTF PO3 Analysis দিয়ে Daily Bias শিখুন
+4. শুধু London ও NY Kill Zone এ Paper Trade করুন
 
-### ফেজ ৩: এক্সিকিউশন (সপ্তাহ ৯-১২)
-1. একটি নির্দিষ্ট মডেল বেছে নিন (Silver Bullet, 2022 Model)
-2. দিনে সর্বোচ্চ ১টি ট্রেড
-3. প্রতিটি সেটআপ জার্নাল করুন
-4. 1M/5M এ এন্ট্রি টাইমিং রিফাইন করুন
+### Phase 3: Execution (সপ্তাহ ৯-১২)
+1. একটি নির্দিষ্ট Model তৈরি করুন (Silver Bullet, 2022 Model ইত্যাদি)
+2. দিনে সর্বোচ্চ ১টি Trade
+3. প্রতিটি Setup Journal করুন (Win বা Loss) Screenshot সহ
+4. 1M/5M Confirmation ব্যবহার করে Entry Timing Refine করুন
+
+### Phase 4: Mastery (৪+ মাস)
+1. Multiple Timeframe Confluence Combine করুন
+2. Session-Specific Model যোগ করুন
+3. Seasonal Tendencies বুঝুন
+4. আপনার নিজস্ব Trading Plan Develop করুন
+
+---
+
+## বাংলাদেশ সময় Reference
+
+| ICT Session             | EST সময়     | বাংলাদেশ সময়    |
+|-------------------------|--------------|------------------|
+| Asian Range             | 8 PM – 12 AM | সকাল ৬ – ১০      |
+| London Kill Zone        | 2 – 5 AM     | দুপুর ১২ – ৩ টা  |
+| NY AM Kill Zone         | 7 – 10 AM    | বিকাল ৫ – ৮ টা   |
+| NY Lunch (এড়িয়ে চলুন) | 12 – 1:30 PM | রাত ১০ – ১১:৩০   |
+| NY PM                   | 1:30 – 4 PM  | রাত ১১:৩০ – ২ AM |
+| Silver Bullet AM        | 10 – 11 AM   | রাত ৮ – ৯        |
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="নতুনদের ভুল">
+<Callout type="warning" title="ICT শুরুতে এই ভুলগুলো এড়িয়ে চলুন">
 
-**❌ সব একসাথে শেখা** — ICT তে ৫০+ কনসেপ্ট আছে। একটি মডেল আগে মাস্টার করুন
+**❌ সব একসাথে শেখার চেষ্টা** — ICT তে ৫০+ Concept আছে। একটি Model বেছে আগে Master করুন।
 
-**❌ সব সেশনে ট্রেড করা** — একটি Kill Zone এ ফোকাস করুন
+**❌ সব Session এ Trade করা** — ধারাবাহিকভাবে Profitable না হওয়া পর্যন্ত একটি Kill Zone এ Focus করুন।
 
-**❌ ডেইলি বায়াস ছাড়া ট্রেড** — HTF দিক জানা জরুরি
+**❌ Daily Bias ছাড়া Trade** — প্রতিটি Trade এ HTF Directional Conviction দরকার।
 
-**❌ ধৈর্যহীনতা** — সেরা সেটআপ দিনে ১-২ বার আসে
+**❌ ধৈর্যহীনতা** — সেরা ICT Setup দিনে ১-২ বার আসে। সঠিক Timing এর জন্য অপেক্ষা করুন।
 
-**❌ ICT আর SMC গুলিয়ে ফেলা** — SMC হলো ICT এর সরলীকৃত সংস্করণ
+**❌ ICT আর SMC গুলিয়ে ফেলা** — SMC ICT কে সরলীকৃত করে। মূল Source Material শিখুন।
+
+**❌ সময় ছাড়া Backtest করা** — Time-Based Setup Develop হতে দেখতে অবশ্যই Replay Mode এ Backtest করুন।
 
 </Callout>
 
@@ -116,21 +167,22 @@ ICT এর সবচেয়ে ইউনিক বৈশিষ্ট্য —
 
 ## সারসংক্ষেপ
 
-| বিষয় | বিবরণ |
-|-------|--------|
-| **স্রষ্টা** | Michael J. Huddleston (ICT) |
-| **মূল ধারণা** | মার্কেট লিকুইডিটি খুঁজছে |
-| **টাইম ফোকাস** | Kill Zones, সেশন ওপেন, Macros |
-| **এন্ট্রি** | PO3 ম্যানিপুলেশনের পর OB/FVG |
-| **রিস্ক** | ট্রেড প্রতি ১-২%, মিনিমাম ১:৩ R:R |
-| **সেরা মার্কেট** | EUR/USD, GBP/USD, Gold, NAS100 |
+| বিষয়            | বিবরণ                                     |
+|------------------|-------------------------------------------|
+| **স্রষ্টা**      | Michael J. Huddleston (ICT)               |
+| **মূল ধারণা**    | Market একটি Algorithm যা Liquidity খুঁজছে |
+| **Time Focus**   | Kill Zones, Session Opens, Macros         |
+| **Entry Method** | PO3 Manipulation এর পর OB/FVG             |
+| **Risk**         | Trade প্রতি ১-২%, সর্বনিম্ন ১:৩+ R:R      |
+| **সেরা Market**  | EUR/USD, GBP/USD, Gold, NAS100, ES        |
+| **Timeframe**    | HTF Bias (D/4H) + LTF Entry (15M/5M/1M)   |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Power of 3](/bn/ict/power-of-3) — ICT এর মূল সাইকেল
-- [ICT Kill Zones](/bn/ict/ict-kill-zones) — সময়-ভিত্তিক ট্রেডিং
-- [Fair Value Gap](/bn/ict/fvg) — মূল PD Array
-- [MSS](/bn/ict/mss) — দিক পরিবর্তনের নিশ্চিতকরণ
-- [Daily Bias](/bn/ict/daily-bias) — দৈনিক দিক নির্ধারণ
+- [Power of 3](/bn/ict/power-of-3) — ICT এর মৌলিক Cycle
+- [ICT Kill Zones](/bn/ict/ict-kill-zones) — Time-Based Trading Window
+- [Fair Value Gap](/bn/ict/fvg) — Entry এর জন্য মূল PD Array
+- [Market Structure Shift](/bn/ict/mss) — দিক পরিবর্তনের Confirmation
+- [Daily Bias](/bn/ict/daily-bias) — কীভাবে দৈনিক Direction নির্ধারণ করবেন

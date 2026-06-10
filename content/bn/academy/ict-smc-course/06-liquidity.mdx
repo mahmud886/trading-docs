@@ -1,0 +1,116 @@
+---
+title: "Liquidity"
+description: "Complete guide to Liquidity in ICT/SMC — the fuel that drives every market move. Understand how Smart Money engineers, targets, and sweeps Liquidity for position building."
+order: 6
+level: beginner
+lastUpdated: "2026-06-09"
+---
+
+
+### Definition
+
+ICT/SMC Methodology তে, **Liquidity** বলতে Market এ থাকা Resting Order এর Cluster বোঝায় — প্রধানত **Stop Loss** ও **Pending Order** যা Swing High এর উপরে (Buy Side Liquidity) ও Swing Low এর নিচে (Sell Side Liquidity) জমা হয়। Market-Making Algorithm এর প্রধান কাজ হলো এই Liquidity Pool এ Price পৌঁছে দেওয়া।
+
+Liquidity এখানে প্রচলিত অর্থে (সহজে Buy/Sell করা) নয়। ICT Context এ, Liquidity = **যেখানে Stop Loss ও Pending Order Cluster হয়ে আছে** = যেখানে Smart Money তাদের বড় Order Fill করতে Price নিয়ে যাবে।
+
+Liquidity কে জ্বালানি মনে করুন — Smart Money এর বড় Position Enter ও Exit করতে Slippage ছাড়া এটি দরকার।
+
+### Why It Matters
+
+- **প্রতিটি গুরুত্বপূর্ণ Market Move Liquidity Capture করার জন্য বিদ্যমান** — কিছুই Random নয়
+- **আপনার Stop Loss-ই Liquidity** — আপনার Stop Hit হলে, আপনি একটি Institution কে Liquidity দিয়েছেন
+- **Liquidity বলে Price কোথায় যাচ্ছে** — পরবর্তী Liquidity Pool = পরবর্তী Target
+- **Liquidity বুঝলে Stop Out হওয়া প্রতিরোধ করে** — যেখানে Liquidity Concentrate নয় সেখানে Stop রাখুন
+- **Liquidity Sweep সেরা Entry তৈরি করে** — Sweep এর পর, আসল Move শুরু হয়
+
+### How It Works
+
+**Liquidity কোথায় তৈরি হয়:**
+
+1. **Swing High এর উপরে** — যারা Sell করেছে তাদের Stop Loss উপরে। Breakout Trader দের Buy Stop উপরে। = Buy Side Liquidity (BSL)
+
+2. **Swing Low এর নিচে** — যারা Buy করেছে তাদের Stop Loss নিচে। Breakdown Trader দের Sell Stop নিচে। = Sell Side Liquidity (SSL)
+
+3. **Equal Highs** — একই Level এ একাধিক Touch = উপরে বিশাল Stop Cluster = স্পষ্ট BSL Target
+
+4. **Equal Lows** — একই Level এ একাধিক Touch = নিচে বিশাল Stop Cluster = স্পষ্ট SSL Target
+
+5. **Trendline** — Trendline বরাবর রাখা Stop = Trendline "Break" হলে Sweep হবে এমন Liquidity
+
+6. **Session High/Low** — Previous Day High/Low, Asian High/Low = Session-Based Liquidity
+
+**Liquidity Cycle:**
+```
+Liquidity তৈরি হয় → Algorithm চিহ্নিত করে → Price Sweep করে → Order Fill হয় → আসল Move শুরু
+```
+
+### Institutional Logic
+
+**Smart Money কেন Liquidity দরকার:**
+
+কল্পনা করুন একটি Bank 500 Million EUR/USD Buy করতে চায়। তারা যদি Market Buy Order দেয়:
+- Price বিশাল Spike করবে (Slippage)
+- তাদের Average Fill Price খুব খারাপ হবে
+- Move দৃশ্যমান হবে এবং অন্যরা Front-Run করবে
+
+**তাদের বদলে, তারা এটি করে:**
+1. Price কে নামতে দেয় (বা নামিয়ে দেয়) এমন Level এ যেখানে অনেক Sell Stop আছে
+2. যখন Retail Trader দের Sell Stop Trigger হয় → সেই Sell Stop MARKET SELL ORDER হয়ে যায়
+3. Bank এর Algorithm এই Sell Order এর বিপরীতে BUY করে (Perfect Counterparty Liquidity)
+4. তারা চমৎকার Price এ Slippage ছাড়া Fill পায়
+5. তারপর তারা Price Rally করতে দেয় (তাদের আসল Direction সবসময়ই এটি ছিল)
+
+**মূল Insight:** যখন আপনার Stop Loss Hit হয় এবং Price সাথে সাথে আপনার মূল Direction এ Reverse করে — আপনি একটি Institution কে Liquidity দিয়েছেন।
+
+### Trading Application
+
+**Step 1: Liquidity Pool চিহ্নিত করুন**
+- Equal Highs/Lows Mark করুন (সবচেয়ে স্পষ্ট Target)
+- স্পষ্ট Swing Point Mark করুন যেখানে Stop জমে
+- Session High/Low Mark করুন (PDH, PDL, Asian H/L)
+- Trendline Liquidity Mark করুন
+
+**Step 2: কোন Pool Target হচ্ছে নির্ধারণ করুন**
+- Daily Bias ব্যবহার করুন (HTF Draw কোথায়?)
+- Price Discount এ থাকলে → নিচের SSL নেওয়া হয়েছে → উপরের BSL TARGET
+- Price Premium এ থাকলে → উপরের BSL নেওয়া হয়েছে → নিচের SSL TARGET
+
+**Step 3: Sweep এর জন্য অপেক্ষা করুন**
+- Price Liquidity Pool নিয়ে নেয় (সংক্ষিপ্তভাবে Level এর বাইরে যায়)
+- তাৎক্ষণিক Reversal Sign দেখুন (Rejection Candle, LTF তে MSS)
+
+**Step 4: Sweep এর পর Entry**
+- Liquidity Sweep + MSS Confirmation এর পর → Reversal Direction এ Entry
+- Stop Loss: Sweep Extreme এর বাইরে
+- Target: বিপরীত Liquidity Pool
+
+### Common Mistakes
+
+- ❌ **স্পষ্ট Level এ Stop রাখা** — Retail যেখানে Stop রাখে = Smart Money যেখানে Hunt করে
+- ❌ **Liquidity কে Target হিসেবে না দেখা** — প্রতিটি High/Low সম্ভাব্য Liquidity Target
+- ❌ **Liquidity Grab কে Breakout হিসেবে Trade করা** — Sweep-ই Manipulation, আসল Move নয়
+- ❌ **Session Liquidity উপেক্ষা করা** — PDH/PDL ও Asian H/L প্রতিদিন নেওয়া হয়
+- ❌ **Internal vs External Liquidity পার্থক্য না করা** — Internal (Range এর মধ্যে ছোট Swing) External (বড় Swing Extreme) এর আগে নেওয়া হয়
+
+### Advanced Notes
+
+- **Internal Liquidity** = Dealing Range এর মধ্যে ছোট Swing Point → আগে নেওয়া হয়
+- **External Liquidity** = Dealing Range এর বড় Swing High/Low → Internal এর পরে নেওয়া হয়
+- **Liquidity Void** = যেখানে কোনো Resting Order নেই → Price দ্রুত এর মধ্য দিয়ে যায়
+- **Draw on Liquidity (DOL)** = যে Liquidity Pool Price বর্তমানে Target করছে
+- **Raid** vs **Sweep**: Raid = দ্রুত Wick বাইরে → তাৎক্ষণিক Reversal। Sweep = Candle Close বাইরে → প্রকৃত Break হতে পারে
+- **Time-Based Liquidity** — বিভিন্ন Session (Asian, London, NY) থেকে Resting Liquidity ক্রমানুসারে Target হয়
+- **IPDA Cycle** 20/40/60 দিনের Liquidity Reference ব্যবহার করে Target নির্ধারণ করে
+
+### Example
+
+**EUR/USD — Liquidity Sweep থেকে Trade Setup:**
+
+1. **Context:** Daily Bullish। Price Consolidation এ Equal Lows 1.0850 এ তৈরি করেছে (SSL)
+2. **উপরে:** Equal Highs 1.0920 এ (BSL) — এটি সম্ভাব্য TARGET
+3. **London Kill Zone:** Price 1.0850 এর নিচে নামে, Sell Side Liquidity Sweep করে
+4. **Confirmation:** Sweep এর সাথে সাথে 5M Bullish MSS
+5. **Entry:** 1.0855 তে Buy (Sweep এর পর তৈরি Bullish OB তে)
+6. **Stop Loss:** 1.0840 (Sweep Extreme এর নিচে)
+7. **Target:** 1.0920 (Buy Side Liquidity — উপরে Equal Highs)
+8. **Result:** +65 Pips, R:R 1:4.3

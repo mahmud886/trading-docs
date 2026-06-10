@@ -1,44 +1,188 @@
 ---
-title: "বিড, আস্ক এবং স্প্রেড সংযোজন"
-description: "বিড এবং আস্ক মূল্য বুঝুন, স্প্রেড কীভাবে কাজ করে এবং আপনার ট্রেডিং লাভে তাদের প্রভাব"
-author: "ট্রেডিং একাডেমি"
-date: "2024-01-15"
+title: "Bid, Ask ও Spread — সম্পূর্ণ Mechanics গাইড"
+description: "Bid-Ask Spread Mechanics আয়ত্ত করুন। জানুন Spread কীভাবে কাজ করে, কেন এটি Profitability-র জন্য গুরুত্বপূর্ণ, এবং কীভাবে বিভিন্ন Market-এ Spread Cost কমাবেন।"
+level: beginner
+order: 4
+lastUpdated: "2026-06-10"
 ---
 
-## বিড, আস্ক এবং স্প্রেড সংযোজন
+## Bid, Ask ও Spread বোঝা
 
-বিড-আস্ক স্প্রেড বোঝা ট্রেডিং বাজারের খরচ বোঝা অত্যন্ত গুরুত্বপূর্ণ।
+প্রতিবার আপনি Trade করেন, আপনি **Bid-Ask Spread**-এর মুখোমুখি হন — কেনা ও বেচার Price-এর মধ্যে পার্থক্য। এটি আপনার Trading-এর প্রথম খরচ এবং Profitability-র জন্য এটি বোঝা অপরিহার্য।
 
-### বিড মূল্য
+<Callout type="info" title="কেন এটি গুরুত্বপূর্ণ">
+Spread একটি অদৃশ্য খরচ যা অনেক Beginner উপেক্ষা করেন। প্রতিটি Trade-এ Entry করার সাথে সাথে আপনি Spread-এর সমান LOSS-এ শুরু করেন। Profit-এ পৌঁছানোর আগে এই খরচ কাটিয়ে উঠতে হবে।
+</Callout>
 
-**বিড মূল্য** হল সর্বোচ্চ মূল্য যা একটি ক্রেতা একটি সম্পদের জন্য দিতে ইচ্ছুক।
+---
 
-- আপনি এই মূল্যে বিক্রয় করেন
-- আস্ক মূল্যের চেয়ে কম
-- ক্রেতারা নির্ধারণ করেন
+## মূল সংজ্ঞা
 
-### আস্ক মূল্য
+### Bid Price
+যে Price-এ Market (Broker) আপনার কাছ থেকে **কিনতে** প্রস্তুত। আপনি যখন SELL করেন তখন এই Price পান।
 
-**আস্ক মূল্য** হল সর্বনিম্ন মূল্য যা একজন বিক্রেতা গ্রহণ করতে ইচ্ছুক।
+### Ask Price (Offer)
+যে Price-এ Market (Broker) আপনার কাছে **বিক্রি করতে** প্রস্তুত। আপনি যখন BUY করেন তখন এই Price দেন।
 
-- আপনি এই মূল্যে ক্রয় করেন
-- বিড মূল্যের চেয়ে বেশি
-- বিক্রেতারা নির্ধারণ করেন
+### Spread
+Ask ও Bid Price-এর পার্থক্য: **Spread = Ask - Bid**
 
-### স্প্রেড
+### উদাহরণ:
 
-**স্প্রেড** হল বিড এবং আস্কের মধ্যে পার্থক্য।
+```
+EUR/USD Quote:
+┌─────────────────────────────────────┐
+│  BID: 1.0895  │  ASK: 1.0897      │
+│  (Sell Price) │  (Buy Price)       │
+│               │                     │
+│         SPREAD: 2 Pip               │
+└─────────────────────────────────────┘
 
-**উদাহরণ:**
-- বিড: 1.0950
-- আস্ক: 1.0952
-- স্প্রেড: 2 পিপস
+আপনি BUY করলে: 1.0897 (Ask)-এ Entry
+আপনি SELL করলে: 1.0895 (Bid)-এ Entry
+তাৎক্ষণিক খরচ: 2 Pip
+```
 
-এটি আপনার ট্রেডিং খরচ।
+---
 
-## সারসংক্ষেপ
+## Spread আপনার Trade কীভাবে প্রভাবিত করে
 
-কম স্প্রেড = কম খরচ = বেশি লাভ
+### Long (Buy) Position:
+1. আপনি **Ask** Price-এ (বেশি) কিনছেন
+2. Close করতে **Bid** Price-এ বিক্রি করবেন
+3. Break Even-এ পৌঁছাতে Price কমপক্ষে Spread-এর সমান UP হতে হবে
 
-ট্রেড করার সময় সর্বদা স্প্রেডের খরচ বিবেচনা করুন।
+### Short (Sell) Position:
+1. আপনি **Bid** Price-এ (কম) বিক্রি করছেন
+2. Close করতে **Ask** Price-এ কিনবেন
+3. Break Even-এ পৌঁছাতে Price কমপক্ষে Spread-এর সমান DOWN হতে হবে
 
+### ব্যবহারিক প্রভাব:
+
+| Spread  | Break Even-এ প্রয়োজনীয় Movement | ১০-Pip Target-এ প্রভাব |
+|---------|-----------------------------------|------------------------|
+| 0.5 Pip | Price 0.5 Pip মুভ করতে হবে        | ৫% খরচ                 |
+| 1.0 Pip | Price 1.0 Pip মুভ করতে হবে        | ১০% খরচ                |
+| 2.0 Pip | Price 2.0 Pip মুভ করতে হবে        | ২০% খরচ                |
+| 5.0 Pip | Price 5.0 Pip মুভ করতে হবে        | ৫০% খরচ                |
+
+<Callout type="warning" title="Scalper-দের জন্য সতর্কতা">
+আপনার গড় Profit Target যদি ১০ Pip হয় এবং Spread ২ Pip, তাহলে প্রতিটি Trade-এ আপনার Profit-এর ২০% Broker-কে দিচ্ছেন। শত শত Trade-এ এটি উল্লেখযোগ্যভাবে জমা হয়।
+</Callout>
+
+---
+
+## Spread-এর প্রকারভেদ
+
+### Fixed Spread
+- Market Condition নির্বিশেষে স্থির থাকে
+- Market Maker Broker অফার করে
+- সাধারণত Variable Spread-এর চেয়ে চওড়া
+- সুবিধা: পূর্বানুমানযোগ্য খরচ
+- অসুবিধা: সাধারণত সামগ্রিকভাবে বেশি
+
+### Variable (Floating) Spread
+- Market Liquidity ও Volatility-র উপর ভিত্তি করে পরিবর্তিত হয়
+- ECN/STP Broker অফার করে
+- High Liquidity-তে সংকীর্ণ, Low-তে প্রশস্ত
+- সুবিধা: Active Session-এ প্রায়ই সস্তা
+- অসুবিধা: News-এর সময় নাটকীয়ভাবে বাড়তে পারে
+
+### Market অনুযায়ী সাধারণ Spread:
+
+| Instrument    | Normal Spread | News Spread | সেরা Session      |
+|---------------|---------------|-------------|-------------------|
+| EUR/USD       | 0.6-1.2 Pip   | 3-8 Pip     | London/NY Overlap |
+| GBP/USD       | 0.8-1.8 Pip   | 5-15 Pip    | London Session    |
+| USD/JPY       | 0.7-1.4 Pip   | 3-10 Pip    | Tokyo/London      |
+| Gold (XAUUSD) | 15-30 Cent    | 50-150 Cent | London/NY         |
+| S&P 500       | 0.3-0.8 Point | 2-5 Point   | US Session        |
+| Bitcoin       | $5-30         | $50-200     | Variable          |
+
+---
+
+## Spread-এর আকার কী নির্ধারণ করে?
+
+### ১. Liquidity
+- বেশি Liquidity = সংকীর্ণ Spread (EUR/USD, USD/JPY)
+- কম Liquidity = প্রশস্ত Spread (Exotic Pair, Small-cap Stock)
+
+### ২. Volatility
+- কম Volatility = সংকীর্ণ Spread
+- বেশি Volatility = প্রশস্ত Spread (News Event)
+
+### ৩. Trading Session
+- Active Session (London/NY) = সবচেয়ে সংকীর্ণ Spread
+- Off-hours (EUR Pair-এ Asian Session) = প্রশস্ত Spread
+- Weekend Gap = অনেক বেশি প্রশস্ত
+
+### ৪. Broker-এর ধরন
+- ECN/STP Broker = সংকীর্ণ Spread + Commission
+- Market Maker = প্রশস্ত Spread, Commission নেই
+- DMA Broker = Raw Institutional Spread + Fee
+
+---
+
+## Spread Cost গণনা
+
+### সূত্র:
+```
+Spread Cost = Spread (Pip) × Pip Value × Position Size
+
+উদাহরণ:
+- Pair: EUR/USD
+- Spread: 1.2 Pip
+- Position: 1 Standard Lot (100,000 Unit)
+- Pip Value: $10
+
+Spread Cost = 1.2 × $10 × 1 = $12 প্রতি Trade (Round Trip)
+```
+
+### Active Trader-এর দৈনিক খরচ:
+```
+Daily Spread Cost = গড় Spread × Pip Value × Lot Size × Trade সংখ্যা
+
+উদাহরণ (Day Trader):
+- দিনে ৫টি Trade × প্রতি Trade $12 = $60/দিন
+- মাসিক: $60 × 22 Trading Day = $1,320/মাস
+- বাৎসরিক: $1,320 × 12 = $15,840/বছর
+```
+
+<Callout type="warning" title="গোপন খরচ">
+একজন Day Trader যিনি ১ Standard Lot-এ দিনে ৫টি Trade করেন, শুধু Spread-এ বছরে $15,000 এর বেশি খরচ করতে পারেন। এজন্য Low-spread Broker বেছে নেওয়া এবং Tight-spread Session-এ Entry করা অত্যন্ত জরুরি।
+</Callout>
+
+---
+
+## Spread Cost কীভাবে কমাবেন
+
+1. **Major Pair Trade করুন** — EUR/USD, USD/JPY-এ সবচেয়ে সংকীর্ণ Spread
+2. **Active Session-এ Trade করুন** — London ও NY Overlap (8:00-12:00 EST)
+3. **News-এর সময় Trading এড়িয়ে চলুন** — High-impact Event-এ Spread ৩-১০ গুণ বাড়ে
+4. **ECN/Raw Spread Account ব্যবহার করুন** — Commission দিন কিন্তু সংকীর্ণ Spread পান
+5. **Lot Size বিবেচনা করুন** — Spread Cost প্রতি Lot; উপযুক্ত Size-এ Trade করুন
+6. **Exotic Pair-এ Scalp করবেন না** — ছোট Target-এর জন্য Spread খুব চওড়া
+7. **Broker তুলনা করুন** — ০.৫ Pip পার্থক্যও হাজার Trade-এ অনেক বড়
+8. **Limit Order ব্যবহার করুন** — আপনি Entry Price বেছে নিন (Bid-এ Enter করতে পারেন)
+
+---
+
+## Spread vs. Commission: কোনটি ভালো?
+
+| বিষয়             | শুধু Spread     | Raw Spread + Commission |
+|-------------------|-----------------|-------------------------|
+| **মোট খরচ**       | প্রায়ই বেশি    | প্রায়ই কম              |
+| **স্বচ্ছতা**      | Spread-এ লুকানো | স্পষ্ট, আলাদা Fee       |
+| **Scalping**      | ব্যয়বহুল       | ভালো Value              |
+| **Swing Trading** | গ্রহণযোগ্য      | সামান্য সুবিধা          |
+| **উপযুক্ত**       | Beginner (সহজ)  | Active Trader           |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Pips, Points ও Terminology](/bn/academy/pips-points-terminology) — Price পরিমাপ বোঝা
+- [Trading Costs ও Spreads](/bn/academy/trading-costs-spreads) — সম্পূর্ণ খরচ বিশ্লেষণ
+- [Order Types](/bn/academy/order-types) — ভালো Price-এ Execute করুন
+- [Forex Basics](/bn/academy/forex-basics) — Market Fundamental
+- [Position Sizing](/bn/academy/position-sizing) — সঠিক Lot Size গণনা

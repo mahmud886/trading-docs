@@ -24,5 +24,10 @@
   "session-liquidity": "Session Liquidity",
   "kill-zones": "Kill Zones",
   "risk-models": "Risk Models",
-  "advanced-execution-models": "Advanced Execution Models"
+  "advanced-execution-models": "Advanced Execution Models",
+  "supply-demand-zones": "Supply & Demand Zones",
+  "fresh-vs-tested": "Fresh vs Tested Zones",
+  "rally-base-rally": "Rally-Base-Rally / Drop-Base-Drop",
+  "zone-strength-scoring": "Zone Strength Scoring",
+  "proximal-distal-lines": "Proximal vs Distal Lines"
 }

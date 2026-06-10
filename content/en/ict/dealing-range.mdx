@@ -1,17 +1,17 @@
 ---
-title: "ICT Dealing Range"
-description: "Master the ICT Dealing Range — the price range between two opposing liquidity pools. Learn how to identify dealing ranges and use them for premium/discount analysis and bias determination."
+title: "ICT Dealing Range — Complete Guide"
+description: "Master the ICT Dealing Range concept — the price range between two opposing liquidity pools. Learn premium/discount zones, equilibrium, nested dealing ranges, and institutional bias determination used by banks."
 level: intermediate
 order: 12
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-09"
 ---
 
 ## What is a Dealing Range?
 
 A Dealing Range is the **price range between the most recent significant swing high and swing low**. It defines the "playing field" where price is currently operating. The equilibrium (50%) of this range divides price into premium (sell zone) and discount (buy zone).
 
-<Callout type="info" title="Framework">
-The Dealing Range gives you context for EVERY trade. Are you buying in discount? Selling in premium? Without knowing the dealing range, you can't determine premium vs discount.
+<Callout type="info" title="Institutional Framework">
+The Dealing Range gives you context for EVERY trade. Are you buying in discount? Selling in premium? Without knowing the dealing range, you can't determine premium vs discount. This is exactly how JP Morgan, Goldman Sachs, and Citadel frame their directional risk.
 </Callout>
 
 ---
@@ -23,67 +23,243 @@ The Dealing Range gives you context for EVERY trade. Are you buying in discount?
 2. Find the most recent **significant swing low** (SSL target below)
 3. The range between these = your Dealing Range
 4. Mark the **50% equilibrium** — this divides premium and discount
-5. Update when either extreme is broken
+5. Update when either extreme is broken (new dealing range forms)
 
 ### Timeframe Hierarchy
-- **Monthly Dealing Range** — Macro context (position trades)
-- **Weekly Dealing Range** — Swing trade context
-- **Daily Dealing Range** — Day trade context (most used)
-- **4H Dealing Range** — Intraday refinement
+- **Monthly Dealing Range** — Macro context (central banks, sovereign wealth funds)
+- **Weekly Dealing Range** — Swing trade context (hedge funds, prop desks)
+- **Daily Dealing Range** — Day trading context (institutional day desks)
+- **4H Dealing Range** — Intraday precision (prop firm traders)
+- **Session Dealing Range** — Scalping context (HFT-like execution)
+
+### What Makes a "Significant" Swing?
+- Creates BSL or SSL above/below it (resting orders exist)
+- Causes displacement on the move away from it
+- Is visible on the timeframe you're analyzing
+- Has multiple touches or equal highs/lows nearby
+- Was created during a Kill Zone or significant session
 
 ---
 
-## Premium vs Discount Zones
+## Premium, Discount & Equilibrium
 
-### Premium Zone (Above 50%)
-- Area above equilibrium
-- **Sell setups only** — institutions sell in premium
-- Look for bearish PD Arrays (OBs, SIBI FVGs)
-- Retail traders buy here (wrong side)
+### The Three Zones
 
-### Discount Zone (Below 50%)
-- Area below equilibrium
-- **Buy setups only** — institutions buy in discount
-- Look for bullish PD Arrays (OBs, BISI FVGs)
-- Retail traders sell here (wrong side)
+| Zone | Range | Action | Institutional Logic |
+|------|-------|--------|-------------------|
+| **Premium** | 50% to 100% (swing high) | SELL setups only | Banks distribute/sell positions here |
+| **Equilibrium** | Exactly 50% | Neutral — avoid entries | Fair value — no edge for either side |
+| **Discount** | 0% (swing low) to 50% | BUY setups only | Banks accumulate/buy positions here |
 
-### Equilibrium (50%)
-- The midpoint = "fair value"
-- CE of FVGs often aligns with equilibrium
-- Price tends to gravitate toward equilibrium
-- Not ideal for entries — it's the neutral zone
+### How to Calculate
 
----
+```
+Equilibrium = (Swing High + Swing Low) / 2
+Premium zone = Equilibrium to Swing High
+Discount zone = Swing Low to Equilibrium
+```
 
-## Trading the Dealing Range
+### Example Calculation
+- Swing High: 1.1000
+- Swing Low: 1.0800
+- Equilibrium: (1.1000 + 1.0800) / 2 = **1.0900**
+- Premium: 1.0900 – 1.1000 (sell zone)
+- Discount: 1.0800 – 1.0900 (buy zone)
 
-### Bullish Setup (Buy in Discount)
-1. Price is below 50% of dealing range → DISCOUNT
-2. SSL sits below → potential sweep target
-3. Wait for SSL sweep during Kill Zone
-4. MSS confirms bullish reversal
-5. Enter at bullish OB/FVG in discount
-6. Target: BSL at the top of the dealing range
-
-### Bearish Setup (Sell in Premium)
-1. Price is above 50% of dealing range → PREMIUM
-2. BSL sits above → potential sweep target
-3. Wait for BSL sweep during Kill Zone
-4. MSS confirms bearish reversal
-5. Enter at bearish OB/FVG in premium
-6. Target: SSL at the bottom of the dealing range
+### Fibonacci Overlay
+ICT uses the dealing range with Fibonacci levels for precision:
+- **0%** = Swing Low (extreme discount — deepest buy zone)
+- **25%** = Deep discount (ideal accumulation zone for banks)
+- **50%** = Equilibrium (CE of dealing range — fair value)
+- **62%-79%** = OTE zone (Optimal Trade Entry for sells in premium)
+- **75%** = Premium (ideal distribution zone for banks)
+- **100%** = Swing High (extreme premium — deepest sell zone)
 
 ---
 
-## Real Example: EUR/USD
+## Nested Dealing Ranges (Fractal Nature)
 
-- **Dealing Range:** Swing Low 1.0800 — Swing High 1.0950
-- **Equilibrium:** 1.0875 (50%)
-- **Current Price:** 1.0830 → DISCOUNT zone
-- **Action:** Only look for BUYS
-- **Setup:** SSL sweep at 1.0810 during London KZ → MSS → buy at OB 1.0820
-- **Target:** 1.0950 (BSL at top of dealing range)
-- **R:R:** 1:13
+Markets are **fractal** — dealing ranges exist within dealing ranges. Understanding this hierarchy is what separates institutional traders from retail:
+
+### Macro Dealing Range (Monthly/Weekly)
+- Determines the BIG picture directional bias
+- Banks and central banks operate primarily on this level
+- Takes weeks to months to fully traverse
+- Breaking this range = major trend change
+
+### Internal Dealing Range (Daily/4H)
+- Sits INSIDE the macro range
+- Where institutional day desks and swing traders operate
+- Determines your daily bias within the larger context
+- Multiple internal ranges can form within one macro range
+
+### Micro Dealing Range (1H/15M)
+- For precision entry timing only
+- Your execution framework within the internal range
+- Where you actually place limit orders
+- Changes rapidly — must be updated frequently
+
+### The Alignment Rule
+**When ALL timeframe dealing ranges agree on direction = highest probability:**
+- Weekly in discount + Daily in discount + 4H showing bullish MSS = STRONG BUY
+- Weekly in premium + Daily in premium + 4H showing bearish MSS = STRONG SELL
+- Conflict between timeframes = WAIT or REDUCE SIZE
+
+---
+
+## Dealing Range and Institutional Bias
+
+### How Banks Use Dealing Ranges
+
+1. **Accumulation happens in discount** — Banks buy when price is cheap (below 50%). They use SSL sweeps to get fills at better prices.
+2. **Distribution happens in premium** — Banks sell when price is expensive (above 50%). They use BSL sweeps to sell at better prices.
+3. **Manipulation crosses equilibrium** — Stop hunts push price through the 50% to trigger resting orders on both sides.
+4. **Expansion targets opposing liquidity** — After accumulation in discount, price targets BSL in premium (and vice versa).
+
+### Daily Bias from Dealing Range
+
+**If price is in the DISCOUNT of your HTF dealing range:**
+- Look for BUY setups on LTF
+- Target: opposing BSL above equilibrium
+- Expect manipulation below Asian range before the move up
+- Best time: London or NY AM Kill Zone
+
+**If price is in the PREMIUM of your HTF dealing range:**
+- Look for SELL setups on LTF
+- Target: opposing SSL below equilibrium
+- Expect manipulation above before the move down
+- Best time: London or NY AM Kill Zone
+
+**If price is AT equilibrium (50%):**
+- DO NOT TRADE — wait for commitment to one side
+- Equilibrium is "no man's land" — no institutional edge
+- Wait for price to push into premium or discount before acting
+
+---
+
+## PD Arrays Within the Dealing Range
+
+### In Discount (Buy Zone) — Look for Bullish PD Arrays:
+- Bullish Order Blocks (last bearish candle before rally)
+- Bullish FVGs / BISI (imbalances from upward displacement)
+- Bullish Breaker Blocks (failed bearish OBs inverted)
+- Mitigation Blocks (previous failed longs broken even)
+- Liquidity Voids below (price may drop to fill before rallying)
+
+### In Premium (Sell Zone) — Look for Bearish PD Arrays:
+- Bearish Order Blocks (last bullish candle before drop)
+- Bearish FVGs / SIBI (imbalances from downward displacement)
+- Bearish Breaker Blocks (failed bullish OBs inverted)
+- Mitigation Blocks (previous failed shorts broken even)
+- Liquidity Voids above (price may rally to fill before dropping)
+
+### The Confluence Rule (Institutional Grade)
+The HIGHEST probability setups occur when:
+1. PD Array is in the correct zone (discount for buys, premium for sells)
+2. PD Array aligns with HTF dealing range direction
+3. Liquidity has been swept BEFORE reaching the PD Array
+4. An MSS occurs on LTF confirming direction change
+5. Time is within a Kill Zone (London: 12-3 PM BD / NY: 5-8 PM BD)
+6. FVG + OB overlap (Unicorn setup)
+
+---
+
+## Real Trading Examples
+
+### Example 1: EUR/USD — Buying in Discount
+
+**Macro Context:**
+- Weekly dealing range: 1.0750 (low) to 1.0950 (high)
+- Equilibrium: 1.0850
+- Current price: 1.0780 → IN DISCOUNT ✓
+
+**Trade Setup:**
+- Daily bias: Bullish (price below equilibrium, expecting move to BSL)
+- Price sweeps SSL at 1.0765 during early London
+- 15M shows bullish MSS with displacement
+- Bullish FVG at 1.0785-1.0795 created
+- Entry: Buy limit at 1.0790 (CE of FVG)
+- Stop Loss: Below sweep at 1.0760 (30 pips risk)
+- TP1: Equilibrium at 1.0850 (+60 pips, 1:2 R:R)
+- TP2: BSL at 1.0950 (+160 pips, 1:5.3 R:R)
+
+**BD Time:** Setup formed at 1:30 PM (London Kill Zone)
+
+### Example 2: Gold (XAU/USD) — Selling in Premium
+
+**Macro Context:**
+- Daily dealing range: 2,000 (low) to 2,080 (high)
+- Equilibrium: 2,040
+- Current price: 2,065 → IN PREMIUM ✓
+
+**Trade Setup:**
+- HTF bias: Bearish (price in premium, expecting move to SSL)
+- Price sweeps BSL at 2,072 during NY AM session
+- 5M bearish MSS with displacement creating FVG
+- Bearish FVG at 2,068-2,062
+- Entry: Sell limit at 2,065 (CE)
+- Stop Loss: Above BSL sweep at 2,075 (100 pips)
+- TP1: Equilibrium at 2,040 (250 pips, 1:2.5 R:R)
+- TP2: SSL at 2,000 (650 pips, 1:6.5 R:R)
+
+**BD Time:** 6:30 PM (NY AM Kill Zone)
+
+### Example 3: NAS100 — Nested Dealing Range Alignment
+
+**Nested Analysis:**
+- Weekly range: 17,500 - 18,200 → Equilibrium: 17,850
+- Daily range: 17,750 - 18,000 → Equilibrium: 17,875
+- Current price: 17,780
+
+**Confluence Check:**
+- In DISCOUNT of weekly range ✓ (below 17,850)
+- In DISCOUNT of daily range ✓ (below 17,875)
+- BOTH timeframes agree = HIGH PROBABILITY long setup
+- Wait for 15M MSS + FVG in the 17,780-17,800 zone
+- Target: Daily equilibrium (17,875) then weekly equilibrium (17,850+)
+
+---
+
+## Dealing Range Lifecycle
+
+### Phase 1: Formation
+- Strong swing high and swing low are established
+- Liquidity builds above high (BSL) and below low (SSL)
+- Range is clearly defined — this is the new "playing field"
+
+### Phase 2: Internal Activity (Where Most Trading Happens)
+- Price oscillates between premium and discount
+- **Internal liquidity** (minor swings within range) gets swept first
+- Algorithm seeks internal liquidity BEFORE external
+- Multiple PO3 cycles occur within the range
+- Range can last days (Daily DR) to weeks (Weekly DR)
+
+### Phase 3: Expansion (Range Break)
+- After internal liquidity is exhausted
+- Price breaks out to **external liquidity** (BSL or SSL at extremes)
+- Old dealing range is violated — no longer valid
+- NEW dealing range forms using the breakout extreme
+- This is where the biggest moves happen
+
+### When to Update Your Dealing Range
+- When price **closes through** the swing high = update to new DR (bullish expansion)
+- When price **closes through** the swing low = update to new DR (bearish expansion)
+- A wick beyond doesn't count — need body close through
+- Always identify the NEW dealing range immediately after a break
+
+---
+
+## Advanced: Dealing Range + Time
+
+### Best Times for Dealing Range Reversals (BD Time)
+- **12:00 PM - 3:00 PM BD** (London KZ) — Most common reversal from premium/discount
+- **5:00 PM - 8:00 PM BD** (NY AM KZ) — Second best for reversals
+- **6:00 AM - 10:00 AM BD** (Asian) — Range formation, not reversals
+
+### Dealing Range + Power of 3
+- **Accumulation** → price stays in discount (or premium for sells)
+- **Manipulation** → price crosses equilibrium briefly (fake breakout)
+- **Distribution** → price expands to opposing extreme of dealing range
 
 ---
 
@@ -91,21 +267,44 @@ The Dealing Range gives you context for EVERY trade. Are you buying in discount?
 
 <Callout type="warning" title="Dealing Range Errors">
 
-**❌ Buying in premium** — Always check premium/discount before entering
+**❌ Not identifying the correct dealing range** — Using minor swings instead of significant ones. The swing must have created liquidity.
 
-**❌ Wrong swing points** — Use SIGNIFICANT swings, not minor fluctuations
+**❌ Buying in premium** — If price is above 50%, only look for sells. This is a cardinal rule.
 
-**❌ Not updating** — When price breaks the range extreme, reset the dealing range
+**❌ Selling in discount** — If price is below 50%, only look for buys. Don't fight the discount.
 
-**❌ Single timeframe** — Always know the HTF dealing range context first
+**❌ Ignoring HTF dealing range** — Your LTF dealing range must align with HTF for high probability.
+
+**❌ Not updating after a break** — Once a dealing range extreme is broken with a body close, identify the new range immediately.
+
+**❌ Confusing internal vs external liquidity** — Internal = minor swings within range; External = the range extremes themselves.
+
+**❌ Trading at equilibrium** — The 50% level offers no edge. Wait for price to commit to premium or discount.
 
 </Callout>
 
 ---
 
+## Summary
+
+| Aspect | Details |
+|--------|---------|
+| **Definition** | Range between significant swing high and swing low |
+| **Key Level** | 50% Equilibrium (divides premium/discount) |
+| **Buy Zone** | Below 50% (discount) — banks accumulate here |
+| **Sell Zone** | Above 50% (premium) — banks distribute here |
+| **Nested** | Multiple timeframe dealing ranges exist simultaneously |
+| **Update Rule** | New dealing range forms when extreme is broken with body close |
+| **Best Entry** | PD Array in correct zone + Kill Zone timing + MSS confirmation |
+| **Alignment** | HTF + LTF dealing ranges agreeing = highest probability |
+
+---
+
 ## Related Topics
 
-- [OTE](/en/ict/ote) — Optimal entry within the dealing range context
-- [PD Arrays](/en/ict/pd-arrays) — Arrays within premium and discount zones
-- [Liquidity](/en/ict/liquidity) — BSL and SSL define the range extremes
-- [Daily Bias](/en/ict/daily-bias) — Dealing range helps determine daily bias
+- [PD Arrays](/en/ict/pd-arrays) — Institutional levels within dealing ranges
+- [OTE](/en/ict/ote) — The 62-79% retracement zone within the dealing range
+- [Liquidity](/en/ict/liquidity) — BSL and SSL at range extremes
+- [Daily Bias](/en/ict/daily-bias) — Determining direction from dealing range context
+- [Power of 3](/en/ict/power-of-3) — How AMD operates within dealing ranges
+- [Market Structure Shift](/en/ict/mss) — Confirmation before entering in the correct zone

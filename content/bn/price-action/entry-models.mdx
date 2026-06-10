@@ -1,44 +1,57 @@
 ---
-title: "প্রাইস অ্যাকশন এন্ট্রি মডেল"
-description: "প্রাইস অ্যাকশন এন্ট্রি মডেল মাস্টার করুন — পুলব্যাক, ব্রেকআউট, ও রিভার্সাল এন্ট্রি সিস্টেম।"
+title: "Price Action Entry Model — সম্পূর্ণ গাইড"
+description: "সুনির্দিষ্ট Entry Technique আয়ত্ত করুন: Risk Entry, Confirmation Entry এবং Break-Retest Entry। Optimal R:R-এর জন্য কখন কোন Model ব্যবহার করবেন শিখুন।"
 level: intermediate
-order: 21
-lastUpdated: "2026-05-12"
+order: 27
+lastUpdated: "2026-06-10"
 ---
 
-## এন্ট্রি মডেল
+## Entry Model পরিচিতি
 
-### মডেল ১: পুলব্যাক এন্ট্রি
-1. HTF তে ট্রেন্ড দিক চিহ্নিত
-2. মূল লেভেলে (S/R, ট্রেন্ডলাইন, ৫০-৬১.৮% ফিব) পুলব্যাক অপেক্ষা
-3. কনফার্মেশন ক্যান্ডেল (পিন বার, এনগালফিং) খুঁজুন
-4. ট্রেন্ডের সাথে এন্ট্রি
-5. SL পুলব্যাক এক্সট্রিমের বাইরে | TP পরবর্তী স্ট্রাকচার
-
-### মডেল ২: ব্রেকআউট এন্ট্রি
-1. কনসলিডেশন বা মূল S/R চিহ্নিত
-2. লেভেলের বাইরে শক্তিশালী ক্লোজ অপেক্ষা
-3. ভাঙা লেভেলের রিটেস্টে এন্ট্রি
-
-### মডেল ৩: রিভার্সাল এন্ট্রি
-1. মেজর S/R এ ওভারএক্সটেন্ডেড ট্রেন্ড চিহ্নিত
-2. ক্লান্তি সিগন্যাল অপেক্ষা
-3. রিভার্সাল ক্যান্ডেল প্যাটার্ন কনফার্ম
-4. টাইট SL সহ এন্ট্রি
+Entry Model হলো Valid Setup চিহ্নিত করার পর **Entry-র Timing নির্ধারণের নির্দিষ্ট Technique**। সঠিক Model R:R সর্বোচ্চ করে ও Stop-out Risk ন্যূনতম করে।
 
 ---
 
-## উদাহরণ: পুলব্যাক এন্ট্রি — EUR/USD
-- **4H ট্রেন্ড:** বুলিশ (HH/HL)
-- **পুলব্যাক:** 1.0860 তে (আগের রেজিস্ট্যান্স = নতুন সাপোর্ট)
-- **কনফার্ম:** 4H বুলিশ পিন বার
-- **এন্ট্রি:** 1.0865 তে বাই | **SL:** 1.0845 | **TP:** 1.0920
-- **R:R:** 1:2.75
+## তিনটি মূল Model
+
+### ১. Risk Entry (Aggressive)
+- Zone-এ তাৎক্ষণিক Enter (Limit Order)
+- Candle Confirmation প্রয়োজন নেই
+- সেরা R:R (1:3 থেকে 1:5)
+- কম Win Rate (~৪৫-৫৫%)
+- ৫+ Confluence-সহ ব্যবহার করুন
+
+### ২. Confirmation Entry (Standard)
+- Zone-এ Rejection/Engulfing Candle অপেক্ষা
+- Candle Close-এর পর Enter
+- ভালো R:R (1:2 থেকে 1:3)
+- বেশি Win Rate (~৫৫-৬৫%)
+- ৩-৪ Confluence-সহ ব্যবহার
+
+### ৩. Break-Retest Entry (Conservative)
+- LTF Structure Shift (CHOCH) অপেক্ষা
+- ভাঙা Structure-এর Retest-এ Enter
+- মধ্যম R:R (1:1.5 থেকে 1:2.5)
+- সর্বোচ্চ Win Rate (~৬০-৭৫%)
+- Counter-trend বা অনিশ্চিত Setup-এ ব্যবহার
+
+---
+
+## Model নির্বাচন গাইড
+
+| পরিস্থিতি | Model | কারণ |
+|-----------|-------|------|
+| শক্তিশালী HTF Confluence Zone | Risk | Level বিশ্বাস করুন |
+| মধ্যম Setup | Confirmation | R:R ও Win Rate ভারসাম্য |
+| Counter-trend | Break-Retest | সর্বোচ্চ নিরাপত্তা |
+| Scalping | Risk/Confirmation | Speed প্রয়োজন |
+| Swing Trading | Confirmation/B-R | সময় ধৈর্যের সুযোগ দেয় |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [পুলব্যাক](/bn/price-action/pullbacks) — পুলব্যাক এন্ট্রি বিস্তারিত
-- [ব্রেকআউট](/bn/price-action/breakouts) — ব্রেকআউট এন্ট্রি
-- [কনফার্মেশন](/bn/price-action/confirmation) — এন্ট্রি কনফার্মেশন
+- [Confluence](/bn/price-action/confluence) — High-confluence Zone তৈরি
+- [Confirmation](/bn/price-action/confirmation) — Confirmation Technique
+- [Exit Models](/bn/price-action/exit-models) — পরিপূরক Exit
+- [Risk Management](/bn/price-action/risk-management) — Entry-based Sizing

@@ -1,50 +1,169 @@
 ---
-title: "চিরন্তন ফিউচার্স এবং ফান্ডিং রেট"
-description: "চিরন্তন ফিউচার্স ট্রেডিং, লিভারেজ এবং ক্রিপ্টো ডেরিভেটিভে ফান্ডিং রেট আয়ত্ত করুন"
-author: "ট্রেডিং একাডেমি"
-date: "2024-01-15"
+title: "Perpetual Futures ও Funding Rate — সম্পূর্ণ গাইড"
+description: "Perpetual Futures Trading আয়ত্ত করুন। Perp কীভাবে কাজ করে, Funding Rate Mechanics, Liquidation এবং Crypto ও Forex Perpetual Contract Trading-এর Strategy শিখুন।"
+level: intermediate
+order: 11
+lastUpdated: "2026-06-10"
 ---
 
-## চিরন্তন ফিউচার্স এবং ফান্ডিং রেট
+## Perpetual Futures কী?
 
-চিরন্তন ফিউচার্স সবচেয়ে জনপ্রিয় ক্রিপ্টো ডেরিভেটিভ।
+Perpetual Futures (Perp) হলো Derivative Contract যা আপনাকে কোনো Expiry Date ছাড়াই একটি Asset-এর Price Trade করতে দেয়। Traditional Futures-এর বিপরীতে যেগুলো Monthly/Quarterly Expire হয়, Perpetual Contract অনির্দিষ্টকাল ধরে রাখা যায়।
 
-### চিরন্তন ফিউচার্স কী?
+<Callout type="info" title="মূল বৈশিষ্ট্য">
+Perpetual Futures হলো Crypto Market-এ সবচেয়ে জনপ্রিয় Trading Instrument। এগুলো Futures-এর Leverage-কে Contract Expiry বা Rolling Position নিয়ে চিন্তা না করার সরলতার সাথে একত্রিত করে।
+</Callout>
 
-**চিরন্তন ফিউচার্স** = কোন মেয়াদপূর্ণতা তারিখ নেই লিভারেজ চুক্তি
+---
 
-**বৈশিষ্ট্য:**
-- মেয়াদ নেই (অনির্দিষ্টকাল ধারণ করতে পারেন)
-- লিভারেজ উপলব্ধ (1x থেকে 125x)
-- ফান্ডিং রেট পরিবর্তে বহন খরচ
-- 8 ঘন্টার নিষ্পত্তি
+## Perpetual Futures কীভাবে কাজ করে
 
-### ফান্ডিং রেট ব্যাখ্যা
+### Traditional Futures-এর সাথে তুলনা:
 
-**ফান্ডিং রেট** = প্রতি 8 ঘন্টায় লং এবং শর্টদের মধ্যে এক্সচেঞ্জ করা সুদ
+| বৈশিষ্ট্য | Traditional Futures | Perpetual Futures |
+|-----------|-------------------|-------------------|
+| Expiry | Monthly/Quarterly | কোনো Expiry নেই |
+| Settlement | Expiry Date-এ | ক্রমাগত (Funding) |
+| Price Anchor | Expiry-তে Converge | Funding Rate Mechanism |
+| Rolling | Expiry-র আগে প্রয়োজন | প্রয়োজন নেই |
+| উপলব্ধ | সব Market | মূলত Crypto, কিছু Forex |
 
-**উদ্দেশ্য:**
-- চিরন্তন মূল্য = স্পট মূল্য রাখুন
-- অতিরিক্ত দীর্ঘতর জন্য নেতিবাচক ফান্ডিং চার্জ
-- অতিরিক্ত শর্টদের জন্য ইতিবাচক ফান্ডিং চার্জ
+### Funding Rate Mechanism:
 
-**ফান্ডিং রেট অর্থ:**
+Perpetual Futures একটি **Funding Rate** ব্যবহার করে Contract Price-কে Spot (প্রকৃত) Price-এর কাছাকাছি রাখতে:
 
-**ইতিবাচক (দীর্ঘতরবাদীরা প্রদান করে):**
-- অনেক দীর্ঘ, কয়েক শর্ট
-- দীর্ঘরা শর্টদের অর্থ প্রদান করে
-- বাজার অতিরিক্ত দীর্ঘতর
+```
+যদি Perp Price > Spot Price:
+→ Funding Rate পজিটিভ
+→ Long-রা Short-দের Pay করে
+→ Selling-এ উৎসাহিত করে (Price Spot-এ নামায়)
 
-**নেতিবাচক (শর্টরা প্রদান করে):**
-- অনেক শর্ট, কয়েক দীর্ঘ
-- শর্টরা দীর্ঘদের অর্থ প্রদান করে
-- বাজার অতিরিক্ত শর্ট
+যদি Perp Price < Spot Price:
+→ Funding Rate নেগেটিভ
+→ Short-রা Long-দের Pay করে
+→ Buying-এ উৎসাহিত করে (Price Spot-এ তোলে)
+```
 
-এটি একটি সংক্ষিপ্ত বাংলা সংস্করণ। সম্পূর্ণ কৌশলের জন্য ইংরেজি সংস্করণ দেখুন।
+### Funding Rate Payment:
+- সাধারণত প্রতি ৮ ঘণ্টায় দেওয়া হয় (কিছু Exchange-এ ১ ঘণ্টা)
+- Spot-এর তুলনায় Premium/Discount-এর ভিত্তিতে Rate পরিবর্তিত হয়
+- সরাসরি আপনার Position থেকে Debit/Credit হয়
+- চরম পরিস্থিতিতে Interval প্রতি 0.01% থেকে 0.5%+ হতে পারে
 
-## সারসংক্ষেপ
+---
 
-চিরন্তন ফিউচার্স শক্তিশালী কিন্তু ঝুঁকিপূর্ণ।
+## Perpetual Futures-এ Leverage
 
-লিভারেজ সাবধানে ব্যবহার করুন - সর্বাধিক 2:1 অনুপাত।
+### Leverage-সহ Position Sizing:
 
+```
+Position Value = Margin × Leverage
+
+উদাহরণ:
+- Account: $10,000
+- ব্যবহৃত Margin: $1,000 (Account-এর 10%)
+- Leverage: 10x
+- Position Value: $1,000 × 10 = $10,000
+
+প্রতি 1% Price Move = $100 (Margin-এর 10%)
+প্রতি 10% Price Move = $1,000 (Margin-এর 100% = LIQUIDATION)
+```
+
+---
+
+## Liquidation
+
+### Liquidation কী?
+আপনার Loss যখন Margin Deposit-এর কাছাকাছি পৌঁছায়, Exchange জোর করে আপনার Position Close করে Negative Balance রোধ করতে।
+
+### Liquidation Price সূত্র:
+```
+Long Liquidation Price = Entry Price × (1 - 1/Leverage + Maintenance Margin Rate)
+
+উদাহরণ (Long, 10x Leverage, 0.5% Maintenance):
+Entry: $50,000 BTC
+Liquidation ≈ $50,000 × (1 - 0.10 + 0.005) = $45,250
+Liquidation-এর জন্য Price ~9.5% কমতে হবে
+```
+
+### Liquidation এড়ানোর উপায়:
+1. **কম Leverage ব্যবহার করুন** (সর্বোচ্চ 5x-10x সুপারিশকৃত)
+2. **Stop Loss সেট করুন** Liquidation Price-এর অনেক আগে
+3. **সব Available Margin ব্যবহার করবেন না** (Free Margin রাখুন)
+4. **Volatile Period-এ Position সক্রিয়ভাবে Monitor করুন**
+5. **Isolated Margin ব্যবহার করুন** (একটি Position-এ Loss সীমাবদ্ধ রাখে)
+
+---
+
+## Cross Margin vs. Isolated Margin
+
+| বৈশিষ্ট্য | Cross Margin | Isolated Margin |
+|-----------|-------------|-----------------|
+| Margin Pool | সম্পূর্ণ Account Balance | শুধুমাত্র নির্ধারিত Margin |
+| Liquidation Risk | সব Free Balance ব্যবহার করে | Position Margin-এ সীমাবদ্ধ |
+| নমনীয়তা | বেশি Effective Leverage | প্রতি Position-এ নির্দিষ্ট |
+| Risk | সম্পূর্ণ Account ঝুঁকিতে | শুধু বরাদ্দকৃত Margin ঝুঁকিতে |
+| উপযুক্ত | অভিজ্ঞ Trader | Beginner, Risk Management |
+
+<Callout type="warning" title="নিরাপত্তা সুপারিশ">
+শেখার সময় সবসময় **Isolated Margin** ব্যবহার করুন। Cross Margin মানে একটি খারাপ Trade আপনার সম্পূর্ণ Account Liquidate করতে পারে। Isolated Margin আপনার সর্বোচ্চ Loss সেই নির্দিষ্ট Position-এ বরাদ্দকৃত Margin-এ সীমাবদ্ধ রাখে।
+</Callout>
+
+---
+
+## Funding Rate Strategy
+
+### Funding Rate Arbitrage:
+```
+Strategy: Market-neutral থেকে Funding Payment সংগ্রহ করুন
+
+পদ্ধতি:
+1. Spot BTC Long করুন (প্রকৃত Bitcoin কিনুন)
+2. Perp BTC Short করুন (সমান Size)
+3. Positive Funding Rate সংগ্রহ করুন (Long-রা আপনাকে Pay করে)
+4. Net Exposure: শূন্য (Hedged)
+5. Profit: Funding Rate Payment
+
+Risk: Funding Rate Negative হলে (তখন আপনি Pay করেন)
+Return: Bull Market-এ 10-40% APR
+```
+
+### Direction জানতে Funding Rate পড়া:
+- **অত্যন্ত Positive Funding** (0.1%+) → Market Overleveraged Long → সম্ভাব্য Crash
+- **অত্যন্ত Negative Funding** (-0.1%+) → Market Overleveraged Short → সম্ভাব্য Squeeze
+- **Neutral Funding** (0.01%) → ভারসাম্যপূর্ণ Market
+
+---
+
+## Perpetual Futures-এ Risk Management
+
+### নিয়ম:
+
+1. **সাধারণ Trading-এ সর্বোচ্চ 5-10x Leverage**
+2. **একটি Position-এর Margin-এ Account-এর ২০% এর বেশি কখনো নয়**
+3. **Entry-র আগে Stop Loss সেট করুন** — কখনো SL ছাড়া Trade নয়
+4. **অত্যন্ত অভিজ্ঞ না হওয়া পর্যন্ত Isolated Margin ব্যবহার করুন**
+5. **Funding Rate পর্যবেক্ষণ করুন** — উচ্চ Rate Overextension-এর Signal
+6. **চরম Volatility-তে Size কমান**
+
+---
+
+## Perpetual Futures-এ সাধারণ ভুল
+
+| ভুল | ফলাফল | সমাধান |
+|------|--------|--------|
+| Max Leverage ব্যবহার | তাৎক্ষণিক Liquidation | সর্বোচ্চ 5-10x ব্যবহার |
+| Stop Loss নেই | Account Blow-up | সবসময় SL সেট করুন |
+| অসাবধানে Cross Margin | সম্পূর্ণ Account হারানো | Isolated ব্যবহার করুন |
+| Funding Rate উপেক্ষা | সময়ের সাথে নীরব Loss | ধরে রাখার আগে Rate Check |
+| Portfolio Overleveraging | একটি খারাপ Trade সব নষ্ট করে | প্রতি Trade-এ সর্বোচ্চ 20% Margin |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Crypto Trading](/bn/academy/crypto-trading) — সম্পূর্ণ Crypto Strategy
+- [Futures Basics](/bn/academy/futures-basics) — Traditional Futures ব্যাখ্যা
+- [Risk Management](/bn/academy/risk-management) — Capital সুরক্ষা
+- [Margin ও Leverage](/bn/academy/margin-leverage) — Leverage Mechanics
+- [Position Sizing](/bn/academy/position-sizing) — সঠিক Size গণনা

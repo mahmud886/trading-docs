@@ -16,12 +16,12 @@ export function LanguageSwitcher({ currentLang }: { currentLang: Locale }) {
   }
 
   return (
-    <div className="flex items-center gap-0.5 rounded-full border border-border p-0.5 lg:gap-1 lg:p-1">
+    <div className="flex items-center gap-0 rounded-full border border-border p-px xl:gap-1 xl:p-1">
       {locales.map((locale) => (
         <button
           key={locale}
           onClick={() => switchLocale(locale)}
-          className={`rounded-full px-2 py-0.5 text-[11px] font-medium transition-all lg:px-3 lg:py-1 lg:text-xs ${
+          className={`rounded-full px-1 py-px text-[8px] font-medium transition-all xl:px-3 xl:py-1 xl:text-xs ${
             locale === currentLang
               ? "bg-accent-green/10 text-accent-green"
               : "text-muted-foreground hover:text-foreground"

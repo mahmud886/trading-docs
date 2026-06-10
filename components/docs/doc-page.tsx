@@ -7,14 +7,14 @@ import {
   getSidebarTree,
 } from "@/lib/content";
 import { extractToc } from "@/lib/toc";
-import { generateArticleSchema } from "@/lib/schema";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { createMdxComponents } from "@/components/docs/mdx-components";
 import { Toc } from "@/components/docs/toc";
 import { PrevNextNav } from "@/components/docs/prev-next-nav";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { LessonCard } from "@/components/docs/lesson-card";
 import { type Locale, getDictionary } from "@/lib/i18n";
-import { CATEGORY_CONFIG, getCategoryLabel, getCategoryDescription, type Category } from "@/lib/constants";
+import { CATEGORY_CONFIG, getCategoryLabel, getCategoryDescription, type Category, SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
@@ -131,14 +131,24 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
 
   const schema = generateArticleSchema(
     doc.meta,
-    `https://tradingdocs.vercel.app/${lang}/${category}/${slug.join("/")}`
+    `${SITE_URL}/${lang}/${category}/${slug.join("/")}`
   );
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: `${SITE_URL}/${lang}` },
+    { name: getCategoryLabel(category, lang), url: `${SITE_URL}/${lang}/${category}` },
+    { name: doc.meta.title, url: `${SITE_URL}/${lang}/${category}/${slug.join("/")}` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="flex gap-10 px-8 py-10">
         <article className="min-w-0 max-w-3xl flex-1">

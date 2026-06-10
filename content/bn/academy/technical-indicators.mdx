@@ -1,120 +1,188 @@
 ---
-title: "প্রযুক্তিগত সূচক গাইড"
-description: "মুভিং এভারেজ, RSI, MACD এবং বোলিঞ্জার ব্যান্ড সহ প্রয়োজনীয় প্রযুক্তিগত সূচকগুলি সম্পর্কে শিখুন"
-author: "ট্রেডিং একাডেমি"
-date: "2024-01-15"
+title: "Technical Indicator — সম্পূর্ণ গাইড"
+description: "অত্যাবশ্যকীয় Technical Indicator আয়ত্ত করুন: RSI, MACD, Moving Average, Stochastic, ADX এবং Volume Indicator। Trading Signal ও Confirmation-এ এগুলো ব্যবহার শিখুন।"
+level: intermediate
+order: 13
+lastUpdated: "2026-06-10"
 ---
 
-## প্রযুক্তিগত সূচক গাইড
+## Technical Indicator কী?
 
-প্রযুক্তিগত সূচকগুলি মূল্য এবং ভলিউম ডেটার উপর ভিত্তি করে গাণিতিক গণনা যা ট্রেডারদের প্রবণতা, গতিবেগ এবং সম্ভাব্য ট্রেডিং সুযোগ চিহ্নিত করতে সাহায্য করে।
+Technical Indicator হলো Price এবং/অথবা Volume Data-তে প্রয়োগ করা **গাণিতিক গণনা** যা Trader-দের Trend, Momentum, Volatility এবং সম্ভাব্য Reversal Point চিহ্নিত করতে সাহায্য করে। এগুলো হাতিয়ার — ভবিষ্যৎ বলার যন্ত্র নয়।
 
-### প্রযুক্তিগত সূচক প্রকার
+<Callout type="warning" title="গুরুত্বপূর্ণ বাস্তবতা">
+কোনো একক Indicator নিজে থেকে নির্ভরযোগ্য নয়। Professional Trader Indicator ব্যবহার করেন CONFIRMATION-এর জন্য, প্রাথমিক Entry Signal হিসেবে নয়। Price Action ও Market Structure আগে আসে; Indicator আপনি যা দেখছেন তা Confirm করে।
+</Callout>
 
-#### 1. **ট্রেন্ড সূচক**
-ট্রেন্ড সূচকগুলি বাজার আন্দোলনের দিক এবং শক্তি চিহ্নিত করতে সাহায্য করে:
-- মুভিং এভারেজ (SMA, EMA, WMA)
-- MACD (মুভিং এভারেজ কনভার্জেন্স ডাইভার্জেন্স)
-- ADX (এভারেজ ডিরেকশনাল ইন্ডেক্স)
+---
 
-#### 2. **গতিবেগ সূচক**
-গতিবেগ সূচকগুলি মূল্য পরিবর্তনের গতি এবং মাত্রা পরিমাপ করে:
-- RSI (রিলেটিভ স্ট্রেংথ ইন্ডেক্স)
-- স্টোকেস্টিক অসিলেটর
-- রেট অফ চেঞ্জ (ROC)
-- CCI (কমোডিটি চ্যানেল ইন্ডেক্স)
+## Moving Average (MA)
 
-#### 3. **অস্থিরতা সূচক**
-এগুলি মূল্য পরিবর্তনের হার পরিমাপ করে:
-- বোলিঞ্জার ব্যান্ডস
-- ATR (এভারেজ ট্রু রেঞ্জ)
-- স্ট্যান্ডার্ড ডিভিয়েশন
-- কেল্টনার চ্যানেল
+### Simple Moving Average (SMA):
+N Period-এর গড় Closing Price।
 
-#### 4. **ভলিউম সূচক**
-ভলিউম-ভিত্তিক সূচকগুলি ট্রেডিং কার্যকলাপ বিশ্লেষণ করে:
-- অন-ব্যালান্স ভলিউম (OBV)
-- ভলিউম রেট অফ চেঞ্জ (VROC)
-- মানি ফ্লো ইন্ডেক্স (MFI)
-- সংগ্রহণ/বিতরণ
+### Exponential Moving Average (EMA):
+সাম্প্রতিক Price-কে বেশি গুরুত্ব দেয়, দ্রুত React করে।
 
-### মুভিং এভারেজ
+### মূল Moving Average:
 
-**সিম্পল মুভিং এভারেজ (SMA)**
-- নির্দিষ্ট সময়ের সমাপ্তি মূল্যের গড় গণনা করে
-- সমস্ত মূল্যে সমান ওজন দেয়
-- দীর্ঘমেয়াদী প্রবণতা চিহ্নিত করার জন্য উপযোগী
+| MA Period | ব্যবহার | Timeframe |
+|-----------|---------|-----------|
+| EMA 9/10 | Short-term Momentum | M15-H1 |
+| EMA 20/21 | Dynamic S/R, Trend Filter | H1-H4 |
+| SMA/EMA 50 | Medium-term Trend | H4-D1 |
+| SMA/EMA 100 | Intermediate Trend | D1 |
+| SMA/EMA 200 | Long-term Trend (Institutional) | D1-W1 |
 
-**এক্সপোনেনশিয়াল মুভিং এভারেজ (EMA)**
-- সাম্প্রতিক মূল্যে বেশি ওজন দেয়
-- মূল্য পরিবর্তনে দ্রুত প্রতিক্রিয়া জানায়
-- স্বল্পমেয়াদী ট্রেডিংয়ের জন্য ভাল
+### Trading Signal:
 
-**ওয়েইটেড মুভিং এভারেজ (WMA)**
-- মূল্যে নির্দিষ্ট ওজন নির্ধারণ করে
-- SMA এর চেয়ে বেশি প্রতিক্রিয়াশীল
+| Signal | অর্থ | Action |
+|--------|------|--------|
+| Price 200 MA-এর উপরে | Bullish Long-term Trend | Long খুঁজুন |
+| Price 200 MA-এর নিচে | Bearish Long-term Trend | Short খুঁজুন |
+| Golden Cross (50 MA 200 MA-র উপরে Cross) | Bullish Shift | Buy Signal |
+| Death Cross (50 MA 200 MA-র নিচে Cross) | Bearish Shift | Sell Signal |
+| Price 20 EMA-তে Pullback | Uptrend-এ Dynamic Support | Dip কিনুন |
+| MA ছড়িয়ে যাচ্ছে | শক্তিশালী Trend | Trend-এ থাকুন |
+| MA একত্রিত হচ্ছে | Trend দুর্বল হচ্ছে | পরিবর্তনের জন্য প্রস্তুত |
 
-### RSI (রিলেটিভ স্ট্রেংথ ইন্ডেক্স)
+---
 
-RSI মূল্য পরিবর্তনের মাত্রা পরিমাপ করে গতিবেগ মূল্যায়ন করে:
-- **পরিসর:** 0-100
-- **ওভারবট:** 70 বা তার উপরে (সম্ভাব্য বিক্রয় সংকেত)
-- **ওভারসোল্ড:** 30 বা তার নিচে (সম্ভাব্য ক্রয় সংকেত)
-- **গণনার সময়কাল:** সাধারণত 14 সময়কাল
+## RSI (Relative Strength Index)
 
-### MACD (মুভিং এভারেজ কনভার্জেন্স ডাইভার্জেন্স)
+### কী পরিমাপ করে:
+Momentum — 0-100 Scale-এ Price পরিবর্তনের গতি ও মাত্রা।
 
-MACD প্রবণতা পরিবর্তনগুলি এবং গতিবেগ চিহ্নিত করে:
-- MACD লাইন, সিগন্যাল লাইন এবং হিস্টোগ্রাম নিয়ে গঠিত
-- **ক্রয় সংকেত:** MACD সিগন্যাল লাইনের উপরে অতিক্রম করে
-- **বিক্রয় সংকেত:** MACD সিগন্যাল লাইনের নিচে অতিক্রম করে
-- **বিচ্যুতি:** দুর্বল গতিবেগ নির্দেশ করতে পারে
+### Setting:
+- Default Period: 14
+- Overbought: 70-এর উপরে
+- Oversold: 30-এর নিচে
 
-### বোলিঞ্জার ব্যান্ডস
+### RSI Trading Strategy:
 
-বোলিঞ্জার ব্যান্ডস তিনটি লাইন নিয়ে গঠিত:
-- **মধ্য ব্যান্ড:** 20-সময়কাল SMA
-- **উপরের ব্যান্ড:** মধ্য ব্যান্ড + (2 × স্ট্যান্ডার্ড ডিভিয়েশন)
-- **নিম্ন ব্যান্ড:** মধ্য ব্যান্ড - (2 × স্ট্যান্ডার্ড ডিভিয়েশন)
+| Strategy | শর্ত | Action |
+|----------|------|--------|
+| **Overbought/Oversold** | RSI > 70 বা < 30 | Reversal Confirmation অপেক্ষা |
+| **Divergence** | Price নতুন High করে, RSI Lower High করে | সম্ভাব্য Reversal |
+| **Centerline Crossover** | RSI 50-এর উপরে/নিচে Cross | Trend Direction Shift |
+| **Hidden Divergence** | Price Pullback, RSI Trend ধরে রাখে | Trend Continuation |
 
-**ব্যবহার:**
-- ওভারবট/ওভারসোল্ড অবস্থা চিহ্নিত করা
-- সমর্থন এবং প্রতিরোধ স্তর
-- অস্থিরতা পরিমাপ
-- ব্রেকআউট সনাক্তকরণ
+### RSI Divergence:
+```
+Bearish Divergence:
+- Price: Higher High
+- RSI: Lower High
+- Signal: Momentum কমছে, সম্ভাব্য পতন
 
-### স্টোকেস্টিক অসিলেটর
+Bullish Divergence:
+- Price: Lower Low
+- RSI: Higher Low
+- Signal: Selling Pressure কমছে, সম্ভাব্য উত্থান
+```
 
-স্টোকেস্টিক অসিলেটর গতিবেগ পরিমাপ করে:
-- **পরিসর:** 0-100
-- **দ্রুত স্টোকেস্টিক:** প্রতিক্রিয়াশীল কিন্তু মিথ্যা সংকেত উৎপন্ন করে
-- **ধীর স্টোকেস্টিক:** মসৃণ, আরও নির্ভরযোগ্য
-- **ওভারবট:** 80 এর উপরে
-- **ওভারসোল্ড:** 20 এর নিচে
+<Callout type="info" title="Pro Tip">
+শক্তিশালী Uptrend-এ RSI দীর্ঘ সময় Overbought (>70) থাকতে পারে। শুধু RSI বেশি বলে অন্ধভাবে Sell করবেন না — Market Structure-এর Context-এ ব্যবহার করুন। Divergence শুধু Overbought/Oversold Level-এর চেয়ে বেশি নির্ভরযোগ্য।
+</Callout>
 
-### ATR (এভারেজ ট্রু রেঞ্জ)
+---
 
-ATR বাজার অস্থিরতা পরিমাপ করে:
-- স্টপ-লস স্থাপনা নির্ধারণে সহায়তা করে
-- উচ্চ/নিম্ন অস্থিরতা সময়কাল চিহ্নিত করে
-- অবস্থানের আকার নির্ধারণের জন্য ব্যবহৃত হয়
+## MACD (Moving Average Convergence Divergence)
 
-## গুরুত্বপূর্ণ বিবেচনা
+### উপাদান:
+- **MACD Line:** EMA(12) - EMA(26)
+- **Signal Line:** MACD Line-এর EMA(9)
+- **Histogram:** MACD Line - Signal Line
 
-1. **কোন একক নিখুঁত সূচক নেই:** নিশ্চিতকরণের জন্য একাধিক সূচক সমন্বয় করুন
-2. **মিথ্যা সংকেত:** সমস্ত সূচক মিথ্যা সংকেত উৎপন্ন করতে পারে
-3. **বাজার পরিস্থিতি:** সূচকগুলি ট্রেন্ডিং বাজারে ভাল কাজ করে
-4. **নিশ্চিতকরণ:** মূল্য পদক্ষেপ এবং কাঠামোর সাথে সূচক ব্যবহার করুন
+### MACD Signal:
 
-## সর্বোত্তম অনুশীলন
+| Signal | শর্ত | অর্থ |
+|--------|------|------|
+| Bullish Crossover | MACD Signal-এর উপরে Cross | Momentum Bullish হচ্ছে |
+| Bearish Crossover | MACD Signal-এর নিচে Cross | Momentum Bearish হচ্ছে |
+| Histogram বাড়ছে | Bar লম্বা হচ্ছে | Trend শক্তিশালী হচ্ছে |
+| Histogram কমছে | Bar ছোট হচ্ছে | Trend দুর্বল হচ্ছে |
+| Zero Line Cross | MACD শূন্যের উপরে/নিচে Cross | Trend Direction পরিবর্তন |
+| Divergence | MACD Price থেকে Diverge করছে | সম্ভাব্য Reversal |
 
-- নিশ্চিতকরণের জন্য 2-3টি সূচক ব্যবহার করুন
-- প্রতিটি সূচকের সীমাবদ্ধতা বুঝুন
-- ঐতিহাসিক ডেটায় সূচক পরীক্ষা করুন
-- সমর্থন/প্রতিরোধ এবং মূল্য পদক্ষেপের সাথে সংমিশ্রণ করুন
-- আপনার ট্রেডিং সময়সীমার উপর ভিত্তি করে পরামিতি সামঞ্জস্য করুন
+---
 
-## সংক্ষিপ্তসার
+## Stochastic Oscillator
 
-প্রযুক্তিগত সূচকগুলি সিদ্ধান্ত গ্রহণে সহায়তা করার জন্য সরঞ্জাম, একচেটিয়া ট্রেডিং সিস্টেম নয়। সফল ট্রেডাররা তাদের বিশ্লেষণ নিশ্চিত করতে সূচক ব্যবহার করে বরং সম্পূর্ণরূপে তাদের উপর নির্ভর করে না।
+### কী পরিমাপ করে:
+N Period-এ High-Low Range-এর তুলনায় বর্তমান Price কোথায়।
 
+### Setting:
+- Fast Stochastic: %K(14), %D(3)
+- Overbought: 80-এর উপরে
+- Oversold: 20-এর নিচে
+
+### Stochastic Signal:
+
+| Signal | শর্ত | Action |
+|--------|------|--------|
+| Bullish | %K 20-এর নিচে %D-এর উপরে Cross | সম্ভাব্য Buy |
+| Bearish | %K 80-এর উপরে %D-এর নিচে Cross | সম্ভাব্য Sell |
+| Divergence | Price vs. Stochastic Diverge | Reversal সতর্কতা |
+
+---
+
+## ADX (Average Directional Index)
+
+### কী পরিমাপ করে:
+**Trend-এর শক্তি** (Direction নয়) 0-100 Scale-এ।
+
+### ADX Level:
+
+| ADX মান | অর্থ | Trading পদ্ধতি |
+|---------|------|----------------|
+| 0-20 | Trend নেই (Ranging) | Range/Mean Reversion Strategy |
+| 20-25 | দুর্বল Trend উদ্ভব হচ্ছে | Breakout-এর জন্য পর্যবেক্ষণ |
+| 25-50 | শক্তিশালী Trend | Trend Following Strategy |
+| 50-75 | অত্যন্ত শক্তিশালী Trend | Trend-এ থাকুন, Counter করবেন না |
+| 75-100 | চরম Trend (বিরল) | Trend শেষ হতে পারে |
+
+---
+
+## Volume Indicator
+
+### On-Balance Volume (OBV):
+- Cumulative Volume (Up Day-তে যোগ, Down Day-তে বিয়োগ)
+- OBV বাড়ছে → Uptrend Confirm
+- OBV কমছে → Downtrend Confirm
+- OBV Divergence = সম্ভাব্য Reversal
+
+### Volume Moving Average:
+- বর্তমান Volume-কে Average-এর সাথে তুলনা করুন
+- Average-এর উপরে = তাৎপর্যপূর্ণ Move (চলমান থাকার সম্ভাবনা)
+- Average-এর নিচে = দুর্বল Move (Reverse হতে পারে)
+
+---
+
+## Indicator সমন্বয়
+
+### Confluence পদ্ধতি:
+```
+শক্তিশালী Buy Signal = একাধিক Confirmation:
+1. Price 200 EMA-এর উপরে (Bullish Trend) ✅
+2. RSI 50-এর উপরে কিন্তু 70-এর নিচে (বাড়ার সুযোগ) ✅
+3. MACD Signal-এর উপরে Cross করছে (Momentum Shift) ✅
+4. ADX 25-এর উপরে (Trend আছে) ✅
+5. Volume Average-এর উপরে (প্রকৃত অংশগ্রহণ) ✅
+= HIGH PROBABILITY SETUP
+```
+
+### অতিরিক্ত Analysis এড়িয়ে চলুন:
+- প্রতি Chart-এ সর্বোচ্চ ২-৩টি Indicator
+- সব Indicator ভিন্ন উদ্দেশ্যে ব্যবহার করুন
+- ৩টি Momentum Indicator একসাথে ব্যবহার করবেন না (Redundant)
+- সেরা সমন্বয়: Trend + Momentum + Volume
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Support ও Resistance](/bn/academy/support-resistance-advanced) — মূল Price Level
+- [Chart Pattern](/bn/academy/chart-patterns) — Pattern Recognition
+- [Fibonacci Trading](/bn/academy/fibonacci-trading) — মূল Retracement Level
+- [Bollinger Bands](/bn/academy/bollinger-bands-trading) — Volatility Indicator
+- [Trading Plan](/bn/academy/trading-plan) — System Development

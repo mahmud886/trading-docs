@@ -1,6 +1,10 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+
 export function SessionHeatmap() {
+  const pathname = usePathname();
+  const lang = pathname?.split("/")[1] || "en";
   const hours = Array.from({ length: 24 }, (_, i) => i);
 
   // Volatility intensity per hour (Bangladesh time) — 0-1 scale
@@ -11,6 +15,7 @@ export function SessionHeatmap() {
     "XAU/USD":   [0.1, 0.1, 0.1, 0.1, 0.2, 0.3, 0.4, 0.4, 0.3, 0.3, 0.2, 0.2, 0.3, 0.7, 0.8, 0.8, 0.7, 0.7, 1.0, 1.0, 1.0, 0.8, 0.5, 0.2],
     "US30":      [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.3, 0.4, 0.4, 0.3, 0.4, 0.9, 1.0, 1.0, 0.8, 0.6, 0.3],
     "NAS100":    [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.3, 0.4, 0.4, 0.3, 0.4, 0.9, 1.0, 1.0, 0.8, 0.6, 0.3],
+    "DXY":       [0.1, 0.1, 0.1, 0.1, 0.1, 0.2, 0.3, 0.3, 0.2, 0.2, 0.2, 0.2, 0.3, 0.6, 0.7, 0.7, 0.6, 0.5, 0.8, 0.9, 0.9, 0.7, 0.4, 0.2],
   };
 
   function getColor(value: number): string {
@@ -23,14 +28,20 @@ export function SessionHeatmap() {
 
   return (
     <div className="overflow-x-auto rounded-2xl border border-border bg-card p-6">
-      <h3 className="mb-1 text-lg font-semibold text-foreground">Volatility Heatmap</h3>
-      <p className="mb-4 text-xs text-muted-foreground">Trading activity by instrument — Bangladesh Time (GMT+6)</p>
+      <h3 className="mb-1 text-lg font-semibold text-foreground">
+        {lang === "bn" ? "ভোলাটিলিটি হিটম্যাপ" : "Volatility Heatmap"}
+      </h3>
+      <p className="mb-4 text-xs text-muted-foreground">
+        {lang === "bn"
+          ? "ইনস্ট্রুমেন্ট অনুযায়ী ট্রেডিং অ্যাক্টিভিটি — বাংলাদেশ সময় (GMT+6) — ইনস্টিটিউশনাল কিল জোন হাইলাইটেড"
+          : "Trading activity by instrument — Bangladesh Time (GMT+6) — Institutional kill zones highlighted"}
+      </p>
 
-      <div className="min-w-[700px]">
+      <div className="min-w-175">
         {/* Hour labels */}
         <div className="mb-1 flex" style={{ paddingLeft: "80px" }}>
           {hours.map((h) => (
-            <div key={h} className="flex-1 text-center text-[9px] text-zinc-600">
+            <div key={h} className="flex-1 text-center text-[9px] text-muted-foreground">
               {h % 3 === 0 ? `${h}` : ""}
             </div>
           ))}
@@ -44,9 +55,9 @@ export function SessionHeatmap() {
               {values.map((v, i) => (
                 <div
                   key={i}
-                  className={`h-6 flex-1 rounded-[2px] transition-colors ${getColor(v)}`}
+                  className={`h-6 flex-1 rounded-xs transition-colors ${getColor(v)}`}
                   style={{ opacity: Math.max(0.3, v) }}
-                  title={`${pair} at ${i}:00 BD — Activity: ${Math.round(v * 100)}%`}
+                  title={`${pair} at ${i}:00 BD — ${lang === "bn" ? "অ্যাক্টিভিটি" : "Activity"}: ${Math.round(v * 100)}%`}
                 />
               ))}
             </div>
@@ -76,21 +87,21 @@ export function SessionHeatmap() {
 
         {/* Legend */}
         <div className="mt-4 flex items-center gap-4 border-t border-border pt-3 text-[10px] text-muted-foreground">
-          <span>Activity:</span>
+          <span>{lang === "bn" ? "অ্যাক্টিভিটি:" : "Activity:"}</span>
           <div className="flex items-center gap-1">
-            <div className="h-3 w-6 rounded-sm bg-zinc-800/50" /> Low
+            <div className="h-3 w-6 rounded-sm bg-zinc-800/50" /> {lang === "bn" ? "কম" : "Low"}
           </div>
           <div className="flex items-center gap-1">
-            <div className="h-3 w-6 rounded-sm bg-[#a855f7]/60" /> Med
+            <div className="h-3 w-6 rounded-sm bg-[#a855f7]/60" /> {lang === "bn" ? "মধ্যম" : "Med"}
           </div>
           <div className="flex items-center gap-1">
-            <div className="h-3 w-6 rounded-sm bg-[#3b82f6]" /> High
+            <div className="h-3 w-6 rounded-sm bg-[#3b82f6]" /> {lang === "bn" ? "উচ্চ" : "High"}
           </div>
           <div className="flex items-center gap-1">
-            <div className="h-3 w-6 rounded-sm bg-[#00ff9d]" /> V.High
+            <div className="h-3 w-6 rounded-sm bg-[#00ff9d]" /> {lang === "bn" ? "অতি উচ্চ" : "V.High"}
           </div>
           <div className="flex items-center gap-1">
-            <div className="h-3 w-6 rounded-sm bg-[#ff9500]" /> Peak
+            <div className="h-3 w-6 rounded-sm bg-[#ff9500]" /> {lang === "bn" ? "শীর্ষ" : "Peak"}
           </div>
         </div>
       </div>

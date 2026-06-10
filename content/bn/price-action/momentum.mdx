@@ -1,41 +1,125 @@
 ---
-title: "প্রাইস অ্যাকশন মোমেন্টাম"
-description: "প্রাইস অ্যাকশন দিয়ে মোমেন্টাম রিডিং মাস্টার করুন — ক্যান্ডেলের আকার, উইক বিশ্লেষণ ও মোমেন্টাম শিফট থেকে মুভের শক্তি পরিমাপ।"
+title: "Price Action-এ Momentum — সম্পূর্ণ গাইড"
+description: "Price Action-এ Momentum Reading আয়ত্ত করুন। Candle Momentum মূল্যায়ন, Impulse vs Correction, Momentum Shift এবং Momentum কীভাবে Trade Direction নির্ধারণ করে শিখুন।"
 level: intermediate
-order: 16
-lastUpdated: "2026-05-12"
+order: 18
+lastUpdated: "2026-06-10"
 ---
 
-## মোমেন্টাম কী?
+## Momentum কী?
 
-মোমেন্টাম হলো প্রাইস মুভমেন্টের **শক্তি ও গতি**। বড় বডি = শক্তিশালী মোমেন্টাম, লম্বা উইক = ক্লান্তি।
+Momentum হলো একটি নির্দিষ্ট Direction-এ Price Movement-এর **গতি ও শক্তি**। Price Action-এ আমরা সরাসরি Candle-এর বৈশিষ্ট্য — Size, Close Position, Wick Ratio এবং Sequence — থেকে Momentum পড়ি, RSI বা MACD-এর মতো Indicator ছাড়াই।
 
----
-
-## ক্যান্ডেল থেকে মোমেন্টাম পড়া
-
-### শক্তিশালী মোমেন্টাম (ট্রেন্ড চলবে সম্ভবত)
-- ছোট/না উইক সহ **বড় বডি** ক্যান্ডেল
-- একই দিকে **পরপর ক্যান্ডেল**
-- **বাড়তে থাকা ক্যান্ডেল সাইজ**
-
-### দুর্বল মোমেন্টাম (রিভার্সাল বা বিরতি সম্ভবত)
-- লম্বা উইক সহ **ছোট বডি**
-- **পর্যায়ক্রমে ক্যান্ডেল** — বুল, বেয়ার, বুল, বেয়ার
-- **কমতে থাকা ক্যান্ডেল সাইজ**
+<Callout type="info" title="Momentum-ই রাজা">
+যে পক্ষের বেশি Momentum সে জেতে। Buyer বড় Bullish Candle তৈরি করছে এবং Seller ছোট Bearish Candle তৈরি করছে মানে Buyer-এর Momentum আছে। সবসময় Momentum-এর Direction-এ Trade করুন।
+</Callout>
 
 ---
 
-## মোমেন্টাম শিফট চিহ্নিত করা
+## Candle থেকে Momentum পড়া
 
-1. **প্রথম লক্ষণ:** বিপরীত দিকে একটি ক্যান্ডেল যা সাম্প্রতিক ট্রেন্ড ক্যান্ডেলগুলোর চেয়ে বড়
-2. **কনফার্ম:** একই বিপরীত দিকে ফলো-থ্রু ক্যান্ডেল
-3. **স্ট্রাকচার:** ট্রেন্ডের বিরুদ্ধে সবচেয়ে সাম্প্রতিক সুইং পয়েন্ট ভাঙা
+### শক্তিশালী Momentum-এর সূচক:
+
+| বৈশিষ্ট্য | Bullish Momentum | Bearish Momentum |
+|-----------|-----------------|-----------------|
+| Candle Body | বড় Green Body | বড় Red Body |
+| Close অবস্থান | High-এর কাছে Close | Low-এর কাছে Close |
+| Upper Wick | ছোট বা নেই | বড় (Rejection) |
+| Lower Wick | বড় (Rejection) | ছোট বা নেই |
+| পরপর | পরপর কয়েকটি Green | পরপর কয়েকটি Red |
+| Body-to-Wick Ratio | Body > Range-এর ৭০% | Body > Range-এর ৭০% |
+
+### দুর্বল Momentum-এর সূচক:
+- ছোট Candle Body (Indecision)
+- উভয় দিকে লম্বা Wick (যুদ্ধ)
+- পর্যায়ক্রমে রঙ বদল (Direction নেই)
+- Doji বা Spinning Top Candle
+- ক্রমহ্রাসমান Candle Size
+
+---
+
+## Impulse vs. Correction
+
+### Impulse (শক্তিশালী Momentum):
+- Full Body-র বড় Candle
+- একদিকে দ্রুত Move
+- Structure Break (BOS) তৈরি করে
+- Fair Value Gap (FVG) তৈরি করে
+- সাধারণত ১-৩ Candle-এ বড় দূরত্ব Cover
+
+### Correction (দুর্বল Momentum):
+- ছোট Candle, প্রায়ই মিশ্র রঙ
+- ধীরে চলে, পাশে বা Trend-এর সামান্য বিরুদ্ধে
+- Structure Break তৈরি করে না
+- পূর্ববর্তী FVG Fill করে
+- ছোট দূরত্ব Cover করতে অনেক Candle লাগে
+
+### মূল অন্তর্দৃষ্টি:
+```
+যদি Impulse Bullish এবং Correction Bearish হয়:
+→ Bullish Trend সুস্থ → LONG Entry খুঁজুন
+
+যদি Impulse Bearish এবং Correction Bullish হয়:
+→ Bearish Trend সুস্থ → SHORT Entry খুঁজুন
+
+যদি Impulse ও Correction শক্তিতে সমান:
+→ Trend দুর্বল হচ্ছে → Reversal-এর জন্য প্রস্তুত হন
+```
+
+---
+
+## Momentum Shift
+
+### Momentum Shift কীভাবে চিহ্নিত করবেন:
+
+1. **Impulse ছোট হচ্ছে** — Trend Direction-এ প্রতিটি Push কম দূরত্ব Cover
+2. **Correction শক্তিশালী হচ্ছে** — Counter-trend Move Impulsive হচ্ছে
+3. **Impulse/Correction সমান** — কোনো পক্ষের সুবিধা নেই
+4. **প্রথম Impulsive Counter-trend Candle** — Trend-এর বিরুদ্ধে শক্তিশালী Candle
+5. **CHOCH Confirmation** — Trend-এর বিরুদ্ধে Structure Break
+
+### Shift Trade করা:
+```
+1. Trend Bullish ছিল (শক্তিশালী Green Impulse, দুর্বল Red Correction)
+2. লক্ষ্য করুন Green Impulse সঙ্কুচিত, Red Correction বাড়ছে
+3. প্রথম বড় Red Engulfing Candle দেখা দেয় (Momentum Shift Signal)
+4. Structure Break (CHOCH) — Shift Confirm করে
+5. এখন Pullback-এ SHORT Entry খুঁজুন
+```
+
+---
+
+## Momentum-based Trading নিয়ম
+
+1. **শুধু Momentum-এর সাথে Trade করুন** — শক্তিশালী পক্ষের বিরুদ্ধে কখনো নয়
+2. **Impulse = Direction** — Impulse Direction-এ Trade করুন
+3. **Correction-এর জন্য অপেক্ষা** — Impulse চলাকালীন Enter করবেন না (Late Entry)
+4. **Correction শেষে Enter করুন** — সেরা R:R
+5. **Momentum Shift হলে Exit করুন** — Momentum Reverse হলে ধরে রাখবেন না
+
+---
+
+## Momentum ও Timeframe
+
+| Timeframe | Momentum কী বলে |
+|-----------|-----------------|
+| Weekly | সামগ্রিক Bias (Bull/Bear Market) |
+| Daily | বর্তমান Directional Control |
+| H4 | Swing-level Momentum |
+| H1 | Intraday Momentum |
+| M15 | Entry-level Momentum |
+
+### Multi-Timeframe Momentum নিয়ম:
+- H4/D1 Momentum-এর Direction-এ Trade করুন (Bias)
+- M15/H1 Momentum Bias-এর সাথে মিললে Enter করুন
+- Lower TF Momentum যখন Higher TF-কে Oppose করে তখন এড়িয়ে চলুন
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [ট্রেন্ড বিশ্লেষণ](/bn/price-action/trend-analysis) — ট্রেন্ড দিক
-- [ক্যান্ডেলস্টিক সাইকোলজি](/bn/price-action/candlestick-psychology) — ক্যান্ডেল অর্থ
-- [এক্সপ্যানশন](/bn/price-action/expansion) — এক্সপ্যানশনে মোমেন্টাম
+- [Market Structure](/bn/price-action/market-structure) — Momentum Structure তৈরি করে
+- [Expansion](/bn/price-action/expansion) — Peak Momentum = Expansion
+- [Compression](/bn/price-action/compression) — Low Momentum = Compression
+- [Reversal Concepts](/bn/price-action/reversal-concepts) — Momentum Shift = Reversal
+- [Trend Analysis](/bn/price-action/trend-analysis) — Momentum Trend Health সংজ্ঞায়িত করে

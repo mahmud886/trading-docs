@@ -1,58 +1,113 @@
 ---
 title: "ICT Market Maker Models"
-description: "Market Maker অ্যালগরিদম কীভাবে প্রাইস ডেলিভার করে বুঝুন। MMBM ও MMSM — সম্পূর্ণ প্রাইস ডেলিভারি ফ্রেমওয়ার্ক।"
+description: "Market Maker Algorithm কীভাবে Price Deliver করে বুঝুন। Market Maker Buy Model (MMBM) এবং Market Maker Sell Model (MMSM) — সম্পূর্ণ Price Delivery Framework শিখুন।"
 level: advanced
 order: 18
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-09"
 ---
 
 ## Market Maker Models কী?
 
-Market Maker Models বর্ণনা করে **ইন্টারব্যাংক অ্যালগরিদম কীভাবে সম্পূর্ণ প্রাইস ডেলিভারি সাইকেল চালায়**। এগুলো accumulation থেকে distribution পর্যন্ত পুরো প্রক্রিয়ার রোডম্যাপ দেয়।
+Market Maker Models Interbank Algorithm দ্বারা **Price Delivery এর সম্পূর্ণ Cycle** বর্ণনা করে। এটি Map করে কীভাবে Price Accumulation থেকে Manipulation হয়ে Distribution এ যায় — আপনাকে একটি Roadmap দেয় যে আপনি Cycle এর কোথায় আছেন এবং পরবর্তীতে কী আসবে।
+
+<Callout type="info" title="Algorithm এর Pattern">
+Algorithm বারবার একই Pattern করে: এক দিক Sweep, অন্য দিকে Displace, Retrace, তারপর Expand। Market Maker Models আপনাকে চিহ্নিত করতে সাহায্য করে কোন Stage এ আছেন।
+</Callout>
 
 ---
 
 ## Market Maker Buy Model (MMBM)
 
-বুলিশ সাইকেলের ব্লুপ্রিন্ট:
+Bullish Cycle এর Blueprint:
 
-### পর্যায়সমূহ
-1. **ওরিজিনাল কনসলিডেশন** — নিচে রেঞ্জিং (accumulation)
-2. **স্মার্ট মানি রিভার্সাল** — SSL সুইপ + MSS (manipulation)
-3. **প্রথম ডিসপ্লেসমেন্ট লেগ** — OB ও FVG তৈরি
-4. **রি-অ্যাকুমুলেশন** — OB/FVG তে পুলব্যাক (**এটাই আপনার এন্ট্রি**)
-5. **দ্বিতীয় লেগ** — BSL টার্গেটে এক্সপ্যানশন
-6. **Distribution** — প্রিমিয়ামে পৌঁছে, টপিং শুরু
+### Stages
+1. **Original Consolidation** — Price Low এ Range করে (Accumulation)
+2. **Smart Money Reversal** — SSL Sweep + MSS (Manipulation)
+3. **First Displacement Leg Up** — OB ও FVG তৈরি করে
+4. **Re-Accumulation** — OB/FVG তে Pullback (এটিই আপনার Entry)
+5. **Second Leg Up** — BSL Target এ Expansion
+6. **Distribution** — Price Premium এ পৌঁছে, Topping Out শুরু
+
+### Entry Point
+আদর্শ Entry **Stage 4 (Re-Accumulation)** এ:
+- Price Stage 3 এর FVG/OB তে Pull Back করে
+- এই Pullback প্রায়ই OTE (62-79% Retracement) এ পৌঁছে
+- Stage 2 Manipulation Low এর নিচে Stop দিয়ে Entry
 
 ---
 
 ## Market Maker Sell Model (MMSM)
 
-বেয়ারিশ সাইকেলের ব্লুপ্রিন্ট:
+Bearish Cycle এর Blueprint:
 
-### পর্যায়সমূহ
-1. **ওরিজিনাল কনসলিডেশন** — উপরে রেঞ্জিং (distribution)
-2. **স্মার্ট মানি রিভার্সাল** — BSL সুইপ + MSS
-3. **প্রথম ডিসপ্লেসমেন্ট লেগ** — বেয়ারিশ OB ও FVG তৈরি
-4. **রি-ডিস্ট্রিবিউশন** — বেয়ারিশ OB/FVG তে পুলব্যাক (**এন্ট্রি**)
-5. **দ্বিতীয় লেগ** — SSL টার্গেটে এক্সপ্যানশন
-6. **Accumulation** — ডিসকাউন্টে পৌঁছে, বটমিং শুরু
+### Stages
+1. **Original Consolidation** — Price High এ Range করে (Distribution)
+2. **Smart Money Reversal** — BSL Sweep + MSS (Manipulation)
+3. **First Displacement Leg Down** — Bearish OB ও FVG তৈরি করে
+4. **Re-Distribution** — Bearish OB/FVG তে Pullback (Entry)
+5. **Second Leg Down** — SSL Target এ Expansion
+6. **Accumulation** — Price Discount এ পৌঁছে, Bottoming শুরু
+
+### Entry Point
+**Stage 4 (Re-Distribution)** এ Entry:
+- Price Stage 3 এর Bearish FVG/OB তে Retrace করে
+- প্রায়ই OTE Zone এ পৌঁছে
+- Stage 2 Manipulation High এর উপরে Stop
 
 ---
 
-## বাস্তব উদাহরণ: MMBM — EUR/USD (ডেইলি)
-- **পর্যায় ১:** 1.0800-1.0830 কনসলিডেশন (৫ দিন)
-- **পর্যায় ২:** SSL সুইপ 1.0785 এ, বুলিশ MSS
-- **পর্যায় ৩:** 1.0880 পর্যন্ত ডিসপ্লেসমেন্ট, FVG 1.0840-1.0855
-- **পর্যায় ৪:** 1.0848 এ পুলব্যাক (FVG CE + OTE) — **বাই এন্ট্রি**
-- **পর্যায় ৫:** 1.0970 পর্যন্ত এক্সপ্যানশন
-- **R:R:** 1:8+
+## বাস্তব উদাহরণ
+
+### উদাহরণ ১: MMBM EUR/USD (Daily)
+- **Stage 1:** 1.0800-1.0830 এ ৫ দিন Consolidation
+- **Stage 2:** SSL Sweep 1.0785 এ, তারপর Bullish MSS
+- **Stage 3:** 1.0880 পর্যন্ত Displacement, FVG 1.0840-1.0855 এ তৈরি
+- **Stage 4:** 1.0848 এ Pullback (FVG CE + OTE Zone) — **ENTRY BUY**
+- **Stage 5:** 1.0970 পর্যন্ত Expansion
+- **Entry থেকে R:R:** 1:8+
+
+### উদাহরণ ২: MMSM NAS100 (4H)
+- **Stage 1:** 18,000-18,100 এ Consolidation
+- **Stage 2:** BSL Sweep 18,150 এ, Bearish MSS
+- **Stage 3:** 17,900 পর্যন্ত Displacement, OB তৈরি
+- **Stage 4:** 18,020 এ Retracement (Bearish OB) — **ENTRY SELL**
+- **Stage 5:** 17,500 পর্যন্ত Expansion
+- **R:R:** 1:7
+
+---
+
+## Model এ আপনার Position চিহ্নিত করা
+
+| যদি Price...                      | আপনি Stage...       | Action                |
+|-----------------------------------|---------------------|-----------------------|
+| Support এ Range করছে              | 1 (Consolidation)   | Sweep এর জন্য অপেক্ষা |
+| Low Sweep করে উপরে Displace       | 2-3 (Reversal)      | Buy এর জন্য প্রস্তুত  |
+| Up Move এর পর FVG/OB তে Pull Back | 4 (Re-Accumulation) | BUY ENTRY             |
+| High এর দিকে Expand করছে          | 5 (Expansion)       | Hold / Partial নিন    |
+| Resistance এ Range করছে           | 6 (Distribution)    | MMSM এর জন্য প্রস্তুত |
+
+---
+
+## সাধারণ ভুল
+
+<Callout type="warning" title="Market Maker Model এ ভুল">
+
+**❌ Stage 1 এ Entry** — Consolidation দিন/সপ্তাহ চলতে পারে। Sweep এর জন্য অপেক্ষা করুন
+
+**❌ Stage 3 Chase করা** — প্রথম Displacement Entry নয়। Stage 4 Pullback এর জন্য অপেক্ষা করুন
+
+**❌ ভুল Timeframe** — Model Structure এর জন্য Daily/4H ব্যবহার করুন, Execution এর জন্য LTF
+
+**❌ ভুলে যাওয়া এটি Cycle** — MMBM শেষ → MMSM শুরু। এটি Continuous
+
+</Callout>
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [AMD](/bn/ict/amd) — Market Maker Models হলো বিস্তৃত AMD
-- [PD Arrays](/bn/ict/pd-arrays) — মডেলের মধ্যে এন্ট্রি পয়েন্ট
-- [OTE](/bn/ict/ote) — পর্যায় ৪ পুলব্যাক OTE তে পৌঁছায়
-- [লিকুইডিটি](/bn/ict/liquidity) — প্রতি পর্যায়ে সুইপ টার্গেট
+- [AMD](/bn/ict/amd) — Market Maker Models হলো Expanded AMD
+- [PD Arrays](/bn/ict/pd-arrays) — Model এর মধ্যে Entry Vehicle
+- [OTE](/bn/ict/ote) — Stage 4 Pullback প্রায়ই OTE তে পৌঁছে
+- [Dealing Range](/bn/ict/dealing-range) — Model Stages এর Context
+- [Liquidity](/bn/ict/liquidity) — প্রতিটি Stage এ Sweep Target

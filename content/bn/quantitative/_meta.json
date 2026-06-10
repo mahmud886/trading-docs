@@ -1,0 +1,11 @@
+{
+  "introduction": "Introduction to Quantitative Trading",
+  "expectancy-formula": "Expectancy & Edge Calculation",
+  "kelly-criterion": "Kelly Criterion & Fractional Kelly",
+  "mean-reversion": "Mean Reversion Models",
+  "momentum-factors": "Momentum Factor Strategies",
+  "backtesting-methodology": "Statistical Backtesting Methodology",
+  "monte-carlo": "Monte Carlo Simulations",
+  "equity-curve-management": "Equity Curve Management",
+  "walk-forward": "Walk-Forward Optimization"
+}

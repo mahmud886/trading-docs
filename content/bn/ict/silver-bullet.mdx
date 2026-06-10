@@ -1,80 +1,130 @@
 ---
 title: "ICT Silver Bullet"
-description: "ICT Silver Bullet মাস্টার করুন — সময়-নির্দিষ্ট FVG এন্ট্রি মডেল। 10AM, 2PM, এবং 3AM Silver Bullet সেটআপ শিখুন।"
+description: "ICT Silver Bullet Master করুন — FVG Entry এর জন্য Precise Window ব্যবহার করা Time-Specific Execution Model। 10AM, 2PM এবং 3AM Silver Bullet Setup শিখুন।"
 level: advanced
 order: 11
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-06-09"
 ---
 
 ## Silver Bullet কী?
 
-Silver Bullet হলো একটি **সময়-নির্দিষ্ট এক্সিকিউশন মডেল** যা সংকীর্ণ সময় উইন্ডোর মধ্যে FVG এন্ট্রি চিহ্নিত করে। অ্যালগরিদম এই নির্দিষ্ট সময়ে ডিসপ্লেসমেন্ট তৈরি করে, ট্রেডযোগ্য FVG রেখে যায়।
+Silver Bullet হলো একটি **Time-Specific Execution Model** যা সংকীর্ণ Time Window এর মধ্যে FVG Entry চিহ্নিত করে। ICT শেখায় যে Algorithm এই নির্দিষ্ট ঘণ্টাগুলোতে Displacement তৈরি করে, পেছনে Tradeable FVG রেখে যায়।
+
+<Callout type="info" title="Precision Timing">
+Silver Bullet আপনার Screen Time প্রতি Session এ মাত্র ১ ঘণ্টায় কমিয়ে দেয়। আপনাকে শুধু নির্দিষ্ট Window এ দেখতে হবে এবং যে FVG তৈরি হয় সেটি নিতে হবে।
+</Callout>
 
 ---
 
-## তিনটি Silver Bullet উইন্ডো
+## তিনটি Silver Bullet Window
 
-### ১. লন্ডন Silver Bullet
-- **BD সময়:** দুপুর ১:০০ - ২:০০
-- **সেরা:** EUR/USD, GBP/USD, Gold
+### 1. London Silver Bullet
+| বিবরণ       | তথ্য                              |
+|-------------|-----------------------------------|
+| **EST**     | 3:00 AM - 4:00 AM                 |
+| **BD সময়** | দুপুর 1:00 - 2:00                 |
+| **Context** | London Session Early Manipulation |
+| **সেরা**    | EUR/USD, GBP/USD, Gold            |
 
-### ২. NY AM Silver Bullet
-- **BD সময়:** রাত ৮:০০ - ৯:০০
-- **সেরা:** সব মেজর পেয়ার, ইনডিসেস, Gold
+### 2. NY AM Silver Bullet
+| বিবরণ       | তথ্য                   |
+|-------------|------------------------|
+| **EST**     | 10:00 AM - 11:00 AM    |
+| **BD সময়** | রাত 8:00 - 9:00        |
+| **Context** | Post-News Displacement |
+| **সেরা**    | সব Pair, Indices, Gold |
 
-### ৩. NY PM Silver Bullet
-- **BD সময়:** রাত ১২:০০ - ১:০০ AM
-- **সেরা:** USD পেয়ার, ইনডিসেস
+### 3. NY PM Silver Bullet
+| বিবরণ       | তথ্য                |
+|-------------|---------------------|
+| **EST**     | 2:00 PM - 3:00 PM   |
+| **BD সময়** | রাত 12:00 - 1:00 AM |
+| **Context** | PM Session Momentum |
+| **সেরা**    | USD Pairs, Indices  |
 
 ---
 
-## Silver Bullet ট্রেডিং পদ্ধতি
+## Silver Bullet কীভাবে Trade করবেন
 
-1. **ডেইলি বায়াস নির্ধারণ করুন** — দিক নিশ্চিত হতে হবে
-2. **Silver Bullet উইন্ডো খোলার অপেক্ষা করুন**
-3. **ডিসপ্লেসমেন্ট খুঁজুন** — উইন্ডোতে শক্তিশালী ক্যান্ডেল FVG তৈরি করবে
-4. **FVG মার্ক করুন**
-5. **এন্ট্রি** — FVG তে লিমিট অর্ডার (CE তে প্রিসিশন)
-6. **SL** — ডিসপ্লেসমেন্ট সুইং পয়েন্টের বাইরে
-7. **TP** — বায়াসের দিকে পরবর্তী লিকুইডিটি পুল
+### ধাপে ধাপে Process
+1. **Daily Bias নির্ধারণ করুন** — প্রথমে Directional Conviction থাকতে হবে
+2. **Silver Bullet Window** Open হওয়ার জন্য অপেক্ষা করুন
+3. **Displacement খুঁজুন** — Window এর মধ্যে FVG তৈরি করা শক্তিশালী Candle
+4. **FVG Mark করুন** Displacement এর সময় তৈরি হওয়া
+5. **Entry** — FVG তে Limit Order (Precision এর জন্য CE)
+6. **Stop Loss** — Displacement তৈরিকারী Swing Point এর বাইরে
+7. **Target** — Bias এর Direction এ পরবর্তী Liquidity Pool
 
-### নিয়ম
-- FVG অবশ্যই Silver Bullet সময়ের মধ্যে তৈরি হতে হবে
-- প্রতি সেশনে শুধু একটি SB নিন (প্রথম ভ্যালিডটি)
-- উইন্ডোতে FVG না হলে → ট্রেড নেই
+### Rules
+- FVG অবশ্যই Silver Bullet Time Window এর মধ্যে তৈরি হতে হবে
+- Displacement অবশ্যই আপনার Daily Bias এর Direction এ হতে হবে
+- প্রতি Session এ শুধু একটি Silver Bullet নিন (প্রথম Valid টি)
+- Window এ কোনো FVG না তৈরি হলে → Trade নেই (বসে থাকুন)
 
 ---
 
 ## বাস্তব উদাহরণ
 
-### NY AM Silver Bullet — EUR/USD বাই
-- **ডেইলি বায়াস:** বুলিশ
-- **রাত ৮:১৫ BD:** 5M এ শক্তিশালী বুলিশ ডিসপ্লেসমেন্ট
-- **FVG:** 1.0882-1.0890 (৮:০০-৯:০০ উইন্ডোতে)
-- **এন্ট্রি:** 1.0886 তে বাই (CE)
-- **SL:** 1.0875 | **TP:** 1.0930
+### উদাহরণ ১: NY AM Silver Bullet — EUR/USD Buy
+- **Daily Bias:** Bullish (আগের দিন Bullish PO3 Candle)
+- **রাত 8:15 BD:** 5M এ শক্তিশালী Bullish Displacement Candle
+- **FVG Created:** 1.0882 - 1.0890 (রাত 8:00-9:00 Window এর মধ্যে)
+- **Entry:** 1.0886 তে Buy Limit (CE)
+- **Stop:** 1.0875 (Displacement Swing Low এর নিচে)
+- **Target:** 1.0930 (BSL)
 - **R:R:** 1:4
+
+### উদাহরণ ২: London Silver Bullet — Gold Sell
+- **Daily Bias:** Bearish (Price Premium এ, SSL Draw 2,020)
+- **দুপুর 1:20 BD:** London Window এ 5M Bearish Displacement
+- **FVG Created:** 2,044 - 2,038
+- **Entry:** 2,041 তে Sell Limit (CE)
+- **Stop:** 2,048
+- **Target:** 2,020
+- **R:R:** 1:3
+
+---
+
+## Silver Bullet কেন কাজ করে
+
+1. **Algorithmic Timing** — IPDA পূর্বানুমানযোগ্য সময়ে Move তৈরি করে
+2. **Volume Confluence** — এই Window Institutional Order Flow এর সাথে Align করে
+3. **Reduced Noise** — সংকীর্ণ Time Window = কম False Signal
+4. **Mechanical Approach** — স্পষ্ট Rule Emotional Decision কমায়
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="Silver Bullet ভুল">
+<Callout type="warning" title="Silver Bullet এ ভুল">
 
-**❌ বায়াস ছাড়া** — বায়াস ছাড়া Silver Bullet = র‍্যান্ডম FVG ট্রেড
+**❌ Daily Bias ছাড়া** — Bias ছাড়া Silver Bullet = Random FVG Trading
 
-**❌ উইন্ডোর বাইরে FVG** — টাইমিং-ই এজ। ভুল সময়ের FVG Silver Bullet নয়
+**❌ Window এর বাইরে FVG Trade করা** — Timing-ই Edge। 9:30 AM EST এ FVG Silver Bullet নয়
 
-**❌ একাধিক SB নেওয়া** — প্রতি সেশনে সর্বোচ্চ একটি
+**❌ একাধিক Silver Bullet নেওয়া** — প্রতি Session এ সর্বোচ্চ একটি
 
-**❌ ট্রেড জোর করা** — FVG না থাকলে No Trade মেনে নিন
+**❌ Trade Force করা** — Window এ FVG না তৈরি হলে, No Trade গ্রহণ করুন
+
+**❌ Displacement Quality উপেক্ষা করা** — FVG অবশ্যই শক্তিশালী Displacement থেকে তৈরি হতে হবে, ধীর Drift নয়
 
 </Callout>
 
 ---
 
+## সারসংক্ষেপ
+
+| Window        | BD সময়             | সেরা Pair      | Typical R:R |
+|---------------|---------------------|----------------|-------------|
+| **London SB** | দুপুর 1:00 - 2:00   | EUR, GBP, Gold | 1:3-5       |
+| **NY AM SB**  | রাত 8:00 - 9:00     | সব Major       | 1:3-5       |
+| **NY PM SB**  | রাত 12:00 - 1:00 AM | USD, Indices   | 1:2-4       |
+
+---
+
 ## সম্পর্কিত বিষয়
 
-- [FVG](/bn/ict/fvg) — Silver Bullet এর এন্ট্রি পয়েন্ট
-- [Daily Bias](/bn/ict/daily-bias) — SB এর আগে বায়াস দরকার
-- [ICT Kill Zones](/bn/ict/ict-kill-zones) — SB উইন্ডো KZ এর মধ্যে
+- [FVG](/bn/ict/fvg) — FVG হলো Silver Bullet Entry
+- [Daily Bias](/bn/ict/daily-bias) — Silver Bullet এর আগে প্রয়োজন
+- [ICT Kill Zones](/bn/ict/ict-kill-zones) — Kill Zone এর মধ্যে Silver Bullet Window
+- [AMD](/bn/ict/amd) — Displacement Context বোঝা

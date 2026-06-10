@@ -1,102 +1,82 @@
 ---
-title: "SMC Advanced Execution Models"
-description: "Master advanced SMC execution models — complete trading systems combining all SMC concepts into repeatable, high-probability setups."
+title: "Advanced SMC Execution Models — Complete Guide"
+description: "Master advanced execution in SMC: Risk Entry, Confirmation Entry, Refined Entry with optimal R:R and when to use each."
 level: advanced
-order: 26
-lastUpdated: "2026-05-12"
+order: 17
+lastUpdated: "2026-06-10"
 ---
 
-## What are Execution Models?
+## SMC Execution Models
 
-Execution models are **complete trading systems** that combine multiple SMC concepts into a step-by-step process. Instead of randomly applying concepts, you follow a specific model for consistent results.
-
----
-
-## Model 1: The London Sweep Model
-
-### Setup Requirements
-1. Clear HTF bias (Daily/4H direction)
-2. Asian session range marked
-3. London Kill Zone timing (12:00-3:00 PM BD)
-
-### Execution Steps
-1. Wait for London to sweep Asian H/L
-2. Confirm CHOCH on 15M after sweep
-3. Identify OB/FVG created by the displacement
-4. Enter at the OB/FVG
-5. SL beyond the sweep extreme
-6. TP at opposing liquidity pool
-
-### Win Rate: 55-65% | Average R:R: 1:3-5
+Execution models determine HOW you enter a trade once you've identified your POI. The model you choose affects your R:R, win rate, and whether you catch the move.
 
 ---
 
-## Model 2: The HTF-LTF Alignment Model
+## The Three Models
 
-### Setup Requirements
-1. 4H OB in premium (sells) or discount (buys)
-2. Price reaches the 4H OB
-3. LTF (15M) shows CHOCH at the OB level
+### 1. Risk Entry (Limit Order at POI)
+```
+- Place limit order directly at OB/FVG
+- No confirmation needed
+- Best R:R (1:4 to 1:8)
+- Win rate: ~40-50%
+- Use when: A+ setup, maximum confluence
+- Risk: May get swept before reversal
+```
 
-### Execution Steps
-1. Mark 4H OBs at premium/discount extremes
-2. Set alerts at these OBs
-3. When price reaches 4H OB, drop to 15M
-4. Wait for 15M CHOCH at the OB
-5. Enter at the 15M OB/FVG within the 4H OB
-6. SL beyond the 4H OB | TP at 4H liquidity target
+### 2. Confirmation Entry (LTF CHOCH)
+```
+- Wait for LTF structural shift at POI
+- Enter after CHOCH confirmation
+- Moderate R:R (1:2 to 1:4)
+- Win rate: ~55-65%
+- Use when: Standard setups, moderate confidence
+- Risk: May miss fast moves, wider stop
+```
 
-### Win Rate: 60-70% | Average R:R: 1:4-8
-
----
-
-## Model 3: The POI Stacking Model
-
-### Concept
-Stack multiple Points of Interest (POI) for maximum confluence:
-- 4H OB + 15M FVG + OTE zone = extremely high probability
-
-### Execution
-1. Identify 4H OB at discount/premium
-2. Within that OB, find 15M FVG
-3. Check if this zone aligns with OTE (62-79% Fib)
-4. Enter when ALL three align
-5. Tightest stop possible (behind the FVG)
-
-### Win Rate: 65-75% | Average R:R: 1:5-10
-
----
-
-## Building Your Own Model
-
-### Requirements
-1. **Define the bias method** — How do you determine direction?
-2. **Define the entry trigger** — What confirms your entry?
-3. **Define risk** — Where's the stop? What R:R do you need?
-4. **Backtest 100 trades** — Minimum sample size for statistical validity
-5. **Track results** — Journal everything, adjust as needed
+### 3. Refined Entry (FVG within CHOCH)
+```
+- Wait for LTF CHOCH, then enter at FVG/OB
+  created BY the CHOCH
+- Best of both worlds
+- R:R: 1:3 to 1:6
+- Win rate: ~50-60%
+- Use when: You want precision + confirmation
+- Requires patience and skill
+```
 
 ---
 
-## Common Mistakes
+## When to Use Each
 
-<Callout type="warning" title="Execution Errors">
+| Situation | Model | Reason |
+|-----------|-------|--------|
+| Perfect A+ confluence | Risk Entry | Maximum R:R, trust zone |
+| Good setup, want safety | Confirmation | Higher win rate |
+| Want precision | Refined | Best balance |
+| Counter-trend | Confirmation/Refined | Need extra proof |
+| Scalping | Risk/Confirmation | Speed matters |
 
-**❌ Trading without a model** — "I see a setup" is not a model. Have specific rules
+---
 
-**❌ Model hopping** — Give each model 3 months before evaluating
+## Stacking Models
 
-**❌ No backtesting** — Backtest in replay mode with time, not hindsight analysis
+```
+Advanced: Use multiple entries on same setup
 
-**❌ Too many confluences** — 3-4 factors max. More = zero trades
+1st Entry: Risk Entry (small size) at OB
+2nd Entry: Confirmation (add size) after CHOCH
+3rd Entry: Refined (add more) at FVG retest
 
-</Callout>
+Result: Average entry price in premium zone
+with progressively confirmed bias
+```
 
 ---
 
 ## Related Topics
 
-- [Entry Confirmation](/en/smc/entry-confirmation) — The confirmation checklist
-- [Risk Models](/en/smc/risk-models) — Managing trade risk
-- [Kill Zones](/en/smc/kill-zones) — When to execute
-- [Wyckoff Relation](/en/smc/wyckoff-relation) — Understanding the full cycle
+- [Entry Confirmation](/en/smc/entry-confirmation) — Confirmation techniques
+- [Risk Models](/en/smc/risk-models) — Sizing per model
+- [Order Blocks](/en/smc/order-blocks) — Entry zones
+- [Fair Value Gap](/en/smc/fair-value-gap) — Refined entries

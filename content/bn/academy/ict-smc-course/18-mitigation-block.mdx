@@ -1,0 +1,120 @@
+---
+title: "Mitigation Block"
+description: "Understand Mitigation Blocks — Order Blocks that were partially filled and return for remaining institutional orders. Learn the difference between Mitigation and Breaker Blocks."
+order: 18
+level: intermediate
+lastUpdated: "2026-06-09"
+---
+
+
+### Definition
+
+Mitigation Block হলো একটি **Order Block যা আগে Test হয়েছে (আংশিকভাবে Fill) এবং সম্পূর্ণ Hold করতে ব্যর্থ হয়েছে, কিন্তু Remaining Institutional Order Fill করতে Price ফিরে আসে**। Breaker Block (যেখানে OB সম্পূর্ণ Break Through হয়) এর বিপরীতে, Mitigation Block এমন OB যাতে "Dip" হয়েছে সম্পূর্ণ Fail না করে, Unfilled Order রেখে যা Algorithm ফিরে Fill করবে।
+
+**মূল Concept:** Institution খুব কমই OB এর প্রথম Touch এ 100% Intended Order Fill করে। প্রথম Reaction এর পর Price একই OB Zone এ ফিরলে, এটি "Mitigating" — প্রথমবার সম্পন্ন না হওয়া Remaining Order Fill করছে।
+
+- **Bullish Mitigation Block:** আগে Test হওয়া Bullish OB যেখানে Price Remaining Buy Order Fill করতে ফেরে
+- **Bearish Mitigation Block:** আগে Test হওয়া Bearish OB যেখানে Price Remaining Sell Order Fill করতে ফেরে
+
+### Why It Matters
+
+- Mitigation Block প্রথম OB Touch মিস করলে SECOND CHANCE Entry দেয়
+- এটি Institutional দৃষ্টিকোণ থেকে ব্যাখ্যা করে কেন "ভাঙা Support Resistance হয়ে যায়"
+- Fresh OB এর চেয়ে সামান্য কম Probability কিন্তু এখনো Valid Institutional Entry
+- Mitigation বুঝলে "ব্যবহৃত" OB Dismiss করবেন না যার এখনো মূল্য আছে
+- এগুলো দেখায় Institution এর কোথায় UNFILLED Order বাকি আছে
+
+### How It Works
+
+**Bullish Mitigation Block প্রক্রিয়া:**
+1. Bullish OB তৈরি হয় (Up Displacement এর আগে শেষ Bearish Candle)
+2. OB তৈরি হওয়ার পর Price ওঠে (প্রথম Move Away)
+3. Price OB তে ফেরে → আংশিকভাবে Order Fill → Bounce (প্রথম Reaction)
+4. Price ওঠে কিন্তু পূর্ণ Target এ পৌঁছায় না
+5. Price আবার OB Zone এ ফেরে → এটি Mitigation Touch
+6. Remaining Order Fill → Price এবার আরো আক্রমণাত্মকভাবে Move করে
+7. OB এর এই দ্বিতীয় (বা তৃতীয়) Touch = Mitigation Block Entry
+
+**Bearish Mitigation Block প্রক্রিয়া:**
+1. Bearish OB তৈরি হয় (Down Displacement এর আগে শেষ Bullish Candle)
+2. Price নামে → OB তে ফেরে → প্রথম Reaction (Partial Fill)
+3. Price আবার নামে কিন্তু পূর্ণ Target এ পৌঁছায় না
+4. Price আবার OB Zone এ ফেরে → Mitigation
+5. Remaining Sell Order Fill → পূর্ণ Distribution Move অনুসরণ করে
+
+**Mitigation vs অন্য Concept:**
+| Concept | বর্ণনা | মূল পার্থক্য |
+|---------|--------|-------------|
+| **Fresh OB** | তৈরির পর কখনো Touch হয়নি | সর্বোচ্চ Probability |
+| **Mitigation Block** | Touch হয়েছে কিন্তু Break Through হয়নি | Second-Chance Entry |
+| **Breaker Block** | সম্পূর্ণ Break Through, Role Flip | Reversal Trade এ ব্যবহার |
+
+### Institutional Logic
+
+**Mitigation কেন ঘটে:**
+
+1. **Partial Fill:** প্রথম Touch হয়তো মাত্র 30-50% Intended Order Fill করে (Market Depth যথেষ্ট ছিল না)
+2. **Position Sizing:** Institution সময় ধরে Position তৈরি করে, একবারে না
+3. **Risk Management:** তারা আগে ছোট Fill দিয়ে Level Test করে, তারপর Confirmation এ আরো Commit করে
+4. **Algorithmic Design:** IPDA Program করা Unfilled Order Zone এ ফেরত আসতে
+5. **Break-Even Trader:** OB তে Enter করা Trader যারা এখন Break-Even এ, দ্বিতীয় Touch এ EXIT করবে, Fresh Liquidity দেবে
+
+**Mitigation Block এ Institutional Order Lifecycle:**
+- প্রথম Visit: 40% Fill → Price Move → ফেরে
+- দ্বিতীয় Visit (Mitigation): Remaining 60% Fill → পূর্ণ Move শুরু
+- Mitigation Touch প্রায়ই শক্তিশালী Move দেয় কারণ বেশি Order Fill হয়
+
+### Trading Application
+
+**Mitigation Block চিহ্নিতকরণ:**
+1. একটি OB খুঁজুন যা একবার Touch হয়েছে (Price OB তে গিয়ে Bounce করেছে)
+2. Verify করুন প্রথম Touch OB সম্পূর্ণ Break করেনি (Price Close Through করেনি)
+3. নোট: প্রথম Touch এর পর, Price Move করেছে কিন্তু পূর্ণ Target এ পৌঁছায়নি → আরো Order বাকি আছে ইঙ্গিত
+4. Price আবার OB Zone এ ফিরলে → এটি আপনার Mitigation Block Entry
+
+**Mitigation Block এ Entry:**
+1. মূল OB Zone Mark করুন
+2. প্রথম Touch + Reaction এর জন্য অপেক্ষা করুন (Partial Fill)
+3. Price OB Zone এ ফিরে আসার অপেক্ষা করুন (দ্বিতীয় Visit)
+4. দ্বিতীয় Touch এ OB Zone এ Entry:
+   - Entry: OB Body বা Midpoint এ
+   - Stop Loss: OB Extreme এর নিচে/উপরে (Fresh OB এর মতোই)
+   - Target: Liquidity Pool পর্যন্ত পূর্ণ Extension
+
+**Mitigation Block Entry এর Quality Factor:**
+- HTF Alignment (Trend এর সাথে হতে হবে)
+- Kill Zone Timing (KZ এ দ্বিতীয় Touch = ভালো)
+- Mitigation Zone এর মধ্যে FVG = অতিরিক্ত Confluence
+- Mitigation Zone এর বাইরে স্পষ্ট Liquidity Target
+
+### Common Mistakes
+
+- ❌ **OB তে তৃতীয় বা চতুর্থ Touch এ Trade করা** — Mitigation সাধারণত দ্বিতীয় Touch। তৃতীয়+ = OB শেষ
+- ❌ **Mitigation আর Breaker গুলিয়ে ফেলা** — Price OB Close Through করলে = Breaker। শুধু Wick In করলে = Mitigation
+- ❌ **একই Reaction Strength আশা করা** — Mitigation Touch এ Fresh OB এর চেয়ে দুর্বল Initial Reaction হতে পারে
+- ❌ **HTF Context ছাড়া** — Trend Alignment ছাড়া Mitigation অনির্ভরযোগ্য
+- ❌ **Return এর কারণ উপেক্ষা করা** — Price Mitigate করতে ফেরে কারণ UNFILLED Order আছে। প্রথমবার সম্পূর্ণ Fill হলে, ফিরবে না
+
+### Advanced Notes
+
+- **Mitigation + FVG** — Mitigation Zone এ FVG থাকলে, Precision এর জন্য FVG CE তে Entry
+- **Visit এর মধ্যে সময়** — প্রথম ও দ্বিতীয় Visit এর মধ্যে বেশি সময় = বেশি নির্ভরযোগ্য (Order অপেক্ষায় ছিল)
+- **OTE Zone এ Mitigation** — Mitigation Block OTE (62-79%) এর সাথে Align করলে = উন্নত Probability
+- **Mitigation Failure** — দ্বিতীয় Touch OB Break Through করলে → Breaker Block হয়ে যায়
+- **HTF Mitigation → LTF Entry** — 4H OB Mitigate হচ্ছে? এর মধ্যে Precise Entry এর জন্য 15M/5M ব্যবহার করুন
+- **Mitigation এর পর** — সম্পূর্ণ Mitigate হলে, OB শেষ। আর Trade করবেন না
+
+### Example
+
+**GBP/USD — Bullish Mitigation Block Trade:**
+
+1. **Original OB:** 4H Bullish OB 1.2650-1.2670 এ (Up Displacement দ্বারা তৈরি)
+2. **প্রথম Touch:** Price 1.2660 তে ফেরে → 1.2720 পর্যন্ত Bounce (Partial Fill)
+3. **অসম্পূর্ণ Move:** Price শুধু 1.2720 পৌঁছে, 1.2780 এ BSL Target করতে ব্যর্থ
+4. **Mitigation এর জন্য ফিরে আসা:** পরদিন, Price 1.2655 তে ফেরে (আবার OB এর ভেতরে)
+5. **এটি Mitigation Block Entry:**
+   - Entry: 1.2658 তে Buy
+   - Stop Loss: 1.2645 (OB Low এর নিচে)
+   - Target: 1.2780 (BSL — এবার পূর্ণ Target)
+   - R:R: 1:9.4, +122 Pips
+6. **Result:** Mitigation Touch এর পর, Price 1.2790 পর্যন্ত Drive → পূর্ণ Target অর্জিত

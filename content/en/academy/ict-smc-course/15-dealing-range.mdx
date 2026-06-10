@@ -1,0 +1,113 @@
+---
+title: "Dealing Range"
+description: "Master the Dealing Range concept — the price range between two opposing Liquidity pools where institutional price delivery occurs. Learn to identify and trade within dealing ranges."
+order: 15
+level: intermediate
+lastUpdated: "2026-06-09"
+---
+
+
+### Definition
+
+A Dealing Range is the **price range between the most recent significant Swing High and Swing Low** that defines the current "playing field" for institutional price delivery. It establishes the boundaries within which the IPDA (Interbank Price Delivery Algorithm) operates, seeking Internal Liquidity before targeting External Liquidity.
+
+The Dealing Range gives context to EVERY trade by defining:
+- WHERE Premium and Discount zones are (50% divides the range)
+- WHAT Liquidity exists inside (Internal) vs. outside (External)
+- Whether price should be bought or sold at its current position
+- The TARGETS for both bulls and bears
+
+### Why It Matters
+
+- Without a Dealing Range, you cannot determine Premium/Discount accurately
+- It tells you the SEQUENCE of Liquidity that will be taken (Internal → External)
+- It identifies the BOUNDARIES that contain current price action
+- When a Dealing Range is broken (External Liquidity taken), a NEW range forms
+- Every professional ICT trade starts with identifying the current Dealing Range
+
+### How It Works
+
+**Identifying a Dealing Range:**
+1. Find the most recent significant Swing High (must have BSL above — stops resting)
+2. Find the most recent significant Swing Low (must have SSL below — stops resting)
+3. The range between = Your Dealing Range
+4. Mark 50% (Equilibrium) — this is your Premium/Discount divider
+5. Mark Internal Liquidity (minor swings within the range)
+6. Mark External Liquidity (the Swing High and Low themselves)
+
+**Internal vs External Liquidity within a Dealing Range:**
+| Type | Definition | Order of targeting |
+|------|-----------|-------------------|
+| **Internal Liquidity** | Minor swing points WITHIN the range | Taken FIRST |
+| **External Liquidity** | The range boundaries (Swing H/L) | Taken AFTER internal is cleared |
+
+**Dealing Range Lifecycle:**
+1. **Formation** — Swing High and Low establish the range
+2. **Internal Raid** — Price sweeps minor Liquidity within the range
+3. **External Expansion** — After internal is exhausted, price breaks to External Liquidity
+4. **New Range** — Once External is taken, a NEW Dealing Range forms
+
+### Institutional Logic
+
+**How institutions use Dealing Ranges:**
+
+1. **Define their operating zone** — They know exactly where Premium and Discount are
+2. **Sequence their fills** — They take Internal Liquidity first (less risk) before External
+3. **Set their targets** — External Liquidity of the Dealing Range = Their major targets
+4. **Build new ranges** — After taking External Liquidity, they establish new boundaries
+5. **Multi-timeframe alignment** — Larger TF Dealing Ranges contain smaller TF ranges (fractal)
+
+**Why Internal before External:**
+- Internal Liquidity is safer to target (stays within the range)
+- It provides additional fill opportunities without committing to a breakout
+- Once internal is exhausted, the algorithm commits to an External raid
+- This sequencing is PREDICTABLE — giving you an edge
+
+### Trading Application
+
+**Step 1: Mark the current Dealing Range**
+- HTF (Daily/4H): Identify the major Swing H/L
+- Draw 50% Equilibrium
+- Mark Internal Liquidity (minor highs/lows within)
+
+**Step 2: Determine if Internal or External Liquidity is being targeted**
+- If minor swing points WITHIN the range are being taken → Internal raid in progress
+- If price is approaching the range boundaries → External expansion likely
+
+**Step 3: Trade based on position**
+- Price in Discount (below 50%) + Internal Lows being taken → Buy after sweep
+- Price in Premium (above 50%) + Internal Highs being taken → Sell after sweep
+- Price breaking range boundary → External Liquidity taken → Expect new range
+
+**Step 4: When Dealing Range breaks**
+- Old range no longer valid
+- The breakout extreme + the previous range extreme = New Dealing Range
+- Reassess Premium/Discount from the new range
+
+### Common Mistakes
+
+- ❌ **Not updating the Dealing Range after External Liquidity is taken** — Once the high/low is swept and price continues, it's a new range
+- ❌ **Confusing Internal and External moves** — Internal = within range; External = beyond range boundaries
+- ❌ **Using too many ranges** — Focus on the MOST RELEVANT range for your trading timeframe
+- ❌ **Trading External Liquidity as a breakout** — It could be a sweep that leads to reversal
+
+### Advanced Notes
+
+- **Nested Dealing Ranges:** Monthly range > Weekly range > Daily range > 4H range. Best trades occur when multiple ranges agree
+- **Dealing Range + IPDA:** The algorithm uses 20/40/60 day ranges as its macro Dealing Ranges
+- **Range expansion signals:** When ALL Internal Liquidity is taken, prepare for External expansion
+- **Time within range:** Most time is spent in Internal Liquidity raids. External moves are quick
+
+### Example
+
+**EUR/USD Dealing Range Trade:**
+
+1. **4H Range:** High 1.0950 / Low 1.0820. Equilibrium: 1.0885
+2. **Internal Liquidity:** Minor low at 1.0860, Minor high at 1.0920
+3. **Sequence:** Price sweeps 1.0860 (Internal SSL) → Rallies to 1.0920 (Internal BSL)
+4. **After Internal cleared:** Price breaks above 1.0950 → External BSL taken
+5. **New Range forms:** New Low 1.0860, New High 1.0970
+6. **Entry:** After 1.0860 Internal SSL sweep → Buy at 1.0865 → Target 1.0920 (Internal BSL)
+7. **R:R:** 1:4.5
+
+---

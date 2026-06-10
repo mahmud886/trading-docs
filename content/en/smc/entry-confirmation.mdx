@@ -1,90 +1,80 @@
 ---
-title: "SMC Entry Confirmation"
-description: "Master entry confirmation in SMC — the specific signals that validate your trade entry. Learn CHOCH confirmation, displacement, and multi-factor entry models."
+title: "SMC Entry Confirmation — Complete Guide"
+description: "Master entry confirmation techniques in SMC. Learn LTF CHOCH, displacement, candle confirmation, and grading setup quality."
 level: intermediate
-order: 22
-lastUpdated: "2026-05-12"
+order: 15
+lastUpdated: "2026-06-10"
 ---
 
 ## What is Entry Confirmation?
 
-Entry confirmation is the set of **signals that validate your trade before you click the button**. In SMC, entering without confirmation leads to random results. The confirmation process filters out false setups.
+Entry confirmation is the **final trigger** that validates entering a trade after reaching your Point of Interest (POI). In SMC, you don't enter just because price touches an OB — you wait for confirmation that smart money is reacting.
 
 ---
 
-## The SMC Confirmation Checklist
+## Confirmation Methods
 
-### Before Entry — 5 Checks
-1. ✅ **HTF Bias** — Daily/4H direction clear?
-2. ✅ **Kill Zone Timing** — Within London or NY AM window?
-3. ✅ **Liquidity Swept** — Has BSL/SSL been taken?
-4. ✅ **Structure Shift** — CHOCH or MSS on LTF (5M/15M)?
-5. ✅ **PD Array Entry** — Entering at OB, FVG, or Breaker?
-
-### Entry Model Flow
+### 1. LTF CHOCH (Best)
 ```
-HTF Bias → Kill Zone → Liquidity Sweep → CHOCH/MSS → OB/FVG Entry
+1. Price reaches your HTF POI (OB, FVG, etc.)
+2. Drop to lower timeframe (M5/M15)
+3. Wait for CHOCH in your trade direction
+4. Enter after the CHOCH
+5. Stop: Beyond the CHOCH swing point
+
+This is the HIGHEST CONFIDENCE confirmation.
 ```
 
----
+### 2. Displacement + FVG Creation
+```
+1. Price reaches POI
+2. Strong displacement candle appears (Marubozu-like)
+3. Creates a new FVG in your direction
+4. Enter on retracement to the new FVG
+5. Shows institutional commitment
+```
 
-## Types of Confirmation
-
-### 1. CHOCH (Change of Character)
-- First break of structure against the current LTF trend
-- Signals potential reversal after sweep
-- Look on 5M/15M
-
-### 2. Displacement
-- Strong candles with full bodies (little to no wicks)
-- Creates FVGs — these are your entry zones
-- Shows institutional COMMITMENT
-
-### 3. Engulfing Candle
-- Single candle that completely engulfs the previous candle
-- Shows strong momentum shift
-- Especially powerful at OB/FVG levels
-
-### 4. SMT Divergence
-- Correlated pair fails to confirm the move
-- Extra confluence for your entry
-- See [SMT Divergence](/en/smc/smt-divergence)
+### 3. Candle Confirmation
+- Engulfing pattern at POI
+- Pin bar/rejection at POI
+- Strong close in your direction
+- Weakest form of confirmation (use with confluence)
 
 ---
 
-## Real Example: Full Confirmation Trade
+## Confirmation Hierarchy
 
-### EUR/USD Long
-1. ✅ **HTF Bias:** Daily bullish (making HH/HL, price in discount)
-2. ✅ **Kill Zone:** London session (12:30 PM BD)
-3. ✅ **Liquidity Swept:** Asian Low at 1.0855 swept to 1.0848
-4. ✅ **CHOCH:** 5M bullish CHOCH at 1.0858 — displacement candle
-5. ✅ **Entry:** Bullish OB at 1.0855, FVG at 1.0852-1.0858
-6. **Entry:** Buy at 1.0855 (OB + FVG confluence)
-7. **SL:** 1.0845 | **TP:** 1.0910
-8. **R:R:** 1:5.5
+| Rank | Method | Confidence | R:R |
+|------|--------|-----------|-----|
+| 1 | LTF CHOCH | Highest | Moderate |
+| 2 | Displacement + FVG | High | High |
+| 3 | Engulfing at POI | Moderate | Moderate |
+| 4 | No confirmation (risk entry) | Low | Highest |
 
 ---
 
-## Common Mistakes
+## Grading Setup Quality
 
-<Callout type="warning" title="Confirmation Errors">
+```
+A+ Setup (take full size):
+- HTF trend aligned ✓
+- At unmitigated OB/FVG ✓
+- In discount/premium zone ✓
+- LTF CHOCH confirmed ✓
+- Kill Zone timing ✓
 
-**❌ Entering without all 5 checks** — Skip a check = skip the trade
+B Setup (take reduced size):
+- 3-4 of the above criteria met
 
-**❌ CHOCH without displacement** — Weak break is not confirmation. Need strong candle
-
-**❌ Entering on LTF against HTF** — 5M CHOCH against Daily trend = losing trade
-
-**❌ No liquidity sweep** — If liquidity hasn't been swept, the manipulation isn't done
-
-</Callout>
+C Setup (skip):
+- Fewer than 3 criteria met
+```
 
 ---
 
 ## Related Topics
 
-- [CHOCH](/en/smc/choch) — Primary confirmation signal
-- [BOS](/en/smc/bos) — Continuation confirmation
-- [Kill Zones](/en/smc/kill-zones) — When to look for confirmation
-- [Order Blocks](/en/smc/order-blocks) — Where to enter after confirmation
+- [Entry Models](/en/price-action/entry-models) — Risk vs. confirmation entry
+- [CHOCH](/en/smc/choch) — Understanding CHOCH
+- [Order Blocks](/en/smc/order-blocks) — POI for entries
+- [Kill Zones](/en/smc/kill-zones) — Timing confirmation

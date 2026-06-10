@@ -17,69 +17,105 @@ function makeAlternates(path: string) {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
+  const now = new Date();
+
+  // Tool slugs that have dedicated pages
+  const toolSlugs = [
+    "position-calculator",
+    "pip-value-calculator",
+    "fibonacci-calculator",
+    "risk-reward-calculator",
+    "session-timer",
+    "lot-converter",
+    "tp-sl-calculator",
+    "portfolio-allocation",
+    "atr-analyzer",
+    "economic-calendar",
+    "mtf-analyzer",
+    "journal-template",
+    "correlation-matrix",
+    "currency-strength",
+    "drawdown-calculator",
+    "compounding-calculator",
+    "expectancy-calculator",
+    "cot-viewer",
+    "swap-calculator",
+    "margin-calculator",
+    "equity-simulator",
+    "regime-detector",
+  ];
 
   for (const lang of locales) {
-    // Static pages
-    entries.push(
-      {
-        url: `${BASE_URL}/${lang}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 1,
-        alternates: makeAlternates(""),
-      },
-      {
-        url: `${BASE_URL}/${lang}/glossary`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.6,
-        alternates: makeAlternates("/glossary"),
-      },
-      {
-        url: `${BASE_URL}/${lang}/blog`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.7,
-        alternates: makeAlternates("/blog"),
-      },
-      {
-        url: `${BASE_URL}/${lang}/tools`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.5,
-        alternates: makeAlternates("/tools"),
-      },
-      {
-        url: `${BASE_URL}/${lang}/charts`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.5,
-        alternates: makeAlternates("/charts"),
-      }
-    );
+    // Homepage - highest priority
+    entries.push({
+      url: `${BASE_URL}/${lang}`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 1.0,
+      alternates: makeAlternates(""),
+    });
 
-    // Doc pages
+    // Category index pages - high priority
     for (const category of CATEGORIES) {
       entries.push({
         url: `${BASE_URL}/${lang}/${category}`,
-        lastModified: new Date(),
+        lastModified: now,
         changeFrequency: "weekly",
         priority: 0.9,
         alternates: makeAlternates(`/${category}`),
       });
 
+      // Individual doc pages
       const slugs = getAllDocSlugs(lang, category);
       for (const slugParts of slugs) {
         const slugPath = `/${category}/${slugParts.join("/")}`;
         entries.push({
           url: `${BASE_URL}/${lang}${slugPath}`,
-          lastModified: new Date(),
+          lastModified: now,
           changeFrequency: "weekly",
           priority: 0.8,
           alternates: makeAlternates(slugPath),
         });
       }
     }
+
+    // Tools index
+    entries.push({
+      url: `${BASE_URL}/${lang}/tools`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+      alternates: makeAlternates("/tools"),
+    });
+
+    // Individual tool pages
+    for (const tool of toolSlugs) {
+      entries.push({
+        url: `${BASE_URL}/${lang}/tools/${tool}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.7,
+        alternates: makeAlternates(`/tools/${tool}`),
+      });
+    }
+
+    // Charts page
+    entries.push({
+      url: `${BASE_URL}/${lang}/charts`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.75,
+      alternates: makeAlternates("/charts"),
+    });
+
+    // Blog index
+    entries.push({
+      url: `${BASE_URL}/${lang}/blog`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.8,
+      alternates: makeAlternates("/blog"),
+    });
 
     // Blog posts
     for (const post of getAllBlogPosts(lang as (typeof locales)[number])) {
@@ -92,8 +128,50 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: makeAlternates(blogPath),
       });
     }
+
+    // Glossary
+    entries.push({
+      url: `${BASE_URL}/${lang}/glossary`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: makeAlternates("/glossary"),
+    });
+
+    // Dashboard
+    entries.push({
+      url: `${BASE_URL}/${lang}/dashboard`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: makeAlternates("/dashboard"),
+    });
+
+    // Legal pages
+    entries.push(
+      {
+        url: `${BASE_URL}/${lang}/privacy-policy`,
+        lastModified: now,
+        changeFrequency: "yearly",
+        priority: 0.3,
+        alternates: makeAlternates("/privacy-policy"),
+      },
+      {
+        url: `${BASE_URL}/${lang}/terms`,
+        lastModified: now,
+        changeFrequency: "yearly",
+        priority: 0.3,
+        alternates: makeAlternates("/terms"),
+      },
+      {
+        url: `${BASE_URL}/${lang}/disclaimer`,
+        lastModified: now,
+        changeFrequency: "yearly",
+        priority: 0.3,
+        alternates: makeAlternates("/disclaimer"),
+      }
+    );
   }
 
   return entries;
 }
-

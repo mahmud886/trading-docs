@@ -1,41 +1,88 @@
 ---
-title: "প্রাইস অ্যাকশন ট্রেড ম্যানেজমেন্ট"
-description: "ট্রেড ম্যানেজমেন্ট মাস্টার করুন — ওপেন পজিশন ম্যানেজ করা, ট্রেইলিং স্টপ, উইনারে যোগ করা, লুজার কাটা।"
+title: "Trade Management — সম্পূর্ণ গাইড"
+description: "Active Trade Management আয়ত্ত করুন। কখন Stop সরাবেন, Partial নেবেন, Position Trail করবেন এবং Entry-র পর বিভিন্ন Trade Scenario Handle করবেন শিখুন।"
 level: intermediate
-order: 32
-lastUpdated: "2026-05-12"
+order: 26
+lastUpdated: "2026-06-10"
 ---
 
-## ম্যানেজমেন্ট নিয়ম
+## Trade Management কী?
 
-### নিয়ম ১: 1:1 এ ব্রেকইভেনে মুভ
-প্রাইস 1:1 R:R এ পৌঁছালে SL এন্ট্রিতে (ব্রেকইভেন) সরান।
-
-### নিয়ম ২: আংশিক লাভ
-1:2 R:R এ ৩০-৫০% ক্লোজ। লাভ লক করে বাকি পজিশনের চাপ কমায়।
-
-### নিয়ম ৩: ট্রেইলিং স্টপ
-সুইং স্ট্রাকচারের পেছনে SL ট্রেইল:
-- **বাই:** 1H/4H সুইং লো এর পেছনে
-- **সেল:** 1H/4H সুইং হাই এর পেছনে
-- বেশি টাইট ট্রেইল করবেন না — ট্রেডকে জায়গা দিন
-
-### নিয়ম ৪: SL সম্মান করুন
-SL হিট হলে → লস মেনে নিন। কখনো SL বাড়াবেন না বা সরাবেন না।
+Trade Management হলো **Entry ও Exit-এর মধ্যে** যা ঘটে — Stop সরানো, Partial নেওয়া, Trailing এবং Live Position-এ সিদ্ধান্ত নেওয়া।
 
 ---
 
-## উইনারে যোগ করা (পিরামিডিং)
+## Management Framework
 
-### কখন যোগ করবেন
-- ট্রেড শুধু লাভে থাকলে (কমপক্ষে 1:1)
-- ট্রেন্ডের পরবর্তী পুলব্যাক এন্ট্রিতে
-- নতুন পজিশনের নিজস্ব ভ্যালিড SL থাকতে হবে
-- মোট রিস্ক ৩% এর বেশি নয়
+### Phase ১: Initial (Entry-র পর)
+- হাত সরিয়ে রাখুন — Trade Develop হতে দিন
+- কমপক্ষে ১-২ Candle Stop সরাবেন না
+- Analysis বিশ্বাস করুন
+
+### Phase ২: Break-Even
+- 1R Gain-এর পর SL Entry Price-এ সরান
+- Trade "Risk-free" হয়ে যায়
+- শুধু Structure Support করলেই করুন
+
+### Phase ৩: Profit Lock
+- নতুন Swing Point-এর পিছনে Stop Trail
+- 1:2 R:R-এ ৫০% Partial নিন
+- বাকি পূর্ণ Target-এ চলতে দিন
+
+### Phase ৪: Final Exit
+- Take Profit Target Hit
+- অথবা Trailing Stop Trigger
+- অথবা নতুন Structure Thesis Invalidate করে
+
+---
+
+## Partial Profit Strategy
+
+```
+Position: 1.0 Lot
+
+1:1 R:R-এ → 0.5 Lot Close (50%) → SL BE-তে
+1:2 R:R-এ → 0.3 Lot Close (30%)
+1:3 R:R বা Target-এ → 0.2 Lot Close (20%)
+
+ফলাফল: 1:1 Hit হলে কিছু Profit নিশ্চিত
+মনস্তাত্ত্বিক সুবিধা: বিশাল চাপ উপশম
+```
+
+---
+
+## কখন Stop Loss সরাবেন
+
+| SL সরান যখন... | SL সরান যেখানে... |
+|----------------|-------------------|
+| Trade 1R Gain করেছে | Entry (Break-even) |
+| আপনার Direction-এ নতুন Swing তৈরি | নতুন Swing-এর পিছনে |
+| Price নতুন BOS তৈরি করেছে | BOS Candle-এর পিছনে |
+| Major Opposing Level-এ আসছে | আরো Profit Lock করুন |
+
+### কখনো SL সরাবেন না:
+- Trade Initial Phase-এ (প্রথম ১-২ Candle)
+- আবেগের ভিত্তিতে (ভয়/লোভ)
+- মূল Plan-এর বিরুদ্ধে
+
+---
+
+## Scenario Handling
+
+| দৃশ্য | Action |
+|--------|--------|
+| Price সরাসরি Target-এ যায় | ভালো — পূর্ণ Profit নিন |
+| Price Entry-র কাছে Consolidate | অপেক্ষা — সময় দিন |
+| Price বিরুদ্ধে যায় | Stop বিশ্বাস করুন — চওড়া করবেন না |
+| Price 1R Hit করে তারপর Stall | Partial নিন, বাকি Trail |
+| News Event আসছে | Stop Tight করুন বা আগে Close |
+| Higher TF Direction পরিবর্তন | তাৎক্ষণিক Close |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [রিস্ক ম্যানেজমেন্ট](/bn/price-action/risk-management) — প্রি-ট্রেড রিস্ক
-- [এক্সিট মডেল](/bn/price-action/exit-models) — কখন ক্লোজ করবেন
+- [Exit Models](/bn/price-action/exit-models) — Exit Strategy
+- [Risk Management](/bn/price-action/risk-management) — Stop Placement
+- [Entry Models](/bn/price-action/entry-models) — Initial Setup
+- [Trading Psychology](/bn/academy/trading-psychology) — Management-এর আবেগ

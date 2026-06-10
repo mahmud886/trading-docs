@@ -1,34 +1,73 @@
 ---
-title: "প্রাইস অ্যাকশন এক্সিট মডেল"
-description: "এক্সিট কৌশল মাস্টার করুন — প্রাইস অ্যাকশন সিগন্যাল ব্যবহার করে কখন ও কীভাবে ট্রেড বন্ধ করবেন।"
+title: "Price Action Exit Model — সম্পূর্ণ গাইড"
+description: "Trade Exit আয়ত্ত করুন: Fixed Target, Trailing Stop, Structural Exit, Partial Profit ও Time-based Exit।"
 level: intermediate
-order: 22
-lastUpdated: "2026-05-12"
+order: 28
+lastUpdated: "2026-06-10"
 ---
 
-## এক্সিট মডেল
+## Exit Strategy গুরুত্বপূর্ণ
 
-### মডেল ১: টার্গেট-বেসড এক্সিট
-- পরবর্তী মূল S/R লেভেলে ফিক্সড টার্গেট সেট
+Exit আপনার **প্রকৃত Profit** নির্ধারণ করে। Perfect Entry-র সাথে খারাপ Exit = মাঝারি ফলাফল।
 
-### মডেল ২: ট্রেইলিং স্টপ
-- সুইং লো এর পেছনে (বাই) বা সুইং হাই এর পেছনে (সেল) SL ট্রেইল
-- ট্রেন্ড-ফলোইং ও সুইং ট্রেডের জন্য সেরা
+---
 
-### মডেল ৩: আংশিক লাভ নেওয়া
-1. TP1 (1:2 R:R) → SL ব্রেকইভেনে, ৫০% ক্লোজ
-2. TP2 (1:4 R:R) → আরও ৩০% ক্লোজ
-3. রানার → বাকি ২০% সর্বোচ্চ টার্গেট পর্যন্ত ট্রেইল
+## Exit-এর ধরন
 
-### মডেল ৪: সিগন্যাল-বেসড এক্সিট
-বিপরীত প্রাইস অ্যাকশন সিগন্যালে এক্সিট:
-- পজিশনের বিরুদ্ধে রিভার্সাল ক্যান্ডেল
-- ট্রেডের বিরুদ্ধে স্ট্রাকচার ব্রেক (CHOCH)
-- মোমেন্টাম ক্লান্তি
+### ১. Fixed Target
+- পরবর্তী S/R Level
+- Measured Move (Pattern Height)
+- Fibonacci Extension (127.2%, 161.8%)
+- Risk Multiple (সবসময় 2R বা 3R)
+
+### ২. Structural Exit
+- পরবর্তী Opposing Swing High/Low
+- বিপরীত Order Block
+- Liquidity Pool (Equal H/L)
+- Previous Session H/L
+
+### ৩. Trailing Stop
+- প্রতিটি নতুন Swing Point-এর পিছনে
+- 20 EMA-এর পিছনে
+- ATR-based (1.5× ATR Distance)
+- 1R-এর পর Break-even
+
+### ৪. Partial Exit (Scaling Out)
+- 1:1 R:R-এ ৫০% → SL BE-তে
+- 1:2 R:R-এ ৩০%
+- চূড়ান্ত Target-এ ২০% Trailing
+
+### ৫. Time-Based
+- Session শেষ (Intraday)
+- Entry-র ২৪-৪৮ ঘণ্টা পর (Swing)
+- স্থবির Trade খুব কমই Winner হয়
+
+---
+
+## Style সুপারিশ
+
+| Style | সেরা Exit |
+|-------|----------|
+| Scalping | Fixed Target (5-20 Pip) |
+| Intraday | Structural + Time |
+| Swing | Partial + Trailing |
+| Position | Structural + Trailing |
+
+---
+
+## Exit নিয়ম
+
+1. Entry-র আগে Exit পরিকল্পনা
+2. TP আরো দূরে সরাবেন না
+3. Partial Profit চাপ কমায়
+4. Opposing Level সম্মান করুন
+5. স্থবির Trade-এ Time Stop কাজ করে
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [রিস্ক ম্যানেজমেন্ট](/bn/price-action/risk-management) — SL প্লেসমেন্ট
-- [ট্রেড ম্যানেজমেন্ট](/bn/price-action/trade-management) — ওপেন ট্রেড ম্যানেজ
+- [Entry Models](/bn/price-action/entry-models)
+- [Trade Management](/bn/price-action/trade-management)
+- [Risk Management](/bn/price-action/risk-management)
+- [Support ও Resistance](/bn/price-action/support-resistance)

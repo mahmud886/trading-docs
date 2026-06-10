@@ -44,7 +44,7 @@ export function MobileMenuTrigger() {
   return (
     <button
       onClick={() => setOpen(!open)}
-      className="rounded-lg p-1.5 text-muted-foreground transition-all hover:bg-accent-green/10 hover:text-accent-green lg:hidden"
+      className="rounded-lg p-1.5 text-muted-foreground transition-all hover:bg-accent-green/10 hover:text-accent-green md:hidden"
       aria-label="Toggle menu"
     >
       {open ? <X size={18} /> : <Menu size={18} />}

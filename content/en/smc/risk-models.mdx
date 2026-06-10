@@ -1,89 +1,67 @@
 ---
-title: "SMC Risk Management Models"
-description: "Master risk management for SMC trading — position sizing, R:R frameworks, maximum drawdown rules, and institutional risk models for consistent profitability."
+title: "SMC Risk Models — Complete Guide"
+description: "Master risk management in SMC. Learn structural stop placement, invalidation-based stops, position sizing, and risk per setup grade."
 level: intermediate
-order: 25
-lastUpdated: "2026-05-12"
+order: 16
+lastUpdated: "2026-06-10"
 ---
 
-## Why Risk Management is #1
+## SMC Risk Management
 
-Even with the best SMC analysis, you will have LOSING trades. Risk management determines whether those losses are small bumps or account-ending blows.
-
-<Callout type="info" title="The Truth">
-"Risk management is not a concept — it's the ONLY thing that keeps you in the game." Professional traders risk 1-2% maximum per trade.
-</Callout>
+In SMC, risk management uses **structural invalidation** rather than arbitrary pip distances. Your stop goes where your thesis is WRONG — beyond the structural level that would invalidate the setup.
 
 ---
 
-## SMC Risk Framework
+## Stop Placement in SMC
 
-### Position Sizing Rules
-| Account Size | Max Risk/Trade | Max Risk/Day |
-|-------------|---------------|-------------|
-| $1,000 | $10-20 (1-2%) | $30 (3%) |
-| $5,000 | $50-100 (1-2%) | $150 (3%) |
-| $10,000 | $100-200 (1-2%) | $300 (3%) |
-| $50,000 | $500-1,000 (1-2%) | $1,500 (3%) |
-| $100,000+ | $1,000-2,000 (1-2%) | $3,000 (3%) |
-
-### R:R Minimums
-| Setup Type | Minimum R:R | Typical R:R |
-|-----------|-------------|-------------|
-| Scalp (5M entry) | 1:2 | 1:3-5 |
-| Day Trade (15M entry) | 1:3 | 1:4-7 |
-| Swing Trade (4H entry) | 1:3 | 1:5-10+ |
+| Setup Type | Stop Location | Why |
+|-----------|--------------|-----|
+| OB entry | Beyond the OB (body, not wick) | OB violated = thesis wrong |
+| FVG entry | Beyond the FVG range | FVG broken = imbalance filled |
+| Sweep entry | Beyond the sweep wick | New low/high = not a sweep |
+| CHOCH entry | Beyond CHOCH swing point | Structure not actually shifted |
+| Breaker entry | Beyond the Breaker zone | Breaker failed |
 
 ---
 
-## Stop Loss Placement in SMC
+## Position Sizing Formula
 
-### Where to Place Stops
-1. **After liquidity sweep** — Beyond the sweep extreme (safest)
-2. **Below/above OB** — Beyond the Order Block range
-3. **Beyond FVG** — Beyond the FVG with some buffer (5-10 pips for Forex, 50-100 for Gold)
+```
+Lot Size = (Account × Risk%) ÷ (Stop pips × Pip value)
 
-### Where NOT to Place Stops
-- At the obvious swing low/high (that's where liquidity rests!)
-- At round numbers without buffer
-- Too tight (needs room for manipulation)
-
----
-
-## Trade Management
-
-### Partials Strategy
-1. **First target (1:2 R:R)** — Move stop to breakeven, take 30-50% off
-2. **Second target (1:4 R:R)** — Take 30% more
-3. **Runner (let it ride)** — Leave 20% to reach full target
-
-### When to Cut Early
-- Price closes through your OB/FVG entirely (invalidation)
-- CHOCH forms against your trade on entry timeframe
-- News event changes the fundamental picture
+Example:
+- Account: $10,000
+- Risk: 1% = $100
+- Stop: 25 pips (OB width + buffer)
+- Pip value: $10/lot
+- Size: $100 ÷ (25 × $10) = 0.40 lots
+```
 
 ---
 
-## Common Mistakes
+## Risk Per Setup Grade
 
-<Callout type="warning" title="Risk Management Errors">
+| Grade | Criteria Met | Risk |
+|-------|-------------|------|
+| A+ | 5/5 confluences, Kill Zone, CHOCH confirmed | 1-2% |
+| B | 3-4 confluences, good but not perfect | 0.5-1% |
+| C | 2-3 confluences, uncertain | 0.25-0.5% or SKIP |
 
-**❌ Risking more than 2%** — One bad day can take weeks to recover from
+---
 
-**❌ No stop loss** — ALWAYS have a predetermined exit
+## Rules
 
-**❌ Moving stop to breakeven too early** — Give the trade room to breathe
-
-**❌ Revenge trading** — After a loss, take a break. Don't double size
-
-**❌ Not journaling** — Track every trade to improve your edge
-
-</Callout>
+1. **Max 1-2% per trade** — non-negotiable
+2. **Max 3% daily loss** — stop for the day
+3. **Max 5% weekly loss** — reduce size next week
+4. **Correlated pairs** count as ONE risk unit
+5. **Wider stop = smaller size** (never remove stop)
+6. **Break-even after 1R** gained
 
 ---
 
 ## Related Topics
 
-- [Entry Confirmation](/en/smc/entry-confirmation) — Entry before risk management
-- [Order Blocks](/en/smc/order-blocks) — Stop placement relative to OBs
-- [Advanced Execution Models](/en/smc/advanced-execution-models) — Complete trading system
+- [Entry Confirmation](/en/smc/entry-confirmation) — Quality grading
+- [Order Blocks](/en/smc/order-blocks) — OB-based stops
+- [Advanced Execution](/en/smc/advanced-execution-models) — Entry models affect risk

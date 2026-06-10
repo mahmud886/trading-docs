@@ -1,0 +1,169 @@
+---
+title: "Iceberg Orders & Spoofing Detection — Complete Guide"
+description: "Learn to identify hidden institutional iceberg orders and detect illegal spoofing/layering. Understand dark pool activity and how large players conceal their true order sizes."
+level: expert
+order: 8
+lastUpdated: "2026-06-10"
+---
+
+## What are Iceberg Orders?
+
+An iceberg order is a large institutional order that is **broken into smaller visible portions**. Only a small "tip" is visible in the order book, while the majority remains hidden — like an iceberg where 90% is underwater.
+
+<Callout type="info" title="Why Institutions Use Icebergs">
+If a fund needs to buy 10,000 lots, showing all 10,000 in the order book would:
+1. Alert other participants to their intent
+2. Cause front-running (others buy ahead of them)
+3. Move the market against them before filling
+
+Solution: Show only 50 lots at a time, refill automatically when hit.
+</Callout>
+
+---
+
+## Identifying Iceberg Orders
+
+### Signs of an Iceberg
+
+1. **Constant refreshing** at the same price level
+2. **Volume transacted >> Visible order size** at that price
+3. **Price doesn't move** despite heavy hitting
+4. **Same size reappearing** repeatedly (algorithmic pattern)
+
+### Example
+
+```
+Order Book shows: 50 lots bid at 1.0950
+Market sellers hit it: 50 lots filled
+Immediately: 50 lots REAPPEARS at 1.0950
+Market sellers hit again: 50 lots filled
+Again: 50 lots REAPPEARS at 1.0950
+...this happens 20 times...
+
+Total filled: 1,000 lots (20 × 50)
+Total visible at any time: only 50 lots
+= ICEBERG ORDER — institution accumulating 1,000+ lots
+```
+
+---
+
+## Types of Hidden Orders
+
+### Standard Iceberg
+- Fixed clip size (e.g., always shows 50)
+- Easy to detect (repetitive pattern)
+- Used by: Traditional institutions, pension funds
+
+### Randomized Iceberg
+- Varying clip sizes (47, 53, 49, 51...)
+- Harder to detect (looks more natural)
+- Used by: Sophisticated algos, HFT firms
+
+### Dark Pool Orders
+- Completely invisible — executed on alternative venues
+- Show up only in trade prints (Time & Sales)
+- Large block trades between institutions
+- Used by: Major banks, hedge funds
+
+### Reserve Orders
+- Similar to icebergs but broker-specific
+- Some show partial, some show nothing
+- Platform-dependent visibility
+
+---
+
+## What is Spoofing?
+
+Spoofing is the **illegal practice** of placing large orders with the intent to **cancel them before execution** to manipulate other traders' perception of supply and demand.
+
+### How Spoofing Works
+
+```
+Step 1: Spoofer wants to BUY at lower price
+Step 2: Places HUGE sell orders above (1000 lots on ask)
+Step 3: Market sees "massive resistance" → sells
+Step 4: Price drops due to retail/algo selling
+Step 5: Spoofer CANCELS sell orders
+Step 6: Spoofer BUYS at lower price
+Step 7: Removes fake orders → price recovers → profit
+```
+
+### Spoofing Characteristics
+
+- Orders **placed and cancelled within seconds**
+- Sizes are **disproportionately large** (10-100x normal)
+- They appear during **low liquidity** periods for maximum impact
+- Often combined with **layering** (multiple levels of fake orders)
+
+---
+
+## Layering
+
+A more sophisticated form of spoofing:
+
+```
+LAYERED SELL WALL (to push price down):
+1.0960: 500 lots ← Fake
+1.0959: 400 lots ← Fake
+1.0958: 300 lots ← Fake
+1.0957: 200 lots ← Fake
+
+Creates appearance of overwhelming supply.
+All cancelled once price moves to desired buy level.
+```
+
+---
+
+## How to Detect Spoofing
+
+### Red Flags
+1. **Large orders that never get hit** — they disappear when price approaches
+2. **Rapid placement/cancellation** — millisecond lifetimes
+3. **Price returns to normal** after the "wall" disappears
+4. **Order-to-trade ratio** extremely high (many orders, few fills)
+5. **Always on one side** — spoofer only fake-shows supply OR demand
+
+### Protection Strategies
+- **Don't react to DOM alone** — wait for actual transactions
+- **Watch Time & Sales** — actual fills tell the truth
+- **Ignore size on DOM in crypto** — extremely common spoofing venue
+- **Focus on delta/footprint** — shows what actually TRADED, not what's sitting
+
+---
+
+## Dark Pools & Block Trading
+
+### What are Dark Pools?
+- Private exchanges where large orders are executed anonymously
+- No pre-trade transparency (orders invisible until filled)
+- ~40% of US equity volume trades on dark pools
+
+### How They Affect Price
+- Large buy on dark pool → eventually shows in tape → delayed bullish signal
+- Dark pool prints at VWAP → institutional accumulation signal
+- Block trades above/below market → institutional positioning
+
+### Reading Dark Pool Activity
+- Watch for "prints" in Time & Sales that don't match visible order book
+- Large individual prints (500+ lots) at or near VWAP = institutional
+- Repeated same-size prints at same level = algo-driven institutional filling
+
+---
+
+## Practical Application
+
+### For Intraday Trading
+1. **Identify icebergs** at your key levels → confirms institutional interest
+2. **Ignore spoofed walls** → don't let fake orders scare you out of positions
+3. **Watch actual fills** (Time & Sales) over pending orders (DOM)
+4. **Large delta without price movement** = iceberg absorption
+
+### For Swing Trading
+1. **Dark pool prints** near your levels = institutions agree with your analysis
+2. **Unusual block activity** = someone positioning for a move
+3. **Iceberg detection** at weekly OBs = institutional commitment to that level
+
+<Callout type="warning" title="Legal Note">
+Spoofing is illegal under Dodd-Frank Act (US), MAR (EU), and similar regulations. However, it still occurs, especially in crypto markets. Learn to detect it to PROTECT yourself, not to replicate it.
+</Callout>
+

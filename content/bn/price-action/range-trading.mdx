@@ -1,38 +1,104 @@
 ---
-title: "প্রাইস অ্যাকশনে রেঞ্জ ট্রেডিং"
-description: "রেঞ্জ ট্রেডিং মাস্টার করুন — নির্ধারিত প্রাইস রেঞ্জের মধ্যে পজিশন নিন ও ম্যানেজ করুন।"
+title: "Price Action দিয়ে Range Trading — সম্পূর্ণ গাইড"
+description: "Range-bound Market Trading আয়ত্ত করুন। Range চিহ্নিতকরণ, S/R-এর মধ্যে Bounce Trade, Breakout Anticipate করা এবং কার্যকরভাবে Range Trade Manage করা শিখুন।"
 level: intermediate
-order: 27
-lastUpdated: "2026-05-12"
+order: 20
+lastUpdated: "2026-06-10"
 ---
 
-## রেঞ্জ ট্রেডিং কী?
+## Range Trading কী?
 
-রেঞ্জ ট্রেডিং হলো **নির্ধারিত অনুভূমিক রেঞ্জের** মধ্যে সাপোর্টে কেনা ও রেজিস্ট্যান্সে বিক্রি। ৭০% সময় মার্কেট রেঞ্জিং থাকে — এই দক্ষতা অপরিহার্য।
+Range Trading হলো Price Trending না করলে **প্রতিষ্ঠিত Support ও Resistance Level-এর মধ্যে** Trade করার Strategy। Market তার সময়ের প্রায় ৬০-৭০% Range-এ কাটায়, এটিকে একটি মূল্যবান দক্ষতা করে তোলে।
+
+<Callout type="info" title="Range বাস্তবতা">
+বেশিরভাগ Trader শুধু Trend-এ ফোকাস করেন, কিন্তু Price Trend-এর চেয়ে বেশি Range করে। একজন দক্ষ Range Trader Sideways Market-এ ধারাবাহিক Profit করতে পারেন যেখানে Trend Trader বসে থাকেন।
+</Callout>
 
 ---
 
-## রেঞ্জ ট্রেডিং কৌশল
+## Range চিহ্নিতকরণ
 
-### সাপোর্টে বাই
-1. প্রাইস রেঞ্জ নিচে পৌঁছায়
-2. বুলিশ কনফার্মেশন ক্যান্ডেল
-3. SL রেঞ্জ নিচের বাইরে | TP রেঞ্জ উপরে বা মিডপয়েন্ট
+### বৈশিষ্ট্য:
+- স্পষ্ট Support ও Resistance-এর মধ্যে Price Bounce করছে
+- কোনো স্পষ্ট HH/HL বা LH/LL Pattern নেই
+- উভয় Boundary-তে একাধিক Touch (প্রতিটিতে ৩+)
+- Candle মিশ্র Direction (কোনো প্রভাবশালী রঙ নেই)
 
-### রেজিস্ট্যান্সে সেল
-1. প্রাইস রেঞ্জ উপরে পৌঁছায়
-2. বেয়ারিশ কনফার্মেশন ক্যান্ডেল
-3. SL রেঞ্জ উপরের বাইরে | TP রেঞ্জ নিচে বা মিডপয়েন্ট
+### Range কাঠামো:
+```
+Resistance ─────────────────────── (Sell Zone)
+     ↕ Trading Range ↕
+Support ────────────────────────── (Buy Zone)
 
-### কখন রেঞ্জ ট্রেডিং বন্ধ করবেন
-- প্রাইস সীমানার বাইরে শক্তিশালী ক্লোজ (ব্রেকআউট)
-- ক্যান্ডেল সাইজ নাটকীয়ভাবে বাড়ে
-- হাই-ইমপ্যাক্ট নিউজ আসছে
+নিয়ম:
+- Support-এ (Lower Boundary) Buy
+- Resistance-এ (Upper Boundary) Sell
+- Boundary-র বাইরে Stop
+- Target: বিপরীত Boundary (বা আংশিকের জন্য Midpoint)
+```
+
+---
+
+## Range Trading Strategy
+
+### Support-এ Buy:
+```
+1. Price Range Support-এ আসে
+2. Bullish Rejection Candle-এর জন্য অপেক্ষা (Pin Bar, Engulfing)
+3. Rejection Candle-এর উপরে Long Enter
+4. Stop: Support-এর নিচে + Buffer (5-15 Pip)
+5. Target 1: Range Midpoint (Range-এর 50%)
+6. Target 2: Range Resistance
+7. R:R: সাধারণত 1:2 থেকে 1:3
+```
+
+### Resistance-এ Sell:
+```
+1. Price Range Resistance-এ আসে
+2. Bearish Rejection Candle-এর জন্য অপেক্ষা
+3. Rejection Candle-এর নিচে Short Enter
+4. Stop: Resistance-এর উপরে + Buffer
+5. Target 1: Range Midpoint
+6. Target 2: Range Support
+```
+
+---
+
+## Range কখন ভাঙে
+
+### Breakout Signal:
+- এক Boundary-তে Compression (Resistance-এ Higher Low)
+- Boundary Approach-এ Volume বাড়ছে
+- Range-এর বাইরে শক্তিশালী Impulsive Candle Close
+- Pullback Range-এর বাইরে থাকে (ভিতরে ফেরে না)
+
+### Range Break-এর পর Strategy:
+```
+1. Range Break হয় (Boundary-র বাইরে শক্তিশালী Close)
+2. ভাঙা Boundary-র Retest-এর জন্য অপেক্ষা
+3. পুরনো Resistance নতুন Support হয় (বা উল্টো)
+4. Trend-এর সাথে Retest-এ Enter
+5. Stop: Range-এর ভিতরে ফিরে
+6. Target: Breakout থেকে Range Width Project (Measured Move)
+```
+
+---
+
+## Range Trading নিয়ম
+
+1. **শুধু স্পষ্ট Range Trade করুন** — উভয় Boundary-তে ন্যূনতম ৩+ Touch
+2. **Bounce Trade করুন, Break নয়** (Confirmed না হওয়া পর্যন্ত)
+3. **Range-এ Size কমান** — এটি শেষ পর্যন্ত ভাঙবেই
+4. **Boundary-তে Alert সেট করুন** — অতিরিক্ত পর্যবেক্ষণ করবেন না
+5. **Flip করতে প্রস্তুত থাকুন** — Range ভাঙলে Breakout Mode-এ Switch
+6. **Boundary-তে Stop** — Range Break-এর মধ্য দিয়ে কখনো Hold করবেন না
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [সাপোর্ট ও রেজিস্ট্যান্স](/bn/price-action/support-resistance) — রেঞ্জ সীমানা
-- [কম্প্রেশন](/bn/price-action/compression) — সঙ্কুচিত রেঞ্জ
-- [ব্রেকআউট](/bn/price-action/breakouts) — যখন রেঞ্জ ভাঙে
+- [Support ও Resistance](/bn/price-action/support-resistance) — Range Boundary
+- [Compression](/bn/price-action/compression) — Range-এর মধ্যে Compression
+- [Breakouts](/bn/price-action/breakouts) — Range Breakout
+- [Fakeouts](/bn/price-action/fakeouts) — False Range Break
+- [Confirmation](/bn/price-action/confirmation) — Range Edge-এ Entry Confirmation

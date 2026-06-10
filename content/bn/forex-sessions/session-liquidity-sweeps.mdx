@@ -1,47 +1,71 @@
 ---
-title: "সেশন লিকুইডিটি সুইপ"
-description: "প্রতিটি ফরেক্স সেশন কীভাবে আগের সেশনের লিকুইডিটি সুইপ করে। স্মার্ট এন্ট্রির জন্য সেশন-টু-সেশন লিকুইডিটি টার্গেটিং বোঝা।"
-level: advanced
+title: "Session Liquidity Sweep — সম্পূর্ণ গাইড"
+description: "Session কীভাবে পূর্ববর্তী Session-এর Liquidity Sweep করে আয়ত্ত করুন। Asian থেকে London থেকে New York পর্যন্ত Sweep Chain শিখুন।"
+level: intermediate
 order: 11
-lastUpdated: "2026-05-10"
+lastUpdated: "2026-06-10"
 ---
 
-## সেশন লিকুইডিটি সুইপ
+## Session Liquidity Sweep কী?
 
-প্রতিটি ফরেক্স সেশন পদ্ধতিগতভাবে আগের সেশনের তৈরি লিকুইডিটি টার্গেট করে। এই শৃঙ্খল বুঝলে আপনি আগে থেকে অনুমান করতে পারবেন প্রাইস কোথায় যাবে।
+Session Liquidity Sweep ঘটে যখন একটি **নতুন Session পূর্ববর্তী Session-এর রেখে যাওয়া Liquidity Target করে নেয়**। এটি Institutional Trading-এ Intraday Price Movement চালিত করার মৌলিক Mechanism।
 
-## লিকুইডিটি চেইন (BD সময়)
+---
 
-### সিডনি → টোকিও
-- **সময়**: ৫:০০ AM BD
-- টোকিও সিডনির হাই বা লো সুইপ করতে পারে
-- সাধারণত ছোট — উভয়ই কম ভোলাটিলিটি সেশন
+## Sweep Chain
 
-### টোকিও → লন্ডন (সবচেয়ে গুরুত্বপূর্ণ)
-- **সময়**: ১:০০ PM BD
-- লন্ডন সর্বদা এশিয়ান লিকুইডিটি টার্গেট করে
-- দিনের সবচেয়ে ট্রেডযোগ্য সুইপ
-- একটি দিক সুইপ করার ৭৫%+ সম্ভাবনা
+```
+Session Flow (BD সময়):
+Asian (৫AM-১PM) → Range তৈরি (উপরে/নিচে Liquidity)
+London (১PM-১০PM) → Asian H বা L Sweep করে, তারপর Trend
+NY (৬PM-৩AM) → Continue করে বা London H/L Sweep করে
 
-### লন্ডন → নিউ ইয়র্ক
-- **সময়**: ৬:০০ PM BD
-- NY লন্ডনের ট্রেন্ড চালিয়ে যেতে পারে বা রিভার্স করতে পারে
-- চালিয়ে গেলে: পরবর্তী দৈনিক/সাপ্তাহিক লেভেল টার্গেট করে
-- রিভার্স করলে: লন্ডনের উৎপত্তি বিন্দু টার্গেট করে
+প্রতিটি Session-এর H/L পরবর্তী Session-এর TARGET হয়।
+```
 
-### নিউ ইয়র্ক → পরের দিনের এশিয়ান
-- **সময়**: ৩:০০ AM BD
-- দেরি NY পরের দিনের এশিয়ান সেশনের জন্য রেঞ্জ তৈরি করে
-- চক্র চলতে থাকে
+---
 
-<Callout type="info" title="মূল প্যাটার্ন">
-**এশিয়ান রেঞ্জ তৈরি করে → লন্ডন সুইপ করে → নিউ ইয়র্ক চালিয়ে যায় বা রিভার্স করে।**
-এটি ফরেক্সের মৌলিক দৈনিক চক্র। একবার এই প্যাটার্ন দেখলে, আপনি আর কখনো চার্ট একইভাবে দেখবেন না।
-</Callout>
+## Session Sweep-এর ধরন
 
-## সুইপ সুযোগ চিহ্নিত করা
+| Sweep ধরন | কী ঘটে | সময় (BD) |
+|-----------|--------|-----------|
+| London Asian Low Sweep | Bearish Trap → Bullish Move | ১:০০ - ২:০০ PM |
+| London Asian High Sweep | Bullish Trap → Bearish Move | ১:০০ - ২:০০ PM |
+| NY London Low Sweep | NY Long-এর জন্য London Low নেওয়া | ৬:০০ - ৮:০০ PM |
+| NY London High Sweep | NY Short-এর জন্য London High নেওয়া | ৬:০০ - ৮:০০ PM |
+| PDH Sweep পরের দিন | Previous Day High = BSL Target | পরবর্তী London Open |
+| PDL Sweep পরের দিন | Previous Day Low = SSL Target | পরবর্তী London Open |
 
-1. **ইকুয়াল হাই/লো** আগের সেশন থেকে = উচ্চ সম্ভাবনার সুইপ টার্গেট
-2. **পরিষ্কার লেভেল** ন্যূনতম উইক সহ = আরও বিশ্রাম অর্ডার = ভালো টার্গেট
-3. **সময়ের সামঞ্জস্য** — সুইপ নতুন সেশনের প্রথম ১-২ ঘণ্টায় ঘটে
-4. **ভলিউম কনফার্মেশন** — সুইপের সময় ভলিউমে স্পাইক ইনস্টিটিউশনাল কার্যকলাপ নিশ্চিত করে
+---
+
+## Session Sweep Trade করা
+
+```
+1. পূর্ববর্তী Session H/L স্পষ্টভাবে Mark
+2. নতুন Session এই Level Approach করার অপেক্ষা
+3. যদি Price Sweep করে (বাইরে যায় তারপর Reverse):
+   - এটি Entry Signal
+   - Reversal Confirmation-এ Enter (CHOCH/Engulfing)
+4. Stop: Sweep Wick-এর বাইরে
+5. Target: বিপরীত Session Extreme
+
+Daily Bias-এর সাথে Aligned হলে Success Rate: ~৭০%
+```
+
+---
+
+## নিয়ম
+
+1. Session-এর প্রথম Sweep সর্বোচ্চ Probability
+2. সব Session H/L সম্ভাব্য Target হিসেবে Mark করুন
+3. Higher Timeframe Bias-এর সাথে Sweep Align করুন
+4. Daily Trend-এর বিরুদ্ধে Sweep Trade করবেন না
+5. PDH/PDL Sweep Intraday Session Sweep-এর চেয়ে শক্তিশালী
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Asian Range](/bn/forex-sessions/asian-range) — সবচেয়ে বেশি Swept Range
+- [London Open Manipulation](/bn/forex-sessions/london-open-manipulation) — London Sweep
+- [Kill Zones](/bn/forex-sessions/kill-zones) — কখন Sweep ঘটে
