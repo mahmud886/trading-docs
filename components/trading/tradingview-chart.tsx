@@ -24,8 +24,7 @@ export function TradingViewChart({
     containerRef.current.id = containerId;
 
     const script = document.createElement("script");
-    script.src =
-      "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
     script.async = true;
     script.innerHTML = JSON.stringify({
       symbol,
@@ -58,4 +57,3 @@ export function TradingViewChart({
     </div>
   );
 }
-

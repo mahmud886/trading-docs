@@ -11,7 +11,8 @@ lastUpdated: "2026-06-10"
 Volatility একটি নির্দিষ্ট সময়ে **Price ওঠানামার মাত্রা** পরিমাপ করে। High Volatility মানে বড়, দ্রুত Price Swing; Low Volatility মানে ছোট, ধীরগতির Movement। সঠিক Position Sizing, Stop Placement এবং Strategy নির্বাচনের জন্য Volatility বোঝা অপরিহার্য।
 
 <Callout type="info" title="মূল অন্তর্দৃষ্টি">
-Volatility Direction নয় — এটি বলে Price কতটা Move করতে পারে, কোন দিকে নয়। High Volatility দুর্দান্ত সুযোগ ও দুর্দান্ত Risk উভয়ই তৈরি করে। স্মার্ট Trader বর্তমান Volatility অবস্থার ভিত্তিতে পদ্ধতি পরিবর্তন করেন।
+  Volatility Direction নয় — এটি বলে Price কতটা Move করতে পারে, কোন দিকে নয়। High Volatility দুর্দান্ত সুযোগ ও
+  দুর্দান্ত Risk উভয়ই তৈরি করে। স্মার্ট Trader বর্তমান Volatility অবস্থার ভিত্তিতে পদ্ধতি পরিবর্তন করেন।
 </Callout>
 
 ---
@@ -33,15 +34,16 @@ ATR = N Period-এ True Range-এর Average (সাধারণত 14)
 
 ### ATR কীভাবে ব্যবহার করবেন:
 
-| প্রয়োগ | পদ্ধতি |
-|---------|--------|
-| **Stop Loss** | Entry থেকে 1.5-2× ATR-এ SL সেট করুন |
-| **Take Profit** | Entry থেকে 2-3× ATR-এ TP সেট করুন |
-| **Position Size** | বড় ATR = ছোট Position Size |
-| **Filter** | ATR অত্যন্ত কম হলে Trade করবেন না |
-| **Breakout** | Price যখন Level থেকে >1× ATR Move করে তখন Enter |
+| প্রয়োগ           | পদ্ধতি                                          |
+| ----------------- | ----------------------------------------------- |
+| **Stop Loss**     | Entry থেকে 1.5-2× ATR-এ SL সেট করুন             |
+| **Take Profit**   | Entry থেকে 2-3× ATR-এ TP সেট করুন               |
+| **Position Size** | বড় ATR = ছোট Position Size                     |
+| **Filter**        | ATR অত্যন্ত কম হলে Trade করবেন না               |
+| **Breakout**      | Price যখন Level থেকে >1× ATR Move করে তখন Enter |
 
 ### ATR-based Stop Loss উদাহরণ:
+
 ```
 EUR/USD Daily ATR = 80 Pip
 Entry: 1.0900 (Long)
@@ -58,15 +60,16 @@ Risk:Reward = 120:200 = 1:1.67
 
 ### VIX Level:
 
-| VIX Range | Market অবস্থা | Trading ইঙ্গিত |
-|-----------|--------------|----------------|
-| ১২-এর নিচে | অত্যন্ত কম Volatility (আত্মতুষ্টি) | Breakout আসন্ন |
-| ১২-২০ | স্বাভাবিক Volatility | মানক Trading অবস্থা |
-| ২০-৩০ | বর্ধিত Volatility | অনিশ্চয়তা বাড়ছে, চওড়া Stop |
-| ৩০-৪০ | উচ্চ Volatility (ভয়) | Panic Sell, Buying সুযোগ |
-| ৪০-এর উপরে | চরম ভয়/সংকট | বড় Crash, শেষ পর্যন্ত Reversal |
+| VIX Range  | Market অবস্থা                      | Trading ইঙ্গিত                  |
+| ---------- | ---------------------------------- | ------------------------------- |
+| ১২-এর নিচে | অত্যন্ত কম Volatility (আত্মতুষ্টি) | Breakout আসন্ন                  |
+| ১২-২০      | স্বাভাবিক Volatility               | মানক Trading অবস্থা             |
+| ২০-৩০      | বর্ধিত Volatility                  | অনিশ্চয়তা বাড়ছে, চওড়া Stop   |
+| ৩০-৪০      | উচ্চ Volatility (ভয়)              | Panic Sell, Buying সুযোগ        |
+| ৪০-এর উপরে | চরম ভয়/সংকট                       | বড় Crash, শেষ পর্যন্ত Reversal |
 
 ### VIX Trading Signal:
+
 - **VIX Spike (>30)** → ভয় বেশি → Stock-এ Contrarian Buying সুযোগ
 - **VIX অত্যন্ত কম ( 12-এর নিচে)** → আত্মতুষ্টি → Market Correction-এর সময় হতে পারে
 - **VIX নিম্নমুখী** → Risk-on পরিবেশ → Stock-এ Bullish
@@ -77,12 +80,14 @@ Risk:Reward = 120:200 = 1:1.67
 ## Volatility Regime
 
 ### Low Volatility পরিবেশ:
+
 - **বৈশিষ্ট্য:** সংকীর্ণ Range, ছোট Candle, কম ATR
 - **Strategy:** Range Trading, Mean Reversion, Breakout Anticipation
 - **Position Size:** সামান্য বড় হতে পারে (Tight Stop কাজ করে)
 - **সতর্কতা:** Breakout আসছে — Strategy পরিবর্তনে প্রস্তুত থাকুন
 
 ### High Volatility পরিবেশ:
+
 - **বৈশিষ্ট্য:** বড় Candle, Gap, দ্রুত Move, উচ্চ ATR
 - **Strategy:** Trend Following, Momentum, চওড়া Stop
 - **Position Size:** অবশ্যই ছোট হতে হবে (চওড়া Stop প্রয়োজন)
@@ -93,6 +98,7 @@ Risk:Reward = 120:200 = 1:1.67
 ## Volatility-based Position Sizing
 
 ### ATR-based সূত্র:
+
 ```
 Position Size = (Account × Risk%) ÷ (ATR × Multiplier × Pip Value)
 
@@ -111,7 +117,8 @@ Position Size = $100 ÷ (225 × $10) = 0.04 Lot
 ```
 
 <Callout type="info" title="Dynamic Sizing">
-ATR-based Position Sizing সবচেয়ে শক্তিশালী পদ্ধতিগুলোর একটি কারণ এটি বর্তমান Market অবস্থার সাথে স্বয়ংক্রিয়ভাবে আপনার Position Size Adjust করে। Market Volatile হলে ছোট Trade করেন। শান্ত হলে সামান্য বড় Trade করতে পারেন।
+  ATR-based Position Sizing সবচেয়ে শক্তিশালী পদ্ধতিগুলোর একটি কারণ এটি বর্তমান Market অবস্থার সাথে স্বয়ংক্রিয়ভাবে
+  আপনার Position Size Adjust করে। Market Volatile হলে ছোট Trade করেন। শান্ত হলে সামান্য বড় Trade করতে পারেন।
 </Callout>
 
 ---
@@ -119,18 +126,21 @@ ATR-based Position Sizing সবচেয়ে শক্তিশালী প�
 ## Volatility Trading
 
 ### Strategy ১: Bollinger Band Squeeze Breakout
+
 - BB Squeeze (সংকীর্ণ Width)-এর জন্য অপেক্ষা করুন
 - Volume Confirmation-সহ Breakout-এ Enter করুন
 - সামগ্রিক Trend Bias দ্বারা Direction নির্ধারিত
 - Squeeze-র ভিতরে Stop, Target 2-3× ATR
 
 ### Strategy ২: VIX Mean Reversion
+
 - VIX ৩০-এর উপরে Spike করলে Stock/Index কিনুন
 - Historical Data দেখায় Fear Spike-এর পর Market Recovery হয়
 - VIX আরও বাড়লে Scale In করুন
 - VIX Normalize হলে Profit নিন
 
 ### Strategy ৩: Volatility Expansion
+
 - Low → High Volatility-তে Transition করছে এমন Asset চিহ্নিত করুন
 - Expansion Phase-র শুরুতে Enter করুন
 - Volatility Expand হওয়ার সাথে Trend Ride করুন
@@ -140,14 +150,14 @@ ATR-based Position Sizing সবচেয়ে শক্তিশালী প�
 
 ## Market অনুযায়ী Volatility
 
-| Market | গড় দৈনিক Volatility | High Volatility দিন |
-|--------|---------------------|---------------------|
-| EUR/USD | 60-100 Pip | 150+ Pip |
-| GBP/USD | 80-130 Pip | 200+ Pip |
-| Gold | $15-40 | $60-100+ |
-| S&P 500 | 0.5-1.5% | 3-5%+ |
-| Bitcoin | 2-5% | 10-20%+ |
-| USD/JPY | 50-90 Pip | 150+ Pip |
+| Market  | গড় দৈনিক Volatility | High Volatility দিন |
+| ------- | -------------------- | ------------------- |
+| EUR/USD | 60-100 Pip           | 150+ Pip            |
+| GBP/USD | 80-130 Pip           | 200+ Pip            |
+| Gold    | $15-40               | $60-100+            |
+| S&P 500 | 0.5-1.5%             | 3-5%+               |
+| Bitcoin | 2-5%                 | 10-20%+             |
+| USD/JPY | 50-90 Pip            | 150+ Pip            |
 
 ---
 

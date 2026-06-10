@@ -2,10 +2,10 @@
  * Academy Content Generator
  * Generates educational academy content for trading docs
  */
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
-const CONTENT_DIR = path.resolve('content');
+const CONTENT_DIR = path.resolve("content");
 
 function generateAcademyEN(title, slug) {
   return `
@@ -384,51 +384,54 @@ ${title} শক্তিশালী মনোবৈজ্ঞানিক শৃ
 - [ফরেক্স সেশন গাইড](/bn/forex-sessions/introduction) — সেশন টাইমিং আয়ত্ত করুন`;
 }
 
-const langs = ['en', 'bn'];
+const langs = ["en", "bn"];
 let count = 0;
 
 for (const lang of langs) {
-  const dir = path.join(CONTENT_DIR, lang, 'academy');
+  const dir = path.join(CONTENT_DIR, lang, "academy");
   if (!fs.existsSync(dir)) continue;
 
-  const files = fs.readdirSync(dir).filter(f => f.endsWith('.mdx'));
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mdx"));
 
   for (const file of files) {
     const filePath = path.join(dir, file);
-    const content = fs.readFileSync(filePath, 'utf-8');
-    if (content.split('\n').length > 30) continue;
+    const content = fs.readFileSync(filePath, "utf-8");
+    if (content.split("\n").length > 30) continue;
 
     const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
     if (!fmMatch) continue;
 
     const fm = {};
-    fmMatch[1].split('\n').forEach(line => {
-      const [key, ...vals] = line.split(':');
-      if (key && vals.length) fm[key.trim()] = vals.join(':').trim().replace(/^"|"$/g, '');
+    fmMatch[1].split("\n").forEach((line) => {
+      const [key, ...vals] = line.split(":");
+      if (key && vals.length) fm[key.trim()] = vals.join(":").trim().replace(/^"|"$/g, "");
     });
 
-    const title = fm.title || file.replace('.mdx', '').replace(/-/g, ' ');
-    const body = lang === 'en' ? generateAcademyEN(title, file.replace('.mdx', '')) : generateAcademyBN(title, file.replace('.mdx', ''));
+    const title = fm.title || file.replace(".mdx", "").replace(/-/g, " ");
+    const body =
+      lang === "en"
+        ? generateAcademyEN(title, file.replace(".mdx", ""))
+        : generateAcademyBN(title, file.replace(".mdx", ""));
 
-    const desc = lang === 'en'
-      ? `Complete guide to ${title}. Learn everything from basics to advanced concepts with practical examples, risk management, and professional tips.`
-      : `${title} এর সম্পূর্ণ গাইড। বাস্তব উদাহরণ, রিস্ক ম্যানেজমেন্ট এবং পেশাদার টিপস সহ বেসিক থেকে অ্যাডভান্সড কনসেপ্ট পর্যন্ত সবকিছু শিখুন।`;
+    const desc =
+      lang === "en"
+        ? `Complete guide to ${title}. Learn everything from basics to advanced concepts with practical examples, risk management, and professional tips.`
+        : `${title} এর সম্পূর্ণ গাইড। বাস্তব উদাহরণ, রিস্ক ম্যানেজমেন্ট এবং পেশাদার টিপস সহ বেসিক থেকে অ্যাডভান্সড কনসেপ্ট পর্যন্ত সবকিছু শিখুন।`;
 
     const newContent = `---
 title: "${fm.title || title}"
 description: "${desc}"
-level: ${fm.level || 'beginner'}
+level: ${fm.level || "beginner"}
 order: ${fm.order || 1}
 lastUpdated: "2026-05-11"
 ---
 ${body}
 `;
 
-    fs.writeFileSync(filePath, newContent, 'utf-8');
+    fs.writeFileSync(filePath, newContent, "utf-8");
     count++;
     console.log(`✅ ${lang}/academy/${file}`);
   }
 }
 
 console.log(`\nDone! Updated ${count} academy files.`);
-

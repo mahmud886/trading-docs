@@ -17,13 +17,7 @@ export function SidebarNav({ tree, category, lang }: SidebarNavProps) {
   return (
     <nav className="space-y-1 p-4">
       {tree.map((node) => (
-        <SidebarItem
-          key={node.slug}
-          node={node}
-          category={category}
-          lang={lang}
-          depth={0}
-        />
+        <SidebarItem key={node.slug} node={node} category={category} lang={lang} depth={0} />
       ))}
     </nav>
   );
@@ -44,8 +38,7 @@ function SidebarItem({
   const href = `/${lang}/${category}/${node.slug}`;
   const isActive = pathname === href;
   const hasChildren = node.children && node.children.length > 0;
-  const isChildActive =
-    hasChildren && node.children!.some((c) => pathname.includes(c.slug));
+  const isChildActive = hasChildren && node.children!.some((c) => pathname.includes(c.slug));
   const [expanded, setExpanded] = useState(isActive || isChildActive);
 
   if (hasChildren) {
@@ -55,9 +48,7 @@ function SidebarItem({
           onClick={() => setExpanded(!expanded)}
           className={cn(
             "flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm transition-all",
-            isChildActive
-              ? "text-foreground"
-              : "text-muted-foreground hover:bg-accent-green/5 hover:text-foreground"
+            isChildActive ? "text-foreground" : "text-muted-foreground hover:bg-accent-green/5 hover:text-foreground",
           )}
           style={{ paddingLeft: `${depth * 12 + 12}px` }}
         >
@@ -71,13 +62,7 @@ function SidebarItem({
         {expanded && (
           <div className="mt-0.5">
             {node.children!.map((child) => (
-              <SidebarItem
-                key={child.slug}
-                node={child}
-                category={category}
-                lang={lang}
-                depth={depth + 1}
-              />
+              <SidebarItem key={child.slug} node={child} category={category} lang={lang} depth={depth + 1} />
             ))}
           </div>
         )}
@@ -92,7 +77,7 @@ function SidebarItem({
         "block rounded-lg px-3 py-2 text-sm capitalize transition-all",
         isActive
           ? "bg-accent-green/10 font-medium text-accent-green shadow-[inset_2px_0_0_var(--accent-green)]"
-          : "text-muted-foreground hover:bg-accent-green/5 hover:text-foreground"
+          : "text-muted-foreground hover:bg-accent-green/5 hover:text-foreground",
       )}
       style={{ paddingLeft: `${depth * 12 + 24}px` }}
     >

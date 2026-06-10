@@ -17,7 +17,7 @@ export default function LotConverter() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <Link 
+      <Link
         href={`/${lang}/tools`}
         className="flex items-center gap-2 text-muted-foreground hover:text-accent-green mb-6 transition-colors"
       >
@@ -27,14 +27,10 @@ export default function LotConverter() {
 
       <div className="bg-card border border-border rounded-2xl backdrop-blur-xl p-8">
         <h1 className="text-3xl font-bold text-foreground">Lot Size Converter</h1>
-        <p className="text-muted-foreground mt-2">
-          Convert between standard lots, mini lots, micro lots, and units
-        </p>
+        <p className="text-muted-foreground mt-2">Convert between standard lots, mini lots, micro lots, and units</p>
 
         <div className="mt-8">
-          <label className="block text-sm font-medium text-foreground mb-2">
-            Enter Standard Lots
-          </label>
+          <label className="block text-sm font-medium text-foreground mb-2">Enter Standard Lots</label>
           <input
             type="number"
             value={standardLots}

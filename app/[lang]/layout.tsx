@@ -46,21 +46,16 @@ export default async function LangLayout({
   return (
     <html lang={lang} suppressHydrationWarning={true} data-scroll-behavior="smooth" className={fontClasses}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       </head>
       <body suppressHydrationWarning={true} className="relative min-h-screen text-foreground antialiased">
         {/* Emerald Depths background */}
         <div
           className="pointer-events-none fixed inset-0 z-0"
           style={{
-            background: "radial-gradient(ellipse 80% 60% at 50% 0%, var(--emerald-glow), transparent 70%), var(--background)",
+            background:
+              "radial-gradient(ellipse 80% 60% at 50% 0%, var(--emerald-glow), transparent 70%), var(--background)",
           }}
         />
         <div className="bg-grid pointer-events-none fixed inset-0 z-0" />

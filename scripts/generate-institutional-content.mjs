@@ -1,12 +1,12 @@
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
-const contentDir = path.join(process.cwd(), 'content');
+const contentDir = path.join(process.cwd(), "content");
 
 function createFile(filePath, content) {
   const dir = path.dirname(filePath);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(filePath, content, 'utf-8');
+  fs.writeFileSync(filePath, content, "utf-8");
   console.log(`Created: ${filePath}`);
 }
 
@@ -14,21 +14,22 @@ function createFile(filePath, content) {
 // PHASE 2: Order Flow & Volume Profile
 // ============================================================
 const orderFlowMeta = {
-  "introduction": "Introduction to Order Flow",
+  introduction: "Introduction to Order Flow",
   "dom-level2": "DOM & Level 2 Data",
   "volume-profile": "Volume Profile (POC, VAH, VAL)",
-  "vwap": "VWAP — Institutional Anchor",
+  vwap: "VWAP — Institutional Anchor",
   "delta-analysis": "Delta & Cumulative Delta",
   "footprint-charts": "Footprint Charts & Clusters",
   "absorption-exhaustion": "Absorption & Exhaustion",
-  "iceberg-spoofing": "Iceberg Orders & Spoofing"
+  "iceberg-spoofing": "Iceberg Orders & Spoofing",
 };
 
 const orderFlowContent = [
   {
     slug: "introduction",
     title: "Introduction to Order Flow Trading",
-    description: "Understand order flow — the study of real-time buy and sell orders that reveals institutional activity invisible on regular charts. The foundation of professional trading.",
+    description:
+      "Understand order flow — the study of real-time buy and sell orders that reveals institutional activity invisible on regular charts. The foundation of professional trading.",
     level: "beginner",
     order: 1,
     content: `## What is Order Flow?
@@ -125,12 +126,13 @@ To begin reading order flow effectively:
 <Callout type="warning" title="Important">
 Order flow is NOT a replacement for market structure and price action — it's a CONFIRMATION tool. Always combine with HTF bias (ICT/SMC concepts) before using order flow for precision entries.
 </Callout>
-`
+`,
   },
   {
     slug: "dom-level2",
     title: "DOM & Level 2 Data Reading — Complete Guide",
-    description: "Master Depth of Market (DOM) and Level 2 data reading. Learn to identify institutional orders, spoofing, absorption, and real-time supply/demand imbalances used by professional traders.",
+    description:
+      "Master Depth of Market (DOM) and Level 2 data reading. Learn to identify institutional orders, spoofing, absorption, and real-time supply/demand imbalances used by professional traders.",
     level: "intermediate",
     order: 2,
     content: `## What is DOM (Depth of Market)?
@@ -266,12 +268,13 @@ This creates resistance. If price breaks through = strong signal.
 | Jigsaw Trading | DOM analysis | $37/month |
 | Quantower | Multi-asset DOM | Free/Premium |
 | ATAS | Futures + Crypto | $69/month |
-`
+`,
   },
   {
     slug: "volume-profile",
     title: "Volume Profile — POC, VAH, VAL, HVN, LVN Complete Guide",
-    description: "Master Volume Profile analysis. Learn Point of Control (POC), Value Area High/Low, High/Low Volume Nodes, and how institutions use volume distribution for entries and exits.",
+    description:
+      "Master Volume Profile analysis. Learn Point of Control (POC), Value Area High/Low, High/Low Volume Nodes, and how institutions use volume distribution for entries and exits.",
     level: "intermediate",
     order: 3,
     content: `## What is Volume Profile?
@@ -396,12 +399,13 @@ Price    Volume Distribution
 <Callout type="warning" title="Common Mistake">
 Don't use Volume Profile in isolation. A POC without directional bias is just a level. Always combine with HTF market structure and ICT/SMC concepts for direction FIRST, then use VP for precision.
 </Callout>
-`
+`,
   },
   {
     slug: "vwap",
     title: "VWAP — Volume Weighted Average Price (Institutional Anchor)",
-    description: "Master VWAP — the single most important institutional benchmark. Learn how banks use VWAP for execution, how to identify institutional positioning, and VWAP trading strategies.",
+    description:
+      "Master VWAP — the single most important institutional benchmark. Learn how banks use VWAP for execution, how to identify institutional positioning, and VWAP trading strategies.",
     level: "intermediate",
     order: 4,
     content: `## What is VWAP?
@@ -527,12 +531,13 @@ VWAP   ═════════════════  Fair value (institut
 <Callout type="warning" title="Forex VWAP Note">
 Spot forex has no centralized volume. For accurate VWAP on forex, use futures data (6E for EUR/USD, 6B for GBP/USD) or broker-level tick volume as a proxy.
 </Callout>
-`
+`,
   },
   {
     slug: "delta-analysis",
     title: "Delta & Cumulative Delta Analysis — Complete Guide",
-    description: "Master Delta analysis — the difference between buying and selling volume. Learn cumulative delta divergence, delta absorption, and how to confirm institutional direction.",
+    description:
+      "Master Delta analysis — the difference between buying and selling volume. Learn cumulative delta divergence, delta absorption, and how to confirm institutional direction.",
     level: "advanced",
     order: 5,
     content: `## What is Delta?
@@ -678,12 +683,13 @@ Multiple green candles with NEGATIVE delta
 | Bookmap | Visual delta heatmap | Real-time scalping |
 | VolSys | Delta dashboard | Quick analysis |
 | TradingView | Basic delta indicators | Beginner friendly |
-`
+`,
   },
   {
     slug: "footprint-charts",
     title: "Footprint Charts & Cluster Analysis — Complete Guide",
-    description: "Master footprint charts — see inside every candle with bid/ask volume, delta, and imbalances. Learn cluster analysis used by institutional traders for precision entries.",
+    description:
+      "Master footprint charts — see inside every candle with bid/ask volume, delta, and imbalances. Learn cluster analysis used by institutional traders for precision entries.",
     level: "advanced",
     order: 6,
     content: `## What are Footprint Charts?
@@ -830,12 +836,13 @@ Footprint reading requires practice:
 - ATAS (best for crypto)
 - Quantower (multi-asset)
 - Exocharts (crypto-focused)
-`
+`,
   },
   {
     slug: "absorption-exhaustion",
     title: "Absorption & Exhaustion Patterns — Complete Guide",
-    description: "Master absorption and exhaustion patterns in order flow. Learn how to identify when institutions are absorbing aggressive orders and when momentum is exhausting for precision reversals.",
+    description:
+      "Master absorption and exhaustion patterns in order flow. Learn how to identify when institutions are absorbing aggressive orders and when momentum is exhausting for precision reversals.",
     level: "advanced",
     order: 7,
     content: `## Absorption vs Exhaustion
@@ -978,12 +985,13 @@ The most powerful setup:
 - Trading exhaustion too early (wait for actual reversal candle)
 - Not combining with structure (absorption at random levels is meaningless)
 - Over-trading absorption in ranging markets
-`
+`,
   },
   {
     slug: "iceberg-spoofing",
     title: "Iceberg Orders & Spoofing Detection — Complete Guide",
-    description: "Learn to identify hidden institutional iceberg orders and detect illegal spoofing/layering. Understand dark pool activity and how large players conceal their true order sizes.",
+    description:
+      "Learn to identify hidden institutional iceberg orders and detect illegal spoofing/layering. Understand dark pool activity and how large players conceal their true order sizes.",
     level: "expert",
     order: 8,
     content: `## What are Iceberg Orders?
@@ -1146,15 +1154,12 @@ All cancelled once price moves to desired buy level.
 <Callout type="warning" title="Legal Note">
 Spoofing is illegal under Dodd-Frank Act (US), MAR (EU), and similar regulations. However, it still occurs, especially in crypto markets. Learn to detect it to PROTECT yourself, not to replicate it.
 </Callout>
-`
-  }
+`,
+  },
 ];
 
 // Write Order Flow files
-createFile(
-  path.join(contentDir, 'en', 'order-flow', '_meta.json'),
-  JSON.stringify(orderFlowMeta, null, 2) + '\n'
-);
+createFile(path.join(contentDir, "en", "order-flow", "_meta.json"), JSON.stringify(orderFlowMeta, null, 2) + "\n");
 
 for (const item of orderFlowContent) {
   const frontmatter = `---
@@ -1167,41 +1172,91 @@ lastUpdated: "2026-06-10"
 
 ${item.content}
 `;
-  createFile(
-    path.join(contentDir, 'en', 'order-flow', `${item.slug}.mdx`),
-    frontmatter
-  );
+  createFile(path.join(contentDir, "en", "order-flow", `${item.slug}.mdx`), frontmatter);
 }
 
 // ============================================================
 // PHASE 3: Intermarket & Correlation Analysis
 // ============================================================
 const intermarketMeta = {
-  "introduction": "Introduction to Intermarket Analysis",
+  introduction: "Introduction to Intermarket Analysis",
   "dxy-correlation": "DXY ↔ Majors Correlation",
   "yield-curve": "Yield Curve Dynamics",
   "gold-dollar-bonds": "Gold ↔ Dollar ↔ Bonds Trinity",
   "risk-on-risk-off": "Risk-On / Risk-Off Framework",
   "cross-asset-momentum": "Cross-Asset Momentum Signals",
   "spx-vix-regime": "SPX ↔ VIX Regime Detection",
-  "currency-strength": "Currency Strength Methodology"
+  "currency-strength": "Currency Strength Methodology",
 };
 
 const intermarketContent = [
-  { slug: "introduction", title: "Introduction to Intermarket Analysis", description: "Understand how markets are interconnected. No institutional fund trades a single instrument in isolation — learn the correlations that drive professional portfolio decisions.", level: "beginner", order: 1 },
-  { slug: "dxy-correlation", title: "DXY ↔ Major Pairs Correlation Models", description: "Master the relationship between the US Dollar Index and major currency pairs. Learn how DXY movements predict EUR/USD, GBP/USD, and commodity currencies with institutional precision.", level: "intermediate", order: 2 },
-  { slug: "yield-curve", title: "Yield Curve Dynamics — 2s10s Spread & Real Yields", description: "Understand yield curve analysis used by macro funds. Learn 2-year vs 10-year spread dynamics, real yields, and how bond markets predict currency and equity movements.", level: "intermediate", order: 3 },
-  { slug: "gold-dollar-bonds", title: "Gold ↔ Dollar ↔ Bonds Trinity", description: "Master the three-way relationship between gold, US dollar, and treasury bonds. Learn how institutions use this trinity for hedging, rotation, and directional signals.", level: "intermediate", order: 4 },
-  { slug: "risk-on-risk-off", title: "Risk-On / Risk-Off Framework", description: "Learn the institutional risk regime framework. Understand which assets flow into risk-on vs risk-off environments and how to position your portfolio accordingly.", level: "intermediate", order: 5 },
-  { slug: "cross-asset-momentum", title: "Cross-Asset Momentum Signals", description: "Identify momentum signals across asset classes. Learn how equity momentum, bond momentum, and commodity momentum create leading signals for forex markets.", level: "advanced", order: 6 },
-  { slug: "spx-vix-regime", title: "SPX ↔ VIX Relationship for Regime Detection", description: "Master the SPX-VIX inverse correlation and regime detection. Learn how volatility regimes determine institutional behavior and optimal trading strategies.", level: "advanced", order: 7 },
-  { slug: "currency-strength", title: "Currency Strength Meter Methodology", description: "Build and use a currency strength meter to identify the strongest and weakest currencies. Learn institutional pairing methodology for maximum edge in forex trading.", level: "intermediate", order: 8 }
+  {
+    slug: "introduction",
+    title: "Introduction to Intermarket Analysis",
+    description:
+      "Understand how markets are interconnected. No institutional fund trades a single instrument in isolation — learn the correlations that drive professional portfolio decisions.",
+    level: "beginner",
+    order: 1,
+  },
+  {
+    slug: "dxy-correlation",
+    title: "DXY ↔ Major Pairs Correlation Models",
+    description:
+      "Master the relationship between the US Dollar Index and major currency pairs. Learn how DXY movements predict EUR/USD, GBP/USD, and commodity currencies with institutional precision.",
+    level: "intermediate",
+    order: 2,
+  },
+  {
+    slug: "yield-curve",
+    title: "Yield Curve Dynamics — 2s10s Spread & Real Yields",
+    description:
+      "Understand yield curve analysis used by macro funds. Learn 2-year vs 10-year spread dynamics, real yields, and how bond markets predict currency and equity movements.",
+    level: "intermediate",
+    order: 3,
+  },
+  {
+    slug: "gold-dollar-bonds",
+    title: "Gold ↔ Dollar ↔ Bonds Trinity",
+    description:
+      "Master the three-way relationship between gold, US dollar, and treasury bonds. Learn how institutions use this trinity for hedging, rotation, and directional signals.",
+    level: "intermediate",
+    order: 4,
+  },
+  {
+    slug: "risk-on-risk-off",
+    title: "Risk-On / Risk-Off Framework",
+    description:
+      "Learn the institutional risk regime framework. Understand which assets flow into risk-on vs risk-off environments and how to position your portfolio accordingly.",
+    level: "intermediate",
+    order: 5,
+  },
+  {
+    slug: "cross-asset-momentum",
+    title: "Cross-Asset Momentum Signals",
+    description:
+      "Identify momentum signals across asset classes. Learn how equity momentum, bond momentum, and commodity momentum create leading signals for forex markets.",
+    level: "advanced",
+    order: 6,
+  },
+  {
+    slug: "spx-vix-regime",
+    title: "SPX ↔ VIX Relationship for Regime Detection",
+    description:
+      "Master the SPX-VIX inverse correlation and regime detection. Learn how volatility regimes determine institutional behavior and optimal trading strategies.",
+    level: "advanced",
+    order: 7,
+  },
+  {
+    slug: "currency-strength",
+    title: "Currency Strength Meter Methodology",
+    description:
+      "Build and use a currency strength meter to identify the strongest and weakest currencies. Learn institutional pairing methodology for maximum edge in forex trading.",
+    level: "intermediate",
+    order: 8,
+  },
 ];
 
-createFile(
-  path.join(contentDir, 'en', 'intermarket', '_meta.json'),
-  JSON.stringify(intermarketMeta, null, 2) + '\n'
-);
+createFile(path.join(contentDir, "en", "intermarket", "_meta.json"), JSON.stringify(intermarketMeta, null, 2) + "\n");
 
 for (const item of intermarketContent) {
   const content = `---
@@ -1212,7 +1267,7 @@ order: ${item.order}
 lastUpdated: "2026-06-10"
 ---
 
-## ${item.title.split('—')[0].trim()}
+## ${item.title.split("—")[0].trim()}
 
 ${item.description}
 
@@ -1259,17 +1314,14 @@ Understanding intermarket relationships gives you:
 Correlations change over time and can break during crisis periods. Always use correlations as ONE input in your analysis, never as the sole decision factor. Regularly update your correlation matrices.
 </Callout>
 `;
-  createFile(
-    path.join(contentDir, 'en', 'intermarket', `${item.slug}.mdx`),
-    content
-  );
+  createFile(path.join(contentDir, "en", "intermarket", `${item.slug}.mdx`), content);
 }
 
 // ============================================================
 // PHASE 4: Quantitative Trading
 // ============================================================
 const quantMeta = {
-  "introduction": "Introduction to Quantitative Trading",
+  introduction: "Introduction to Quantitative Trading",
   "expectancy-formula": "Expectancy & Edge Calculation",
   "kelly-criterion": "Kelly Criterion & Fractional Kelly",
   "mean-reversion": "Mean Reversion Models",
@@ -1277,25 +1329,85 @@ const quantMeta = {
   "backtesting-methodology": "Statistical Backtesting Methodology",
   "monte-carlo": "Monte Carlo Simulations",
   "equity-curve-management": "Equity Curve Management",
-  "walk-forward": "Walk-Forward Optimization"
+  "walk-forward": "Walk-Forward Optimization",
 };
 
 const quantContent = [
-  { slug: "introduction", title: "Introduction to Quantitative Trading", description: "Understand quantitative approaches to trading. Learn how systematic traders use mathematics, statistics, and probability to build consistent edges in the markets.", level: "beginner", order: 1 },
-  { slug: "expectancy-formula", title: "Expectancy Formula & Edge Calculation", description: "Master the expectancy formula — the mathematical foundation of every profitable trading system. Calculate your true edge: (Win% × Avg Win) - (Loss% × Avg Loss).", level: "intermediate", order: 2 },
-  { slug: "kelly-criterion", title: "Kelly Criterion & Fractional Kelly Position Sizing", description: "Learn optimal position sizing using Kelly Criterion. Understand full Kelly, fractional Kelly, and why most institutional traders use 25-50% Kelly for capital preservation.", level: "intermediate", order: 3 },
-  { slug: "mean-reversion", title: "Mean Reversion Models", description: "Master mean reversion strategies used by quantitative funds. Learn z-score analysis, Bollinger Band reversion, pairs trading, and statistical arbitrage approaches.", level: "advanced", order: 4 },
-  { slug: "momentum-factors", title: "Momentum Factor Strategies", description: "Understand momentum as a quantitative factor. Learn time-series momentum, cross-sectional momentum, and how trend-following CTAs generate returns.", level: "advanced", order: 5 },
-  { slug: "backtesting-methodology", title: "Statistical Backtesting Methodology", description: "Learn rigorous backtesting methodology. Avoid survivorship bias, look-ahead bias, overfitting, and understand statistical significance testing for trading strategies.", level: "intermediate", order: 6 },
-  { slug: "monte-carlo", title: "Monte Carlo Simulations for Drawdown Expectancy", description: "Master Monte Carlo analysis for trading. Simulate thousands of possible equity curves to understand drawdown probability, ruin risk, and confidence intervals.", level: "advanced", order: 7 },
-  { slug: "equity-curve-management", title: "Equity Curve Management", description: "Learn to manage your strategy based on equity curve behavior. Understand when to increase/decrease size, when to pause, and equity curve trading rules.", level: "advanced", order: 8 },
-  { slug: "walk-forward", title: "Walk-Forward Optimization", description: "Master walk-forward analysis — the gold standard for strategy validation. Learn in-sample/out-of-sample testing, parameter stability, and avoiding curve-fitting.", level: "expert", order: 9 }
+  {
+    slug: "introduction",
+    title: "Introduction to Quantitative Trading",
+    description:
+      "Understand quantitative approaches to trading. Learn how systematic traders use mathematics, statistics, and probability to build consistent edges in the markets.",
+    level: "beginner",
+    order: 1,
+  },
+  {
+    slug: "expectancy-formula",
+    title: "Expectancy Formula & Edge Calculation",
+    description:
+      "Master the expectancy formula — the mathematical foundation of every profitable trading system. Calculate your true edge: (Win% × Avg Win) - (Loss% × Avg Loss).",
+    level: "intermediate",
+    order: 2,
+  },
+  {
+    slug: "kelly-criterion",
+    title: "Kelly Criterion & Fractional Kelly Position Sizing",
+    description:
+      "Learn optimal position sizing using Kelly Criterion. Understand full Kelly, fractional Kelly, and why most institutional traders use 25-50% Kelly for capital preservation.",
+    level: "intermediate",
+    order: 3,
+  },
+  {
+    slug: "mean-reversion",
+    title: "Mean Reversion Models",
+    description:
+      "Master mean reversion strategies used by quantitative funds. Learn z-score analysis, Bollinger Band reversion, pairs trading, and statistical arbitrage approaches.",
+    level: "advanced",
+    order: 4,
+  },
+  {
+    slug: "momentum-factors",
+    title: "Momentum Factor Strategies",
+    description:
+      "Understand momentum as a quantitative factor. Learn time-series momentum, cross-sectional momentum, and how trend-following CTAs generate returns.",
+    level: "advanced",
+    order: 5,
+  },
+  {
+    slug: "backtesting-methodology",
+    title: "Statistical Backtesting Methodology",
+    description:
+      "Learn rigorous backtesting methodology. Avoid survivorship bias, look-ahead bias, overfitting, and understand statistical significance testing for trading strategies.",
+    level: "intermediate",
+    order: 6,
+  },
+  {
+    slug: "monte-carlo",
+    title: "Monte Carlo Simulations for Drawdown Expectancy",
+    description:
+      "Master Monte Carlo analysis for trading. Simulate thousands of possible equity curves to understand drawdown probability, ruin risk, and confidence intervals.",
+    level: "advanced",
+    order: 7,
+  },
+  {
+    slug: "equity-curve-management",
+    title: "Equity Curve Management",
+    description:
+      "Learn to manage your strategy based on equity curve behavior. Understand when to increase/decrease size, when to pause, and equity curve trading rules.",
+    level: "advanced",
+    order: 8,
+  },
+  {
+    slug: "walk-forward",
+    title: "Walk-Forward Optimization",
+    description:
+      "Master walk-forward analysis — the gold standard for strategy validation. Learn in-sample/out-of-sample testing, parameter stability, and avoiding curve-fitting.",
+    level: "expert",
+    order: 9,
+  },
 ];
 
-createFile(
-  path.join(contentDir, 'en', 'quantitative', '_meta.json'),
-  JSON.stringify(quantMeta, null, 2) + '\n'
-);
+createFile(path.join(contentDir, "en", "quantitative", "_meta.json"), JSON.stringify(quantMeta, null, 2) + "\n");
 
 for (const item of quantContent) {
   const content = `---
@@ -1306,7 +1418,7 @@ order: ${item.order}
 lastUpdated: "2026-06-10"
 ---
 
-## ${item.title.split('—')[0].split('&')[0].trim()}
+## ${item.title.split("—")[0].split("&")[0].trim()}
 
 ${item.description}
 
@@ -1353,41 +1465,91 @@ Quantitative trading is built on these foundations:
 The #1 killer of quantitative strategies is overfitting — finding patterns in historical noise that don't persist forward. Always use out-of-sample data and walk-forward testing. If a strategy looks "too good" in backtest, it probably IS too good to be true.
 </Callout>
 `;
-  createFile(
-    path.join(contentDir, 'en', 'quantitative', `${item.slug}.mdx`),
-    content
-  );
+  createFile(path.join(contentDir, "en", "quantitative", `${item.slug}.mdx`), content);
 }
 
 // ============================================================
 // PHASE 5: Wyckoff Method
 // ============================================================
 const wyckoffMeta = {
-  "introduction": "Introduction to Wyckoff Method",
+  introduction: "Introduction to Wyckoff Method",
   "composite-man": "Composite Man Theory",
   "accumulation-schematic": "Wyckoff Accumulation Schematics",
   "distribution-schematic": "Wyckoff Distribution Schematics",
   "phases-events": "Wyckoff Phases & Events",
   "volume-spread-analysis": "Volume Spread Analysis (VSA)",
   "effort-vs-result": "Effort vs Result Principle",
-  "cause-effect": "Cause and Effect (P&F Charts)"
+  "cause-effect": "Cause and Effect (P&F Charts)",
 };
 
 const wyckoffContent = [
-  { slug: "introduction", title: "Introduction to Wyckoff Method", description: "Master the Wyckoff Method — the original institutional framework from the 1930s. Understand how the 'Composite Man' (smart money) accumulates and distributes positions.", level: "beginner", order: 1 },
-  { slug: "composite-man", title: "Composite Man Theory — The Original Smart Money", description: "Understand the Composite Man — Wyckoff's concept of the combined institutional operators who engineer market movements. Learn to read the market through their eyes.", level: "intermediate", order: 2 },
-  { slug: "accumulation-schematic", title: "Wyckoff Accumulation Schematics #1 & #2", description: "Master Wyckoff accumulation patterns. Learn Schematic #1 (with spring) and Schematic #2 (without spring), including PS, SC, AR, ST, Spring, SOS, LPS, and BU phases.", level: "intermediate", order: 3 },
-  { slug: "distribution-schematic", title: "Wyckoff Distribution Schematics #1 & #2", description: "Master Wyckoff distribution patterns. Learn Schematic #1 (with UTAD) and Schematic #2 (without UTAD), including PSY, BC, AR, ST, UT, UTAD, SOW, and LPSY phases.", level: "intermediate", order: 4 },
-  { slug: "phases-events", title: "Wyckoff Phases & Events Complete Breakdown", description: "Deep dive into all Wyckoff phases: PS, SC, AR, ST, Spring, Test, SOS, LPS, BU, PSY, BC, UT, UTAD, SOW, LPSY — with identification rules and trading strategies.", level: "advanced", order: 5 },
-  { slug: "volume-spread-analysis", title: "Volume Spread Analysis (VSA) — Complete Guide", description: "Master Volume Spread Analysis — the modern evolution of Wyckoff's principles. Learn to read effort (volume) vs result (spread) to identify institutional activity.", level: "advanced", order: 6 },
-  { slug: "effort-vs-result", title: "Effort vs Result Principle", description: "Understand the Effort vs Result principle — when volume (effort) doesn't match price movement (result), institutions are operating. Learn to identify divergences.", level: "advanced", order: 7 },
-  { slug: "cause-effect", title: "Cause and Effect — Point & Figure Charts", description: "Master Wyckoff's Cause and Effect principle using Point & Figure charts. Learn to measure the 'cause' (accumulation/distribution range) to project the 'effect' (price target).", level: "expert", order: 8 }
+  {
+    slug: "introduction",
+    title: "Introduction to Wyckoff Method",
+    description:
+      "Master the Wyckoff Method — the original institutional framework from the 1930s. Understand how the 'Composite Man' (smart money) accumulates and distributes positions.",
+    level: "beginner",
+    order: 1,
+  },
+  {
+    slug: "composite-man",
+    title: "Composite Man Theory — The Original Smart Money",
+    description:
+      "Understand the Composite Man — Wyckoff's concept of the combined institutional operators who engineer market movements. Learn to read the market through their eyes.",
+    level: "intermediate",
+    order: 2,
+  },
+  {
+    slug: "accumulation-schematic",
+    title: "Wyckoff Accumulation Schematics #1 & #2",
+    description:
+      "Master Wyckoff accumulation patterns. Learn Schematic #1 (with spring) and Schematic #2 (without spring), including PS, SC, AR, ST, Spring, SOS, LPS, and BU phases.",
+    level: "intermediate",
+    order: 3,
+  },
+  {
+    slug: "distribution-schematic",
+    title: "Wyckoff Distribution Schematics #1 & #2",
+    description:
+      "Master Wyckoff distribution patterns. Learn Schematic #1 (with UTAD) and Schematic #2 (without UTAD), including PSY, BC, AR, ST, UT, UTAD, SOW, and LPSY phases.",
+    level: "intermediate",
+    order: 4,
+  },
+  {
+    slug: "phases-events",
+    title: "Wyckoff Phases & Events Complete Breakdown",
+    description:
+      "Deep dive into all Wyckoff phases: PS, SC, AR, ST, Spring, Test, SOS, LPS, BU, PSY, BC, UT, UTAD, SOW, LPSY — with identification rules and trading strategies.",
+    level: "advanced",
+    order: 5,
+  },
+  {
+    slug: "volume-spread-analysis",
+    title: "Volume Spread Analysis (VSA) — Complete Guide",
+    description:
+      "Master Volume Spread Analysis — the modern evolution of Wyckoff's principles. Learn to read effort (volume) vs result (spread) to identify institutional activity.",
+    level: "advanced",
+    order: 6,
+  },
+  {
+    slug: "effort-vs-result",
+    title: "Effort vs Result Principle",
+    description:
+      "Understand the Effort vs Result principle — when volume (effort) doesn't match price movement (result), institutions are operating. Learn to identify divergences.",
+    level: "advanced",
+    order: 7,
+  },
+  {
+    slug: "cause-effect",
+    title: "Cause and Effect — Point & Figure Charts",
+    description:
+      "Master Wyckoff's Cause and Effect principle using Point & Figure charts. Learn to measure the 'cause' (accumulation/distribution range) to project the 'effect' (price target).",
+    level: "expert",
+    order: 8,
+  },
 ];
 
-createFile(
-  path.join(contentDir, 'en', 'wyckoff', '_meta.json'),
-  JSON.stringify(wyckoffMeta, null, 2) + '\n'
-);
+createFile(path.join(contentDir, "en", "wyckoff", "_meta.json"), JSON.stringify(wyckoffMeta, null, 2) + "\n");
 
 for (const item of wyckoffContent) {
   const content = `---
@@ -1398,7 +1560,7 @@ order: ${item.order}
 lastUpdated: "2026-06-10"
 ---
 
-## ${item.title.split('—')[0].split('#')[0].trim()}
+## ${item.title.split("—")[0].split("#")[0].trim()}
 
 ${item.description}
 
@@ -1449,39 +1611,82 @@ Richard Wyckoff developed his method in the 1930s by studying how JP Morgan, Jes
 Wyckoff schematics are IDEALIZED templates. Real markets rarely follow them perfectly. Look for the PRINCIPLE behind each event, not the exact visual pattern. Phase identification is more important than event labeling.
 </Callout>
 `;
-  createFile(
-    path.join(contentDir, 'en', 'wyckoff', `${item.slug}.mdx`),
-    content
-  );
+  createFile(path.join(contentDir, "en", "wyckoff", `${item.slug}.mdx`), content);
 }
 
 // ============================================================
 // PHASE 6: Auction Market Theory
 // ============================================================
 const auctionMeta = {
-  "introduction": "Introduction to Auction Market Theory",
+  introduction: "Introduction to Auction Market Theory",
   "market-profile": "Market Profile (TPO Charts)",
   "initial-balance": "Initial Balance (IB)",
   "value-area": "Value Area Migration",
   "excess-poor-highs-lows": "Excess & Poor Highs/Lows",
   "single-prints": "Single Print Concepts",
-  "balanced-imbalanced": "Balanced vs Imbalanced Markets"
+  "balanced-imbalanced": "Balanced vs Imbalanced Markets",
 };
 
 const auctionContent = [
-  { slug: "introduction", title: "Introduction to Auction Market Theory", description: "Understand Auction Market Theory (AMT) — the framework that explains HOW and WHY price moves. Learn how markets facilitate trade between buyers and sellers through price discovery.", level: "beginner", order: 1 },
-  { slug: "market-profile", title: "Market Profile — TPO Charts Complete Guide", description: "Master Market Profile (Time Price Opportunity) charts. Learn to read TPO distributions, identify balance/imbalance, and understand institutional price acceptance.", level: "intermediate", order: 2 },
-  { slug: "initial-balance", title: "Initial Balance — Breakout & Failure Strategies", description: "Master the Initial Balance (IB) concept — the range formed in the first hour of trading. Learn IB breakouts, failures, and how institutions use the IB as a reference.", level: "intermediate", order: 3 },
-  { slug: "value-area", title: "Value Area Migration — Tracking Institutional Flow", description: "Learn to track Value Area migration between sessions. Understand how shifting value areas reveal institutional accumulation, distribution, and directional intent.", level: "intermediate", order: 4 },
-  { slug: "excess-poor-highs-lows", title: "Excess & Poor Highs/Lows — Auction Completeness", description: "Identify excess (completed auctions) vs poor highs/lows (incomplete auctions). Learn why poor extremes are revisited and how to trade them with institutional logic.", level: "advanced", order: 5 },
-  { slug: "single-prints", title: "Single Print Concepts — Price Rejection Zones", description: "Master single print analysis — areas where price moved so fast that only one TPO printed. Learn why single prints act as support/resistance and future targets.", level: "advanced", order: 6 },
-  { slug: "balanced-imbalanced", title: "Balanced vs Imbalanced Markets", description: "Distinguish between balanced markets (range-bound, mean-reverting) and imbalanced markets (trending, directional). Learn the optimal strategy for each market state.", level: "advanced", order: 7 }
+  {
+    slug: "introduction",
+    title: "Introduction to Auction Market Theory",
+    description:
+      "Understand Auction Market Theory (AMT) — the framework that explains HOW and WHY price moves. Learn how markets facilitate trade between buyers and sellers through price discovery.",
+    level: "beginner",
+    order: 1,
+  },
+  {
+    slug: "market-profile",
+    title: "Market Profile — TPO Charts Complete Guide",
+    description:
+      "Master Market Profile (Time Price Opportunity) charts. Learn to read TPO distributions, identify balance/imbalance, and understand institutional price acceptance.",
+    level: "intermediate",
+    order: 2,
+  },
+  {
+    slug: "initial-balance",
+    title: "Initial Balance — Breakout & Failure Strategies",
+    description:
+      "Master the Initial Balance (IB) concept — the range formed in the first hour of trading. Learn IB breakouts, failures, and how institutions use the IB as a reference.",
+    level: "intermediate",
+    order: 3,
+  },
+  {
+    slug: "value-area",
+    title: "Value Area Migration — Tracking Institutional Flow",
+    description:
+      "Learn to track Value Area migration between sessions. Understand how shifting value areas reveal institutional accumulation, distribution, and directional intent.",
+    level: "intermediate",
+    order: 4,
+  },
+  {
+    slug: "excess-poor-highs-lows",
+    title: "Excess & Poor Highs/Lows — Auction Completeness",
+    description:
+      "Identify excess (completed auctions) vs poor highs/lows (incomplete auctions). Learn why poor extremes are revisited and how to trade them with institutional logic.",
+    level: "advanced",
+    order: 5,
+  },
+  {
+    slug: "single-prints",
+    title: "Single Print Concepts — Price Rejection Zones",
+    description:
+      "Master single print analysis — areas where price moved so fast that only one TPO printed. Learn why single prints act as support/resistance and future targets.",
+    level: "advanced",
+    order: 6,
+  },
+  {
+    slug: "balanced-imbalanced",
+    title: "Balanced vs Imbalanced Markets",
+    description:
+      "Distinguish between balanced markets (range-bound, mean-reverting) and imbalanced markets (trending, directional). Learn the optimal strategy for each market state.",
+    level: "advanced",
+    order: 7,
+  },
 ];
 
-createFile(
-  path.join(contentDir, 'en', 'auction-market', '_meta.json'),
-  JSON.stringify(auctionMeta, null, 2) + '\n'
-);
+createFile(path.join(contentDir, "en", "auction-market", "_meta.json"), JSON.stringify(auctionMeta, null, 2) + "\n");
 
 for (const item of auctionContent) {
   const content = `---
@@ -1492,7 +1697,7 @@ order: ${item.order}
 lastUpdated: "2026-06-10"
 ---
 
-## ${item.title.split('—')[0].split('(')[0].trim()}
+## ${item.title.split("—")[0].split("(")[0].trim()}
 
 ${item.description}
 
@@ -1559,24 +1764,77 @@ Markets exist for ONE purpose: to facilitate trade. Price moves UP to find selle
 AMT tells you WHERE the market is in its auction process. ICT/SMC tells you WHO is driving it and WHEN they'll act. Combining both creates a complete institutional framework — understanding both the mechanism (AMT) and the operator (Smart Money).
 </Callout>
 `;
-  createFile(
-    path.join(contentDir, 'en', 'auction-market', `${item.slug}.mdx`),
-    content
-  );
+  createFile(path.join(contentDir, "en", "auction-market", `${item.slug}.mdx`), content);
 }
 
 // ============================================================
 // PHASE 7: Macro & Fundamental (Academy expansion)
 // ============================================================
 const macroContent = [
-  { slug: "central-bank-analysis", title: "Central Bank Policy Analysis — Hawkish/Dovish Scoring", description: "Learn to analyze central bank communications like institutional macro traders. Build a hawkish/dovish scoring system for Fed, ECB, BOE, and BOJ policy decisions.", level: "intermediate", order: 50 },
-  { slug: "cot-report", title: "COT Report Reading — CFTC Commitment of Traders", description: "Master COT report analysis. Learn to read CFTC positioning data, identify institutional sentiment extremes, and use COT as a contrarian indicator for forex and commodities.", level: "intermediate", order: 51 },
-  { slug: "institutional-positioning", title: "Institutional Positioning Data — TFF & DCOT Reports", description: "Understand institutional positioning through TFF (Traders in Financial Futures) and disaggregated COT reports. Learn how asset managers, leveraged funds, and dealers position.", level: "advanced", order: 52 },
-  { slug: "sentiment-analysis", title: "Sentiment Analysis — Retail Positioning as Contrarian Signal", description: "Learn to use retail sentiment data as a contrarian indicator. When retail is extremely long, smart money is short. Master sentiment-based institutional trading.", level: "intermediate", order: 53 },
-  { slug: "carry-trade", title: "Carry Trade Mechanics — Interest Rate Differentials", description: "Master carry trade strategies used by institutional FX desks. Learn how interest rate differentials drive currency flows, carry trade unwinding risks, and positioning.", level: "intermediate", order: 54 },
-  { slug: "seasonal-patterns", title: "Seasonal Patterns & Calendar Tendencies", description: "Learn seasonal patterns in forex, commodities, and equities. Understand January effect, sell-in-May, quarter-end flows, and how institutions position for seasonal moves.", level: "intermediate", order: 55 },
-  { slug: "interest-rate-differentials", title: "Interest Rate Differential Models for Forex", description: "Master interest rate differential analysis for currency trading. Learn how rate expectations drive forex flows, forward curves, and the carry-to-risk ratio framework.", level: "advanced", order: 56 },
-  { slug: "gdp-inflation-cycles", title: "GDP & Inflation Cycle Mapping", description: "Map economic cycles for trading decisions. Learn to identify where we are in the business cycle (expansion, peak, contraction, trough) and position accordingly.", level: "advanced", order: 57 }
+  {
+    slug: "central-bank-analysis",
+    title: "Central Bank Policy Analysis — Hawkish/Dovish Scoring",
+    description:
+      "Learn to analyze central bank communications like institutional macro traders. Build a hawkish/dovish scoring system for Fed, ECB, BOE, and BOJ policy decisions.",
+    level: "intermediate",
+    order: 50,
+  },
+  {
+    slug: "cot-report",
+    title: "COT Report Reading — CFTC Commitment of Traders",
+    description:
+      "Master COT report analysis. Learn to read CFTC positioning data, identify institutional sentiment extremes, and use COT as a contrarian indicator for forex and commodities.",
+    level: "intermediate",
+    order: 51,
+  },
+  {
+    slug: "institutional-positioning",
+    title: "Institutional Positioning Data — TFF & DCOT Reports",
+    description:
+      "Understand institutional positioning through TFF (Traders in Financial Futures) and disaggregated COT reports. Learn how asset managers, leveraged funds, and dealers position.",
+    level: "advanced",
+    order: 52,
+  },
+  {
+    slug: "sentiment-analysis",
+    title: "Sentiment Analysis — Retail Positioning as Contrarian Signal",
+    description:
+      "Learn to use retail sentiment data as a contrarian indicator. When retail is extremely long, smart money is short. Master sentiment-based institutional trading.",
+    level: "intermediate",
+    order: 53,
+  },
+  {
+    slug: "carry-trade",
+    title: "Carry Trade Mechanics — Interest Rate Differentials",
+    description:
+      "Master carry trade strategies used by institutional FX desks. Learn how interest rate differentials drive currency flows, carry trade unwinding risks, and positioning.",
+    level: "intermediate",
+    order: 54,
+  },
+  {
+    slug: "seasonal-patterns",
+    title: "Seasonal Patterns & Calendar Tendencies",
+    description:
+      "Learn seasonal patterns in forex, commodities, and equities. Understand January effect, sell-in-May, quarter-end flows, and how institutions position for seasonal moves.",
+    level: "intermediate",
+    order: 55,
+  },
+  {
+    slug: "interest-rate-differentials",
+    title: "Interest Rate Differential Models for Forex",
+    description:
+      "Master interest rate differential analysis for currency trading. Learn how rate expectations drive forex flows, forward curves, and the carry-to-risk ratio framework.",
+    level: "advanced",
+    order: 56,
+  },
+  {
+    slug: "gdp-inflation-cycles",
+    title: "GDP & Inflation Cycle Mapping",
+    description:
+      "Map economic cycles for trading decisions. Learn to identify where we are in the business cycle (expansion, peak, contraction, trough) and position accordingly.",
+    level: "advanced",
+    order: 57,
+  },
 ];
 
 for (const item of macroContent) {
@@ -1588,7 +1846,7 @@ order: ${item.order}
 lastUpdated: "2026-06-10"
 ---
 
-## ${item.title.split('—')[0].split('(')[0].trim()}
+## ${item.title.split("—")[0].split("(")[0].trim()}
 
 ${item.description}
 
@@ -1627,24 +1885,77 @@ Technical analysis tells you WHEN to enter. Macro analysis tells you WHICH DIREC
 You don't need a PhD in economics. Focus on: 1) Which central banks are hawkish/dovish? 2) Where is positioning extreme? 3) What's the rate direction? These three questions cover 80% of institutional macro edge.
 </Callout>
 `;
-  createFile(
-    path.join(contentDir, 'en', 'academy', `${item.slug}.mdx`),
-    content
-  );
+  createFile(path.join(contentDir, "en", "academy", `${item.slug}.mdx`), content);
 }
 
 // ============================================================
 // PHASE 8: Execution & Market Microstructure (Academy)
 // ============================================================
 const executionContent = [
-  { slug: "slippage-management", title: "Slippage Management — Complete Guide", description: "Master slippage management techniques used by institutional desks. Learn how to minimize execution costs, manage slippage during volatility, and optimize order types.", level: "intermediate", order: 60 },
-  { slug: "spread-dynamics", title: "Spread Dynamics During Market Events", description: "Understand how spreads widen during news events, rollover, and low liquidity. Learn institutional approaches to trading around spread expansion.", level: "intermediate", order: 61 },
-  { slug: "liquidity-providers", title: "Liquidity Provider Behavior & Market Making", description: "Understand how liquidity providers and market makers operate. Learn their hedging strategies, risk management, and how their behavior creates tradeable patterns.", level: "advanced", order: 62 },
-  { slug: "ecn-vs-market-maker", title: "ECN vs Market Maker Brokers — What You Need to Know", description: "Understand the difference between ECN/STP and Market Maker broker models. Learn how your broker type affects execution, pricing, and potential conflicts of interest.", level: "beginner", order: 63 },
-  { slug: "smart-order-routing", title: "Smart Order Routing — Institutional Execution", description: "Learn how smart order routing (SOR) works for institutional traders. Understand how large orders are routed across venues for best execution.", level: "advanced", order: 64 },
-  { slug: "twap-execution", title: "TWAP Execution Algorithms", description: "Master Time-Weighted Average Price (TWAP) execution. Learn how institutions use TWAP algorithms to execute large orders with minimal market impact.", level: "expert", order: 65 },
-  { slug: "vwap-execution", title: "VWAP Execution Algorithms — Institutional Order Filling", description: "Master VWAP execution algorithms used by institutional desks. Learn how funds benchmark execution against VWAP and strategies for VWAP-based order filling.", level: "expert", order: 66 },
-  { slug: "partial-fills-scaling", title: "Partial Fills & Precision Scaling Strategies", description: "Learn institutional scaling techniques — how to build and exit positions in parts. Master DCA, pyramid scaling, and institutional block-filling methodologies.", level: "advanced", order: 67 }
+  {
+    slug: "slippage-management",
+    title: "Slippage Management — Complete Guide",
+    description:
+      "Master slippage management techniques used by institutional desks. Learn how to minimize execution costs, manage slippage during volatility, and optimize order types.",
+    level: "intermediate",
+    order: 60,
+  },
+  {
+    slug: "spread-dynamics",
+    title: "Spread Dynamics During Market Events",
+    description:
+      "Understand how spreads widen during news events, rollover, and low liquidity. Learn institutional approaches to trading around spread expansion.",
+    level: "intermediate",
+    order: 61,
+  },
+  {
+    slug: "liquidity-providers",
+    title: "Liquidity Provider Behavior & Market Making",
+    description:
+      "Understand how liquidity providers and market makers operate. Learn their hedging strategies, risk management, and how their behavior creates tradeable patterns.",
+    level: "advanced",
+    order: 62,
+  },
+  {
+    slug: "ecn-vs-market-maker",
+    title: "ECN vs Market Maker Brokers — What You Need to Know",
+    description:
+      "Understand the difference between ECN/STP and Market Maker broker models. Learn how your broker type affects execution, pricing, and potential conflicts of interest.",
+    level: "beginner",
+    order: 63,
+  },
+  {
+    slug: "smart-order-routing",
+    title: "Smart Order Routing — Institutional Execution",
+    description:
+      "Learn how smart order routing (SOR) works for institutional traders. Understand how large orders are routed across venues for best execution.",
+    level: "advanced",
+    order: 64,
+  },
+  {
+    slug: "twap-execution",
+    title: "TWAP Execution Algorithms",
+    description:
+      "Master Time-Weighted Average Price (TWAP) execution. Learn how institutions use TWAP algorithms to execute large orders with minimal market impact.",
+    level: "expert",
+    order: 65,
+  },
+  {
+    slug: "vwap-execution",
+    title: "VWAP Execution Algorithms — Institutional Order Filling",
+    description:
+      "Master VWAP execution algorithms used by institutional desks. Learn how funds benchmark execution against VWAP and strategies for VWAP-based order filling.",
+    level: "expert",
+    order: 66,
+  },
+  {
+    slug: "partial-fills-scaling",
+    title: "Partial Fills & Precision Scaling Strategies",
+    description:
+      "Learn institutional scaling techniques — how to build and exit positions in parts. Master DCA, pyramid scaling, and institutional block-filling methodologies.",
+    level: "advanced",
+    order: 67,
+  },
 ];
 
 for (const item of executionContent) {
@@ -1656,7 +1967,7 @@ order: ${item.order}
 lastUpdated: "2026-06-10"
 ---
 
-## ${item.title.split('—')[0].split('(')[0].trim()}
+## ${item.title.split("—")[0].split("(")[0].trim()}
 
 ${item.description}
 
@@ -1709,21 +2020,53 @@ Most retail traders focus exclusively on ENTRY signals. Institutions know that H
 If your average trade is 30 pips of profit but you lose 3 pips to slippage + spread each trade, that's 10% of your profits going to execution costs. Institutional traders obsess over reducing these costs — you should too.
 </Callout>
 `;
-  createFile(
-    path.join(contentDir, 'en', 'academy', `${item.slug}.mdx`),
-    content
-  );
+  createFile(path.join(contentDir, "en", "academy", `${item.slug}.mdx`), content);
 }
 
 // ============================================================
 // PHASE 9: Supply & Demand (SMC expansion)
 // ============================================================
 const supplyDemandContent = [
-  { slug: "supply-demand-zones", title: "Supply & Demand Zones — Institutional Complete Guide", description: "Master institutional supply and demand zones. Learn the difference between retail S&R and institutional supply/demand, zone identification rules, and trading strategies.", level: "intermediate", order: 30 },
-  { slug: "fresh-vs-tested", title: "Fresh vs Tested Zones — Zone Validity", description: "Learn to distinguish between fresh (untested) and tested supply/demand zones. Understand why fresh zones have higher probability and how to grade zone quality.", level: "intermediate", order: 31 },
-  { slug: "rally-base-rally", title: "Rally-Base-Rally & Drop-Base-Drop Patterns", description: "Master continuation supply/demand patterns. Learn RBR (Rally-Base-Rally) for demand zones and DBD (Drop-Base-Drop) for supply zones used in institutional trading.", level: "intermediate", order: 32 },
-  { slug: "zone-strength-scoring", title: "Zone Strength Scoring Methodology", description: "Build a zone strength scoring system. Learn to evaluate supply/demand zones using departure speed, time at level, freshness, and volume criteria.", level: "advanced", order: 33 },
-  { slug: "proximal-distal-lines", title: "Proximal vs Distal Lines — Precision Zone Trading", description: "Master proximal and distal line concepts for supply/demand zones. Learn which boundary to use for entries, stops, and targets for maximum precision.", level: "advanced", order: 34 }
+  {
+    slug: "supply-demand-zones",
+    title: "Supply & Demand Zones — Institutional Complete Guide",
+    description:
+      "Master institutional supply and demand zones. Learn the difference between retail S&R and institutional supply/demand, zone identification rules, and trading strategies.",
+    level: "intermediate",
+    order: 30,
+  },
+  {
+    slug: "fresh-vs-tested",
+    title: "Fresh vs Tested Zones — Zone Validity",
+    description:
+      "Learn to distinguish between fresh (untested) and tested supply/demand zones. Understand why fresh zones have higher probability and how to grade zone quality.",
+    level: "intermediate",
+    order: 31,
+  },
+  {
+    slug: "rally-base-rally",
+    title: "Rally-Base-Rally & Drop-Base-Drop Patterns",
+    description:
+      "Master continuation supply/demand patterns. Learn RBR (Rally-Base-Rally) for demand zones and DBD (Drop-Base-Drop) for supply zones used in institutional trading.",
+    level: "intermediate",
+    order: 32,
+  },
+  {
+    slug: "zone-strength-scoring",
+    title: "Zone Strength Scoring Methodology",
+    description:
+      "Build a zone strength scoring system. Learn to evaluate supply/demand zones using departure speed, time at level, freshness, and volume criteria.",
+    level: "advanced",
+    order: 33,
+  },
+  {
+    slug: "proximal-distal-lines",
+    title: "Proximal vs Distal Lines — Precision Zone Trading",
+    description:
+      "Master proximal and distal line concepts for supply/demand zones. Learn which boundary to use for entries, stops, and targets for maximum precision.",
+    level: "advanced",
+    order: 34,
+  },
 ];
 
 for (const item of supplyDemandContent) {
@@ -1735,7 +2078,7 @@ order: ${item.order}
 lastUpdated: "2026-06-10"
 ---
 
-## ${item.title.split('—')[0].split('(')[0].trim()}
+## ${item.title.split("—")[0].split("(")[0].trim()}
 
 ${item.description}
 
@@ -1797,21 +2140,53 @@ Supply and demand zones are the FOUNDATION that Order Blocks are built upon. Und
 A zone is INVALIDATED when price closes through the distal line with displacement. Tested zones lose strength with each touch. After 3 tests, consider the zone consumed. Always use fresh zones for highest probability.
 </Callout>
 `;
-  createFile(
-    path.join(contentDir, 'en', 'smc', `${item.slug}.mdx`),
-    content
-  );
+  createFile(path.join(contentDir, "en", "smc", `${item.slug}.mdx`), content);
 }
 
 // ============================================================
 // PHASE 10: Options Flow (ICT expansion)
 // ============================================================
 const optionsContent = [
-  { slug: "options-flow-signals", title: "Options Flow as Directional Signal", description: "Learn how hedge funds use options flow data for directional trading. Understand how large options trades reveal institutional positioning and expected moves.", level: "advanced", order: 30 },
-  { slug: "max-pain-theory", title: "Max Pain Theory — Options Expiry Price Magnet", description: "Master max pain theory — the price at which most options expire worthless. Learn how market makers hedge gamma exposure and why price gravitates toward max pain.", level: "advanced", order: 31 },
-  { slug: "gamma-exposure", title: "Gamma Exposure (GEX) — Institutional Support & Resistance", description: "Master Gamma Exposure analysis. Learn how dealer hedging creates support/resistance levels, and how gamma flips from positive to negative regime.", level: "expert", order: 32 },
-  { slug: "put-call-ratio", title: "Put/Call Ratio as Sentiment Indicator", description: "Use the Put/Call ratio as a sentiment and contrarian indicator. Learn how extreme readings predict reversals and how institutions read options sentiment.", level: "intermediate", order: 33 },
-  { slug: "options-expiry-pinning", title: "Options Expiry Pinning Effect", description: "Understand options expiry pinning — how price tends to gravitate toward strikes with highest open interest near expiration. Learn to trade around monthly/weekly OpEx.", level: "advanced", order: 34 }
+  {
+    slug: "options-flow-signals",
+    title: "Options Flow as Directional Signal",
+    description:
+      "Learn how hedge funds use options flow data for directional trading. Understand how large options trades reveal institutional positioning and expected moves.",
+    level: "advanced",
+    order: 30,
+  },
+  {
+    slug: "max-pain-theory",
+    title: "Max Pain Theory — Options Expiry Price Magnet",
+    description:
+      "Master max pain theory — the price at which most options expire worthless. Learn how market makers hedge gamma exposure and why price gravitates toward max pain.",
+    level: "advanced",
+    order: 31,
+  },
+  {
+    slug: "gamma-exposure",
+    title: "Gamma Exposure (GEX) — Institutional Support & Resistance",
+    description:
+      "Master Gamma Exposure analysis. Learn how dealer hedging creates support/resistance levels, and how gamma flips from positive to negative regime.",
+    level: "expert",
+    order: 32,
+  },
+  {
+    slug: "put-call-ratio",
+    title: "Put/Call Ratio as Sentiment Indicator",
+    description:
+      "Use the Put/Call ratio as a sentiment and contrarian indicator. Learn how extreme readings predict reversals and how institutions read options sentiment.",
+    level: "intermediate",
+    order: 33,
+  },
+  {
+    slug: "options-expiry-pinning",
+    title: "Options Expiry Pinning Effect",
+    description:
+      "Understand options expiry pinning — how price tends to gravitate toward strikes with highest open interest near expiration. Learn to trade around monthly/weekly OpEx.",
+    level: "advanced",
+    order: 34,
+  },
 ];
 
 for (const item of optionsContent) {
@@ -1823,7 +2198,7 @@ order: ${item.order}
 lastUpdated: "2026-06-10"
 ---
 
-## ${item.title.split('—')[0].split('(')[0].trim()}
+## ${item.title.split("—")[0].split("(")[0].trim()}
 
 ${item.description}
 
@@ -1877,22 +2252,61 @@ The options market is where institutions EXPRESS their views on future price dir
 Options flow data is primarily available for equities and indices (SPX, QQQ, individual stocks). For forex, the relevant data comes from FX options markets (25-delta risk reversals, option barriers). Crypto options (Deribit) are growing but less liquid.
 </Callout>
 `;
-  createFile(
-    path.join(contentDir, 'en', 'ict', `${item.slug}.mdx`),
-    content
-  );
+  createFile(path.join(contentDir, "en", "ict", `${item.slug}.mdx`), content);
 }
 
 // ============================================================
 // PHASE 11: Crypto Institutional (Academy expansion)
 // ============================================================
 const cryptoContent = [
-  { slug: "funding-rate-trading", title: "Funding Rate Trading — Perpetual Futures Edge", description: "Master funding rate trading strategies. Learn how to profit from funding rate imbalances, identify crowded trades, and use funding as a contrarian sentiment indicator.", level: "intermediate", order: 70 },
-  { slug: "liquidation-heatmaps", title: "Liquidation Heatmaps & Cascades", description: "Master liquidation analysis for crypto trading. Learn to read liquidation heatmaps, predict cascade events, and position for liquidation-driven moves.", level: "intermediate", order: 71 },
-  { slug: "on-chain-analysis", title: "On-Chain Analysis — Whale Wallets & Exchange Flows", description: "Master on-chain analysis for institutional crypto trading. Track whale wallets, exchange inflows/outflows, and on-chain metrics that predict major moves.", level: "advanced", order: 72 },
-  { slug: "basis-trading", title: "Basis Trading & Cash-and-Carry Arbitrage", description: "Learn basis trading strategies used by crypto funds. Understand futures premium, cash-and-carry arbitrage, and funding rate arbitrage for market-neutral returns.", level: "advanced", order: 73 },
-  { slug: "dex-liquidity-pools", title: "DEX Liquidity Pool Dynamics", description: "Understand DEX liquidity pools and their impact on price. Learn impermanent loss, concentrated liquidity, and how large LP positions create support/resistance.", level: "advanced", order: 74 },
-  { slug: "mev-order-flow", title: "MEV & On-Chain Order Flow", description: "Understand Maximal Extractable Value (MEV) and on-chain order flow. Learn how searchers, builders, and validators extract value and how it affects your trades.", level: "expert", order: 75 }
+  {
+    slug: "funding-rate-trading",
+    title: "Funding Rate Trading — Perpetual Futures Edge",
+    description:
+      "Master funding rate trading strategies. Learn how to profit from funding rate imbalances, identify crowded trades, and use funding as a contrarian sentiment indicator.",
+    level: "intermediate",
+    order: 70,
+  },
+  {
+    slug: "liquidation-heatmaps",
+    title: "Liquidation Heatmaps & Cascades",
+    description:
+      "Master liquidation analysis for crypto trading. Learn to read liquidation heatmaps, predict cascade events, and position for liquidation-driven moves.",
+    level: "intermediate",
+    order: 71,
+  },
+  {
+    slug: "on-chain-analysis",
+    title: "On-Chain Analysis — Whale Wallets & Exchange Flows",
+    description:
+      "Master on-chain analysis for institutional crypto trading. Track whale wallets, exchange inflows/outflows, and on-chain metrics that predict major moves.",
+    level: "advanced",
+    order: 72,
+  },
+  {
+    slug: "basis-trading",
+    title: "Basis Trading & Cash-and-Carry Arbitrage",
+    description:
+      "Learn basis trading strategies used by crypto funds. Understand futures premium, cash-and-carry arbitrage, and funding rate arbitrage for market-neutral returns.",
+    level: "advanced",
+    order: 73,
+  },
+  {
+    slug: "dex-liquidity-pools",
+    title: "DEX Liquidity Pool Dynamics",
+    description:
+      "Understand DEX liquidity pools and their impact on price. Learn impermanent loss, concentrated liquidity, and how large LP positions create support/resistance.",
+    level: "advanced",
+    order: 74,
+  },
+  {
+    slug: "mev-order-flow",
+    title: "MEV & On-Chain Order Flow",
+    description:
+      "Understand Maximal Extractable Value (MEV) and on-chain order flow. Learn how searchers, builders, and validators extract value and how it affects your trades.",
+    level: "expert",
+    order: 75,
+  },
 ];
 
 for (const item of cryptoContent) {
@@ -1904,7 +2318,7 @@ order: ${item.order}
 lastUpdated: "2026-06-10"
 ---
 
-## ${item.title.split('—')[0].split('(')[0].trim()}
+## ${item.title.split("—")[0].split("(")[0].trim()}
 
 ${item.description}
 
@@ -1960,12 +2374,8 @@ Crypto-specific institutional concepts provide edges unavailable in traditional 
 Crypto markets operate 24/7 with extreme leverage available. Liquidation cascades can move price 10-20% in minutes. ALWAYS use conservative position sizing in crypto and account for the higher volatility in your risk management.
 </Callout>
 `;
-  createFile(
-    path.join(contentDir, 'en', 'academy', `${item.slug}.mdx`),
-    content
-  );
+  createFile(path.join(contentDir, "en", "academy", `${item.slug}.mdx`), content);
 }
 
-console.log('\n✅ All Phase 2-11 content files created!');
-console.log('Total new MDX files: ~72 (English)');
-
+console.log("\n✅ All Phase 2-11 content files created!");
+console.log("Total new MDX files: ~72 (English)");

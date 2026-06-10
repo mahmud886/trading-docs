@@ -4,19 +4,20 @@
  * in both English and Bangla.
  */
 
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
-const CONTENT_DIR = path.resolve('content');
+const CONTENT_DIR = path.resolve("content");
 
 // ─── Topic definitions with full content templates ───
 
 const SMC_TOPICS = {
-  'order-blocks': {
+  "order-blocks": {
     en: {
-      title: 'Order Blocks — Complete Guide',
-      description: 'Master institutional Order Blocks in Smart Money Concepts. Learn to identify bullish and bearish OBs, institutional entry zones, validation rules, and advanced trading strategies with real examples.',
-      level: 'intermediate',
+      title: "Order Blocks — Complete Guide",
+      description:
+        "Master institutional Order Blocks in Smart Money Concepts. Learn to identify bullish and bearish OBs, institutional entry zones, validation rules, and advanced trading strategies with real examples.",
+      level: "intermediate",
       content: `
 ## What is an Order Block?
 
@@ -289,12 +290,13 @@ Yes — OBs work on forex, indices, crypto, gold, and stocks. Any market with in
 - [Break of Structure (BOS)](/en/smc/bos) — Validates Order Blocks
 - [Breaker Blocks](/en/smc/breaker-blocks) — Violated Order Blocks
 - [Liquidity Pools](/en/smc/liquidity-pools) — Sweeps that create OB entries
-- [Premium & Discount](/en/smc/premium-discount) — Optimal OB trading zones`
+- [Premium & Discount](/en/smc/premium-discount) — Optimal OB trading zones`,
     },
     bn: {
-      title: 'অর্ডার ব্লক — সম্পূর্ণ গাইড',
-      description: 'Smart Money Concepts এ ইনস্টিটিউশনাল অর্ডার ব্লক আয়ত্ত করুন। বুলিশ ও বিয়ারিশ OB চিহ্নিতকরণ, ভ্যালিডেশন নিয়ম এবং বাস্তব উদাহরণ সহ অ্যাডভান্সড ট্রেডিং কৌশল শিখুন।',
-      level: 'intermediate',
+      title: "অর্ডার ব্লক — সম্পূর্ণ গাইড",
+      description:
+        "Smart Money Concepts এ ইনস্টিটিউশনাল অর্ডার ব্লক আয়ত্ত করুন। বুলিশ ও বিয়ারিশ OB চিহ্নিতকরণ, ভ্যালিডেশন নিয়ম এবং বাস্তব উদাহরণ সহ অ্যাডভান্সড ট্রেডিং কৌশল শিখুন।",
+      level: "intermediate",
       content: `
 ## অর্ডার ব্লক কী?
 
@@ -459,14 +461,15 @@ OB এর প্রথম পরীক্ষায় সর্বোচ্চ �
 - [ফেয়ার ভ্যালু গ্যাপ (FVG)](/bn/smc/fair-value-gap) — প্রায়ই অর্ডার ব্লকের সাথে ওভারল্যাপ করে
 - [ব্রেক অফ স্ট্রাকচার (BOS)](/bn/smc/bos) — অর্ডার ব্লক ভ্যালিডেট করে
 - [লিকুইডিটি পুল](/bn/smc/liquidity-pools) — সুইপ যা OB এন্ট্রি তৈরি করে
-- [প্রিমিয়াম ও ডিসকাউন্ট](/bn/smc/premium-discount) — সেরা OB ট্রেডিং জোন`
-    }
+- [প্রিমিয়াম ও ডিসকাউন্ট](/bn/smc/premium-discount) — সেরা OB ট্রেডিং জোন`,
+    },
   },
-  'choch': {
+  choch: {
     en: {
-      title: 'Change of Character (CHOCH) — Complete Guide',
-      description: 'Master the Change of Character (CHOCH) concept in Smart Money trading. Learn to identify trend reversals, differentiate CHOCH from BOS, and execute high-probability reversal trades.',
-      level: 'intermediate',
+      title: "Change of Character (CHOCH) — Complete Guide",
+      description:
+        "Master the Change of Character (CHOCH) concept in Smart Money trading. Learn to identify trend reversals, differentiate CHOCH from BOS, and execute high-probability reversal trades.",
+      level: "intermediate",
       content: `
 ## What is Change of Character (CHOCH)?
 
@@ -654,12 +657,13 @@ Never chase a CHOCH. Wait for price to retrace 50-79% of the CHOCH move. This pu
 - [Market Structure Shift](/en/smc/market-structure-shift) — Broader structure change context
 - [Fair Value Gap (FVG)](/en/smc/fair-value-gap) — Entry zones after CHOCH
 - [Liquidity Pools](/en/smc/liquidity-pools) — Sweeps that precede CHOCH
-- [Order Blocks](/en/smc/order-blocks) — Entry zones after CHOCH`
+- [Order Blocks](/en/smc/order-blocks) — Entry zones after CHOCH`,
     },
     bn: {
-      title: 'চেঞ্জ অফ ক্যারেক্টার (CHOCH) — সম্পূর্ণ গাইড',
-      description: 'Smart Money ট্রেডিংয়ে Change of Character (CHOCH) কনসেপ্ট আয়ত্ত করুন। ট্রেন্ড রিভার্সাল চিহ্নিতকরণ, CHOCH ও BOS এর পার্থক্য এবং উচ্চ-সম্ভাবনা রিভার্সাল ট্রেড এক্সিকিউট করা শিখুন।',
-      level: 'intermediate',
+      title: "চেঞ্জ অফ ক্যারেক্টার (CHOCH) — সম্পূর্ণ গাইড",
+      description:
+        "Smart Money ট্রেডিংয়ে Change of Character (CHOCH) কনসেপ্ট আয়ত্ত করুন। ট্রেন্ড রিভার্সাল চিহ্নিতকরণ, CHOCH ও BOS এর পার্থক্য এবং উচ্চ-সম্ভাবনা রিভার্সাল ট্রেড এক্সিকিউট করা শিখুন।",
+      level: "intermediate",
       content: `
 ## Change of Character (CHOCH) কী?
 
@@ -767,18 +771,18 @@ CHOCH একটি এন্ট্রি নয় — এটি একটি �
 - [ব্রেক অফ স্ট্রাকচার (BOS)](/bn/smc/bos) — ট্রেন্ড ধারাবাহিকতা (CHOCH এর বিপরীত)
 - [ফেয়ার ভ্যালু গ্যাপ (FVG)](/bn/smc/fair-value-gap) — CHOCH এর পর এন্ট্রি জোন
 - [অর্ডার ব্লক](/bn/smc/order-blocks) — CHOCH এর পর এন্ট্রি জোন
-- [লিকুইডিটি পুল](/bn/smc/liquidity-pools) — CHOCH এর আগে ঘটা সুইপ`
-    }
-  }
+- [লিকুইডিটি পুল](/bn/smc/liquidity-pools) — CHOCH এর আগে ঘটা সুইপ`,
+    },
+  },
 };
 
 // Generic topic content generator for remaining stubs
 function generateTopicContent(slug, meta, lang, category) {
-  const isEn = lang === 'en';
-  const categoryLabel = { smc: 'Smart Money Concepts', 'price-action': 'Price Action', ict: 'ICT' }[category];
-  const categoryLabelBn = { smc: 'স্মার্ট মানি কনসেপ্টস', 'price-action': 'প্রাইস অ্যাকশন', ict: 'আইসিটি' }[category];
+  const isEn = lang === "en";
+  const categoryLabel = { smc: "Smart Money Concepts", "price-action": "Price Action", ict: "ICT" }[category];
+  const categoryLabelBn = { smc: "স্মার্ট মানি কনসেপ্টস", "price-action": "প্রাইস অ্যাকশন", ict: "আইসিটি" }[category];
 
-  const titleClean = meta.title || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  const titleClean = meta.title || slug.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
 
   if (isEn) {
     return `
@@ -1122,8 +1126,8 @@ ${titleClean} বোঝা বেশ কারণে গুরুত্বপূ
 // ─── Main logic ───
 
 function processFile(filePath) {
-  const content = fs.readFileSync(filePath, 'utf-8');
-  const lines = content.split('\n');
+  const content = fs.readFileSync(filePath, "utf-8");
+  const lines = content.split("\n");
   if (lines.length > 30) return false; // Skip already expanded files
 
   // Parse frontmatter
@@ -1131,9 +1135,9 @@ function processFile(filePath) {
   if (!fmMatch) return false;
 
   const fm = {};
-  fmMatch[1].split('\n').forEach(line => {
-    const [key, ...vals] = line.split(':');
-    if (key && vals.length) fm[key.trim()] = vals.join(':').trim().replace(/^"|"$/g, '');
+  fmMatch[1].split("\n").forEach((line) => {
+    const [key, ...vals] = line.split(":");
+    if (key && vals.length) fm[key.trim()] = vals.join(":").trim().replace(/^"|"$/g, "");
   });
 
   return fm;
@@ -1152,7 +1156,7 @@ function generateFile(filePath, slug, category, lang) {
     newContent = `---
 title: "${spec.title}"
 description: "${spec.description}"
-level: ${spec.level || fm.level || 'intermediate'}
+level: ${spec.level || fm.level || "intermediate"}
 order: ${fm.order || 5}
 lastUpdated: "2026-05-11"
 ---
@@ -1160,18 +1164,19 @@ ${spec.content}
 `;
   } else {
     // Use generic but comprehensive template
-    const titleClean = fm.title || slug.replace(/-/g, ' ');
+    const titleClean = fm.title || slug.replace(/-/g, " ");
     const generatedContent = generateTopicContent(slug, fm, lang, category);
 
-    const title = lang === 'bn' ? fm.title : fm.title;
-    const desc = lang === 'bn'
-      ? `${titleClean} এর সম্পূর্ণ গাইড। চার্টে চিহ্নিতকরণ, এন্ট্রি ও এক্সিট কৌশল, রিস্ক ম্যানেজমেন্ট এবং বাস্তব ট্রেডিং উদাহরণ সহ বিস্তারিত শিক্ষামূলক বিষয়বস্তু।`
-      : `Complete guide to ${titleClean}. Detailed educational content with chart identification, entry and exit strategies, risk management, and real trading examples.`;
+    const title = lang === "bn" ? fm.title : fm.title;
+    const desc =
+      lang === "bn"
+        ? `${titleClean} এর সম্পূর্ণ গাইড। চার্টে চিহ্নিতকরণ, এন্ট্রি ও এক্সিট কৌশল, রিস্ক ম্যানেজমেন্ট এবং বাস্তব ট্রেডিং উদাহরণ সহ বিস্তারিত শিক্ষামূলক বিষয়বস্তু।`
+        : `Complete guide to ${titleClean}. Detailed educational content with chart identification, entry and exit strategies, risk management, and real trading examples.`;
 
     newContent = `---
 title: "${title}"
 description: "${desc}"
-level: ${fm.level || 'intermediate'}
+level: ${fm.level || "intermediate"}
 order: ${fm.order || 5}
 lastUpdated: "2026-05-11"
 ---
@@ -1179,13 +1184,13 @@ ${generatedContent}
 `;
   }
 
-  fs.writeFileSync(filePath, newContent, 'utf-8');
+  fs.writeFileSync(filePath, newContent, "utf-8");
   return true;
 }
 
 // Process all categories
-const categories = ['smc', 'price-action', 'ict'];
-const langs = ['en', 'bn'];
+const categories = ["smc", "price-action", "ict"];
+const langs = ["en", "bn"];
 let updated = 0;
 let skipped = 0;
 
@@ -1194,15 +1199,15 @@ for (const category of categories) {
     const dir = path.join(CONTENT_DIR, lang, category);
     if (!fs.existsSync(dir)) continue;
 
-    const files = fs.readdirSync(dir).filter(f => f.endsWith('.mdx') && f !== '_meta.json');
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mdx") && f !== "_meta.json");
 
     for (const file of files) {
       const filePath = path.join(dir, file);
-      const slug = file.replace('.mdx', '');
+      const slug = file.replace(".mdx", "");
 
       // Check if stub
-      const content = fs.readFileSync(filePath, 'utf-8');
-      if (content.split('\n').length > 30) {
+      const content = fs.readFileSync(filePath, "utf-8");
+      if (content.split("\n").length > 30) {
         skipped++;
         continue;
       }
@@ -1216,4 +1221,3 @@ for (const category of categories) {
 }
 
 console.log(`\nDone! Updated: ${updated}, Skipped (already expanded): ${skipped}`);
-

@@ -19,8 +19,7 @@ export interface BlogPostWithContent extends BlogPost {
   content: string;
 }
 
-const blogDir = (locale: Locale) =>
-  path.join(process.cwd(), "content", locale, "blog");
+const blogDir = (locale: Locale) => path.join(process.cwd(), "content", locale, "blog");
 
 /**
  * Get all blog posts for a locale
@@ -49,18 +48,13 @@ export function getAllBlogPosts(locale: Locale): BlogPost[] {
   });
 
   // Sort by date descending
-  return posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 /**
  * Get a single blog post with content
  */
-export function getBlogPostBySlug(
-  locale: Locale,
-  slug: string
-): BlogPostWithContent | null {
+export function getBlogPostBySlug(locale: Locale, slug: string): BlogPostWithContent | null {
   const dir = blogDir(locale);
   const filePath = path.join(dir, `${slug}.mdx`);
 
@@ -95,13 +89,8 @@ export function getFeaturedBlogPosts(locale: Locale, limit: number = 3): BlogPos
 /**
  * Get blog posts by category
  */
-export function getBlogPostsByCategory(
-  locale: Locale,
-  category: string
-): BlogPost[] {
-  return getAllBlogPosts(locale).filter(
-    (post) => post.category.toLowerCase() === category.toLowerCase()
-  );
+export function getBlogPostsByCategory(locale: Locale, category: string): BlogPost[] {
+  return getAllBlogPosts(locale).filter((post) => post.category.toLowerCase() === category.toLowerCase());
 }
 
 /**
@@ -119,7 +108,7 @@ export function getAllBlogCategories(locale: Locale): string[] {
 export function paginateBlogPosts(
   posts: BlogPost[],
   page: number = 1,
-  pageSize: number = 6
+  pageSize: number = 6,
 ): {
   posts: BlogPost[];
   totalPages: number;
@@ -143,14 +132,8 @@ export function paginateBlogPosts(
 /**
  * Find related posts by tags and category
  */
-export function getRelatedBlogPosts(
-  locale: Locale,
-  currentPost: BlogPost,
-  limit: number = 3
-): BlogPost[] {
-  const allPosts = getAllBlogPosts(locale).filter(
-    (post) => post.slug !== currentPost.slug
-  );
+export function getRelatedBlogPosts(locale: Locale, currentPost: BlogPost, limit: number = 3): BlogPost[] {
+  const allPosts = getAllBlogPosts(locale).filter((post) => post.slug !== currentPost.slug);
 
   // Score posts based on tag overlap and category match
   const scored = allPosts.map((post) => {
@@ -160,9 +143,7 @@ export function getRelatedBlogPosts(
     if (post.category === currentPost.category) score += 10;
 
     // Shared tags: +3 points each
-    const sharedTags = post.tags.filter((tag) =>
-      currentPost.tags.includes(tag)
-    ).length;
+    const sharedTags = post.tags.filter((tag) => currentPost.tags.includes(tag)).length;
     score += sharedTags * 3;
 
     return { post, score };
@@ -178,10 +159,7 @@ export function getRelatedBlogPosts(
 /**
  * Search blog posts
  */
-export function searchBlogPosts(
-  locale: Locale,
-  query: string
-): BlogPost[] {
+export function searchBlogPosts(locale: Locale, query: string): BlogPost[] {
   const lowerQuery = query.toLowerCase();
   const allPosts = getAllBlogPosts(locale);
 
@@ -194,4 +172,3 @@ export function searchBlogPosts(
     );
   });
 }
-

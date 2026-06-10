@@ -16,9 +16,7 @@ export function SidebarClient({ lang, trees }: SidebarClientProps) {
   const pathname = usePathname();
   const segments = pathname.split("/");
   const catSegment = segments[2] || "price-action";
-  const currentCat = CATEGORIES.includes(catSegment as Category)
-    ? catSegment
-    : "price-action";
+  const currentCat = CATEGORIES.includes(catSegment as Category) ? catSegment : "price-action";
 
   return (
     <div className="flex h-full flex-col">
@@ -33,9 +31,7 @@ export function SidebarClient({ lang, trees }: SidebarClientProps) {
                 key={cat}
                 href={`/${lang}/${cat}`}
                 className={`rounded-lg px-2.5 py-1.5 text-xs font-medium transition-all ${
-                  isActive
-                    ? "shadow-sm"
-                    : "text-muted-foreground hover:bg-accent-green/5 hover:text-foreground"
+                  isActive ? "shadow-sm" : "text-muted-foreground hover:bg-accent-green/5 hover:text-foreground"
                 }`}
                 style={
                   isActive
@@ -56,11 +52,7 @@ export function SidebarClient({ lang, trees }: SidebarClientProps) {
 
       {/* Tree navigation */}
       <div className="flex-1 overflow-y-auto">
-        <SidebarNav
-          tree={trees[currentCat] || []}
-          category={currentCat}
-          lang={lang}
-        />
+        <SidebarNav tree={trees[currentCat] || []} category={currentCat} lang={lang} />
       </div>
     </div>
   );

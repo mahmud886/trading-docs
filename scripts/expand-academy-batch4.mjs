@@ -1,7 +1,7 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from "fs";
+import { join } from "path";
 
-const contentDir = join(process.cwd(), 'content');
+const contentDir = join(process.cwd(), "content");
 
 function writeMdx(lang, category, slug, frontmatter, content) {
   const fm = `---
@@ -12,7 +12,7 @@ order: ${frontmatter.order}
 lastUpdated: "2026-06-10"
 ---
 `;
-  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, 'utf-8');
+  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, "utf-8");
   console.log(`✅ ${lang}/${category}/${slug}.mdx`);
 }
 
@@ -23,12 +23,18 @@ lastUpdated: "2026-06-10"
 // ============================
 // 1. ORDER TYPES — EN
 // ============================
-writeMdx('en', 'academy', 'order-types', {
-  title: "Order Types Explained — Complete Guide",
-  description: "Master all trading order types: Market, Limit, Stop, Stop-Limit, Trailing Stop, OCO, and advanced orders. Learn when and how to use each type effectively.",
-  level: "beginner",
-  order: 19
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "order-types",
+  {
+    title: "Order Types Explained — Complete Guide",
+    description:
+      "Master all trading order types: Market, Limit, Stop, Stop-Limit, Trailing Stop, OCO, and advanced orders. Learn when and how to use each type effectively.",
+    level: "beginner",
+    order: 19,
+  },
+  `
 ## Understanding Order Types
 
 An order is an instruction to your broker to buy or sell an asset. Different order types give you control over **when**, **at what price**, and **under what conditions** your trade executes. Mastering order types is essential for precise trade execution.
@@ -189,17 +195,24 @@ Option C: Close 50%, trail rest
 - [Position Sizing](/en/academy/position-sizing) — Calculate lot size with SL
 - [Trading Plan](/en/academy/trading-plan) — Order strategy in your plan
 - [Margin & Leverage](/en/academy/margin-leverage) — Margin and order types
-`);
+`,
+);
 
 // ============================
 // 1. ORDER TYPES — BN
 // ============================
-writeMdx('bn', 'academy', 'order-types', {
-  title: "Order Type ব্যাখ্যা — সম্পূর্ণ গাইড",
-  description: "সব Trading Order Type আয়ত্ত করুন: Market, Limit, Stop, Stop-Limit, Trailing Stop, OCO এবং Advanced Order। কখন ও কীভাবে প্রতিটি Type কার্যকরভাবে ব্যবহার করবেন শিখুন।",
-  level: "beginner",
-  order: 19
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "order-types",
+  {
+    title: "Order Type ব্যাখ্যা — সম্পূর্ণ গাইড",
+    description:
+      "সব Trading Order Type আয়ত্ত করুন: Market, Limit, Stop, Stop-Limit, Trailing Stop, OCO এবং Advanced Order। কখন ও কীভাবে প্রতিটি Type কার্যকরভাবে ব্যবহার করবেন শিখুন।",
+    level: "beginner",
+    order: 19,
+  },
+  `
 ## Order Type বোঝা
 
 Order হলো আপনার Broker-কে কোনো Asset কেনা বা বেচার নির্দেশ। বিভিন্ন Order Type আপনাকে **কখন**, **কোন Price-এ** এবং **কোন শর্তে** আপনার Trade Execute হবে তার উপর নিয়ন্ত্রণ দেয়। সুনির্দিষ্ট Trade Execution-এর জন্য Order Type আয়ত্ত করা অপরিহার্য।
@@ -335,17 +348,24 @@ R:R = 1:2.7
 - [Position Sizing](/bn/academy/position-sizing) — SL-সহ Lot Size গণনা
 - [Trading Plan](/bn/academy/trading-plan) — Plan-এ Order Strategy
 - [Margin ও Leverage](/bn/academy/margin-leverage) — Margin ও Order Type
-`);
+`,
+);
 
 // ============================
 // 2. MONEY MANAGEMENT ADVANCED — EN
 // ============================
-writeMdx('en', 'academy', 'money-management-advanced', {
-  title: "Advanced Money Management — Complete Guide",
-  description: "Master advanced money management: Kelly Criterion, anti-martingale, scaling in/out, portfolio heat, drawdown management, and capital allocation strategies for traders.",
-  level: "intermediate",
-  order: 20
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "money-management-advanced",
+  {
+    title: "Advanced Money Management — Complete Guide",
+    description:
+      "Master advanced money management: Kelly Criterion, anti-martingale, scaling in/out, portfolio heat, drawdown management, and capital allocation strategies for traders.",
+    level: "intermediate",
+    order: 20,
+  },
+  `
 ## Advanced Money Management
 
 Beyond basic risk management (1-2% per trade), advanced money management strategies help you **optimize returns while protecting capital** through sophisticated position sizing, scaling, and allocation techniques.
@@ -526,17 +546,24 @@ Total Capital: $50,000
 - [Trading Plan](/en/academy/trading-plan) — Integrate money management
 - [Trading Psychology](/en/academy/trading-psychology) — Emotional aspects of sizing
 - [Performance Tracking](/en/academy/performance-tracking) — Measure effectiveness
-`);
+`,
+);
 
 // ============================
 // 2. MONEY MANAGEMENT ADVANCED — BN
 // ============================
-writeMdx('bn', 'academy', 'money-management-advanced', {
-  title: "Advanced Money Management — সম্পূর্ণ গাইড",
-  description: "Advanced Money Management আয়ত্ত করুন: Kelly Criterion, Anti-Martingale, Scaling In/Out, Portfolio Heat, Drawdown Management এবং Trader-দের জন্য Capital Allocation Strategy।",
-  level: "intermediate",
-  order: 20
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "money-management-advanced",
+  {
+    title: "Advanced Money Management — সম্পূর্ণ গাইড",
+    description:
+      "Advanced Money Management আয়ত্ত করুন: Kelly Criterion, Anti-Martingale, Scaling In/Out, Portfolio Heat, Drawdown Management এবং Trader-দের জন্য Capital Allocation Strategy।",
+    level: "intermediate",
+    order: 20,
+  },
+  `
 ## Advanced Money Management
 
 মৌলিক Risk Management (প্রতি Trade-এ ১-২%)-এর বাইরে, Advanced Money Management Strategy আপনাকে পরিশীলিত Position Sizing, Scaling ও Allocation কৌশলের মাধ্যমে **Capital রক্ষা করে Return অপ্টিমাইজ** করতে সাহায্য করে।
@@ -685,17 +712,24 @@ WIN-এর পর Position Size বাড়ান, LOSS-এর পর কমা
 - [Trading Plan](/bn/academy/trading-plan) — Money Management সমন্বয়
 - [Trading Psychology](/bn/academy/trading-psychology) — Sizing-এর আবেগিক দিক
 - [Performance Tracking](/bn/academy/performance-tracking) — কার্যকারিতা পরিমাপ
-`);
+`,
+);
 
 // ============================
 // 3. TRADING PLAN — EN
 // ============================
-writeMdx('en', 'academy', 'trading-plan', {
-  title: "Trading Plan Development — Complete Guide",
-  description: "Build a professional trading plan. Learn all essential components: strategy rules, risk parameters, routine, journaling framework, and performance review process.",
-  level: "beginner",
-  order: 21
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "trading-plan",
+  {
+    title: "Trading Plan Development — Complete Guide",
+    description:
+      "Build a professional trading plan. Learn all essential components: strategy rules, risk parameters, routine, journaling framework, and performance review process.",
+    level: "beginner",
+    order: 21,
+  },
+  `
 ## Why You Need a Trading Plan
 
 A trading plan is a **written document** that defines every aspect of your trading approach. Without one, you're making emotional decisions that lead to inconsistent results. With one, you have a roadmap that removes emotion and guides consistent execution.
@@ -847,17 +881,24 @@ REVIEW SCHEDULE:
 - [Journaling](/en/academy/journaling) — Track plan adherence
 - [Performance Tracking](/en/academy/performance-tracking) — Measure plan effectiveness
 - [Position Sizing](/en/academy/position-sizing) — Sizing within your plan
-`);
+`,
+);
 
 // ============================
 // 3. TRADING PLAN — BN
 // ============================
-writeMdx('bn', 'academy', 'trading-plan', {
-  title: "Trading Plan তৈরি — সম্পূর্ণ গাইড",
-  description: "Professional Trading Plan তৈরি করুন। সব অপরিহার্য উপাদান শিখুন: Strategy Rule, Risk Parameter, Routine, Journaling Framework এবং Performance Review Process।",
-  level: "beginner",
-  order: 21
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "trading-plan",
+  {
+    title: "Trading Plan তৈরি — সম্পূর্ণ গাইড",
+    description:
+      "Professional Trading Plan তৈরি করুন। সব অপরিহার্য উপাদান শিখুন: Strategy Rule, Risk Parameter, Routine, Journaling Framework এবং Performance Review Process।",
+    level: "beginner",
+    order: 21,
+  },
+  `
 ## কেন Trading Plan দরকার
 
 Trading Plan হলো একটি **লিখিত Document** যা আপনার Trading পদ্ধতির প্রতিটি দিক সংজ্ঞায়িত করে। এটি ছাড়া আপনি আবেগপূর্ণ সিদ্ধান্ত নিচ্ছেন যা অসামঞ্জস্য ফলাফল দেয়। এটি থাকলে আপনার কাছে একটি Roadmap আছে যা আবেগ দূর করে এবং ধারাবাহিক Execution-এ পথ দেখায়।
@@ -961,17 +1002,24 @@ Post-Market (Session-এর ১৫ মিনিট পর):
 - [Journaling](/bn/academy/journaling) — Plan Adherence Track করা
 - [Performance Tracking](/bn/academy/performance-tracking) — Plan কার্যকারিতা পরিমাপ
 - [Position Sizing](/bn/academy/position-sizing) — Plan-এর মধ্যে Sizing
-`);
+`,
+);
 
 // ============================
 // 4. TRADING COSTS & SPREADS — EN
 // ============================
-writeMdx('en', 'academy', 'trading-costs-spreads', {
-  title: "Trading Costs & Spreads — Complete Analysis",
-  description: "Understand all trading costs: spreads, commissions, swaps, slippage, and hidden fees. Learn how to minimize costs and maximize net profitability.",
-  level: "beginner",
-  order: 22
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "trading-costs-spreads",
+  {
+    title: "Trading Costs & Spreads — Complete Analysis",
+    description:
+      "Understand all trading costs: spreads, commissions, swaps, slippage, and hidden fees. Learn how to minimize costs and maximize net profitability.",
+    level: "beginner",
+    order: 22,
+  },
+  `
 ## Understanding Trading Costs
 
 Every trade you make has costs that reduce your profits. Understanding and minimizing these costs is crucial — especially for active traders where costs compound over hundreds of trades.
@@ -1095,17 +1143,24 @@ profits just to BREAK EVEN on costs.
 - [Position Sizing](/en/academy/position-sizing) — Account for costs
 - [Performance Tracking](/en/academy/performance-tracking) — Track net results
 - [Forex Basics](/en/academy/forex-basics) — Market cost structure
-`);
+`,
+);
 
 // ============================
 // 4. TRADING COSTS & SPREADS — BN
 // ============================
-writeMdx('bn', 'academy', 'trading-costs-spreads', {
-  title: "Trading Cost ও Spread — সম্পূর্ণ বিশ্লেষণ",
-  description: "সব Trading Cost বুঝুন: Spread, Commission, Swap, Slippage এবং গোপন Fee। খরচ কমানো ও Net Profitability সর্বোচ্চ করা শিখুন।",
-  level: "beginner",
-  order: 22
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "trading-costs-spreads",
+  {
+    title: "Trading Cost ও Spread — সম্পূর্ণ বিশ্লেষণ",
+    description:
+      "সব Trading Cost বুঝুন: Spread, Commission, Swap, Slippage এবং গোপন Fee। খরচ কমানো ও Net Profitability সর্বোচ্চ করা শিখুন।",
+    level: "beginner",
+    order: 22,
+  },
+  `
 ## Trading Cost বোঝা
 
 আপনার করা প্রতিটি Trade-এ খরচ থাকে যা Profit কমায়। এই খরচ বোঝা ও কমানো অত্যন্ত জরুরি — বিশেষত Active Trader-দের জন্য যেখানে শত শত Trade-এ খরচ Compound হয়।
@@ -1213,17 +1268,24 @@ Overnight Position ধরে রাখলে চার্জ হয়। Curren
 - [Position Sizing](/bn/academy/position-sizing) — খরচ হিসাবে নিন
 - [Performance Tracking](/bn/academy/performance-tracking) — Net Result Track
 - [Forex Basics](/bn/academy/forex-basics) — Market Cost Structure
-`);
+`,
+);
 
 // ============================
 // 5. PERFORMANCE TRACKING — EN
 // ============================
-writeMdx('en', 'academy', 'performance-tracking', {
-  title: "Performance Tracking & Analytics — Complete Guide",
-  description: "Master trading performance tracking. Learn key metrics, how to analyze your results, identify strengths and weaknesses, and continuously improve your trading.",
-  level: "beginner",
-  order: 23
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "performance-tracking",
+  {
+    title: "Performance Tracking & Analytics — Complete Guide",
+    description:
+      "Master trading performance tracking. Learn key metrics, how to analyze your results, identify strengths and weaknesses, and continuously improve your trading.",
+    level: "beginner",
+    order: 23,
+  },
+  `
 ## Why Track Performance?
 
 Performance tracking transforms trading from gambling into a **data-driven profession**. Without measuring results, you cannot identify what works, what doesn't, and where to improve.
@@ -1367,17 +1429,24 @@ Over 100 trades: $37.50 × 100 = $3,750 expected profit
 - [Risk Management](/en/academy/risk-management) — Risk metrics tracking
 - [Trading Psychology](/en/academy/trading-psychology) — Emotional tracking
 - [Money Management](/en/academy/money-management-advanced) — Sizing optimization
-`);
+`,
+);
 
 // ============================
 // 5. PERFORMANCE TRACKING — BN
 // ============================
-writeMdx('bn', 'academy', 'performance-tracking', {
-  title: "Performance Tracking ও Analytics — সম্পূর্ণ গাইড",
-  description: "Trading Performance Tracking আয়ত্ত করুন। মূল Metric, ফলাফল বিশ্লেষণ, শক্তি ও দুর্বলতা চিহ্নিতকরণ এবং ক্রমাগত Trading উন্নতির পদ্ধতি শিখুন।",
-  level: "beginner",
-  order: 23
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "performance-tracking",
+  {
+    title: "Performance Tracking ও Analytics — সম্পূর্ণ গাইড",
+    description:
+      "Trading Performance Tracking আয়ত্ত করুন। মূল Metric, ফলাফল বিশ্লেষণ, শক্তি ও দুর্বলতা চিহ্নিতকরণ এবং ক্রমাগত Trading উন্নতির পদ্ধতি শিখুন।",
+    level: "beginner",
+    order: 23,
+  },
+  `
 ## কেন Performance Track করবেন?
 
 Performance Tracking Trading-কে Gambling থেকে একটি **Data-driven Profession**-এ রূপান্তরিত করে। ফলাফল পরিমাপ না করলে আপনি কী কাজ করে, কী করে না এবং কোথায় উন্নতি করবেন তা চিহ্নিত করতে পারবেন না।
@@ -1512,8 +1581,10 @@ Expectancy = (0.55 × $150) - (0.45 × $100)
 - [Risk Management](/bn/academy/risk-management) — Risk Metric Tracking
 - [Trading Psychology](/bn/academy/trading-psychology) — Emotional Tracking
 - [Money Management](/bn/academy/money-management-advanced) — Sizing Optimization
-`);
+`,
+);
 
-console.log('\n✅ Academy Batch 4 Complete: 5 topics × 2 languages = 10 files');
-console.log('Topics: order-types, money-management-advanced, trading-plan, trading-costs-spreads, performance-tracking');
-
+console.log("\n✅ Academy Batch 4 Complete: 5 topics × 2 languages = 10 files");
+console.log(
+  "Topics: order-types, money-management-advanced, trading-plan, trading-costs-spreads, performance-tracking",
+);

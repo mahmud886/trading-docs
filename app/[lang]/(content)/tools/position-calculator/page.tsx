@@ -85,7 +85,7 @@ export default function PositionCalculator() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <Link 
+      <Link
         href={`/${lang}/tools`}
         className="flex items-center gap-2 text-muted-foreground hover:text-accent-green mb-6 transition-colors duration-200"
       >
@@ -100,9 +100,7 @@ export default function PositionCalculator() {
         <div className="mt-8 space-y-6">
           {/* Account Balance */}
           <div>
-            <label className="block text-sm font-medium text-foreground mb-2">
-              {t.accountBalance}
-            </label>
+            <label className="block text-sm font-medium text-foreground mb-2">{t.accountBalance}</label>
             <input
               type="number"
               value={accountBalance}
@@ -136,9 +134,7 @@ export default function PositionCalculator() {
 
           {/* Stop Loss Distance */}
           <div>
-            <label className="block text-sm font-medium text-foreground mb-2">
-              {t.stopLoss}
-            </label>
+            <label className="block text-sm font-medium text-foreground mb-2">{t.stopLoss}</label>
             <input
               type="number"
               value={stopLossDistance}
@@ -151,9 +147,7 @@ export default function PositionCalculator() {
 
           {/* Pair Type */}
           <div>
-            <label className="block text-sm font-medium text-foreground mb-2">
-              {t.pairType}
-            </label>
+            <label className="block text-sm font-medium text-foreground mb-2">{t.pairType}</label>
             <select
               value={pairType}
               onChange={(e) => setPairType(e.target.value)}
@@ -175,38 +169,36 @@ export default function PositionCalculator() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <p className="text-muted-foreground text-sm">{t.riskAmount}</p>
-              <p className="text-2xl font-bold text-accent-green mt-1">
-                ${riskAmount.toFixed(2)}
-              </p>
+              <p className="text-2xl font-bold text-accent-green mt-1">${riskAmount.toFixed(2)}</p>
             </div>
-            
+
             <div>
               <p className="text-muted-foreground text-sm">{t.positionSize}</p>
-              <p className="text-2xl font-bold text-accent-blue mt-1">
-                {positionSize.toFixed(3)} Lots
-              </p>
+              <p className="text-2xl font-bold text-accent-blue mt-1">{positionSize.toFixed(3)} Lots</p>
             </div>
 
             <div>
               <p className="text-muted-foreground text-sm">{t.microLots}</p>
-              <p className="text-2xl font-bold text-accent-purple mt-1">
-                {(positionSize * 100).toFixed(0)} µLots
-              </p>
+              <p className="text-2xl font-bold text-accent-purple mt-1">{(positionSize * 100).toFixed(0)} µLots</p>
             </div>
 
             <div>
               <p className="text-muted-foreground text-sm">{t.miniLots}</p>
-              <p className="text-2xl font-bold text-accent-orange mt-1">
-                {(positionSize * 10).toFixed(2)} mLots
-              </p>
+              <p className="text-2xl font-bold text-accent-orange mt-1">{(positionSize * 10).toFixed(2)} mLots</p>
             </div>
           </div>
 
           <div className="mt-4 p-3 bg-card/50 border border-accent-blue/20 rounded-lg">
             <p className="text-xs text-foreground">
-              📝 {t.summary} <span className="text-accent-green font-semibold">${riskAmount.toFixed(2)}</span> {t.onThisTrade}{" "}
-              <span className="text-accent-orange font-semibold">{stopLossDistance} {t.pipStop}</span>{" "}
-              <span className="text-accent-blue font-semibold">{positionSize.toFixed(3)} {t.lots}</span>.
+              📝 {t.summary} <span className="text-accent-green font-semibold">${riskAmount.toFixed(2)}</span>{" "}
+              {t.onThisTrade}{" "}
+              <span className="text-accent-orange font-semibold">
+                {stopLossDistance} {t.pipStop}
+              </span>{" "}
+              <span className="text-accent-blue font-semibold">
+                {positionSize.toFixed(3)} {t.lots}
+              </span>
+              .
             </p>
           </div>
         </div>

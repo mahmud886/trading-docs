@@ -36,7 +36,10 @@ export default function CompoundingCalculatorPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-10">
-      <Link href={`/${lang}/tools`} className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+      <Link
+        href={`/${lang}/tools`}
+        className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+      >
         <ArrowLeft size={16} /> Back to Tools
       </Link>
 
@@ -46,30 +49,48 @@ export default function CompoundingCalculatorPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-purple/20 bg-accent-purple/5 p-4 text-sm text-muted-foreground">
-        🏦 Consistent 3-5% monthly returns with compounding creates exponential growth. A $10K account at 5% monthly = $17,958 in 12 months without withdrawals. Patience + consistency = wealth.
+        🏦 Consistent 3-5% monthly returns with compounding creates exponential growth. A $10K account at 5% monthly =
+        $17,958 in 12 months without withdrawals. Patience + consistency = wealth.
       </div>
 
       {/* Inputs */}
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
         <div>
           <label className="text-sm font-medium text-foreground">Starting Balance ($)</label>
-          <input type="number" value={startBalance} onChange={(e) => setStartBalance(Number(e.target.value))}
-            className="mt-2 w-full rounded-lg border border-border bg-card px-4 py-3 text-foreground" />
+          <input
+            type="number"
+            value={startBalance}
+            onChange={(e) => setStartBalance(Number(e.target.value))}
+            className="mt-2 w-full rounded-lg border border-border bg-card px-4 py-3 text-foreground"
+          />
         </div>
         <div>
           <label className="text-sm font-medium text-foreground">Monthly Return (%)</label>
-          <input type="number" value={monthlyReturn} onChange={(e) => setMonthlyReturn(Number(e.target.value))} step="0.5"
-            className="mt-2 w-full rounded-lg border border-border bg-card px-4 py-3 text-foreground" />
+          <input
+            type="number"
+            value={monthlyReturn}
+            onChange={(e) => setMonthlyReturn(Number(e.target.value))}
+            step="0.5"
+            className="mt-2 w-full rounded-lg border border-border bg-card px-4 py-3 text-foreground"
+          />
         </div>
         <div>
           <label className="text-sm font-medium text-foreground">Duration (Months)</label>
-          <input type="number" value={months} onChange={(e) => setMonths(Number(e.target.value))}
-            className="mt-2 w-full rounded-lg border border-border bg-card px-4 py-3 text-foreground" />
+          <input
+            type="number"
+            value={months}
+            onChange={(e) => setMonths(Number(e.target.value))}
+            className="mt-2 w-full rounded-lg border border-border bg-card px-4 py-3 text-foreground"
+          />
         </div>
         <div>
           <label className="text-sm font-medium text-foreground">Monthly Withdrawal ($)</label>
-          <input type="number" value={withdrawal} onChange={(e) => setWithdrawal(Number(e.target.value))}
-            className="mt-2 w-full rounded-lg border border-border bg-card px-4 py-3 text-foreground" />
+          <input
+            type="number"
+            value={withdrawal}
+            onChange={(e) => setWithdrawal(Number(e.target.value))}
+            className="mt-2 w-full rounded-lg border border-border bg-card px-4 py-3 text-foreground"
+          />
         </div>
       </div>
 
@@ -77,11 +98,15 @@ export default function CompoundingCalculatorPage() {
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         <div className="rounded-xl border border-border bg-card p-6">
           <div className="text-xs text-muted-foreground">Final Balance</div>
-          <div className="mt-1 text-2xl font-bold text-green-400">${finalBalance.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
+          <div className="mt-1 text-2xl font-bold text-green-400">
+            ${finalBalance.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+          </div>
         </div>
         <div className="rounded-xl border border-border bg-card p-6">
           <div className="text-xs text-muted-foreground">Total Profit</div>
-          <div className="mt-1 text-2xl font-bold text-accent-blue">${totalProfit.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
+          <div className="mt-1 text-2xl font-bold text-accent-blue">
+            ${totalProfit.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+          </div>
         </div>
         <div className="rounded-xl border border-border bg-card p-6">
           <div className="text-xs text-muted-foreground">Total Return</div>
@@ -104,9 +129,15 @@ export default function CompoundingCalculatorPage() {
             {growth.slice(0, 24).map((row) => (
               <tr key={row.month} className="border-b border-border/30">
                 <td className="p-3 text-muted-foreground">{row.month}</td>
-                <td className="p-3 text-right font-mono text-foreground">${row.balance.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
-                <td className="p-3 text-right font-mono text-green-400">+${row.profit.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
-                <td className="p-3 text-right font-mono text-accent-blue">${row.totalProfit.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
+                <td className="p-3 text-right font-mono text-foreground">
+                  ${row.balance.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                </td>
+                <td className="p-3 text-right font-mono text-green-400">
+                  +${row.profit.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                </td>
+                <td className="p-3 text-right font-mono text-accent-blue">
+                  ${row.totalProfit.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -115,4 +146,3 @@ export default function CompoundingCalculatorPage() {
     </div>
   );
 }
-

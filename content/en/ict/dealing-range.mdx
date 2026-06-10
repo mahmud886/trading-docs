@@ -11,7 +11,9 @@ lastUpdated: "2026-06-09"
 A Dealing Range is the **price range between the most recent significant swing high and swing low**. It defines the "playing field" where price is currently operating. The equilibrium (50%) of this range divides price into premium (sell zone) and discount (buy zone).
 
 <Callout type="info" title="Institutional Framework">
-The Dealing Range gives you context for EVERY trade. Are you buying in discount? Selling in premium? Without knowing the dealing range, you can't determine premium vs discount. This is exactly how JP Morgan, Goldman Sachs, and Citadel frame their directional risk.
+  The Dealing Range gives you context for EVERY trade. Are you buying in discount? Selling in premium? Without knowing
+  the dealing range, you can't determine premium vs discount. This is exactly how JP Morgan, Goldman Sachs, and Citadel
+  frame their directional risk.
 </Callout>
 
 ---
@@ -19,6 +21,7 @@ The Dealing Range gives you context for EVERY trade. Are you buying in discount?
 ## How to Identify the Dealing Range
 
 ### Steps
+
 1. Find the most recent **significant swing high** (BSL target above)
 2. Find the most recent **significant swing low** (SSL target below)
 3. The range between these = your Dealing Range
@@ -26,6 +29,7 @@ The Dealing Range gives you context for EVERY trade. Are you buying in discount?
 5. Update when either extreme is broken (new dealing range forms)
 
 ### Timeframe Hierarchy
+
 - **Monthly Dealing Range** — Macro context (central banks, sovereign wealth funds)
 - **Weekly Dealing Range** — Swing trade context (hedge funds, prop desks)
 - **Daily Dealing Range** — Day trading context (institutional day desks)
@@ -33,6 +37,7 @@ The Dealing Range gives you context for EVERY trade. Are you buying in discount?
 - **Session Dealing Range** — Scalping context (HFT-like execution)
 
 ### What Makes a "Significant" Swing?
+
 - Creates BSL or SSL above/below it (resting orders exist)
 - Causes displacement on the move away from it
 - Is visible on the timeframe you're analyzing
@@ -45,11 +50,11 @@ The Dealing Range gives you context for EVERY trade. Are you buying in discount?
 
 ### The Three Zones
 
-| Zone | Range | Action | Institutional Logic |
-|------|-------|--------|-------------------|
-| **Premium** | 50% to 100% (swing high) | SELL setups only | Banks distribute/sell positions here |
-| **Equilibrium** | Exactly 50% | Neutral — avoid entries | Fair value — no edge for either side |
-| **Discount** | 0% (swing low) to 50% | BUY setups only | Banks accumulate/buy positions here |
+| Zone            | Range                    | Action                  | Institutional Logic                  |
+| --------------- | ------------------------ | ----------------------- | ------------------------------------ |
+| **Premium**     | 50% to 100% (swing high) | SELL setups only        | Banks distribute/sell positions here |
+| **Equilibrium** | Exactly 50%              | Neutral — avoid entries | Fair value — no edge for either side |
+| **Discount**    | 0% (swing low) to 50%    | BUY setups only         | Banks accumulate/buy positions here  |
 
 ### How to Calculate
 
@@ -60,6 +65,7 @@ Discount zone = Swing Low to Equilibrium
 ```
 
 ### Example Calculation
+
 - Swing High: 1.1000
 - Swing Low: 1.0800
 - Equilibrium: (1.1000 + 1.0800) / 2 = **1.0900**
@@ -67,7 +73,9 @@ Discount zone = Swing Low to Equilibrium
 - Discount: 1.0800 – 1.0900 (buy zone)
 
 ### Fibonacci Overlay
+
 ICT uses the dealing range with Fibonacci levels for precision:
+
 - **0%** = Swing Low (extreme discount — deepest buy zone)
 - **25%** = Deep discount (ideal accumulation zone for banks)
 - **50%** = Equilibrium (CE of dealing range — fair value)
@@ -82,25 +90,30 @@ ICT uses the dealing range with Fibonacci levels for precision:
 Markets are **fractal** — dealing ranges exist within dealing ranges. Understanding this hierarchy is what separates institutional traders from retail:
 
 ### Macro Dealing Range (Monthly/Weekly)
+
 - Determines the BIG picture directional bias
 - Banks and central banks operate primarily on this level
 - Takes weeks to months to fully traverse
 - Breaking this range = major trend change
 
 ### Internal Dealing Range (Daily/4H)
+
 - Sits INSIDE the macro range
 - Where institutional day desks and swing traders operate
 - Determines your daily bias within the larger context
 - Multiple internal ranges can form within one macro range
 
 ### Micro Dealing Range (1H/15M)
+
 - For precision entry timing only
 - Your execution framework within the internal range
 - Where you actually place limit orders
 - Changes rapidly — must be updated frequently
 
 ### The Alignment Rule
+
 **When ALL timeframe dealing ranges agree on direction = highest probability:**
+
 - Weekly in discount + Daily in discount + 4H showing bullish MSS = STRONG BUY
 - Weekly in premium + Daily in premium + 4H showing bearish MSS = STRONG SELL
 - Conflict between timeframes = WAIT or REDUCE SIZE
@@ -119,18 +132,21 @@ Markets are **fractal** — dealing ranges exist within dealing ranges. Understa
 ### Daily Bias from Dealing Range
 
 **If price is in the DISCOUNT of your HTF dealing range:**
+
 - Look for BUY setups on LTF
 - Target: opposing BSL above equilibrium
 - Expect manipulation below Asian range before the move up
 - Best time: London or NY AM Kill Zone
 
 **If price is in the PREMIUM of your HTF dealing range:**
+
 - Look for SELL setups on LTF
 - Target: opposing SSL below equilibrium
 - Expect manipulation above before the move down
 - Best time: London or NY AM Kill Zone
 
 **If price is AT equilibrium (50%):**
+
 - DO NOT TRADE — wait for commitment to one side
 - Equilibrium is "no man's land" — no institutional edge
 - Wait for price to push into premium or discount before acting
@@ -140,6 +156,7 @@ Markets are **fractal** — dealing ranges exist within dealing ranges. Understa
 ## PD Arrays Within the Dealing Range
 
 ### In Discount (Buy Zone) — Look for Bullish PD Arrays:
+
 - Bullish Order Blocks (last bearish candle before rally)
 - Bullish FVGs / BISI (imbalances from upward displacement)
 - Bullish Breaker Blocks (failed bearish OBs inverted)
@@ -147,6 +164,7 @@ Markets are **fractal** — dealing ranges exist within dealing ranges. Understa
 - Liquidity Voids below (price may drop to fill before rallying)
 
 ### In Premium (Sell Zone) — Look for Bearish PD Arrays:
+
 - Bearish Order Blocks (last bullish candle before drop)
 - Bearish FVGs / SIBI (imbalances from downward displacement)
 - Bearish Breaker Blocks (failed bullish OBs inverted)
@@ -154,7 +172,9 @@ Markets are **fractal** — dealing ranges exist within dealing ranges. Understa
 - Liquidity Voids above (price may rally to fill before dropping)
 
 ### The Confluence Rule (Institutional Grade)
+
 The HIGHEST probability setups occur when:
+
 1. PD Array is in the correct zone (discount for buys, premium for sells)
 2. PD Array aligns with HTF dealing range direction
 3. Liquidity has been swept BEFORE reaching the PD Array
@@ -169,11 +189,13 @@ The HIGHEST probability setups occur when:
 ### Example 1: EUR/USD — Buying in Discount
 
 **Macro Context:**
+
 - Weekly dealing range: 1.0750 (low) to 1.0950 (high)
 - Equilibrium: 1.0850
 - Current price: 1.0780 → IN DISCOUNT ✓
 
 **Trade Setup:**
+
 - Daily bias: Bullish (price below equilibrium, expecting move to BSL)
 - Price sweeps SSL at 1.0765 during early London
 - 15M shows bullish MSS with displacement
@@ -188,11 +210,13 @@ The HIGHEST probability setups occur when:
 ### Example 2: Gold (XAU/USD) — Selling in Premium
 
 **Macro Context:**
+
 - Daily dealing range: 2,000 (low) to 2,080 (high)
 - Equilibrium: 2,040
 - Current price: 2,065 → IN PREMIUM ✓
 
 **Trade Setup:**
+
 - HTF bias: Bearish (price in premium, expecting move to SSL)
 - Price sweeps BSL at 2,072 during NY AM session
 - 5M bearish MSS with displacement creating FVG
@@ -207,11 +231,13 @@ The HIGHEST probability setups occur when:
 ### Example 3: NAS100 — Nested Dealing Range Alignment
 
 **Nested Analysis:**
+
 - Weekly range: 17,500 - 18,200 → Equilibrium: 17,850
 - Daily range: 17,750 - 18,000 → Equilibrium: 17,875
 - Current price: 17,780
 
 **Confluence Check:**
+
 - In DISCOUNT of weekly range ✓ (below 17,850)
 - In DISCOUNT of daily range ✓ (below 17,875)
 - BOTH timeframes agree = HIGH PROBABILITY long setup
@@ -223,11 +249,13 @@ The HIGHEST probability setups occur when:
 ## Dealing Range Lifecycle
 
 ### Phase 1: Formation
+
 - Strong swing high and swing low are established
 - Liquidity builds above high (BSL) and below low (SSL)
 - Range is clearly defined — this is the new "playing field"
 
 ### Phase 2: Internal Activity (Where Most Trading Happens)
+
 - Price oscillates between premium and discount
 - **Internal liquidity** (minor swings within range) gets swept first
 - Algorithm seeks internal liquidity BEFORE external
@@ -235,6 +263,7 @@ The HIGHEST probability setups occur when:
 - Range can last days (Daily DR) to weeks (Weekly DR)
 
 ### Phase 3: Expansion (Range Break)
+
 - After internal liquidity is exhausted
 - Price breaks out to **external liquidity** (BSL or SSL at extremes)
 - Old dealing range is violated — no longer valid
@@ -242,6 +271,7 @@ The HIGHEST probability setups occur when:
 - This is where the biggest moves happen
 
 ### When to Update Your Dealing Range
+
 - When price **closes through** the swing high = update to new DR (bullish expansion)
 - When price **closes through** the swing low = update to new DR (bearish expansion)
 - A wick beyond doesn't count — need body close through
@@ -252,11 +282,13 @@ The HIGHEST probability setups occur when:
 ## Advanced: Dealing Range + Time
 
 ### Best Times for Dealing Range Reversals (BD Time)
+
 - **12:00 PM - 3:00 PM BD** (London KZ) — Most common reversal from premium/discount
 - **5:00 PM - 8:00 PM BD** (NY AM KZ) — Second best for reversals
 - **6:00 AM - 10:00 AM BD** (Asian) — Range formation, not reversals
 
 ### Dealing Range + Power of 3
+
 - **Accumulation** → price stays in discount (or premium for sells)
 - **Manipulation** → price crosses equilibrium briefly (fake breakout)
 - **Distribution** → price expands to opposing extreme of dealing range
@@ -287,16 +319,16 @@ The HIGHEST probability setups occur when:
 
 ## Summary
 
-| Aspect | Details |
-|--------|---------|
-| **Definition** | Range between significant swing high and swing low |
-| **Key Level** | 50% Equilibrium (divides premium/discount) |
-| **Buy Zone** | Below 50% (discount) — banks accumulate here |
-| **Sell Zone** | Above 50% (premium) — banks distribute here |
-| **Nested** | Multiple timeframe dealing ranges exist simultaneously |
+| Aspect          | Details                                                        |
+| --------------- | -------------------------------------------------------------- |
+| **Definition**  | Range between significant swing high and swing low             |
+| **Key Level**   | 50% Equilibrium (divides premium/discount)                     |
+| **Buy Zone**    | Below 50% (discount) — banks accumulate here                   |
+| **Sell Zone**   | Above 50% (premium) — banks distribute here                    |
+| **Nested**      | Multiple timeframe dealing ranges exist simultaneously         |
 | **Update Rule** | New dealing range forms when extreme is broken with body close |
-| **Best Entry** | PD Array in correct zone + Kill Zone timing + MSS confirmation |
-| **Alignment** | HTF + LTF dealing ranges agreeing = highest probability |
+| **Best Entry**  | PD Array in correct zone + Kill Zone timing + MSS confirmation |
+| **Alignment**   | HTF + LTF dealing ranges agreeing = highest probability        |
 
 ---
 

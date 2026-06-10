@@ -11,7 +11,8 @@ lastUpdated: "2026-06-10"
 Perpetual Futures (Perp) হলো Derivative Contract যা আপনাকে কোনো Expiry Date ছাড়াই একটি Asset-এর Price Trade করতে দেয়। Traditional Futures-এর বিপরীতে যেগুলো Monthly/Quarterly Expire হয়, Perpetual Contract অনির্দিষ্টকাল ধরে রাখা যায়।
 
 <Callout type="info" title="মূল বৈশিষ্ট্য">
-Perpetual Futures হলো Crypto Market-এ সবচেয়ে জনপ্রিয় Trading Instrument। এগুলো Futures-এর Leverage-কে Contract Expiry বা Rolling Position নিয়ে চিন্তা না করার সরলতার সাথে একত্রিত করে।
+  Perpetual Futures হলো Crypto Market-এ সবচেয়ে জনপ্রিয় Trading Instrument। এগুলো Futures-এর Leverage-কে Contract
+  Expiry বা Rolling Position নিয়ে চিন্তা না করার সরলতার সাথে একত্রিত করে।
 </Callout>
 
 ---
@@ -20,13 +21,13 @@ Perpetual Futures হলো Crypto Market-এ সবচেয়ে জনপ্
 
 ### Traditional Futures-এর সাথে তুলনা:
 
-| বৈশিষ্ট্য | Traditional Futures | Perpetual Futures |
-|-----------|-------------------|-------------------|
-| Expiry | Monthly/Quarterly | কোনো Expiry নেই |
-| Settlement | Expiry Date-এ | ক্রমাগত (Funding) |
-| Price Anchor | Expiry-তে Converge | Funding Rate Mechanism |
-| Rolling | Expiry-র আগে প্রয়োজন | প্রয়োজন নেই |
-| উপলব্ধ | সব Market | মূলত Crypto, কিছু Forex |
+| বৈশিষ্ট্য    | Traditional Futures   | Perpetual Futures       |
+| ------------ | --------------------- | ----------------------- |
+| Expiry       | Monthly/Quarterly     | কোনো Expiry নেই         |
+| Settlement   | Expiry Date-এ         | ক্রমাগত (Funding)       |
+| Price Anchor | Expiry-তে Converge    | Funding Rate Mechanism  |
+| Rolling      | Expiry-র আগে প্রয়োজন | প্রয়োজন নেই            |
+| উপলব্ধ       | সব Market             | মূলত Crypto, কিছু Forex |
 
 ### Funding Rate Mechanism:
 
@@ -45,6 +46,7 @@ Perpetual Futures একটি **Funding Rate** ব্যবহার করে 
 ```
 
 ### Funding Rate Payment:
+
 - সাধারণত প্রতি ৮ ঘণ্টায় দেওয়া হয় (কিছু Exchange-এ ১ ঘণ্টা)
 - Spot-এর তুলনায় Premium/Discount-এর ভিত্তিতে Rate পরিবর্তিত হয়
 - সরাসরি আপনার Position থেকে Debit/Credit হয়
@@ -74,9 +76,11 @@ Position Value = Margin × Leverage
 ## Liquidation
 
 ### Liquidation কী?
+
 আপনার Loss যখন Margin Deposit-এর কাছাকাছি পৌঁছায়, Exchange জোর করে আপনার Position Close করে Negative Balance রোধ করতে।
 
 ### Liquidation Price সূত্র:
+
 ```
 Long Liquidation Price = Entry Price × (1 - 1/Leverage + Maintenance Margin Rate)
 
@@ -87,6 +91,7 @@ Liquidation-এর জন্য Price ~9.5% কমতে হবে
 ```
 
 ### Liquidation এড়ানোর উপায়:
+
 1. **কম Leverage ব্যবহার করুন** (সর্বোচ্চ 5x-10x সুপারিশকৃত)
 2. **Stop Loss সেট করুন** Liquidation Price-এর অনেক আগে
 3. **সব Available Margin ব্যবহার করবেন না** (Free Margin রাখুন)
@@ -97,16 +102,17 @@ Liquidation-এর জন্য Price ~9.5% কমতে হবে
 
 ## Cross Margin vs. Isolated Margin
 
-| বৈশিষ্ট্য | Cross Margin | Isolated Margin |
-|-----------|-------------|-----------------|
-| Margin Pool | সম্পূর্ণ Account Balance | শুধুমাত্র নির্ধারিত Margin |
-| Liquidation Risk | সব Free Balance ব্যবহার করে | Position Margin-এ সীমাবদ্ধ |
-| নমনীয়তা | বেশি Effective Leverage | প্রতি Position-এ নির্দিষ্ট |
-| Risk | সম্পূর্ণ Account ঝুঁকিতে | শুধু বরাদ্দকৃত Margin ঝুঁকিতে |
-| উপযুক্ত | অভিজ্ঞ Trader | Beginner, Risk Management |
+| বৈশিষ্ট্য        | Cross Margin                | Isolated Margin               |
+| ---------------- | --------------------------- | ----------------------------- |
+| Margin Pool      | সম্পূর্ণ Account Balance    | শুধুমাত্র নির্ধারিত Margin    |
+| Liquidation Risk | সব Free Balance ব্যবহার করে | Position Margin-এ সীমাবদ্ধ    |
+| নমনীয়তা         | বেশি Effective Leverage     | প্রতি Position-এ নির্দিষ্ট    |
+| Risk             | সম্পূর্ণ Account ঝুঁকিতে    | শুধু বরাদ্দকৃত Margin ঝুঁকিতে |
+| উপযুক্ত          | অভিজ্ঞ Trader               | Beginner, Risk Management     |
 
 <Callout type="warning" title="নিরাপত্তা সুপারিশ">
-শেখার সময় সবসময় **Isolated Margin** ব্যবহার করুন। Cross Margin মানে একটি খারাপ Trade আপনার সম্পূর্ণ Account Liquidate করতে পারে। Isolated Margin আপনার সর্বোচ্চ Loss সেই নির্দিষ্ট Position-এ বরাদ্দকৃত Margin-এ সীমাবদ্ধ রাখে।
+  শেখার সময় সবসময় **Isolated Margin** ব্যবহার করুন। Cross Margin মানে একটি খারাপ Trade আপনার সম্পূর্ণ Account
+  Liquidate করতে পারে। Isolated Margin আপনার সর্বোচ্চ Loss সেই নির্দিষ্ট Position-এ বরাদ্দকৃত Margin-এ সীমাবদ্ধ রাখে।
 </Callout>
 
 ---
@@ -114,6 +120,7 @@ Liquidation-এর জন্য Price ~9.5% কমতে হবে
 ## Funding Rate Strategy
 
 ### Funding Rate Arbitrage:
+
 ```
 Strategy: Market-neutral থেকে Funding Payment সংগ্রহ করুন
 
@@ -129,6 +136,7 @@ Return: Bull Market-এ 10-40% APR
 ```
 
 ### Direction জানতে Funding Rate পড়া:
+
 - **অত্যন্ত Positive Funding** (0.1%+) → Market Overleveraged Long → সম্ভাব্য Crash
 - **অত্যন্ত Negative Funding** (-0.1%+) → Market Overleveraged Short → সম্ভাব্য Squeeze
 - **Neutral Funding** (0.01%) → ভারসাম্যপূর্ণ Market
@@ -150,12 +158,12 @@ Return: Bull Market-এ 10-40% APR
 
 ## Perpetual Futures-এ সাধারণ ভুল
 
-| ভুল | ফলাফল | সমাধান |
-|------|--------|--------|
-| Max Leverage ব্যবহার | তাৎক্ষণিক Liquidation | সর্বোচ্চ 5-10x ব্যবহার |
-| Stop Loss নেই | Account Blow-up | সবসময় SL সেট করুন |
-| অসাবধানে Cross Margin | সম্পূর্ণ Account হারানো | Isolated ব্যবহার করুন |
-| Funding Rate উপেক্ষা | সময়ের সাথে নীরব Loss | ধরে রাখার আগে Rate Check |
+| ভুল                      | ফলাফল                        | সমাধান                            |
+| ------------------------ | ---------------------------- | --------------------------------- |
+| Max Leverage ব্যবহার     | তাৎক্ষণিক Liquidation        | সর্বোচ্চ 5-10x ব্যবহার            |
+| Stop Loss নেই            | Account Blow-up              | সবসময় SL সেট করুন                |
+| অসাবধানে Cross Margin    | সম্পূর্ণ Account হারানো      | Isolated ব্যবহার করুন             |
+| Funding Rate উপেক্ষা     | সময়ের সাথে নীরব Loss        | ধরে রাখার আগে Rate Check          |
 | Portfolio Overleveraging | একটি খারাপ Trade সব নষ্ট করে | প্রতি Trade-এ সর্বোচ্চ 20% Margin |
 
 ---

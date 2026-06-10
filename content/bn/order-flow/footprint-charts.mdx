@@ -11,7 +11,8 @@ lastUpdated: "2026-06-10"
 Footprint charts (also called cluster charts or bid/ask charts) show the **exact volume traded at each price level within each candle**, separated by buying volume (at ask) and selling volume (at bid). They let you see INSIDE every candle.
 
 <Callout type="info" title="X-Ray Vision for Candles">
-A regular candle shows Open, High, Low, Close. A footprint candle shows you the exact buying and selling battle at EVERY price tick within that candle. It's like having X-ray vision.
+  A regular candle shows Open, High, Low, Close. A footprint candle shows you the exact buying and selling battle at
+  EVERY price tick within that candle. It's like having X-ray vision.
 </Callout>
 
 ---
@@ -86,18 +87,21 @@ When a price level has volume on only one side:
 ## Footprint Trading Strategies
 
 ### Strategy 1: Stacked Imbalance Entry
+
 1. Identify stacked imbalances (3+ consecutive levels with 3:1+ ratio)
 2. Mark the zone as institutional interest
 3. Wait for price to retrace to that zone
 4. Enter at the imbalance zone with stop below
 
 ### Strategy 2: Exhaustion Reversal
+
 1. At a key level (OB, FVG, VP POC), watch for exhaustion
 2. High volume + diminishing delta at the extreme
 3. This signals the aggressor is running out of orders
 4. Counter-trade with stop beyond the exhaustion wick
 
 ### Strategy 3: Absorption Confirmation
+
 1. At your entry level (ICT/SMC setup), watch footprint
 2. If you see absorption (high volume, no price movement)
 3. The absorbing side = smart money
@@ -108,16 +112,19 @@ When a price level has volume on only one side:
 ## Footprint + ICT/SMC Integration
 
 ### At Order Blocks
+
 - Look for stacked imbalances within the OB candle
 - The imbalance zone = EXACT institutional entry price
 - Refine your OB entry to the specific imbalance level
 
 ### At FVG
+
 - FVG forms with stacked imbalances = STRONG FVG
 - FVG forms without imbalances = Weaker, may fill completely
 - Use footprint to grade FVG quality
 
 ### At Liquidity Sweeps
+
 - After a sweep, look for absorption in footprint
 - Absorption at the sweep level = smart money present
 - No absorption = just a stop hunt, continuation likely
@@ -128,26 +135,27 @@ When a price level has volume on only one side:
 
 Footprint reading requires practice:
 
-| Skill Level | Focus | Timeframe |
-|-------------|-------|-----------|
-| Beginner | Identify imbalances only | 5M-15M |
-| Intermediate | Imbalances + absorption | 1M-5M |
-| Advanced | All patterns in real-time | 1M and below |
-| Expert | Combine with DOM flow | Tick charts |
+| Skill Level  | Focus                     | Timeframe    |
+| ------------ | ------------------------- | ------------ |
+| Beginner     | Identify imbalances only  | 5M-15M       |
+| Intermediate | Imbalances + absorption   | 1M-5M        |
+| Advanced     | All patterns in real-time | 1M and below |
+| Expert       | Combine with DOM flow     | Tick charts  |
 
 ---
 
 ## Recommended Setup
 
 ### Chart Configuration
+
 - Timeframe: 5M or 15M for swing, 1M for scalping
 - Filter: Show imbalances at 200%+ ratio
 - Color: Highlight stacked imbalances (3+ consecutive)
 - Delta: Show per-bar delta below footprint
 
 ### Platform Requirements
+
 - Sierra Chart (best for futures)
 - ATAS (best for crypto)
 - Quantower (multi-asset)
 - Exocharts (crypto-focused)
-

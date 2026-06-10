@@ -9,22 +9,22 @@ export default function TPSLCalculator() {
   const pathname = usePathname();
   const lang = pathname.split("/")[1] || "en";
 
-  const [entryPrice, setEntryPrice] = useState<number>(1.0900);
+  const [entryPrice, setEntryPrice] = useState<number>(1.09);
   const [riskPercentage, setRiskPercentage] = useState<number>(2);
   const [rewardMultiplier, setRewardMultiplier] = useState<number>(2);
   const [accountBalance, setAccountBalance] = useState<number>(10000);
 
   const riskAmount = (accountBalance * riskPercentage) / 100;
-  
+
   // Calculate pips based on risk amount (assuming $10 per pip for 1.0 lot)
   const stopLossPips = riskAmount / 10;
   const stopLossPrice = entryPrice - stopLossPips * 0.0001;
-  const takeProfitPrice = entryPrice + (stopLossPips * rewardMultiplier) * 0.0001;
+  const takeProfitPrice = entryPrice + stopLossPips * rewardMultiplier * 0.0001;
   const profitAmount = riskAmount * rewardMultiplier;
 
   return (
     <div className="max-w-2xl mx-auto">
-      <Link 
+      <Link
         href={`/${lang}/tools`}
         className="flex items-center gap-2 text-muted-foreground hover:text-accent-green mb-6 transition-colors"
       >
@@ -41,9 +41,7 @@ export default function TPSLCalculator() {
         <div className="mt-8 space-y-6">
           {/* Entry Price */}
           <div>
-            <label className="block text-sm font-medium text-foreground mb-2">
-              Entry Price
-            </label>
+            <label className="block text-sm font-medium text-foreground mb-2">Entry Price</label>
             <input
               type="number"
               value={entryPrice}
@@ -55,9 +53,7 @@ export default function TPSLCalculator() {
 
           {/* Account Balance */}
           <div>
-            <label className="block text-sm font-medium text-foreground mb-2">
-              Account Balance (USD)
-            </label>
+            <label className="block text-sm font-medium text-foreground mb-2">Account Balance (USD)</label>
             <input
               type="number"
               value={accountBalance}
@@ -105,9 +101,7 @@ export default function TPSLCalculator() {
         <div className="mt-8 space-y-4">
           <div className="bg-red-900/20 border border-red-500/30 rounded-xl p-6">
             <p className="text-muted-foreground text-sm font-medium">STOP LOSS (SL)</p>
-            <p className="text-3xl font-bold text-red-400 mt-2">
-              {stopLossPrice.toFixed(5)}
-            </p>
+            <p className="text-3xl font-bold text-red-400 mt-2">{stopLossPrice.toFixed(5)}</p>
             <p className="text-xs text-muted-foreground mt-2">
               {stopLossPips.toFixed(1)} pips below entry | ${riskAmount.toFixed(2)} at risk
             </p>
@@ -115,9 +109,7 @@ export default function TPSLCalculator() {
 
           <div className="bg-green-900/20 border border-green-500/30 rounded-xl p-6">
             <p className="text-muted-foreground text-sm font-medium">TAKE PROFIT (TP)</p>
-            <p className="text-3xl font-bold text-green-400 mt-2">
-              {takeProfitPrice.toFixed(5)}
-            </p>
+            <p className="text-3xl font-bold text-green-400 mt-2">{takeProfitPrice.toFixed(5)}</p>
             <p className="text-xs text-muted-foreground mt-2">
               {(stopLossPips * rewardMultiplier).toFixed(1)} pips above entry | ${profitAmount.toFixed(2)} to win
             </p>
@@ -125,9 +117,7 @@ export default function TPSLCalculator() {
 
           <div className="bg-blue-900/20 border border-blue-500/30 rounded-xl p-6">
             <p className="text-muted-foreground text-sm font-medium">RISK-REWARD RATIO</p>
-            <p className="text-3xl font-bold text-blue-400 mt-2">
-              1 : {rewardMultiplier.toFixed(1)}
-            </p>
+            <p className="text-3xl font-bold text-blue-400 mt-2">1 : {rewardMultiplier.toFixed(1)}</p>
             <p className="text-xs text-muted-foreground mt-2">
               Risk ${riskAmount.toFixed(2)} to win ${profitAmount.toFixed(2)}
             </p>
@@ -138,7 +128,7 @@ export default function TPSLCalculator() {
         <div className="mt-8 bg-muted border border-border rounded-xl overflow-hidden">
           <div className="p-6">
             <h2 className="text-lg font-semibold text-foreground mb-4">Trade Setup Summary</h2>
-            
+
             <div className="space-y-2 text-sm">
               <div className="flex justify-between items-center p-2 bg-muted rounded">
                 <span className="text-muted-foreground">Entry</span>

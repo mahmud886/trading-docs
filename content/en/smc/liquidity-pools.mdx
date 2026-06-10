@@ -13,7 +13,8 @@ In Smart Money Concepts, **liquidity** refers to clusters of stop-loss orders an
 **Institutional traders need liquidity to fill their large orders.** They can't simply market-buy millions of dollars without significant slippage. Instead, they engineer price to move toward these stop clusters, triggering them to create the counter-party orders they need.
 
 <Callout type="info" title="The Liquidity Concept">
-Think of liquidity as "fuel" for price movement. Price moves FROM liquidity that's been taken TO the next pool of liquidity. Understanding this flow is the foundation of Smart Money trading.
+  Think of liquidity as "fuel" for price movement. Price moves FROM liquidity that's been taken TO the next pool of
+  liquidity. Understanding this flow is the foundation of Smart Money trading.
 </Callout>
 
 ---
@@ -34,6 +35,7 @@ Think of liquidity as "fuel" for price movement. Price moves FROM liquidity that
 ### Buy-Side Liquidity (BSL)
 
 Buy-Side Liquidity sits **above swing highs** and consists of:
+
 - Stop losses from short sellers
 - Buy-stop orders from breakout traders
 - Pending buy orders above resistance
@@ -43,13 +45,14 @@ Buy-Side Liquidity sits **above swing highs** and consists of:
     ========================
     $$$  $$$  $$$  $$$  $$$   ← Stop losses from shorts
     ─────────────────────────  ← Swing High / Equal Highs
-    
+
          Price below
          looking up
          at BSL "target"
 ```
 
 **When price sweeps BSL:**
+
 - Short sellers get stopped out (they're forced to BUY to close)
 - Breakout traders enter LONG
 - This creates massive buy orders → institutions SELL into this buying pressure
@@ -58,6 +61,7 @@ Buy-Side Liquidity sits **above swing highs** and consists of:
 ### Sell-Side Liquidity (SSL)
 
 Sell-Side Liquidity sits **below swing lows** and consists of:
+
 - Stop losses from long buyers
 - Sell-stop orders from breakdown traders
 - Pending sell orders below support
@@ -66,7 +70,7 @@ Sell-Side Liquidity sits **below swing lows** and consists of:
          Price above
          looking down
          at SSL "target"
-    
+
     ─────────────────────────  ← Swing Low / Equal Lows
     $$$  $$$  $$$  $$$  $$$   ← Stop losses from longs
     ========================
@@ -74,6 +78,7 @@ Sell-Side Liquidity sits **below swing lows** and consists of:
 ```
 
 **When price sweeps SSL:**
+
 - Long buyers get stopped out (they're forced to SELL to close)
 - Breakdown traders enter SHORT
 - This creates massive sell orders → institutions BUY into this selling pressure
@@ -86,6 +91,7 @@ Sell-Side Liquidity sits **below swing lows** and consists of:
 ### External Liquidity
 
 External liquidity refers to **swing highs and swing lows** — the major structural points:
+
 - Major swing highs = BSL targets
 - Major swing lows = SSL targets
 - These are the "big targets" institutions aim for
@@ -94,13 +100,15 @@ External liquidity refers to **swing highs and swing lows** — the major struct
 ### Internal Liquidity
 
 Internal liquidity refers to orders **within the current range**:
+
 - Fair Value Gaps (price wants to fill them)
 - Order Blocks (revisit for mitigation)
 - Imbalances in price delivery
 - Located inside the current structure
 
 <Callout type="tip" title="The Flow Rule">
-**Price moves from internal liquidity to external liquidity, and from external liquidity to internal liquidity.** This alternating flow is one of the most powerful concepts in SMC.
+  **Price moves from internal liquidity to external liquidity, and from external liquidity to internal liquidity.** This
+  alternating flow is one of the most powerful concepts in SMC.
 </Callout>
 
 ### The Flow Pattern:
@@ -169,10 +177,10 @@ A **liquidity sweep** occurs when price briefly moves beyond a swing point, trig
 
 ```
     Before Sweep:           During Sweep:           After Sweep:
-    
+
     ─── Swing High ──      ╮ Wick above           ─── Level broken
                            │ (sweep)                   then...
-                           ╰─── Immediate              
+                           ╰─── Immediate
                                 reversal           STRONG reversal
                                                    move begins
 ```
@@ -278,16 +286,19 @@ A **liquidity sweep** occurs when price briefly moves beyond a swing point, trig
 ## Liquidity in Different Market Contexts
 
 ### Trending Market
+
 - Liquidity builds on one side (against the trend)
 - Pullbacks sweep minor liquidity before continuing
 - Major liquidity pools mark potential reversal zones
 
 ### Ranging Market
+
 - Both sides build equal liquidity
 - Sweeps of one side often target the other
 - Double sweeps (both sides taken) signal breakout imminent
 
 ### Reversal Zones
+
 - Major trend reversals start with a liquidity sweep
 - The sweep is the "final trap" before the reversal move
 - Highest R:R trades come from reversal sweeps
@@ -299,18 +310,23 @@ A **liquidity sweep** occurs when price briefly moves beyond a swing point, trig
 <Callout type="warning" title="Avoid These Liquidity Errors">
 
 ### ❌ Entering Before the Sweep Completes
+
 Don't anticipate the sweep — wait for it to happen and CONFIRM with structure shift. Many apparent sweeps continue as breakouts.
 
 ### ❌ Ignoring the Context
+
 A sweep into premium (for BSL) is bearish. A sweep into discount (for SSL) is bullish. The premium/discount context amplifies probability.
 
 ### ❌ Not Waiting for Structure Shift
+
 A sweep without CHOCH/MSS confirmation is just a wick. You need the structural break to confirm the reversal.
 
 ### ❌ Placing Stops at Obvious Levels
+
 If you can see the liquidity, institutions can too. Place stops beyond the next OB or structural point — not at the obvious level.
 
 ### ❌ Trading Against HTF Liquidity Draw
+
 If the Daily has a clear draw on liquidity to the upside, don't short lower timeframe sweeps of BSL. Always align with the HTF draw.
 
 </Callout>
@@ -322,6 +338,7 @@ If the Daily has a clear draw on liquidity to the upside, don't short lower time
 ### Engineered Liquidity
 
 Institutions CREATE liquidity by:
+
 1. Holding price at a level (inducing entries)
 2. Creating false patterns (head & shoulders, triangles)
 3. Using news events to trigger cluster entries
@@ -330,24 +347,26 @@ Institutions CREATE liquidity by:
 ### Liquidity Draw
 
 **Liquidity draw** means price has an objective — it's being magnetically pulled toward a specific pool:
+
 - Which side has MORE untouched liquidity?
 - What does the higher timeframe structure suggest?
 - Where is the nearest unmitigated OB/FVG?
 
 ### Multi-Timeframe Liquidity
 
-| Timeframe | Liquidity Type | Significance |
-|-----------|---------------|--------------|
-| Monthly/Weekly | Major swing H/L | Highest — major reversals |
-| Daily | Daily/Weekly ranges | High — swing trades |
-| 4H | Swing structure | Medium — position entries |
-| 1H/15M | Session ranges | Lower — intraday targets |
+| Timeframe      | Liquidity Type      | Significance              |
+| -------------- | ------------------- | ------------------------- |
+| Monthly/Weekly | Major swing H/L     | Highest — major reversals |
+| Daily          | Daily/Weekly ranges | High — swing trades       |
+| 4H             | Swing structure     | Medium — position entries |
+| 1H/15M         | Session ranges      | Lower — intraday targets  |
 
 ---
 
 ## Risk Management with Liquidity
 
 ### Stop Loss Rules:
+
 1. **Never** place stops at obvious swing highs/lows
 2. Place stops beyond the ORDER BLOCK past the liquidity
 3. Use the sweep wick as your minimum stop distance
@@ -355,10 +374,10 @@ Institutions CREATE liquidity by:
 
 ### Position Sizing:
 
-| Setup | Risk |
-|-------|------|
-| Sweep + CHOCH + OB (A+) | 1.5-2% |
-| Sweep + FVG only | 0.75-1% |
+| Setup                                | Risk      |
+| ------------------------------------ | --------- |
+| Sweep + CHOCH + OB (A+)              | 1.5-2%    |
+| Sweep + FVG only                     | 0.75-1%   |
 | Approaching liquidity (anticipation) | 0.25-0.5% |
 
 ---
@@ -366,31 +385,35 @@ Institutions CREATE liquidity by:
 ## FAQ
 
 ### How do I know if a sweep will reverse or break through?
+
 Look for: 1) Higher timeframe alignment, 2) Displacement after sweep, 3) CHOCH/MSS formation, 4) Premium/discount location. Sweeps with all 4 factors have highest reversal probability.
 
 ### How many times can the same liquidity pool be swept?
+
 Once swept, the liquidity is "used up." New orders can accumulate at the same level over time, but the original pool is gone.
 
 ### What's the difference between a sweep and a breakout?
+
 A sweep is a brief pierce that reverses (wick through level). A breakout sustains beyond the level with candle body closes and continuation.
 
 ### Should I always wait for a sweep before entering?
+
 Not always. Trend-continuation trades (BOS + OB) don't require sweeps. For reversal trades, always wait for the sweep confirmation.
 
 ---
 
 ## Summary
 
-| Concept | Key Points |
-|---------|-----------|
-| **BSL** | Liquidity above highs — stops of shorts, buy-stops |
-| **SSL** | Liquidity below lows — stops of longs, sell-stops |
-| **Internal** | FVGs, OBs within current range |
-| **External** | Swing highs/lows outside range |
-| **Flow** | Internal → External → Internal (alternating) |
-| **Sweep** | Price takes liquidity then reverses |
-| **Draw** | Direction price is being pulled toward |
-| **Best Trade** | Sweep + CHOCH + OB/FVG entry |
+| Concept        | Key Points                                         |
+| -------------- | -------------------------------------------------- |
+| **BSL**        | Liquidity above highs — stops of shorts, buy-stops |
+| **SSL**        | Liquidity below lows — stops of longs, sell-stops  |
+| **Internal**   | FVGs, OBs within current range                     |
+| **External**   | Swing highs/lows outside range                     |
+| **Flow**       | Internal → External → Internal (alternating)       |
+| **Sweep**      | Price takes liquidity then reverses                |
+| **Draw**       | Direction price is being pulled toward             |
+| **Best Trade** | Sweep + CHOCH + OB/FVG entry                       |
 
 ---
 
@@ -402,4 +425,3 @@ Not always. Trend-continuation trades (BOS + OB) don't require sweeps. For rever
 - [Equal Highs & Lows](/en/smc/equal-highs-lows) — Key liquidity formations
 - [Inducement](/en/smc/inducement) — Engineered liquidity traps
 - [Kill Zones](/en/smc/kill-zones) — When sweeps are most likely
-

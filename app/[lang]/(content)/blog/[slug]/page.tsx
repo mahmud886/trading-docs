@@ -7,19 +7,13 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import remarkGfm from "remark-gfm";
 import type { Locale } from "@/lib/i18n";
-import {
-  getBlogPostBySlug,
-  getRelatedBlogPosts,
-  getAllBlogPosts,
-} from "@/lib/blog";
+import { getBlogPostBySlug, getRelatedBlogPosts, getAllBlogPosts } from "@/lib/blog";
 import { generateArticleSchema } from "@/lib/schema";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import { locales } from "@/lib/i18n";
 
 function getLocaleAlternates(slug: string) {
-  return Object.fromEntries(
-    locales.map((locale) => [locale, `${SITE_URL}/${locale}/blog/${slug}`])
-  );
+  return Object.fromEntries(locales.map((locale) => [locale, `${SITE_URL}/${locale}/blog/${slug}`]));
 }
 
 export async function generateStaticParams() {
@@ -76,11 +70,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ lang: string; slug: string }>;
-}) {
+export default async function BlogPostPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params;
   const locale = lang as Locale;
   const post = getBlogPostBySlug(locale, slug);
@@ -105,7 +95,7 @@ export default async function BlogPostPage({
       description: post.description,
       lastUpdated: post.date,
     },
-    `${SITE_URL}/${locale}/blog/${slug}`
+    `${SITE_URL}/${locale}/blog/${slug}`,
   );
 
   const isBn = locale === "bn";
@@ -114,10 +104,7 @@ export default async function BlogPostPage({
 
   return (
     <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Link
         href={`/${lang}/blog`}
         className="mb-6 inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-accent-green"
@@ -129,9 +116,7 @@ export default async function BlogPostPage({
         <div className="mb-8">
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
             {post.category && (
-              <span className="rounded-full border border-border px-2.5 py-0.5 font-medium">
-                {post.category}
-              </span>
+              <span className="rounded-full border border-border px-2.5 py-0.5 font-medium">{post.category}</span>
             )}
             {post.date && (
               <span className="flex items-center gap-1">
@@ -146,23 +131,15 @@ export default async function BlogPostPage({
               </span>
             )}
           </div>
-          <h1 className="mt-4 text-4xl font-bold text-foreground">
-            {post.title}
-          </h1>
-          {post.description && (
-            <p className="mt-3 text-lg text-muted-foreground">
-              {post.description}
-            </p>
-          )}
+          <h1 className="mt-4 text-4xl font-bold text-foreground">{post.title}</h1>
+          {post.description && <p className="mt-3 text-lg text-muted-foreground">{post.description}</p>}
         </div>
 
         <div className="prose max-w-none dark:prose-invert">{mdxContent}</div>
       </article>
 
       {/* Related Posts */}
-      {relatedPosts.length > 0 && (
-        <RelatedPosts posts={relatedPosts} locale={locale} />
-      )}
+      {relatedPosts.length > 0 && <RelatedPosts posts={relatedPosts} locale={locale} />}
     </div>
   );
 }

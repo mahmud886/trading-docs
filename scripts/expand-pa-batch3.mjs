@@ -1,11 +1,30 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
-const C = join(process.cwd(), 'content');
-const w = (l,cat,s,f,c) => { writeFileSync(join(C,l,cat,s+'.mdx'), `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-06-10"\n---\n`+c,'utf-8'); console.log(`✅ ${l}/${cat}/${s}`); };
+import { writeFileSync } from "fs";
+import { join } from "path";
+const C = join(process.cwd(), "content");
+const w = (l, cat, s, f, c) => {
+  writeFileSync(
+    join(C, l, cat, s + ".mdx"),
+    `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-06-10"\n---\n` +
+      c,
+    "utf-8",
+  );
+  console.log(`✅ ${l}/${cat}/${s}`);
+};
 
 // BATCH 3: Trading Styles (4 topics × 2 langs = 8 files)
 
-w('en','price-action','trend-trading',{title:"Trend Trading with Price Action — Complete Guide",description:"Master trend trading using pure Price Action. Learn trend identification, trend-following entries, riding trends, and when to exit trend trades.",level:"intermediate",order:21},`
+w(
+  "en",
+  "price-action",
+  "trend-trading",
+  {
+    title: "Trend Trading with Price Action — Complete Guide",
+    description:
+      "Master trend trading using pure Price Action. Learn trend identification, trend-following entries, riding trends, and when to exit trend trades.",
+    level: "intermediate",
+    order: 21,
+  },
+  `
 ## What is Trend Trading?
 
 Trend trading is the strategy of **identifying the dominant market direction** and placing trades that align with it. In Price Action, we identify trends through swing structure (HH/HL for bullish, LH/LL for bearish) and trade pullbacks within the trend.
@@ -115,9 +134,21 @@ LH1
 - [Continuation](/en/price-action/continuation) — Trend continuation patterns
 - [Market Structure](/en/price-action/market-structure) — Structure-based trends
 - [Multi-Timeframe Analysis](/en/price-action/multi-timeframe-analysis) — Timeframe alignment
-`);
+`,
+);
 
-w('bn','price-action','trend-trading',{title:"Price Action দিয়ে Trend Trading — সম্পূর্ণ গাইড",description:"Pure Price Action ব্যবহার করে Trend Trading আয়ত্ত করুন। Trend চিহ্নিতকরণ, Trend-following Entry, Trend Ride করা এবং কখন Trend Trade Exit করবেন শিখুন।",level:"intermediate",order:21},`
+w(
+  "bn",
+  "price-action",
+  "trend-trading",
+  {
+    title: "Price Action দিয়ে Trend Trading — সম্পূর্ণ গাইড",
+    description:
+      "Pure Price Action ব্যবহার করে Trend Trading আয়ত্ত করুন। Trend চিহ্নিতকরণ, Trend-following Entry, Trend Ride করা এবং কখন Trend Trade Exit করবেন শিখুন।",
+    level: "intermediate",
+    order: 21,
+  },
+  `
 ## Trend Trading কী?
 
 Trend Trading হলো **Market-এর প্রভাবশালী Direction চিহ্নিত** করে সেই Direction-এ Trade দেওয়ার Strategy। Price Action-এ আমরা Swing Structure (Bullish-এর জন্য HH/HL, Bearish-এর জন্য LH/LL) দিয়ে Trend চিহ্নিত করি এবং Trend-এর মধ্যে Pullback Trade করি।
@@ -197,9 +228,21 @@ Trend Trading হলো **Market-এর প্রভাবশালী Direction
 - [Continuation](/bn/price-action/continuation) — Trend Continuation Pattern
 - [Market Structure](/bn/price-action/market-structure) — Structure-based Trend
 - [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — Timeframe Alignment
-`);
+`,
+);
 
-w('en','price-action','range-trading',{title:"Range Trading with Price Action — Complete Guide",description:"Master range-bound market trading. Learn to identify ranges, trade bounces between S/R, anticipate breakouts, and manage range trades effectively.",level:"intermediate",order:20},`
+w(
+  "en",
+  "price-action",
+  "range-trading",
+  {
+    title: "Range Trading with Price Action — Complete Guide",
+    description:
+      "Master range-bound market trading. Learn to identify ranges, trade bounces between S/R, anticipate breakouts, and manage range trades effectively.",
+    level: "intermediate",
+    order: 20,
+  },
+  `
 ## What is Range Trading?
 
 Range trading is the strategy of trading **between established support and resistance levels** when price is not trending. Markets spend approximately 60-70% of their time in ranges, making this a valuable skill.
@@ -297,9 +340,21 @@ Rules:
 - [Breakouts](/en/price-action/breakouts) — Range breakouts
 - [Fakeouts](/en/price-action/fakeouts) — False range breaks
 - [Confirmation](/en/price-action/confirmation) — Entry confirmation at range edges
-`);
+`,
+);
 
-w('bn','price-action','range-trading',{title:"Price Action দিয়ে Range Trading — সম্পূর্ণ গাইড",description:"Range-bound Market Trading আয়ত্ত করুন। Range চিহ্নিতকরণ, S/R-এর মধ্যে Bounce Trade, Breakout Anticipate করা এবং কার্যকরভাবে Range Trade Manage করা শিখুন।",level:"intermediate",order:20},`
+w(
+  "bn",
+  "price-action",
+  "range-trading",
+  {
+    title: "Price Action দিয়ে Range Trading — সম্পূর্ণ গাইড",
+    description:
+      "Range-bound Market Trading আয়ত্ত করুন। Range চিহ্নিতকরণ, S/R-এর মধ্যে Bounce Trade, Breakout Anticipate করা এবং কার্যকরভাবে Range Trade Manage করা শিখুন।",
+    level: "intermediate",
+    order: 20,
+  },
+  `
 ## Range Trading কী?
 
 Range Trading হলো Price Trending না করলে **প্রতিষ্ঠিত Support ও Resistance Level-এর মধ্যে** Trade করার Strategy। Market তার সময়ের প্রায় ৬০-৭০% Range-এ কাটায়, এটিকে একটি মূল্যবান দক্ষতা করে তোলে।
@@ -396,9 +451,21 @@ Support ────────────────────────
 - [Breakouts](/bn/price-action/breakouts) — Range Breakout
 - [Fakeouts](/bn/price-action/fakeouts) — False Range Break
 - [Confirmation](/bn/price-action/confirmation) — Range Edge-এ Entry Confirmation
-`);
+`,
+);
 
-w('en','price-action','swing-trading',{title:"Swing Trading with Price Action — Complete Guide",description:"Master Price Action swing trading on H4/D1 timeframes. Learn swing entry techniques, multi-day trade management, and swing trading position sizing.",level:"intermediate",order:23},`
+w(
+  "en",
+  "price-action",
+  "swing-trading",
+  {
+    title: "Swing Trading with Price Action — Complete Guide",
+    description:
+      "Master Price Action swing trading on H4/D1 timeframes. Learn swing entry techniques, multi-day trade management, and swing trading position sizing.",
+    level: "intermediate",
+    order: 23,
+  },
+  `
 ## What is Swing Trading?
 
 Swing trading captures **multi-day price swings** by holding positions for 2-20+ days. Using Price Action on H4 and D1 charts, swing traders aim for 100-500+ pip moves with minimal screen time — ideal for people with full-time jobs.
@@ -510,9 +577,21 @@ Position: $100 ÷ (80 × $10) = 0.125 lots (0.12 or 0.13)
 - [Pullbacks](/en/price-action/pullbacks) — Swing pullback entries
 - [Trade Management](/en/price-action/trade-management) — Managing multi-day trades
 - [Risk Management](/en/price-action/risk-management) — Swing position sizing
-`);
+`,
+);
 
-w('bn','price-action','swing-trading',{title:"Price Action দিয়ে Swing Trading — সম্পূর্ণ গাইড",description:"H4/D1 Timeframe-এ Price Action Swing Trading আয়ত্ত করুন। Swing Entry Technique, Multi-day Trade Management এবং Swing Trading Position Sizing শিখুন।",level:"intermediate",order:23},`
+w(
+  "bn",
+  "price-action",
+  "swing-trading",
+  {
+    title: "Price Action দিয়ে Swing Trading — সম্পূর্ণ গাইড",
+    description:
+      "H4/D1 Timeframe-এ Price Action Swing Trading আয়ত্ত করুন। Swing Entry Technique, Multi-day Trade Management এবং Swing Trading Position Sizing শিখুন।",
+    level: "intermediate",
+    order: 23,
+  },
+  `
 ## Swing Trading কী?
 
 Swing Trading ২-২০+ দিন Position ধরে রেখে **Multi-day Price Swing** ক্যাপচার করে। H4 ও D1 Chart-এ Price Action ব্যবহার করে, Swing Trader ন্যূনতম Screen Time-এ ১০০-৫০০+ Pip Move লক্ষ্য করে — Full-time Job থাকা ব্যক্তিদের জন্য আদর্শ।
@@ -615,9 +694,21 @@ Position: $100 ÷ (80 × $10) = 0.125 Lot (0.12 বা 0.13)
 - [Pullbacks](/bn/price-action/pullbacks) — Swing Pullback Entry
 - [Trade Management](/bn/price-action/trade-management) — Multi-day Trade Manage
 - [Risk Management](/bn/price-action/risk-management) — Swing Position Sizing
-`);
+`,
+);
 
-w('en','price-action','scalping',{title:"Price Action Scalping — Complete Guide",description:"Master Price Action scalping on M1-M5 timeframes. Learn micro-structure reading, quick entry techniques, session-based scalping, and scalping risk management.",level:"advanced",order:22},`
+w(
+  "en",
+  "price-action",
+  "scalping",
+  {
+    title: "Price Action Scalping — Complete Guide",
+    description:
+      "Master Price Action scalping on M1-M5 timeframes. Learn micro-structure reading, quick entry techniques, session-based scalping, and scalping risk management.",
+    level: "advanced",
+    order: 22,
+  },
+  `
 ## What is Price Action Scalping?
 
 Price Action scalping is taking **rapid trades on M1-M5 timeframes** using pure price structure, candlestick patterns, and micro-level support/resistance — no indicators needed. Scalpers aim for 5-20 pip profits per trade with tight stops.
@@ -702,9 +793,21 @@ Scalping is the HARDEST trading style. It requires fast decisions, excellent exe
 - [Entry Models](/en/price-action/entry-models) — Quick entry techniques
 - [Risk Management](/en/price-action/risk-management) — Scalp risk control
 - [Candlestick Basics](/en/price-action/candlestick-basics) — Reading M1 candles
-`);
+`,
+);
 
-w('bn','price-action','scalping',{title:"Price Action Scalping — সম্পূর্ণ গাইড",description:"M1-M5 Timeframe-এ Price Action Scalping আয়ত্ত করুন। Micro-structure Reading, Quick Entry Technique, Session-based Scalping এবং Scalping Risk Management শিখুন।",level:"advanced",order:22},`
+w(
+  "bn",
+  "price-action",
+  "scalping",
+  {
+    title: "Price Action Scalping — সম্পূর্ণ গাইড",
+    description:
+      "M1-M5 Timeframe-এ Price Action Scalping আয়ত্ত করুন। Micro-structure Reading, Quick Entry Technique, Session-based Scalping এবং Scalping Risk Management শিখুন।",
+    level: "advanced",
+    order: 22,
+  },
+  `
 ## Price Action Scalping কী?
 
 Price Action Scalping হলো Pure Price Structure, Candlestick Pattern এবং Micro-level Support/Resistance ব্যবহার করে **M1-M5 Timeframe-এ দ্রুত Trade** নেওয়া — কোনো Indicator প্রয়োজন নেই। Scalper প্রতি Trade-এ ৫-২০ Pip Profit লক্ষ্য করে Tight Stop-সহ।
@@ -789,8 +892,8 @@ Scalping সবচেয়ে কঠিন Trading Style। দ্রুত স
 - [Entry Models](/bn/price-action/entry-models) — Quick Entry Technique
 - [Risk Management](/bn/price-action/risk-management) — Scalp Risk Control
 - [Candlestick Basics](/bn/price-action/candlestick-basics) — M1 Candle পড়া
-`);
+`,
+);
 
-console.log('\n✅ Price Action Batch 3 Complete: 4 topics × 2 languages = 8 files');
-console.log('Topics: trend-trading, range-trading, swing-trading, scalping');
-
+console.log("\n✅ Price Action Batch 3 Complete: 4 topics × 2 languages = 8 files");
+console.log("Topics: trend-trading, range-trading, swing-trading, scalping");

@@ -2,22 +2,14 @@
 
 import { AlertTriangle } from "lucide-react";
 
-export default function GlobalError({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
+export default function GlobalError({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   return (
     <html>
       <body suppressHydrationWarning={true}>
         <div className="flex min-h-screen items-center justify-center px-6">
           <div className="text-center">
             <AlertTriangle size={48} className="mx-auto text-orange-500" />
-            <h2 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">
-              Critical Error
-            </h2>
+            <h2 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">Critical Error</h2>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
               A critical error occurred. Please refresh the page or contact support.
             </p>
@@ -38,4 +30,3 @@ export default function GlobalError({
     </html>
   );
 }
-

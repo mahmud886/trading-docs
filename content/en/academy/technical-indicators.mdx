@@ -11,7 +11,8 @@ lastUpdated: "2026-06-10"
 Technical indicators are **mathematical calculations** applied to price and/or volume data that help traders identify trends, momentum, volatility, and potential reversal points. They are tools — not crystal balls.
 
 <Callout type="warning" title="Important Reality">
-No single indicator is reliable on its own. Professional traders use indicators for CONFIRMATION, not as primary entry signals. Price action and market structure come first; indicators confirm what you already see.
+  No single indicator is reliable on its own. Professional traders use indicators for CONFIRMATION, not as primary entry
+  signals. Price action and market structure come first; indicators confirm what you already see.
 </Callout>
 
 ---
@@ -19,6 +20,7 @@ No single indicator is reliable on its own. Professional traders use indicators 
 ## Moving Averages (MA)
 
 ### Simple Moving Average (SMA):
+
 The average closing price over N periods.
 
 ```
@@ -26,53 +28,57 @@ SMA(20) = Sum of last 20 closes ÷ 20
 ```
 
 ### Exponential Moving Average (EMA):
+
 Gives more weight to recent prices, reacts faster.
 
 ### Key Moving Averages:
 
-| MA Period | Use Case | Timeframe |
-|-----------|----------|-----------|
-| EMA 9/10 | Short-term momentum | M15-H1 |
-| EMA 20/21 | Dynamic S/R, trend filter | H1-H4 |
-| SMA/EMA 50 | Medium-term trend | H4-D1 |
-| SMA/EMA 100 | Intermediate trend | D1 |
-| SMA/EMA 200 | Long-term trend (institutional) | D1-W1 |
+| MA Period   | Use Case                        | Timeframe |
+| ----------- | ------------------------------- | --------- |
+| EMA 9/10    | Short-term momentum             | M15-H1    |
+| EMA 20/21   | Dynamic S/R, trend filter       | H1-H4     |
+| SMA/EMA 50  | Medium-term trend               | H4-D1     |
+| SMA/EMA 100 | Intermediate trend              | D1        |
+| SMA/EMA 200 | Long-term trend (institutional) | D1-W1     |
 
 ### Trading Signals:
 
-| Signal | Meaning | Action |
-|--------|---------|--------|
-| Price above 200 MA | Bullish long-term trend | Look for longs |
-| Price below 200 MA | Bearish long-term trend | Look for shorts |
-| Golden Cross (50 MA crosses above 200 MA) | Bullish shift | Buy signal |
-| Death Cross (50 MA crosses below 200 MA) | Bearish shift | Sell signal |
-| Price pulls back to 20 EMA | Dynamic support in uptrend | Buy the dip |
-| MAs fanning apart | Strong trend | Stay with trend |
-| MAs converging | Trend weakening | Prepare for change |
+| Signal                                    | Meaning                    | Action             |
+| ----------------------------------------- | -------------------------- | ------------------ |
+| Price above 200 MA                        | Bullish long-term trend    | Look for longs     |
+| Price below 200 MA                        | Bearish long-term trend    | Look for shorts    |
+| Golden Cross (50 MA crosses above 200 MA) | Bullish shift              | Buy signal         |
+| Death Cross (50 MA crosses below 200 MA)  | Bearish shift              | Sell signal        |
+| Price pulls back to 20 EMA                | Dynamic support in uptrend | Buy the dip        |
+| MAs fanning apart                         | Strong trend               | Stay with trend    |
+| MAs converging                            | Trend weakening            | Prepare for change |
 
 ---
 
 ## RSI (Relative Strength Index)
 
 ### What It Measures:
+
 Momentum — speed and magnitude of price changes on a 0-100 scale.
 
 ### Settings:
+
 - Default period: 14
 - Overbought: above 70
 - Oversold: below 30
 
 ### RSI Trading Strategies:
 
-| Strategy | Condition | Action |
-|----------|-----------|--------|
-| **Overbought/Oversold** | RSI > 70 or < 30 | Wait for reversal confirmation |
-| **Divergence** | Price makes new high, RSI makes lower high | Potential reversal |
-| **Centerline Crossover** | RSI crosses above/below 50 | Trend direction shift |
-| **Hidden Divergence** | Price pullback, RSI holds trend | Trend continuation |
-| **Range Shift** | RSI stays 40-80 (bullish) or 20-60 (bearish) | Confirms trend bias |
+| Strategy                 | Condition                                    | Action                         |
+| ------------------------ | -------------------------------------------- | ------------------------------ |
+| **Overbought/Oversold**  | RSI > 70 or < 30                             | Wait for reversal confirmation |
+| **Divergence**           | Price makes new high, RSI makes lower high   | Potential reversal             |
+| **Centerline Crossover** | RSI crosses above/below 50                   | Trend direction shift          |
+| **Hidden Divergence**    | Price pullback, RSI holds trend              | Trend continuation             |
+| **Range Shift**          | RSI stays 40-80 (bullish) or 20-60 (bearish) | Confirms trend bias            |
 
 ### RSI Divergence:
+
 ```
 Bearish Divergence:
 - Price: Higher High
@@ -94,22 +100,24 @@ In a strong uptrend, RSI can stay overbought (>70) for extended periods. Don't b
 ## MACD (Moving Average Convergence Divergence)
 
 ### Components:
+
 - **MACD Line:** EMA(12) - EMA(26)
 - **Signal Line:** EMA(9) of MACD Line
 - **Histogram:** MACD Line - Signal Line
 
 ### MACD Signals:
 
-| Signal | Condition | Meaning |
-|--------|-----------|---------|
-| Bullish Crossover | MACD crosses above Signal | Momentum shifting bullish |
-| Bearish Crossover | MACD crosses below Signal | Momentum shifting bearish |
-| Histogram Growing | Bars getting taller | Trend strengthening |
-| Histogram Shrinking | Bars getting shorter | Trend weakening |
-| Zero Line Cross | MACD crosses above/below zero | Trend direction change |
-| Divergence | MACD diverges from price | Potential reversal |
+| Signal              | Condition                     | Meaning                   |
+| ------------------- | ----------------------------- | ------------------------- |
+| Bullish Crossover   | MACD crosses above Signal     | Momentum shifting bullish |
+| Bearish Crossover   | MACD crosses below Signal     | Momentum shifting bearish |
+| Histogram Growing   | Bars getting taller           | Trend strengthening       |
+| Histogram Shrinking | Bars getting shorter          | Trend weakening           |
+| Zero Line Cross     | MACD crosses above/below zero | Trend direction change    |
+| Divergence          | MACD diverges from price      | Potential reversal        |
 
 ### MACD Best Practices:
+
 - Use on H4/D1 for most reliable signals
 - Combine with price action (don't trade MACD alone)
 - Histogram direction change = early warning
@@ -120,9 +128,11 @@ In a strong uptrend, RSI can stay overbought (>70) for extended periods. Don't b
 ## Stochastic Oscillator
 
 ### What It Measures:
+
 Where current price is relative to its high-low range over N periods.
 
 ### Settings:
+
 - Fast Stochastic: %K(14), %D(3)
 - Slow Stochastic: Smoothed version (less noise)
 - Overbought: above 80
@@ -130,11 +140,11 @@ Where current price is relative to its high-low range over N periods.
 
 ### Stochastic Signals:
 
-| Signal | Condition | Action |
-|--------|-----------|--------|
-| Bullish | %K crosses above %D below 20 | Potential buy |
-| Bearish | %K crosses below %D above 80 | Potential sell |
-| Divergence | Price vs. Stochastic diverge | Reversal warning |
+| Signal        | Condition                      | Action           |
+| ------------- | ------------------------------ | ---------------- |
+| Bullish       | %K crosses above %D below 20   | Potential buy    |
+| Bearish       | %K crosses below %D above 80   | Potential sell   |
+| Divergence    | Price vs. Stochastic diverge   | Reversal warning |
 | Double bottom | Stochastic dips twice below 20 | Strong buy setup |
 
 ---
@@ -142,19 +152,21 @@ Where current price is relative to its high-low range over N periods.
 ## ADX (Average Directional Index)
 
 ### What It Measures:
+
 **Trend strength** (not direction) on a 0-100 scale.
 
 ### ADX Levels:
 
-| ADX Value | Meaning | Trading Approach |
-|-----------|---------|-----------------|
-| 0-20 | No trend (ranging) | Range/mean reversion strategies |
-| 20-25 | Weak trend emerging | Watch for breakout |
-| 25-50 | Strong trend | Trend following strategies |
-| 50-75 | Very strong trend | Stay with trend, don't counter |
-| 75-100 | Extreme trend (rare) | Trend may exhaust soon |
+| ADX Value | Meaning              | Trading Approach                |
+| --------- | -------------------- | ------------------------------- |
+| 0-20      | No trend (ranging)   | Range/mean reversion strategies |
+| 20-25     | Weak trend emerging  | Watch for breakout              |
+| 25-50     | Strong trend         | Trend following strategies      |
+| 50-75     | Very strong trend    | Stay with trend, don't counter  |
+| 75-100    | Extreme trend (rare) | Trend may exhaust soon          |
 
 ### ADX + DI Lines:
+
 - **+DI above -DI:** Bullish bias
 - **-DI above +DI:** Bearish bias
 - **ADX rising:** Trend strengthening
@@ -165,17 +177,20 @@ Where current price is relative to its high-low range over N periods.
 ## Volume Indicators
 
 ### On-Balance Volume (OBV):
+
 - Cumulative volume (adds on up days, subtracts on down days)
 - Rising OBV confirms uptrend
 - Falling OBV confirms downtrend
 - OBV divergence = potential reversal
 
 ### Volume Moving Average:
+
 - Compare current volume to average
 - Above average = significant move (likely to continue)
 - Below average = weak move (may reverse)
 
 ### Volume Profile (Advanced):
+
 - Shows volume at each price level
 - High Volume Nodes (HVN) = support/resistance zones
 - Low Volume Nodes (LVN) = price moves quickly through
@@ -186,6 +201,7 @@ Where current price is relative to its high-low range over N periods.
 ## Combining Indicators
 
 ### The Confluence Approach:
+
 ```
 Strong Buy Signal = Multiple confirmations:
 1. Price above 200 EMA (bullish trend) ✅
@@ -197,6 +213,7 @@ Strong Buy Signal = Multiple confirmations:
 ```
 
 ### Avoid Over-Analysis:
+
 - Maximum 2-3 indicators per chart
 - All indicators should serve different purposes
 - Don't use 3 momentum indicators together (redundant)

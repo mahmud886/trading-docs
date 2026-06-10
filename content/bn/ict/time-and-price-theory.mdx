@@ -11,7 +11,7 @@ lastUpdated: "2026-06-09"
 ICT এর Time & Price Theory প্রতিষ্ঠিত করে যে **TIME হলো Senior Element** Trading এ। বেশিরভাগ Trader Price Level নিয়ে ব্যস্ত থাকে, কিন্তু ICT শেখায় যে Algorithm WHEN Move করবে তা জানা WHERE যাবে তার চেয়ে বেশি মূল্যবান।
 
 <Callout type="info" title="Time > Price">
-"Time জানলে Price বের করতে পারবেন। কিন্তু শুধু Price জানলে Time বের করতে পারবেন না। Time হলো Price এর Senior।" — ICT
+  "Time জানলে Price বের করতে পারবেন। কিন্তু শুধু Price জানলে Time বের করতে পারবেন না। Time হলো Price এর Senior।" — ICT
 </Callout>
 
 ---
@@ -19,6 +19,7 @@ ICT এর Time & Price Theory প্রতিষ্ঠিত করে যে *
 ## IPDA (Interbank Price Delivery Algorithm)
 
 ### IPDA কী?
+
 Interbank Price Delivery Algorithm হলো সেই System যা Financial Market এ Price Delivery নিয়ন্ত্রণ করে। এটি কাজ করে:
 
 - **20-Day Cycle** — IPDA 20 Trading Day পিছনে Liquidity Target খোঁজে
@@ -26,7 +27,9 @@ Interbank Price Delivery Algorithm হলো সেই System যা Financial M
 - **60-Day Cycle** — Quarterly Institutional Perspective
 
 ### IPDA Data Ranges
+
 Price কোথায় যাচ্ছে তা জানতে 20/40/60 দিন পিছনে দেখুন:
+
 - এই Lookback Period এর High ও Low Mark করুন
 - এগুলো Algorithm এর Liquidity Target হয়ে যায়
 - Algorithm বর্তমান Cycle এর মধ্যে এই Level এ Price Deliver করে
@@ -36,6 +39,7 @@ Price কোথায় যাচ্ছে তা জানতে 20/40/60 দ�
 ## মূল Time Concepts
 
 ### Macro Times
+
 যে নির্দিষ্ট মিনিটে Displacement ঘটে:
 | Macro | EST | BD সময় |
 |-------|-----|---------|
@@ -46,26 +50,30 @@ Price কোথায় যাচ্ছে তা জানতে 20/40/60 দ�
 | Last Hour | 3:15 - 3:45 PM | রাত 1:15 - 1:45 AM |
 
 ### Quarterly Shifts
+
 Market Quarterly Boundary তে Character পরিবর্তন করে:
+
 - **Q1** (Jan-Mar): প্রায়ই Yearly Low সেট করে
 - **Q2** (Apr-Jun): Q1 Range থেকে Expansion
 - **Q3** (Jul-Sep): Reversal বা Continuation
 - **Q4** (Oct-Dec): Year-End Institutional Positioning
 
 ### Day of Week Profiles
-| দিন | Profile |
-|-----|---------|
-| Monday | Accumulation / Range Setting |
-| Tuesday | Manipulation / Judas Day |
+
+| দিন       | Profile                          |
+| --------- | -------------------------------- |
+| Monday    | Accumulation / Range Setting     |
+| Tuesday   | Manipulation / Judas Day         |
 | Wednesday | Distribution / Maximum Expansion |
-| Thursday | Continuation বা Reversal |
-| Friday | Profit-Taking / কম Reliability |
+| Thursday  | Continuation বা Reversal         |
+| Friday    | Profit-Taking / কম Reliability   |
 
 ---
 
 ## Time ও Price একসাথে ব্যবহার
 
 ### সম্পূর্ণ Framework
+
 1. **Monthly/Weekly** → কোন Liquidity Pool Target? (IPDA Cycle)
 2. **Daily** → আজকের Bias কী? (PO3 Candle + Day of Week)
 3. **Session** → কোন Kill Zone? (দিনের সময়)
@@ -73,6 +81,7 @@ Market Quarterly Boundary তে Character পরিবর্তন করে:
 5. **Entry** → Macro Window এর মধ্যে PD Array
 
 ### উদাহরণ: সম্পূর্ণ Time-Price Analysis
+
 - **IPDA 20-Day Range:** Low 1.0780, High 1.0960 (Untouched BSL)
 - **Day:** Wednesday (Expansion Day)
 - **Bias:** Bullish (গতকাল Bullish PO3 ছিল)

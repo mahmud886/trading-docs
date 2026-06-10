@@ -15,10 +15,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
         <span key={i} className="flex items-center gap-1">
           <ChevronRight size={12} />
           {item.href ? (
-            <Link
-              href={item.href}
-              className="capitalize transition-colors hover:text-foreground"
-            >
+            <Link href={item.href} className="capitalize transition-colors hover:text-foreground">
               {item.label}
             </Link>
           ) : (

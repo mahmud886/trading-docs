@@ -9,21 +9,23 @@ lastUpdated: "2026-06-10"
 ## Internal vs. External Liquidity
 
 In SMC, liquidity exists in two forms:
+
 - **External Liquidity:** Resting orders beyond swing highs/lows (the TARGET)
 - **Internal Liquidity:** FVGs, Order Blocks within the range (the ENTRY)
 
 <Callout type="info" title="The Flow">
-Price moves FROM internal liquidity TO external liquidity, then back. Understanding this flow tells you where price is going next.
+  Price moves FROM internal liquidity TO external liquidity, then back. Understanding this flow tells you where price is
+  going next.
 </Callout>
 
 ---
 
 ## Definitions
 
-| Type | Location | Examples | Purpose |
-|------|----------|---------|----------|
-| **External** | Beyond swing H/L | EQH, EQL, Swing points | TARGET (where price is going) |
-| **Internal** | Within the range | FVGs, OBs, Breakers | ENTRY (where price enters from) |
+| Type         | Location         | Examples               | Purpose                         |
+| ------------ | ---------------- | ---------------------- | ------------------------------- |
+| **External** | Beyond swing H/L | EQH, EQL, Swing points | TARGET (where price is going)   |
+| **Internal** | Within the range | FVGs, OBs, Breakers    | ENTRY (where price enters from) |
 
 ---
 
@@ -52,10 +54,12 @@ Example:
 ## Trading Application
 
 ### Using External as TARGET:
+
 - Draw on liquidity = next unfilled external level
 - Use EQH/EQL, session H/L, swing points as TP
 
 ### Using Internal as ENTRY:
+
 - After external is taken, look for internal entry
 - Enter at FVG or OB retracement
 - This gives you the best R:R

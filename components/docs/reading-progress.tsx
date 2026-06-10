@@ -8,8 +8,7 @@ export function ReadingProgress() {
   useEffect(() => {
     function handleScroll() {
       const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       setProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
     }
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -22,10 +21,7 @@ export function ReadingProgress() {
         className="h-full bg-accent-green transition-[width] duration-150"
         style={{
           width: `${progress}%`,
-          boxShadow:
-            progress > 0
-              ? "0 0 10px var(--accent-green), 0 0 20px var(--glow-color)"
-              : "none",
+          boxShadow: progress > 0 ? "0 0 10px var(--accent-green), 0 0 20px var(--glow-color)" : "none",
         }}
       />
     </div>

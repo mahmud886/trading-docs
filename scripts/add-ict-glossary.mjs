@@ -1,10 +1,10 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from "fs";
+import { join } from "path";
 
-const C = join(process.cwd(), 'content');
+const C = join(process.cwd(), "content");
 
 const writeEN = (slug, meta, content) => {
-  const path = join(C, 'en', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "en", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -13,12 +13,12 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ EN: ${slug}`);
 };
 
 const writeBN = (slug, meta, content) => {
-  const path = join(C, 'bn', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "bn", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -27,16 +27,20 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ BN: ${slug}`);
 };
 
-writeEN('00-ict-glossary', {
-  title: 'ICT Glossary - Complete Terms Dictionary',
-  description: 'Comprehensive glossary of all ICT (Inner Circle Trader) and Smart Money Concepts terms. Your complete reference guide for institutional trading terminology.',
-  order: 0,
-  level: 'beginner'
-}, `# ICT Glossary - Complete Terms Dictionary
+writeEN(
+  "00-ict-glossary",
+  {
+    title: "ICT Glossary - Complete Terms Dictionary",
+    description:
+      "Comprehensive glossary of all ICT (Inner Circle Trader) and Smart Money Concepts terms. Your complete reference guide for institutional trading terminology.",
+    order: 0,
+    level: "beginner",
+  },
+  `# ICT Glossary - Complete Terms Dictionary
 
 Welcome to the **complete ICT terminology reference**. This glossary covers all major Inner Circle Trader (ICT) and Smart Money Concepts (SMC) terms from beginner to professional level.
 
@@ -637,14 +641,19 @@ True institutional move that delivers price to target.
 ---
 
 **📌 Pro Tip:** Bookmark this glossary and refer back as you learn each concept in depth throughout the course!
-`);
+`,
+);
 
-writeBN('00-ict-glossary', {
-  title: 'ICT গ্লসারি - সম্পূর্ণ শব্দকোষ',
-  description: 'সমস্ত ICT (Inner Circle Trader) এবং Smart Money Concepts শর্তাবলীর সম্পূর্ণ গ্লসারি। Institutional Trading পরিভাষার জন্য আপনার সম্পূর্ণ রেফারেন্স গাইড।',
-  order: 0,
-  level: 'beginner'
-}, `# ICT গ্লসারি - সম্পূর্ণ শব্দকোষ
+writeBN(
+  "00-ict-glossary",
+  {
+    title: "ICT গ্লসারি - সম্পূর্ণ শব্দকোষ",
+    description:
+      "সমস্ত ICT (Inner Circle Trader) এবং Smart Money Concepts শর্তাবলীর সম্পূর্ণ গ্লসারি। Institutional Trading পরিভাষার জন্য আপনার সম্পূর্ণ রেফারেন্স গাইড।",
+    order: 0,
+    level: "beginner",
+  },
+  `# ICT গ্লসারি - সম্পূর্ণ শব্দকোষ
 
 **সম্পূর্ণ ICT পরিভাষা রেফারেন্স**এ স্বাগতম। এই গ্লসারি Beginner থেকে Professional Level পর্যন্ত সমস্ত প্রধান Inner Circle Trader (ICT) এবং Smart Money Concepts (SMC) শর্তাবলী কভার করে।
 
@@ -881,8 +890,8 @@ Real Move এর জন্য Liquidity তৈরি করতে Stop এর Ag
 ---
 
 **📌 Pro Tip:** এই Glossary Bookmark করুন এবং Course জুড়ে প্রতিটি Concept গভীরভাবে শেখার সাথে সাথে ফিরে Refer করুন!
-`);
+`,
+);
 
-console.log('\n🎉 ICT Glossary (Topic 00) created successfully!\n');
-console.log('📚 Comprehensive glossary with 200+ terms added to the course!\n');
-
+console.log("\n🎉 ICT Glossary (Topic 00) created successfully!\n");
+console.log("📚 Comprehensive glossary with 200+ terms added to the course!\n");

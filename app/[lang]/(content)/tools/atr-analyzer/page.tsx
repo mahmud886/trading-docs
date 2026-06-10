@@ -9,9 +9,9 @@ export default function ATRAnalyzer() {
   const pathname = usePathname();
   const lang = pathname.split("/")[1] || "en";
 
-  const [high, setHigh] = useState<number>(1.0950);
-  const [low, setLow] = useState<number>(1.0850);
-  const [previousClose, setPreviousClose] = useState<number>(1.0900);
+  const [high, setHigh] = useState<number>(1.095);
+  const [low, setLow] = useState<number>(1.085);
+  const [previousClose, setPreviousClose] = useState<number>(1.09);
   const [period, setPeriod] = useState<number>(14);
 
   const calculateATR = () => {
@@ -19,7 +19,7 @@ export default function ATRAnalyzer() {
     const tr2 = Math.abs(high - previousClose);
     const tr3 = Math.abs(low - previousClose);
     const trueRange = Math.max(tr1, tr2, tr3);
-    
+
     // Simple ATR calculation for single period
     const atr = trueRange;
     const atrPips = atr / 0.0001;
@@ -36,7 +36,7 @@ export default function ATRAnalyzer() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <Link 
+      <Link
         href={`/${lang}/tools`}
         className="flex items-center gap-2 text-muted-foreground hover:text-accent-green mb-6 transition-colors"
       >
@@ -46,17 +46,13 @@ export default function ATRAnalyzer() {
 
       <div className="bg-card border border-border rounded-2xl backdrop-blur-xl p-8">
         <h1 className="text-3xl font-bold text-foreground">ATR & Volatility Analyzer</h1>
-        <p className="text-muted-foreground mt-2">
-          Calculate Average True Range and analyze market volatility
-        </p>
+        <p className="text-muted-foreground mt-2">Calculate Average True Range and analyze market volatility</p>
 
         <div className="mt-8 space-y-6">
           {/* Price Inputs */}
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                High Price
-              </label>
+              <label className="block text-sm font-medium text-foreground mb-2">High Price</label>
               <input
                 type="number"
                 value={high}
@@ -67,9 +63,7 @@ export default function ATRAnalyzer() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                Low Price
-              </label>
+              <label className="block text-sm font-medium text-foreground mb-2">Low Price</label>
               <input
                 type="number"
                 value={low}
@@ -80,9 +74,7 @@ export default function ATRAnalyzer() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                Previous Close
-              </label>
+              <label className="block text-sm font-medium text-foreground mb-2">Previous Close</label>
               <input
                 type="number"
                 value={previousClose}
@@ -93,9 +85,7 @@ export default function ATRAnalyzer() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                ATR Period (for reference)
-              </label>
+              <label className="block text-sm font-medium text-foreground mb-2">ATR Period (for reference)</label>
               <input
                 type="number"
                 value={period}
@@ -113,37 +103,39 @@ export default function ATRAnalyzer() {
         <div className="mt-8 space-y-4">
           <div className="bg-blue-900/20 border border-blue-500/30 rounded-xl p-6">
             <p className="text-muted-foreground text-sm font-medium">TRUE RANGE</p>
-            <p className="text-3xl font-bold text-blue-400 mt-2">
-              {data.trueRange.toFixed(5)}
-            </p>
-            <p className="text-xs text-muted-foreground mt-2">
-              {data.atrPips.toFixed(0)} pips
-            </p>
+            <p className="text-3xl font-bold text-blue-400 mt-2">{data.trueRange.toFixed(5)}</p>
+            <p className="text-xs text-muted-foreground mt-2">{data.atrPips.toFixed(0)} pips</p>
           </div>
 
-          <div className={`rounded-xl p-6 border ${
-            data.volatilityLevel === "Low" ? "bg-green-900/20 border-green-500/30" :
-            data.volatilityLevel === "Medium" ? "bg-yellow-900/20 border-yellow-500/30" :
-            "bg-red-900/20 border-red-500/30"
-          }`}>
+          <div
+            className={`rounded-xl p-6 border ${
+              data.volatilityLevel === "Low"
+                ? "bg-green-900/20 border-green-500/30"
+                : data.volatilityLevel === "Medium"
+                  ? "bg-yellow-900/20 border-yellow-500/30"
+                  : "bg-red-900/20 border-red-500/30"
+            }`}
+          >
             <p className="text-muted-foreground text-sm font-medium">VOLATILITY LEVEL</p>
-            <p className={`text-3xl font-bold mt-2 ${
-              data.volatilityLevel === "Low" ? "text-green-400" :
-              data.volatilityLevel === "Medium" ? "text-yellow-400" :
-              "text-red-400"
-            }`}>
+            <p
+              className={`text-3xl font-bold mt-2 ${
+                data.volatilityLevel === "Low"
+                  ? "text-green-400"
+                  : data.volatilityLevel === "Medium"
+                    ? "text-yellow-400"
+                    : "text-red-400"
+              }`}
+            >
               {data.volatilityLevel}
             </p>
-            <p className="text-xs text-muted-foreground mt-2">
-              Current 1-period ATR: {data.atrPips.toFixed(0)} pips
-            </p>
+            <p className="text-xs text-muted-foreground mt-2">Current 1-period ATR: {data.atrPips.toFixed(0)} pips</p>
           </div>
         </div>
 
         {/* Volatility Analysis */}
         <div className="mt-8 bg-muted border border-border rounded-xl p-6">
           <h2 className="text-lg font-semibold text-foreground mb-4">Volatility Analysis</h2>
-          
+
           <div className="space-y-3">
             <div className="flex justify-between items-center p-3 bg-muted rounded">
               <span className="text-muted-foreground">Current ATR (pips)</span>
@@ -172,7 +164,7 @@ export default function ATRAnalyzer() {
         {/* ATR Reference Table */}
         <div className="mt-8 bg-muted border border-border rounded-xl p-6">
           <h2 className="text-lg font-semibold text-foreground mb-4">ATR Volatility Reference</h2>
-          
+
           <div className="space-y-2 text-sm">
             <div className="flex justify-between items-center p-2 bg-green-900/20 rounded border border-green-500/20">
               <span className="text-foreground">Low Volatility</span>

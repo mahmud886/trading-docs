@@ -23,7 +23,8 @@ const dashboardDict = {
     bookmarkedLessons: "Bookmarked Lessons",
     noCompleted: "No completed lessons yet. Start learning!",
     noBookmarks: "No bookmarks yet. Save lessons for later!",
-    institutionalTip: "💡 Pro Tip: Institutional traders review their progress weekly. Track your win rate and R:R ratios alongside lesson completion.",
+    institutionalTip:
+      "💡 Pro Tip: Institutional traders review their progress weekly. Track your win rate and R:R ratios alongside lesson completion.",
   },
   bn: {
     title: "আপনার ড্যাশবোর্ড",
@@ -37,7 +38,8 @@ const dashboardDict = {
     bookmarkedLessons: "বুকমার্ক করা পাঠ",
     noCompleted: "এখনো কোনো পাঠ সম্পন্ন হয়নি। শেখা শুরু করুন!",
     noBookmarks: "এখনো কোনো বুকমার্ক নেই। পরে পড়ার জন্য পাঠ সেভ করুন!",
-    institutionalTip: "💡 প্রো টিপ: ইনস্টিটিউশনাল ট্রেডাররা সাপ্তাহিক অগ্রগতি পর্যালোচনা করে। পাঠ সম্পন্নের পাশাপাশি আপনার উইন রেট ও R:R রেশিও ট্র্যাক করুন।",
+    institutionalTip:
+      "💡 প্রো টিপ: ইনস্টিটিউশনাল ট্রেডাররা সাপ্তাহিক অগ্রগতি পর্যালোচনা করে। পাঠ সম্পন্নের পাশাপাশি আপনার উইন রেট ও R:R রেশিও ট্র্যাক করুন।",
   },
 };
 
@@ -97,14 +99,9 @@ export default function DashboardPage() {
         ].map((stat) => {
           const Icon = stat.icon;
           return (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-border bg-card p-6 backdrop-blur-xl"
-            >
+            <div key={stat.label} className="rounded-xl border border-border bg-card p-6 backdrop-blur-xl">
               <Icon size={24} style={{ color: stat.color }} />
-              <div className="mt-3 text-3xl font-bold text-foreground">
-                {stat.value}
-              </div>
+              <div className="mt-3 text-3xl font-bold text-foreground">{stat.value}</div>
               <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
             </div>
           );
@@ -170,4 +167,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-

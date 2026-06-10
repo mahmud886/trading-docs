@@ -39,4 +39,3 @@ export function extractToc(rawMdx: string): TocItem[] {
 
   return items;
 }
-

@@ -1,7 +1,15 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
-const C = join(process.cwd(), 'content');
-const w = (l,cat,s,f,c) => { writeFileSync(join(C,l,cat,s+'.mdx'), `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-06-10"\n---\n`+c,'utf-8'); console.log(`✅ ${l}/${cat}/${s}`); };
+import { writeFileSync } from "fs";
+import { join } from "path";
+const C = join(process.cwd(), "content");
+const w = (l, cat, s, f, c) => {
+  writeFileSync(
+    join(C, l, cat, s + ".mdx"),
+    `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-06-10"\n---\n` +
+      c,
+    "utf-8",
+  );
+  console.log(`✅ ${l}/${cat}/${s}`);
+};
 
 // ============================================================
 // BN REWRITES: 9 topics that already have good EN content
@@ -9,7 +17,18 @@ const w = (l,cat,s,f,c) => { writeFileSync(join(C,l,cat,s+'.mdx'), `---\ntitle: 
 // ============================================================
 
 // 1. PULLBACKS — BN
-w('bn','price-action','pullbacks',{title:"Pullback Trading — সম্পূর্ণ গাইড",description:"Pullback Trading আয়ত্ত করুন। সুস্থ Pullback চিহ্নিতকরণ, Fibonacci Retracement Level এবং Optimal Pullback Entry Technique শিখুন।",level:"intermediate",order:11},`
+w(
+  "bn",
+  "price-action",
+  "pullbacks",
+  {
+    title: "Pullback Trading — সম্পূর্ণ গাইড",
+    description:
+      "Pullback Trading আয়ত্ত করুন। সুস্থ Pullback চিহ্নিতকরণ, Fibonacci Retracement Level এবং Optimal Pullback Entry Technique শিখুন।",
+    level: "intermediate",
+    order: 11,
+  },
+  `
 ## Pullback কী?
 
 Pullback হলো প্রভাবশালী Trend-এর বিরুদ্ধে একটি **সাময়িক Retracement** যার পর Price মূল Direction-এ চলতে থাকে। Uptrend-এ Pullback হলো একটি Dip। Downtrend-এ Pullback হলো একটি Rally। Pullback **সেরা Entry সুযোগ** দেয় কারণ আপনি Trend-এর সাথে ভালো Price-এ Enter করছেন।
@@ -122,10 +141,22 @@ Pullback হলো প্রভাবশালী Trend-এর বিরুদ�
 - [Market Structure](/bn/price-action/market-structure) — BOS ও CHOCH
 - [Trend Trading](/bn/price-action/trend-trading) — Trend-এ Pullback Entry
 - [Entry Models](/bn/price-action/entry-models) — Pullback Entry Timing
-`);
+`,
+);
 
 // 2. CANDLESTICK PSYCHOLOGY — BN
-w('bn','price-action','candlestick-psychology',{title:"Candlestick Psychology — সম্পূর্ণ গাইড",description:"প্রতিটি Candlestick-এর পেছনের Psychology বুঝুন। Candle Shape Buyer/Seller-এর যুদ্ধ, Sentiment Shift ও Institutional Activity সম্পর্কে কী প্রকাশ করে শিখুন।",level:"beginner",order:3},`
+w(
+  "bn",
+  "price-action",
+  "candlestick-psychology",
+  {
+    title: "Candlestick Psychology — সম্পূর্ণ গাইড",
+    description:
+      "প্রতিটি Candlestick-এর পেছনের Psychology বুঝুন। Candle Shape Buyer/Seller-এর যুদ্ধ, Sentiment Shift ও Institutional Activity সম্পর্কে কী প্রকাশ করে শিখুন।",
+    level: "beginner",
+    order: 3,
+  },
+  `
 ## Candlestick Psychology কী?
 
 Candlestick Psychology হলো **প্রতিটি Candle Buyer ও Seller-এর মধ্যে যুদ্ধ সম্পর্কে কী প্রকাশ করে** তার অধ্যয়ন। প্রতিটি Candle একটি গল্প বলে — Body দেখায় কে জিতেছে, Wick দেখায় কে চেষ্টা করে ব্যর্থ হয়েছে, এবং Size দেখায় লড়াইয়ের তীব্রতা।
@@ -240,10 +271,22 @@ Context ছাড়া কোনো Candle-এর অর্থ নেই!
 - [Confirmation](/bn/price-action/confirmation) — Candle Confirmation
 - [Entry Models](/bn/price-action/entry-models) — Candle-based Entry
 - [Reversal Concepts](/bn/price-action/reversal-concepts) — Reversal Candle
-`);
+`,
+);
 
 // 3. FAKEOUTS — BN
-w('bn','price-action','fakeouts',{title:"Fakeout — সম্পূর্ণ গাইড",description:"Fakeout চিহ্নিতকরণ ও Trading আয়ত্ত করুন। False Breakout চেনা, Institutional Trap এবং ব্যর্থ Move থেকে Profit করা শিখুন।",level:"intermediate",order:9},`
+w(
+  "bn",
+  "price-action",
+  "fakeouts",
+  {
+    title: "Fakeout — সম্পূর্ণ গাইড",
+    description:
+      "Fakeout চিহ্নিতকরণ ও Trading আয়ত্ত করুন। False Breakout চেনা, Institutional Trap এবং ব্যর্থ Move থেকে Profit করা শিখুন।",
+    level: "intermediate",
+    order: 9,
+  },
+  `
 ## Fakeout কী?
 
 Fakeout (False Breakout) ঘটে যখন Price সাময়িকভাবে Support/Resistance Level-এর বাইরে **ভেদ করে** কিন্তু **দ্রুত ভিতরে ফিরে** আসে, Breakout-এ Enter করা Trader-দের Trap করে। Fakeout Trading-এর সবচেয়ে সাধারণ Trap-এর একটি এবং প্রায়ই **Institution দ্বারা Liquidity সংগ্রহের জন্য Engineered** হয়।
@@ -350,10 +393,22 @@ Fakeout ও Liquidity Sweep একই জিনিস। "Fakeout" হলো Ret
 - [Support ও Resistance](/bn/price-action/support-resistance) — যে Level Fakeout ঘটে
 - [Reversal Concepts](/bn/price-action/reversal-concepts) — Fakeout-এর পর Reversal
 - [Entry Models](/bn/price-action/entry-models) — Fakeout Entry Timing
-`);
+`,
+);
 
 // 4. SWING HIGH LOW — BN
-w('bn','price-action','swing-high-low',{title:"Swing High ও Low — সম্পূর্ণ গাইড",description:"Swing High ও Low চিহ্নিতকরণ আয়ত্ত করুন। Fractal Concept, Swing Failure Pattern এবং Structure Analysis-এ Swing Point কীভাবে ব্যবহার করবেন শিখুন।",level:"beginner",order:7},`
+w(
+  "bn",
+  "price-action",
+  "swing-high-low",
+  {
+    title: "Swing High ও Low — সম্পূর্ণ গাইড",
+    description:
+      "Swing High ও Low চিহ্নিতকরণ আয়ত্ত করুন। Fractal Concept, Swing Failure Pattern এবং Structure Analysis-এ Swing Point কীভাবে ব্যবহার করবেন শিখুন।",
+    level: "beginner",
+    order: 7,
+  },
+  `
 ## Swing High ও Swing Low কী?
 
 Swing Point হলো **Market Structure-এর Building Block**। Swing High হলো এমন একটি Price Peak যার দুই পাশে নিচু High আছে। Swing Low হলো এমন একটি Price Trough যার দুই পাশে উচ্চু Low আছে। এগুলো চিহ্নিত করে কোথায় Price Direction পরিবর্তন করেছে এবং Trend, Support/Resistance ও Structure Break চিহ্নিতকরণের ভিত্তি।
@@ -447,10 +502,22 @@ LL (Lower Low)  → প্রতিটি Swing Low আগেরটির চে
 - [Support ও Resistance](/bn/price-action/support-resistance) — Swing = S/R Level
 - [Breakouts](/bn/price-action/breakouts) — Swing Break = Breakout
 - [Pullbacks](/bn/price-action/pullbacks) — Swing Low-এ Pullback Entry
-`);
+`,
+);
 
 // 5. MULTI-TIMEFRAME ANALYSIS — BN
-w('bn','price-action','multi-timeframe-analysis',{title:"Multi-Timeframe Analysis — সম্পূর্ণ গাইড",description:"Multi-Timeframe Analysis আয়ত্ত করুন। Top-down পদ্ধতি, Timeframe Correlation এবং HTF Bias-এর সাথে LTF Entry কীভাবে Align করবেন শিখুন।",level:"intermediate",order:14},`
+w(
+  "bn",
+  "price-action",
+  "multi-timeframe-analysis",
+  {
+    title: "Multi-Timeframe Analysis — সম্পূর্ণ গাইড",
+    description:
+      "Multi-Timeframe Analysis আয়ত্ত করুন। Top-down পদ্ধতি, Timeframe Correlation এবং HTF Bias-এর সাথে LTF Entry কীভাবে Align করবেন শিখুন।",
+    level: "intermediate",
+    order: 14,
+  },
+  `
 ## Multi-Timeframe Analysis কী?
 
 Multi-Timeframe Analysis (MTA) হলো একটি সম্পূর্ণ চিত্র পেতে একই Instrument-কে **একাধিক Timeframe-এ** বিশ্লেষণ করার অভ্যাস। Higher Timeframe আপনাকে **Direction** (Bias) দেয়, এবং Lower Timeframe আপনাকে **Entry** (Precision) দেয়।
@@ -569,12 +636,24 @@ Professional Trader কখনো একটি Timeframe থেকে Trade ক�
 - [Entry Models](/bn/price-action/entry-models) — LTF Entry Technique
 - [Confluence](/bn/price-action/confluence) — Multiple TF Confluence
 - [Intraday](/bn/price-action/intraday) — Intraday MTA Application
-`);
+`,
+);
 
 // 6-9: Remaining BN files (support-resistance, breakouts, market-structure, trend-analysis)
 // These already have 92-97 lines - reasonable but let's give them proper quality rewrites
 
-w('bn','price-action','support-resistance',{title:"Support ও Resistance — সম্পূর্ণ গাইড",description:"Support ও Resistance Level আয়ত্ত করুন। Horizontal Level, S/R Flip, Dynamic S/R, Psychological Level এবং Zone-based Trading শিখুন।",level:"beginner",order:5},`
+w(
+  "bn",
+  "price-action",
+  "support-resistance",
+  {
+    title: "Support ও Resistance — সম্পূর্ণ গাইড",
+    description:
+      "Support ও Resistance Level আয়ত্ত করুন। Horizontal Level, S/R Flip, Dynamic S/R, Psychological Level এবং Zone-based Trading শিখুন।",
+    level: "beginner",
+    order: 5,
+  },
+  `
 ## Support ও Resistance কী?
 
 Support ও Resistance (S/R) হলো **Horizontal Price Level** যেখানে Buying বা Selling Pressure ঐতিহাসিকভাবে এতটা শক্তিশালী যে Price থামাতে ও Reverse করতে পারে। এগুলো সব Technical Analysis-এর সবচেয়ে মৌলিক Concept।
@@ -689,9 +768,21 @@ Static (Horizontal)-এর বিপরীতে, Dynamic S/R সময়ের
 - [Fakeouts](/bn/price-action/fakeouts) — S/R-এ False Break
 - [Confluence](/bn/price-action/confluence) — S/R + অন্যান্য Factor
 - [Range Trading](/bn/price-action/range-trading) — S/R-এর মধ্যে Trade
-`);
+`,
+);
 
-w('bn','price-action','breakouts',{title:"Breakout Trading — সম্পূর্ণ গাইড",description:"Breakout Trading আয়ত্ত করুন। সত্যিকার Breakout চিহ্নিত করা, Fakeout থেকে পার্থক্য করা, Breakout Entry Technique এবং Breakout Trade Manage করা শিখুন।",level:"intermediate",order:8},`
+w(
+  "bn",
+  "price-action",
+  "breakouts",
+  {
+    title: "Breakout Trading — সম্পূর্ণ গাইড",
+    description:
+      "Breakout Trading আয়ত্ত করুন। সত্যিকার Breakout চিহ্নিত করা, Fakeout থেকে পার্থক্য করা, Breakout Entry Technique এবং Breakout Trade Manage করা শিখুন।",
+    level: "intermediate",
+    order: 8,
+  },
+  `
 ## Breakout কী?
 
 Breakout ঘটে যখন Price একটি প্রতিষ্ঠিত Support বা Resistance Level **শক্তিশালীভাবে ভেদ করে** এবং সেই Direction-এ চলতে থাকে। Breakout নতুন Trend শুরু করে বা বিদ্যমান Trend Accelerate করে।
@@ -777,9 +868,21 @@ Breakout ব্যর্থ হলে (Price ভিতরে ফিরে আস
 - [Expansion](/bn/price-action/expansion) — Breakout-এর পর কী ঘটে
 - [Support ও Resistance](/bn/price-action/support-resistance) — যে Level Break হয়
 - [Volume](/bn/price-action/volume) — Breakout Validate করে
-`);
+`,
+);
 
-w('bn','price-action','market-structure',{title:"Market Structure — সম্পূর্ণ গাইড",description:"Market Structure Analysis আয়ত্ত করুন। Swing High/Low, HH/HL/LH/LL Pattern, BOS, CHOCH এবং Trend চিহ্নিতকরণের জন্য Internal vs External Structure শিখুন।",level:"beginner",order:4},`
+w(
+  "bn",
+  "price-action",
+  "market-structure",
+  {
+    title: "Market Structure — সম্পূর্ণ গাইড",
+    description:
+      "Market Structure Analysis আয়ত্ত করুন। Swing High/Low, HH/HL/LH/LL Pattern, BOS, CHOCH এবং Trend চিহ্নিতকরণের জন্য Internal vs External Structure শিখুন।",
+    level: "beginner",
+    order: 4,
+  },
+  `
 ## Market Structure কী?
 
 Market Structure হলো **Price Action Trading-এর মেরুদণ্ড**। এটি বলতে বোঝায় Price সময়ের সাথে চলার সময় যে Swing High ও Swing Low-এর Pattern তৈরি করে। এই Swing Point বিশ্লেষণ করে আপনি নির্ধারণ করতে পারেন:
@@ -912,9 +1015,21 @@ Internal may be temporarily bearish (pullback) = Entry Zone
 - [Reversal Concepts](/bn/price-action/reversal-concepts) — CHOCH ও Reversal
 - [Continuation](/bn/price-action/continuation) — BOS ও Continuation
 - [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — MTF Structure
-`);
+`,
+);
 
-w('bn','price-action','trend-analysis',{title:"Trend Analysis — সম্পূর্ণ গাইড",description:"Trend চিহ্নিতকরণ ও Analysis আয়ত্ত করুন। Uptrend, Downtrend, Sideways Market, Trendline, Channel এবং Trend Exhaustion Signal শিখুন।",level:"beginner",order:6},`
+w(
+  "bn",
+  "price-action",
+  "trend-analysis",
+  {
+    title: "Trend Analysis — সম্পূর্ণ গাইড",
+    description:
+      "Trend চিহ্নিতকরণ ও Analysis আয়ত্ত করুন। Uptrend, Downtrend, Sideways Market, Trendline, Channel এবং Trend Exhaustion Signal শিখুন।",
+    level: "beginner",
+    order: 6,
+  },
+  `
 ## Trend Analysis কী?
 
 Trend Analysis হলো Price Movement-এর **প্রভাবশালী Direction** চিহ্নিত করার প্রক্রিয়া। Trend প্রতিনিধিত্ব করে সবচেয়ে কম প্রতিরোধের পথ — যে Direction-এ Price চলতে থাকার সম্ভাবনা সবচেয়ে বেশি। Trend-এর সাথে Trading হলো একজন Trader-এর সবচেয়ে গুরুত্বপূর্ণ Edge।
@@ -1023,9 +1138,11 @@ Trend শেষ হওয়ার আগে লক্ষণ:
 - [Trend Trading](/bn/price-action/trend-trading) — Trend-এর সাথে Trading
 - [Pullbacks](/bn/price-action/pullbacks) — Trend-এ Pullback Entry
 - [Reversal Concepts](/bn/price-action/reversal-concepts) — Trend শেষের Signal
-`);
+`,
+);
 
-console.log('\n✅ Price Action BN Rewrites Complete: 9 topics = 9 files');
-console.log('Topics: pullbacks, candlestick-psychology, fakeouts, swing-high-low, multi-timeframe-analysis, support-resistance, breakouts, market-structure, trend-analysis');
-console.log('\n🎉 FULL PRICE ACTION SECTION COMPLETE (EN + BN)');
-
+console.log("\n✅ Price Action BN Rewrites Complete: 9 topics = 9 files");
+console.log(
+  "Topics: pullbacks, candlestick-psychology, fakeouts, swing-high-low, multi-timeframe-analysis, support-resistance, breakouts, market-structure, trend-analysis",
+);
+console.log("\n🎉 FULL PRICE ACTION SECTION COMPLETE (EN + BN)");

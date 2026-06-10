@@ -1,7 +1,7 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from "fs";
+import { join } from "path";
 
-const contentDir = join(process.cwd(), 'content');
+const contentDir = join(process.cwd(), "content");
 
 function writeMdx(lang, category, slug, frontmatter, content) {
   const fm = `---
@@ -12,7 +12,7 @@ order: ${frontmatter.order}
 lastUpdated: "2026-06-10"
 ---
 `;
-  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, 'utf-8');
+  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, "utf-8");
   console.log(`✅ ${lang}/${category}/${slug}.mdx`);
 }
 
@@ -25,12 +25,18 @@ lastUpdated: "2026-06-10"
 // ============================
 // 1. STOCK MARKET BASICS — EN
 // ============================
-writeMdx('en', 'academy', 'stock-market-basics', {
-  title: "Stock Market Basics — Complete Guide",
-  description: "Learn how the stock market works, how to trade stocks, understand market orders, stock exchanges, fundamental analysis, and build a solid foundation for stock trading.",
-  level: "beginner",
-  order: 7
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "stock-market-basics",
+  {
+    title: "Stock Market Basics — Complete Guide",
+    description:
+      "Learn how the stock market works, how to trade stocks, understand market orders, stock exchanges, fundamental analysis, and build a solid foundation for stock trading.",
+    level: "beginner",
+    order: 7,
+  },
+  `
 ## What is the Stock Market?
 
 The stock market is a collection of exchanges where **shares of publicly traded companies** are bought and sold. When you buy a stock, you're purchasing a small piece of ownership (equity) in that company.
@@ -231,17 +237,24 @@ Use stock screeners to filter by:
 - [Technical Indicators](/en/academy/technical-indicators) — Chart analysis tools
 - [Order Types](/en/academy/order-types) — Execution methods
 - [Indices Trading](/en/academy/indices-trading) — Trade market baskets
-`);
+`,
+);
 
 // ============================
 // 1. STOCK MARKET BASICS — BN
 // ============================
-writeMdx('bn', 'academy', 'stock-market-basics', {
-  title: "Stock Market Basics — সম্পূর্ণ গাইড",
-  description: "Stock Market কীভাবে কাজ করে, Stock কীভাবে Trade করবেন, Market Order, Stock Exchange, Fundamental Analysis বুঝুন এবং Stock Trading-এর শক্ত ভিত্তি তৈরি করুন।",
-  level: "beginner",
-  order: 7
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "stock-market-basics",
+  {
+    title: "Stock Market Basics — সম্পূর্ণ গাইড",
+    description:
+      "Stock Market কীভাবে কাজ করে, Stock কীভাবে Trade করবেন, Market Order, Stock Exchange, Fundamental Analysis বুঝুন এবং Stock Trading-এর শক্ত ভিত্তি তৈরি করুন।",
+    level: "beginner",
+    order: 7,
+  },
+  `
 ## Stock Market কী?
 
 Stock Market হলো এমন Exchange-এর সমষ্টি যেখানে **Publicly Traded Company-র Share** কেনা-বেচা হয়। আপনি যখন একটি Stock কেনেন, তখন সেই Company-র একটি ছোট অংশের Ownership (Equity) কিনছেন।
@@ -400,17 +413,24 @@ Stock Screener ব্যবহার করে Filter করুন:
 - [Technical Indicators](/bn/academy/technical-indicators) — Chart Analysis Tool
 - [Order Types](/bn/academy/order-types) — Execution পদ্ধতি
 - [Indices Trading](/bn/academy/indices-trading) — Market Basket Trade
-`);
+`,
+);
 
 // ============================
 // 2. COMMODITY MARKETS — EN
 // ============================
-writeMdx('en', 'academy', 'commodity-markets', {
-  title: "Commodity Markets — Complete Trading Guide",
-  description: "Master commodity trading including gold, oil, silver, and agricultural commodities. Learn how commodity markets work, trading strategies, and key price drivers.",
-  level: "beginner",
-  order: 8
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "commodity-markets",
+  {
+    title: "Commodity Markets — Complete Trading Guide",
+    description:
+      "Master commodity trading including gold, oil, silver, and agricultural commodities. Learn how commodity markets work, trading strategies, and key price drivers.",
+    level: "beginner",
+    order: 8,
+  },
+  `
 ## What Are Commodities?
 
 Commodities are **raw materials and primary agricultural products** that can be bought and sold. They are the building blocks of the global economy — everything from the gold in your jewelry to the oil powering your car.
@@ -559,17 +579,24 @@ Commodities offer portfolio diversification, inflation protection, and unique tr
 - [Risk Management](/en/academy/risk-management) — Manage commodity volatility
 - [Economic Indicators](/en/academy/economic-indicators-macro) — Macro drivers
 - [Volatility Analysis](/en/academy/volatility-analysis) — Measure and trade volatility
-`);
+`,
+);
 
 // ============================
 // 2. COMMODITY MARKETS — BN
 // ============================
-writeMdx('bn', 'academy', 'commodity-markets', {
-  title: "Commodity Market — সম্পূর্ণ Trading গাইড",
-  description: "Gold, Oil, Silver এবং Agricultural Commodity সহ Commodity Trading আয়ত্ত করুন। Commodity Market কীভাবে কাজ করে, Trading Strategy এবং মূল Price Driver শিখুন।",
-  level: "beginner",
-  order: 8
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "commodity-markets",
+  {
+    title: "Commodity Market — সম্পূর্ণ Trading গাইড",
+    description:
+      "Gold, Oil, Silver এবং Agricultural Commodity সহ Commodity Trading আয়ত্ত করুন। Commodity Market কীভাবে কাজ করে, Trading Strategy এবং মূল Price Driver শিখুন।",
+    level: "beginner",
+    order: 8,
+  },
+  `
 ## Commodity কী?
 
 Commodity হলো **কাঁচামাল ও প্রাথমিক কৃষিপণ্য** যা কেনা-বেচা করা যায়। এগুলো বৈশ্বিক অর্থনীতির মূল ভিত্তি — আপনার গয়নার Gold থেকে শুরু করে গাড়ি চালানোর Oil পর্যন্ত সবকিছু।
@@ -706,17 +733,24 @@ Commodity Portfolio Diversification, Inflation Protection এবং Supply/Deman
 - [Risk Management](/bn/academy/risk-management) — Commodity Volatility ম্যানেজ
 - [Economic Indicators](/bn/academy/economic-indicators-macro) — Macro Driver
 - [Volatility Analysis](/bn/academy/volatility-analysis) — Volatility পরিমাপ ও Trade
-`);
+`,
+);
 
 // ============================
 // 3. CRYPTOCURRENCY FUNDAMENTALS — EN
 // ============================
-writeMdx('en', 'academy', 'cryptocurrency-fundamentals', {
-  title: "Cryptocurrency Fundamentals — Complete Guide",
-  description: "Understand cryptocurrency from the ground up. Learn blockchain technology, how crypto works, major coins, wallets, exchanges, and the crypto ecosystem.",
-  level: "beginner",
-  order: 9
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "cryptocurrency-fundamentals",
+  {
+    title: "Cryptocurrency Fundamentals — Complete Guide",
+    description:
+      "Understand cryptocurrency from the ground up. Learn blockchain technology, how crypto works, major coins, wallets, exchanges, and the crypto ecosystem.",
+    level: "beginner",
+    order: 9,
+  },
+  `
 ## What is Cryptocurrency?
 
 Cryptocurrency is a **digital or virtual currency** that uses cryptography for security and operates on decentralized networks based on blockchain technology. Unlike traditional currencies, crypto is not controlled by any government or central bank.
@@ -879,17 +913,24 @@ A **distributed digital ledger** that records all transactions across a network 
 - [Risk Management](/en/academy/risk-management) — Capital protection
 - [What is Trading?](/en/academy/what-is-trading) — Trading fundamentals
 - [Technical Indicators](/en/academy/technical-indicators) — Chart analysis
-`);
+`,
+);
 
 // ============================
 // 3. CRYPTOCURRENCY FUNDAMENTALS — BN
 // ============================
-writeMdx('bn', 'academy', 'cryptocurrency-fundamentals', {
-  title: "Cryptocurrency Fundamentals — সম্পূর্ণ গাইড",
-  description: "Cryptocurrency শূন্য থেকে বুঝুন। Blockchain Technology, Crypto কীভাবে কাজ করে, প্রধান Coin, Wallet, Exchange এবং Crypto Ecosystem শিখুন।",
-  level: "beginner",
-  order: 9
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "cryptocurrency-fundamentals",
+  {
+    title: "Cryptocurrency Fundamentals — সম্পূর্ণ গাইড",
+    description:
+      "Cryptocurrency শূন্য থেকে বুঝুন। Blockchain Technology, Crypto কীভাবে কাজ করে, প্রধান Coin, Wallet, Exchange এবং Crypto Ecosystem শিখুন।",
+    level: "beginner",
+    order: 9,
+  },
+  `
 ## Cryptocurrency কী?
 
 Cryptocurrency হলো একটি **Digital বা Virtual Currency** যা নিরাপত্তার জন্য Cryptography ব্যবহার করে এবং Blockchain Technology-র উপর ভিত্তি করে Decentralized Network-এ পরিচালিত হয়। Traditional Currency-র বিপরীতে, Crypto কোনো সরকার বা Central Bank দ্বারা নিয়ন্ত্রিত নয়।
@@ -1041,17 +1082,24 @@ Cryptocurrency মধ্যস্থতাকারী (Bank) ছাড়াই
 - [Risk Management](/bn/academy/risk-management) — Capital সুরক্ষা
 - [Trading কী?](/bn/academy/what-is-trading) — Trading Fundamental
 - [Technical Indicators](/bn/academy/technical-indicators) — Chart Analysis
-`);
+`,
+);
 
 // ============================
 // 4. BONDS & ETFs — EN
 // ============================
-writeMdx('en', 'academy', 'bonds-etfs', {
-  title: "Bonds & ETFs — Complete Investment Guide",
-  description: "Understand bonds and ETFs for trading and investing. Learn bond mechanics, yield curves, ETF types, and how to use them for diversification and income generation.",
-  level: "beginner",
-  order: 10
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "bonds-etfs",
+  {
+    title: "Bonds & ETFs — Complete Investment Guide",
+    description:
+      "Understand bonds and ETFs for trading and investing. Learn bond mechanics, yield curves, ETF types, and how to use them for diversification and income generation.",
+    level: "beginner",
+    order: 10,
+  },
+  `
 ## Bonds & ETFs: Essential Financial Instruments
 
 Bonds and ETFs are foundational instruments for both investors and traders. Understanding them enhances your overall market knowledge and provides diversification opportunities.
@@ -1199,17 +1247,24 @@ An **ETF (Exchange-Traded Fund)** is a basket of securities that trades on an ex
 - [Economic Indicators](/en/academy/economic-indicators-macro) — Macro analysis
 - [Investing vs Trading](/en/academy/investing-vs-trading) — Choose your approach
 - [Risk Management](/en/academy/risk-management) — Portfolio protection
-`);
+`,
+);
 
 // ============================
 // 4. BONDS & ETFs — BN
 // ============================
-writeMdx('bn', 'academy', 'bonds-etfs', {
-  title: "Bond ও ETF — সম্পূর্ণ Investment গাইড",
-  description: "Trading ও Investing-এর জন্য Bond ও ETF বুঝুন। Bond Mechanics, Yield Curve, ETF-এর ধরন এবং Diversification ও Income Generation-এ এগুলো কীভাবে ব্যবহার করবেন শিখুন।",
-  level: "beginner",
-  order: 10
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "bonds-etfs",
+  {
+    title: "Bond ও ETF — সম্পূর্ণ Investment গাইড",
+    description:
+      "Trading ও Investing-এর জন্য Bond ও ETF বুঝুন। Bond Mechanics, Yield Curve, ETF-এর ধরন এবং Diversification ও Income Generation-এ এগুলো কীভাবে ব্যবহার করবেন শিখুন।",
+    level: "beginner",
+    order: 10,
+  },
+  `
 ## Bond ও ETF: অপরিহার্য Financial Instrument
 
 Bond ও ETF হলো Investor ও Trader উভয়ের জন্য মৌলিক Instrument। এগুলো বোঝা আপনার সামগ্রিক Market জ্ঞান বাড়ায় এবং Diversification-এর সুযোগ দেয়।
@@ -1328,17 +1383,24 @@ Interest Rate কমলে:
 - [Economic Indicators](/bn/academy/economic-indicators-macro) — Macro Analysis
 - [Investing vs Trading](/bn/academy/investing-vs-trading) — পদ্ধতি বেছে নিন
 - [Risk Management](/bn/academy/risk-management) — Portfolio সুরক্ষা
-`);
+`,
+);
 
 // ============================
 // 5. PERPETUAL FUTURES — EN
 // ============================
-writeMdx('en', 'academy', 'perpetual-futures', {
-  title: "Perpetual Futures & Funding Rates — Complete Guide",
-  description: "Master perpetual futures trading. Learn how perps work, funding rate mechanics, liquidation, and strategies for trading crypto and forex perpetual contracts.",
-  level: "intermediate",
-  order: 11
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "perpetual-futures",
+  {
+    title: "Perpetual Futures & Funding Rates — Complete Guide",
+    description:
+      "Master perpetual futures trading. Learn how perps work, funding rate mechanics, liquidation, and strategies for trading crypto and forex perpetual contracts.",
+    level: "intermediate",
+    order: 11,
+  },
+  `
 ## What Are Perpetual Futures?
 
 Perpetual Futures (Perps) are derivative contracts that allow you to trade an asset's price without expiry dates. Unlike traditional futures that expire monthly/quarterly, perpetual contracts can be held indefinitely.
@@ -1541,17 +1603,24 @@ Margin needed = $10,000 ÷ 10 = $1,000
 - [Risk Management](/en/academy/risk-management) — Capital protection
 - [Margin & Leverage](/en/academy/margin-leverage) — Leverage mechanics
 - [Position Sizing](/en/academy/position-sizing) — Calculate correct sizes
-`);
+`,
+);
 
 // ============================
 // 5. PERPETUAL FUTURES — BN
 // ============================
-writeMdx('bn', 'academy', 'perpetual-futures', {
-  title: "Perpetual Futures ও Funding Rate — সম্পূর্ণ গাইড",
-  description: "Perpetual Futures Trading আয়ত্ত করুন। Perp কীভাবে কাজ করে, Funding Rate Mechanics, Liquidation এবং Crypto ও Forex Perpetual Contract Trading-এর Strategy শিখুন।",
-  level: "intermediate",
-  order: 11
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "perpetual-futures",
+  {
+    title: "Perpetual Futures ও Funding Rate — সম্পূর্ণ গাইড",
+    description:
+      "Perpetual Futures Trading আয়ত্ত করুন। Perp কীভাবে কাজ করে, Funding Rate Mechanics, Liquidation এবং Crypto ও Forex Perpetual Contract Trading-এর Strategy শিখুন।",
+    level: "intermediate",
+    order: 11,
+  },
+  `
 ## Perpetual Futures কী?
 
 Perpetual Futures (Perp) হলো Derivative Contract যা আপনাকে কোনো Expiry Date ছাড়াই একটি Asset-এর Price Trade করতে দেয়। Traditional Futures-এর বিপরীতে যেগুলো Monthly/Quarterly Expire হয়, Perpetual Contract অনির্দিষ্টকাল ধরে রাখা যায়।
@@ -1713,17 +1782,24 @@ Return: Bull Market-এ 10-40% APR
 - [Risk Management](/bn/academy/risk-management) — Capital সুরক্ষা
 - [Margin ও Leverage](/bn/academy/margin-leverage) — Leverage Mechanics
 - [Position Sizing](/bn/academy/position-sizing) — সঠিক Size গণনা
-`);
+`,
+);
 
 // ============================
 // 6. VOLATILITY ANALYSIS — EN
 // ============================
-writeMdx('en', 'academy', 'volatility-analysis', {
-  title: "Volatility Analysis & VIX — Complete Guide",
-  description: "Master volatility analysis for trading. Learn how to measure, interpret, and trade volatility using ATR, VIX, Bollinger Bands, and volatility-based strategies.",
-  level: "intermediate",
-  order: 12
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "volatility-analysis",
+  {
+    title: "Volatility Analysis & VIX — Complete Guide",
+    description:
+      "Master volatility analysis for trading. Learn how to measure, interpret, and trade volatility using ATR, VIX, Bollinger Bands, and volatility-based strategies.",
+    level: "intermediate",
+    order: 12,
+  },
+  `
 ## What is Volatility?
 
 Volatility measures the **degree of price fluctuation** over a given time period. High volatility means large, rapid price swings; low volatility means small, gradual movements. Understanding volatility is essential for proper position sizing, stop placement, and strategy selection.
@@ -1903,17 +1979,24 @@ ATR-based position sizing is one of the most robust methods because it automatic
 - [Bollinger Bands](/en/academy/bollinger-bands-trading) — Volatility-based indicator
 - [Technical Indicators](/en/academy/technical-indicators) — Complete indicator guide
 - [Trading Psychology](/en/academy/trading-psychology) — Managing emotions during volatility
-`);
+`,
+);
 
 // ============================
 // 6. VOLATILITY ANALYSIS — BN
 // ============================
-writeMdx('bn', 'academy', 'volatility-analysis', {
-  title: "Volatility Analysis ও VIX — সম্পূর্ণ গাইড",
-  description: "Trading-এর জন্য Volatility Analysis আয়ত্ত করুন। ATR, VIX, Bollinger Band ব্যবহার করে Volatility পরিমাপ, ব্যাখ্যা ও Trade করা এবং Volatility-based Strategy শিখুন।",
-  level: "intermediate",
-  order: 12
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "volatility-analysis",
+  {
+    title: "Volatility Analysis ও VIX — সম্পূর্ণ গাইড",
+    description:
+      "Trading-এর জন্য Volatility Analysis আয়ত্ত করুন। ATR, VIX, Bollinger Band ব্যবহার করে Volatility পরিমাপ, ব্যাখ্যা ও Trade করা এবং Volatility-based Strategy শিখুন।",
+    level: "intermediate",
+    order: 12,
+  },
+  `
 ## Volatility কী?
 
 Volatility একটি নির্দিষ্ট সময়ে **Price ওঠানামার মাত্রা** পরিমাপ করে। High Volatility মানে বড়, দ্রুত Price Swing; Low Volatility মানে ছোট, ধীরগতির Movement। সঠিক Position Sizing, Stop Placement এবং Strategy নির্বাচনের জন্য Volatility বোঝা অপরিহার্য।
@@ -2077,8 +2160,10 @@ ATR-based Position Sizing সবচেয়ে শক্তিশালী প�
 - [Bollinger Bands](/bn/academy/bollinger-bands-trading) — Volatility-based Indicator
 - [Technical Indicators](/bn/academy/technical-indicators) — সম্পূর্ণ Indicator গাইড
 - [Trading Psychology](/bn/academy/trading-psychology) — Volatility-তে আবেগ ম্যানেজ
-`);
+`,
+);
 
-console.log('\n✅ Academy Batch 2 Complete: 6 topics × 2 languages = 12 files');
-console.log('Topics: stock-market-basics, commodity-markets, cryptocurrency-fundamentals, bonds-etfs, perpetual-futures, volatility-analysis');
-
+console.log("\n✅ Academy Batch 2 Complete: 6 topics × 2 languages = 12 files");
+console.log(
+  "Topics: stock-market-basics, commodity-markets, cryptocurrency-fundamentals, bonds-etfs, perpetual-futures, volatility-analysis",
+);

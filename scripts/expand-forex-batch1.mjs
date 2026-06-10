@@ -1,14 +1,29 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
-const C = join(process.cwd(), 'content');
+import { writeFileSync } from "fs";
+import { join } from "path";
+const C = join(process.cwd(), "content");
 const w = (l, slug, f, c) => {
-  writeFileSync(join(C, l, 'forex-sessions', slug + '.mdx'), `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-06-10"\n---\n` + c, 'utf-8');
+  writeFileSync(
+    join(C, l, "forex-sessions", slug + ".mdx"),
+    `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-06-10"\n---\n` +
+      c,
+    "utf-8",
+  );
   console.log(`✅ ${l}/forex-sessions/${slug}`);
 };
 
 // FOREX SESSIONS BATCH 1: asian-range, london-open-manipulation, new-york-reversal, session-liquidity-sweeps
 
-w('en', 'asian-range', {title:"Asian Range Concept (BD Time) — Complete Guide",description:"Master the Asian Range — a core ICT concept. Learn how to mark, trade, and use the Asian Range for London session setups. All times in Bangladesh time.",level:"intermediate",order:10}, `
+w(
+  "en",
+  "asian-range",
+  {
+    title: "Asian Range Concept (BD Time) — Complete Guide",
+    description:
+      "Master the Asian Range — a core ICT concept. Learn how to mark, trade, and use the Asian Range for London session setups. All times in Bangladesh time.",
+    level: "intermediate",
+    order: 10,
+  },
+  `
 ## What is the Asian Range?
 
 The Asian Range is the **price range created during the Tokyo/Asian session** — from **5:00 AM to 1:00 PM Bangladesh time**. In ICT/SMC methodology, this range is critical because London session typically **sweeps one side** of this range to begin its directional move.
@@ -96,9 +111,20 @@ The Asian Range creates liquidity pools on both sides. Buy stops accumulate abov
 - [Kill Zones](/en/forex-sessions/kill-zones) — Timing entries
 - [Session Liquidity Sweeps](/en/forex-sessions/session-liquidity-sweeps) — Sweep mechanics
 - [London Open Manipulation](/en/forex-sessions/london-open-manipulation) — Manipulation details
-`);
+`,
+);
 
-w('bn', 'asian-range', {title:"Asian Range Concept (BD সময়) — সম্পূর্ণ গাইড",description:"Asian Range আয়ত্ত করুন — একটি মূল ICT Concept। London Session Setup-এ Asian Range কীভাবে Mark, Trade ও ব্যবহার করবেন শিখুন। সব সময় বাংলাদেশ সময়ে।",level:"intermediate",order:10}, `
+w(
+  "bn",
+  "asian-range",
+  {
+    title: "Asian Range Concept (BD সময়) — সম্পূর্ণ গাইড",
+    description:
+      "Asian Range আয়ত্ত করুন — একটি মূল ICT Concept। London Session Setup-এ Asian Range কীভাবে Mark, Trade ও ব্যবহার করবেন শিখুন। সব সময় বাংলাদেশ সময়ে।",
+    level: "intermediate",
+    order: 10,
+  },
+  `
 ## Asian Range কী?
 
 Asian Range হলো **Tokyo/Asian Session-এ তৈরি হওয়া Price Range** — **সকাল ৫:০০ থেকে দুপুর ১:০০ বাংলাদেশ সময়**। ICT/SMC Methodology-তে এই Range অত্যন্ত গুরুত্বপূর্ণ কারণ London Session সাধারণত তার Directional Move শুরু করতে এই Range-এর **একটি দিক Sweep** করে।
@@ -185,9 +211,20 @@ Asian Range উভয় দিকে Liquidity Pool তৈরি করে। A
 - [London Session](/bn/forex-sessions/london) — Sweep-এর পর কী ঘটে
 - [Kill Zones](/bn/forex-sessions/kill-zones) — Entry Timing
 - [Session Liquidity Sweeps](/bn/forex-sessions/session-liquidity-sweeps) — Sweep Mechanics
-`);
+`,
+);
 
-w('en', 'london-open-manipulation', {title:"London Open Manipulation — Complete Guide",description:"Master London Open manipulation patterns. Learn how smart money uses the first 30-60 minutes to trap retail traders and initiate the real move.",level:"intermediate",order:8}, `
+w(
+  "en",
+  "london-open-manipulation",
+  {
+    title: "London Open Manipulation — Complete Guide",
+    description:
+      "Master London Open manipulation patterns. Learn how smart money uses the first 30-60 minutes to trap retail traders and initiate the real move.",
+    level: "intermediate",
+    order: 8,
+  },
+  `
 ## What is London Open Manipulation?
 
 London Open Manipulation (also called "Judas Swing") is the **false initial move** in the first 30-60 minutes of London session that traps retail traders before the real directional move begins. It's how smart money collects liquidity at the open.
@@ -267,9 +304,20 @@ Wait for the trap to spring, then trade the real move.
 - [Kill Zones](/en/forex-sessions/kill-zones) — London Kill Zone
 - [Session Liquidity Sweeps](/en/forex-sessions/session-liquidity-sweeps) — Sweep mechanics
 - [New York Reversal](/en/forex-sessions/new-york-reversal) — Similar NY pattern
-`);
+`,
+);
 
-w('bn', 'london-open-manipulation', {title:"London Open Manipulation — সম্পূর্ণ গাইড",description:"London Open Manipulation Pattern আয়ত্ত করুন। প্রথম ৩০-৬০ মিনিটে Smart Money কীভাবে Retail Trader Trap করে এবং প্রকৃত Move শুরু করে শিখুন।",level:"intermediate",order:8}, `
+w(
+  "bn",
+  "london-open-manipulation",
+  {
+    title: "London Open Manipulation — সম্পূর্ণ গাইড",
+    description:
+      "London Open Manipulation Pattern আয়ত্ত করুন। প্রথম ৩০-৬০ মিনিটে Smart Money কীভাবে Retail Trader Trap করে এবং প্রকৃত Move শুরু করে শিখুন।",
+    level: "intermediate",
+    order: 8,
+  },
+  `
 ## London Open Manipulation কী?
 
 London Open Manipulation (যাকে "Judas Swing"-ও বলে) হলো London Session-এর প্রথম ৩০-৬০ মিনিটে **মিথ্যা Initial Move** যা প্রকৃত Directional Move শুরুর আগে Retail Trader-দের Trap করে। এভাবে Smart Money Open-এ Liquidity সংগ্রহ করে।
@@ -347,9 +395,20 @@ Trap Spring হওয়ার অপেক্ষা, তারপর প্র�
 - [Asian Range](/bn/forex-sessions/asian-range) — যে Range Sweep হয়
 - [Kill Zones](/bn/forex-sessions/kill-zones) — London Kill Zone
 - [New York Reversal](/bn/forex-sessions/new-york-reversal) — একই NY Pattern
-`);
+`,
+);
 
-w('en', 'new-york-reversal', {title:"New York Reversal — Complete Guide",description:"Master the New York session reversal pattern. Learn how NY often reverses London's move and creates the daily high/low.",level:"intermediate",order:9}, `
+w(
+  "en",
+  "new-york-reversal",
+  {
+    title: "New York Reversal — Complete Guide",
+    description:
+      "Master the New York session reversal pattern. Learn how NY often reverses London's move and creates the daily high/low.",
+    level: "intermediate",
+    order: 9,
+  },
+  `
 ## What is the New York Reversal?
 
 The New York Reversal is a pattern where the **NY session reverses the London session's direction**, often creating the opposite daily extreme. If London made the daily low, NY makes the daily high (and vice versa).
@@ -416,9 +475,20 @@ Time (BD):
 - [New York Session](/en/forex-sessions/new-york) — Full NY guide
 - [Daily Session Bias](/en/forex-sessions/daily-session-bias) — Predicting direction
 - [London Open Manipulation](/en/forex-sessions/london-open-manipulation) — Similar London pattern
-`);
+`,
+);
 
-w('bn', 'new-york-reversal', {title:"New York Reversal — সম্পূর্ণ গাইড",description:"New York Session Reversal Pattern আয়ত্ত করুন। NY কীভাবে প্রায়ই London-এর Move Reverse করে ও Daily High/Low তৈরি করে শিখুন।",level:"intermediate",order:9}, `
+w(
+  "bn",
+  "new-york-reversal",
+  {
+    title: "New York Reversal — সম্পূর্ণ গাইড",
+    description:
+      "New York Session Reversal Pattern আয়ত্ত করুন। NY কীভাবে প্রায়ই London-এর Move Reverse করে ও Daily High/Low তৈরি করে শিখুন।",
+    level: "intermediate",
+    order: 9,
+  },
+  `
 ## New York Reversal কী?
 
 New York Reversal হলো এমন Pattern যেখানে **NY Session London Session-এর Direction Reverse করে**, প্রায়ই বিপরীত Daily Extreme তৈরি করে। London যদি Daily Low করে, NY Daily High করে (এবং উল্টো)।
@@ -484,9 +554,20 @@ New York Reversal হলো এমন Pattern যেখানে **NY Session Lo
 - [London Session](/bn/forex-sessions/london) — NY কী Reverse করে
 - [New York Session](/bn/forex-sessions/new-york) — সম্পূর্ণ NY Guide
 - [Daily Session Bias](/bn/forex-sessions/daily-session-bias) — Direction Predict
-`);
+`,
+);
 
-w('en', 'session-liquidity-sweeps', {title:"Session Liquidity Sweeps — Complete Guide",description:"Master how sessions sweep previous session liquidity. Learn the chain of sweeps from Asian to London to New York.",level:"intermediate",order:11}, `
+w(
+  "en",
+  "session-liquidity-sweeps",
+  {
+    title: "Session Liquidity Sweeps — Complete Guide",
+    description:
+      "Master how sessions sweep previous session liquidity. Learn the chain of sweeps from Asian to London to New York.",
+    level: "intermediate",
+    order: 11,
+  },
+  `
 ## What are Session Liquidity Sweeps?
 
 Session Liquidity Sweeps occur when a **new session targets and takes the liquidity** left by the previous session. This is the fundamental mechanism driving intraday price movement in institutional trading.
@@ -551,9 +632,20 @@ Success rate: ~70% when aligned with daily bias
 - [London Open Manipulation](/en/forex-sessions/london-open-manipulation) — London sweeps
 - [Session Liquidity (SMC)](/en/smc/session-liquidity) — Detailed SMC context
 - [Kill Zones](/en/forex-sessions/kill-zones) — When sweeps happen
-`);
+`,
+);
 
-w('bn', 'session-liquidity-sweeps', {title:"Session Liquidity Sweep — সম্পূর্ণ গাইড",description:"Session কীভাবে পূর্ববর্তী Session-এর Liquidity Sweep করে আয়ত্ত করুন। Asian থেকে London থেকে New York পর্যন্ত Sweep Chain শিখুন।",level:"intermediate",order:11}, `
+w(
+  "bn",
+  "session-liquidity-sweeps",
+  {
+    title: "Session Liquidity Sweep — সম্পূর্ণ গাইড",
+    description:
+      "Session কীভাবে পূর্ববর্তী Session-এর Liquidity Sweep করে আয়ত্ত করুন। Asian থেকে London থেকে New York পর্যন্ত Sweep Chain শিখুন।",
+    level: "intermediate",
+    order: 11,
+  },
+  `
 ## Session Liquidity Sweep কী?
 
 Session Liquidity Sweep ঘটে যখন একটি **নতুন Session পূর্ববর্তী Session-এর রেখে যাওয়া Liquidity Target করে নেয়**। এটি Institutional Trading-এ Intraday Price Movement চালিত করার মৌলিক Mechanism।
@@ -617,9 +709,20 @@ Daily Bias-এর সাথে Aligned হলে Success Rate: ~৭০%
 - [Asian Range](/bn/forex-sessions/asian-range) — সবচেয়ে বেশি Swept Range
 - [London Open Manipulation](/bn/forex-sessions/london-open-manipulation) — London Sweep
 - [Kill Zones](/bn/forex-sessions/kill-zones) — কখন Sweep ঘটে
-`);
+`,
+);
 
-w('en', 'daily-session-bias', {title:"Daily Session Bias — Complete Guide",description:"Master how to determine daily directional bias before the session starts. Use higher timeframe analysis to predict session direction.",level:"intermediate",order:12}, `
+w(
+  "en",
+  "daily-session-bias",
+  {
+    title: "Daily Session Bias — Complete Guide",
+    description:
+      "Master how to determine daily directional bias before the session starts. Use higher timeframe analysis to predict session direction.",
+    level: "intermediate",
+    order: 12,
+  },
+  `
 ## What is Daily Session Bias?
 
 Daily Session Bias is determining the **most likely direction** for today's trading BEFORE the session begins. By analyzing D1/H4 structure and key levels, you can predict whether today will be bullish or bearish — and only take trades in that direction.
@@ -677,9 +780,20 @@ Step 4: Weekly candle context
 - [London Open Manipulation](/en/forex-sessions/london-open-manipulation) — Bias determines which side gets swept
 - [Kill Zones](/en/forex-sessions/kill-zones) — When to execute bias trades
 - [Session Strategies](/en/forex-sessions/session-strategies) — Strategy per bias
-`);
+`,
+);
 
-w('bn', 'daily-session-bias', {title:"Daily Session Bias — সম্পূর্ণ গাইড",description:"Session শুরুর আগে দৈনিক Directional Bias কীভাবে নির্ধারণ করবেন আয়ত্ত করুন। Session Direction Predict করতে Higher Timeframe Analysis ব্যবহার।",level:"intermediate",order:12}, `
+w(
+  "bn",
+  "daily-session-bias",
+  {
+    title: "Daily Session Bias — সম্পূর্ণ গাইড",
+    description:
+      "Session শুরুর আগে দৈনিক Directional Bias কীভাবে নির্ধারণ করবেন আয়ত্ত করুন। Session Direction Predict করতে Higher Timeframe Analysis ব্যবহার।",
+    level: "intermediate",
+    order: 12,
+  },
+  `
 ## Daily Session Bias কী?
 
 Daily Session Bias হলো Session শুরুর আগে আজকের Trading-এর **সবচেয়ে সম্ভাব্য Direction** নির্ধারণ করা। D1/H4 Structure ও Key Level বিশ্লেষণ করে আপনি Predict করতে পারেন আজ Bullish হবে না Bearish — এবং শুধু সেই Direction-এ Trade নেবেন।
@@ -737,8 +851,10 @@ Daily Session Bias হলো Session শুরুর আগে আজকের T
 - [London Open Manipulation](/bn/forex-sessions/london-open-manipulation) — Bias নির্ধারণ করে কোন দিক Sweep
 - [Kill Zones](/bn/forex-sessions/kill-zones) — কখন Bias Trade Execute
 - [Session Strategies](/bn/forex-sessions/session-strategies) — Bias অনুযায়ী Strategy
-`);
+`,
+);
 
-console.log('\n✅ Forex Sessions Batch 1 Complete: 4 topics × 2 languages = 8 files');
-console.log('Topics: asian-range, london-open-manipulation, new-york-reversal, session-liquidity-sweeps, daily-session-bias');
-
+console.log("\n✅ Forex Sessions Batch 1 Complete: 4 topics × 2 languages = 8 files");
+console.log(
+  "Topics: asian-range, london-open-manipulation, new-york-reversal, session-liquidity-sweeps, daily-session-bias",
+);

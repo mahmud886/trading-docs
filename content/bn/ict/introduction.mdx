@@ -11,7 +11,8 @@ lastUpdated: "2026-06-09"
 ICT (Inner Circle Trader) হলো **Michael J. Huddleston** এর তৈরি একটি Trading Framework যা Interbank Market Making Algorithm কীভাবে Price Deliver করে তা প্রকাশ করে। Retail Trading পদ্ধতি যা Lagging Indicator এর উপর নির্ভর করে তার বিপরীতে, ICT প্রতিটি Market Move এর পেছনের **Institutional Logic** বোঝার উপর Focus করে।
 
 <Callout type="info" title="মূল দর্শন">
-"Market random নয়। এটি একটি Algorithm যা Liquidity খোঁজে এবং Premium ও Discount Array এর মধ্যে Price Deliver করে।" — ICT
+  "Market random নয়। এটি একটি Algorithm যা Liquidity খোঁজে এবং Premium ও Discount Array এর মধ্যে Price Deliver করে।" —
+  ICT
 </Callout>
 
 ---
@@ -32,35 +33,45 @@ ICT এর Framework SMC (Smart Money Concepts) থেকে আলাদা —
 ## ICT এর ৫টি স্তম্ভ
 
 ### স্তম্ভ ১: Algorithmic Price Delivery
+
 Market IPDA (Interbank Price Delivery Algorithm) দ্বারা নিয়ন্ত্রিত। এই Algorithm:
+
 - High এর উপরে ও Low এর নিচে Liquidity খোঁজে
 - FVG (Imbalance) পূরণ করতে Price Deliver করে
 - পূর্বানুমানযোগ্য Time Schedule অনুসরণ করে
 - Price এ Inefficiency Rebalance করে
 
 ### স্তম্ভ ২: Time-Based Trading
+
 ICT Price এর চেয়ে **Time** এর উপর জোর দেওয়ায় অনন্য। মূল Time Concept:
+
 - **Kill Zones** — সর্বোচ্চ Probability Setup এর নির্দিষ্ট সময়
 - **Session Opens** — Midnight, London, New York Setup তৈরি করে
 - **ICT Macro Times** — নির্দিষ্ট ঘণ্টার :50 থেকে :10 মিনিটে Displacement দেখায়
 - **Seasonal Tendencies** — Monthly ও Quarterly Bias Pattern
 
 ### স্তম্ভ ৩: Liquidity Theory
+
 Market এর সবকিছু Liquidity কে ঘিরে ঘোরে:
+
 - **Buy-Side Liquidity (BSL)** — Swing High এর উপরে Stop Loss
 - **Sell-Side Liquidity (SSL)** — Swing Low এর নিচে Stop Loss
 - **Engineered Liquidity** — Equal Highs/Lows সুস্পষ্ট Target তৈরি করে
 - Algorithm সবসময় পরবর্তী Liquidity Pool এ যায়
 
 ### স্তম্ভ ৪: Premium & Discount Framework
+
 Price Equilibrium এর সাপেক্ষে দুটি Zone এ কাজ করে:
+
 - **Premium (50% এর উপরে)** — Sell করার জন্য আদর্শ
 - **Discount (50% এর নিচে)** — Buy করার জন্য আদর্শ
 - **Equilibrium (50%)** — FVG এর CE, Range এর Midpoint
 - Premium এ PD Arrays = Sell Setup; Discount এ PD Arrays = Buy Setup
 
 ### স্তম্ভ ৫: Power of 3 (AMD Cycle)
+
 প্রতিটি Move তিন Phase এ হয়:
+
 1. **Accumulation** — Smart Money একটি Range এ Position তৈরি করে
 2. **Manipulation** — False Move (Judas Swing) Retail কে ফাঁদে ফেলে
 3. **Distribution** — Manipulation এর পর সত্যিকার দিকে Move
@@ -69,21 +80,23 @@ Price Equilibrium এর সাপেক্ষে দুটি Zone এ কা�
 
 ## ICT vs Retail Trading
 
-| বিষয় | Retail পদ্ধতি | ICT পদ্ধতি |
-|-------|-------------|------------|
-| **Indicator** | RSI, MACD, Moving Average | কিছুই না — শুধু Price Action + Time |
-| **Entry** | Breakout, Crossover | Manipulation এর পর OB/FVG Retracement |
-| **Stop Loss** | সাম্প্রতিক Swing এর নিচে | Manipulation Extreme এর বাইরে |
-| **Target** | Fixed Pips বা R:R | বিপরীত Liquidity Pool |
-| **Timing** | যেকোনো সময় | শুধু Kill Zone এ |
-| **Bias** | Indicator ভিত্তিক | HTF Structure + PO3 Candle Analysis |
+| বিষয়         | Retail পদ্ধতি             | ICT পদ্ধতি                            |
+| ------------- | ------------------------- | ------------------------------------- |
+| **Indicator** | RSI, MACD, Moving Average | কিছুই না — শুধু Price Action + Time   |
+| **Entry**     | Breakout, Crossover       | Manipulation এর পর OB/FVG Retracement |
+| **Stop Loss** | সাম্প্রতিক Swing এর নিচে  | Manipulation Extreme এর বাইরে         |
+| **Target**    | Fixed Pips বা R:R         | বিপরীত Liquidity Pool                 |
+| **Timing**    | যেকোনো সময়               | শুধু Kill Zone এ                      |
+| **Bias**      | Indicator ভিত্তিক         | HTF Structure + PO3 Candle Analysis   |
 
 ---
 
 ## ICT মূল Concept Overview
 
 ### PD Arrays (Premium/Discount Arrays)
+
 Chart এ Institutional Footprint:
+
 - **Order Blocks (OB)** — Displacement এর আগে শেষ বিপরীত Candle
 - **Fair Value Gaps (FVG)** — 3-Candle Imbalance
 - **Breaker Blocks** — ব্যর্থ OB যা Support/Resistance হয়ে যায়
@@ -91,12 +104,14 @@ Chart এ Institutional Footprint:
 - **Liquidity Voids** — বড় একক-Candle Inefficiency
 
 ### Time Concepts
+
 - **Kill Zones** — London (2:00-5:00 AM EST), NY (7:00-10:00 AM EST)
 - **Silver Bullet** — 10:00-11:00 AM, 2:00-3:00 PM, 3:00-4:00 AM EST Window
 - **ICT Macros** — নির্দিষ্ট ঘণ্টার :50 থেকে :10
 - **Power of 3 Candle** — Daily/4H Candle Structure (Open → Low → High → Close)
 
 ### Market Structure
+
 - **Market Structure Shift (MSS)** — নিশ্চিত Trend Change
 - **Change of Character (CHOCH)** — Reversal এর প্রথম চিহ্ন
 - **Displacement** — শক্তিশালী Momentum দিক নিশ্চিত করে
@@ -107,24 +122,28 @@ Chart এ Institutional Footprint:
 ## শেখার পথ — ICT দিয়ে শুরু করুন
 
 ### Phase 1: Foundation (সপ্তাহ ১-৪)
+
 1. Market Structure শিখুন (Swing High/Low, BOS, CHOCH)
 2. Liquidity বুঝুন (BSL, SSL, Equal Highs/Lows)
 3. Daily Chart এ PO3 Candle Identify করুন
 4. Kill Zone Timing শিখুন (আপনার Timezone এ Convert করুন)
 
 ### Phase 2: Core Concepts (সপ্তাহ ৫-৮)
+
 1. FVG ও Order Block চিহ্নিত করুন
 2. Premium/Discount এ PD Array Identification Practice করুন
 3. HTF PO3 Analysis দিয়ে Daily Bias শিখুন
 4. শুধু London ও NY Kill Zone এ Paper Trade করুন
 
 ### Phase 3: Execution (সপ্তাহ ৯-১২)
+
 1. একটি নির্দিষ্ট Model তৈরি করুন (Silver Bullet, 2022 Model ইত্যাদি)
 2. দিনে সর্বোচ্চ ১টি Trade
 3. প্রতিটি Setup Journal করুন (Win বা Loss) Screenshot সহ
 4. 1M/5M Confirmation ব্যবহার করে Entry Timing Refine করুন
 
 ### Phase 4: Mastery (৪+ মাস)
+
 1. Multiple Timeframe Confluence Combine করুন
 2. Session-Specific Model যোগ করুন
 3. Seasonal Tendencies বুঝুন
@@ -135,7 +154,7 @@ Chart এ Institutional Footprint:
 ## বাংলাদেশ সময় Reference
 
 | ICT Session             | EST সময়     | বাংলাদেশ সময়    |
-|-------------------------|--------------|------------------|
+| ----------------------- | ------------ | ---------------- |
 | Asian Range             | 8 PM – 12 AM | সকাল ৬ – ১০      |
 | London Kill Zone        | 2 – 5 AM     | দুপুর ১২ – ৩ টা  |
 | NY AM Kill Zone         | 7 – 10 AM    | বিকাল ৫ – ৮ টা   |
@@ -168,7 +187,7 @@ Chart এ Institutional Footprint:
 ## সারসংক্ষেপ
 
 | বিষয়            | বিবরণ                                     |
-|------------------|-------------------------------------------|
+| ---------------- | ----------------------------------------- |
 | **স্রষ্টা**      | Michael J. Huddleston (ICT)               |
 | **মূল ধারণা**    | Market একটি Algorithm যা Liquidity খুঁজছে |
 | **Time Focus**   | Kill Zones, Session Opens, Macros         |

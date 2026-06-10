@@ -6,12 +6,12 @@ level: intermediate
 lastUpdated: "2026-06-09"
 ---
 
-
 ### Definition
 
 A Dealing Range is the **price range between the most recent significant Swing High and Swing Low** that defines the current "playing field" for institutional price delivery. It establishes the boundaries within which the IPDA (Interbank Price Delivery Algorithm) operates, seeking Internal Liquidity before targeting External Liquidity.
 
 The Dealing Range gives context to EVERY trade by defining:
+
 - WHERE Premium and Discount zones are (50% divides the range)
 - WHAT Liquidity exists inside (Internal) vs. outside (External)
 - Whether price should be bought or sold at its current position
@@ -28,6 +28,7 @@ The Dealing Range gives context to EVERY trade by defining:
 ### How It Works
 
 **Identifying a Dealing Range:**
+
 1. Find the most recent significant Swing High (must have BSL above — stops resting)
 2. Find the most recent significant Swing Low (must have SSL below — stops resting)
 3. The range between = Your Dealing Range
@@ -42,6 +43,7 @@ The Dealing Range gives context to EVERY trade by defining:
 | **External Liquidity** | The range boundaries (Swing H/L) | Taken AFTER internal is cleared |
 
 **Dealing Range Lifecycle:**
+
 1. **Formation** — Swing High and Low establish the range
 2. **Internal Raid** — Price sweeps minor Liquidity within the range
 3. **External Expansion** — After internal is exhausted, price breaks to External Liquidity
@@ -58,6 +60,7 @@ The Dealing Range gives context to EVERY trade by defining:
 5. **Multi-timeframe alignment** — Larger TF Dealing Ranges contain smaller TF ranges (fractal)
 
 **Why Internal before External:**
+
 - Internal Liquidity is safer to target (stays within the range)
 - It provides additional fill opportunities without committing to a breakout
 - Once internal is exhausted, the algorithm commits to an External raid
@@ -66,20 +69,24 @@ The Dealing Range gives context to EVERY trade by defining:
 ### Trading Application
 
 **Step 1: Mark the current Dealing Range**
+
 - HTF (Daily/4H): Identify the major Swing H/L
 - Draw 50% Equilibrium
 - Mark Internal Liquidity (minor highs/lows within)
 
 **Step 2: Determine if Internal or External Liquidity is being targeted**
+
 - If minor swing points WITHIN the range are being taken → Internal raid in progress
 - If price is approaching the range boundaries → External expansion likely
 
 **Step 3: Trade based on position**
+
 - Price in Discount (below 50%) + Internal Lows being taken → Buy after sweep
 - Price in Premium (above 50%) + Internal Highs being taken → Sell after sweep
 - Price breaking range boundary → External Liquidity taken → Expect new range
 
 **Step 4: When Dealing Range breaks**
+
 - Old range no longer valid
 - The breakout extreme + the previous range extreme = New Dealing Range
 - Reassess Premium/Discount from the new range

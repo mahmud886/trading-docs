@@ -41,20 +41,12 @@ export function Callout({
   const Icon = v.icon;
 
   return (
-    <div
-      className={cn(
-        "my-6 rounded-xl border-l-4 p-4 backdrop-blur-xl",
-        v.border,
-        v.bg
-      )}
-    >
+    <div className={cn("my-6 rounded-xl border-l-4 p-4 backdrop-blur-xl", v.border, v.bg)}>
       <div className={cn("flex items-center gap-2 font-semibold text-foreground")}>
         <Icon size={18} className={v.iconColor} />
         {title && <span>{title}</span>}
       </div>
-      <div className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        {children}
-      </div>
+      <div className="mt-2 text-sm leading-relaxed text-muted-foreground">{children}</div>
     </div>
   );
 }

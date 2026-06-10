@@ -1,10 +1,16 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
-const C = join(process.cwd(), 'content');
-const w = (l,s,t) => { writeFileSync(join(C,l,'blog',s+'.mdx'), t, 'utf-8'); console.log(`✅ ${l}/blog/${s}`); };
+import { writeFileSync } from "fs";
+import { join } from "path";
+const C = join(process.cwd(), "content");
+const w = (l, s, t) => {
+  writeFileSync(join(C, l, "blog", s + ".mdx"), t, "utf-8");
+  console.log(`✅ ${l}/blog/${s}`);
+};
 
 // ============ BLOG 2: UNDERSTANDING ORDER BLOCKS ============
-w('en','understanding-order-blocks',`---
+w(
+  "en",
+  "understanding-order-blocks",
+  `---
 title: "Understanding Order Blocks in SMC"
 description: "A deep dive into how institutional order blocks form and how to identify high-probability entry zones using Smart Money Concepts."
 date: "2026-04-28"
@@ -191,9 +197,13 @@ When an OB is invalidated:
 For a complete deep-dive, check the full [Order Blocks lesson](/en/smc/order-blocks) in our SMC curriculum.
 
 Happy trading! 📊
-`);
+`,
+);
 
-w('bn','understanding-order-blocks',`---
+w(
+  "bn",
+  "understanding-order-blocks",
+  `---
 title: "SMC তে অর্ডার ব্লক বোঝা"
 description: "ইনস্টিটিউশনাল অর্ডার ব্লক কীভাবে তৈরি হয় এবং Smart Money Concepts ব্যবহার করে হাই-প্রোবাবিলিটি এন্ট্রি জোন কীভাবে চিহ্নিত করবেন তার গভীর বিশ্লেষণ।"
 date: "2026-04-28"
@@ -304,10 +314,14 @@ Order Block আমাকে অস্পষ্ট "এলাকা" এর ব�
 ---
 
 বিস্তারিতের জন্য আমাদের SMC পাঠ্যক্রমে সম্পূর্ণ [অর্ডার ব্লক পাঠ](/bn/smc/order-blocks) দেখুন।
-`);
+`,
+);
 
 // ============ BLOG 3: ICT KILL ZONES ============
-w('en','ict-kill-zones-explained',`---
+w(
+  "en",
+  "ict-kill-zones-explained",
+  `---
 title: "ICT Kill Zones Explained — The Best Times to Trade"
 description: "Master the key trading sessions and time-based setups used in the ICT methodology. Complete guide with Bangladesh time conversions."
 date: "2026-04-25"
@@ -454,9 +468,13 @@ Since the NY AM session is the most important, here's a complete strategy:
 - Focus your trading on Kill Zones to dramatically improve results
 
 Full lesson: [ICT Kill Zones](/en/ict/ict-kill-zones)
-`);
+`,
+);
 
-w('bn','ict-kill-zones-explained',`---
+w(
+  "bn",
+  "ict-kill-zones-explained",
+  `---
 title: "ICT Kill Zones ব্যাখ্যা — ট্রেডের সেরা সময়"
 description: "ICT মেথডলজিতে ব্যবহৃত মূল ট্রেডিং সেশন ও সময়-ভিত্তিক সেটআপ আয়ত্ত করুন। বাংলাদেশ সময় সহ সম্পূর্ণ গাইড।"
 date: "2026-04-25"
@@ -548,10 +566,14 @@ Kill Zones সরাসরি Power of 3 (AMD) সাইকেলে ম্য�
 ---
 
 সম্পূর্ণ পাঠ: [ICT Kill Zones](/bn/ict/ict-kill-zones)
-`);
+`,
+);
 
 // ============ BLOG 4: RISK MANAGEMENT ============
-w('en','risk-management-essentials',`---
+w(
+  "en",
+  "risk-management-essentials",
+  `---
 title: "Risk Management Essentials for Traders"
 description: "The complete guide to position sizing, stop loss placement, and protecting your trading capital. The #1 skill every trader needs."
 date: "2026-04-20"
@@ -682,9 +704,13 @@ If ANY box is unchecked, I don't take the trade. **No exceptions.**
 | **Correlation** | Max 2-3 uncorrelated positions |
 
 Full lesson: [Risk Management](/en/academy/risk-management)
-`);
+`,
+);
 
-w('bn','risk-management-essentials',`---
+w(
+  "bn",
+  "risk-management-essentials",
+  `---
 title: "ট্রেডারদের জন্য রিস্ক ম্যানেজমেন্ট অপরিহার্য"
 description: "পজিশন সাইজিং, স্টপ লস প্লেসমেন্ট এবং ট্রেডিং ক্যাপিটাল রক্ষার সম্পূর্ণ গাইড। প্রতিটি ট্রেডারের #১ দক্ষতা।"
 date: "2026-04-20"
@@ -758,10 +784,14 @@ featured: false
 ---
 
 সম্পূর্ণ পাঠ: [রিস্ক ম্যানেজমেন্ট](/bn/academy/risk-management)
-`);
+`,
+);
 
 // ============ BLOG 5: TOP 5 MISTAKES (NEW) ============
-w('en','top-5-beginner-mistakes',`---
+w(
+  "en",
+  "top-5-beginner-mistakes",
+  `---
 title: "Top 5 Mistakes Every Beginner Trader Makes (And How to Fix Them)"
 description: "Avoid the most common trading mistakes that destroy beginner accounts. Learn the solutions that professional traders use."
 date: "2026-05-05"
@@ -868,9 +898,13 @@ If you can't make money on demo consistently, you won't make money with real mon
 Every profitable trader was once a losing beginner. The difference is that they **identified their mistakes and fixed them systematically**. You can do the same.
 
 Start with risk management. Write a plan. Practice on demo. Journal everything. The results will follow.
-`);
+`,
+);
 
-w('bn','top-5-beginner-mistakes',`---
+w(
+  "bn",
+  "top-5-beginner-mistakes",
+  `---
 title: "প্রতিটি বিগিনার ট্রেডারের শীর্ষ ৫ ভুল (এবং সমাধান)"
 description: "বিগিনার অ্যাকাউন্ট ধ্বংসকারী সবচেয়ে সাধারণ ট্রেডিং ভুল এড়িয়ে চলুন। প্রফেশনাল ট্রেডারদের সমাধান শিখুন।"
 date: "2026-05-05"
@@ -953,10 +987,14 @@ featured: true
 প্রতিটি লাভজনক ট্রেডার একসময় লসকারী বিগিনার ছিল। পার্থক্য হলো তারা **ভুল চিহ্নিত করে সিস্টেমেটিকভাবে ঠিক করেছে**। আপনিও পারবেন।
 
 রিস্ক ম্যানেজমেন্ট দিয়ে শুরু করুন। প্ল্যান লিখুন। ডেমোতে প্র্যাক্টিস করুন। সব জার্নাল করুন। ফলাফল আসবে।
-`);
+`,
+);
 
 // ============ BLOG 6: GOLD TRADING (NEW) ============
-w('en','how-to-trade-gold-xauusd',`---
+w(
+  "en",
+  "how-to-trade-gold-xauusd",
+  `---
 title: "How to Trade Gold (XAU/USD) — A Complete Beginner's Guide"
 description: "Everything you need to know about trading Gold (XAU/USD). Market fundamentals, best sessions, strategies, risk management, and common mistakes."
 date: "2026-05-08"
@@ -1083,9 +1121,13 @@ Gold is more volatile than forex — adjust your risk accordingly:
 Gold is an incredible trading instrument when approached with proper risk management and a solid strategy. Focus on the London-NY overlap (7:30-11PM BD time), use SMC concepts, and always respect gold's higher volatility.
 
 Full lesson: [Gold Trading](/en/academy/gold-trading)
-`);
+`,
+);
 
-w('bn','how-to-trade-gold-xauusd',`---
+w(
+  "bn",
+  "how-to-trade-gold-xauusd",
+  `---
 title: "গোল্ড (XAU/USD) কীভাবে ট্রেড করবেন — সম্পূর্ণ বিগিনার গাইড"
 description: "গোল্ড (XAU/USD) ট্রেডিং সম্পর্কে আপনার যা জানা দরকার সবকিছু। মার্কেট ফান্ডামেন্টাল, সেরা সেশন, কৌশল এবং রিস্ক ম্যানেজমেন্ট।"
 date: "2026-05-08"
@@ -1175,7 +1217,7 @@ featured: true
 ---
 
 সম্পূর্ণ পাঠ: [গোল্ড ট্রেডিং](/bn/academy/gold-trading)
-`);
+`,
+);
 
-console.log('\n✅ All blog posts created (6 EN + 6 BN = 12 files)');
-
+console.log("\n✅ All blog posts created (6 EN + 6 BN = 12 files)");

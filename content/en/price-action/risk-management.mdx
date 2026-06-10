@@ -14,14 +14,14 @@ Risk management in Price Action trading uses **structural stop placement** — s
 
 ## Stop Loss Placement Rules
 
-| Setup Type | Stop Location |
-|-----------|---------------|
-| Order Block entry | Beyond the OB (body) |
-| Fibonacci entry | Beyond 78.6% or swing point |
-| S/R bounce | Beyond the zone + buffer |
-| Trendline bounce | Beyond the trendline |
-| CHOCH entry | Beyond the CHOCH swing point |
-| Liquidity sweep | Beyond the sweep wick |
+| Setup Type        | Stop Location                |
+| ----------------- | ---------------------------- |
+| Order Block entry | Beyond the OB (body)         |
+| Fibonacci entry   | Beyond 78.6% or swing point  |
+| S/R bounce        | Beyond the zone + buffer     |
+| Trendline bounce  | Beyond the trendline         |
+| CHOCH entry       | Beyond the CHOCH swing point |
+| Liquidity sweep   | Beyond the sweep wick        |
 
 ---
 
@@ -54,11 +54,11 @@ Example:
 
 ## Structural vs. Fixed Stops
 
-| Method | Description | Pro | Con |
-|--------|-------------|-----|-----|
-| Structural | Beyond swing/OB/zone | Logical, less random SL hit | Sometimes wide |
-| Fixed pip | Always X pips | Simple, consistent size | May be inside structure |
-| ATR-based | 1.5-2× ATR | Volatility-adjusted | Doesn't respect structure |
+| Method     | Description          | Pro                         | Con                       |
+| ---------- | -------------------- | --------------------------- | ------------------------- |
+| Structural | Beyond swing/OB/zone | Logical, less random SL hit | Sometimes wide            |
+| Fixed pip  | Always X pips        | Simple, consistent size     | May be inside structure   |
+| ATR-based  | 1.5-2× ATR           | Volatility-adjusted         | Doesn't respect structure |
 
 **Best approach: Structural stop, then calculate position size to fit your risk %.**
 

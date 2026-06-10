@@ -1,15 +1,15 @@
-import { writeFileSync, mkdirSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync, mkdirSync } from "fs";
+import { join } from "path";
 
-const C = join(process.cwd(), 'content');
+const C = join(process.cwd(), "content");
 
 // Ensure directories exist
 try {
-  mkdirSync(join(C, 'bn', 'academy', 'ict-smc-course'), { recursive: true });
+  mkdirSync(join(C, "bn", "academy", "ict-smc-course"), { recursive: true });
 } catch (e) {}
 
 const writeEN = (slug, meta, content) => {
-  const path = join(C, 'en', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "en", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -18,12 +18,12 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ EN: ${slug}`);
 };
 
 const writeBN = (slug, meta, content) => {
-  const path = join(C, 'bn', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "bn", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -32,17 +32,21 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ BN: ${slug}`);
 };
 
 // ============ TOPIC 20: IFVG (Inverse Fair Value Gap) ============
-writeEN('20-ifvg', {
-  title: 'Inverse Fair Value Gap (IFVG)',
-  description: 'Master Inverse Fair Value Gaps — FVGs that get fully traded through and invert their role. Learn how Bullish FVGs become Bearish zones and vice versa.',
-  order: 20,
-  level: 'intermediate'
-}, `# Inverse Fair Value Gap (IFVG)
+writeEN(
+  "20-ifvg",
+  {
+    title: "Inverse Fair Value Gap (IFVG)",
+    description:
+      "Master Inverse Fair Value Gaps — FVGs that get fully traded through and invert their role. Learn how Bullish FVGs become Bearish zones and vice versa.",
+    order: 20,
+    level: "intermediate",
+  },
+  `# Inverse Fair Value Gap (IFVG)
 
 ### Definition
 
@@ -158,14 +162,19 @@ An Inverse Fair Value Gap (IFVG) is a **Fair Value Gap that has been fully trade
 9. **Result:** 10 pip risk, 75 pip reward → 1:7.5 R:R
 
 The former support FVG perfectly rejected price as resistance after inversion.
-`);
+`,
+);
 
-writeBN('20-ifvg', {
-  title: 'Inverse Fair Value Gap (IFVG)',
-  description: 'Inverse Fair Value Gap Master করুন — FVG যা সম্পূর্ণ Trade Through হয়ে তাদের ভূমিকা উল্টে যায়। শিখুন কীভাবে Bullish FVG Bearish Zone হয় এবং বিপরীত।',
-  order: 20,
-  level: 'intermediate'
-}, `# Inverse Fair Value Gap (IFVG)
+writeBN(
+  "20-ifvg",
+  {
+    title: "Inverse Fair Value Gap (IFVG)",
+    description:
+      "Inverse Fair Value Gap Master করুন — FVG যা সম্পূর্ণ Trade Through হয়ে তাদের ভূমিকা উল্টে যায়। শিখুন কীভাবে Bullish FVG Bearish Zone হয় এবং বিপরীত।",
+    order: 20,
+    level: "intermediate",
+  },
+  `# Inverse Fair Value Gap (IFVG)
 
 ### Definition
 
@@ -259,17 +268,22 @@ Inverse Fair Value Gap (IFVG) হলো **Fair Value Gap যা সম্পূ�
 9. **ফলাফল:** 10 Pip Risk, 75 Pip Reward → 1:7.5 R:R
 
 পূর্বের Support FVG Inversion পরে Resistance হিসেবে Price Perfect Reject করেছে।
-`);
+`,
+);
 
-console.log('\n✅ Topic 20 (IFVG) complete!\n');
+console.log("\n✅ Topic 20 (IFVG) complete!\n");
 
 // ============ TOPIC 21: Balanced Price Range ============
-writeEN('21-balanced-price-range', {
-  title: 'Balanced Price Range',
-  description: 'Understand Balanced Price Ranges — equilibrium zones where price delivered efficiently. Learn how these ranges create future support and resistance.',
-  order: 21,
-  level: 'intermediate'
-}, `# Balanced Price Range
+writeEN(
+  "21-balanced-price-range",
+  {
+    title: "Balanced Price Range",
+    description:
+      "Understand Balanced Price Ranges — equilibrium zones where price delivered efficiently. Learn how these ranges create future support and resistance.",
+    order: 21,
+    level: "intermediate",
+  },
+  `# Balanced Price Range
 
 ### Definition
 
@@ -382,14 +396,19 @@ A Balanced Price Range (BPR) is a **price range where efficient delivery occurre
 10. **Result:** 8 pip risk, 84 pip reward → 1:10.5 R:R
 
 The BPR held perfectly as support, confirming institutional involvement.
-`);
+`,
+);
 
-writeBN('21-balanced-price-range', {
-  title: 'Balanced Price Range',
-  description: 'Balanced Price Range বুঝুন — ভারসাম্য Zone যেখানে Price দক্ষভাবে Deliver হয়েছে। শিখুন এই Range কীভাবে ভবিষ্যতে Support ও Resistance তৈরি করে।',
-  order: 21,
-  level: 'intermediate'
-}, `# Balanced Price Range
+writeBN(
+  "21-balanced-price-range",
+  {
+    title: "Balanced Price Range",
+    description:
+      "Balanced Price Range বুঝুন — ভারসাম্য Zone যেখানে Price দক্ষভাবে Deliver হয়েছে। শিখুন এই Range কীভাবে ভবিষ্যতে Support ও Resistance তৈরি করে।",
+    order: 21,
+    level: "intermediate",
+  },
+  `# Balanced Price Range
 
 ### Definition
 
@@ -482,17 +501,22 @@ Balanced Price Range (BPR) হলো এমন **Price Range যেখানে 
 10. **ফলাফল:** 8 Pip Risk, 84 Pip Reward → 1:10.5 R:R
 
 BPR Support হিসেবে নিখুঁতভাবে Hold করেছে, Institutional Involvement Confirm করেছে।
-`);
+`,
+);
 
-console.log('✅ Topic 21 (Balanced Price Range) complete!\n');
+console.log("✅ Topic 21 (Balanced Price Range) complete!\n");
 
 // ============ TOPIC 22: OTE (Optimal Trade Entry) ============
-writeEN('22-ote', {
-  title: 'Optimal Trade Entry (OTE)',
-  description: 'Master the 62-79% Fibonacci retracement zone — the Optimal Trade Entry where institutions re-enter after displacement. Learn the golden entry window.',
-  order: 22,
-  level: 'intermediate'
-}, `# Optimal Trade Entry (OTE)
+writeEN(
+  "22-ote",
+  {
+    title: "Optimal Trade Entry (OTE)",
+    description:
+      "Master the 62-79% Fibonacci retracement zone — the Optimal Trade Entry where institutions re-enter after displacement. Learn the golden entry window.",
+    order: 22,
+    level: "intermediate",
+  },
+  `# Optimal Trade Entry (OTE)
 
 ### Definition
 
@@ -625,14 +649,19 @@ Optimal Trade Entry (OTE) is the **62% to 79% Fibonacci retracement zone** of a 
 8. **R:R:** 17 pip stop, 135 pip target → 1:7.9 R:R
 
 The combination of OTE + FVG produced the perfect institutional entry.
-`);
+`,
+);
 
-writeBN('22-ote', {
-  title: 'Optimal Trade Entry (OTE)',
-  description: '62-79% Fibonacci Retracement Zone Master করুন — Optimal Trade Entry যেখানে Institution Displacement এর পর Re-Enter করে। Golden Entry Window শিখুন।',
-  order: 22,
-  level: 'intermediate'
-}, `# Optimal Trade Entry (OTE)
+writeBN(
+  "22-ote",
+  {
+    title: "Optimal Trade Entry (OTE)",
+    description:
+      "62-79% Fibonacci Retracement Zone Master করুন — Optimal Trade Entry যেখানে Institution Displacement এর পর Re-Enter করে। Golden Entry Window শিখুন।",
+    order: 22,
+    level: "intermediate",
+  },
+  `# Optimal Trade Entry (OTE)
 
 ### Definition
 
@@ -744,17 +773,22 @@ Optimal Trade Entry (OTE) হলো **62% থেকে 79% Fibonacci Retracement
 8. **R:R:** 17 Pip Stop, 135 Pip Target → 1:7.9 R:R
 
 OTE + FVG এর সংমিশ্রণ নিখুঁত Institutional Entry তৈরি করেছে।
-`);
+`,
+);
 
-console.log('✅ Topic 22 (OTE) complete!\n');
+console.log("✅ Topic 22 (OTE) complete!\n");
 
 // ============ TOPIC 23: Market Maker Model ============
-writeEN('23-market-maker-model', {
-  title: 'Market Maker Model',
-  description: 'Understand the Market Maker Model — the accumulation, manipulation, distribution cycle that drives institutional trading. Learn to predict market phases.',
-  order: 23,
-  level: 'advanced'
-}, `# Market Maker Model
+writeEN(
+  "23-market-maker-model",
+  {
+    title: "Market Maker Model",
+    description:
+      "Understand the Market Maker Model — the accumulation, manipulation, distribution cycle that drives institutional trading. Learn to predict market phases.",
+    order: 23,
+    level: "advanced",
+  },
+  `# Market Maker Model
 
 ### Definition
 
@@ -909,14 +943,19 @@ Also known as **AMD** (Accumulation, Manipulation, Distribution) or **Power of 3
    - Distribution phase delivered price to the target
 
 The model played out perfectly: Consolidation → False breakout up → True move down.
-`);
+`,
+);
 
-writeBN('23-market-maker-model', {
-  title: 'Market Maker Model',
-  description: 'Market Maker Model বুঝুন — Accumulation, Manipulation, Distribution Cycle যা Institutional Trading চালায়। Market Phase Predict করা শিখুন।',
-  order: 23,
-  level: 'advanced'
-}, `# Market Maker Model
+writeBN(
+  "23-market-maker-model",
+  {
+    title: "Market Maker Model",
+    description:
+      "Market Maker Model বুঝুন — Accumulation, Manipulation, Distribution Cycle যা Institutional Trading চালায়। Market Phase Predict করা শিখুন।",
+    order: 23,
+    level: "advanced",
+  },
+  `# Market Maker Model
 
 ### Definition
 
@@ -1054,11 +1093,7 @@ Market Maker Model হলো **Institutional Trading Framework** যা বর�
    - Distribution Phase Price Target এ Deliver করেছে
 
 Model নিখুঁতভাবে কাজ করেছে: Consolidation → উপরে False Breakout → নিচে True Move।
-`);
+`,
+);
 
-console.log('✅ Topic 23 (Market Maker Model) complete!\n');
-
-
-
-
-
+console.log("✅ Topic 23 (Market Maker Model) complete!\n");

@@ -48,9 +48,7 @@ export function FeaturedBlogs({ posts, locale }: FeaturedBlogsProps) {
               </h2>
 
               {/* Description */}
-              <p className="mb-4 text-sm text-muted-foreground line-clamp-2">
-                {post.description}
-              </p>
+              <p className="mb-4 text-sm text-muted-foreground line-clamp-2">{post.description}</p>
 
               {/* Meta */}
               <div className="flex items-center gap-4 border-t border-accent-green/10 pt-4 text-xs text-muted-foreground">
@@ -75,4 +73,3 @@ export function FeaturedBlogs({ posts, locale }: FeaturedBlogsProps) {
     </section>
   );
 }
-

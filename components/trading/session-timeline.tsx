@@ -85,10 +85,7 @@ export function SessionTimeline() {
               <div className="flex w-28 shrink-0 items-center gap-2">
                 <span className="text-base">{session.flag}</span>
                 <div>
-                  <div
-                    className="text-xs font-semibold"
-                    style={{ color: active ? session.color : "#71717a" }}
-                  >
+                  <div className="text-xs font-semibold" style={{ color: active ? session.color : "#71717a" }}>
                     {session.name}
                   </div>
                 </div>
@@ -157,11 +154,7 @@ export function SessionTimeline() {
       {/* Hour labels */}
       <div className="mt-2 flex" style={{ marginLeft: "172px", marginRight: "96px" }}>
         {[0, 3, 6, 9, 12, 15, 18, 21].map((h) => (
-          <div
-            key={h}
-            className="text-[9px] text-zinc-600"
-            style={{ width: `${(3 / 24) * 100}%` }}
-          >
+          <div key={h} className="text-[9px] text-zinc-600" style={{ width: `${(3 / 24) * 100}%` }}>
             {formatTime(h)}
           </div>
         ))}
@@ -181,4 +174,3 @@ export function SessionTimeline() {
     </div>
   );
 }
-

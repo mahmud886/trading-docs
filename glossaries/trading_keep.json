@@ -1,7 +1,5 @@
 {
   "version": "2026-05-14",
   "description": "Mapping for forex/trading terminology. Keep English terms as-is (liquidity, CHOCH, BOS, etc.). Do not translate English trading jargon into Bengali.",
-  "mappings": [
-  ]
+  "mappings": []
 }
-

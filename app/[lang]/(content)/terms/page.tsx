@@ -1,11 +1,7 @@
 import { FileText, BookOpen, UserCheck, Copyright, Scale, RefreshCcw, Gavel } from "lucide-react";
 import Link from "next/link";
 
-export default async function TermsPage({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
+export default async function TermsPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isBn = lang === "bn";
 
@@ -57,7 +53,8 @@ export default async function TermsPage({
           </p>
           <div className="mt-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-4">
             <p className="text-sm text-yellow-300/90">
-              ⚠️ {isBn
+              ⚠️{" "}
+              {isBn
                 ? "এই সাইটের কোনো কন্টেন্ট আপনার নির্দিষ্ট পরিস্থিতির জন্য ব্যক্তিগতকৃত আর্থিক পরামর্শ নয়।"
                 : "Nothing on this site is personalized financial advice for your specific situation."}
             </p>
@@ -74,14 +71,26 @@ export default async function TermsPage({
           </h2>
           <ul className="mt-4 space-y-3">
             {[
-              isBn ? "আপনি নিজের ট্রেডিং সিদ্ধান্তের জন্য সম্পূর্ণ দায়ী" : "You are solely responsible for your own trading decisions",
-              isBn ? "লাইভ ট্রেডিংয়ের আগে আপনার নিজস্ব গবেষণা এবং যথাযথ পরিশ্রম করুন" : "Conduct your own research and due diligence before live trading",
-              isBn ? "ট্রেডিং সিদ্ধান্ত নেওয়ার আগে যোগ্য আর্থিক পরামর্শদাতার সাথে পরামর্শ করুন" : "Consult with a qualified financial advisor before making trading decisions",
-              isBn ? "যতটুকু হারাতে সামর্থ্য আছে তার বেশি রিস্ক নেবেন না" : "Never risk more than you can afford to lose",
-              isBn ? "ডেমো অ্যাকাউন্টে অনুশীলন করুন আসল অর্থ ব্যবহারের আগে" : "Practice on demo accounts before using real money",
+              isBn
+                ? "আপনি নিজের ট্রেডিং সিদ্ধান্তের জন্য সম্পূর্ণ দায়ী"
+                : "You are solely responsible for your own trading decisions",
+              isBn
+                ? "লাইভ ট্রেডিংয়ের আগে আপনার নিজস্ব গবেষণা এবং যথাযথ পরিশ্রম করুন"
+                : "Conduct your own research and due diligence before live trading",
+              isBn
+                ? "ট্রেডিং সিদ্ধান্ত নেওয়ার আগে যোগ্য আর্থিক পরামর্শদাতার সাথে পরামর্শ করুন"
+                : "Consult with a qualified financial advisor before making trading decisions",
+              isBn
+                ? "যতটুকু হারাতে সামর্থ্য আছে তার বেশি রিস্ক নেবেন না"
+                : "Never risk more than you can afford to lose",
+              isBn
+                ? "ডেমো অ্যাকাউন্টে অনুশীলন করুন আসল অর্থ ব্যবহারের আগে"
+                : "Practice on demo accounts before using real money",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-accent-orange/30 text-[10px] text-accent-orange">✓</span>
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-accent-orange/30 text-[10px] text-accent-orange">
+                  ✓
+                </span>
                 {item}
               </li>
             ))}
@@ -103,16 +112,24 @@ export default async function TermsPage({
           </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-3">
-              <p className="text-xs font-medium text-green-400">✓ {isBn ? "ব্যক্তিগত শিক্ষার জন্য ব্যবহার" : "Personal learning use"}</p>
+              <p className="text-xs font-medium text-green-400">
+                ✓ {isBn ? "ব্যক্তিগত শিক্ষার জন্য ব্যবহার" : "Personal learning use"}
+              </p>
             </div>
             <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-3">
-              <p className="text-xs font-medium text-green-400">✓ {isBn ? "লিংক শেয়ার করা" : "Sharing links to content"}</p>
+              <p className="text-xs font-medium text-green-400">
+                ✓ {isBn ? "লিংক শেয়ার করা" : "Sharing links to content"}
+              </p>
             </div>
             <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-3">
-              <p className="text-xs font-medium text-red-400">✗ {isBn ? "বাণিজ্যিক পুনরুৎপাদন" : "Commercial reproduction"}</p>
+              <p className="text-xs font-medium text-red-400">
+                ✗ {isBn ? "বাণিজ্যিক পুনরুৎপাদন" : "Commercial reproduction"}
+              </p>
             </div>
             <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-3">
-              <p className="text-xs font-medium text-red-400">✗ {isBn ? "কন্টেন্ট পুনঃবিক্রয়" : "Reselling content"}</p>
+              <p className="text-xs font-medium text-red-400">
+                ✗ {isBn ? "কন্টেন্ট পুনঃবিক্রয়" : "Reselling content"}
+              </p>
             </div>
           </div>
         </section>
@@ -165,10 +182,16 @@ export default async function TermsPage({
 
       {/* Other Legal Links */}
       <div className="mt-12 flex flex-wrap gap-4">
-        <Link href={`/${lang}/privacy-policy`} className="rounded-lg border border-border bg-card px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-accent-green/30 hover:text-foreground">
+        <Link
+          href={`/${lang}/privacy-policy`}
+          className="rounded-lg border border-border bg-card px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-accent-green/30 hover:text-foreground"
+        >
           {isBn ? "গোপনীয়তা নীতি →" : "Privacy Policy →"}
         </Link>
-        <Link href={`/${lang}/disclaimer`} className="rounded-lg border border-border bg-card px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-accent-green/30 hover:text-foreground">
+        <Link
+          href={`/${lang}/disclaimer`}
+          className="rounded-lg border border-border bg-card px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-accent-green/30 hover:text-foreground"
+        >
           {isBn ? "দায়মুক্তি →" : "Disclaimer →"}
         </Link>
       </div>

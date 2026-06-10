@@ -21,17 +21,13 @@ export interface DocContent {
   content: string;
 }
 
-export function getDocBySlug(
-  locale: Locale,
-  category: string,
-  slugParts: string[]
-): DocContent | null {
+export function getDocBySlug(locale: Locale, category: string, slugParts: string[]): DocContent | null {
   const filePath = path.join(
     contentDir,
     locale,
     category,
     ...slugParts.slice(0, -1),
-    `${slugParts[slugParts.length - 1]}.mdx`
+    `${slugParts[slugParts.length - 1]}.mdx`,
   );
 
   if (!fs.existsSync(filePath)) return null;
@@ -83,7 +79,13 @@ export function getAllDocSlugs(locale: Locale, category: string): string[][] {
 
   function readMetaForSlug(slugParts: string[]) {
     try {
-      const filePath = path.join(contentDir, locale, category, ...slugParts.slice(0, -1), `${slugParts[slugParts.length - 1]}.mdx`);
+      const filePath = path.join(
+        contentDir,
+        locale,
+        category,
+        ...slugParts.slice(0, -1),
+        `${slugParts[slugParts.length - 1]}.mdx`,
+      );
       if (!fs.existsSync(filePath)) return { levelPri: 0, order: 0, name: slugParts.join("/") };
       const fileContent = fs.readFileSync(filePath, "utf-8");
       const { data } = matter(fileContent);
@@ -134,10 +136,7 @@ function buildTree(dir: string, baseParts: string[] = []): TreeNode[] {
     if (entry.name.startsWith("_")) continue;
 
     if (entry.isDirectory()) {
-      const children = buildTree(path.join(dir, entry.name), [
-        ...baseParts,
-        entry.name,
-      ]);
+      const children = buildTree(path.join(dir, entry.name), [...baseParts, entry.name]);
       nodes.push({
         title: order[entry.name] ?? entry.name.replace(/-/g, " "),
         slug: [...baseParts, entry.name].join("/"),
@@ -219,7 +218,7 @@ function buildTree(dir: string, baseParts: string[] = []): TreeNode[] {
 export function getAdjacentDocs(
   locale: Locale,
   category: string,
-  currentSlug: string[]
+  currentSlug: string[],
 ): {
   prev: { title: string; slug: string } | null;
   next: { title: string; slug: string } | null;
@@ -234,17 +233,14 @@ export function getAdjacentDocs(
   if (currentIdx > 0) {
     const prevSlug = allSlugs[currentIdx - 1];
     const prevDoc = getDocBySlug(locale, category, prevSlug);
-    if (prevDoc)
-      prev = { title: prevDoc.meta.title, slug: prevSlug.join("/") };
+    if (prevDoc) prev = { title: prevDoc.meta.title, slug: prevSlug.join("/") };
   }
 
   if (currentIdx >= 0 && currentIdx < allSlugs.length - 1) {
     const nextSlug = allSlugs[currentIdx + 1];
     const nextDoc = getDocBySlug(locale, category, nextSlug);
-    if (nextDoc)
-      next = { title: nextDoc.meta.title, slug: nextSlug.join("/") };
+    if (nextDoc) next = { title: nextDoc.meta.title, slug: nextSlug.join("/") };
   }
 
   return { prev, next };
 }
-

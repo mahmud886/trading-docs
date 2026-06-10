@@ -9,7 +9,7 @@ export function generateArticleSchema(
     readingTime?: number;
     category?: string;
   },
-  url: string
+  url: string,
 ) {
   return {
     "@context": "https://schema.org",
@@ -45,10 +45,7 @@ export function generateArticleSchema(
   };
 }
 
-export function generateCourseSchema(
-  meta: { title: string; description: string; level?: string },
-  url: string
-) {
+export function generateCourseSchema(meta: { title: string; description: string; level?: string }, url: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -69,9 +66,7 @@ export function generateCourseSchema(
   };
 }
 
-export function generateFAQSchema(
-  items: { question: string; answer: string }[]
-) {
+export function generateFAQSchema(items: { question: string; answer: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -112,9 +107,7 @@ export function generateWebsiteSchema() {
   };
 }
 
-export function generateBreadcrumbSchema(
-  items: { name: string; url: string }[]
-) {
+export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -134,12 +127,8 @@ export function generateOrganizationSchema() {
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/images/og/default.png`,
-    description:
-      "Free institutional-grade trading education platform with 350+ topics and 22+ professional tools.",
-    sameAs: [
-      "https://github.com/mahmud886",
-      "https://bd.linkedin.com/in/mahmud886",
-    ],
+    description: "Free institutional-grade trading education platform with 350+ topics and 22+ professional tools.",
+    sameAs: ["https://github.com/mahmud886", "https://bd.linkedin.com/in/mahmud886"],
     founder: {
       "@type": "Person",
       name: "Md. Iqbal Mahmud",
@@ -147,9 +136,7 @@ export function generateOrganizationSchema() {
   };
 }
 
-export function generateSoftwareAppSchema(
-  tool: { name: string; description: string; url: string }
-) {
+export function generateSoftwareAppSchema(tool: { name: string; description: string; url: string }) {
   return {
     "@context": "https://schema.org",
     "@type": "WebApplication",

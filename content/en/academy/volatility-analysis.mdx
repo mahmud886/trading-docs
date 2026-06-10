@@ -11,7 +11,8 @@ lastUpdated: "2026-06-10"
 Volatility measures the **degree of price fluctuation** over a given time period. High volatility means large, rapid price swings; low volatility means small, gradual movements. Understanding volatility is essential for proper position sizing, stop placement, and strategy selection.
 
 <Callout type="info" title="Key Insight">
-Volatility is not direction — it tells you HOW MUCH price might move, not which direction. High volatility creates both great opportunities and great risks. Smart traders adjust their approach based on current volatility conditions.
+  Volatility is not direction — it tells you HOW MUCH price might move, not which direction. High volatility creates
+  both great opportunities and great risks. Smart traders adjust their approach based on current volatility conditions.
 </Callout>
 
 ---
@@ -33,15 +34,16 @@ ATR = Average of True Range over N periods (typically 14)
 
 ### How to Use ATR:
 
-| Application | Method |
-|-------------|--------|
-| **Stop Loss** | Set SL at 1.5-2× ATR from entry |
-| **Take Profit** | Set TP at 2-3× ATR from entry |
-| **Position Size** | Larger ATR = smaller position size |
-| **Filter** | Don't trade when ATR is extremely low |
-| **Breakout** | Enter when price moves >1× ATR from level |
+| Application       | Method                                    |
+| ----------------- | ----------------------------------------- |
+| **Stop Loss**     | Set SL at 1.5-2× ATR from entry           |
+| **Take Profit**   | Set TP at 2-3× ATR from entry             |
+| **Position Size** | Larger ATR = smaller position size        |
+| **Filter**        | Don't trade when ATR is extremely low     |
+| **Breakout**      | Enter when price moves >1× ATR from level |
 
 ### ATR-Based Stop Loss Example:
+
 ```
 EUR/USD Daily ATR = 80 pips
 Entry: 1.0900 (Long)
@@ -58,15 +60,16 @@ The **CBOE Volatility Index** measures expected 30-day volatility of the S&P 500
 
 ### VIX Levels:
 
-| VIX Range | Market Condition | Trading Implications |
-|-----------|-----------------|---------------------|
-| Below 12 | Very low volatility (complacency) | Breakout imminent, sell options |
-| 12-20 | Normal volatility | Standard trading conditions |
-| 20-30 | Elevated volatility | Increased uncertainty, wider stops |
-| 30-40 | High volatility (fear) | Sell panic, buy opportunity |
-| Above 40 | Extreme fear/crisis | Major crash, eventual reversal |
+| VIX Range | Market Condition                  | Trading Implications               |
+| --------- | --------------------------------- | ---------------------------------- |
+| Below 12  | Very low volatility (complacency) | Breakout imminent, sell options    |
+| 12-20     | Normal volatility                 | Standard trading conditions        |
+| 20-30     | Elevated volatility               | Increased uncertainty, wider stops |
+| 30-40     | High volatility (fear)            | Sell panic, buy opportunity        |
+| Above 40  | Extreme fear/crisis               | Major crash, eventual reversal     |
 
 ### VIX Trading Signals:
+
 - **VIX spikes (>30)** → Fear is high → Contrarian buying opportunity for stocks
 - **VIX extremely low (below 12)** → Complacency → Market may be due for correction
 - **VIX trending down** → Risk-on environment → Bullish for stocks
@@ -88,18 +91,21 @@ Expansion: BB Width widening → Trend developing
 ## Volatility Regimes
 
 ### Low Volatility Environment:
+
 - **Characteristics:** Tight ranges, small candles, low ATR
 - **Strategy:** Range trading, mean reversion, breakout anticipation
 - **Position Size:** Can use slightly larger (tighter stops work)
 - **Caution:** Breakout coming — be ready to switch strategies
 
 ### High Volatility Environment:
+
 - **Characteristics:** Large candles, gaps, fast moves, high ATR
 - **Strategy:** Trend following, momentum, wider stops
 - **Position Size:** Must be SMALLER (wider stops needed)
 - **Caution:** Stops can be hit easily — use volatility-adjusted sizing
 
 ### Transition Periods:
+
 - Moving from low → high volatility (breakout phase)
 - Moving from high → low volatility (consolidation after trend)
 - Most profitable trades happen during transitions
@@ -109,6 +115,7 @@ Expansion: BB Width widening → Trend developing
 ## Volatility-Based Position Sizing
 
 ### The ATR-Based Formula:
+
 ```
 Position Size = (Account × Risk%) ÷ (ATR × Multiplier × Pip Value)
 
@@ -127,7 +134,8 @@ Position Size = $100 ÷ (225 × $10) = 0.04 lots
 ```
 
 <Callout type="info" title="Dynamic Sizing">
-ATR-based position sizing is one of the most robust methods because it automatically adjusts your position size to current market conditions. When markets are volatile, you trade smaller. When calm, you can trade slightly larger.
+  ATR-based position sizing is one of the most robust methods because it automatically adjusts your position size to
+  current market conditions. When markets are volatile, you trade smaller. When calm, you can trade slightly larger.
 </Callout>
 
 ---
@@ -135,18 +143,21 @@ ATR-based position sizing is one of the most robust methods because it automatic
 ## Trading Volatility
 
 ### Strategy 1: Bollinger Band Squeeze Breakout
+
 - Wait for BB to squeeze (narrow width)
 - Enter on breakout with volume confirmation
 - Direction determined by overall trend bias
 - Stop inside the squeeze, target 2-3× ATR
 
 ### Strategy 2: VIX Mean Reversion
+
 - Buy stocks/indices when VIX spikes above 30
 - Historical data shows markets recover after fear spikes
 - Scale in positions as VIX rises further
 - Take profit as VIX normalizes
 
 ### Strategy 3: Volatility Expansion
+
 - Identify assets transitioning from low → high volatility
 - Enter early in the expansion phase
 - Ride the trend as volatility expands
@@ -156,14 +167,14 @@ ATR-based position sizing is one of the most robust methods because it automatic
 
 ## Volatility by Market
 
-| Market | Avg Daily Volatility | High Vol Days |
-|--------|---------------------|---------------|
-| EUR/USD | 60-100 pips | 150+ pips |
-| GBP/USD | 80-130 pips | 200+ pips |
-| Gold | $15-40 | $60-100+ |
-| S&P 500 | 0.5-1.5% | 3-5%+ |
-| Bitcoin | 2-5% | 10-20%+ |
-| USD/JPY | 50-90 pips | 150+ pips |
+| Market  | Avg Daily Volatility | High Vol Days |
+| ------- | -------------------- | ------------- |
+| EUR/USD | 60-100 pips          | 150+ pips     |
+| GBP/USD | 80-130 pips          | 200+ pips     |
+| Gold    | $15-40               | $60-100+      |
+| S&P 500 | 0.5-1.5%             | 3-5%+         |
+| Bitcoin | 2-5%                 | 10-20%+       |
+| USD/JPY | 50-90 pips           | 150+ pips     |
 
 ---
 

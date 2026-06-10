@@ -107,10 +107,14 @@
 
 /* ═══ Neon glow effects ═══ */
 .glow-green {
-  box-shadow: 0 0 40px rgba(0, 217, 126, 0.08), 0 0 80px rgba(0, 217, 126, 0.04);
+  box-shadow:
+    0 0 40px rgba(0, 217, 126, 0.08),
+    0 0 80px rgba(0, 217, 126, 0.04);
 }
 .dark .glow-green {
-  box-shadow: 0 0 60px rgba(0, 255, 157, 0.12), 0 0 120px rgba(0, 255, 157, 0.06);
+  box-shadow:
+    0 0 60px rgba(0, 255, 157, 0.12),
+    0 0 120px rgba(0, 255, 157, 0.06);
 }
 .glow-blue {
   box-shadow: 0 0 40px rgba(14, 165, 233, 0.08);
@@ -134,11 +138,15 @@
 /* ═══ Neon border glow on hover ═══ */
 .neon-border {
   border: 1px solid var(--border);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
 }
 .neon-border:hover {
   border-color: var(--accent-green);
-  box-shadow: 0 0 20px var(--glow-color), inset 0 0 20px var(--glow-color);
+  box-shadow:
+    0 0 20px var(--glow-color),
+    inset 0 0 20px var(--glow-color);
 }
 
 /* ═══ Neon text glow ═══ */
@@ -147,7 +155,9 @@
   text-shadow: 0 0 10px var(--glow-color);
 }
 .dark .neon-text {
-  text-shadow: 0 0 20px rgba(0, 255, 157, 0.4), 0 0 40px rgba(0, 255, 157, 0.2);
+  text-shadow:
+    0 0 20px rgba(0, 255, 157, 0.4),
+    0 0 40px rgba(0, 255, 157, 0.2);
 }
 
 /* ═══ Neon underline ═══ */
@@ -171,15 +181,26 @@
 }
 
 /* ═══ Scrollbar styling ═══ */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 ::-webkit-scrollbar-thumb {
   background: #c5d4cc;
   border-radius: 3px;
 }
-::-webkit-scrollbar-thumb:hover { background: #8aa898; }
-.dark ::-webkit-scrollbar-thumb { background: rgba(0, 255, 157, 0.15); }
-.dark ::-webkit-scrollbar-thumb:hover { background: rgba(0, 255, 157, 0.3); }
+::-webkit-scrollbar-thumb:hover {
+  background: #8aa898;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 157, 0.15);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 157, 0.3);
+}
 
 /* ═══ Selection ═══ */
 ::selection {
@@ -211,33 +232,78 @@ html {
 
 /* ═══ Animation utilities ═══ */
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
 }
-.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
 
 @keyframes neon-flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-  20%, 24%, 55% { opacity: 0.6; }
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.6;
+  }
 }
-.animate-neon-flicker { animation: neon-flicker 4s infinite; }
+.animate-neon-flicker {
+  animation: neon-flicker 4s infinite;
+}
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px var(--glow-color); }
-  50% { box-shadow: 0 0 40px var(--glow-color), 0 0 60px var(--glow-color); }
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--glow-color);
+  }
+  50% {
+    box-shadow:
+      0 0 40px var(--glow-color),
+      0 0 60px var(--glow-color);
+  }
 }
-.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .animate-gradient {
   background-size: 200% 200%;
@@ -252,7 +318,10 @@ html {
 
 /* ═══ Fancy card hover lift ═══ */
 .card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 .card-hover:hover {
   transform: translateY(-2px);
@@ -261,5 +330,7 @@ html {
 }
 .dark .card-hover:hover {
   border-color: rgba(0, 255, 157, 0.3);
-  box-shadow: 0 8px 40px rgba(0, 255, 157, 0.08), 0 0 60px rgba(0, 255, 157, 0.04);
+  box-shadow:
+    0 8px 40px rgba(0, 255, 157, 0.08),
+    0 0 60px rgba(0, 255, 157, 0.04);
 }

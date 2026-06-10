@@ -25,7 +25,11 @@ export function ThemeSwitcher() {
       className="rounded-full p-0.5 text-muted-foreground transition-all hover:bg-accent-green/10 hover:text-accent-green xl:p-2"
       aria-label="Toggle theme"
     >
-      {isDark ? <Sun size={12} className="xl:h-[18px] xl:w-[18px]" /> : <Moon size={12} className="xl:h-[18px] xl:w-[18px]" />}
+      {isDark ? (
+        <Sun size={12} className="xl:h-[18px] xl:w-[18px]" />
+      ) : (
+        <Moon size={12} className="xl:h-[18px] xl:w-[18px]" />
+      )}
     </button>
   );
 }

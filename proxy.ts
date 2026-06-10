@@ -13,18 +13,12 @@ export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Check if pathname already has a locale
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  );
+  const pathnameHasLocale = locales.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`);
 
   if (pathnameHasLocale) return;
 
   // Skip static files, api, and Next.js internals
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/api") ||
-    pathname.includes(".")
-  ) {
+  if (pathname.startsWith("/_next") || pathname.startsWith("/api") || pathname.includes(".")) {
     return;
   }
 
@@ -37,4 +31,3 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: ["/((?!_next|api|.*\\..*).*)"],
 };
-

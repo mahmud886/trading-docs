@@ -1,11 +1,11 @@
-import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs';
-import { join } from 'path';
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
+import { join } from "path";
 
-const C = join(process.cwd(), 'content');
+const C = join(process.cwd(), "content");
 
 // Topic-specific detailed examples for SMC
 const smcExamples = {
-  'introduction': {
+  introduction: {
     en: `
 
 ---
@@ -126,9 +126,9 @@ Stop thinking like a retail trader. Every time you place a trade, ask: "Would an
 - **রাত ৭:৪৫ (NY):** OB রিটেস্ট 18,190
 - **এন্ট্রি:** 18,192 | **স্টপ:** 18,162 | **টার্গেট:** 18,380
 - **রাত ৯:৩০:** টার্গেট হিট — **+188 পয়েন্ট, 6.3R** ✅
-`
+`,
   },
-  'manipulation': {
+  manipulation: {
     en: `
 
 ---
@@ -234,9 +234,9 @@ What retail sees:        What actually happened:
 4. **৯:৩৫ এর পরে:** EUR/USD সত্যিকার দিকে — 120 পিপ ড্রপ
 
 **ICT শেখায়:** নিউজের পরে প্রথম মুভ সাধারণত ম্যানিপুলেশন। সত্যিকার দিকের জন্য ৫-১৫ মিনিট অপেক্ষা করুন।
-`
+`,
   },
-  'kill-zones': {
+  "kill-zones": {
     en: `
 
 ---
@@ -319,13 +319,13 @@ Mark your calendar. Set an alarm. This is YOUR Kill Zone.
 <Callout type="warning" title="বাংলাদেশ ট্রেডারদের সময়সূচী">
 আপনার সেরা ট্রেডিং উইন্ডো **রাত ৭:০০ - ১০:০০ বাংলাদেশ সময়**। এই সময়ে সর্বোচ্চ ভলিউম, সেরা ডিসপ্লেসমেন্ট, এবং সবচেয়ে নির্ভরযোগ্য SMC/ICT সেটআপ তৈরি হয়।
 </Callout>
-`
-  }
+`,
+  },
 };
 
 // Generic detailed examples to append to ALL remaining files
 function getGenericExamples(slug, category, isEN) {
-  const topicName = slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  const topicName = slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
   if (isEN) {
     return `
@@ -469,32 +469,32 @@ ${topicName} কনসেপ্ট সব লিকুইড মার্কে�
 
 // Process all files in a category
 function processCategory(category) {
-  for (const lang of ['en', 'bn']) {
+  for (const lang of ["en", "bn"]) {
     const dir = join(C, lang, category);
     if (!existsSync(dir)) continue;
 
-    const files = readdirSync(dir).filter(f => f.endsWith('.mdx'));
+    const files = readdirSync(dir).filter((f) => f.endsWith(".mdx"));
 
     for (const file of files) {
-      const slug = file.replace('.mdx', '');
+      const slug = file.replace(".mdx", "");
       const filePath = join(dir, file);
-      const content = readFileSync(filePath, 'utf-8');
-      const lineCount = content.split('\n').length;
+      const content = readFileSync(filePath, "utf-8");
+      const lineCount = content.split("\n").length;
 
       // Skip files that already have decent content (350+ lines for EN, 250+ for BN)
-      const threshold = lang === 'en' ? 300 : 220;
+      const threshold = lang === "en" ? 300 : 220;
       if (lineCount > threshold) {
         continue;
       }
 
       // Check if file already has "Trading Examples" section
-      if (content.includes('Trading Examples') || content.includes('ট্রেডিং উদাহরণ')) {
+      if (content.includes("Trading Examples") || content.includes("ট্রেডিং উদাহরণ")) {
         // Already has examples but may need more - check line count
-        if (lineCount > 200 && lang === 'en') continue;
-        if (lineCount > 160 && lang === 'bn') continue;
+        if (lineCount > 200 && lang === "en") continue;
+        if (lineCount > 160 && lang === "bn") continue;
       }
 
-      const isEN = lang === 'en';
+      const isEN = lang === "en";
       let examples;
 
       // Use topic-specific examples if available
@@ -505,22 +505,21 @@ function processCategory(category) {
       }
 
       // Append examples to the file
-      const newContent = content.trimEnd() + '\n' + examples + '\n';
-      writeFileSync(filePath, newContent, 'utf-8');
-      console.log(`✅ ${lang}/${category}/${slug} (${lineCount} → ${newContent.split('\n').length} lines)`);
+      const newContent = content.trimEnd() + "\n" + examples + "\n";
+      writeFileSync(filePath, newContent, "utf-8");
+      console.log(`✅ ${lang}/${category}/${slug} (${lineCount} → ${newContent.split("\n").length} lines)`);
     }
   }
 }
 
 // Process all three categories
-console.log('=== SMC Examples ===');
-processCategory('smc');
+console.log("=== SMC Examples ===");
+processCategory("smc");
 
-console.log('\n=== ICT Examples ===');
-processCategory('ict');
+console.log("\n=== ICT Examples ===");
+processCategory("ict");
 
-console.log('\n=== Price Action Examples ===');
-processCategory('price-action');
+console.log("\n=== Price Action Examples ===");
+processCategory("price-action");
 
-console.log('\n✅ All examples added!');
-
+console.log("\n✅ All examples added!");

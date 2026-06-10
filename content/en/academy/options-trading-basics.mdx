@@ -11,37 +11,38 @@ lastUpdated: "2026-06-10"
 An option is a **contract giving you the RIGHT (but not obligation)** to buy or sell an asset at a specific price within a specific time period. You pay a premium for this right.
 
 <Callout type="info" title="Key Advantage">
-Options offer unique benefits no other instrument provides: defined maximum risk, leveraged exposure, ability to profit from time decay, and strategies that profit in ANY market direction (up, down, or sideways).
+  Options offer unique benefits no other instrument provides: defined maximum risk, leveraged exposure, ability to
+  profit from time decay, and strategies that profit in ANY market direction (up, down, or sideways).
 </Callout>
 
 ---
 
 ## Call vs. Put Options
 
-| | Call Option | Put Option |
-|--|-------------|------------|
-| **Right** | Buy asset at strike price | Sell asset at strike price |
-| **Buyer Profits** | When price goes UP | When price goes DOWN |
-| **Seller Profits** | When price stays below strike | When price stays above strike |
-| **Max Loss (Buyer)** | Premium paid | Premium paid |
-| **Max Loss (Seller)** | Unlimited (calls) / Large (puts) | Strike price - premium |
+|                       | Call Option                      | Put Option                    |
+| --------------------- | -------------------------------- | ----------------------------- |
+| **Right**             | Buy asset at strike price        | Sell asset at strike price    |
+| **Buyer Profits**     | When price goes UP               | When price goes DOWN          |
+| **Seller Profits**    | When price stays below strike    | When price stays above strike |
+| **Max Loss (Buyer)**  | Premium paid                     | Premium paid                  |
+| **Max Loss (Seller)** | Unlimited (calls) / Large (puts) | Strike price - premium        |
 
 ---
 
 ## Key Options Terminology
 
-| Term | Definition |
-|------|-----------|
-| **Strike Price** | Price at which option can be exercised |
-| **Premium** | Price paid to buy the option contract |
-| **Expiration** | Date when option contract expires |
-| **In-the-Money (ITM)** | Option has intrinsic value |
-| **At-the-Money (ATM)** | Strike ≈ current price |
-| **Out-of-the-Money (OTM)** | Option has no intrinsic value |
-| **Intrinsic Value** | Difference between strike and market price |
-| **Time Value** | Premium - Intrinsic value (decays over time) |
-| **Exercise** | Using your right to buy/sell |
-| **Assignment** | Being obligated to fulfill the contract |
+| Term                       | Definition                                   |
+| -------------------------- | -------------------------------------------- |
+| **Strike Price**           | Price at which option can be exercised       |
+| **Premium**                | Price paid to buy the option contract        |
+| **Expiration**             | Date when option contract expires            |
+| **In-the-Money (ITM)**     | Option has intrinsic value                   |
+| **At-the-Money (ATM)**     | Strike ≈ current price                       |
+| **Out-of-the-Money (OTM)** | Option has no intrinsic value                |
+| **Intrinsic Value**        | Difference between strike and market price   |
+| **Time Value**             | Premium - Intrinsic value (decays over time) |
+| **Exercise**               | Using your right to buy/sell                 |
+| **Assignment**             | Being obligated to fulfill the contract      |
 
 ---
 
@@ -61,27 +62,28 @@ Time Value: $8 - $5 = $3 (time until expiry)
 
 ### What Affects Premium:
 
-| Factor | Calls | Puts |
-|--------|-------|------|
-| Stock price rises | Premium ↑ | Premium ↓ |
-| Stock price falls | Premium ↓ | Premium ↑ |
-| More time to expiry | Premium ↑ | Premium ↑ |
-| Higher volatility | Premium ↑ | Premium ↑ |
+| Factor                | Calls     | Puts      |
+| --------------------- | --------- | --------- |
+| Stock price rises     | Premium ↑ | Premium ↓ |
+| Stock price falls     | Premium ↓ | Premium ↑ |
+| More time to expiry   | Premium ↑ | Premium ↑ |
+| Higher volatility     | Premium ↑ | Premium ↑ |
 | Higher interest rates | Premium ↑ | Premium ↓ |
 
 ---
 
 ## The Greeks (Brief Overview)
 
-| Greek | Measures | Practical Meaning |
-|-------|----------|-------------------|
-| **Delta** | Price sensitivity | How much option moves per $1 stock move |
-| **Gamma** | Delta change rate | How fast delta changes |
-| **Theta** | Time decay | How much value lost per day |
-| **Vega** | Volatility sensitivity | Impact of volatility change |
-| **Rho** | Interest rate sensitivity | Impact of rate changes |
+| Greek     | Measures                  | Practical Meaning                       |
+| --------- | ------------------------- | --------------------------------------- |
+| **Delta** | Price sensitivity         | How much option moves per $1 stock move |
+| **Gamma** | Delta change rate         | How fast delta changes                  |
+| **Theta** | Time decay                | How much value lost per day             |
+| **Vega**  | Volatility sensitivity    | Impact of volatility change             |
+| **Rho**   | Interest rate sensitivity | Impact of rate changes                  |
 
 ### Delta Guide:
+
 - ATM Call: ~0.50 delta (moves $0.50 per $1 stock move)
 - Deep ITM Call: ~0.90-1.00 delta (moves almost like stock)
 - OTM Call: ~0.10-0.30 delta (small movement)
@@ -91,24 +93,28 @@ Time Value: $8 - $5 = $3 (time until expiry)
 ## Basic Options Strategies
 
 ### 1. Long Call (Bullish)
+
 - Buy a call option
 - Profit: Unlimited upside potential
 - Risk: Limited to premium paid
 - Best when: Expecting strong upward move
 
 ### 2. Long Put (Bearish)
+
 - Buy a put option
 - Profit: Large downside potential (to zero)
 - Risk: Limited to premium paid
 - Best when: Expecting strong downward move
 
 ### 3. Covered Call (Income)
+
 - Own stock + sell call against it
 - Profit: Premium received + stock appreciation to strike
 - Risk: Stock decline (offset by premium)
 - Best when: Neutral to slightly bullish
 
 ### 4. Protective Put (Insurance)
+
 - Own stock + buy put for protection
 - Profit: Unlimited upside, protected downside
 - Risk: Premium cost reduces returns
@@ -118,20 +124,21 @@ Time Value: $8 - $5 = $3 (time until expiry)
 
 ## Options vs. Stock/Forex Trading
 
-| Factor | Options | Stock/Forex |
-|--------|---------|-------------|
-| Risk | Defined (buyers) | Can be large |
-| Leverage | Built-in | Margin required |
-| Time | Works for/against you | Neutral |
-| Complexity | Higher | Lower |
-| Profit Ways | Up, down, sideways | Up or down only |
-| Capital | Lower | Higher |
+| Factor      | Options               | Stock/Forex     |
+| ----------- | --------------------- | --------------- |
+| Risk        | Defined (buyers)      | Can be large    |
+| Leverage    | Built-in              | Margin required |
+| Time        | Works for/against you | Neutral         |
+| Complexity  | Higher                | Lower           |
+| Profit Ways | Up, down, sideways    | Up or down only |
+| Capital     | Lower                 | Higher          |
 
 ---
 
 ## Getting Started with Options
 
 ### Steps:
+
 1. Learn terminology and basics thoroughly
 2. Understand risk/reward profiles
 3. Paper trade for 2-3 months minimum

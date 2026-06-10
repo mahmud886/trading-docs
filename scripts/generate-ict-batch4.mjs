@@ -1,15 +1,15 @@
-import { writeFileSync, mkdirSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync, mkdirSync } from "fs";
+import { join } from "path";
 
-const C = join(process.cwd(), 'content');
+const C = join(process.cwd(), "content");
 
 // Ensure directories exist
 try {
-  mkdirSync(join(C, 'bn', 'academy', 'ict-smc-course'), { recursive: true });
+  mkdirSync(join(C, "bn", "academy", "ict-smc-course"), { recursive: true });
 } catch (e) {}
 
 const writeEN = (slug, meta, content) => {
-  const path = join(C, 'en', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "en", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -18,12 +18,12 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ EN: ${slug}`);
 };
 
 const writeBN = (slug, meta, content) => {
-  const path = join(C, 'bn', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "bn", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -32,17 +32,21 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ BN: ${slug}`);
 };
 
 // ============ TOPIC 26: Power of Three ============
-writeEN('26-power-of-three', {
-  title: 'Power of Three',
-  description: 'Master the Power of Three (PO3) — the Accumulation, Manipulation, Distribution cycle. Learn how every price move follows this three-phase institutional model.',
-  order: 26,
-  level: 'advanced'
-}, `# Power of Three
+writeEN(
+  "26-power-of-three",
+  {
+    title: "Power of Three",
+    description:
+      "Master the Power of Three (PO3) — the Accumulation, Manipulation, Distribution cycle. Learn how every price move follows this three-phase institutional model.",
+    order: 26,
+    level: "advanced",
+  },
+  `# Power of Three
 
 ### Definition
 
@@ -215,14 +219,19 @@ Power of Three (PO3), also known as the **Accumulation, Manipulation, Distributi
 - Perfect PO3 execution: Range → False drop → True rally
 
 The trade captured the distribution phase after identifying manipulation, achieving the institutional target.
-`);
+`,
+);
 
-writeBN('26-power-of-three', {
-  title: 'Power of Three',
-  description: 'Power of Three (PO3) Master করুন — Accumulation, Manipulation, Distribution Cycle। শিখুন কীভাবে প্রতিটি Price Move এই তিন-Phase Institutional Model অনুসরণ করে।',
-  order: 26,
-  level: 'advanced'
-}, `# Power of Three
+writeBN(
+  "26-power-of-three",
+  {
+    title: "Power of Three",
+    description:
+      "Power of Three (PO3) Master করুন — Accumulation, Manipulation, Distribution Cycle। শিখুন কীভাবে প্রতিটি Price Move এই তিন-Phase Institutional Model অনুসরণ করে।",
+    order: 26,
+    level: "advanced",
+  },
+  `# Power of Three
 
 ### Definition
 
@@ -374,19 +383,24 @@ Power of Three (PO3), যা **Accumulation, Manipulation, Distribution (AMD)** 
 - নিখুঁত PO3 Execution: Range → False Drop → True Rally
 
 Trade Manipulation চিহ্নিত করার পর Distribution Phase ধরেছে, Institutional Target অর্জন করেছে।
-`);
+`,
+);
 
-console.log('✅ Topic 26 (Power of Three) complete!\n');
+console.log("✅ Topic 26 (Power of Three) complete!\n");
 
-console.log('\n🎉 Topics 20-26 now complete! Continuing with topics 27-37...\n');
+console.log("\n🎉 Topics 20-26 now complete! Continuing with topics 27-37...\n");
 
 // ============ TOPIC 27: Accumulation ============
-writeEN('27-accumulation', {
-  title: 'Accumulation',
-  description: 'Master the Accumulation phase — where Smart Money quietly builds positions before the major move. Learn to identify consolidation that precedes institutional distribution.',
-  order: 27,
-  level: 'advanced'
-}, `# Accumulation
+writeEN(
+  "27-accumulation",
+  {
+    title: "Accumulation",
+    description:
+      "Master the Accumulation phase — where Smart Money quietly builds positions before the major move. Learn to identify consolidation that precedes institutional distribution.",
+    order: 27,
+    level: "advanced",
+  },
+  `# Accumulation
 
 ### Definition
 
@@ -516,14 +530,19 @@ Accumulation is the **first phase of the Power of Three model** where Smart Mone
 - Accumulation range provided the setup framework
 
 The key was recognizing the Asian consolidation as accumulation, waiting for manipulation, then entering distribution.
-`);
+`,
+);
 
-writeBN('27-accumulation', {
-  title: 'Accumulation',
-  description: 'Accumulation Phase Master করুন — যেখানে Smart Money Major Move এর আগে নিঃশব্দে Position তৈরি করে। Institutional Distribution এর আগে Consolidation চিহ্নিত করা শিখুন।',
-  order: 27,
-  level: 'advanced'
-}, `# Accumulation
+writeBN(
+  "27-accumulation",
+  {
+    title: "Accumulation",
+    description:
+      "Accumulation Phase Master করুন — যেখানে Smart Money Major Move এর আগে নিঃশব্দে Position তৈরি করে। Institutional Distribution এর আগে Consolidation চিহ্নিত করা শিখুন।",
+    order: 27,
+    level: "advanced",
+  },
+  `# Accumulation
 
 ### Definition
 
@@ -642,10 +661,9 @@ Accumulation হলো **Power of Three Model এর প্রথম Phase** য
 - Accumulation Range Setup Framework দিয়েছে
 
 মূল ছিল Asian Consolidation কে Accumulation হিসেবে চিনা, Manipulation এর জন্য অপেক্ষা করা, তারপর Distribution এ Enter করা।
-`);
+`,
+);
 
-console.log('✅ Topic 27 (Accumulation) complete!\n');
+console.log("✅ Topic 27 (Accumulation) complete!\n");
 
-console.log('\n📝 Continuing with remaining topics...\n');
-
-
+console.log("\n📝 Continuing with remaining topics...\n");

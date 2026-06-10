@@ -11,7 +11,8 @@ lastUpdated: "2026-06-10"
 Technical Indicator হলো Price এবং/অথবা Volume Data-তে প্রয়োগ করা **গাণিতিক গণনা** যা Trader-দের Trend, Momentum, Volatility এবং সম্ভাব্য Reversal Point চিহ্নিত করতে সাহায্য করে। এগুলো হাতিয়ার — ভবিষ্যৎ বলার যন্ত্র নয়।
 
 <Callout type="warning" title="গুরুত্বপূর্ণ বাস্তবতা">
-কোনো একক Indicator নিজে থেকে নির্ভরযোগ্য নয়। Professional Trader Indicator ব্যবহার করেন CONFIRMATION-এর জন্য, প্রাথমিক Entry Signal হিসেবে নয়। Price Action ও Market Structure আগে আসে; Indicator আপনি যা দেখছেন তা Confirm করে।
+  কোনো একক Indicator নিজে থেকে নির্ভরযোগ্য নয়। Professional Trader Indicator ব্যবহার করেন CONFIRMATION-এর জন্য,
+  প্রাথমিক Entry Signal হিসেবে নয়। Price Action ও Market Structure আগে আসে; Indicator আপনি যা দেখছেন তা Confirm করে।
 </Callout>
 
 ---
@@ -19,55 +20,60 @@ Technical Indicator হলো Price এবং/অথবা Volume Data-তে �
 ## Moving Average (MA)
 
 ### Simple Moving Average (SMA):
+
 N Period-এর গড় Closing Price।
 
 ### Exponential Moving Average (EMA):
+
 সাম্প্রতিক Price-কে বেশি গুরুত্ব দেয়, দ্রুত React করে।
 
 ### মূল Moving Average:
 
-| MA Period | ব্যবহার | Timeframe |
-|-----------|---------|-----------|
-| EMA 9/10 | Short-term Momentum | M15-H1 |
-| EMA 20/21 | Dynamic S/R, Trend Filter | H1-H4 |
-| SMA/EMA 50 | Medium-term Trend | H4-D1 |
-| SMA/EMA 100 | Intermediate Trend | D1 |
-| SMA/EMA 200 | Long-term Trend (Institutional) | D1-W1 |
+| MA Period   | ব্যবহার                         | Timeframe |
+| ----------- | ------------------------------- | --------- |
+| EMA 9/10    | Short-term Momentum             | M15-H1    |
+| EMA 20/21   | Dynamic S/R, Trend Filter       | H1-H4     |
+| SMA/EMA 50  | Medium-term Trend               | H4-D1     |
+| SMA/EMA 100 | Intermediate Trend              | D1        |
+| SMA/EMA 200 | Long-term Trend (Institutional) | D1-W1     |
 
 ### Trading Signal:
 
-| Signal | অর্থ | Action |
-|--------|------|--------|
-| Price 200 MA-এর উপরে | Bullish Long-term Trend | Long খুঁজুন |
-| Price 200 MA-এর নিচে | Bearish Long-term Trend | Short খুঁজুন |
-| Golden Cross (50 MA 200 MA-র উপরে Cross) | Bullish Shift | Buy Signal |
-| Death Cross (50 MA 200 MA-র নিচে Cross) | Bearish Shift | Sell Signal |
-| Price 20 EMA-তে Pullback | Uptrend-এ Dynamic Support | Dip কিনুন |
-| MA ছড়িয়ে যাচ্ছে | শক্তিশালী Trend | Trend-এ থাকুন |
-| MA একত্রিত হচ্ছে | Trend দুর্বল হচ্ছে | পরিবর্তনের জন্য প্রস্তুত |
+| Signal                                   | অর্থ                      | Action                   |
+| ---------------------------------------- | ------------------------- | ------------------------ |
+| Price 200 MA-এর উপরে                     | Bullish Long-term Trend   | Long খুঁজুন              |
+| Price 200 MA-এর নিচে                     | Bearish Long-term Trend   | Short খুঁজুন             |
+| Golden Cross (50 MA 200 MA-র উপরে Cross) | Bullish Shift             | Buy Signal               |
+| Death Cross (50 MA 200 MA-র নিচে Cross)  | Bearish Shift             | Sell Signal              |
+| Price 20 EMA-তে Pullback                 | Uptrend-এ Dynamic Support | Dip কিনুন                |
+| MA ছড়িয়ে যাচ্ছে                        | শক্তিশালী Trend           | Trend-এ থাকুন            |
+| MA একত্রিত হচ্ছে                         | Trend দুর্বল হচ্ছে        | পরিবর্তনের জন্য প্রস্তুত |
 
 ---
 
 ## RSI (Relative Strength Index)
 
 ### কী পরিমাপ করে:
+
 Momentum — 0-100 Scale-এ Price পরিবর্তনের গতি ও মাত্রা।
 
 ### Setting:
+
 - Default Period: 14
 - Overbought: 70-এর উপরে
 - Oversold: 30-এর নিচে
 
 ### RSI Trading Strategy:
 
-| Strategy | শর্ত | Action |
-|----------|------|--------|
-| **Overbought/Oversold** | RSI > 70 বা < 30 | Reversal Confirmation অপেক্ষা |
-| **Divergence** | Price নতুন High করে, RSI Lower High করে | সম্ভাব্য Reversal |
-| **Centerline Crossover** | RSI 50-এর উপরে/নিচে Cross | Trend Direction Shift |
-| **Hidden Divergence** | Price Pullback, RSI Trend ধরে রাখে | Trend Continuation |
+| Strategy                 | শর্ত                                    | Action                        |
+| ------------------------ | --------------------------------------- | ----------------------------- |
+| **Overbought/Oversold**  | RSI > 70 বা < 30                        | Reversal Confirmation অপেক্ষা |
+| **Divergence**           | Price নতুন High করে, RSI Lower High করে | সম্ভাব্য Reversal             |
+| **Centerline Crossover** | RSI 50-এর উপরে/নিচে Cross               | Trend Direction Shift         |
+| **Hidden Divergence**    | Price Pullback, RSI Trend ধরে রাখে      | Trend Continuation            |
 
 ### RSI Divergence:
+
 ```
 Bearish Divergence:
 - Price: Higher High
@@ -89,69 +95,75 @@ Bullish Divergence:
 ## MACD (Moving Average Convergence Divergence)
 
 ### উপাদান:
+
 - **MACD Line:** EMA(12) - EMA(26)
 - **Signal Line:** MACD Line-এর EMA(9)
 - **Histogram:** MACD Line - Signal Line
 
 ### MACD Signal:
 
-| Signal | শর্ত | অর্থ |
-|--------|------|------|
-| Bullish Crossover | MACD Signal-এর উপরে Cross | Momentum Bullish হচ্ছে |
-| Bearish Crossover | MACD Signal-এর নিচে Cross | Momentum Bearish হচ্ছে |
-| Histogram বাড়ছে | Bar লম্বা হচ্ছে | Trend শক্তিশালী হচ্ছে |
-| Histogram কমছে | Bar ছোট হচ্ছে | Trend দুর্বল হচ্ছে |
-| Zero Line Cross | MACD শূন্যের উপরে/নিচে Cross | Trend Direction পরিবর্তন |
-| Divergence | MACD Price থেকে Diverge করছে | সম্ভাব্য Reversal |
+| Signal            | শর্ত                         | অর্থ                     |
+| ----------------- | ---------------------------- | ------------------------ |
+| Bullish Crossover | MACD Signal-এর উপরে Cross    | Momentum Bullish হচ্ছে   |
+| Bearish Crossover | MACD Signal-এর নিচে Cross    | Momentum Bearish হচ্ছে   |
+| Histogram বাড়ছে  | Bar লম্বা হচ্ছে              | Trend শক্তিশালী হচ্ছে    |
+| Histogram কমছে    | Bar ছোট হচ্ছে                | Trend দুর্বল হচ্ছে       |
+| Zero Line Cross   | MACD শূন্যের উপরে/নিচে Cross | Trend Direction পরিবর্তন |
+| Divergence        | MACD Price থেকে Diverge করছে | সম্ভাব্য Reversal        |
 
 ---
 
 ## Stochastic Oscillator
 
 ### কী পরিমাপ করে:
+
 N Period-এ High-Low Range-এর তুলনায় বর্তমান Price কোথায়।
 
 ### Setting:
+
 - Fast Stochastic: %K(14), %D(3)
 - Overbought: 80-এর উপরে
 - Oversold: 20-এর নিচে
 
 ### Stochastic Signal:
 
-| Signal | শর্ত | Action |
-|--------|------|--------|
-| Bullish | %K 20-এর নিচে %D-এর উপরে Cross | সম্ভাব্য Buy |
-| Bearish | %K 80-এর উপরে %D-এর নিচে Cross | সম্ভাব্য Sell |
-| Divergence | Price vs. Stochastic Diverge | Reversal সতর্কতা |
+| Signal     | শর্ত                           | Action           |
+| ---------- | ------------------------------ | ---------------- |
+| Bullish    | %K 20-এর নিচে %D-এর উপরে Cross | সম্ভাব্য Buy     |
+| Bearish    | %K 80-এর উপরে %D-এর নিচে Cross | সম্ভাব্য Sell    |
+| Divergence | Price vs. Stochastic Diverge   | Reversal সতর্কতা |
 
 ---
 
 ## ADX (Average Directional Index)
 
 ### কী পরিমাপ করে:
+
 **Trend-এর শক্তি** (Direction নয়) 0-100 Scale-এ।
 
 ### ADX Level:
 
-| ADX মান | অর্থ | Trading পদ্ধতি |
-|---------|------|----------------|
-| 0-20 | Trend নেই (Ranging) | Range/Mean Reversion Strategy |
-| 20-25 | দুর্বল Trend উদ্ভব হচ্ছে | Breakout-এর জন্য পর্যবেক্ষণ |
-| 25-50 | শক্তিশালী Trend | Trend Following Strategy |
-| 50-75 | অত্যন্ত শক্তিশালী Trend | Trend-এ থাকুন, Counter করবেন না |
-| 75-100 | চরম Trend (বিরল) | Trend শেষ হতে পারে |
+| ADX মান | অর্থ                     | Trading পদ্ধতি                  |
+| ------- | ------------------------ | ------------------------------- |
+| 0-20    | Trend নেই (Ranging)      | Range/Mean Reversion Strategy   |
+| 20-25   | দুর্বল Trend উদ্ভব হচ্ছে | Breakout-এর জন্য পর্যবেক্ষণ     |
+| 25-50   | শক্তিশালী Trend          | Trend Following Strategy        |
+| 50-75   | অত্যন্ত শক্তিশালী Trend  | Trend-এ থাকুন, Counter করবেন না |
+| 75-100  | চরম Trend (বিরল)         | Trend শেষ হতে পারে              |
 
 ---
 
 ## Volume Indicator
 
 ### On-Balance Volume (OBV):
+
 - Cumulative Volume (Up Day-তে যোগ, Down Day-তে বিয়োগ)
 - OBV বাড়ছে → Uptrend Confirm
 - OBV কমছে → Downtrend Confirm
 - OBV Divergence = সম্ভাব্য Reversal
 
 ### Volume Moving Average:
+
 - বর্তমান Volume-কে Average-এর সাথে তুলনা করুন
 - Average-এর উপরে = তাৎপর্যপূর্ণ Move (চলমান থাকার সম্ভাবনা)
 - Average-এর নিচে = দুর্বল Move (Reverse হতে পারে)
@@ -161,6 +173,7 @@ N Period-এ High-Low Range-এর তুলনায় বর্তমান P
 ## Indicator সমন্বয়
 
 ### Confluence পদ্ধতি:
+
 ```
 শক্তিশালী Buy Signal = একাধিক Confirmation:
 1. Price 200 EMA-এর উপরে (Bullish Trend) ✅
@@ -172,6 +185,7 @@ N Period-এ High-Low Range-এর তুলনায় বর্তমান P
 ```
 
 ### অতিরিক্ত Analysis এড়িয়ে চলুন:
+
 - প্রতি Chart-এ সর্বোচ্চ ২-৩টি Indicator
 - সব Indicator ভিন্ন উদ্দেশ্যে ব্যবহার করুন
 - ৩টি Momentum Indicator একসাথে ব্যবহার করবেন না (Redundant)

@@ -2,23 +2,13 @@
 
 import { AlertTriangle } from "lucide-react";
 
-export default function RootError({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
+export default function RootError({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   return (
     <div className="flex min-h-[60vh] items-center justify-center px-6">
       <div className="text-center">
         <AlertTriangle size={48} className="mx-auto text-orange-500" />
-        <h2 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">
-          Application Error
-        </h2>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
-          An unexpected error occurred. Please try again.
-        </p>
+        <h2 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">Application Error</h2>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">An unexpected error occurred. Please try again.</p>
         {process.env.NODE_ENV === "development" && (
           <pre className="mt-6 max-w-xl overflow-auto rounded-lg bg-gray-100 dark:bg-gray-900 p-4 text-left text-sm text-gray-800 dark:text-gray-200">
             {error.message}
@@ -34,4 +24,3 @@ export default function RootError({
     </div>
   );
 }
-

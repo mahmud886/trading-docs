@@ -2,20 +2,21 @@
  * Script to expand all trading content with comprehensive educational material.
  * Run: node scripts/expand-content.mjs
  */
-import { writeFileSync, existsSync, mkdirSync } from 'fs';
-import { dirname, join } from 'path';
+import { writeFileSync, existsSync, mkdirSync } from "fs";
+import { dirname, join } from "path";
 
-const contentDir = join(process.cwd(), 'content');
+const contentDir = join(process.cwd(), "content");
 
 // ============================================================
 // SMC TOPICS - ENGLISH
 // ============================================================
 
 const smcTopics = {
-  'liquidity-pools': {
+  "liquidity-pools": {
     en: {
       title: "Liquidity Pools — Complete Guide",
-      description: "Master liquidity pools in Smart Money trading. Learn how institutions hunt stops, identify buy-side and sell-side liquidity, and use liquidity sweeps for high-probability trade setups.",
+      description:
+        "Master liquidity pools in Smart Money trading. Learn how institutions hunt stops, identify buy-side and sell-side liquidity, and use liquidity sweeps for high-probability trade setups.",
       level: "intermediate",
       order: 6,
       content: `
@@ -415,11 +416,12 @@ Not always. Trend-continuation trades (BOS + OB) don't require sweeps. For rever
 - [Equal Highs & Lows](/en/smc/equal-highs-lows) — Key liquidity formations
 - [Inducement](/en/smc/inducement) — Engineered liquidity traps
 - [Kill Zones](/en/smc/kill-zones) — When sweeps are most likely
-`
+`,
     },
     bn: {
       title: "লিকুইডিটি পুল — সম্পূর্ণ গাইড",
-      description: "Smart Money ট্রেডিংয়ে লিকুইডিটি পুল আয়ত্ত করুন। ইনস্টিটিউশন কীভাবে স্টপ হান্ট করে, buy-side ও sell-side liquidity চিহ্নিত করা, এবং হাই-প্রোবাবিলিটি ট্রেড সেটআপ শিখুন।",
+      description:
+        "Smart Money ট্রেডিংয়ে লিকুইডিটি পুল আয়ত্ত করুন। ইনস্টিটিউশন কীভাবে স্টপ হান্ট করে, buy-side ও sell-side liquidity চিহ্নিত করা, এবং হাই-প্রোবাবিলিটি ট্রেড সেটআপ শিখুন।",
       level: "intermediate",
       order: 6,
       content: `
@@ -683,14 +685,15 @@ CHOCH/MSS কনফার্মেশন ছাড়া সুইপ শুধ�
 - [অর্ডার ব্লক](/bn/smc/order-blocks) — সুইপের পরে এন্ট্রি জোন
 - [Equal Highs ও Lows](/bn/smc/equal-highs-lows) — মূল লিকুইডিটি ফর্মেশন
 - [Inducement](/bn/smc/inducement) — ইঞ্জিনিয়ার্ড লিকুইডিটি ট্র্যাপ
-`
-    }
+`,
+    },
   },
 
-  'premium-discount': {
+  "premium-discount": {
     en: {
       title: "Premium & Discount Zones — Complete Guide",
-      description: "Master the Premium and Discount concept in Smart Money trading. Learn to identify institutional pricing zones, calculate equilibrium, and enter trades at optimal price levels.",
+      description:
+        "Master the Premium and Discount concept in Smart Money trading. Learn to identify institutional pricing zones, calculate equilibrium, and enter trades at optimal price levels.",
       level: "intermediate",
       order: 7,
       content: `
@@ -954,11 +957,12 @@ Use only the portion in the correct zone. If a bullish OB starts in discount and
 - [OTE (Optimal Trade Entry)](/en/ict/ote) — Fibonacci precision
 - [Liquidity Pools](/en/smc/liquidity-pools) — Targets from P&D zones
 - [Kill Zones](/en/smc/kill-zones) — When P&D setups activate
-`
+`,
     },
     bn: {
       title: "Premium ও Discount জোন — সম্পূর্ণ গাইড",
-      description: "Smart Money ট্রেডিংয়ে Premium ও Discount কনসেপ্ট আয়ত্ত করুন। ইনস্টিটিউশনাল প্রাইসিং জোন চিহ্নিত করা, ইকুইলিব্রিয়াম ক্যালকুলেট করা, এবং অপটিমাল লেভেলে ট্রেড শিখুন।",
+      description:
+        "Smart Money ট্রেডিংয়ে Premium ও Discount কনসেপ্ট আয়ত্ত করুন। ইনস্টিটিউশনাল প্রাইসিং জোন চিহ্নিত করা, ইকুইলিব্রিয়াম ক্যালকুলেট করা, এবং অপটিমাল লেভেলে ট্রেড শিখুন।",
       level: "intermediate",
       order: 7,
       content: `
@@ -1137,9 +1141,9 @@ OTE হলো premium/discount ফ্রেমওয়ার্কের মধ
 - [Fair Value Gap](/bn/smc/fair-value-gap) — P&D কন্টেক্সটে গ্যাপ
 - [OTE](/bn/ict/ote) — ফিবোনাচি প্রিসিশন
 - [লিকুইডিটি পুল](/bn/smc/liquidity-pools) — P&D জোন থেকে টার্গেট
-`
-    }
-  }
+`,
+    },
+  },
 };
 
 // Helper to write MDX file
@@ -1153,16 +1157,15 @@ lastUpdated: "2026-05-11"
 ---
 ${content}
 `;
-  writeFileSync(filePath, fullContent, 'utf-8');
+  writeFileSync(filePath, fullContent, "utf-8");
   console.log(`✅ Written: ${filePath}`);
 }
 
 // Write SMC topics
 for (const [slug, langs] of Object.entries(smcTopics)) {
-  writeMdx(join(contentDir, 'en', 'smc', `${slug}.mdx`), langs.en);
-  writeMdx(join(contentDir, 'bn', 'smc', `${slug}.mdx`), langs.bn);
+  writeMdx(join(contentDir, "en", "smc", `${slug}.mdx`), langs.en);
+  writeMdx(join(contentDir, "bn", "smc", `${slug}.mdx`), langs.bn);
 }
 
-console.log('\n✅ SMC Core Topics expanded!');
-console.log('Files updated: liquidity-pools (EN/BN), premium-discount (EN/BN)');
-
+console.log("\n✅ SMC Core Topics expanded!");
+console.log("Files updated: liquidity-pools (EN/BN), premium-discount (EN/BN)");

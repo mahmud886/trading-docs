@@ -1,10 +1,29 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
-const C = join(process.cwd(), 'content');
-const w = (l,c,s,f,t) => { writeFileSync(join(C,l,c,s+'.mdx'), `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-05-11"\n---\n`+t,'utf-8'); console.log(`✅ ${l}/${c}/${s}`); };
+import { writeFileSync } from "fs";
+import { join } from "path";
+const C = join(process.cwd(), "content");
+const w = (l, c, s, f, t) => {
+  writeFileSync(
+    join(C, l, c, s + ".mdx"),
+    `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-05-11"\n---\n` +
+      t,
+    "utf-8",
+  );
+  console.log(`✅ ${l}/${c}/${s}`);
+};
 
 // ============ ICT - POWER OF 3 (EN) ============
-w('en','ict','power-of-3',{title:"Power of 3 (AMD) — Complete Guide",description:"Master ICT Power of 3: Accumulation, Manipulation, Distribution. Learn the three-phase institutional cycle that drives every market move and how to trade each phase.",level:"intermediate",order:8},`
+w(
+  "en",
+  "ict",
+  "power-of-3",
+  {
+    title: "Power of 3 (AMD) — Complete Guide",
+    description:
+      "Master ICT Power of 3: Accumulation, Manipulation, Distribution. Learn the three-phase institutional cycle that drives every market move and how to trade each phase.",
+    level: "intermediate",
+    order: 8,
+  },
+  `
 ## What is Power of 3?
 
 Power of 3 (PO3) is one of ICT's most important concepts. It describes the **three-phase cycle** that institutions use to move price:
@@ -237,10 +256,22 @@ PO3 works on all timeframes but is most reliable on 15M+ charts where institutio
 - [Kill Zones](/en/ict/ict-kill-zones) — When to trade PO3
 - [Daily Bias](/en/ict/daily-bias) — How to determine direction
 - [Silver Bullet](/en/ict/silver-bullet) — Entry model within PO3
-`);
+`,
+);
 
 // ============ ICT - POWER OF 3 (BN) ============
-w('bn','ict','power-of-3',{title:"Power of 3 (AMD) — সম্পূর্ণ গাইড",description:"ICT Power of 3 আয়ত্ত করুন: Accumulation, Manipulation, Distribution। প্রতিটি মার্কেট মুভ চালিত তিন-ফেজ ইনস্টিটিউশনাল সাইকেল এবং প্রতিটি ফেজে ট্রেড করা শিখুন।",level:"intermediate",order:8},`
+w(
+  "bn",
+  "ict",
+  "power-of-3",
+  {
+    title: "Power of 3 (AMD) — সম্পূর্ণ গাইড",
+    description:
+      "ICT Power of 3 আয়ত্ত করুন: Accumulation, Manipulation, Distribution। প্রতিটি মার্কেট মুভ চালিত তিন-ফেজ ইনস্টিটিউশনাল সাইকেল এবং প্রতিটি ফেজে ট্রেড করা শিখুন।",
+    level: "intermediate",
+    order: 8,
+  },
+  `
 ## Power of 3 কী?
 
 Power of 3 (PO3) হলো ICT এর সবচেয়ে গুরুত্বপূর্ণ কনসেপ্টগুলোর একটি। এটি **তিন-ফেজ সাইকেল** বর্ণনা করে যা ইনস্টিটিউশন প্রাইস মুভ করতে ব্যবহার করে:
@@ -382,10 +413,22 @@ PO3 প্রতিটি টাইমফ্রেমে প্রযোজ্�
 - [Judas Swing](/bn/ict/judas-swing) — ম্যানিপুলেশন ফেজ
 - [Kill Zones](/bn/ict/ict-kill-zones) — PO3 কখন ট্রেড করবেন
 - [Daily Bias](/bn/ict/daily-bias) — দিক নির্ধারণ
-`);
+`,
+);
 
 // ============ ICT - JUDAS SWING (EN) ============
-w('en','ict','judas-swing',{title:"Judas Swing — Complete Guide",description:"Master the ICT Judas Swing concept. Learn how to identify the false initial move that traps retail traders before the real institutional move begins.",level:"intermediate",order:9},`
+w(
+  "en",
+  "ict",
+  "judas-swing",
+  {
+    title: "Judas Swing — Complete Guide",
+    description:
+      "Master the ICT Judas Swing concept. Learn how to identify the false initial move that traps retail traders before the real institutional move begins.",
+    level: "intermediate",
+    order: 9,
+  },
+  `
 ## What is a Judas Swing?
 
 The Judas Swing is the **false initial move** at the start of a trading session that goes in the opposite direction of the true daily move. Named after the biblical betrayal, this move "betrays" traders who follow it, trapping them on the wrong side.
@@ -520,10 +563,22 @@ Just as Judas betrayed with a kiss (appearing friendly), the Judas Swing appears
 - [AMD](/en/ict/amd) — Same cycle, different name
 - [ICT Kill Zones](/en/ict/ict-kill-zones) — When Judas Swings occur
 - [Liquidity Sweep](/en/ict/liquidity-sweep) — What the Judas Swing creates
-`);
+`,
+);
 
 // ============ JUDAS SWING BN ============
-w('bn','ict','judas-swing',{title:"Judas Swing — সম্পূর্ণ গাইড",description:"ICT Judas Swing কনসেপ্ট আয়ত্ত করুন। আসল ইনস্টিটিউশনাল মুভের আগে রিটেইল ট্রেডারদের ট্র্যাপ করা ফলস মুভ চিহ্নিত করা শিখুন।",level:"intermediate",order:9},`
+w(
+  "bn",
+  "ict",
+  "judas-swing",
+  {
+    title: "Judas Swing — সম্পূর্ণ গাইড",
+    description:
+      "ICT Judas Swing কনসেপ্ট আয়ত্ত করুন। আসল ইনস্টিটিউশনাল মুভের আগে রিটেইল ট্রেডারদের ট্র্যাপ করা ফলস মুভ চিহ্নিত করা শিখুন।",
+    level: "intermediate",
+    order: 9,
+  },
+  `
 ## Judas Swing কী?
 
 Judas Swing হলো ট্রেডিং সেশনের শুরুতে **ফলস প্রাথমিক মুভ** যা দিনের সত্যিকার মুভের বিপরীত দিকে যায়। বাইবেলের বিশ্বাসঘাতকতার নামে নামকরণ, এই মুভ অনুসরণকারী ট্রেডারদের "বিশ্বাসঘাতকতা" করে।
@@ -622,42 +677,379 @@ Judas Swing একটি আসল ব্রেকআউটের মতো দ�
 - [Power of 3](/bn/ict/power-of-3) — Judas Swing হলো Manipulation ফেজ
 - [ICT Kill Zones](/bn/ict/ict-kill-zones) — Judas Swing কখন ঘটে
 - [Liquidity Sweep](/bn/ict/liquidity-sweep) — Judas Swing যা তৈরি করে
-`);
+`,
+);
 
 // ============ REMAINING ICT TOPICS ============
 const ictTopics = [
-  {slug:'introduction',en:{title:"Introduction to ICT Methodology",desc:"Complete introduction to ICT (Inner Circle Trader) methodology. Learn the foundation of institutional trading concepts and how ICT approaches the markets.",level:"beginner",order:1},bn:{title:"ICT মেথডলজি পরিচিতি",desc:"ICT মেথডলজির সম্পূর্ণ পরিচিতি। ইনস্টিটিউশনাল ট্রেডিং কনসেপ্টের ভিত্তি এবং ICT কীভাবে মার্কেট দেখে শিখুন।",level:"beginner",order:1}},
-  {slug:'amd',en:{title:"AMD (Accumulation, Manipulation, Distribution)",desc:"Master AMD cycle - the institutional 3-phase market pattern. Learn to identify each phase and position yourself with smart money.",level:"intermediate",order:2},bn:{title:"AMD (Accumulation, Manipulation, Distribution)",desc:"AMD সাইকেল আয়ত্ত করুন — ইনস্টিটিউশনাল ৩-ফেজ মার্কেট প্যাটার্ন।",level:"intermediate",order:2}},
-  {slug:'liquidity',en:{title:"ICT Liquidity Concepts",desc:"Master ICT's approach to liquidity. Learn buy-side and sell-side liquidity identification, liquidity pools, and how institutions use liquidity for entries.",level:"beginner",order:3},bn:{title:"ICT লিকুইডিটি কনসেপ্ট",desc:"ICT এর লিকুইডিটি অ্যাপ্রোচ আয়ত্ত করুন। BSL, SSL চিহ্নিতকরণ এবং ইনস্টিটিউশন কীভাবে লিকুইডিটি ব্যবহার করে শিখুন।",level:"beginner",order:3}},
-  {slug:'liquidity-sweep',en:{title:"ICT Liquidity Sweep",desc:"Master liquidity sweeps in ICT methodology. Learn to identify and trade sweeps of key liquidity levels with institutional precision.",level:"intermediate",order:4},bn:{title:"ICT লিকুইডিটি সুইপ",desc:"ICT মেথডলজিতে liquidity sweep আয়ত্ত করুন। মূল লিকুইডিটি লেভেলের সুইপ চিহ্নিত ও ট্রেড করা শিখুন।",level:"intermediate",order:4}},
-  {slug:'mss',en:{title:"ICT Market Structure Shift (MSS)",desc:"Master MSS in ICT methodology. The definitive guide to identifying institutional structure shifts and timing your entries perfectly.",level:"intermediate",order:5},bn:{title:"ICT Market Structure Shift (MSS)",desc:"ICT মেথডলজিতে MSS আয়ত্ত করুন। ইনস্টিটিউশনাল স্ট্রাকচার শিফট চিহ্নিত করা এবং এন্ট্রি টাইমিং শিখুন।",level:"intermediate",order:5}},
-  {slug:'fvg',en:{title:"ICT Fair Value Gap (FVG)",desc:"Master FVG in ICT methodology. Learn ICT's specific approach to Fair Value Gaps including consequent encroachment and trading the gap.",level:"intermediate",order:6},bn:{title:"ICT Fair Value Gap (FVG)",desc:"ICT মেথডলজিতে FVG আয়ত্ত করুন। ICT এর নির্দিষ্ট FVG অ্যাপ্রোচ শিখুন।",level:"intermediate",order:6}},
-  {slug:'ote',en:{title:"Optimal Trade Entry (OTE)",desc:"Master ICT OTE - the sweet spot for entries. Learn to use Fibonacci retracement with ICT concepts for optimal entry positioning at the 62-79% zone.",level:"intermediate",order:7},bn:{title:"Optimal Trade Entry (OTE)",desc:"ICT OTE আয়ত্ত করুন — এন্ট্রির সুইট স্পট। ফিবোনাচি রিট্রেসমেন্ট ও ICT কনসেপ্ট মিলিয়ে অপটিমাল এন্ট্রি শিখুন।",level:"intermediate",order:7}},
-  {slug:'ict-kill-zones',en:{title:"ICT Kill Zones — Complete Guide",desc:"Master ICT Kill Zones with Bangladesh time. Learn the specific time windows when institutional activity peaks and the highest-probability setups form.",level:"beginner",order:10},bn:{title:"ICT Kill Zones — সম্পূর্ণ গাইড",desc:"বাংলাদেশ সময় সহ ICT Kill Zone আয়ত্ত করুন। কোন সময়ে ইনস্টিটিউশনাল কার্যকলাপ সর্বোচ্চ হয় শিখুন।",level:"beginner",order:10}},
-  {slug:'pd-arrays',en:{title:"PD Arrays — Complete Guide",desc:"Master ICT PD Arrays (Premium/Discount Arrays). Learn all institutional reference points and how to rank them for trade entries.",level:"advanced",order:11},bn:{title:"PD Arrays — সম্পূর্ণ গাইড",desc:"ICT PD Arrays আয়ত্ত করুন। সব ইনস্টিটিউশনাল রেফারেন্স পয়েন্ট এবং ট্রেড এন্ট্রির জন্য র‍্যাঙ্কিং শিখুন।",level:"advanced",order:11}},
-  {slug:'daily-bias',en:{title:"Daily Bias — Complete Guide",desc:"Master ICT Daily Bias determination. Learn to identify if today is a bullish or bearish day BEFORE the market opens using institutional logic.",level:"intermediate",order:12},bn:{title:"Daily Bias — সম্পূর্ণ গাইড",desc:"ICT Daily Bias নির্ধারণ আয়ত্ত করুন। মার্কেট ওপেনের আগেই আজ বুলিশ না বিয়ারিশ দিন তা চিহ্নিত করা শিখুন।",level:"intermediate",order:12}},
-  {slug:'silver-bullet',en:{title:"Silver Bullet — Complete Guide",desc:"Master ICT Silver Bullet entry model. Learn the specific time-based entry windows that offer the highest probability setups within Kill Zones.",level:"advanced",order:13},bn:{title:"Silver Bullet — সম্পূর্ণ গাইড",desc:"ICT Silver Bullet এন্ট্রি মডেল আয়ত্ত করুন। Kill Zone এর মধ্যে সর্বোচ্চ প্রোবাবিলিটি সেটআপের সময়-ভিত্তিক এন্ট্রি উইন্ডো শিখুন।",level:"advanced",order:13}},
-  {slug:'turtle-soup',en:{title:"Turtle Soup — Complete Guide",desc:"Master ICT Turtle Soup pattern. Learn how to trade false breakouts of key highs and lows using the classic Turtle Soup reversal pattern.",level:"intermediate",order:14},bn:{title:"Turtle Soup — সম্পূর্ণ গাইড",desc:"ICT Turtle Soup প্যাটার্ন আয়ত্ত করুন। কী হাই ও লো এর ফলস ব্রেকআউট ট্রেড করা শিখুন।",level:"intermediate",order:14}},
-  {slug:'market-maker-models',en:{title:"Market Maker Models — Complete Guide",desc:"Master ICT Market Maker Models. Learn how market makers manipulate price through buy and sell models to capture liquidity.",level:"advanced",order:15},bn:{title:"Market Maker Models — সম্পূর্ণ গাইড",desc:"ICT Market Maker Models আয়ত্ত করুন। মার্কেট মেকাররা কীভাবে লিকুইডিটি ক্যাপচারের জন্য প্রাইস ম্যানিপুলেট করে শিখুন।",level:"advanced",order:15}},
-  {slug:'unicorn-model',en:{title:"Unicorn Model — Complete Guide",desc:"Master the ICT Unicorn Model. An advanced entry model combining Breaker Block + FVG + OB for the highest probability entries in the market.",level:"advanced",order:16},bn:{title:"Unicorn Model — সম্পূর্ণ গাইড",desc:"ICT Unicorn Model আয়ত্ত করুন। Breaker Block + FVG + OB মিলিয়ে সর্বোচ্চ প্রোবাবিলিটি এন্ট্রি মডেল শিখুন।",level:"advanced",order:16}},
-  {slug:'venom-model',en:{title:"Venom Model — Complete Guide",desc:"Master the ICT Venom Model. An advanced execution concept for precision entries using liquidity engineering and manipulation patterns.",level:"advanced",order:17},bn:{title:"Venom Model — সম্পূর্ণ গাইড",desc:"ICT Venom Model আয়ত্ত করুন। লিকুইডিটি ইঞ্জিনিয়ারিং ও ম্যানিপুলেশন প্যাটার্ন ব্যবহার করে প্রিসিশন এন্ট্রি শিখুন।",level:"advanced",order:17}},
-  {slug:'london-open',en:{title:"London Open — Complete Guide",desc:"Master ICT London Open trading. Learn the most volatile market open with institutional manipulation patterns and high-probability setups.",level:"intermediate",order:18},bn:{title:"London Open — সম্পূর্ণ গাইড",desc:"ICT London Open ট্রেডিং আয়ত্ত করুন। সবচেয়ে ভোলাটাইল মার্কেট ওপেনের ম্যানিপুলেশন প্যাটার্ন ও সেটআপ শিখুন।",level:"intermediate",order:18}},
-  {slug:'new-york-open',en:{title:"New York Open — Complete Guide",desc:"Master ICT New York Open trading. Learn NY session dynamics, reversal patterns, and how to trade the most liquid session in forex.",level:"intermediate",order:19},bn:{title:"New York Open — সম্পূর্ণ গাইড",desc:"ICT New York Open ট্রেডিং আয়ত্ত করুন। NY সেশন ডায়নামিক্স, রিভার্সাল প্যাটার্ন শিখুন।",level:"intermediate",order:19}},
-  {slug:'dealing-range',en:{title:"Dealing Range — Complete Guide",desc:"Master ICT Dealing Range concept. Learn to identify the institutional dealing range and how price delivers within defined boundaries.",level:"advanced",order:20},bn:{title:"Dealing Range — সম্পূর্ণ গাইড",desc:"ICT Dealing Range কনসেপ্ট আয়ত্ত করুন। ইনস্টিটিউশনাল ডিলিং রেঞ্জ চিহ্নিত করা শিখুন।",level:"advanced",order:20}},
-  {slug:'time-and-price-theory',en:{title:"Time & Price Theory — Complete Guide",desc:"Master ICT Time and Price Theory. Understand how time and price intersect and why certain times produce predictable price behavior.",level:"advanced",order:21},bn:{title:"Time ও Price Theory — সম্পূর্ণ গাইড",desc:"ICT Time ও Price Theory আয়ত্ত করুন। কীভাবে সময় ও প্রাইস মিলিত হয় এবং নির্দিষ্ট সময়ে কেন অনুমানযোগ্য আচরণ হয় শিখুন।",level:"advanced",order:21}},
-  {slug:'weekly-profiles',en:{title:"Weekly Profiles — Complete Guide",desc:"Master ICT Weekly Profiles. Learn how each day of the week has a specific role in institutional price delivery and weekly range formation.",level:"intermediate",order:22},bn:{title:"Weekly Profiles — সম্পূর্ণ গাইড",desc:"ICT Weekly Profiles আয়ত্ত করুন। সপ্তাহের প্রতিটি দিনের ইনস্টিটিউশনাল প্রাইস ডেলিভারিতে নির্দিষ্ট ভূমিকা শিখুন।",level:"intermediate",order:22}},
-  {slug:'monthly-profiles',en:{title:"Monthly Profiles — Complete Guide",desc:"Master ICT Monthly Profiles. Learn how institutional price delivery follows a monthly cycle and how to position for monthly ranges.",level:"advanced",order:23},bn:{title:"Monthly Profiles — সম্পূর্ণ গাইড",desc:"ICT Monthly Profiles আয়ত্ত করুন। ইনস্টিটিউশনাল প্রাইস ডেলিভারি মাসিক সাইকেল কীভাবে অনুসরণ করে শিখুন।",level:"advanced",order:23}},
-  {slug:'2022-mentorship-concepts',en:{title:"2022 Mentorship Concepts — Complete Guide",desc:"Master ICT's 2022 Mentorship concepts. Updated ICT framework with refined models including algorithmic theory and new execution models.",level:"advanced",order:24},bn:{title:"2022 Mentorship Concepts — সম্পূর্ণ গাইড",desc:"ICT এর 2022 Mentorship কনসেপ্ট আয়ত্ত করুন। অ্যালগরিদমিক থিওরি ও নতুন এক্সিকিউশন মডেল সহ আপডেটেড ফ্রেমওয়ার্ক শিখুন।",level:"advanced",order:24}},
-  {slug:'advanced-ict-models',en:{title:"Advanced ICT Models — Complete Guide",desc:"Master advanced ICT trading models. Combine multiple concepts into sophisticated execution frameworks for professional-level trading.",level:"advanced",order:25},bn:{title:"Advanced ICT Models — সম্পূর্ণ গাইড",desc:"অ্যাডভান্সড ICT ট্রেডিং মডেল আয়ত্ত করুন। প্রফেশনাল-লেভেল ট্রেডিংয়ের জন্য একাধিক কনসেপ্ট মিলিয়ে সফিস্টিকেটেড ফ্রেমওয়ার্ক শিখুন।",level:"advanced",order:25}},
-  {slug:'algorithmic-delivery-concepts',en:{title:"Algorithmic Delivery — Complete Guide",desc:"Master ICT's Algorithmic Delivery theory. Understand how the market-making algorithm delivers price to specific levels using time-based protocols.",level:"advanced",order:26},bn:{title:"Algorithmic Delivery — সম্পূর্ণ গাইড",desc:"ICT এর Algorithmic Delivery থিওরি আয়ত্ত করুন। মার্কেট-মেকিং অ্যালগরিদম কীভাবে সময়-ভিত্তিক প্রোটোকল ব্যবহার করে প্রাইস ডেলিভার করে শিখুন।",level:"advanced",order:26}},
+  {
+    slug: "introduction",
+    en: {
+      title: "Introduction to ICT Methodology",
+      desc: "Complete introduction to ICT (Inner Circle Trader) methodology. Learn the foundation of institutional trading concepts and how ICT approaches the markets.",
+      level: "beginner",
+      order: 1,
+    },
+    bn: {
+      title: "ICT মেথডলজি পরিচিতি",
+      desc: "ICT মেথডলজির সম্পূর্ণ পরিচিতি। ইনস্টিটিউশনাল ট্রেডিং কনসেপ্টের ভিত্তি এবং ICT কীভাবে মার্কেট দেখে শিখুন।",
+      level: "beginner",
+      order: 1,
+    },
+  },
+  {
+    slug: "amd",
+    en: {
+      title: "AMD (Accumulation, Manipulation, Distribution)",
+      desc: "Master AMD cycle - the institutional 3-phase market pattern. Learn to identify each phase and position yourself with smart money.",
+      level: "intermediate",
+      order: 2,
+    },
+    bn: {
+      title: "AMD (Accumulation, Manipulation, Distribution)",
+      desc: "AMD সাইকেল আয়ত্ত করুন — ইনস্টিটিউশনাল ৩-ফেজ মার্কেট প্যাটার্ন।",
+      level: "intermediate",
+      order: 2,
+    },
+  },
+  {
+    slug: "liquidity",
+    en: {
+      title: "ICT Liquidity Concepts",
+      desc: "Master ICT's approach to liquidity. Learn buy-side and sell-side liquidity identification, liquidity pools, and how institutions use liquidity for entries.",
+      level: "beginner",
+      order: 3,
+    },
+    bn: {
+      title: "ICT লিকুইডিটি কনসেপ্ট",
+      desc: "ICT এর লিকুইডিটি অ্যাপ্রোচ আয়ত্ত করুন। BSL, SSL চিহ্নিতকরণ এবং ইনস্টিটিউশন কীভাবে লিকুইডিটি ব্যবহার করে শিখুন।",
+      level: "beginner",
+      order: 3,
+    },
+  },
+  {
+    slug: "liquidity-sweep",
+    en: {
+      title: "ICT Liquidity Sweep",
+      desc: "Master liquidity sweeps in ICT methodology. Learn to identify and trade sweeps of key liquidity levels with institutional precision.",
+      level: "intermediate",
+      order: 4,
+    },
+    bn: {
+      title: "ICT লিকুইডিটি সুইপ",
+      desc: "ICT মেথডলজিতে liquidity sweep আয়ত্ত করুন। মূল লিকুইডিটি লেভেলের সুইপ চিহ্নিত ও ট্রেড করা শিখুন।",
+      level: "intermediate",
+      order: 4,
+    },
+  },
+  {
+    slug: "mss",
+    en: {
+      title: "ICT Market Structure Shift (MSS)",
+      desc: "Master MSS in ICT methodology. The definitive guide to identifying institutional structure shifts and timing your entries perfectly.",
+      level: "intermediate",
+      order: 5,
+    },
+    bn: {
+      title: "ICT Market Structure Shift (MSS)",
+      desc: "ICT মেথডলজিতে MSS আয়ত্ত করুন। ইনস্টিটিউশনাল স্ট্রাকচার শিফট চিহ্নিত করা এবং এন্ট্রি টাইমিং শিখুন।",
+      level: "intermediate",
+      order: 5,
+    },
+  },
+  {
+    slug: "fvg",
+    en: {
+      title: "ICT Fair Value Gap (FVG)",
+      desc: "Master FVG in ICT methodology. Learn ICT's specific approach to Fair Value Gaps including consequent encroachment and trading the gap.",
+      level: "intermediate",
+      order: 6,
+    },
+    bn: {
+      title: "ICT Fair Value Gap (FVG)",
+      desc: "ICT মেথডলজিতে FVG আয়ত্ত করুন। ICT এর নির্দিষ্ট FVG অ্যাপ্রোচ শিখুন।",
+      level: "intermediate",
+      order: 6,
+    },
+  },
+  {
+    slug: "ote",
+    en: {
+      title: "Optimal Trade Entry (OTE)",
+      desc: "Master ICT OTE - the sweet spot for entries. Learn to use Fibonacci retracement with ICT concepts for optimal entry positioning at the 62-79% zone.",
+      level: "intermediate",
+      order: 7,
+    },
+    bn: {
+      title: "Optimal Trade Entry (OTE)",
+      desc: "ICT OTE আয়ত্ত করুন — এন্ট্রির সুইট স্পট। ফিবোনাচি রিট্রেসমেন্ট ও ICT কনসেপ্ট মিলিয়ে অপটিমাল এন্ট্রি শিখুন।",
+      level: "intermediate",
+      order: 7,
+    },
+  },
+  {
+    slug: "ict-kill-zones",
+    en: {
+      title: "ICT Kill Zones — Complete Guide",
+      desc: "Master ICT Kill Zones with Bangladesh time. Learn the specific time windows when institutional activity peaks and the highest-probability setups form.",
+      level: "beginner",
+      order: 10,
+    },
+    bn: {
+      title: "ICT Kill Zones — সম্পূর্ণ গাইড",
+      desc: "বাংলাদেশ সময় সহ ICT Kill Zone আয়ত্ত করুন। কোন সময়ে ইনস্টিটিউশনাল কার্যকলাপ সর্বোচ্চ হয় শিখুন।",
+      level: "beginner",
+      order: 10,
+    },
+  },
+  {
+    slug: "pd-arrays",
+    en: {
+      title: "PD Arrays — Complete Guide",
+      desc: "Master ICT PD Arrays (Premium/Discount Arrays). Learn all institutional reference points and how to rank them for trade entries.",
+      level: "advanced",
+      order: 11,
+    },
+    bn: {
+      title: "PD Arrays — সম্পূর্ণ গাইড",
+      desc: "ICT PD Arrays আয়ত্ত করুন। সব ইনস্টিটিউশনাল রেফারেন্স পয়েন্ট এবং ট্রেড এন্ট্রির জন্য র‍্যাঙ্কিং শিখুন।",
+      level: "advanced",
+      order: 11,
+    },
+  },
+  {
+    slug: "daily-bias",
+    en: {
+      title: "Daily Bias — Complete Guide",
+      desc: "Master ICT Daily Bias determination. Learn to identify if today is a bullish or bearish day BEFORE the market opens using institutional logic.",
+      level: "intermediate",
+      order: 12,
+    },
+    bn: {
+      title: "Daily Bias — সম্পূর্ণ গাইড",
+      desc: "ICT Daily Bias নির্ধারণ আয়ত্ত করুন। মার্কেট ওপেনের আগেই আজ বুলিশ না বিয়ারিশ দিন তা চিহ্নিত করা শিখুন।",
+      level: "intermediate",
+      order: 12,
+    },
+  },
+  {
+    slug: "silver-bullet",
+    en: {
+      title: "Silver Bullet — Complete Guide",
+      desc: "Master ICT Silver Bullet entry model. Learn the specific time-based entry windows that offer the highest probability setups within Kill Zones.",
+      level: "advanced",
+      order: 13,
+    },
+    bn: {
+      title: "Silver Bullet — সম্পূর্ণ গাইড",
+      desc: "ICT Silver Bullet এন্ট্রি মডেল আয়ত্ত করুন। Kill Zone এর মধ্যে সর্বোচ্চ প্রোবাবিলিটি সেটআপের সময়-ভিত্তিক এন্ট্রি উইন্ডো শিখুন।",
+      level: "advanced",
+      order: 13,
+    },
+  },
+  {
+    slug: "turtle-soup",
+    en: {
+      title: "Turtle Soup — Complete Guide",
+      desc: "Master ICT Turtle Soup pattern. Learn how to trade false breakouts of key highs and lows using the classic Turtle Soup reversal pattern.",
+      level: "intermediate",
+      order: 14,
+    },
+    bn: {
+      title: "Turtle Soup — সম্পূর্ণ গাইড",
+      desc: "ICT Turtle Soup প্যাটার্ন আয়ত্ত করুন। কী হাই ও লো এর ফলস ব্রেকআউট ট্রেড করা শিখুন।",
+      level: "intermediate",
+      order: 14,
+    },
+  },
+  {
+    slug: "market-maker-models",
+    en: {
+      title: "Market Maker Models — Complete Guide",
+      desc: "Master ICT Market Maker Models. Learn how market makers manipulate price through buy and sell models to capture liquidity.",
+      level: "advanced",
+      order: 15,
+    },
+    bn: {
+      title: "Market Maker Models — সম্পূর্ণ গাইড",
+      desc: "ICT Market Maker Models আয়ত্ত করুন। মার্কেট মেকাররা কীভাবে লিকুইডিটি ক্যাপচারের জন্য প্রাইস ম্যানিপুলেট করে শিখুন।",
+      level: "advanced",
+      order: 15,
+    },
+  },
+  {
+    slug: "unicorn-model",
+    en: {
+      title: "Unicorn Model — Complete Guide",
+      desc: "Master the ICT Unicorn Model. An advanced entry model combining Breaker Block + FVG + OB for the highest probability entries in the market.",
+      level: "advanced",
+      order: 16,
+    },
+    bn: {
+      title: "Unicorn Model — সম্পূর্ণ গাইড",
+      desc: "ICT Unicorn Model আয়ত্ত করুন। Breaker Block + FVG + OB মিলিয়ে সর্বোচ্চ প্রোবাবিলিটি এন্ট্রি মডেল শিখুন।",
+      level: "advanced",
+      order: 16,
+    },
+  },
+  {
+    slug: "venom-model",
+    en: {
+      title: "Venom Model — Complete Guide",
+      desc: "Master the ICT Venom Model. An advanced execution concept for precision entries using liquidity engineering and manipulation patterns.",
+      level: "advanced",
+      order: 17,
+    },
+    bn: {
+      title: "Venom Model — সম্পূর্ণ গাইড",
+      desc: "ICT Venom Model আয়ত্ত করুন। লিকুইডিটি ইঞ্জিনিয়ারিং ও ম্যানিপুলেশন প্যাটার্ন ব্যবহার করে প্রিসিশন এন্ট্রি শিখুন।",
+      level: "advanced",
+      order: 17,
+    },
+  },
+  {
+    slug: "london-open",
+    en: {
+      title: "London Open — Complete Guide",
+      desc: "Master ICT London Open trading. Learn the most volatile market open with institutional manipulation patterns and high-probability setups.",
+      level: "intermediate",
+      order: 18,
+    },
+    bn: {
+      title: "London Open — সম্পূর্ণ গাইড",
+      desc: "ICT London Open ট্রেডিং আয়ত্ত করুন। সবচেয়ে ভোলাটাইল মার্কেট ওপেনের ম্যানিপুলেশন প্যাটার্ন ও সেটআপ শিখুন।",
+      level: "intermediate",
+      order: 18,
+    },
+  },
+  {
+    slug: "new-york-open",
+    en: {
+      title: "New York Open — Complete Guide",
+      desc: "Master ICT New York Open trading. Learn NY session dynamics, reversal patterns, and how to trade the most liquid session in forex.",
+      level: "intermediate",
+      order: 19,
+    },
+    bn: {
+      title: "New York Open — সম্পূর্ণ গাইড",
+      desc: "ICT New York Open ট্রেডিং আয়ত্ত করুন। NY সেশন ডায়নামিক্স, রিভার্সাল প্যাটার্ন শিখুন।",
+      level: "intermediate",
+      order: 19,
+    },
+  },
+  {
+    slug: "dealing-range",
+    en: {
+      title: "Dealing Range — Complete Guide",
+      desc: "Master ICT Dealing Range concept. Learn to identify the institutional dealing range and how price delivers within defined boundaries.",
+      level: "advanced",
+      order: 20,
+    },
+    bn: {
+      title: "Dealing Range — সম্পূর্ণ গাইড",
+      desc: "ICT Dealing Range কনসেপ্ট আয়ত্ত করুন। ইনস্টিটিউশনাল ডিলিং রেঞ্জ চিহ্নিত করা শিখুন।",
+      level: "advanced",
+      order: 20,
+    },
+  },
+  {
+    slug: "time-and-price-theory",
+    en: {
+      title: "Time & Price Theory — Complete Guide",
+      desc: "Master ICT Time and Price Theory. Understand how time and price intersect and why certain times produce predictable price behavior.",
+      level: "advanced",
+      order: 21,
+    },
+    bn: {
+      title: "Time ও Price Theory — সম্পূর্ণ গাইড",
+      desc: "ICT Time ও Price Theory আয়ত্ত করুন। কীভাবে সময় ও প্রাইস মিলিত হয় এবং নির্দিষ্ট সময়ে কেন অনুমানযোগ্য আচরণ হয় শিখুন।",
+      level: "advanced",
+      order: 21,
+    },
+  },
+  {
+    slug: "weekly-profiles",
+    en: {
+      title: "Weekly Profiles — Complete Guide",
+      desc: "Master ICT Weekly Profiles. Learn how each day of the week has a specific role in institutional price delivery and weekly range formation.",
+      level: "intermediate",
+      order: 22,
+    },
+    bn: {
+      title: "Weekly Profiles — সম্পূর্ণ গাইড",
+      desc: "ICT Weekly Profiles আয়ত্ত করুন। সপ্তাহের প্রতিটি দিনের ইনস্টিটিউশনাল প্রাইস ডেলিভারিতে নির্দিষ্ট ভূমিকা শিখুন।",
+      level: "intermediate",
+      order: 22,
+    },
+  },
+  {
+    slug: "monthly-profiles",
+    en: {
+      title: "Monthly Profiles — Complete Guide",
+      desc: "Master ICT Monthly Profiles. Learn how institutional price delivery follows a monthly cycle and how to position for monthly ranges.",
+      level: "advanced",
+      order: 23,
+    },
+    bn: {
+      title: "Monthly Profiles — সম্পূর্ণ গাইড",
+      desc: "ICT Monthly Profiles আয়ত্ত করুন। ইনস্টিটিউশনাল প্রাইস ডেলিভারি মাসিক সাইকেল কীভাবে অনুসরণ করে শিখুন।",
+      level: "advanced",
+      order: 23,
+    },
+  },
+  {
+    slug: "2022-mentorship-concepts",
+    en: {
+      title: "2022 Mentorship Concepts — Complete Guide",
+      desc: "Master ICT's 2022 Mentorship concepts. Updated ICT framework with refined models including algorithmic theory and new execution models.",
+      level: "advanced",
+      order: 24,
+    },
+    bn: {
+      title: "2022 Mentorship Concepts — সম্পূর্ণ গাইড",
+      desc: "ICT এর 2022 Mentorship কনসেপ্ট আয়ত্ত করুন। অ্যালগরিদমিক থিওরি ও নতুন এক্সিকিউশন মডেল সহ আপডেটেড ফ্রেমওয়ার্ক শিখুন।",
+      level: "advanced",
+      order: 24,
+    },
+  },
+  {
+    slug: "advanced-ict-models",
+    en: {
+      title: "Advanced ICT Models — Complete Guide",
+      desc: "Master advanced ICT trading models. Combine multiple concepts into sophisticated execution frameworks for professional-level trading.",
+      level: "advanced",
+      order: 25,
+    },
+    bn: {
+      title: "Advanced ICT Models — সম্পূর্ণ গাইড",
+      desc: "অ্যাডভান্সড ICT ট্রেডিং মডেল আয়ত্ত করুন। প্রফেশনাল-লেভেল ট্রেডিংয়ের জন্য একাধিক কনসেপ্ট মিলিয়ে সফিস্টিকেটেড ফ্রেমওয়ার্ক শিখুন।",
+      level: "advanced",
+      order: 25,
+    },
+  },
+  {
+    slug: "algorithmic-delivery-concepts",
+    en: {
+      title: "Algorithmic Delivery — Complete Guide",
+      desc: "Master ICT's Algorithmic Delivery theory. Understand how the market-making algorithm delivers price to specific levels using time-based protocols.",
+      level: "advanced",
+      order: 26,
+    },
+    bn: {
+      title: "Algorithmic Delivery — সম্পূর্ণ গাইড",
+      desc: "ICT এর Algorithmic Delivery থিওরি আয়ত্ত করুন। মার্কেট-মেকিং অ্যালগরিদম কীভাবে সময়-ভিত্তিক প্রোটোকল ব্যবহার করে প্রাইস ডেলিভার করে শিখুন।",
+      level: "advanced",
+      order: 26,
+    },
+  },
 ];
 
 function genICTContent(slug, titleEn, isEN) {
   if (isEN) {
     return `
-## What is ${titleEn.replace(' — Complete Guide','')}?
+## What is ${titleEn.replace(" — Complete Guide", "")}?
 
-${titleEn.replace(' — Complete Guide','')} is a core concept in ICT (Inner Circle Trader) methodology. ICT methodology focuses on understanding how the interbank market and market-making algorithms operate, enabling traders to align with institutional order flow rather than trading against it.
+${titleEn.replace(" — Complete Guide", "")} is a core concept in ICT (Inner Circle Trader) methodology. ICT methodology focuses on understanding how the interbank market and market-making algorithms operate, enabling traders to align with institutional order flow rather than trading against it.
 
 <Callout type="info" title="ICT Methodology">
 This concept is part of ICT's comprehensive trading framework. Each concept works synergistically with others — mastering them individually and understanding their interconnections is essential for developing a complete ICT trading methodology.
@@ -665,7 +1057,7 @@ This concept is part of ICT's comprehensive trading framework. Each concept work
 
 ---
 
-## Why ${titleEn.replace(' — Complete Guide','')} Matters
+## Why ${titleEn.replace(" — Complete Guide", "")} Matters
 
 Understanding this concept provides several critical advantages:
 
@@ -812,9 +1204,9 @@ Before any significant move, there's a manipulation phase that traps retail trad
 `;
   } else {
     return `
-## ${titleEn.replace(' — Complete Guide','')} কী?
+## ${titleEn.replace(" — Complete Guide", "")} কী?
 
-${titleEn.replace(' — Complete Guide','')} হলো ICT (Inner Circle Trader) মেথডলজির একটি মূল কনসেপ্ট। ICT মেথডলজি ইন্টারব্যাংক মার্কেট এবং মার্কেট-মেকিং অ্যালগরিদম কীভাবে কাজ করে তা বুঝতে ফোকাস করে, যাতে ট্রেডাররা ইনস্টিটিউশনাল অর্ডার ফ্লোর সাথে ট্রেড করতে পারে।
+${titleEn.replace(" — Complete Guide", "")} হলো ICT (Inner Circle Trader) মেথডলজির একটি মূল কনসেপ্ট। ICT মেথডলজি ইন্টারব্যাংক মার্কেট এবং মার্কেট-মেকিং অ্যালগরিদম কীভাবে কাজ করে তা বুঝতে ফোকাস করে, যাতে ট্রেডাররা ইনস্টিটিউশনাল অর্ডার ফ্লোর সাথে ট্রেড করতে পারে।
 
 <Callout type="info" title="ICT মেথডলজি">
 এই কনসেপ্ট ICT এর ব্যাপক ট্রেডিং ফ্রেমওয়ার্কের অংশ। প্রতিটি কনসেপ্ট অন্যদের সাথে সিনার্জিস্টিকভাবে কাজ করে — আলাদাভাবে আয়ত্ত করা ও তাদের সংযোগ বোঝা একটি সম্পূর্ণ ICT মেথডলজি গড়ে তোলার জন্য অপরিহার্য।
@@ -924,20 +1316,31 @@ ICT জোর দেয় যে সময় নির্ধারণ কর�
 }
 
 for (const topic of ictTopics) {
-  w('en', 'ict', topic.slug, {
-    title: topic.en.title,
-    description: topic.en.desc,
-    level: topic.en.level,
-    order: topic.en.order
-  }, genICTContent(topic.slug, topic.en.title, true));
+  w(
+    "en",
+    "ict",
+    topic.slug,
+    {
+      title: topic.en.title,
+      description: topic.en.desc,
+      level: topic.en.level,
+      order: topic.en.order,
+    },
+    genICTContent(topic.slug, topic.en.title, true),
+  );
 
-  w('bn', 'ict', topic.slug, {
-    title: topic.bn.title,
-    description: topic.bn.desc,
-    level: topic.bn.level,
-    order: topic.bn.order
-  }, genICTContent(topic.slug, topic.bn.title, false));
+  w(
+    "bn",
+    "ict",
+    topic.slug,
+    {
+      title: topic.bn.title,
+      description: topic.bn.desc,
+      level: topic.bn.level,
+      order: topic.bn.order,
+    },
+    genICTContent(topic.slug, topic.bn.title, false),
+  );
 }
 
-console.log('\n✅ Batch 3 complete: All ICT topics expanded (EN + BN)');
-
+console.log("\n✅ Batch 3 complete: All ICT topics expanded (EN + BN)");

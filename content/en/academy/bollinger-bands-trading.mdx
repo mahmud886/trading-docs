@@ -14,14 +14,15 @@ Bollinger Bands are a **volatility indicator** consisting of three lines: a midd
 
 ## Components
 
-| Component | Calculation | Purpose |
-|-----------|------------|---------|
-| **Middle Band** | 20-period SMA | Trend direction and mean |
-| **Upper Band** | SMA + (2 × Standard Deviation) | Overbought/resistance area |
-| **Lower Band** | SMA - (2 × Standard Deviation) | Oversold/support area |
-| **Band Width** | (Upper - Lower) ÷ Middle | Volatility measurement |
+| Component       | Calculation                    | Purpose                    |
+| --------------- | ------------------------------ | -------------------------- |
+| **Middle Band** | 20-period SMA                  | Trend direction and mean   |
+| **Upper Band**  | SMA + (2 × Standard Deviation) | Overbought/resistance area |
+| **Lower Band**  | SMA - (2 × Standard Deviation) | Oversold/support area      |
+| **Band Width**  | (Upper - Lower) ÷ Middle       | Volatility measurement     |
 
 ### Key Properties:
+
 - ~95% of price action stays within the bands (2 SD)
 - Bands expand during high volatility
 - Bands contract during low volatility (squeeze)
@@ -62,6 +63,7 @@ WARNING: Don't use in trending markets (price can "walk the bands")
 ### Strategy 3: Walking the Bands (Trend)
 
 In strong trends, price consistently touches/exceeds one band:
+
 - Strong uptrend: Price walks along upper band (don't sell!)
 - Strong downtrend: Price walks along lower band (don't buy!)
 - Trade pullbacks to middle band in trend direction
@@ -69,6 +71,7 @@ In strong trends, price consistently touches/exceeds one band:
 ### Strategy 4: Double Bollinger Bands
 
 Use two sets: Standard (2 SD) + Inner (1 SD):
+
 ```
 - Price between upper 1SD and 2SD = Strong bullish trend
 - Price between lower 1SD and 2SD = Strong bearish trend
@@ -80,25 +83,25 @@ Use two sets: Standard (2 SD) + Inner (1 SD):
 
 ## BB + RSI Combination
 
-| BB Signal | RSI Confirmation | Action |
-|-----------|-----------------|--------|
-| Touch upper band | RSI > 70 + divergence | Sell signal |
-| Touch lower band | RSI < 30 + divergence | Buy signal |
-| Squeeze breakout up | RSI crossing above 50 | Confirmed long |
-| Squeeze breakout down | RSI crossing below 50 | Confirmed short |
-| Walking upper band | RSI 60-80 range | Stay long, trend is strong |
+| BB Signal             | RSI Confirmation      | Action                     |
+| --------------------- | --------------------- | -------------------------- |
+| Touch upper band      | RSI > 70 + divergence | Sell signal                |
+| Touch lower band      | RSI < 30 + divergence | Buy signal                 |
+| Squeeze breakout up   | RSI crossing above 50 | Confirmed long             |
+| Squeeze breakout down | RSI crossing below 50 | Confirmed short            |
+| Walking upper band    | RSI 60-80 range       | Stay long, trend is strong |
 
 ---
 
 ## Common Mistakes
 
-| Mistake | Reality |
-|---------|---------|
-| Selling every upper band touch | In trends, price walks the band |
-| Buying every lower band touch | In downtrends, price stays at lower band |
-| Ignoring squeeze context | Squeeze direction depends on prior trend |
-| Using wrong settings | Default 20,2 works for most cases |
-| Trading BB alone | Always combine with trend/momentum |
+| Mistake                        | Reality                                  |
+| ------------------------------ | ---------------------------------------- |
+| Selling every upper band touch | In trends, price walks the band          |
+| Buying every lower band touch  | In downtrends, price stays at lower band |
+| Ignoring squeeze context       | Squeeze direction depends on prior trend |
+| Using wrong settings           | Default 20,2 works for most cases        |
+| Trading BB alone               | Always combine with trend/momentum       |
 
 ---
 

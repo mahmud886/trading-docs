@@ -11,7 +11,8 @@ lastUpdated: "2026-06-09"
 Fair Value Gap (FVG) হলো **3টি Candle এর Price Imbalance** যেখানে Candle 1 এবং Candle 3 এর Wick Overlap করে না, Candle 2 এর Body দ্বারা তৈরি একটি Gap থাকে। এই Gap দেখায় Price একদিকে খুব দ্রুত চলে গেছে — Algorithm সম্ভবত এটা পুনরায় পূরণ করবে।
 
 <Callout type="info" title="ICT সংজ্ঞা">
-"Fair Value Gap হলো Candle 1 এর High ও Candle 3 এর Low এর মধ্যবর্তী Range (Bullish) অথবা Candle 1 এর Low ও Candle 3 এর High এর মধ্যবর্তী Range (Bearish)। এটি Price Delivery তে Imbalance প্রতিনিধিত্ব করে।" — ICT
+  "Fair Value Gap হলো Candle 1 এর High ও Candle 3 এর Low এর মধ্যবর্তী Range (Bullish) অথবা Candle 1 এর Low ও Candle 3 এর
+  High এর মধ্যবর্তী Range (Bearish)। এটি Price Delivery তে Imbalance প্রতিনিধিত্ব করে।" — ICT
 </Callout>
 
 ---
@@ -19,6 +20,7 @@ Fair Value Gap (FVG) হলো **3টি Candle এর Price Imbalance** যে�
 ## Bullish vs Bearish FVG
 
 ### Bullish FVG (BISI — Buy-Side Imbalance, Sell-Side Inefficiency)
+
 - Candle 1: যেকোনো Candle
 - Candle 2: শক্তিশালী Bullish Displacement Candle
 - Candle 3: যেকোনো Candle
@@ -26,6 +28,7 @@ Fair Value Gap (FVG) হলো **3টি Candle এর Price Imbalance** যে�
 - Price এই Gap এ নিচে ফিরে আসলে Buy Entry
 
 ### Bearish FVG (SIBI — Sell-Side Imbalance, Buy-Side Inefficiency)
+
 - Candle 1: যেকোনো Candle
 - Candle 2: শক্তিশালী Bearish Displacement Candle
 - Candle 3: যেকোনো Candle
@@ -44,6 +47,7 @@ Fair Value Gap (FVG) হলো **3টি Candle এর Price Imbalance** যে�
 - পুরো FVG Range এর বদলে CE ব্যবহার করুন Precision Entry এর জন্য
 
 ### CE কীভাবে Calculate করবেন
+
 ```
 Bullish FVG CE = (Candle 1 High + Candle 3 Low) / 2
 Bearish FVG CE = (Candle 1 Low + Candle 3 High) / 2
@@ -54,20 +58,26 @@ Bearish FVG CE = (Candle 1 Low + Candle 3 High) / 2
 ## ICT তে FVG এর প্রকারভেদ
 
 ### ১. Standard FVG
+
 সাধারণ 3-Candle Imbalance — সবচেয়ে Common, Entry এর জন্য ব্যবহৃত
 
 ### ২. Implied FVG (IFVG)
+
 Wick সামান্য Overlap করলেও Body Overlap করে না — তবুও FVG হিসেবে গণ্য কারণ Body Range Inefficient ছিল
 
 ### ৩. Inversion FVG
+
 আগে Bearish FVG সম্পূর্ণ Fill হয়ে এখন **Support** হিসেবে কাজ করে (বা উল্টোটা)। FVG তার ভূমিকা "Invert" করে:
+
 - Bearish FVG Filled → Bullish Support হয়ে যায়
 - Bullish FVG Filled → Bearish Resistance হয়ে যায়
 
 ### ৪. Volume Imbalance (VI)
+
 একটি Candle এর Close ও পরবর্তী Candle এর Open এর মধ্যে Gap — FVG থেকে ভিন্ন কিন্তু সম্পর্কিত Concept
 
 ### ৫. Opening Range Gap
+
 আগের দিনের Close ও বর্তমান দিনের Open এর মধ্যে Gap — Institutional Gap
 
 ---
@@ -75,6 +85,7 @@ Wick সামান্য Overlap করলেও Body Overlap করে না
 ## FVG Trading Rules
 
 ### Entry Rules
+
 1. **HTF Direction** — শুধু Daily/4H Bias এর সাথে মেলে এমন FVG Trade করুন
 2. **Premium/Discount** — Discount Zone এ Bullish FVG, Premium Zone এ Bearish FVG
 3. **Kill Zone Timing** — Kill Zone এ তৈরি FVG সর্বোচ্চ Probability
@@ -82,6 +93,7 @@ Wick সামান্য Overlap করলেও Body Overlap করে না
 5. **CE Entry** — সেরা Risk:Reward এর জন্য FVG এর 50% (CE) এ Entry করুন
 
 ### Invalidation Rules
+
 - Price পুরোপুরি FVG ভেদ করে Body Close করলে FVG **Invalid**
 - Price CE ভেদ করে Respect না করলে FVG **Weakened**
 - Higher Timeframe FVG Lower Timeframe FVG কে Override করে
@@ -92,6 +104,7 @@ Wick সামান্য Overlap করলেও Body Overlap করে না
 ## বাস্তব Trading উদাহরণ
 
 ### উদাহরণ ১: EUR/USD — Bullish FVG Entry
+
 - **HTF Bias:** Daily Bullish — Price Discount এ, BSL Target 1.0950
 - **Setup:** 15M Displacement উপরে, Bullish FVG (1.0885 - 1.0895)
 - **CE Level:** 1.0890
@@ -102,6 +115,7 @@ Wick সামান্য Overlap করলেও Body Overlap করে না
 - **সময় (BD):** দুপুর ২:৩০ (London Kill Zone)
 
 ### উদাহরণ ২: Gold (XAU/USD) — Bearish FVG
+
 - **HTF Bias:** 4H Bearish — Price Premium এ 2,045 এ Rally এর পর
 - **Setup:** 5M NY AM Session, MSS এর পর Bearish FVG (2,042-2,038)
 - **CE Level:** 2,040
@@ -112,6 +126,7 @@ Wick সামান্য Overlap করলেও Body Overlap করে না
 - **সময় (BD):** রাত ৮:০০ (NY AM Kill Zone)
 
 ### উদাহরণ ৩: NAS100 — Inversion FVG
+
 - **Setup:** 17,850-17,820 তে আগের Bearish FVG সম্পূর্ণ Filled হয়
 - **Price ফিরে আসে** এই একই Zone এ এবং এখন Support হিসেবে কাজ করে
 - **Entry:** পুরনো Bearish FVG এর Top এ Buy (17,850)
@@ -122,7 +137,7 @@ Wick সামান্য Overlap করলেও Body Overlap করে না
 ## Multi-Timeframe FVG Analysis
 
 | Timeframe          | FVG ভূমিকা                                   | ব্যবহার                         |
-|--------------------|----------------------------------------------|---------------------------------|
+| ------------------ | -------------------------------------------- | ------------------------------- |
 | **Monthly/Weekly** | Major Imbalance — Price এগুলো Fill করতে যাবে | Directional Bias, Swing Target  |
 | **Daily**          | সপ্তাহের জন্য মূল Level                      | Intraday Bias, Area of Interest |
 | **4H**             | Refined Entry Zone                           | Swing Trade Entry               |
@@ -130,6 +145,7 @@ Wick সামান্য Overlap করলেও Body Overlap করে না
 | **1M**             | Sniper Entry                                 | CE তে Exact Entry               |
 
 ### Rule: HTF FVG > LTF FVG
+
 Daily FVG এর মধ্যে 15M FVG = খুব বেশি Probability। Daily FVG এর বিপরীতে 15M FVG = কম Probability।
 
 ---
@@ -155,7 +171,7 @@ Daily FVG এর মধ্যে 15M FVG = খুব বেশি Probability।
 ## সারসংক্ষেপ
 
 | বিষয়            | বিবরণ                                            |
-|------------------|--------------------------------------------------|
+| ---------------- | ------------------------------------------------ |
 | **সংজ্ঞা**       | 3-Candle Imbalance, C1 ও C3 Wick Overlap নেই     |
 | **প্রকার**       | Standard, Implied, Inversion, Volume Imbalance   |
 | **মূল Level**    | Consequent Encroachment (FVG এর 50%)             |

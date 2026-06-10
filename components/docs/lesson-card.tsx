@@ -10,14 +10,10 @@ interface LessonCardProps {
 }
 
 const levelColors = {
-  beginner:
-    "bg-accent-green/10 text-accent-green border-accent-green/20",
-  intermediate:
-    "bg-accent-blue/10 text-accent-blue border-accent-blue/20",
-  advanced:
-    "bg-accent-orange/10 text-accent-orange border-accent-orange/20",
-  expert:
-    "bg-accent-purple/10 text-accent-purple border-accent-purple/20",
+  beginner: "bg-accent-green/10 text-accent-green border-accent-green/20",
+  intermediate: "bg-accent-blue/10 text-accent-blue border-accent-blue/20",
+  advanced: "bg-accent-orange/10 text-accent-orange border-accent-orange/20",
+  expert: "bg-accent-purple/10 text-accent-purple border-accent-purple/20",
 };
 
 export function LessonCard({ meta, lang, category, levelLabel }: LessonCardProps) {
@@ -31,13 +27,12 @@ export function LessonCard({ meta, lang, category, levelLabel }: LessonCardProps
           <h3 className="font-medium capitalize text-card-foreground transition-colors group-hover:text-accent-green">
             {meta.title}
           </h3>
-          {meta.description && (
-            <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
-              {meta.description}
-            </p>
-          )}
+          {meta.description && <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{meta.description}</p>}
         </div>
-        <BookOpen size={16} className="mt-1 shrink-0 text-muted-foreground/50 transition-colors group-hover:text-accent-green/50" />
+        <BookOpen
+          size={16}
+          className="mt-1 shrink-0 text-muted-foreground/50 transition-colors group-hover:text-accent-green/50"
+        />
       </div>
       <div className="mt-4 flex items-center gap-3">
         <span

@@ -11,7 +11,8 @@ lastUpdated: "2026-06-10"
 Testing Professional Trader-কে Gambler থেকে আলাদা করে। Real Money Risk করার আগে আপনাকে **প্রমাণ করতে হবে যে Strategy কাজ করে** — Historical Data (Backtesting) ও Real-time Simulation (Forward Testing/Demo)-এর মাধ্যমে।
 
 <Callout type="warning" title="কঠিন সত্য">
-কমপক্ষে ১০০+ Historical Trade-এ Test না করা Strategy-র কোনো প্রমাণিত Edge নেই। এটি Live Trade করা Gambling, Trading নয়। টাকা দেওয়ার আগে পরিশ্রম করুন।
+  কমপক্ষে ১০০+ Historical Trade-এ Test না করা Strategy-র কোনো প্রমাণিত Edge নেই। এটি Live Trade করা Gambling, Trading
+  নয়। টাকা দেওয়ার আগে পরিশ্রম করুন।
 </Callout>
 
 ---
@@ -19,9 +20,11 @@ Testing Professional Trader-কে Gambler থেকে আলাদা কর�
 ## Backtesting
 
 ### Backtesting কী?
+
 **Historical Price Data**-এর বিপরীতে আপনার Strategy Test করা — এটি অতীতে কেমন Perform করত তা দেখতে।
 
 ### Manual Backtesting Process:
+
 ```
 ধাপ ১: সুনির্দিষ্ট Rule সংজ্ঞায়িত (Entry, Exit, SL, TP)
 ধাপ ২: Timeframe ও Market নির্বাচন
@@ -34,6 +37,7 @@ Testing Professional Trader-কে Gambler থেকে আলাদা কর�
 ```
 
 ### ন্যূনতম Sample Size:
+
 - **৫০ Trade:** প্রাথমিক মূল্যায়ন
 - **১০০ Trade:** যুক্তিসঙ্গত আত্মবিশ্বাস
 - **২০০+ Trade:** Statistical Significance
@@ -67,19 +71,21 @@ Max Drawdown: বৃহত্তম Peak-to-trough পতন
 ## Forward Testing (Demo Trading)
 
 ### Forward Testing কী?
+
 Backtest Result Validate করতে **Real-time Market Condition-এ Demo Account-এ** Strategy Trade করা।
 
 ### Backtesting-এর পর কেন Forward Test?
 
-| Backtesting | Forward Testing |
-|-------------|-----------------|
-| Hindsight Bias সম্ভব | Real-time সিদ্ধান্ত |
+| Backtesting                  | Forward Testing               |
+| ---------------------------- | ----------------------------- |
+| Hindsight Bias সম্ভব         | Real-time সিদ্ধান্ত           |
 | Perfect Entry (কী হয় দেখেন) | ভবিষ্যৎ জ্ঞান ছাড়া সিদ্ধান্ত |
-| কোনো Emotional উপাদান নেই | Emotional Execution Test করে |
-| Slippage/Spread সমস্যা নেই | বাস্তব Execution Condition |
-| অতীত Market Condition | বর্তমান Market Condition |
+| কোনো Emotional উপাদান নেই    | Emotional Execution Test করে  |
+| Slippage/Spread সমস্যা নেই   | বাস্তব Execution Condition    |
+| অতীত Market Condition        | বর্তমান Market Condition      |
 
 ### Forward Testing নিয়ম:
+
 1. **ন্যূনতম সময়কাল:** ৩-৬ মাস
 2. **ন্যূনতম Trade:** ৫০-১০০
 3. **Real হিসেবে Treat করুন** — একই আবেগ, একই শৃঙ্খলা
@@ -90,13 +96,13 @@ Backtest Result Validate করতে **Real-time Market Condition-এ Demo Acco
 
 ## Backtesting ফাঁদ
 
-| ফাঁদ | বর্ণনা | সমাধান |
-|------|---------|--------|
-| **Curve Fitting** | অতীত Data-র জন্য অতিরিক্ত Optimize | Rule সহজ রাখুন, একাধিক Market-এ Test |
-| **Hindsight Bias** | ভবিষ্যৎ Candle জানা সিদ্ধান্ত প্রভাবিত করে | ভবিষ্যৎ Candle ঢাকুন, সামনে এগিয়ে যান |
-| **ছোট Sample** | Significance-এর জন্য পর্যাপ্ত Trade নেই | ন্যূনতম ১০০ Trade |
-| **Cost উপেক্ষা** | Spread/Commission অন্তর্ভুক্ত নয় | সবসময় বাস্তবসম্মত খরচ অন্তর্ভুক্ত করুন |
-| **Cherry Picking** | শুধু অনুকূল Setup গণনা | প্রতিটি Setup Record করুন, Win বা Lose |
+| ফাঁদ               | বর্ণনা                                     | সমাধান                                  |
+| ------------------ | ------------------------------------------ | --------------------------------------- |
+| **Curve Fitting**  | অতীত Data-র জন্য অতিরিক্ত Optimize         | Rule সহজ রাখুন, একাধিক Market-এ Test    |
+| **Hindsight Bias** | ভবিষ্যৎ Candle জানা সিদ্ধান্ত প্রভাবিত করে | ভবিষ্যৎ Candle ঢাকুন, সামনে এগিয়ে যান  |
+| **ছোট Sample**     | Significance-এর জন্য পর্যাপ্ত Trade নেই    | ন্যূনতম ১০০ Trade                       |
+| **Cost উপেক্ষা**   | Spread/Commission অন্তর্ভুক্ত নয়          | সবসময় বাস্তবসম্মত খরচ অন্তর্ভুক্ত করুন |
+| **Cherry Picking** | শুধু অনুকূল Setup গণনা                     | প্রতিটি Setup Record করুন, Win বা Lose  |
 
 ---
 

@@ -11,7 +11,8 @@ lastUpdated: "2026-06-10"
 Testing separates professional traders from gamblers. Before risking real money, you must **prove your strategy works** through historical data (backtesting) and real-time simulation (forward testing/demo).
 
 <Callout type="warning" title="The Hard Truth">
-A strategy that hasn't been tested on at least 100+ historical trades has NO proven edge. Trading it live is gambling, not trading. Put in the work before you put in the money.
+  A strategy that hasn't been tested on at least 100+ historical trades has NO proven edge. Trading it live is gambling,
+  not trading. Put in the work before you put in the money.
 </Callout>
 
 ---
@@ -19,6 +20,7 @@ A strategy that hasn't been tested on at least 100+ historical trades has NO pro
 ## Backtesting
 
 ### What is Backtesting?
+
 Testing your strategy against **historical price data** to see how it would have performed in the past.
 
 ### Manual Backtesting Process:
@@ -36,19 +38,20 @@ Step 8: Calculate statistics (win rate, avg R, expectancy)
 
 ### What to Record:
 
-| Field | Purpose |
-|-------|---------|
-| Trade # | Sequential tracking |
-| Date | Time-based analysis |
-| Pair | Market performance |
-| Direction | Long/short bias |
-| Entry | Entry price |
-| Stop Loss | Risk calculation |
-| Take Profit | Target calculation |
-| Result (R) | Performance in R-multiples |
-| Notes | Pattern observations |
+| Field       | Purpose                    |
+| ----------- | -------------------------- |
+| Trade #     | Sequential tracking        |
+| Date        | Time-based analysis        |
+| Pair        | Market performance         |
+| Direction   | Long/short bias            |
+| Entry       | Entry price                |
+| Stop Loss   | Risk calculation           |
+| Take Profit | Target calculation         |
+| Result (R)  | Performance in R-multiples |
+| Notes       | Pattern observations       |
 
 ### Minimum Sample Size:
+
 - **50 trades:** Preliminary assessment
 - **100 trades:** Reasonable confidence
 - **200+ trades:** Statistical significance
@@ -83,19 +86,21 @@ MINIMUM VIABLE STRATEGY:
 ## Forward Testing (Demo Trading)
 
 ### What is Forward Testing?
+
 Trading your strategy on a **demo account in real-time** market conditions to validate backtest results.
 
 ### Why Forward Test After Backtesting?
 
-| Backtesting | Forward Testing |
-|-------------|-----------------|
-| Hindsight bias possible | Real-time decisions |
+| Backtesting                            | Forward Testing                              |
+| -------------------------------------- | -------------------------------------------- |
+| Hindsight bias possible                | Real-time decisions                          |
 | Perfect entries (you see what happens) | Must make decisions without future knowledge |
-| No emotional component | Tests emotional execution |
-| No slippage/spread issues | Real execution conditions |
-| Past market conditions | Current market conditions |
+| No emotional component                 | Tests emotional execution                    |
+| No slippage/spread issues              | Real execution conditions                    |
+| Past market conditions                 | Current market conditions                    |
 
 ### Forward Testing Rules:
+
 1. **Minimum duration:** 3-6 months
 2. **Minimum trades:** 50-100
 3. **Treat it as real** — same emotions, same discipline
@@ -106,14 +111,14 @@ Trading your strategy on a **demo account in real-time** market conditions to va
 
 ## Backtesting Pitfalls
 
-| Pitfall | Description | Solution |
-|---------|-------------|----------|
-| **Curve Fitting** | Over-optimizing for past data | Keep rules simple, test on multiple markets |
-| **Hindsight Bias** | Knowing future candles influences decisions | Cover future candles, move forward |
-| **Survivorship Bias** | Only testing on pairs that exist today | Include delisted assets |
-| **Small Sample** | Not enough trades for significance | Minimum 100 trades |
-| **Ignoring Costs** | Not including spread/commission | Always include realistic costs |
-| **Cherry Picking** | Only counting favorable setups | Record EVERY setup, win or lose |
+| Pitfall               | Description                                 | Solution                                    |
+| --------------------- | ------------------------------------------- | ------------------------------------------- |
+| **Curve Fitting**     | Over-optimizing for past data               | Keep rules simple, test on multiple markets |
+| **Hindsight Bias**    | Knowing future candles influences decisions | Cover future candles, move forward          |
+| **Survivorship Bias** | Only testing on pairs that exist today      | Include delisted assets                     |
+| **Small Sample**      | Not enough trades for significance          | Minimum 100 trades                          |
+| **Ignoring Costs**    | Not including spread/commission             | Always include realistic costs              |
+| **Cherry Picking**    | Only counting favorable setups              | Record EVERY setup, win or lose             |
 
 ---
 

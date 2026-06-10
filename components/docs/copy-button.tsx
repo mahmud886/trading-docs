@@ -7,9 +7,7 @@ export function CopyButton() {
   const [copied, setCopied] = useState(false);
 
   async function handleCopy(e: React.MouseEvent) {
-    const pre = (e.currentTarget as HTMLElement)
-      .closest(".group")
-      ?.querySelector("pre");
+    const pre = (e.currentTarget as HTMLElement).closest(".group")?.querySelector("pre");
     if (!pre) return;
     await navigator.clipboard.writeText(pre.textContent ?? "");
     setCopied(true);
@@ -26,4 +24,3 @@ export function CopyButton() {
     </button>
   );
 }
-

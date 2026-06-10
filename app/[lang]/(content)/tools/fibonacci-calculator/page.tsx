@@ -22,18 +22,18 @@ export default function FibonacciCalculator() {
       retracement: {
         level236: lowPrice + range * 0.236,
         level382: lowPrice + range * 0.382,
-        level500: lowPrice + range * 0.500,
+        level500: lowPrice + range * 0.5,
         level618: lowPrice + range * 0.618,
         level786: lowPrice + range * 0.786,
       },
       extension: {
         level127: highPrice + range * 0.127,
         level161: highPrice + range * 0.161,
-        level200: highPrice + range * 0.200,
+        level200: highPrice + range * 0.2,
         level261: highPrice + range * 0.261,
         level423: highPrice + range * 0.423,
         level618: highPrice + range * 0.618,
-      }
+      },
     };
   };
 
@@ -59,9 +59,7 @@ export default function FibonacciCalculator() {
           {/* Price Inputs */}
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                High Price (Swing High)
-              </label>
+              <label className="block text-sm font-medium text-foreground mb-2">High Price (Swing High)</label>
               <input
                 type="number"
                 value={highPrice}
@@ -72,9 +70,7 @@ export default function FibonacciCalculator() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                Low Price (Swing Low)
-              </label>
+              <label className="block text-sm font-medium text-foreground mb-2">Low Price (Swing Low)</label>
               <input
                 type="number"
                 value={lowPrice}
@@ -214,4 +210,3 @@ export default function FibonacciCalculator() {
     </div>
   );
 }
-

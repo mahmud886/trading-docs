@@ -1,10 +1,10 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from "fs";
+import { join } from "path";
 
-const C = join(process.cwd(), 'content');
+const C = join(process.cwd(), "content");
 
 const writeEN = (slug, meta, content) => {
-  const path = join(C, 'en', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "en", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -13,12 +13,12 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ EN: ${slug}`);
 };
 
 const writeBN = (slug, meta, content) => {
-  const path = join(C, 'bn', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "bn", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -27,17 +27,21 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ BN: ${slug}`);
 };
 
 // CISD Framework
-writeEN('38-cisd-framework', {
-  title: 'CISD Framework',
-  description: 'Master the CISD model — Consolidation, Inducement, Stop-loss hunt, Distribution. Learn the four-phase institutional trading cycle.',
-  order: 38,
-  level: 'advanced'
-}, `# CISD Framework
+writeEN(
+  "38-cisd-framework",
+  {
+    title: "CISD Framework",
+    description:
+      "Master the CISD model — Consolidation, Inducement, Stop-loss hunt, Distribution. Learn the four-phase institutional trading cycle.",
+    order: 38,
+    level: "advanced",
+  },
+  `# CISD Framework
 
 ### Definition
 
@@ -280,14 +284,19 @@ Entry Checklist:
 5. **Distribution is where you profit** — This is the only phase to trade
 
 **CISD = The institutional blueprint for every major move.**
-`);
+`,
+);
 
-writeBN('38-cisd-framework', {
-  title: 'CISD Framework',
-  description: 'CISD Model Master করুন — Consolidation, Inducement, Stop-loss hunt, Distribution। চার-Phase Institutional Trading Cycle শিখুন।',
-  order: 38,
-  level: 'advanced'
-}, `# CISD Framework
+writeBN(
+  "38-cisd-framework",
+  {
+    title: "CISD Framework",
+    description:
+      "CISD Model Master করুন — Consolidation, Inducement, Stop-loss hunt, Distribution। চার-Phase Institutional Trading Cycle শিখুন।",
+    order: 38,
+    level: "advanced",
+  },
+  `# CISD Framework
 
 ### Definition
 
@@ -482,8 +491,8 @@ Entry Checklist:
 - প্রকৃত: 63 Pip Profit, 14 Pip Risk = 1:4.5 RR
 
 **CISD = প্রতিটি Major Move এর জন্য Institutional Blueprint।**
-`);
+`,
+);
 
-console.log('\n✅ CISD Framework (Topic 38) created successfully!\n');
-console.log('📚 Course now has 38 complete topics with CISD added!\n');
-
+console.log("\n✅ CISD Framework (Topic 38) created successfully!\n");
+console.log("📚 Course now has 38 complete topics with CISD added!\n");

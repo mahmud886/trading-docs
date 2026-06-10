@@ -11,4 +11,3 @@ export function slugify(str: string): string {
     .replace(/[^\w\s-]/g, "")
     .replace(/\s+/g, "-");
 }
-

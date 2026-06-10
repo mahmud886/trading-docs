@@ -11,19 +11,20 @@ lastUpdated: "2026-06-10"
 A Mitigation Block is an **Order Block that has already been tested/touched by price** but didn't fully break. When price returns to an OB and reacts (partially fills), the OB becomes "mitigated" — its remaining power is reduced.
 
 <Callout type="warning" title="Mitigated = Weaker">
-Fresh, unmitigated Order Blocks are STRONGEST. Each time price returns and reacts, the OB loses significance. After 2-3 mitigations, the level is likely exhausted.
+  Fresh, unmitigated Order Blocks are STRONGEST. Each time price returns and reacts, the OB loses significance. After
+  2-3 mitigations, the level is likely exhausted.
 </Callout>
 
 ---
 
 ## Fresh vs. Mitigated
 
-| Status | Description | Trade Quality |
-|--------|------------|---------------|
-| **Fresh (Unmitigated)** | Never been retested | Highest quality |
-| **1x Mitigated** | Tested once, held | Still tradeable |
-| **2x Mitigated** | Tested twice | Weak — caution |
-| **3x+ Mitigated** | Tested 3+ times | Avoid — likely to break |
+| Status                  | Description         | Trade Quality           |
+| ----------------------- | ------------------- | ----------------------- |
+| **Fresh (Unmitigated)** | Never been retested | Highest quality         |
+| **1x Mitigated**        | Tested once, held   | Still tradeable         |
+| **2x Mitigated**        | Tested twice        | Weak — caution          |
+| **3x+ Mitigated**       | Tested 3+ times     | Avoid — likely to break |
 
 ---
 
@@ -45,11 +46,11 @@ Rule: Trade the FIRST touch. Avoid 3rd+ touch.
 
 ## Mitigation vs. Breaker
 
-| Feature | Mitigation Block | Breaker Block |
-|---------|-----------------|---------------|
-| OB status | Tested but holding | Completely broken |
-| Direction | Same as original | Flipped (opposite) |
-| Trade | Same direction (weakening) | New direction |
+| Feature       | Mitigation Block            | Breaker Block             |
+| ------------- | --------------------------- | ------------------------- |
+| OB status     | Tested but holding          | Completely broken         |
+| Direction     | Same as original            | Flipped (opposite)        |
+| Trade         | Same direction (weakening)  | New direction             |
 | What happened | Price touched but respected | Price violated completely |
 
 ---

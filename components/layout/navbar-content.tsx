@@ -25,9 +25,7 @@ export function NavbarContent({ links }: NavbarContentProps) {
             key={link.href}
             href={link.href}
             className={`relative rounded-md px-2 py-2 text-[10px] leading-tight transition-all xl:rounded-lg xl:px-2.5 xl:py-2 xl:text-[14px] ${
-              active
-                ? "font-medium text-accent-green"
-                : "text-muted-foreground hover:text-foreground"
+              active ? "font-medium text-accent-green" : "text-muted-foreground hover:text-foreground"
             }`}
           >
             {active && (

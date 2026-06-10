@@ -41,7 +41,7 @@ export default function DrawdownCalculatorPage() {
     return {
       median: maxDrawdowns[Math.floor(simulations * 0.5)],
       percentile75: maxDrawdowns[Math.floor(simulations * 0.75)],
-      percentile90: maxDrawdowns[Math.floor(simulations * 0.90)],
+      percentile90: maxDrawdowns[Math.floor(simulations * 0.9)],
       percentile95: maxDrawdowns[Math.floor(simulations * 0.95)],
       percentile99: maxDrawdowns[Math.floor(simulations * 0.99)],
       worst: maxDrawdowns[simulations - 1],
@@ -56,7 +56,10 @@ export default function DrawdownCalculatorPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-10">
-      <Link href={`/${lang}/tools`} className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+      <Link
+        href={`/${lang}/tools`}
+        className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+      >
         <ArrowLeft size={16} /> Back to Tools
       </Link>
 
@@ -66,7 +69,8 @@ export default function DrawdownCalculatorPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-orange/20 bg-accent-orange/5 p-4 text-sm text-muted-foreground">
-        🏦 Prop firms typically allow 5-10% max drawdown. This tool helps you determine if your strategy parameters can stay within those limits. Run 1000+ simulations for reliable results.
+        🏦 Prop firms typically allow 5-10% max drawdown. This tool helps you determine if your strategy parameters can
+        stay within those limits. Run 1000+ simulations for reliable results.
       </div>
 
       {/* Inputs */}
@@ -120,7 +124,9 @@ export default function DrawdownCalculatorPage() {
       {/* Results */}
       {results && (
         <div className="mt-8 rounded-xl border border-border bg-card p-6">
-          <h3 className="text-lg font-semibold text-foreground">Simulation Results ({simulations.toLocaleString()} runs)</h3>
+          <h3 className="text-lg font-semibold text-foreground">
+            Simulation Results ({simulations.toLocaleString()} runs)
+          </h3>
           <div className="mt-4 grid gap-4 sm:grid-cols-3">
             <div className="rounded-lg border border-border p-4">
               <div className="text-xs text-muted-foreground">Median Max DD</div>
@@ -148,12 +154,11 @@ export default function DrawdownCalculatorPage() {
             </div>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Interpretation: With {winRate}% win rate and {riskPerTrade}% risk per trade over {totalTrades} trades,
-            there is a 5% chance your max drawdown will exceed {results.percentile95.toFixed(1)}%.
+            Interpretation: With {winRate}% win rate and {riskPerTrade}% risk per trade over {totalTrades} trades, there
+            is a 5% chance your max drawdown will exceed {results.percentile95.toFixed(1)}%.
           </p>
         </div>
       )}
     </div>
   );
 }
-

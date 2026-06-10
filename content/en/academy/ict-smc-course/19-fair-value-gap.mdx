@@ -6,7 +6,6 @@ level: intermediate
 lastUpdated: "2026-06-09"
 ---
 
-
 ### Definition
 
 A Fair Value Gap (FVG) is a **3-candle price imbalance** where the wicks of Candle 1 and Candle 3 do NOT overlap, leaving a gap created by Candle 2's displacement. This gap represents inefficient price delivery — an area where price moved too aggressively in one direction, and the algorithm will likely return to "fill" or "rebalance" this imbalance.
@@ -27,6 +26,7 @@ A Fair Value Gap (FVG) is a **3-candle price imbalance** where the wicks of Cand
 ### How It Works
 
 **Bullish FVG Formation:**
+
 1. Candle 1: Any candle (note its HIGH)
 2. Candle 2: Strong BULLISH displacement candle (creates the gap)
 3. Candle 3: Any candle (note its LOW)
@@ -34,6 +34,7 @@ A Fair Value Gap (FVG) is a **3-candle price imbalance** where the wicks of Cand
 5. Price returns to this gap = Buy opportunity
 
 **Bearish FVG Formation:**
+
 1. Candle 1: Any candle (note its LOW)
 2. Candle 2: Strong BEARISH displacement candle
 3. Candle 3: Any candle (note its HIGH)
@@ -50,12 +51,14 @@ A Fair Value Gap (FVG) is a **3-candle price imbalance** where the wicks of Cand
 ### Institutional Logic
 
 **Why FVGs exist:**
+
 - Institutional displacement is SO aggressive that price cannot deliver efficiently
 - The algorithm MUST return to fill these gaps for efficient price delivery
 - Unfilled FVGs act as magnets — price is drawn to them
 - Filled FVGs lose their magnetic pull (already rebalanced)
 
 **FVG as entry vehicle:**
+
 - Smart Money creates FVGs during displacement
 - They EXPECT price to return to the FVG before continuing
 - The FVG is where they place their limit orders for re-entry
@@ -64,6 +67,7 @@ A Fair Value Gap (FVG) is a **3-candle price imbalance** where the wicks of Cand
 ### Trading Application
 
 **Trading Bullish FVG:**
+
 1. Identify displacement UP that creates a gap (C1 High < C3 Low)
 2. Mark the FVG zone (C1 High to C3 Low)
 3. Calculate CE: (C1 High + C3 Low) / 2
@@ -72,6 +76,7 @@ A Fair Value Gap (FVG) is a **3-candle price imbalance** where the wicks of Cand
 6. Target: Next BSL above
 
 **FVG Quality Assessment:**
+
 - FVG created during Kill Zone = High quality
 - FVG that creates BOS/CHOCH = Institutional
 - FVG within OTE zone of a larger move = Best context
@@ -79,6 +84,7 @@ A Fair Value Gap (FVG) is a **3-candle price imbalance** where the wicks of Cand
 - Multiple FVGs stacked = Price likely fills the deepest one
 
 **Inversion FVG:**
+
 - When a Bullish FVG gets fully traded through (becomes resistance) = Bearish signal
 - When a Bearish FVG gets fully traded through (becomes support) = Bullish signal
 - Inverted FVGs provide re-entry opportunities in the NEW direction

@@ -1,7 +1,7 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from "fs";
+import { join } from "path";
 
-const contentDir = join(process.cwd(), 'content');
+const contentDir = join(process.cwd(), "content");
 
 function writeMdx(lang, category, slug, frontmatter, content) {
   const fm = `---
@@ -12,7 +12,7 @@ order: ${frontmatter.order}
 lastUpdated: "2026-06-10"
 ---
 `;
-  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, 'utf-8');
+  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, "utf-8");
   console.log(`✅ ${lang}/${category}/${slug}.mdx`);
 }
 
@@ -23,12 +23,18 @@ lastUpdated: "2026-06-10"
 // ============================
 // 1. OPTIONS TRADING BASICS — EN
 // ============================
-writeMdx('en', 'academy', 'options-trading-basics', {
-  title: "Options Trading Basics — Complete Guide",
-  description: "Learn options trading fundamentals: calls, puts, strike prices, expiration, premium, Greeks, and basic options strategies for beginners.",
-  level: "intermediate",
-  order: 24
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "options-trading-basics",
+  {
+    title: "Options Trading Basics — Complete Guide",
+    description:
+      "Learn options trading fundamentals: calls, puts, strike prices, expiration, premium, Greeks, and basic options strategies for beginners.",
+    level: "intermediate",
+    order: 24,
+  },
+  `
 ## What Are Options?
 
 An option is a **contract giving you the RIGHT (but not obligation)** to buy or sell an asset at a specific price within a specific time period. You pay a premium for this right.
@@ -172,17 +178,24 @@ Time Value: $8 - $5 = $3 (time until expiry)
 - [Volatility Analysis](/en/academy/volatility-analysis) — Vega and volatility
 - [Technical Indicators](/en/academy/technical-indicators) — Time entries
 - [Trading Plan](/en/academy/trading-plan) — Options in your plan
-`);
+`,
+);
 
 // ============================
 // 1. OPTIONS TRADING BASICS — BN
 // ============================
-writeMdx('bn', 'academy', 'options-trading-basics', {
-  title: "Options Trading Basics — সম্পূর্ণ গাইড",
-  description: "Options Trading-এর Fundamental শিখুন: Call, Put, Strike Price, Expiration, Premium, Greek এবং Beginner-দের জন্য মৌলিক Options Strategy।",
-  level: "intermediate",
-  order: 24
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "options-trading-basics",
+  {
+    title: "Options Trading Basics — সম্পূর্ণ গাইড",
+    description:
+      "Options Trading-এর Fundamental শিখুন: Call, Put, Strike Price, Expiration, Premium, Greek এবং Beginner-দের জন্য মৌলিক Options Strategy।",
+    level: "intermediate",
+    order: 24,
+  },
+  `
 ## Options কী?
 
 Option হলো একটি **Contract যা আপনাকে একটি নির্দিষ্ট সময়ের মধ্যে নির্দিষ্ট Price-এ কোনো Asset কেনা বা বেচার অধিকার (বাধ্যবাধকতা নয়)** দেয়। এই অধিকারের জন্য আপনি Premium প্রদান করেন।
@@ -317,17 +330,24 @@ Time Value: $8 - $5 = $3 (Expiry পর্যন্ত সময়)
 - [Volatility Analysis](/bn/academy/volatility-analysis) — Vega ও Volatility
 - [Technical Indicator](/bn/academy/technical-indicators) — Entry Timing
 - [Trading Plan](/bn/academy/trading-plan) — Plan-এ Options
-`);
+`,
+);
 
 // ============================
 // 2. HARMONIC PATTERNS — EN
 // ============================
-writeMdx('en', 'academy', 'harmonic-patterns', {
-  title: "Harmonic Patterns Trading — Complete Guide",
-  description: "Master harmonic pattern trading: Gartley, Butterfly, Bat, Crab, and Cypher patterns. Learn precise Fibonacci ratios, entry rules, and pattern identification.",
-  level: "intermediate",
-  order: 25
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "harmonic-patterns",
+  {
+    title: "Harmonic Patterns Trading — Complete Guide",
+    description:
+      "Master harmonic pattern trading: Gartley, Butterfly, Bat, Crab, and Cypher patterns. Learn precise Fibonacci ratios, entry rules, and pattern identification.",
+    level: "intermediate",
+    order: 25,
+  },
+  `
 ## What Are Harmonic Patterns?
 
 Harmonic patterns are **advanced chart patterns** defined by precise Fibonacci ratios between price swings. They identify potential reversal zones (PRZ) with mathematical precision, offering high-probability trading setups.
@@ -453,17 +473,24 @@ Harmonic patterns have a ~60-70% success rate when properly identified. Always u
 - [Support & Resistance](/en/academy/support-resistance-advanced) — PRZ confluence
 - [Technical Indicators](/en/academy/technical-indicators) — Confirm patterns
 - [Risk Management](/en/academy/risk-management) — Pattern trade risk
-`);
+`,
+);
 
 // ============================
 // 2. HARMONIC PATTERNS — BN
 // ============================
-writeMdx('bn', 'academy', 'harmonic-patterns', {
-  title: "Harmonic Pattern Trading — সম্পূর্ণ গাইড",
-  description: "Harmonic Pattern Trading আয়ত্ত করুন: Gartley, Butterfly, Bat, Crab এবং Cypher Pattern। সুনির্দিষ্ট Fibonacci Ratio, Entry Rule ও Pattern চিহ্নিতকরণ শিখুন।",
-  level: "intermediate",
-  order: 25
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "harmonic-patterns",
+  {
+    title: "Harmonic Pattern Trading — সম্পূর্ণ গাইড",
+    description:
+      "Harmonic Pattern Trading আয়ত্ত করুন: Gartley, Butterfly, Bat, Crab এবং Cypher Pattern। সুনির্দিষ্ট Fibonacci Ratio, Entry Rule ও Pattern চিহ্নিতকরণ শিখুন।",
+    level: "intermediate",
+    order: 25,
+  },
+  `
 ## Harmonic Pattern কী?
 
 Harmonic Pattern হলো **Advanced Chart Pattern** যা Price Swing-এর মধ্যে সুনির্দিষ্ট Fibonacci Ratio দ্বারা সংজ্ঞায়িত। এগুলো গাণিতিক নির্ভুলতায় সম্ভাব্য Reversal Zone (PRZ) চিহ্নিত করে, High-probability Trading Setup প্রদান করে।
@@ -571,17 +598,24 @@ Harmonic Pattern Fibonacci Mathematics-এর ভিত্তিতে সুন
 - [Support ও Resistance](/bn/academy/support-resistance-advanced) — PRZ Confluence
 - [Technical Indicator](/bn/academy/technical-indicators) — Pattern Confirm
 - [Risk Management](/bn/academy/risk-management) — Pattern Trade Risk
-`);
+`,
+);
 
 // ============================
 // 3. BOLLINGER BANDS — EN
 // ============================
-writeMdx('en', 'academy', 'bollinger-bands-trading', {
-  title: "Bollinger Bands Trading — Complete Guide",
-  description: "Master Bollinger Bands for trading: band squeeze breakouts, mean reversion, walking the bands, and combining Bollinger Bands with other indicators.",
-  level: "intermediate",
-  order: 26
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "bollinger-bands-trading",
+  {
+    title: "Bollinger Bands Trading — Complete Guide",
+    description:
+      "Master Bollinger Bands for trading: band squeeze breakouts, mean reversion, walking the bands, and combining Bollinger Bands with other indicators.",
+    level: "intermediate",
+    order: 26,
+  },
+  `
 ## What Are Bollinger Bands?
 
 Bollinger Bands are a **volatility indicator** consisting of three lines: a middle band (SMA) and two outer bands that expand and contract based on price volatility. Created by John Bollinger, they adapt to market conditions automatically.
@@ -685,17 +719,24 @@ Use two sets: Standard (2 SD) + Inner (1 SD):
 - [Support & Resistance](/en/academy/support-resistance-advanced) — BB as dynamic S/R
 - [Chart Patterns](/en/academy/chart-patterns) — Patterns within BB
 - [Trading Plan](/en/academy/trading-plan) — BB rules in your plan
-`);
+`,
+);
 
 // ============================
 // 3. BOLLINGER BANDS — BN
 // ============================
-writeMdx('bn', 'academy', 'bollinger-bands-trading', {
-  title: "Bollinger Bands Trading — সম্পূর্ণ গাইড",
-  description: "Trading-এর জন্য Bollinger Bands আয়ত্ত করুন: Band Squeeze Breakout, Mean Reversion, Walking the Bands এবং অন্যান্য Indicator-এর সাথে Bollinger Bands সমন্বয়।",
-  level: "intermediate",
-  order: 26
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "bollinger-bands-trading",
+  {
+    title: "Bollinger Bands Trading — সম্পূর্ণ গাইড",
+    description:
+      "Trading-এর জন্য Bollinger Bands আয়ত্ত করুন: Band Squeeze Breakout, Mean Reversion, Walking the Bands এবং অন্যান্য Indicator-এর সাথে Bollinger Bands সমন্বয়।",
+    level: "intermediate",
+    order: 26,
+  },
+  `
 ## Bollinger Bands কী?
 
 Bollinger Bands হলো একটি **Volatility Indicator** যা তিনটি Line নিয়ে গঠিত: একটি Middle Band (SMA) এবং দুটি Outer Band যা Price Volatility-র ভিত্তিতে Expand ও Contract করে। John Bollinger এটি তৈরি করেন, এটি স্বয়ংক্রিয়ভাবে Market Condition-এর সাথে খাপ খায়।
@@ -789,17 +830,24 @@ RANGING Market-এ:
 - [Support ও Resistance](/bn/academy/support-resistance-advanced) — Dynamic S/R হিসেবে BB
 - [Chart Pattern](/bn/academy/chart-patterns) — BB-এর মধ্যে Pattern
 - [Trading Plan](/bn/academy/trading-plan) — Plan-এ BB নিয়ম
-`);
+`,
+);
 
 // ============================
 // 4. BACKTESTING & FORWARD TESTING — EN
 // ============================
-writeMdx('en', 'academy', 'backtesting-forward-testing', {
-  title: "Backtesting & Forward Testing — Complete Guide",
-  description: "Learn how to backtest and forward test trading strategies. Understand the proper methodology for validating strategies before risking real capital.",
-  level: "intermediate",
-  order: 27
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "backtesting-forward-testing",
+  {
+    title: "Backtesting & Forward Testing — Complete Guide",
+    description:
+      "Learn how to backtest and forward test trading strategies. Understand the proper methodology for validating strategies before risking real capital.",
+    level: "intermediate",
+    order: 27,
+  },
+  `
 ## Why Test Your Strategy?
 
 Testing separates professional traders from gamblers. Before risking real money, you must **prove your strategy works** through historical data (backtesting) and real-time simulation (forward testing/demo).
@@ -948,17 +996,24 @@ Phase 4: FULL LIVE
 - [Risk Management](/en/academy/risk-management) — Validate risk rules
 - [Trading Psychology](/en/academy/trading-psychology) — Demo to live transition
 - [Journaling](/en/academy/journaling) — Record test results
-`);
+`,
+);
 
 // ============================
 // 4. BACKTESTING & FORWARD TESTING — BN
 // ============================
-writeMdx('bn', 'academy', 'backtesting-forward-testing', {
-  title: "Backtesting ও Forward Testing — সম্পূর্ণ গাইড",
-  description: "Trading Strategy কীভাবে Backtest ও Forward Test করবেন শিখুন। Real Capital Risk করার আগে Strategy Validate করার সঠিক পদ্ধতি বুঝুন।",
-  level: "intermediate",
-  order: 27
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "backtesting-forward-testing",
+  {
+    title: "Backtesting ও Forward Testing — সম্পূর্ণ গাইড",
+    description:
+      "Trading Strategy কীভাবে Backtest ও Forward Test করবেন শিখুন। Real Capital Risk করার আগে Strategy Validate করার সঠিক পদ্ধতি বুঝুন।",
+    level: "intermediate",
+    order: 27,
+  },
+  `
 ## কেন Strategy Test করবেন?
 
 Testing Professional Trader-কে Gambler থেকে আলাদা করে। Real Money Risk করার আগে আপনাকে **প্রমাণ করতে হবে যে Strategy কাজ করে** — Historical Data (Backtesting) ও Real-time Simulation (Forward Testing/Demo)-এর মাধ্যমে।
@@ -1090,17 +1145,24 @@ Phase 4: পূর্ণ LIVE
 - [Risk Management](/bn/academy/risk-management) — Risk Rule Validate
 - [Trading Psychology](/bn/academy/trading-psychology) — Demo থেকে Live Transition
 - [Journaling](/bn/academy/journaling) — Test Result Record
-`);
+`,
+);
 
 // ============================
 // 5. ECONOMIC INDICATORS — EN
 // ============================
-writeMdx('en', 'academy', 'economic-indicators-macro', {
-  title: "Economic Indicators & Macro Trading — Complete Guide",
-  description: "Master economic indicators for trading: NFP, CPI, GDP, interest rates, and central bank decisions. Learn how macro events move markets and how to trade them.",
-  level: "intermediate",
-  order: 28
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "economic-indicators-macro",
+  {
+    title: "Economic Indicators & Macro Trading — Complete Guide",
+    description:
+      "Master economic indicators for trading: NFP, CPI, GDP, interest rates, and central bank decisions. Learn how macro events move markets and how to trade them.",
+    level: "intermediate",
+    order: 28,
+  },
+  `
 ## Why Economic Indicators Matter
 
 Economic indicators are **data releases that measure economic health**. They drive major market moves because they influence central bank policy, investor sentiment, and capital flows. Understanding macro fundamentals helps you avoid being on the wrong side of large moves.
@@ -1233,17 +1295,24 @@ Interest rates are the **single most powerful driver** of currency and bond mark
 - [Risk Management](/en/academy/risk-management) — Pre-news position management
 - [Trading Plan](/en/academy/trading-plan) — News rules in your plan
 - [Economic Calendar Guide](/en/academy/economic-calendar-guide) — Detailed calendar usage
-`);
+`,
+);
 
 // ============================
 // 5. ECONOMIC INDICATORS — BN
 // ============================
-writeMdx('bn', 'academy', 'economic-indicators-macro', {
-  title: "Economic Indicator ও Macro Trading — সম্পূর্ণ গাইড",
-  description: "Trading-এর জন্য Economic Indicator আয়ত্ত করুন: NFP, CPI, GDP, Interest Rate এবং Central Bank সিদ্ধান্ত। Macro Event কীভাবে Market চালায় ও কীভাবে Trade করবেন শিখুন।",
-  level: "intermediate",
-  order: 28
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "economic-indicators-macro",
+  {
+    title: "Economic Indicator ও Macro Trading — সম্পূর্ণ গাইড",
+    description:
+      "Trading-এর জন্য Economic Indicator আয়ত্ত করুন: NFP, CPI, GDP, Interest Rate এবং Central Bank সিদ্ধান্ত। Macro Event কীভাবে Market চালায় ও কীভাবে Trade করবেন শিখুন।",
+    level: "intermediate",
+    order: 28,
+  },
+  `
 ## কেন Economic Indicator গুরুত্বপূর্ণ
 
 Economic Indicator হলো **অর্থনৈতিক স্বাস্থ্য পরিমাপকারী Data Release**। এগুলো বড় Market Move চালায় কারণ Central Bank Policy, Investor Sentiment ও Capital Flow-কে প্রভাবিত করে। Macro Fundamental বোঝা আপনাকে বড় Move-এর ভুল দিকে থাকা এড়াতে সাহায্য করে।
@@ -1363,8 +1432,10 @@ Interest Rate হলো Currency ও Bond Market-এর **একক সবচে
 - [Risk Management](/bn/academy/risk-management) — Pre-news Position Management
 - [Trading Plan](/bn/academy/trading-plan) — Plan-এ News নিয়ম
 - [Economic Calendar Guide](/bn/academy/economic-calendar-guide) — বিস্তারিত Calendar ব্যবহার
-`);
+`,
+);
 
-console.log('\n✅ Academy Batch 5 Complete: 5 topics × 2 languages = 10 files');
-console.log('Topics: options-trading-basics, harmonic-patterns, bollinger-bands-trading, backtesting-forward-testing, economic-indicators-macro');
-
+console.log("\n✅ Academy Batch 5 Complete: 5 topics × 2 languages = 10 files");
+console.log(
+  "Topics: options-trading-basics, harmonic-patterns, bollinger-bands-trading, backtesting-forward-testing, economic-indicators-macro",
+);

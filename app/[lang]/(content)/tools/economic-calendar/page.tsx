@@ -25,7 +25,7 @@ export default function EconomicCalendar() {
       date: "2024-05-14",
       time: "18:00",
       importance: "high",
-      country: "USA"
+      country: "USA",
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ export default function EconomicCalendar() {
       date: "2024-05-15",
       time: "12:30",
       importance: "high",
-      country: "USA"
+      country: "USA",
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ export default function EconomicCalendar() {
       date: "2024-05-16",
       time: "12:30",
       importance: "medium",
-      country: "USA"
+      country: "USA",
     },
     {
       id: 4,
@@ -49,7 +49,7 @@ export default function EconomicCalendar() {
       date: "2024-05-16",
       time: "13:00",
       importance: "high",
-      country: "EUR"
+      country: "EUR",
     },
     {
       id: 5,
@@ -57,38 +57,44 @@ export default function EconomicCalendar() {
       date: "2024-05-17",
       time: "12:00",
       importance: "high",
-      country: "GBP"
+      country: "GBP",
     },
   ]);
 
   const [filter, setFilter] = useState<"all" | "high" | "medium" | "low">("all");
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
 
-  const filteredEvents = filter === "all" 
-    ? events 
-    : events.filter(e => e.importance === filter);
+  const filteredEvents = filter === "all" ? events : events.filter((e) => e.importance === filter);
 
   const getImportanceColor = (importance: string) => {
-    switch(importance) {
-      case "high": return "bg-red-900/20 border-red-500/30 text-red-400";
-      case "medium": return "bg-yellow-900/20 border-yellow-500/30 text-yellow-400";
-      case "low": return "bg-green-900/20 border-green-500/30 text-green-400";
-      default: return "";
+    switch (importance) {
+      case "high":
+        return "bg-red-900/20 border-red-500/30 text-red-400";
+      case "medium":
+        return "bg-yellow-900/20 border-yellow-500/30 text-yellow-400";
+      case "low":
+        return "bg-green-900/20 border-green-500/30 text-green-400";
+      default:
+        return "";
     }
   };
 
   const getImportanceBadge = (importance: string) => {
-    switch(importance) {
-      case "high": return "🔴 High Impact";
-      case "medium": return "🟡 Medium Impact";
-      case "low": return "🟢 Low Impact";
-      default: return "";
+    switch (importance) {
+      case "high":
+        return "🔴 High Impact";
+      case "medium":
+        return "🟡 Medium Impact";
+      case "low":
+        return "🟢 Low Impact";
+      default:
+        return "";
     }
   };
 
   return (
     <div className="max-w-3xl mx-auto">
-      <Link 
+      <Link
         href={`/${lang}/tools`}
         className="flex items-center gap-2 text-muted-foreground hover:text-accent-green mb-6 transition-colors"
       >
@@ -98,9 +104,7 @@ export default function EconomicCalendar() {
 
       <div className="bg-card border border-border rounded-2xl backdrop-blur-xl p-8">
         <h1 className="text-3xl font-bold text-foreground">Economic Calendar</h1>
-        <p className="text-muted-foreground mt-2">
-          Track important economic events that impact forex markets
-        </p>
+        <p className="text-muted-foreground mt-2">Track important economic events that impact forex markets</p>
 
         {/* Controls */}
         <div className="mt-8 flex items-center gap-4 flex-wrap">
@@ -163,7 +167,7 @@ export default function EconomicCalendar() {
         {/* Events List */}
         <div className="mt-8 space-y-3">
           <p className="text-muted-foreground text-sm font-medium">Upcoming Events ({filteredEvents.length})</p>
-          
+
           {filteredEvents.length === 0 ? (
             <div className="text-center py-8">
               <p className="text-muted-foreground">No events found for this filter</p>
@@ -178,11 +182,9 @@ export default function EconomicCalendar() {
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="font-semibold text-foreground">{event.name}</h3>
-                      <span className="text-xs font-bold px-2 py-1 bg-black/20 rounded">
-                        {event.country}
-                      </span>
+                      <span className="text-xs font-bold px-2 py-1 bg-black/20 rounded">{event.country}</span>
                     </div>
-                    
+
                     <div className="flex items-center gap-4 text-xs text-foreground mt-2">
                       <span>📅 {event.date}</span>
                       <span>🕐 {event.time} UTC</span>
@@ -190,9 +192,7 @@ export default function EconomicCalendar() {
                   </div>
 
                   <div className="text-right">
-                    <p className="text-xs font-bold whitespace-nowrap">
-                      {getImportanceBadge(event.importance)}
-                    </p>
+                    <p className="text-xs font-bold whitespace-nowrap">{getImportanceBadge(event.importance)}</p>
                     {notificationsEnabled && (
                       <button className="mt-2 text-xs px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition-colors">
                         Set Alert
@@ -209,17 +209,27 @@ export default function EconomicCalendar() {
         <div className="mt-8 bg-amber-500/10 border border-amber-500/20 rounded-xl p-6">
           <h3 className="font-semibold text-amber-200 mb-3">💡 Trading Around Economic Events</h3>
           <div className="space-y-2 text-sm text-foreground">
-            <p><span className="font-semibold">High Impact Events:</span> Major volatility expected, wider spreads may occur</p>
-            <p><span className="font-semibold">Medium Impact:</span> Moderate volatility potential</p>
-            <p><span className="font-semibold">Low Impact:</span> Minor price movement expected</p>
-            <p className="mt-3 text-muted-foreground"><span className="font-semibold">Pro Tip:</span> Avoid trading 30 min before and after high-impact events if scalping</p>
+            <p>
+              <span className="font-semibold">High Impact Events:</span> Major volatility expected, wider spreads may
+              occur
+            </p>
+            <p>
+              <span className="font-semibold">Medium Impact:</span> Moderate volatility potential
+            </p>
+            <p>
+              <span className="font-semibold">Low Impact:</span> Minor price movement expected
+            </p>
+            <p className="mt-3 text-muted-foreground">
+              <span className="font-semibold">Pro Tip:</span> Avoid trading 30 min before and after high-impact events
+              if scalping
+            </p>
           </div>
         </div>
 
         {/* Major Economic Indicators */}
         <div className="mt-8 bg-muted border border-border rounded-xl p-6">
           <h2 className="text-lg font-semibold text-foreground mb-4">Important Economic Indicators</h2>
-          
+
           <div className="space-y-2 text-sm">
             <div className="flex justify-between items-start">
               <span className="text-foreground">

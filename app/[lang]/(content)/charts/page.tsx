@@ -28,7 +28,8 @@ const chartsDict = {
     subtitle: "Interactive TradingView charts for institutional-grade analysis and practice",
     popularInstruments: "Popular Instruments",
     institutionalWatch: "Institutional Watchlist",
-    institutionalNote: "🏦 Banks & institutions monitor DXY, bond yields, and VIX alongside their primary positions for correlation & risk management.",
+    institutionalNote:
+      "🏦 Banks & institutions monitor DXY, bond yields, and VIX alongside their primary positions for correlation & risk management.",
     all: "All",
     forex: "Forex",
     commodity: "Commodities",
@@ -41,7 +42,8 @@ const chartsDict = {
     subtitle: "ইনস্টিটিউশনাল-গ্রেড অ্যানালাইসিস ও প্র্যাকটিসের জন্য ইন্টারেক্টিভ TradingView চার্ট",
     popularInstruments: "জনপ্রিয় ইনস্ট্রুমেন্ট",
     institutionalWatch: "ইনস্টিটিউশনাল ওয়াচলিস্ট",
-    institutionalNote: "🏦 ব্যাংক ও ইনস্টিটিউশনরা তাদের প্রাথমিক পজিশনের পাশাপাশি DXY, বন্ড ইয়েল্ড এবং VIX মনিটর করে correlation ও রিস্ক ম্যানেজমেন্টের জন্য।",
+    institutionalNote:
+      "🏦 ব্যাংক ও ইনস্টিটিউশনরা তাদের প্রাথমিক পজিশনের পাশাপাশি DXY, বন্ড ইয়েল্ড এবং VIX মনিটর করে correlation ও রিস্ক ম্যানেজমেন্টের জন্য।",
     all: "সব",
     forex: "ফরেক্স",
     commodity: "কমোডিটি",
@@ -58,9 +60,7 @@ export default function ChartsPage() {
   const lang = (pathname.split("/")[1] || "en") as "en" | "bn";
   const t = chartsDict[lang] || chartsDict.en;
 
-  const filteredSymbols = activeFilter === "all"
-    ? symbols
-    : symbols.filter((s) => s.category === activeFilter);
+  const filteredSymbols = activeFilter === "all" ? symbols : symbols.filter((s) => s.category === activeFilter);
 
   const filters = ["all", "forex", "commodity", "index", "crypto", "institutional"] as const;
 
@@ -79,9 +79,7 @@ export default function ChartsPage() {
       </div>
 
       <div className="mt-8">
-        <h2 className="mb-4 text-lg font-semibold text-foreground">
-          {t.popularInstruments}
-        </h2>
+        <h2 className="mb-4 text-lg font-semibold text-foreground">{t.popularInstruments}</h2>
 
         {/* Category Filter */}
         <div className="mb-4 flex flex-wrap gap-2">

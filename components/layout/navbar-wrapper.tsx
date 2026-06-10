@@ -26,4 +26,3 @@ export function NavbarWrapper({ children }: { children: React.ReactNode }) {
     </header>
   );
 }
-

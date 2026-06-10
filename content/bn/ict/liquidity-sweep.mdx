@@ -11,7 +11,7 @@ lastUpdated: "2026-06-09"
 Liquidity Sweep ঘটে যখন Price **সংক্ষিপ্তভাবে একটি Key Level এর বাইরে Trade** করে (Swing High/Low, Equal H/L, Session Level) Resting Stop-Loss Order ও Pending Order Trigger করার জন্য, তারপর দ্রুত Reverse করে। এটি AMD এর "Manipulation" Phase — Counterparty Liquidity এর জন্য Institutional Fishing Expedition।
 
 <Callout type="info" title="Sweep-ই Setup">
-"Sweep-ই Setup। একবার Liquidity নেওয়া হলে, Smart Money তাদের Order Fill করেছে এবং True Move শুরু হয়।" — ICT
+  "Sweep-ই Setup। একবার Liquidity নেওয়া হলে, Smart Money তাদের Order Fill করেছে এবং True Move শুরু হয়।" — ICT
 </Callout>
 
 ---
@@ -19,21 +19,25 @@ Liquidity Sweep ঘটে যখন Price **সংক্ষিপ্তভাব
 ## Liquidity Sweep এর প্রকারভেদ
 
 ### 1. Session Level Sweep
+
 - London এ Asian High/Low Sweep
 - NY তে London High/Low Sweep
 - PDH/PDL (Previous Day High/Low) Sweep
 
 ### 2. Swing Point Sweep
+
 - Price একটি সাম্প্রতিক Swing High বা Swing Low নিয়ে নেয়
 - দ্রুত Wick বাইরে, তারপর Reversal
 - বিপরীত দিকে Displacement অনুসরণ করতে হবে
 
 ### 3. Equal High/Low Sweep
+
 - একই Level এ একাধিক Touch "Magnet" তৈরি করে
 - Sweep স্পষ্ট — সাধারণত 5-15 Pips বাইরে Trade করে
 - Sweep এর পর Reversal এর খুব বেশি Probability
 
 ### 4. Trendline Sweep
+
 - Trendline বরাবর রাখা Stop Loss
 - "Breakout" Stop নিয়ে নেয়, তারপর Reverse করে
 - Classic Retail Trap
@@ -45,6 +49,7 @@ Liquidity Sweep ঘটে যখন Price **সংক্ষিপ্তভাব
 Sweep একা Trade করার জন্য যথেষ্ট নয়। Confirmation দরকার:
 
 ### Confirmation Checklist
+
 1. ✅ Price Liquidity Level এর বাইরে Trade করে
 2. ✅ Rejection Candle তৈরি হয় (লম্বা Wick, ছোট Body)
 3. ✅ LTF (5M/15M) এ MSS — বিপরীত দিকে Displacement
@@ -52,6 +57,7 @@ Sweep একা Trade করার জন্য যথেষ্ট নয়। 
 5. ✅ Kill Zone Timing Align করে
 
 ### কী Sweep Invalidate করে
+
 - Price Level এর বাইরে শক্তভাবে Close করে (শুধু Wick নয়)
 - MSS অনুসরণ করে না — Price Sweep Direction এ Continue করে
 - একাধিক Candle বাইরে Close = Genuine Breakout, Sweep নয়
@@ -61,6 +67,7 @@ Sweep একা Trade করার জন্য যথেষ্ট নয়। 
 ## বাস্তব Trading উদাহরণ
 
 ### উদাহরণ ১: PDH Sweep — EUR/USD Sell
+
 - **PDH:** 1.0920
 - **Setup:** NY AM Open, Price 1.0928 পর্যন্ত Spike করে (PDH Sweep)
 - **Confirmation:** 5M Bearish MSS 1.0918 এ, FVG 1.0915-1.0920 এ
@@ -71,6 +78,7 @@ Sweep একা Trade করার জন্য যথেষ্ট নয়। 
 - **BD সময়:** বিকাল 5:45
 
 ### উদাহরণ ২: Equal Lows Sweep — Gold Buy
+
 - **Equal Lows:** 2,025 এ তিনটি Touch
 - **Setup:** London KZ, Price 2,022 এ নামে (Equal Lows Sweep)
 - **Confirmation:** 15M Bullish MSS, 2,027 এ Bullish OB
@@ -85,6 +93,7 @@ Sweep একা Trade করার জন্য যথেষ্ট নয়। 
 ## Sweep Trading Model
 
 ### 4-Step Process
+
 1. **Anticipate** — Session এর আগে সব Liquidity Level Mark করুন
 2. **Wait** — Price Liquidity তে আসতে দিন (Chase করবেন না)
 3. **Confirm** — Sweep এর পর MSS + Displacement
@@ -113,7 +122,7 @@ Sweep একা Trade করার জন্য যথেষ্ট নয়। 
 ## সারসংক্ষেপ
 
 | বিষয়            | বিবরণ                                            |
-|------------------|--------------------------------------------------|
+| ---------------- | ------------------------------------------------ |
 | **সংজ্ঞা**       | Price Key Level এর বাইরে Trade করে তারপর Reverse |
 | **উদ্দেশ্য**     | Stop Trigger = Institutional Order Fill          |
 | **Confirmation** | MSS + Displacement + FVG Creation                |

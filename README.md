@@ -15,9 +15,11 @@ A comprehensive Next.js-based trading education platform covering Price Action, 
 ## 📚 Content Structure
 
 ### 1. **Price Action** (35+ Topics)
+
 Master candlestick patterns, market structure, and pure price action trading.
 
 **Key Topics:**
+
 - Candlestick basics & psychology
 - Market structure analysis
 - Support & resistance
@@ -26,12 +28,14 @@ Master candlestick patterns, market structure, and pure price action trading.
 - Single & multi-candle patterns
 - Volume analysis
 - Trade management & exits
-- *And 20+ more advanced topics*
+- _And 20+ more advanced topics_
 
 ### 2. **Smart Money Concepts (SMC)** (26+ Topics)
+
 Learn institutional trading concepts and how smart money operates.
 
 **Key Topics:**
+
 - Market structure shifts (BOS/CHOCH)
 - Order blocks & breaker blocks
 - Fair value gaps (FVG)
@@ -40,12 +44,14 @@ Learn institutional trading concepts and how smart money operates.
 - Distribution, accumulation & reaccumulation
 - Premium & discount zones
 - Entry confirmation & risk models
-- *And 18+ more advanced concepts*
+- _And 18+ more advanced concepts_
 
 ### 3. **ICT Methodology** (27+ Topics)
+
 In-depth coverage of ICT (Inner Circle Trader) concepts and models.
 
 **Key Topics:**
+
 - PD Arrays & fair value gaps
 - Interior patterns & dealing ranges
 - Kill zones & optimal trade entries
@@ -54,23 +60,26 @@ In-depth coverage of ICT (Inner Circle Trader) concepts and models.
 - Advanced models (Venom, Unicorn, Silver Bullet)
 - Session profiles & daily bias
 - Algorithmic delivery concepts
-- *And 19+ more specialized topics*
+- _And 19+ more specialized topics_
 
 ### 4. **Forex Sessions** (16+ Topics)
+
 Complete guide to forex trading sessions and session-based strategies.
 
 **Key Topics:**
+
 - Sydney, Tokyo, London, New York sessions
 - Session overlaps & kill zones
 - Liquidity sweeps & session manipulation
 - Session-based trading strategies
 - Economic releases by session
 - Best trading times (Bangladesh timezone)
-- *And 10+ more session-related topics*
+- _And 10+ more session-related topics_
 
 ### 5. **Academy** (26 Core Topics)
 
 #### Fundamental Trading Knowledge:
+
 - **Trading Psychology** - Mental aspects of trading
 - **Risk Management** - Protecting your capital
 - **Position Sizing** - Calculating optimal lot sizes
@@ -79,13 +88,15 @@ Complete guide to forex trading sessions and session-based strategies.
 - **Economic Calendar Guide** - News trading basics
 
 #### Market Instruments:
+
 - **Forex Basics** - Currency pair trading
 - **Futures Basics** - Futures market overview
 - **Crypto Trading** - Cryptocurrency trading
-- **Indices Trading** - Index trading strategies  
+- **Indices Trading** - Index trading strategies
 - **Gold Trading** - Precious metals trading
 
 #### Technical Analysis Tools:
+
 - **Technical Indicators** - Moving averages, RSI, MACD, Bollinger Bands, Stochastic, ATR
 - **Advanced Support & Resistance** - Zone identification & confluence
 - **Chart Patterns** - Head & shoulders, double tops, triangles, wedges, flags
@@ -95,6 +106,7 @@ Complete guide to forex trading sessions and session-based strategies.
 - **Bollinger Bands Trading** - Volatility & mean reversion strategies
 
 #### Trading Strategy & Execution:
+
 - **Order Types Explained** - Market, limit, stop, OCO, OTO orders
 - **Trading Plan Development** - Complete trading system framework
 - **Entry Models & Exit Models** - High-probability setups
@@ -102,6 +114,7 @@ Complete guide to forex trading sessions and session-based strategies.
 - **Confluence Trading** - Multi-factor confirmation
 
 #### Advanced Topics:
+
 - **Advanced Money Management** - Position scaling, portfolio allocation, leverage
 - **Trading Costs & Spreads** - Impact analysis & cost minimization
 - **Backtesting & Forward Testing** - System validation & testing
@@ -112,6 +125,7 @@ Complete guide to forex trading sessions and session-based strategies.
 ## 🌍 Multi-Language Support
 
 All content available in:
+
 - **English** - Complete comprehensive coverage
 - **Bengali** - Full translations for local audience
 
@@ -155,6 +169,7 @@ trading-docs/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 16+
 - npm or yarn
 
@@ -218,27 +233,29 @@ npm run start
 
 ### **Other Sections Summary**
 
-| Section | Topics | Focus Area |
-|---------|--------|-----------|
-| **Price Action** | 35+ | Candlesticks, patterns, market structure, volume |
-| **Smart Money Concepts** | 26+ | Order blocks, liquidity, institutional flow |
-| **ICT Methodology** | 27+ | PD Arrays, kill zones, market maker models |
-| **Forex Sessions** | 16+ | Session trading, kill zones, economic events |
+| Section                  | Topics | Focus Area                                       |
+| ------------------------ | ------ | ------------------------------------------------ |
+| **Price Action**         | 35+    | Candlesticks, patterns, market structure, volume |
+| **Smart Money Concepts** | 26+    | Order blocks, liquidity, institutional flow      |
+| **ICT Methodology**      | 27+    | PD Arrays, kill zones, market maker models       |
+| **Forex Sessions**       | 16+    | Session trading, kill zones, economic events     |
 
 **TOTAL: 130+ Trading Topics**
 
 ## 🎓 Learning Paths
 
 ### For Beginners:
+
 1. Trading Psychology
 2. Risk Management
-3. Position Sizing  
+3. Position Sizing
 4. Forex Basics
 5. Price Action Fundamentals
 6. Technical Indicators
 7. Order Types
 
 ### For Intermediate Traders:
+
 1. Advanced Money Management
 2. Trading Plan Development
 3. Chart Patterns
@@ -248,6 +265,7 @@ npm run start
 7. Entry & Exit Models
 
 ### For Advanced Traders:
+
 1. Elliott Wave Theory
 2. Harmonic Patterns
 3. Advanced Price Action
@@ -257,6 +275,7 @@ npm run start
 7. Performance Analytics
 
 ### For System Development:
+
 1. Trading Plan Framework
 2. Backtesting Methods
 3. Performance Tracking
@@ -278,6 +297,7 @@ npm run start
 ## 📢 Content Standards
 
 Each topic includes:
+
 - ✓ Clear explanations for all knowledge levels
 - ✓ Practical, real-world examples
 - ✓ Specific trading rules & criteria
@@ -290,6 +310,7 @@ Each topic includes:
 ## 🔗 Navigation Structure
 
 ### Main Categories:
+
 1. **Price Action** (35+ topics) - Pure price movement analysis
 2. **Smart Money Concepts** (26+ topics) - Institutional trading
 3. **ICT Concepts** (27+ topics) - Inner Circle Trading methods
@@ -299,6 +320,7 @@ Each topic includes:
 ## 📖 Documentation Quality
 
 All content maintains professional trading education standards:
+
 - Written for traders at all levels
 - Practical, actionable advice
 - Grounded in trading principles
@@ -308,11 +330,13 @@ All content maintains professional trading education standards:
 ## 🛠️ Customization
 
 ### Adding New Topics:
+
 1. Create `.mdx` file in appropriate category directory
 2. Add entry to `_meta.json` file
 3. Topic automatically appears in navigation
 
 ### Content Management:
+
 - `_meta.json` controls sidebar order
 - MDX files support React components
 - Full markdown support
@@ -333,8 +357,9 @@ This platform is designed for trading education and market knowledge sharing.
 ## 🤝 Contributing
 
 Content contributions are welcome! Ensure:
+
 - Complete, accurate information
-- Professional trading perspective  
+- Professional trading perspective
 - Clear examples & practical applications
 - Appropriate risk messaging
 - Either English or Bengali language
@@ -351,4 +376,3 @@ For questions about specific topics or platform issues, refer to relevant docume
 **Languages:** English (Full), Bengali (Full)
 **Total Topics:** 130+ comprehensive guides
 **Content Quality:** Professional trading education standard
-

@@ -61,14 +61,13 @@ export function WorldMarketClock() {
             <div className="relative">
               <span className="text-lg">{clock.flag}</span>
               <div className="mt-1 font-mono text-xl font-bold text-white">
-                {String(hours).padStart(2, "0")}:
-                {String(minutes).padStart(2, "0")}:
-                {String(seconds).padStart(2, "0")}
+                {String(hours).padStart(2, "0")}:{String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
               </div>
               <div className="mt-1 text-[11px] font-medium text-zinc-400">{clock.city}</div>
               <div className="mt-0.5 flex items-center justify-center gap-1 text-[10px] text-zinc-600">
                 <span>{isDay ? "☀️" : "🌙"}</span>
-                {clock.timezone} (UTC{clock.utcOffset >= 0 ? "+" : ""}{clock.utcOffset})
+                {clock.timezone} (UTC{clock.utcOffset >= 0 ? "+" : ""}
+                {clock.utcOffset})
               </div>
             </div>
           </div>
@@ -77,4 +76,3 @@ export function WorldMarketClock() {
     </div>
   );
 }
-

@@ -6,7 +6,6 @@ level: beginner
 lastUpdated: "2026-06-09"
 ---
 
-
 ### Definition
 
 In ICT/SMC methodology, **Liquidity** refers to clusters of resting orders in the market — primarily **Stop Losses** and **Pending Orders** that accumulate above Swing Highs (Buy Side Liquidity) and below Swing Lows (Sell Side Liquidity). The market-making algorithm's PRIMARY purpose is to deliver price to these Liquidity pools.
@@ -40,6 +39,7 @@ Think of Liquidity as FUEL — Smart Money needs it to enter and exit large posi
 6. **Session Highs/Lows** — Previous Day High/Low, Asian High/Low = Session-based Liquidity
 
 **The Liquidity Cycle:**
+
 ```
 Liquidity Builds → Algorithm Identifies → Price Sweeps → Orders Fill → Real Move Begins
 ```
@@ -49,11 +49,13 @@ Liquidity Builds → Algorithm Identifies → Price Sweeps → Orders Fill → R
 **Why Smart Money NEEDS Liquidity:**
 
 Imagine a bank wants to BUY 500 million EUR/USD. If they place a market Buy order:
+
 - Price would spike massively (slippage)
 - They'd get terrible average fill price
 - The move would be visible and others would front-run them
 
 **Instead, they do this:**
+
 1. ALLOW price to drop (or PUSH it down) to a level where many Sell Stops exist
 2. When retail traders' Sell Stops get triggered → those Sell stops become MARKET SELL orders
 3. The bank's algorithm BUYS against these Sell orders (perfect counterparty Liquidity)
@@ -65,21 +67,25 @@ Imagine a bank wants to BUY 500 million EUR/USD. If they place a market Buy orde
 ### Trading Application
 
 **Step 1: Identify Liquidity Pools**
+
 - Mark equal highs/lows (clearest targets)
 - Mark obvious swing points where stops accumulate
 - Mark session highs/lows (PDH, PDL, Asian H/L)
 - Mark trendline liquidity
 
 **Step 2: Determine Which Pool Is Targeted**
+
 - Use Daily Bias (where is the HTF draw?)
 - If price is in Discount → SSL below has been taken → BSL above is the TARGET
 - If price is in Premium → BSL above has been taken → SSL below is the TARGET
 
 **Step 3: Wait for the Sweep**
+
 - Price takes out the Liquidity pool (goes beyond the level briefly)
 - Look for immediate reversal signs (rejection candle, MSS on LTF)
 
 **Step 4: Enter After Sweep**
+
 - After Liquidity Sweep + MSS confirmation → Enter in the reversal direction
 - Stop Loss: Beyond the sweep extreme
 - Target: The OPPOSING Liquidity pool

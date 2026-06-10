@@ -1,12 +1,31 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
-const C = join(process.cwd(), 'content');
-const w = (l,c,s,f,t) => { writeFileSync(join(C,l,c,s+'.mdx'), `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-05-11"\n---\n`+t,'utf-8'); console.log(`✅ ${l}/${c}/${s}`); };
+import { writeFileSync } from "fs";
+import { join } from "path";
+const C = join(process.cwd(), "content");
+const w = (l, c, s, f, t) => {
+  writeFileSync(
+    join(C, l, c, s + ".mdx"),
+    `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-05-11"\n---\n` +
+      t,
+    "utf-8",
+  );
+  console.log(`✅ ${l}/${c}/${s}`);
+};
 
 // ============================================================
 // FOREX BASICS - EN
 // ============================================================
-w('en','academy','forex-basics',{title:"Forex Basics — Complete Guide",description:"Complete beginner guide to Forex trading. Learn currency pairs, pips, lots, spread, leverage, margin, order types, and how the forex market works.",level:"beginner",order:1},`
+w(
+  "en",
+  "academy",
+  "forex-basics",
+  {
+    title: "Forex Basics — Complete Guide",
+    description:
+      "Complete beginner guide to Forex trading. Learn currency pairs, pips, lots, spread, leverage, margin, order types, and how the forex market works.",
+    level: "beginner",
+    order: 1,
+  },
+  `
 ## What is Forex Trading?
 
 Forex (Foreign Exchange) is the **global marketplace for trading currencies**. It's the largest and most liquid financial market in the world, with daily trading volume exceeding **$7.5 trillion**. Unlike stock markets, forex operates 24 hours a day, 5 days a week.
@@ -284,12 +303,24 @@ Realistic expectations: 3-10% monthly returns with proper risk management after 
 - [Position Sizing](/en/academy/position-sizing) — How much to risk per trade
 - [Trading Psychology](/en/academy/trading-psychology) — The mental game
 - [Economic Calendar](/en/academy/economic-calendar-guide) — News that moves forex
-`);
+`,
+);
 
 // ============================================================
 // FOREX BASICS - BN
 // ============================================================
-w('bn','academy','forex-basics',{title:"ফরেক্স বেসিক — সম্পূর্ণ গাইড",description:"ফরেক্স ট্রেডিংয়ের সম্পূর্ণ বিগিনার গাইড। কারেন্সি পেয়ার, পিপ, লট, স্প্রেড, লিভারেজ, মার্জিন, অর্ডার টাইপ এবং ফরেক্স মার্কেট কীভাবে কাজ করে শিখুন।",level:"beginner",order:1},`
+w(
+  "bn",
+  "academy",
+  "forex-basics",
+  {
+    title: "ফরেক্স বেসিক — সম্পূর্ণ গাইড",
+    description:
+      "ফরেক্স ট্রেডিংয়ের সম্পূর্ণ বিগিনার গাইড। কারেন্সি পেয়ার, পিপ, লট, স্প্রেড, লিভারেজ, মার্জিন, অর্ডার টাইপ এবং ফরেক্স মার্কেট কীভাবে কাজ করে শিখুন।",
+    level: "beginner",
+    order: 1,
+  },
+  `
 ## ফরেক্স ট্রেডিং কী?
 
 ফরেক্স (Foreign Exchange) হলো **কারেন্সি ট্রেডিংয়ের বৈশ্বিক মার্কেটপ্লেস**। এটি বিশ্বের সবচেয়ে বড় এবং সবচেয়ে লিকুইড আর্থিক মার্কেট, দৈনিক ট্রেডিং ভলিউম **$7.5 ট্রিলিয়নেরও** বেশি। স্টক মার্কেটের বিপরীতে, ফরেক্স সপ্তাহে ৫ দিন ২৪ ঘণ্টা চালু থাকে।
@@ -465,12 +496,24 @@ EUR/USD = 1.0900 তে:
 - [পজিশন সাইজিং](/bn/academy/position-sizing) — প্রতি ট্রেডে কত রিস্ক
 - [ট্রেডিং সাইকোলজি](/bn/academy/trading-psychology) — মানসিক দিক
 - [ইকোনমিক ক্যালেন্ডার](/bn/academy/economic-calendar-guide) — ফরেক্স মুভকারী নিউজ
-`);
+`,
+);
 
 // ============================================================
 // RISK MANAGEMENT - EN
 // ============================================================
-w('en','academy','risk-management',{title:"Risk Management — Complete Guide",description:"Master trading risk management. Learn position sizing, stop loss strategies, risk-reward ratios, drawdown management, and how to protect your trading capital.",level:"beginner",order:2},`
+w(
+  "en",
+  "academy",
+  "risk-management",
+  {
+    title: "Risk Management — Complete Guide",
+    description:
+      "Master trading risk management. Learn position sizing, stop loss strategies, risk-reward ratios, drawdown management, and how to protect your trading capital.",
+    level: "beginner",
+    order: 2,
+  },
+  `
 ## Why Risk Management is Everything
 
 Risk management is the **single most important skill** in trading. You can have the best strategy in the world, but without proper risk management, you WILL blow your account. Every successful professional trader prioritizes risk management above everything else.
@@ -679,12 +722,24 @@ Before EVERY trade:
 - [Trading Psychology](/en/academy/trading-psychology) — Emotional risk management
 - [Forex Basics](/en/academy/forex-basics) — Understanding the market
 - [Journaling](/en/academy/journaling) — Track your risk management
-`);
+`,
+);
 
 // ============================================================
 // RISK MANAGEMENT - BN
 // ============================================================
-w('bn','academy','risk-management',{title:"রিস্ক ম্যানেজমেন্ট — সম্পূর্ণ গাইড",description:"ট্রেডিং রিস্ক ম্যানেজমেন্ট আয়ত্ত করুন। পজিশন সাইজিং, স্টপ লস কৌশল, রিস্ক-রিওয়ার্ড রেশিও, ড্রডাউন ম্যানেজমেন্ট এবং ট্রেডিং ক্যাপিটাল রক্ষা করা শিখুন।",level:"beginner",order:2},`
+w(
+  "bn",
+  "academy",
+  "risk-management",
+  {
+    title: "রিস্ক ম্যানেজমেন্ট — সম্পূর্ণ গাইড",
+    description:
+      "ট্রেডিং রিস্ক ম্যানেজমেন্ট আয়ত্ত করুন। পজিশন সাইজিং, স্টপ লস কৌশল, রিস্ক-রিওয়ার্ড রেশিও, ড্রডাউন ম্যানেজমেন্ট এবং ট্রেডিং ক্যাপিটাল রক্ষা করা শিখুন।",
+    level: "beginner",
+    order: 2,
+  },
+  `
 ## কেন রিস্ক ম্যানেজমেন্ট সবকিছু
 
 রিস্ক ম্যানেজমেন্ট ট্রেডিংয়ে **সবচেয়ে গুরুত্বপূর্ণ দক্ষতা**। আপনার বিশ্বের সেরা কৌশল থাকতে পারে, কিন্তু সঠিক রিস্ক ম্যানেজমেন্ট ছাড়া আপনি অ্যাকাউন্ট উড়িয়ে দেবেন। প্রতিটি সফল প্রফেশনাল ট্রেডার রিস্ক ম্যানেজমেন্টকে সবকিছুর উপরে রাখে।
@@ -803,27 +858,154 @@ R:R = টেক প্রফিট দূরত্ব ÷ স্টপ লস দ
 - [পজিশন সাইজিং](/bn/academy/position-sizing) — বিস্তারিত লট সাইজ ক্যালকুলেশন
 - [ট্রেডিং সাইকোলজি](/bn/academy/trading-psychology) — আবেগিক রিস্ক ম্যানেজমেন্ট
 - [ফরেক্স বেসিক](/bn/academy/forex-basics) — মার্কেট বোঝা
-`);
+`,
+);
 
 // ============ REMAINING ACADEMY TOPICS ============
 const academyTopics = [
-  {slug:'trading-psychology',en:{title:"Trading Psychology — Complete Guide",desc:"Master trading psychology. Learn to control emotions, overcome fear and greed, develop discipline, and build the mindset of a professional trader.",level:"beginner",order:3},bn:{title:"ট্রেডিং সাইকোলজি — সম্পূর্ণ গাইড",desc:"ট্রেডিং সাইকোলজি আয়ত্ত করুন। আবেগ নিয়ন্ত্রণ, ভয় ও লোভ কাটিয়ে ওঠা, শৃঙ্খলা গড়ে তোলা এবং প্রফেশনাল মাইন্ডসেট তৈরি শিখুন।",level:"beginner",order:3}},
-  {slug:'position-sizing',en:{title:"Position Sizing — Complete Guide",desc:"Master position sizing for all markets. Learn lot size calculations, fixed fractional methods, and how to size positions for forex, gold, indices, and crypto.",level:"beginner",order:4},bn:{title:"পজিশন সাইজিং — সম্পূর্ণ গাইড",desc:"সব মার্কেটের জন্য পজিশন সাইজিং আয়ত্ত করুন। লট সাইজ ক্যালকুলেশন এবং ফরেক্স, গোল্ড, ইন্ডাইসেস ও ক্রিপ্টোর জন্য পজিশন সাইজ শিখুন।",level:"beginner",order:4}},
-  {slug:'journaling',en:{title:"Trading Journal — Complete Guide",desc:"Master trading journaling. Learn how to record, review, and analyze your trades for continuous improvement and consistent profitability.",level:"beginner",order:5},bn:{title:"ট্রেডিং জার্নাল — সম্পূর্ণ গাইড",desc:"ট্রেডিং জার্নালিং আয়ত্ত করুন। ক্রমাগত উন্নতি ও ধারাবাহিক লাভের জন্য ট্রেড রেকর্ড, রিভিউ ও অ্যানালাইজ করা শিখুন।",level:"beginner",order:5}},
-  {slug:'prop-firm-guide',en:{title:"Prop Firm Guide — Complete Guide",desc:"Complete guide to proprietary trading firms. Learn how prop firms work, challenge rules, funded account strategies, and tips for passing evaluations.",level:"intermediate",order:6},bn:{title:"প্রপ ফার্ম গাইড — সম্পূর্ণ গাইড",desc:"প্রোপ্রাইটারি ট্রেডিং ফার্মের সম্পূর্ণ গাইড। প্রপ ফার্ম কীভাবে কাজ করে, চ্যালেঞ্জ নিয়ম, ফান্ডেড অ্যাকাউন্ট কৌশল শিখুন।",level:"intermediate",order:6}},
-  {slug:'gold-trading',en:{title:"Gold Trading — Complete Guide",desc:"Master gold (XAU/USD) trading. Learn gold market fundamentals, price drivers, trading strategies, session timing, and risk management for gold.",level:"intermediate",order:7},bn:{title:"গোল্ড ট্রেডিং — সম্পূর্ণ গাইড",desc:"গোল্ড (XAU/USD) ট্রেডিং আয়ত্ত করুন। গোল্ড মার্কেটের ফান্ডামেন্টাল, প্রাইস ড্রাইভার, ট্রেডিং কৌশল ও রিস্ক ম্যানেজমেন্ট শিখুন।",level:"intermediate",order:7}},
-  {slug:'crypto-trading',en:{title:"Crypto Trading — Complete Guide",desc:"Master cryptocurrency trading. Learn crypto market structure, Bitcoin and altcoin trading, DeFi basics, and risk management for volatile crypto markets.",level:"intermediate",order:8},bn:{title:"ক্রিপ্টো ট্রেডিং — সম্পূর্ণ গাইড",desc:"ক্রিপ্টোকারেন্সি ট্রেডিং আয়ত্ত করুন। ক্রিপ্টো মার্কেট স্ট্রাকচার, Bitcoin ও altcoin ট্রেডিং এবং রিস্ক ম্যানেজমেন্ট শিখুন।",level:"intermediate",order:8}},
-  {slug:'indices-trading',en:{title:"Indices Trading — Complete Guide",desc:"Master stock index trading (NAS100, US30, SPX500). Learn index fundamentals, session dynamics, and strategies for trading major indices.",level:"intermediate",order:9},bn:{title:"ইন্ডাইসেস ট্রেডিং — সম্পূর্ণ গাইড",desc:"স্টক ইনডেক্স ট্রেডিং (NAS100, US30, SPX500) আয়ত্ত করুন। ইনডেক্স ফান্ডামেন্টাল, সেশন ডায়নামিক্স ও কৌশল শিখুন।",level:"intermediate",order:9}},
-  {slug:'futures-basics',en:{title:"Futures Basics — Complete Guide",desc:"Master futures trading fundamentals. Learn contracts, margin, expiry, and how futures differ from forex and CFDs for informed market participation.",level:"intermediate",order:10},bn:{title:"ফিউচার্স বেসিক — সম্পূর্ণ গাইড",desc:"ফিউচার্স ট্রেডিং ফান্ডামেন্টাল আয়ত্ত করুন। কন্ট্র্যাক্ট, মার্জিন, এক্সপায়রি এবং ফরেক্স ও CFD থেকে পার্থক্য শিখুন।",level:"intermediate",order:10}},
-  {slug:'economic-calendar-guide',en:{title:"Economic Calendar Guide — Complete Guide",desc:"Master the economic calendar for trading. Learn how major economic releases affect markets, which events matter most, and how to trade around news.",level:"beginner",order:11},bn:{title:"ইকোনমিক ক্যালেন্ডার গাইড — সম্পূর্ণ গাইড",desc:"ট্রেডিংয়ের জন্য ইকোনমিক ক্যালেন্ডার আয়ত্ত করুন। প্রধান অর্থনৈতিক প্রকাশনা কীভাবে মার্কেট প্রভাবিত করে এবং নিউজের আশেপাশে ট্রেড শিখুন।",level:"beginner",order:11}},
+  {
+    slug: "trading-psychology",
+    en: {
+      title: "Trading Psychology — Complete Guide",
+      desc: "Master trading psychology. Learn to control emotions, overcome fear and greed, develop discipline, and build the mindset of a professional trader.",
+      level: "beginner",
+      order: 3,
+    },
+    bn: {
+      title: "ট্রেডিং সাইকোলজি — সম্পূর্ণ গাইড",
+      desc: "ট্রেডিং সাইকোলজি আয়ত্ত করুন। আবেগ নিয়ন্ত্রণ, ভয় ও লোভ কাটিয়ে ওঠা, শৃঙ্খলা গড়ে তোলা এবং প্রফেশনাল মাইন্ডসেট তৈরি শিখুন।",
+      level: "beginner",
+      order: 3,
+    },
+  },
+  {
+    slug: "position-sizing",
+    en: {
+      title: "Position Sizing — Complete Guide",
+      desc: "Master position sizing for all markets. Learn lot size calculations, fixed fractional methods, and how to size positions for forex, gold, indices, and crypto.",
+      level: "beginner",
+      order: 4,
+    },
+    bn: {
+      title: "পজিশন সাইজিং — সম্পূর্ণ গাইড",
+      desc: "সব মার্কেটের জন্য পজিশন সাইজিং আয়ত্ত করুন। লট সাইজ ক্যালকুলেশন এবং ফরেক্স, গোল্ড, ইন্ডাইসেস ও ক্রিপ্টোর জন্য পজিশন সাইজ শিখুন।",
+      level: "beginner",
+      order: 4,
+    },
+  },
+  {
+    slug: "journaling",
+    en: {
+      title: "Trading Journal — Complete Guide",
+      desc: "Master trading journaling. Learn how to record, review, and analyze your trades for continuous improvement and consistent profitability.",
+      level: "beginner",
+      order: 5,
+    },
+    bn: {
+      title: "ট্রেডিং জার্নাল — সম্পূর্ণ গাইড",
+      desc: "ট্রেডিং জার্নালিং আয়ত্ত করুন। ক্রমাগত উন্নতি ও ধারাবাহিক লাভের জন্য ট্রেড রেকর্ড, রিভিউ ও অ্যানালাইজ করা শিখুন।",
+      level: "beginner",
+      order: 5,
+    },
+  },
+  {
+    slug: "prop-firm-guide",
+    en: {
+      title: "Prop Firm Guide — Complete Guide",
+      desc: "Complete guide to proprietary trading firms. Learn how prop firms work, challenge rules, funded account strategies, and tips for passing evaluations.",
+      level: "intermediate",
+      order: 6,
+    },
+    bn: {
+      title: "প্রপ ফার্ম গাইড — সম্পূর্ণ গাইড",
+      desc: "প্রোপ্রাইটারি ট্রেডিং ফার্মের সম্পূর্ণ গাইড। প্রপ ফার্ম কীভাবে কাজ করে, চ্যালেঞ্জ নিয়ম, ফান্ডেড অ্যাকাউন্ট কৌশল শিখুন।",
+      level: "intermediate",
+      order: 6,
+    },
+  },
+  {
+    slug: "gold-trading",
+    en: {
+      title: "Gold Trading — Complete Guide",
+      desc: "Master gold (XAU/USD) trading. Learn gold market fundamentals, price drivers, trading strategies, session timing, and risk management for gold.",
+      level: "intermediate",
+      order: 7,
+    },
+    bn: {
+      title: "গোল্ড ট্রেডিং — সম্পূর্ণ গাইড",
+      desc: "গোল্ড (XAU/USD) ট্রেডিং আয়ত্ত করুন। গোল্ড মার্কেটের ফান্ডামেন্টাল, প্রাইস ড্রাইভার, ট্রেডিং কৌশল ও রিস্ক ম্যানেজমেন্ট শিখুন।",
+      level: "intermediate",
+      order: 7,
+    },
+  },
+  {
+    slug: "crypto-trading",
+    en: {
+      title: "Crypto Trading — Complete Guide",
+      desc: "Master cryptocurrency trading. Learn crypto market structure, Bitcoin and altcoin trading, DeFi basics, and risk management for volatile crypto markets.",
+      level: "intermediate",
+      order: 8,
+    },
+    bn: {
+      title: "ক্রিপ্টো ট্রেডিং — সম্পূর্ণ গাইড",
+      desc: "ক্রিপ্টোকারেন্সি ট্রেডিং আয়ত্ত করুন। ক্রিপ্টো মার্কেট স্ট্রাকচার, Bitcoin ও altcoin ট্রেডিং এবং রিস্ক ম্যানেজমেন্ট শিখুন।",
+      level: "intermediate",
+      order: 8,
+    },
+  },
+  {
+    slug: "indices-trading",
+    en: {
+      title: "Indices Trading — Complete Guide",
+      desc: "Master stock index trading (NAS100, US30, SPX500). Learn index fundamentals, session dynamics, and strategies for trading major indices.",
+      level: "intermediate",
+      order: 9,
+    },
+    bn: {
+      title: "ইন্ডাইসেস ট্রেডিং — সম্পূর্ণ গাইড",
+      desc: "স্টক ইনডেক্স ট্রেডিং (NAS100, US30, SPX500) আয়ত্ত করুন। ইনডেক্স ফান্ডামেন্টাল, সেশন ডায়নামিক্স ও কৌশল শিখুন।",
+      level: "intermediate",
+      order: 9,
+    },
+  },
+  {
+    slug: "futures-basics",
+    en: {
+      title: "Futures Basics — Complete Guide",
+      desc: "Master futures trading fundamentals. Learn contracts, margin, expiry, and how futures differ from forex and CFDs for informed market participation.",
+      level: "intermediate",
+      order: 10,
+    },
+    bn: {
+      title: "ফিউচার্স বেসিক — সম্পূর্ণ গাইড",
+      desc: "ফিউচার্স ট্রেডিং ফান্ডামেন্টাল আয়ত্ত করুন। কন্ট্র্যাক্ট, মার্জিন, এক্সপায়রি এবং ফরেক্স ও CFD থেকে পার্থক্য শিখুন।",
+      level: "intermediate",
+      order: 10,
+    },
+  },
+  {
+    slug: "economic-calendar-guide",
+    en: {
+      title: "Economic Calendar Guide — Complete Guide",
+      desc: "Master the economic calendar for trading. Learn how major economic releases affect markets, which events matter most, and how to trade around news.",
+      level: "beginner",
+      order: 11,
+    },
+    bn: {
+      title: "ইকোনমিক ক্যালেন্ডার গাইড — সম্পূর্ণ গাইড",
+      desc: "ট্রেডিংয়ের জন্য ইকোনমিক ক্যালেন্ডার আয়ত্ত করুন। প্রধান অর্থনৈতিক প্রকাশনা কীভাবে মার্কেট প্রভাবিত করে এবং নিউজের আশেপাশে ট্রেড শিখুন।",
+      level: "beginner",
+      order: 11,
+    },
+  },
 ];
 
 function genAcademyContent(slug, titleEn, isEN) {
   if (isEN) {
     return `
-## What is ${titleEn.replace(' — Complete Guide','')}?
+## What is ${titleEn.replace(" — Complete Guide", "")}?
 
-${titleEn.replace(' — Complete Guide','')} is an essential component of every trader's education. Whether you're a beginner just starting out or an experienced trader looking to refine your skills, mastering this topic will significantly improve your trading performance and consistency.
+${titleEn.replace(" — Complete Guide", "")} is an essential component of every trader's education. Whether you're a beginner just starting out or an experienced trader looking to refine your skills, mastering this topic will significantly improve your trading performance and consistency.
 
 <Callout type="info" title="Academy Lesson">
 This is part of the Trading Academy — a comprehensive curriculum covering everything from market fundamentals to professional-level execution. Each lesson builds on the previous ones to create a complete trading education.
@@ -831,7 +1013,7 @@ This is part of the Trading Academy — a comprehensive curriculum covering ever
 
 ---
 
-## Why ${titleEn.replace(' — Complete Guide','')} Matters
+## Why ${titleEn.replace(" — Complete Guide", "")} Matters
 
 1. **Foundation of Success** — This knowledge forms the bedrock of profitable trading
 2. **Risk Protection** — Proper understanding prevents costly mistakes
@@ -853,7 +1035,7 @@ Every topic in trading has layers of depth. At the beginner level, you need to u
 
 ### The Professional Mindset
 
-Professional traders approach ${titleEn.replace(' — Complete Guide','')} differently from amateurs:
+Professional traders approach ${titleEn.replace(" — Complete Guide", "")} differently from amateurs:
 - They have **systematic rules** rather than gut feelings
 - They **journal and review** their application of these concepts
 - They **adapt** to changing market conditions while maintaining core principles
@@ -994,9 +1176,9 @@ Yes. Forex and crypto trading is accessible from Bangladesh through internationa
 `;
   } else {
     return `
-## ${titleEn.replace(' — Complete Guide','')} কী?
+## ${titleEn.replace(" — Complete Guide", "")} কী?
 
-${titleEn.replace(' — Complete Guide','')} হলো প্রতিটি ট্রেডারের শিক্ষার একটি অপরিহার্য অংশ। আপনি সবে শুরু করছেন বা অভিজ্ঞ ট্রেডার দক্ষতা পরিমার্জন করতে চাইছেন — এই টপিক আয়ত্ত করলে আপনার ট্রেডিং পারফরম্যান্স ও ধারাবাহিকতা উল্লেখযোগ্যভাবে উন্নত হবে।
+${titleEn.replace(" — Complete Guide", "")} হলো প্রতিটি ট্রেডারের শিক্ষার একটি অপরিহার্য অংশ। আপনি সবে শুরু করছেন বা অভিজ্ঞ ট্রেডার দক্ষতা পরিমার্জন করতে চাইছেন — এই টপিক আয়ত্ত করলে আপনার ট্রেডিং পারফরম্যান্স ও ধারাবাহিকতা উল্লেখযোগ্যভাবে উন্নত হবে।
 
 <Callout type="info" title="একাডেমি পাঠ">
 এটি ট্রেডিং একাডেমির অংশ — মার্কেট ফান্ডামেন্টাল থেকে প্রফেশনাল-লেভেল এক্সিকিউশন পর্যন্ত সবকিছু কভার করা একটি সম্পূর্ণ পাঠ্যক্রম।
@@ -1159,21 +1341,32 @@ ${titleEn.replace(' — Complete Guide','')} হলো প্রতিটি ট
 }
 
 for (const topic of academyTopics) {
-  w('en', 'academy', topic.slug, {
-    title: topic.en.title,
-    description: topic.en.desc,
-    level: topic.en.level,
-    order: topic.en.order
-  }, genAcademyContent(topic.slug, topic.en.title, true));
+  w(
+    "en",
+    "academy",
+    topic.slug,
+    {
+      title: topic.en.title,
+      description: topic.en.desc,
+      level: topic.en.level,
+      order: topic.en.order,
+    },
+    genAcademyContent(topic.slug, topic.en.title, true),
+  );
 
-  w('bn', 'academy', topic.slug, {
-    title: topic.bn.title,
-    description: topic.bn.desc,
-    level: topic.bn.level,
-    order: topic.bn.order
-  }, genAcademyContent(topic.slug, topic.bn.title, false));
+  w(
+    "bn",
+    "academy",
+    topic.slug,
+    {
+      title: topic.bn.title,
+      description: topic.bn.desc,
+      level: topic.bn.level,
+      order: topic.bn.order,
+    },
+    genAcademyContent(topic.slug, topic.bn.title, false),
+  );
 }
 
-console.log('\n✅ Academy Batch complete: All 11 academy topics expanded (EN + BN)');
-console.log('Total: 22 files updated');
-
+console.log("\n✅ Academy Batch complete: All 11 academy topics expanded (EN + BN)");
+console.log("Total: 22 files updated");

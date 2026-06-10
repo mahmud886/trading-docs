@@ -26,10 +26,7 @@ interface SearchResult {
   excerpt: string;
 }
 
-const CATEGORY_CONFIG: Record<
-  string,
-  { icon: typeof FileText; color: string; label: string }
-> = {
+const CATEGORY_CONFIG: Record<string, { icon: typeof FileText; color: string; label: string }> = {
   academy: { icon: BookOpen, color: "text-accent-blue", label: "Academy" },
   "price-action": {
     icon: TrendingUp,
@@ -118,9 +115,7 @@ export function SearchModal() {
     setLoading(true);
     try {
       const lang = window.location.pathname.split("/")[1] || "en";
-      const res = await fetch(
-        `/${lang}/api/search?q=${encodeURIComponent(q)}`
-      );
+      const res = await fetch(`/${lang}/api/search?q=${encodeURIComponent(q)}`);
       const data = await res.json();
       setResults(data);
       setActiveIndex(-1);
@@ -205,9 +200,7 @@ export function SearchModal() {
           <Search
             size={22}
             className={`shrink-0 transition-colors duration-300 ${
-              loading
-                ? "animate-pulse text-accent-green"
-                : "text-accent-green/70"
+              loading ? "animate-pulse text-accent-green" : "text-accent-green/70"
             }`}
           />
           <input
@@ -245,20 +238,11 @@ export function SearchModal() {
           {loading && (
             <div className="space-y-1 p-3">
               {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 rounded-xl p-3"
-                >
+                <div key={i} className="flex items-center gap-3 rounded-xl p-3">
                   <div className="h-8 w-8 animate-pulse rounded-lg bg-muted" />
                   <div className="flex-1 space-y-2">
-                    <div
-                      className="h-4 animate-pulse rounded-md bg-muted"
-                      style={{ width: `${60 + i * 10}%` }}
-                    />
-                    <div
-                      className="h-3 animate-pulse rounded-md bg-muted/60"
-                      style={{ width: `${40 + i * 15}%` }}
-                    />
+                    <div className="h-4 animate-pulse rounded-md bg-muted" style={{ width: `${60 + i * 10}%` }} />
+                    <div className="h-3 animate-pulse rounded-md bg-muted/60" style={{ width: `${40 + i * 15}%` }} />
                   </div>
                 </div>
               ))}
@@ -272,12 +256,8 @@ export function SearchModal() {
                 <Search size={20} className="text-muted-foreground/50" />
               </div>
               <div>
-                <p className="text-sm font-medium text-foreground">
-                  No results found
-                </p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Try different keywords or check spelling
-                </p>
+                <p className="text-sm font-medium text-foreground">No results found</p>
+                <p className="mt-1 text-xs text-muted-foreground">Try different keywords or check spelling</p>
               </div>
             </div>
           )}
@@ -315,9 +295,7 @@ export function SearchModal() {
                     {/* Category icon */}
                     <div
                       className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors ${
-                        isActive
-                          ? "bg-accent-green/15 text-accent-green"
-                          : "bg-muted/60 text-muted-foreground"
+                        isActive ? "bg-accent-green/15 text-accent-green" : "bg-muted/60 text-muted-foreground"
                       }`}
                     >
                       <Icon size={15} />
@@ -335,9 +313,7 @@ export function SearchModal() {
                         </span>
                         <span
                           className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${config.color} ${
-                            isActive
-                              ? "bg-accent-green/10"
-                              : "bg-muted/60"
+                            isActive ? "bg-accent-green/10" : "bg-muted/60"
                           }`}
                         >
                           {config.label}
@@ -354,9 +330,7 @@ export function SearchModal() {
                     <ArrowRight
                       size={14}
                       className={`mt-2 shrink-0 transition-all duration-200 ${
-                        isActive
-                          ? "translate-x-0.5 text-accent-green"
-                          : "text-muted-foreground/30"
+                        isActive ? "translate-x-0.5 text-accent-green" : "text-muted-foreground/30"
                       }`}
                     />
                   </button>
@@ -427,4 +401,3 @@ export function SearchModal() {
     </div>
   );
 }
-

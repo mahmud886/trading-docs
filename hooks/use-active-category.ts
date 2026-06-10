@@ -13,4 +13,3 @@ export function useActiveCategory(): Category | undefined {
   }
   return undefined;
 }
-

@@ -14,14 +14,15 @@ Bollinger Bands হলো একটি **Volatility Indicator** যা তিন
 
 ## উপাদান
 
-| উপাদান | গণনা | উদ্দেশ্য |
-|---------|------|----------|
-| **Middle Band** | 20-period SMA | Trend Direction ও Mean |
-| **Upper Band** | SMA + (2 × Standard Deviation) | Overbought/Resistance এলাকা |
-| **Lower Band** | SMA - (2 × Standard Deviation) | Oversold/Support এলাকা |
-| **Band Width** | (Upper - Lower) ÷ Middle | Volatility পরিমাপ |
+| উপাদান          | গণনা                           | উদ্দেশ্য                    |
+| --------------- | ------------------------------ | --------------------------- |
+| **Middle Band** | 20-period SMA                  | Trend Direction ও Mean      |
+| **Upper Band**  | SMA + (2 × Standard Deviation) | Overbought/Resistance এলাকা |
+| **Lower Band**  | SMA - (2 × Standard Deviation) | Oversold/Support এলাকা      |
+| **Band Width**  | (Upper - Lower) ÷ Middle       | Volatility পরিমাপ           |
 
 ### মূল বৈশিষ্ট্য:
+
 - ~৯৫% Price Action Band-এর মধ্যে থাকে (2 SD)
 - High Volatility-তে Band Expand করে
 - Low Volatility-তে Band Contract করে (Squeeze)
@@ -62,6 +63,7 @@ RANGING Market-এ:
 ### Strategy ৩: Walking the Bands (Trend)
 
 শক্তিশালী Trend-এ Price ধারাবাহিকভাবে একটি Band স্পর্শ/অতিক্রম করে:
+
 - শক্তিশালী Uptrend: Price Upper Band ধরে চলে (Sell করবেন না!)
 - শক্তিশালী Downtrend: Price Lower Band ধরে চলে (Buy করবেন না!)
 - Trend Direction-এ Middle Band-এ Pullback Trade করুন
@@ -70,25 +72,25 @@ RANGING Market-এ:
 
 ## BB + RSI সমন্বয়
 
-| BB Signal | RSI Confirmation | Action |
-|-----------|-----------------|--------|
-| Upper Band স্পর্শ | RSI > 70 + Divergence | Sell Signal |
-| Lower Band স্পর্শ | RSI < 30 + Divergence | Buy Signal |
-| Squeeze Breakout উপরে | RSI 50-এর উপরে Cross | Confirmed Long |
-| Squeeze Breakout নিচে | RSI 50-এর নিচে Cross | Confirmed Short |
-| Upper Band-এ Walk | RSI 60-80 Range | Long-এ থাকুন, Trend শক্তিশালী |
+| BB Signal             | RSI Confirmation      | Action                        |
+| --------------------- | --------------------- | ----------------------------- |
+| Upper Band স্পর্শ     | RSI > 70 + Divergence | Sell Signal                   |
+| Lower Band স্পর্শ     | RSI < 30 + Divergence | Buy Signal                    |
+| Squeeze Breakout উপরে | RSI 50-এর উপরে Cross  | Confirmed Long                |
+| Squeeze Breakout নিচে | RSI 50-এর নিচে Cross  | Confirmed Short               |
+| Upper Band-এ Walk     | RSI 60-80 Range       | Long-এ থাকুন, Trend শক্তিশালী |
 
 ---
 
 ## সাধারণ ভুল
 
-| ভুল | বাস্তবতা |
-|------|---------|
-| প্রতিটি Upper Band Touch-এ Sell | Trend-এ Price Band ধরে চলে |
-| প্রতিটি Lower Band Touch-এ Buy | Downtrend-এ Price Lower Band-এ থাকে |
-| Squeeze Context উপেক্ষা | Squeeze Direction পূর্ববর্তী Trend-এর উপর নির্ভর করে |
-| ভুল Setting | Default 20,2 বেশিরভাগ ক্ষেত্রে কাজ করে |
-| শুধু BB দিয়ে Trade | সবসময় Trend/Momentum-এর সাথে সমন্বয় করুন |
+| ভুল                             | বাস্তবতা                                             |
+| ------------------------------- | ---------------------------------------------------- |
+| প্রতিটি Upper Band Touch-এ Sell | Trend-এ Price Band ধরে চলে                           |
+| প্রতিটি Lower Band Touch-এ Buy  | Downtrend-এ Price Lower Band-এ থাকে                  |
+| Squeeze Context উপেক্ষা         | Squeeze Direction পূর্ববর্তী Trend-এর উপর নির্ভর করে |
+| ভুল Setting                     | Default 20,2 বেশিরভাগ ক্ষেত্রে কাজ করে               |
+| শুধু BB দিয়ে Trade             | সবসময় Trend/Momentum-এর সাথে সমন্বয় করুন           |
 
 ---
 

@@ -9,21 +9,23 @@ lastUpdated: "2026-06-10"
 ## Internal vs. External Liquidity
 
 SMC-তে Liquidity দুই রূপে আছে:
+
 - **External Liquidity:** Swing High/Low-এর বাইরে বসে থাকা Order (TARGET)
 - **Internal Liquidity:** Range-এর মধ্যে FVG, Order Block (ENTRY)
 
 <Callout type="info" title="প্রবাহ">
-Price Internal Liquidity থেকে External Liquidity-তে যায়, তারপর ফেরে। এই প্রবাহ বুঝলে জানবেন Price পরবর্তীতে কোথায় যাচ্ছে।
+  Price Internal Liquidity থেকে External Liquidity-তে যায়, তারপর ফেরে। এই প্রবাহ বুঝলে জানবেন Price পরবর্তীতে কোথায়
+  যাচ্ছে।
 </Callout>
 
 ---
 
 ## সংজ্ঞা
 
-| ধরন | অবস্থান | উদাহরণ | উদ্দেশ্য |
-|------|---------|---------|----------|
+| ধরন          | অবস্থান            | উদাহরণ                | উদ্দেশ্য                     |
+| ------------ | ------------------ | --------------------- | ---------------------------- |
 | **External** | Swing H/L-এর বাইরে | EQH, EQL, Swing Point | TARGET (Price কোথায় যাচ্ছে) |
-| **Internal** | Range-এর ভিতরে | FVG, OB, Breaker | ENTRY (Price কোথা থেকে ঢোকে) |
+| **Internal** | Range-এর ভিতরে     | FVG, OB, Breaker      | ENTRY (Price কোথা থেকে ঢোকে) |
 
 ---
 
@@ -50,10 +52,12 @@ Price এই Cycle অনুসরণ করে:
 ## Trading Application
 
 ### External TARGET হিসেবে:
+
 - Draw on Liquidity = পরবর্তী Unfilled External Level
 - EQH/EQL, Session H/L, Swing Point TP হিসেবে ব্যবহার
 
 ### Internal ENTRY হিসেবে:
+
 - External নেওয়ার পর Internal Entry খুঁজুন
 - FVG বা OB Retracement-এ Enter
 - সেরা R:R দেয়

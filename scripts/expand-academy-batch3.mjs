@@ -1,7 +1,7 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from "fs";
+import { join } from "path";
 
-const contentDir = join(process.cwd(), 'content');
+const contentDir = join(process.cwd(), "content");
 
 function writeMdx(lang, category, slug, frontmatter, content) {
   const fm = `---
@@ -12,7 +12,7 @@ order: ${frontmatter.order}
 lastUpdated: "2026-06-10"
 ---
 `;
-  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, 'utf-8');
+  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, "utf-8");
   console.log(`✅ ${lang}/${category}/${slug}.mdx`);
 }
 
@@ -23,12 +23,18 @@ lastUpdated: "2026-06-10"
 // ============================
 // 1. TECHNICAL INDICATORS — EN
 // ============================
-writeMdx('en', 'academy', 'technical-indicators', {
-  title: "Technical Indicators — Complete Guide",
-  description: "Master essential technical indicators: RSI, MACD, Moving Averages, Stochastic, ADX, and Volume indicators. Learn how to use them for trading signals and confirmations.",
-  level: "intermediate",
-  order: 13
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "technical-indicators",
+  {
+    title: "Technical Indicators — Complete Guide",
+    description:
+      "Master essential technical indicators: RSI, MACD, Moving Averages, Stochastic, ADX, and Volume indicators. Learn how to use them for trading signals and confirmations.",
+    level: "intermediate",
+    order: 13,
+  },
+  `
 ## What Are Technical Indicators?
 
 Technical indicators are **mathematical calculations** applied to price and/or volume data that help traders identify trends, momentum, volatility, and potential reversal points. They are tools — not crystal balls.
@@ -234,17 +240,24 @@ Strong Buy Signal = Multiple confirmations:
 - [Fibonacci Trading](/en/academy/fibonacci-trading) — Key retracement levels
 - [Bollinger Bands](/en/academy/bollinger-bands-trading) — Volatility indicator
 - [Trading Plan](/en/academy/trading-plan) — System development
-`);
+`,
+);
 
 // ============================
 // 1. TECHNICAL INDICATORS — BN
 // ============================
-writeMdx('bn', 'academy', 'technical-indicators', {
-  title: "Technical Indicator — সম্পূর্ণ গাইড",
-  description: "অত্যাবশ্যকীয় Technical Indicator আয়ত্ত করুন: RSI, MACD, Moving Average, Stochastic, ADX এবং Volume Indicator। Trading Signal ও Confirmation-এ এগুলো ব্যবহার শিখুন।",
-  level: "intermediate",
-  order: 13
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "technical-indicators",
+  {
+    title: "Technical Indicator — সম্পূর্ণ গাইড",
+    description:
+      "অত্যাবশ্যকীয় Technical Indicator আয়ত্ত করুন: RSI, MACD, Moving Average, Stochastic, ADX এবং Volume Indicator। Trading Signal ও Confirmation-এ এগুলো ব্যবহার শিখুন।",
+    level: "intermediate",
+    order: 13,
+  },
+  `
 ## Technical Indicator কী?
 
 Technical Indicator হলো Price এবং/অথবা Volume Data-তে প্রয়োগ করা **গাণিতিক গণনা** যা Trader-দের Trend, Momentum, Volatility এবং সম্ভাব্য Reversal Point চিহ্নিত করতে সাহায্য করে। এগুলো হাতিয়ার — ভবিষ্যৎ বলার যন্ত্র নয়।
@@ -425,17 +438,24 @@ N Period-এ High-Low Range-এর তুলনায় বর্তমান P
 - [Fibonacci Trading](/bn/academy/fibonacci-trading) — মূল Retracement Level
 - [Bollinger Bands](/bn/academy/bollinger-bands-trading) — Volatility Indicator
 - [Trading Plan](/bn/academy/trading-plan) — System Development
-`);
+`,
+);
 
 // ============================
 // 2. SUPPORT & RESISTANCE ADVANCED — EN
 // ============================
-writeMdx('en', 'academy', 'support-resistance-advanced', {
-  title: "Advanced Support & Resistance — Complete Guide",
-  description: "Master advanced support and resistance concepts: dynamic S/R, flip zones, institutional levels, order blocks, and how to identify the strongest levels for trading.",
-  level: "intermediate",
-  order: 14
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "support-resistance-advanced",
+  {
+    title: "Advanced Support & Resistance — Complete Guide",
+    description:
+      "Master advanced support and resistance concepts: dynamic S/R, flip zones, institutional levels, order blocks, and how to identify the strongest levels for trading.",
+    level: "intermediate",
+    order: 14,
+  },
+  `
 ## Advanced Support & Resistance
 
 Support and Resistance (S/R) are the **most important concepts** in technical analysis. Every trading strategy ultimately relies on understanding where price is likely to react. This guide covers advanced concepts beyond basic horizontal lines.
@@ -616,17 +636,24 @@ Confidence: Very high probability
 - [Fibonacci Trading](/en/academy/fibonacci-trading) — Fib confluence with S/R
 - [Trendlines & Channels](/en/academy/trendlines-channels) — Dynamic levels
 - [Trading Plan](/en/academy/trading-plan) — Build S/R into your system
-`);
+`,
+);
 
 // ============================
 // 2. SUPPORT & RESISTANCE ADVANCED — BN
 // ============================
-writeMdx('bn', 'academy', 'support-resistance-advanced', {
-  title: "Advanced Support ও Resistance — সম্পূর্ণ গাইড",
-  description: "Advanced Support ও Resistance Concept আয়ত্ত করুন: Dynamic S/R, Flip Zone, Institutional Level, Order Block এবং Trading-এর জন্য সবচেয়ে শক্তিশালী Level চিহ্নিত করা।",
-  level: "intermediate",
-  order: 14
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "support-resistance-advanced",
+  {
+    title: "Advanced Support ও Resistance — সম্পূর্ণ গাইড",
+    description:
+      "Advanced Support ও Resistance Concept আয়ত্ত করুন: Dynamic S/R, Flip Zone, Institutional Level, Order Block এবং Trading-এর জন্য সবচেয়ে শক্তিশালী Level চিহ্নিত করা।",
+    level: "intermediate",
+    order: 14,
+  },
+  `
 ## Advanced Support ও Resistance
 
 Support ও Resistance (S/R) হলো Technical Analysis-এর **সবচেয়ে গুরুত্বপূর্ণ ধারণা**। প্রতিটি Trading Strategy শেষ পর্যন্ত নির্ভর করে Price কোথায় React করতে পারে তা বোঝার উপর। এই গাইড মৌলিক Horizontal Line-এর বাইরের Advanced Concept কভার করে।
@@ -790,17 +817,24 @@ Confidence: অত্যন্ত উচ্চ Probability
 - [Fibonacci Trading](/bn/academy/fibonacci-trading) — S/R-এর সাথে Fib Confluence
 - [Trendline ও Channel](/bn/academy/trendlines-channels) — Dynamic Level
 - [Trading Plan](/bn/academy/trading-plan) — System-এ S/R যোগ করুন
-`);
+`,
+);
 
 // ============================
 // 3. CHART PATTERNS — EN
 // ============================
-writeMdx('en', 'academy', 'chart-patterns', {
-  title: "Chart Patterns — Complete Trading Guide",
-  description: "Master all major chart patterns: Head & Shoulders, Double Top/Bottom, Triangles, Wedges, Flags, and Cup & Handle. Learn entry rules, targets, and pattern trading strategies.",
-  level: "beginner",
-  order: 15
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "chart-patterns",
+  {
+    title: "Chart Patterns — Complete Trading Guide",
+    description:
+      "Master all major chart patterns: Head & Shoulders, Double Top/Bottom, Triangles, Wedges, Flags, and Cup & Handle. Learn entry rules, targets, and pattern trading strategies.",
+    level: "beginner",
+    order: 15,
+  },
+  `
 ## What Are Chart Patterns?
 
 Chart patterns are **recognizable formations** on price charts that signal potential future price movements. They represent the psychology of market participants — fear, greed, accumulation, and distribution — visualized through price.
@@ -998,17 +1032,24 @@ Patterns FAIL frequently (30-40% of the time). This is why stop losses are non-n
 - [Technical Indicators](/en/academy/technical-indicators) — Confirm patterns
 - [Fibonacci Trading](/en/academy/fibonacci-trading) — Measure retracements
 - [Risk Management](/en/academy/risk-management) — Manage pattern trades
-`);
+`,
+);
 
 // ============================
 // 3. CHART PATTERNS — BN
 // ============================
-writeMdx('bn', 'academy', 'chart-patterns', {
-  title: "Chart Pattern — সম্পূর্ণ Trading গাইড",
-  description: "সব প্রধান Chart Pattern আয়ত্ত করুন: Head & Shoulders, Double Top/Bottom, Triangle, Wedge, Flag এবং Cup & Handle। Entry Rule, Target ও Pattern Trading Strategy শিখুন।",
-  level: "beginner",
-  order: 15
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "chart-patterns",
+  {
+    title: "Chart Pattern — সম্পূর্ণ Trading গাইড",
+    description:
+      "সব প্রধান Chart Pattern আয়ত্ত করুন: Head & Shoulders, Double Top/Bottom, Triangle, Wedge, Flag এবং Cup & Handle। Entry Rule, Target ও Pattern Trading Strategy শিখুন।",
+    level: "beginner",
+    order: 15,
+  },
+  `
 ## Chart Pattern কী?
 
 Chart Pattern হলো Price Chart-এ **চিনতে পারা Formation** যা সম্ভাব্য ভবিষ্যৎ Price Movement-এর Signal দেয়। এগুলো Market Participant-দের Psychology — ভয়, লোভ, Accumulation ও Distribution — Price-এর মাধ্যমে দৃশ্যমান করে।
@@ -1185,17 +1226,24 @@ Pattern ঘন ঘন FAIL করে (৩০-৪০% সময়)। এজন�
 - [Technical Indicator](/bn/academy/technical-indicators) — Pattern Confirm করুন
 - [Fibonacci Trading](/bn/academy/fibonacci-trading) — Retracement পরিমাপ
 - [Risk Management](/bn/academy/risk-management) — Pattern Trade ম্যানেজ
-`);
+`,
+);
 
 // ============================
 // 4. TRENDLINES & CHANNELS — EN
 // ============================
-writeMdx('en', 'academy', 'trendlines-channels', {
-  title: "Trendlines & Channels — Complete Guide",
-  description: "Master trendline drawing, channel identification, and trend-based trading strategies. Learn ascending, descending, and parallel channels for precise entries.",
-  level: "intermediate",
-  order: 16
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "trendlines-channels",
+  {
+    title: "Trendlines & Channels — Complete Guide",
+    description:
+      "Master trendline drawing, channel identification, and trend-based trading strategies. Learn ascending, descending, and parallel channels for precise entries.",
+    level: "intermediate",
+    order: 16,
+  },
+  `
 ## Understanding Trendlines & Channels
 
 Trendlines are the simplest yet most powerful tools in technical analysis. They visualize the direction and angle of price movement, providing clear entry and exit zones.
@@ -1314,17 +1362,24 @@ Example:
 - [Fibonacci Trading](/en/academy/fibonacci-trading) — Fib + trendline confluence
 - [Technical Indicators](/en/academy/technical-indicators) — Confirm trend direction
 - [Elliott Wave Theory](/en/academy/elliott-wave-theory) — Wave channels
-`);
+`,
+);
 
 // ============================
 // 4. TRENDLINES & CHANNELS — BN
 // ============================
-writeMdx('bn', 'academy', 'trendlines-channels', {
-  title: "Trendline ও Channel — সম্পূর্ণ গাইড",
-  description: "Trendline আঁকা, Channel চিহ্নিতকরণ এবং Trend-based Trading Strategy আয়ত্ত করুন। সুনির্দিষ্ট Entry-র জন্য Ascending, Descending ও Parallel Channel শিখুন।",
-  level: "intermediate",
-  order: 16
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "trendlines-channels",
+  {
+    title: "Trendline ও Channel — সম্পূর্ণ গাইড",
+    description:
+      "Trendline আঁকা, Channel চিহ্নিতকরণ এবং Trend-based Trading Strategy আয়ত্ত করুন। সুনির্দিষ্ট Entry-র জন্য Ascending, Descending ও Parallel Channel শিখুন।",
+    level: "intermediate",
+    order: 16,
+  },
+  `
 ## Trendline ও Channel বোঝা
 
 Trendline হলো Technical Analysis-এর সবচেয়ে সহজ অথচ সবচেয়ে শক্তিশালী Tool। এগুলো Price Movement-এর দিক ও কোণ দৃশ্যমান করে, স্পষ্ট Entry ও Exit Zone প্রদান করে।
@@ -1443,17 +1498,24 @@ Target = Breakout Point থেকে Channel Width Project
 - [Fibonacci Trading](/bn/academy/fibonacci-trading) — Fib + Trendline Confluence
 - [Technical Indicator](/bn/academy/technical-indicators) — Trend Direction Confirm
 - [Elliott Wave Theory](/bn/academy/elliott-wave-theory) — Wave Channel
-`);
+`,
+);
 
 // ============================
 // 5. FIBONACCI TRADING — EN
 // ============================
-writeMdx('en', 'academy', 'fibonacci-trading', {
-  title: "Fibonacci Trading — Complete Guide",
-  description: "Master Fibonacci retracement and extension levels for trading. Learn the golden pocket, Fibonacci confluence zones, and how to combine Fib with other tools.",
-  level: "intermediate",
-  order: 17
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "fibonacci-trading",
+  {
+    title: "Fibonacci Trading — Complete Guide",
+    description:
+      "Master Fibonacci retracement and extension levels for trading. Learn the golden pocket, Fibonacci confluence zones, and how to combine Fib with other tools.",
+    level: "intermediate",
+    order: 17,
+  },
+  `
 ## What is Fibonacci in Trading?
 
 Fibonacci levels are **mathematical ratios** derived from the Fibonacci sequence that identify potential support, resistance, and target levels. These ratios appear throughout nature and financial markets with remarkable frequency.
@@ -1596,17 +1658,24 @@ Zone 1.0845-1.0855 = TRIPLE FIB CONFLUENCE
 - [Chart Patterns](/en/academy/chart-patterns) — Pattern + Fib targets
 - [Technical Indicators](/en/academy/technical-indicators) — Confirm Fib levels
 - [Position Sizing](/en/academy/position-sizing) — Size based on Fib stops
-`);
+`,
+);
 
 // ============================
 // 5. FIBONACCI TRADING — BN
 // ============================
-writeMdx('bn', 'academy', 'fibonacci-trading', {
-  title: "Fibonacci Trading — সম্পূর্ণ গাইড",
-  description: "Trading-এর জন্য Fibonacci Retracement ও Extension Level আয়ত্ত করুন। Golden Pocket, Fibonacci Confluence Zone এবং অন্যান্য Tool-এর সাথে Fib সমন্বয় শিখুন।",
-  level: "intermediate",
-  order: 17
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "fibonacci-trading",
+  {
+    title: "Fibonacci Trading — সম্পূর্ণ গাইড",
+    description:
+      "Trading-এর জন্য Fibonacci Retracement ও Extension Level আয়ত্ত করুন। Golden Pocket, Fibonacci Confluence Zone এবং অন্যান্য Tool-এর সাথে Fib সমন্বয় শিখুন।",
+    level: "intermediate",
+    order: 17,
+  },
+  `
 ## Trading-এ Fibonacci কী?
 
 Fibonacci Level হলো Fibonacci Sequence থেকে প্রাপ্ত **গাণিতিক অনুপাত** যা সম্ভাব্য Support, Resistance ও Target Level চিহ্নিত করে। এই অনুপাতগুলো প্রকৃতি ও Financial Market জুড়ে অসাধারণ ফ্রিকোয়েন্সিতে দেখা যায়।
@@ -1743,17 +1812,24 @@ Zone 1.0845-1.0855 = TRIPLE FIB CONFLUENCE
 - [Chart Pattern](/bn/academy/chart-patterns) — Pattern + Fib Target
 - [Technical Indicator](/bn/academy/technical-indicators) — Fib Level Confirm
 - [Position Sizing](/bn/academy/position-sizing) — Fib Stop-এর ভিত্তিতে Size
-`);
+`,
+);
 
 // ============================
 // 6. ELLIOTT WAVE THEORY — EN
 // ============================
-writeMdx('en', 'academy', 'elliott-wave-theory', {
-  title: "Elliott Wave Theory — Complete Guide",
-  description: "Understand Elliott Wave Theory for market analysis. Learn impulse waves, corrective waves, wave counting rules, and how to apply wave analysis to your trading.",
-  level: "intermediate",
-  order: 18
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "elliott-wave-theory",
+  {
+    title: "Elliott Wave Theory — Complete Guide",
+    description:
+      "Understand Elliott Wave Theory for market analysis. Learn impulse waves, corrective waves, wave counting rules, and how to apply wave analysis to your trading.",
+    level: "intermediate",
+    order: 18,
+  },
+  `
 ## What is Elliott Wave Theory?
 
 Elliott Wave Theory proposes that financial markets move in **predictable wave patterns** driven by collective investor psychology. Developed by Ralph Nelson Elliott in the 1930s, it identifies recurring fractal patterns in market prices.
@@ -1912,17 +1988,24 @@ Elliott Wave is subjective. Two analysts can look at the same chart and produce 
 - [Trendlines & Channels](/en/academy/trendlines-channels) — Wave channels
 - [Technical Indicators](/en/academy/technical-indicators) — Confirm wave counts
 - [Support & Resistance](/en/academy/support-resistance-advanced) — Wave-level S/R
-`);
+`,
+);
 
 // ============================
 // 6. ELLIOTT WAVE THEORY — BN
 // ============================
-writeMdx('bn', 'academy', 'elliott-wave-theory', {
-  title: "Elliott Wave Theory — সম্পূর্ণ গাইড",
-  description: "Market Analysis-এর জন্য Elliott Wave Theory বুঝুন। Impulse Wave, Corrective Wave, Wave Counting Rule এবং আপনার Trading-এ Wave Analysis প্রয়োগ শিখুন।",
-  level: "intermediate",
-  order: 18
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "elliott-wave-theory",
+  {
+    title: "Elliott Wave Theory — সম্পূর্ণ গাইড",
+    description:
+      "Market Analysis-এর জন্য Elliott Wave Theory বুঝুন। Impulse Wave, Corrective Wave, Wave Counting Rule এবং আপনার Trading-এ Wave Analysis প্রয়োগ শিখুন।",
+    level: "intermediate",
+    order: 18,
+  },
+  `
 ## Elliott Wave Theory কী?
 
 Elliott Wave Theory প্রস্তাব করে যে Financial Market সম্মিলিত Investor Psychology দ্বারা চালিত **পূর্বানুমানযোগ্য Wave Pattern**-এ চলে। ১৯৩০-এর দশকে Ralph Nelson Elliott এটি তৈরি করেন, Market Price-এ Recurring Fractal Pattern চিহ্নিত করে।
@@ -2054,8 +2137,10 @@ Elliott Wave Subjective। দুজন Analyst একই Chart দেখে ভ
 - [Trendline ও Channel](/bn/academy/trendlines-channels) — Wave Channel
 - [Technical Indicator](/bn/academy/technical-indicators) — Wave Count Confirm
 - [Support ও Resistance](/bn/academy/support-resistance-advanced) — Wave-level S/R
-`);
+`,
+);
 
-console.log('\n✅ Academy Batch 3 Complete: 6 topics × 2 languages = 12 files');
-console.log('Topics: technical-indicators, support-resistance-advanced, chart-patterns, trendlines-channels, fibonacci-trading, elliott-wave-theory');
-
+console.log("\n✅ Academy Batch 3 Complete: 6 topics × 2 languages = 12 files");
+console.log(
+  "Topics: technical-indicators, support-resistance-advanced, chart-patterns, trendlines-channels, fibonacci-trading, elliott-wave-theory",
+);

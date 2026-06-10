@@ -1,11 +1,6 @@
 import { notFound } from "next/navigation";
 import { compileMDX } from "next-mdx-remote/rsc";
-import {
-  getDocBySlug,
-  getAllDocSlugs,
-  getAdjacentDocs,
-  getSidebarTree,
-} from "@/lib/content";
+import { getDocBySlug, getAllDocSlugs, getAdjacentDocs, getSidebarTree } from "@/lib/content";
 import { extractToc } from "@/lib/toc";
 import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { createMdxComponents } from "@/components/docs/mdx-components";
@@ -25,11 +20,7 @@ interface DocPageProps {
   category: Category;
 }
 
-export async function generateDocMetadata({
-  lang,
-  slug,
-  category,
-}: DocPageProps): Promise<Metadata> {
+export async function generateDocMetadata({ lang, slug, category }: DocPageProps): Promise<Metadata> {
   const config = CATEGORY_CONFIG[category];
 
   if (!slug || slug.length === 0) {
@@ -63,17 +54,12 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
     const allSlugs = getAllDocSlugs(lang as Locale, category);
 
     // Get all doc metas for cards
-    const docs = allSlugs
-      .map((s) => getDocBySlug(lang as Locale, category, s))
-      .filter(Boolean);
+    const docs = allSlugs.map((s) => getDocBySlug(lang as Locale, category, s)).filter(Boolean);
 
     return (
       <div className="px-8 py-10">
         <div className="mb-8">
-          <div
-            className="mb-4 h-1 w-16 rounded-full"
-            style={{ backgroundColor: config.color }}
-          />
+          <div className="mb-4 h-1 w-16 rounded-full" style={{ backgroundColor: config.color }} />
           <h1 className="text-4xl font-bold text-foreground">{getCategoryLabel(category, lang)}</h1>
           <p className="mt-3 text-lg text-muted-foreground">{getCategoryDescription(category, lang)}</p>
         </div>
@@ -90,7 +76,7 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
                     category={category}
                     levelLabel={(dict.levels as Record<string, string>)[doc.meta.level]}
                   />
-                )
+                ),
             )}
           </div>
         ) : (
@@ -98,10 +84,7 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
             <p className="text-muted-foreground">
               {lang === "bn" ? "বিষয়বস্তু শীঘ্রই আসছে। পরে আবার দেখুন!" : "Content coming soon. Check back later!"}
             </p>
-            <Link
-              href={`/${lang}`}
-              className="mt-4 inline-block text-sm text-accent-green hover:underline"
-            >
+            <Link href={`/${lang}`} className="mt-4 inline-block text-sm text-accent-green hover:underline">
               {lang === "bn" ? "← হোমে ফিরে যান" : "← Back to home"}
             </Link>
           </div>
@@ -114,25 +97,22 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
   const doc = getDocBySlug(lang as Locale, category, slug);
   if (!doc) notFound();
 
-   const toc = extractToc(doc.content);
-   const { prev, next } = getAdjacentDocs(lang as Locale, category, slug);
+  const toc = extractToc(doc.content);
+  const { prev, next } = getAdjacentDocs(lang as Locale, category, slug);
 
-   const { content } = await compileMDX({
-     source: doc.content,
-     components: createMdxComponents(),
-     options: {
-       parseFrontmatter: false,
-       mdxOptions: {
-         remarkPlugins: [remarkGfm],
-         rehypePlugins: [],
-       },
-     },
-   });
+  const { content } = await compileMDX({
+    source: doc.content,
+    components: createMdxComponents(),
+    options: {
+      parseFrontmatter: false,
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+        rehypePlugins: [],
+      },
+    },
+  });
 
-  const schema = generateArticleSchema(
-    doc.meta,
-    `${SITE_URL}/${lang}/${category}/${slug.join("/")}`
-  );
+  const schema = generateArticleSchema(doc.meta, `${SITE_URL}/${lang}/${category}/${slug.join("/")}`);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: `${SITE_URL}/${lang}` },
@@ -142,14 +122,8 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="flex gap-10 px-8 py-10">
         <article className="min-w-0 max-w-3xl flex-1">
           <Breadcrumbs
@@ -183,23 +157,12 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
             )}
           </div>
 
-          <h1 className="text-4xl font-bold tracking-tight text-foreground">
-            {doc.meta.title}
-          </h1>
-          {doc.meta.description && (
-            <p className="mt-3 text-lg text-muted-foreground">
-              {doc.meta.description}
-            </p>
-          )}
+          <h1 className="text-4xl font-bold tracking-tight text-foreground">{doc.meta.title}</h1>
+          {doc.meta.description && <p className="mt-3 text-lg text-muted-foreground">{doc.meta.description}</p>}
 
           <div className="mt-8">{content}</div>
 
-          <PrevNextNav
-            lang={lang}
-            category={category}
-            prev={prev}
-            next={next}
-          />
+          <PrevNextNav lang={lang} category={category} prev={prev} next={next} />
         </article>
 
         {/* Table of contents */}
@@ -212,4 +175,3 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
     </>
   );
 }
-

@@ -11,11 +11,7 @@ const MobileMenuCtx = createContext<{
   setOpen: (v: boolean) => void;
 }>({ open: false, setOpen: () => {} });
 
-export function MobileMenuProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function MobileMenuProvider({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
 
   // Prevent body scroll when menu is open
@@ -30,11 +26,7 @@ export function MobileMenuProvider({
     };
   }, [open]);
 
-  return (
-    <MobileMenuCtx.Provider value={{ open, setOpen }}>
-      {children}
-    </MobileMenuCtx.Provider>
-  );
+  return <MobileMenuCtx.Provider value={{ open, setOpen }}>{children}</MobileMenuCtx.Provider>;
 }
 
 /** Small hamburger / X button — goes inside the navbar */
@@ -53,13 +45,7 @@ export function MobileMenuTrigger() {
 }
 
 /** Full-screen overlay + slide-in panel — rendered OUTSIDE the navbar */
-export function MobileMenuPanel({
-  lang,
-  links,
-}: {
-  lang: Locale;
-  links: { href: string; label: string }[];
-}) {
+export function MobileMenuPanel({ lang, links }: { lang: Locale; links: { href: string; label: string }[] }) {
   const { open, setOpen } = useContext(MobileMenuCtx);
 
   if (!open) return null;
@@ -69,18 +55,26 @@ export function MobileMenuPanel({
       {/* Full-screen dark backdrop */}
       <div
         className="fixed inset-0"
-        style={{ zIndex: 9998, backgroundColor: "rgba(0, 0, 0, 0.8)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}
+        style={{
+          zIndex: 9998,
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+        }}
         onClick={() => setOpen(false)}
       />
       {/* Slide-in menu panel */}
       <div
         className="fixed inset-y-0 right-0 w-72 border-l border-border p-6 shadow-2xl"
-        style={{ zIndex: 9998, backgroundColor: "rgba(0, 0, 0, 0.8)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}
+        style={{
+          zIndex: 9998,
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+        }}
       >
         <div className="mb-8 flex items-center justify-between">
-          <span className="text-lg font-bold text-foreground">
-            {lang === "bn" ? "মেনু" : "Menu"}
-          </span>
+          <span className="text-lg font-bold text-foreground">{lang === "bn" ? "মেনু" : "Menu"}</span>
           <button
             onClick={() => setOpen(false)}
             className="rounded-lg p-1 text-muted-foreground hover:text-accent-green"
@@ -89,14 +83,9 @@ export function MobileMenuPanel({
           </button>
         </div>
         <nav className="flex flex-col gap-1">
-          <MobileMenuContent
-            lang={lang}
-            links={links}
-            onClose={() => setOpen(false)}
-          />
+          <MobileMenuContent lang={lang} links={links} onClose={() => setOpen(false)} />
         </nav>
       </div>
     </div>
   );
 }
-

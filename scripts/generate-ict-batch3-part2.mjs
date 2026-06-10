@@ -1,15 +1,15 @@
-import { writeFileSync, mkdirSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync, mkdirSync } from "fs";
+import { join } from "path";
 
-const C = join(process.cwd(), 'content');
+const C = join(process.cwd(), "content");
 
 // Ensure directories exist
 try {
-  mkdirSync(join(C, 'bn', 'academy', 'ict-smc-course'), { recursive: true });
+  mkdirSync(join(C, "bn", "academy", "ict-smc-course"), { recursive: true });
 } catch (e) {}
 
 const writeEN = (slug, meta, content) => {
-  const path = join(C, 'en', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "en", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -18,12 +18,12 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ EN: ${slug}`);
 };
 
 const writeBN = (slug, meta, content) => {
-  const path = join(C, 'bn', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "bn", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -32,17 +32,21 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ BN: ${slug}`);
 };
 
 // ============ TOPIC 24: Judas Swing ============
-writeEN('24-judas-swing', {
-  title: 'Judas Swing',
-  description: 'Master the Judas Swing — the betrayal move that traps early traders before the true market direction. Learn to identify and trade this manipulation phase.',
-  order: 24,
-  level: 'advanced'
-}, `# Judas Swing
+writeEN(
+  "24-judas-swing",
+  {
+    title: "Judas Swing",
+    description:
+      "Master the Judas Swing — the betrayal move that traps early traders before the true market direction. Learn to identify and trade this manipulation phase.",
+    order: 24,
+    level: "advanced",
+  },
+  `# Judas Swing
 
 ### Definition
 
@@ -193,14 +197,19 @@ A Judas Swing is a **false breakout that traps early traders before price revers
    - Price delivered perfectly to target
 
 The Judas Swing trapped early sellers and provided perfect long entry for the real bullish move.
-`);
+`,
+);
 
-writeBN('24-judas-swing', {
-  title: 'Judas Swing',
-  description: 'Judas Swing Master করুন — বিশ্বাসঘাতকতার Move যা প্রকৃত Market Direction এর আগে Early Trader দের Trap করে। এই Manipulation Phase চিহ্নিত ও Trade করা শিখুন।',
-  order: 24,
-  level: 'advanced'
-}, `# Judas Swing
+writeBN(
+  "24-judas-swing",
+  {
+    title: "Judas Swing",
+    description:
+      "Judas Swing Master করুন — বিশ্বাসঘাতকতার Move যা প্রকৃত Market Direction এর আগে Early Trader দের Trap করে। এই Manipulation Phase চিহ্নিত ও Trade করা শিখুন।",
+    order: 24,
+    level: "advanced",
+  },
+  `# Judas Swing
 
 ### Definition
 
@@ -343,17 +352,22 @@ Judas Swing হলো **False Breakout যা প্রকৃত Direction এ P
    - Price নিখুঁতভাবে Target এ Deliver করেছে
 
 Judas Swing Early Seller দের Trap করেছে এবং Real Bullish Move এর জন্য নিখুঁত Long Entry দিয়েছে।
-`);
+`,
+);
 
-console.log('✅ Topic 24 (Judas Swing) complete!\n');
+console.log("✅ Topic 24 (Judas Swing) complete!\n");
 
 // ============ TOPIC 25: Session Liquidity ============
-writeEN('25-session-liquidity', {
-  title: 'Session Liquidity',
-  description: 'Master Session Liquidity — how Asian, London, and NY sessions create distinct liquidity pools. Learn optimal trading times and session-based setups.',
-  order: 25,
-  level: 'intermediate'
-}, `# Session Liquidity
+writeEN(
+  "25-session-liquidity",
+  {
+    title: "Session Liquidity",
+    description:
+      "Master Session Liquidity — how Asian, London, and NY sessions create distinct liquidity pools. Learn optimal trading times and session-based setups.",
+    order: 25,
+    level: "intermediate",
+  },
+  `# Session Liquidity
 
 ### Definition
 
@@ -504,14 +518,19 @@ Session Liquidity refers to the **accumulation of stop losses and pending orders
 - Session liquidity concept delivered perfect entry and target
 
 The trade capitalized on Asian range SSL sweep (Judas), entered on retracement, targeted the next available BSL above.
-`);
+`,
+);
 
-writeBN('25-session-liquidity', {
-  title: 'Session Liquidity',
-  description: 'Session Liquidity Master করুন — কীভাবে Asian, London, ও NY Session স্বতন্ত্র Liquidity Pool তৈরি করে। Optimal Trading Time ও Session-Based Setup শিখুন।',
-  order: 25,
-  level: 'intermediate'
-}, `# Session Liquidity
+writeBN(
+  "25-session-liquidity",
+  {
+    title: "Session Liquidity",
+    description:
+      "Session Liquidity Master করুন — কীভাবে Asian, London, ও NY Session স্বতন্ত্র Liquidity Pool তৈরি করে। Optimal Trading Time ও Session-Based Setup শিখুন।",
+    order: 25,
+    level: "intermediate",
+  },
+  `# Session Liquidity
 
 ### Definition
 
@@ -649,10 +668,9 @@ Session Liquidity বলতে বোঝায় **নির্দিষ্ট 
 - Session Liquidity Concept নিখুঁত Entry ও Target Deliver করেছে
 
 Trade Asian Range SSL Sweep (Judas) কাজে লাগিয়েছে, Retracement এ Enter করেছে, উপরে পরবর্তী উপলব্ধ BSL Target করেছে।
-`);
+`,
+);
 
-console.log('✅ Topic 25 (Session Liquidity) complete!\n');
+console.log("✅ Topic 25 (Session Liquidity) complete!\n");
 
-console.log('\n🎉 Batch 3 Topics 24-25 complete! Topics 26-28 will be in next batch.\n');
-
-
+console.log("\n🎉 Batch 3 Topics 24-25 complete! Topics 26-28 will be in next batch.\n");

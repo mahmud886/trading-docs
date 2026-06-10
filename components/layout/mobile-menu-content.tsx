@@ -10,11 +10,7 @@ interface MobileMenuContentProps {
   onClose: () => void;
 }
 
-export function MobileMenuContent({
-  lang,
-  links,
-  onClose,
-}: MobileMenuContentProps) {
+export function MobileMenuContent({ lang, links, onClose }: MobileMenuContentProps) {
   const pathname = usePathname();
 
   const isActive = (href: string) => {

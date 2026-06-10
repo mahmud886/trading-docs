@@ -6,12 +6,12 @@ level: intermediate
 lastUpdated: "2026-06-09"
 ---
 
-
 ### Definition
 
 Dealing Range হলো **সবচেয়ে সাম্প্রতিক গুরুত্বপূর্ণ Swing High ও Swing Low এর মধ্যবর্তী Price Range** যা Institutional Price Delivery এর বর্তমান "খেলার মাঠ" নির্ধারণ করে। এটি সেই সীমানা প্রতিষ্ঠা করে যার মধ্যে IPDA (Interbank Price Delivery Algorithm) কাজ করে, External Liquidity Target করার আগে Internal Liquidity খোঁজে।
 
 Dealing Range প্রতিটি Trade এর Context দেয়:
+
 - Premium ও Discount Zone কোথায় (50% Range ভাগ করে)
 - ভেতরে (Internal) vs বাইরে (External) কী Liquidity আছে
 - বর্তমান Position এ Price Buy না Sell করা উচিত
@@ -28,6 +28,7 @@ Dealing Range প্রতিটি Trade এর Context দেয়:
 ### How It Works
 
 **Dealing Range চিহ্নিতকরণ:**
+
 1. সবচেয়ে সাম্প্রতিক গুরুত্বপূর্ণ Swing High খুঁজুন (উপরে BSL থাকতে হবে)
 2. সবচেয়ে সাম্প্রতিক গুরুত্বপূর্ণ Swing Low খুঁজুন (নিচে SSL থাকতে হবে)
 3. এদের মধ্যবর্তী Range = আপনার Dealing Range
@@ -42,6 +43,7 @@ Dealing Range প্রতিটি Trade এর Context দেয়:
 | **External Liquidity** | Range Boundary (Swing H/L) | Internal Clear হওয়ার পরে নেওয়া হয় |
 
 **Dealing Range Lifecycle:**
+
 1. **Formation** — Swing High ও Low Range প্রতিষ্ঠা করে
 2. **Internal Raid** — Price Range এর মধ্যে Minor Liquidity Sweep করে
 3. **External Expansion** — Internal শেষ হলে, Price External Liquidity তে Break করে
@@ -58,6 +60,7 @@ Dealing Range প্রতিটি Trade এর Context দেয়:
 5. **Multi-Timeframe Alignment** — বড় TF Dealing Range ছোট TF Range ধারণ করে (Fractal)
 
 **কেন Internal External এর আগে:**
+
 - Internal Liquidity Target করা নিরাপদ (Range এর মধ্যে থাকে)
 - Breakout এ Commit না করে অতিরিক্ত Fill সুযোগ দেয়
 - Internal শেষ হলে, Algorithm External Raid এ Commit করে
@@ -66,20 +69,24 @@ Dealing Range প্রতিটি Trade এর Context দেয়:
 ### Trading Application
 
 **Step 1: বর্তমান Dealing Range Mark করুন**
+
 - HTF (Daily/4H): মূল Swing H/L চিহ্নিত করুন
 - 50% Equilibrium Draw করুন
 - Internal Liquidity Mark করুন (ভেতরে Minor High/Low)
 
 **Step 2: Internal না External Liquidity Target হচ্ছে নির্ধারণ করুন**
+
 - Range এর ভেতরে Minor Swing Point নেওয়া হচ্ছে → Internal Raid চলছে
 - Price Range Boundary এর কাছে আসছে → External Expansion সম্ভব
 
 **Step 3: Position অনুযায়ী Trade করুন**
+
 - Discount এ (50% এর নিচে) + Internal Low নেওয়া হচ্ছে → Sweep এর পর Buy
 - Premium এ (50% এর উপরে) + Internal High নেওয়া হচ্ছে → Sweep এর পর Sell
 - Range Boundary Break করছে → External Liquidity নেওয়া → নতুন Range আশা করুন
 
 **Step 4: Dealing Range Break হলে**
+
 - পুরানো Range আর Valid নয়
 - Breakout Extreme + আগের Range Extreme = নতুন Dealing Range
 - নতুন Range থেকে Premium/Discount পুনরায় Assess করুন

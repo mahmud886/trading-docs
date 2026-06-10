@@ -49,16 +49,16 @@ export default function PortfolioAllocation() {
   };
 
   const updatePosition = (id: number, percentage: number) => {
-    setPositions(positions.map(p => p.id === id ? { ...p, percentage } : p));
+    setPositions(positions.map((p) => (p.id === id ? { ...p, percentage } : p)));
   };
 
   const deletePosition = (id: number) => {
-    setPositions(positions.filter(p => p.id !== id));
+    setPositions(positions.filter((p) => p.id !== id));
   };
 
   return (
     <div className="max-w-3xl mx-auto">
-      <Link 
+      <Link
         href={`/${lang}/tools`}
         className="flex items-center gap-2 text-muted-foreground hover:text-accent-green mb-6 transition-colors"
       >
@@ -77,19 +77,19 @@ export default function PortfolioAllocation() {
           <div className="relative w-48 h-48">
             <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
               {positions.map((pos, idx) => {
-                let startAngle = positions.slice(0, idx).reduce((sum, p) => sum + (p.percentage * 3.6), 0);
-                let endAngle = startAngle + (pos.percentage * 3.6);
-                
+                let startAngle = positions.slice(0, idx).reduce((sum, p) => sum + p.percentage * 3.6, 0);
+                let endAngle = startAngle + pos.percentage * 3.6;
+
                 const startRad = (startAngle * Math.PI) / 180;
                 const endRad = (endAngle * Math.PI) / 180;
-                
+
                 const x1 = 50 + 40 * Math.cos(startRad);
                 const y1 = 50 + 40 * Math.sin(startRad);
                 const x2 = 50 + 40 * Math.cos(endRad);
                 const y2 = 50 + 40 * Math.sin(endRad);
-                
+
                 const largeArc = endAngle - startAngle > 180 ? 1 : 0;
-                
+
                 const colorMap: { [key: string]: string } = {
                   "bg-blue-500": "#3b82f6",
                   "bg-green-500": "#22c55e",
@@ -102,7 +102,7 @@ export default function PortfolioAllocation() {
                   "bg-cyan-500": "#06b6d4",
                   "bg-lime-500": "#84cc16",
                 };
-                
+
                 return (
                   <path
                     key={pos.id}
@@ -128,7 +128,7 @@ export default function PortfolioAllocation() {
         {/* Positions List */}
         <div className="mt-8 space-y-3">
           <h2 className="text-lg font-semibold text-foreground">Current Positions</h2>
-          
+
           {positions.map((pos) => (
             <div key={pos.id} className="bg-muted border border-border rounded-lg p-4">
               <div className="flex items-center gap-4 mb-3">
@@ -141,7 +141,7 @@ export default function PortfolioAllocation() {
                   Remove
                 </button>
               </div>
-              
+
               <div className="flex items-center gap-4">
                 <input
                   type="range"
@@ -202,14 +202,18 @@ export default function PortfolioAllocation() {
         {/* Allocation Summary */}
         <div className="mt-8">
           <div className="grid grid-cols-2 gap-4">
-            <div className={`border rounded-lg p-4 ${isBalanced ? "bg-green-900/20 border-green-500/30" : "bg-yellow-900/20 border-yellow-500/30"}`}>
+            <div
+              className={`border rounded-lg p-4 ${isBalanced ? "bg-green-900/20 border-green-500/30" : "bg-yellow-900/20 border-yellow-500/30"}`}
+            >
               <p className="text-muted-foreground text-sm">Total Allocation</p>
               <p className={`text-2xl font-bold mt-1 ${isBalanced ? "text-green-400" : "text-yellow-400"}`}>
                 {totalAllocation.toFixed(1)}%
               </p>
             </div>
 
-            <div className={`border rounded-lg p-4 ${isBalanced ? "bg-green-900/20 border-green-500/30" : "bg-red-900/20 border-red-500/30"}`}>
+            <div
+              className={`border rounded-lg p-4 ${isBalanced ? "bg-green-900/20 border-green-500/30" : "bg-red-900/20 border-red-500/30"}`}
+            >
               <p className="text-muted-foreground text-sm">Remaining</p>
               <p className={`text-2xl font-bold mt-1 ${isBalanced ? "text-green-400" : "text-red-400"}`}>
                 {(100 - totalAllocation).toFixed(1)}%

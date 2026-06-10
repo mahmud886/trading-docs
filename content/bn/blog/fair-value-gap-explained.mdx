@@ -20,12 +20,14 @@ featured: true
 Institutional Level এ, FVG আসলে **Order Book Imbalance** এর Visual Representation। যখন একটি বড় Institutional Order (যেমন একটি Central Bank Intervention বা একটি Hedge Fund এর Large Position) Market এ Enter করে, তখন Available Liquidity যথেষ্ট হয় না সেই Order কে Smoothly Fill করার জন্য। ফলে Price "Jump" করে — এবং এই Jump এর মধ্যের Area ই হলো FVG।
 
 **Order Flow Analysis** অনুযায়ী:
+
 - **Aggressive Buying** = Market Buy Orders Available Sell Limit Orders কে দ্রুত Exhaust করে
 - **Price Gaps Up** = পরবর্তী Available Sell Orders আরো উপরে থাকে
 - **FVG তৈরি হয়** = যেখানে কোনো Trading Activity হয়নি সেই Zone
 
 <Callout type="tip" title="FVG কেন গুরুত্বপূর্ণ: Institutional Edge">
-FVG Trader কে এমন একটি Zone দেখায় যেখানে Price আবার ফিরে এসে Rebalance করতে পারে। ICT এবং SMC তে নির্ভুল Entry এর জন্য এটি খুবই শক্তিশালী Tool। Institutional Algorithms প্রায়ই এই Zones কে Target করে Unfilled Orders Complete করতে।
+  FVG Trader কে এমন একটি Zone দেখায় যেখানে Price আবার ফিরে এসে Rebalance করতে পারে। ICT এবং SMC তে নির্ভুল Entry এর
+  জন্য এটি খুবই শক্তিশালী Tool। Institutional Algorithms প্রায়ই এই Zones কে Target করে Unfilled Orders Complete করতে।
 </Callout>
 
 ### FVG এবং Efficient Market Hypothesis
@@ -81,17 +83,18 @@ FVG Zone = Candle 3 High → Candle 1 Low
 
 সব FVG সমান নয়। Professional Traders FVG কে Grade করে:
 
-| Grade | Criteria | Win Probability |
-|-------|----------|-----------------|
-| **A+ FVG** | Strong Displacement + HTF Trend Aligned + Premium/Discount + Liquidity Sweep Before | 70-80% |
-| **A FVG** | Strong Displacement + HTF Aligned + Premium/Discount | 60-70% |
-| **B FVG** | Moderate Displacement + Trend Aligned | 50-60% |
-| **C FVG** | Weak Displacement বা Counter-Trend | 40-50% |
-| **D FVG** | No Context, Choppy Market | 30-40% |
+| Grade      | Criteria                                                                            | Win Probability |
+| ---------- | ----------------------------------------------------------------------------------- | --------------- |
+| **A+ FVG** | Strong Displacement + HTF Trend Aligned + Premium/Discount + Liquidity Sweep Before | 70-80%          |
+| **A FVG**  | Strong Displacement + HTF Aligned + Premium/Discount                                | 60-70%          |
+| **B FVG**  | Moderate Displacement + Trend Aligned                                               | 50-60%          |
+| **C FVG**  | Weak Displacement বা Counter-Trend                                                  | 40-50%          |
+| **D FVG**  | No Context, Choppy Market                                                           | 30-40%          |
 
 **শুধু A+ এবং A Grade FVG Trade করুন।**
 
 সহজ মনে রাখার নিয়ম:
+
 - **Bullish Imbalance** = Buy-Side Efficiency এখনও বাকি
 - **Bearish Imbalance** = Sell-Side Efficiency এখনও বাকি
 
@@ -152,16 +155,16 @@ Rule: যদি Price FVG Close করে Break করে, সেই FVG "Invert
 
 FVG এবং Order Block একসাথে কাজ করলেও, তারা এক জিনিস নয়।
 
-| Feature | FVG | Order Block |
-|---------|-----|-------------|
-| **কী বোঝায়** | Price Imbalance / Inefficiency | Institutional Origin Candle |
-| **Formation** | 3-Candle Pattern | Single Candle (Last Opposite) |
-| **Precision** | Very High (Exact Zone) | Moderate (Candle Range) |
-| **Best Use** | Entry Refinement | POI Identification |
-| **Timeframe** | All (LTF Better for Entry) | HTF Better for Direction |
-| **Rebalance** | Price Returns to Fill Gap | Price Returns for Unfilled Orders |
-| **Invalidation** | Full Body Close Through | Full Body Close Through |
-| **Confluence** | FVG inside OB = Strongest | OB with FVG = Strongest |
+| Feature          | FVG                            | Order Block                       |
+| ---------------- | ------------------------------ | --------------------------------- |
+| **কী বোঝায়**    | Price Imbalance / Inefficiency | Institutional Origin Candle       |
+| **Formation**    | 3-Candle Pattern               | Single Candle (Last Opposite)     |
+| **Precision**    | Very High (Exact Zone)         | Moderate (Candle Range)           |
+| **Best Use**     | Entry Refinement               | POI Identification                |
+| **Timeframe**    | All (LTF Better for Entry)     | HTF Better for Direction          |
+| **Rebalance**    | Price Returns to Fill Gap      | Price Returns for Unfilled Orders |
+| **Invalidation** | Full Body Close Through        | Full Body Close Through           |
+| **Confluence**   | FVG inside OB = Strongest      | OB with FVG = Strongest           |
 
 ### Combined Setup: FVG + Order Block Confluence
 
@@ -216,6 +219,7 @@ Continuation to Upside (Target Previous High/BSL)
 - **BSL Sweep + Bearish FVG** = High-Probability Short Setup
 
 এটি বোঝায় যে Smart Money:
+
 1. প্রথমে Liquidity Collect করে (Fuel)
 2. তারপর Displacement দিয়ে Direction দেখায়
 3. FVG তে Retrace Allow করে (Additional Entry)
@@ -273,6 +277,7 @@ Win Rate: Often 65-75% with proper execution
 ### বিস্তারিত উদাহরণ: Complete Trade Walkthrough
 
 **Setup:**
+
 - Daily Trend: Bullish (Higher Highs, Higher Lows)
 - Premium/Discount: Price in Discount (Below 50% of Range)
 - London Session একটি Local Low Sweep করল (SSL Taken)
@@ -280,6 +285,7 @@ Win Rate: Often 65-75% with proper execution
 - FVG 4H Order Block এর মধ্যে অবস্থিত
 
 **Execution:**
+
 - New York Session এ Price Gap এর মধ্যে Retrace করল
 - 5M এ Bullish CHOCH (Change of Character) দেখা গেল
 - Entry: FVG এর CE (50% Level) তে
@@ -314,14 +320,14 @@ Invalidation:
 
 ### FVG Respect Probability by Timeframe
 
-| Timeframe | First Touch Respect Rate | Notes |
-|-----------|-------------------------|-------|
-| Weekly | 80-85% | Very Strong, Rare |
-| Daily | 70-78% | Primary Reference |
-| 4H | 65-72% | Good for Swing |
-| 1H | 55-65% | Intraday Reference |
-| 15M | 50-60% | Entry Refinement |
-| 5M | 45-55% | Scalping Only |
+| Timeframe | First Touch Respect Rate | Notes              |
+| --------- | ------------------------ | ------------------ |
+| Weekly    | 80-85%                   | Very Strong, Rare  |
+| Daily     | 70-78%                   | Primary Reference  |
+| 4H        | 65-72%                   | Good for Swing     |
+| 1H        | 55-65%                   | Intraday Reference |
+| 15M       | 50-60%                   | Entry Refinement   |
+| 5M        | 45-55%                   | Scalping Only      |
 
 **Higher Timeframe FVGs are More Significant** — এটি একটি Fundamental Rule।
 
@@ -464,15 +470,15 @@ Right Approach:
 
 ## Key Takeaways: Institutional Summary
 
-| Concept | Details |
-|---------|---------|
+| Concept            | Details                                               |
+| ------------------ | ----------------------------------------------------- |
 | **FVG Definition** | Aggressive Displacement থেকে তৈরি Market Inefficiency |
-| **Best Context** | Trend, Liquidity Sweep, Session Timing সহ |
-| **Strongest FVGs** | Order Block এর কাছে বা Sweep এর পরে |
-| **Entry Method** | LTF Confirmation + FVG Retracement |
-| **Invalidation** | Full Body Close Through FVG |
-| **Grading** | শুধু A+ এবং A Grade FVG Trade করুন |
-| **Multi-TF** | HTF Direction → LTF Entry |
-| **Session** | London/NY Kill Zones সবচেয়ে Effective |
+| **Best Context**   | Trend, Liquidity Sweep, Session Timing সহ             |
+| **Strongest FVGs** | Order Block এর কাছে বা Sweep এর পরে                   |
+| **Entry Method**   | LTF Confirmation + FVG Retracement                    |
+| **Invalidation**   | Full Body Close Through FVG                           |
+| **Grading**        | শুধু A+ এবং A Grade FVG Trade করুন                    |
+| **Multi-TF**       | HTF Direction → LTF Entry                             |
+| **Session**        | London/NY Kill Zones সবচেয়ে Effective                |
 
 সম্পূর্ণ পাঠের জন্য দেখুন [Fair Value Gap পাঠ](/bn/smc/fair-value-gap)।

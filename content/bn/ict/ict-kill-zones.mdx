@@ -11,7 +11,8 @@ lastUpdated: "2026-06-09"
 Kill Zones হলো Trading Day এর **নির্দিষ্ট Time Window** যখন সর্বোচ্চ Probability Institutional Setup তৈরি হয়। ICT শেখায় যে TIME নির্ধারণ করে WHEN Price Move করবে — Kill Zones এই Time-Based Approach এর Framework।
 
 <Callout type="info" title="Time > Price">
-"আপনার কাছে ভুল Time Window এ Perfect Setup থাকতে পারে এবং এটি Fail করবে। Kill Zones আপনাকে বলে কখন Algorithm সবচেয়ে Active।" — ICT
+  "আপনার কাছে ভুল Time Window এ Perfect Setup থাকতে পারে এবং এটি Fail করবে। Kill Zones আপনাকে বলে কখন Algorithm সবচেয়ে
+  Active।" — ICT
 </Callout>
 
 ---
@@ -19,8 +20,9 @@ Kill Zones হলো Trading Day এর **নির্দিষ্ট Time Windo
 ## চারটি Kill Zone
 
 ### 1. London Kill Zone
+
 | বিবরণ         | তথ্য                              |
-|---------------|-----------------------------------|
+| ------------- | --------------------------------- |
 | **EST Time**  | 2:00 AM - 5:00 AM                 |
 | **BD Time**   | দুপুর 12:00 - 3:00                |
 | **Character** | Manipulation Phase — Judas Swing  |
@@ -30,39 +32,43 @@ Kill Zones হলো Trading Day এর **নির্দিষ্ট Time Windo
 London Kill Zone এ AMD এর **Manipulation** Phase ঘটে। Judas Swing সাধারণত এখানে তৈরি হয়, Asian Range এর এক দিক Sweep করে Daily High বা Low তৈরি করে।
 
 ### 2. New York AM Kill Zone
-| বিবরণ | তথ্য |
-|--------|------|
-| **EST Time** | 7:00 AM - 10:00 AM |
-| **BD Time** | বিকাল 5:00 - 8:00 |
-| **Character** | Distribution Phase — True Move |
-| **সেরা** | London Reversal এর পর Continuation |
-| **Pairs** | সব Major Pair, Gold, Indices |
+
+| বিবরণ         | তথ্য                               |
+| ------------- | ---------------------------------- |
+| **EST Time**  | 7:00 AM - 10:00 AM                 |
+| **BD Time**   | বিকাল 5:00 - 8:00                  |
+| **Character** | Distribution Phase — True Move     |
+| **সেরা**      | London Reversal এর পর Continuation |
+| **Pairs**     | সব Major Pair, Gold, Indices       |
 
 NY AM এ **Distribution** Move ত্বরান্বিত হয়। London Manipulation তৈরি করলে, NY AM Expansion Deliver করে।
 
 ### 3. NY Lunch Kill Zone (এড়িয়ে চলুন)
-| বিবরণ | তথ্য |
-|--------|------|
-| **EST Time** | 12:00 PM - 1:30 PM |
-| **BD Time** | রাত 10:00 - 11:30 |
-| **Character** | কম Probability — Choppy |
-| **সেরা** | কিছুই না — দূরে থাকুন |
-| **সতর্কতা** | False Signal, কম Volume, Erratic Move |
+
+| বিবরণ         | তথ্য                                  |
+| ------------- | ------------------------------------- |
+| **EST Time**  | 12:00 PM - 1:30 PM                    |
+| **BD Time**   | রাত 10:00 - 11:30                     |
+| **Character** | কম Probability — Choppy               |
+| **সেরা**      | কিছুই না — দূরে থাকুন                 |
+| **সতর্কতা**   | False Signal, কম Volume, Erratic Move |
 
 ### 4. NY PM Kill Zone
-| বিবরণ | তথ্য |
-|--------|------|
-| **EST Time** | 1:30 PM - 4:00 PM |
-| **BD Time** | রাত 11:30 - 2:00 AM |
-| **Character** | Continuation বা Reversal |
-| **সেরা** | Trend Continuation, Position Close |
-| **Pairs** | USD Pairs, Indices |
+
+| বিবরণ         | তথ্য                               |
+| ------------- | ---------------------------------- |
+| **EST Time**  | 1:30 PM - 4:00 PM                  |
+| **BD Time**   | রাত 11:30 - 2:00 AM                |
+| **Character** | Continuation বা Reversal           |
+| **সেরা**      | Trend Continuation, Position Close |
+| **Pairs**     | USD Pairs, Indices                 |
 
 ---
 
 ## Kill Zone Trading Strategy
 
 ### London Kill Zone Setup
+
 1. **Asian Range Mark করুন** — BD সময় সকাল 6 - দুপুর 12 এর High ও Low
 2. **Sweep এর জন্য অপেক্ষা** — Price Asian High বা Low নিয়ে নেয়
 3. **MSS Confirm করুন** — Sweep এর পর 5M/15M Structure Shift
@@ -70,6 +76,7 @@ NY AM এ **Distribution** Move ত্বরান্বিত হয়। Lond
 5. **Target** — বিপরীত Liquidity (Asian Low Sweep হলে → BSL Target)
 
 ### NY AM Kill Zone Setup
+
 1. **London Result দেখুন** — London কি Daily High/Low তৈরি করেছে?
 2. **Continuation খুঁজুন** — London Reverse করলে, NY AM সেই Direction Continue করে
 3. **Pullback এ Entry** — London Displacement এর FVG/OB ব্যবহার করুন
@@ -80,6 +87,7 @@ NY AM এ **Distribution** Move ত্বরান্বিত হয়। Lond
 ## বাস্তব উদাহরণ
 
 ### উদাহরণ ১: London KZ — EUR/USD
+
 - **Asian Range:** 1.0870 - 1.0885 (সকাল 6 - দুপুর 12 BD)
 - **দুপুর 12:15 BD:** Price Asian Low 1.0867 Sweep করে
 - **দুপুর 12:30 BD:** 5M Bullish MSS তৈরি হয়
@@ -88,6 +96,7 @@ NY AM এ **Distribution** Move ত্বরান্বিত হয়। Lond
 - **R:R:** 1:4.75
 
 ### উদাহরণ ২: NY AM KZ — Gold
+
 - **London তৈরি করেছে** Daily HOD 2,048 (Manipulation Up, তারপর Reverse)
 - **বিকাল 5:30 BD:** Price 15M FVG তে Pull Back করে
 - **Entry:** 2,040 তে Sell (Bearish FVG CE)
@@ -101,7 +110,7 @@ NY AM এ **Distribution** Move ত্বরান্বিত হয়। Lond
 Kill Zone এর মধ্যে, নির্দিষ্ট **Macro Window** আছে যেখানে Displacement ঘটে:
 
 | Macro Window  | EST Time            | BD সময়                 | Character          |
-|---------------|---------------------|-------------------------|--------------------|
+| ------------- | ------------------- | ----------------------- | ------------------ |
 | London Macro  | 1:33 AM - 4:00 AM   | সকাল 11:33 - দুপুর 2:00 | Setup Formation    |
 | NY AM Macro 1 | 9:50 AM - 10:10 AM  | রাত 7:50 - 8:10         | Major Displacement |
 | NY AM Macro 2 | 10:50 AM - 11:10 AM | রাত 8:50 - 9:10         | Secondary Move     |
@@ -129,12 +138,12 @@ Kill Zone এর মধ্যে, নির্দিষ্ট **Macro Window** �
 
 ## সারসংক্ষেপ
 
-| Kill Zone | BD সময় | সেরা | Priority |
-|-----------|--------|------|----------|
-| **London** | দুপুর 12:00 - 3:00 | Reversal/Manipulation | ★★★★★ |
-| **NY AM** | বিকাল 5:00 - 8:00 | Distribution/Expansion | ★★★★★ |
-| **NY Lunch** | রাত 10:00 - 11:30 | এড়িয়ে চলুন | ✗ |
-| **NY PM** | রাত 11:30 - 2:00 AM | Continuation | ★★★☆☆ |
+| Kill Zone    | BD সময়             | সেরা                   | Priority |
+| ------------ | ------------------- | ---------------------- | -------- |
+| **London**   | দুপুর 12:00 - 3:00  | Reversal/Manipulation  | ★★★★★    |
+| **NY AM**    | বিকাল 5:00 - 8:00   | Distribution/Expansion | ★★★★★    |
+| **NY Lunch** | রাত 10:00 - 11:30   | এড়িয়ে চলুন           | ✗        |
+| **NY PM**    | রাত 11:30 - 2:00 AM | Continuation           | ★★★☆☆    |
 
 ---
 

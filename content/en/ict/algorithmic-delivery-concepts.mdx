@@ -11,7 +11,8 @@ lastUpdated: "2026-05-12"
 ICT teaches that financial markets are NOT driven by random supply and demand but by an **Interbank Price Delivery Algorithm (IPDA)** that systematically delivers price between liquidity pools and imbalances.
 
 <Callout type="info" title="The Algorithm">
-"The market is a price delivery algorithm. It doesn't 'go up' or 'go down.' It delivers price from one liquidity pool to another, filling imbalances along the way." — ICT
+  "The market is a price delivery algorithm. It doesn't 'go up' or 'go down.' It delivers price from one liquidity pool
+  to another, filling imbalances along the way." — ICT
 </Callout>
 
 ---
@@ -19,12 +20,14 @@ ICT teaches that financial markets are NOT driven by random supply and demand bu
 ## How the Algorithm Works
 
 ### The Algorithm's Objectives (in order)
+
 1. **Seek liquidity** — BSL or SSL (stop orders, pending orders)
 2. **Fill imbalances** — FVGs, liquidity voids, volume imbalances
 3. **Deliver price efficiently** — Move between premium and discount
 4. **Create new liquidity** — Form new swing points that attract new orders
 
 ### The Price Delivery Sequence
+
 ```
 Liquidity Pool A → Imbalance Fill → Liquidity Pool B → Imbalance Fill → ...
 ```
@@ -36,17 +39,20 @@ Price bounces between liquidity pools, filling FVGs along the way. This is NOT r
 ## IPDA Data Ranges
 
 ### The Lookback Periods
+
 - **20 trading days** — Short-term institutional reference
-- **40 trading days** — Medium-term reference  
+- **40 trading days** — Medium-term reference
 - **60 trading days** — Quarterly institutional reference
 
 ### How to Use
+
 1. Count back 20/40/60 candles on the Daily chart
 2. Mark the HIGH and LOW of each lookback period
 3. Any UNTOUCHED high or low = algorithm target
 4. The nearest untouched level = most likely next target
 
 ### Example
+
 - 20-day range: 1.0800 - 1.0950
 - Current price: 1.0870
 - 20-day low (1.0800) = untouched SSL → potential target
@@ -58,13 +64,16 @@ Price bounces between liquidity pools, filling FVGs along the way. This is NOT r
 ## Algorithmic Patterns
 
 ### Pattern 1: Liquidity → FVG → Liquidity
+
 - Algorithm sweeps SSL → fills overhead FVG → continues to BSL
 
 ### Pattern 2: FVG Mitigation
+
 - Algorithm returns to previously created FVGs to fill them
 - This is why "price always comes back to the gap"
 
 ### Pattern 3: Time-Scheduled Delivery
+
 - Algorithm activates at specific Kill Zone times
 - Macro windows (:50-:10) show algorithmic displacement
 - Sessions transition = algorithmic recalibration

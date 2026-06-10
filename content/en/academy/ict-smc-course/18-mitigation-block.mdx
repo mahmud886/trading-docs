@@ -6,7 +6,6 @@ level: intermediate
 lastUpdated: "2026-06-09"
 ---
 
-
 ### Definition
 
 A Mitigation Block is an **Order Block that was previously tested (partially filled) and failed to hold completely, but where price returns to fill remaining institutional orders**. Unlike a Breaker Block (where the OB is completely broken through), a Mitigation Block is an OB that was "dipped into" without fully failing, leaving unfilled orders that the algorithm will return to.
@@ -27,6 +26,7 @@ A Mitigation Block is an **Order Block that was previously tested (partially fil
 ### How It Works
 
 **Bullish Mitigation Block Process:**
+
 1. Bullish OB forms (last bearish candle before up displacement)
 2. Price rises after OB forms (first move away)
 3. Price returns to OB → Partially fills orders → Bounces (first reaction)
@@ -36,6 +36,7 @@ A Mitigation Block is an **Order Block that was previously tested (partially fil
 7. This second (or third) touch of an OB = Mitigation Block entry
 
 **Bearish Mitigation Block Process:**
+
 1. Bearish OB forms (last bullish candle before down displacement)
 2. Price drops → Returns to OB → First reaction (partial fill)
 3. Price drops again but doesn't reach full target
@@ -60,6 +61,7 @@ A Mitigation Block is an **Order Block that was previously tested (partially fil
 5. **Break-even traders:** Traders who entered at the OB and are now at breakeven will EXIT on the second touch, providing fresh Liquidity
 
 **Institutional order lifecycle at a Mitigation Block:**
+
 - First visit: Fill 40% → Price moves → Returns
 - Second visit (Mitigation): Fill remaining 60% → Full move commences
 - The Mitigation touch often produces a STRONGER move because more orders fill
@@ -67,12 +69,14 @@ A Mitigation Block is an **Order Block that was previously tested (partially fil
 ### Trading Application
 
 **Identifying Mitigation Blocks:**
+
 1. Find an OB that has been touched ONCE (price went into it and bounced)
 2. Verify the first touch didn't completely break the OB (price didn't close through)
 3. Note: After first touch, price moved but didn't reach full target → Suggesting more orders remain
 4. When price returns to the OB zone again → This is your Mitigation Block entry
 
 **Entry at Mitigation Block:**
+
 1. Mark the original OB zone
 2. Wait for first touch + reaction (partial fill)
 3. Wait for price to return to the OB zone (second visit)
@@ -82,6 +86,7 @@ A Mitigation Block is an **Order Block that was previously tested (partially fil
    - Target: Full extension to Liquidity pool
 
 **Quality factors for Mitigation Block entries:**
+
 - HTF alignment (must be with the trend)
 - Kill Zone timing (second touch during KZ = better)
 - FVG within the Mitigation zone = Extra confluence

@@ -1,7 +1,7 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from "fs";
+import { join } from "path";
 
-const contentDir = join(process.cwd(), 'content');
+const contentDir = join(process.cwd(), "content");
 
 function writeMdx(lang, category, slug, frontmatter, content) {
   const fm = `---
@@ -12,7 +12,7 @@ order: ${frontmatter.order}
 lastUpdated: "2026-06-10"
 ---
 `;
-  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, 'utf-8');
+  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, "utf-8");
   console.log(`✅ ${lang}/${category}/${slug}.mdx`);
 }
 
@@ -22,12 +22,18 @@ lastUpdated: "2026-06-10"
 // ============================================================
 
 // 1. EXPANSION — EN
-writeMdx('en', 'price-action', 'expansion', {
-  title: "Expansion in Price Action — Complete Guide",
-  description: "Master price expansion concepts. Learn how to identify, trade, and manage explosive price moves that follow compression and consolidation phases.",
-  level: "intermediate",
-  order: 17
-}, `
+writeMdx(
+  "en",
+  "price-action",
+  "expansion",
+  {
+    title: "Expansion in Price Action — Complete Guide",
+    description:
+      "Master price expansion concepts. Learn how to identify, trade, and manage explosive price moves that follow compression and consolidation phases.",
+    level: "intermediate",
+    order: 17,
+  },
+  `
 ## What is Expansion?
 
 Expansion is the **explosive directional move** that follows a period of compression or consolidation. It's when price rapidly moves away from a range, creating large impulsive candles with strong momentum. Expansion phases are where the majority of trading profits are made.
@@ -176,15 +182,22 @@ Example:
 - [Momentum](/en/price-action/momentum) — Measuring expansion strength
 - [Session Analysis](/en/price-action/session-analysis) — Session-based expansion
 - [Trade Management](/en/price-action/trade-management) — Managing expansion trades
-`);
+`,
+);
 
 // 1. EXPANSION — BN
-writeMdx('bn', 'price-action', 'expansion', {
-  title: "Price Action-এ Expansion — সম্পূর্ণ গাইড",
-  description: "Price Expansion Concept আয়ত্ত করুন। Compression ও Consolidation Phase-এর পর আসা Explosive Price Move চিহ্নিত, Trade ও Manage করা শিখুন।",
-  level: "intermediate",
-  order: 17
-}, `
+writeMdx(
+  "bn",
+  "price-action",
+  "expansion",
+  {
+    title: "Price Action-এ Expansion — সম্পূর্ণ গাইড",
+    description:
+      "Price Expansion Concept আয়ত্ত করুন। Compression ও Consolidation Phase-এর পর আসা Explosive Price Move চিহ্নিত, Trade ও Manage করা শিখুন।",
+    level: "intermediate",
+    order: 17,
+  },
+  `
 ## Expansion কী?
 
 Expansion হলো Compression বা Consolidation-এর পরে আসা **Explosive Directional Move**। এটি হলো যখন Price দ্রুত একটি Range থেকে দূরে সরে যায়, শক্তিশালী Momentum-সহ বড় Impulsive Candle তৈরি করে। Expansion Phase-এ Trading Profit-এর সিংহভাগ অর্জিত হয়।
@@ -318,15 +331,22 @@ Target = Breakout থেকে Compression Range Height Project
 - [Momentum](/bn/price-action/momentum) — Expansion শক্তি পরিমাপ
 - [Session Analysis](/bn/price-action/session-analysis) — Session-based Expansion
 - [Trade Management](/bn/price-action/trade-management) — Expansion Trade Manage
-`);
+`,
+);
 
 // 2. MOMENTUM — EN
-writeMdx('en', 'price-action', 'momentum', {
-  title: "Momentum in Price Action — Complete Guide",
-  description: "Master momentum reading in Price Action. Learn to assess candle momentum, impulse vs correction, momentum shifts, and how momentum determines trade direction.",
-  level: "intermediate",
-  order: 18
-}, `
+writeMdx(
+  "en",
+  "price-action",
+  "momentum",
+  {
+    title: "Momentum in Price Action — Complete Guide",
+    description:
+      "Master momentum reading in Price Action. Learn to assess candle momentum, impulse vs correction, momentum shifts, and how momentum determines trade direction.",
+    level: "intermediate",
+    order: 18,
+  },
+  `
 ## What is Momentum?
 
 Momentum is the **speed and strength** of price movement in a given direction. In Price Action, we read momentum directly from candle characteristics — size, close position, wick ratio, and sequence — without needing indicators like RSI or MACD.
@@ -444,15 +464,22 @@ IF impulse and correction are EQUAL in strength:
 - [Compression](/en/price-action/compression) — Low momentum = compression
 - [Reversal Concepts](/en/price-action/reversal-concepts) — Momentum shift = reversal
 - [Trend Analysis](/en/price-action/trend-analysis) — Momentum defines trend health
-`);
+`,
+);
 
 // 2. MOMENTUM — BN
-writeMdx('bn', 'price-action', 'momentum', {
-  title: "Price Action-এ Momentum — সম্পূর্ণ গাইড",
-  description: "Price Action-এ Momentum Reading আয়ত্ত করুন। Candle Momentum মূল্যায়ন, Impulse vs Correction, Momentum Shift এবং Momentum কীভাবে Trade Direction নির্ধারণ করে শিখুন।",
-  level: "intermediate",
-  order: 18
-}, `
+writeMdx(
+  "bn",
+  "price-action",
+  "momentum",
+  {
+    title: "Price Action-এ Momentum — সম্পূর্ণ গাইড",
+    description:
+      "Price Action-এ Momentum Reading আয়ত্ত করুন। Candle Momentum মূল্যায়ন, Impulse vs Correction, Momentum Shift এবং Momentum কীভাবে Trade Direction নির্ধারণ করে শিখুন।",
+    level: "intermediate",
+    order: 18,
+  },
+  `
 ## Momentum কী?
 
 Momentum হলো একটি নির্দিষ্ট Direction-এ Price Movement-এর **গতি ও শক্তি**। Price Action-এ আমরা সরাসরি Candle-এর বৈশিষ্ট্য — Size, Close Position, Wick Ratio এবং Sequence — থেকে Momentum পড়ি, RSI বা MACD-এর মতো Indicator ছাড়াই।
@@ -570,15 +597,22 @@ Momentum হলো একটি নির্দিষ্ট Direction-এ Price 
 - [Compression](/bn/price-action/compression) — Low Momentum = Compression
 - [Reversal Concepts](/bn/price-action/reversal-concepts) — Momentum Shift = Reversal
 - [Trend Analysis](/bn/price-action/trend-analysis) — Momentum Trend Health সংজ্ঞায়িত করে
-`);
+`,
+);
 
 // 3. VOLUME — EN
-writeMdx('en', 'price-action', 'volume', {
-  title: "Volume Analysis in Price Action — Complete Guide",
-  description: "Master volume analysis for Price Action trading. Learn how volume confirms breakouts, reveals institutional activity, validates patterns, and improves trade confidence.",
-  level: "intermediate",
-  order: 19
-}, `
+writeMdx(
+  "en",
+  "price-action",
+  "volume",
+  {
+    title: "Volume Analysis in Price Action — Complete Guide",
+    description:
+      "Master volume analysis for Price Action trading. Learn how volume confirms breakouts, reveals institutional activity, validates patterns, and improves trade confidence.",
+    level: "intermediate",
+    order: 19,
+  },
+  `
 ## Why Volume Matters in Price Action
 
 Volume represents the **number of contracts/shares traded** during a period. It tells you the conviction behind a price move. A breakout with high volume is likely real; a breakout with low volume is likely to fail.
@@ -709,15 +743,22 @@ In Forex, true volume isn't available (decentralized market). What brokers show 
 - [Liquidity](/en/price-action/liquidity) — Volume at sweep levels
 - [Reversal Concepts](/en/price-action/reversal-concepts) — Volume divergence at tops/bottoms
 - [Confirmation](/en/price-action/confirmation) — Volume as confirmation tool
-`);
+`,
+);
 
 // 3. VOLUME — BN
-writeMdx('bn', 'price-action', 'volume', {
-  title: "Price Action-এ Volume Analysis — সম্পূর্ণ গাইড",
-  description: "Price Action Trading-এ Volume Analysis আয়ত্ত করুন। Volume কীভাবে Breakout Confirm করে, Institutional Activity প্রকাশ করে, Pattern Validate করে ও Trade Confidence বাড়ায় শিখুন।",
-  level: "intermediate",
-  order: 19
-}, `
+writeMdx(
+  "bn",
+  "price-action",
+  "volume",
+  {
+    title: "Price Action-এ Volume Analysis — সম্পূর্ণ গাইড",
+    description:
+      "Price Action Trading-এ Volume Analysis আয়ত্ত করুন। Volume কীভাবে Breakout Confirm করে, Institutional Activity প্রকাশ করে, Pattern Validate করে ও Trade Confidence বাড়ায় শিখুন।",
+    level: "intermediate",
+    order: 19,
+  },
+  `
 ## Price Action-এ Volume কেন গুরুত্বপূর্ণ
 
 Volume প্রতিনিধিত্ব করে একটি Period-এ **কতগুলো Contract/Share Trade হয়েছে**। এটি আপনাকে বলে Price Move-এর পেছনে Conviction কতটা। High Volume-সহ Breakout সম্ভবত সত্যিকার; Low Volume-সহ Breakout সম্ভবত ব্যর্থ হবে।
@@ -842,15 +883,22 @@ Forex-এ প্রকৃত Volume পাওয়া যায় না (Dece
 - [Liquidity](/bn/price-action/liquidity) — Sweep Level-এ Volume
 - [Reversal Concepts](/bn/price-action/reversal-concepts) — Top/Bottom-এ Volume Divergence
 - [Confirmation](/bn/price-action/confirmation) — Confirmation Tool হিসেবে Volume
-`);
+`,
+);
 
 // 4. CONFLUENCE — EN
-writeMdx('en', 'price-action', 'confluence', {
-  title: "Confluence Trading — Complete Guide",
-  description: "Master confluence trading in Price Action. Learn to stack multiple factors for high-probability setups — combining S/R, Fibonacci, Order Blocks, and structure alignment.",
-  level: "intermediate",
-  order: 30
-}, `
+writeMdx(
+  "en",
+  "price-action",
+  "confluence",
+  {
+    title: "Confluence Trading — Complete Guide",
+    description:
+      "Master confluence trading in Price Action. Learn to stack multiple factors for high-probability setups — combining S/R, Fibonacci, Order Blocks, and structure alignment.",
+    level: "intermediate",
+    order: 30,
+  },
+  `
 ## What is Confluence?
 
 Confluence occurs when **multiple independent trading factors align at the same price zone**, creating a high-probability trade setup. Each individual factor has moderate probability; combined, they create setups with exceptional win rates.
@@ -975,15 +1023,22 @@ R:R: Typically 1:3 to 1:5
 - [Multi-Timeframe Analysis](/en/price-action/multi-timeframe-analysis) — Timeframe alignment
 - [Confirmation](/en/price-action/confirmation) — Entry confirmation at confluence
 - [Entry Models](/en/price-action/entry-models) — Executing at confluence zones
-`);
+`,
+);
 
 // 4. CONFLUENCE — BN
-writeMdx('bn', 'price-action', 'confluence', {
-  title: "Confluence Trading — সম্পূর্ণ গাইড",
-  description: "Price Action-এ Confluence Trading আয়ত্ত করুন। High-probability Setup-এর জন্য একাধিক Factor Stack করা শিখুন — S/R, Fibonacci, Order Block ও Structure Alignment সমন্বয়।",
-  level: "intermediate",
-  order: 30
-}, `
+writeMdx(
+  "bn",
+  "price-action",
+  "confluence",
+  {
+    title: "Confluence Trading — সম্পূর্ণ গাইড",
+    description:
+      "Price Action-এ Confluence Trading আয়ত্ত করুন। High-probability Setup-এর জন্য একাধিক Factor Stack করা শিখুন — S/R, Fibonacci, Order Block ও Structure Alignment সমন্বয়।",
+    level: "intermediate",
+    order: 30,
+  },
+  `
 ## Confluence কী?
 
 Confluence ঘটে যখন **একাধিক স্বাধীন Trading Factor একই Price Zone-এ মিলিত হয়**, একটি High-probability Trade Setup তৈরি করে। প্রতিটি Individual Factor-এর মধ্যম Probability থাকে; একত্রিত হলে, অসাধারণ Win Rate-সহ Setup তৈরি হয়।
@@ -1098,8 +1153,8 @@ R:R: সাধারণত 1:3 থেকে 1:5
 - [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — Timeframe Alignment
 - [Confirmation](/bn/price-action/confirmation) — Confluence-এ Entry Confirmation
 - [Entry Models](/bn/price-action/entry-models) — Confluence Zone-এ Execute
-`);
+`,
+);
 
-console.log('\n✅ Price Action Batch 2 Complete: 4 topics × 2 languages = 8 files');
-console.log('Topics: expansion, momentum, volume, confluence');
-
+console.log("\n✅ Price Action Batch 2 Complete: 4 topics × 2 languages = 8 files");
+console.log("Topics: expansion, momentum, volume, confluence");

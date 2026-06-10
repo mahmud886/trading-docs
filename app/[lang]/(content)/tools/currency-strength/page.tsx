@@ -10,7 +10,14 @@ const currencies = ["USD", "EUR", "GBP", "JPY", "AUD", "NZD", "CAD", "CHF"];
 // Simulated strength scores (0-100)
 function generateStrength(): Record<string, number> {
   const base: Record<string, number> = {
-    USD: 72, EUR: 45, GBP: 58, JPY: 35, AUD: 62, NZD: 55, CAD: 48, CHF: 40,
+    USD: 72,
+    EUR: 45,
+    GBP: 58,
+    JPY: 35,
+    AUD: 62,
+    NZD: 55,
+    CAD: 48,
+    CHF: 40,
   };
   const result: Record<string, number> = {};
   for (const [key, val] of Object.entries(base)) {
@@ -49,7 +56,10 @@ export default function CurrencyStrengthPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-10">
-      <Link href={`/${lang}/tools`} className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+      <Link
+        href={`/${lang}/tools`}
+        className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+      >
         <ArrowLeft size={16} /> Back to Tools
       </Link>
 
@@ -59,7 +69,8 @@ export default function CurrencyStrengthPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-green/20 bg-accent-green/5 p-4 text-sm text-muted-foreground">
-        🏦 Institutional strategy: Buy the STRONGEST currency against the WEAKEST. This gives you the highest probability directional trade with momentum on your side.
+        🏦 Institutional strategy: Buy the STRONGEST currency against the WEAKEST. This gives you the highest
+        probability directional trade with momentum on your side.
       </div>
 
       {/* Timeframe */}
@@ -89,7 +100,9 @@ export default function CurrencyStrengthPage() {
                 className={`h-full rounded-lg transition-all duration-500 ${getBarColor(value)}`}
                 style={{ width: `${value}%` }}
               />
-              <span className={`absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono font-bold ${getStrengthColor(value)}`}>
+              <span
+                className={`absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono font-bold ${getStrengthColor(value)}`}
+              >
                 {value.toFixed(1)}
               </span>
             </div>
@@ -105,8 +118,11 @@ export default function CurrencyStrengthPage() {
         <div className="mt-8 rounded-xl border border-accent-green/30 bg-accent-green/5 p-6">
           <h3 className="font-semibold text-foreground">🎯 Suggested Trade</h3>
           <p className="mt-2 text-sm text-muted-foreground">
-            <span className="font-bold text-green-400">BUY {sorted[0][0]}/{sorted[sorted.length - 1][0]}</span> —
-            Strongest currency ({sorted[0][0]}: {sorted[0][1].toFixed(1)}) against weakest ({sorted[sorted.length - 1][0]}: {sorted[sorted.length - 1][1].toFixed(1)})
+            <span className="font-bold text-green-400">
+              BUY {sorted[0][0]}/{sorted[sorted.length - 1][0]}
+            </span>{" "}
+            — Strongest currency ({sorted[0][0]}: {sorted[0][1].toFixed(1)}) against weakest (
+            {sorted[sorted.length - 1][0]}: {sorted[sorted.length - 1][1].toFixed(1)})
           </p>
           <p className="mt-1 text-xs text-muted-foreground">
             Always confirm with ICT/SMC market structure before entry. Strength = bias, structure = timing.
@@ -128,4 +144,3 @@ export default function CurrencyStrengthPage() {
     </div>
   );
 }
-

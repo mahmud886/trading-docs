@@ -15,7 +15,7 @@ export default function MTFAnalyzer() {
       support: "1.0850",
       resistance: "1.0950",
       signal: "Strong Buy",
-      color: "text-green-400"
+      color: "text-green-400",
     },
     {
       period: "5M",
@@ -23,7 +23,7 @@ export default function MTFAnalyzer() {
       support: "1.0880",
       resistance: "1.0920",
       signal: "Neutral",
-      color: "text-yellow-400"
+      color: "text-yellow-400",
     },
     {
       period: "15M",
@@ -31,7 +31,7 @@ export default function MTFAnalyzer() {
       support: "1.0870",
       resistance: "1.0940",
       signal: "Buy",
-      color: "text-green-400"
+      color: "text-green-400",
     },
     {
       period: "1H",
@@ -39,7 +39,7 @@ export default function MTFAnalyzer() {
       support: "1.0850",
       resistance: "1.0960",
       signal: "Buy",
-      color: "text-green-400"
+      color: "text-green-400",
     },
     {
       period: "4H",
@@ -47,7 +47,7 @@ export default function MTFAnalyzer() {
       support: "1.0800",
       resistance: "1.1000",
       signal: "Strong Buy",
-      color: "text-green-400"
+      color: "text-green-400",
     },
     {
       period: "Daily",
@@ -55,8 +55,8 @@ export default function MTFAnalyzer() {
       support: "1.0700",
       resistance: "1.1100",
       signal: "Buy",
-      color: "text-green-400"
-    }
+      color: "text-green-400",
+    },
   ];
 
   return (
@@ -112,12 +112,12 @@ export default function MTFAnalyzer() {
                 {timeframes.map((tf) => (
                   <tr key={tf.period} className="border-b border-border hover:bg-muted/20 transition-colors">
                     <td className="py-4 px-4">
-                      <span className="font-semibold text-foreground bg-muted px-3 py-1 rounded">
-                        {tf.period}
-                      </span>
+                      <span className="font-semibold text-foreground bg-muted px-3 py-1 rounded">{tf.period}</span>
                     </td>
                     <td className="py-4 px-4">
-                      <span className={`font-medium ${tf.trend === "Uptrend" ? "text-green-400" : tf.trend === "Downtrend" ? "text-red-400" : "text-yellow-400"}`}>
+                      <span
+                        className={`font-medium ${tf.trend === "Uptrend" ? "text-green-400" : tf.trend === "Downtrend" ? "text-red-400" : "text-yellow-400"}`}
+                      >
                         {tf.trend}
                       </span>
                     </td>
@@ -142,7 +142,9 @@ export default function MTFAnalyzer() {
           <div className="space-y-3">
             <div className="bg-muted rounded-lg p-3">
               <p className="text-foreground font-medium">Higher Timeframe Bias (Daily/4H)</p>
-              <p className="text-foreground text-sm mt-1">Strong Uptrend - Primary support at 1.0700, Resistance at 1.1100</p>
+              <p className="text-foreground text-sm mt-1">
+                Strong Uptrend - Primary support at 1.0700, Resistance at 1.1100
+              </p>
             </div>
 
             <div className="bg-muted rounded-lg p-3">
@@ -152,7 +154,9 @@ export default function MTFAnalyzer() {
 
             <div className="bg-muted rounded-lg p-3">
               <p className="text-foreground font-medium">Optimal Entry Zone</p>
-              <p className="text-green-400 text-sm mt-1">1.0850-1.0880 (Confluence of supporting levels across timeframes)</p>
+              <p className="text-green-400 text-sm mt-1">
+                1.0850-1.0880 (Confluence of supporting levels across timeframes)
+              </p>
             </div>
 
             <div className="bg-muted rounded-lg p-3">
@@ -166,12 +170,24 @@ export default function MTFAnalyzer() {
         <div className="mt-8 bg-amber-500/10 border border-amber-500/20 rounded-xl p-6">
           <h3 className="font-semibold text-amber-200 mb-3">💡 Multi-Timeframe Strategy Tips</h3>
           <div className="space-y-2 text-sm text-foreground">
-            <p>✓ <span className="font-semibold">Use higher TF for bias:</span> Daily/4H shows overall direction</p>
-            <p>✓ <span className="font-semibold">Medium TF for entries:</span> 1H/15M for entry confirmation</p>
-            <p>✓ <span className="font-semibold">Lower TF for timing:</span> 5M/1M for precise entries</p>
-            <p>✓ <span className="font-semibold">Confluence zones:</span> Look where levels align across timeframes</p>
-            <p>✓ <span className="font-semibold">Trend alignment:</span> Best trades when all timeframes agree</p>
-            <p>✓ <span className="font-semibold">Stop logic:</span> Place below support on your bias timeframe</p>
+            <p>
+              ✓ <span className="font-semibold">Use higher TF for bias:</span> Daily/4H shows overall direction
+            </p>
+            <p>
+              ✓ <span className="font-semibold">Medium TF for entries:</span> 1H/15M for entry confirmation
+            </p>
+            <p>
+              ✓ <span className="font-semibold">Lower TF for timing:</span> 5M/1M for precise entries
+            </p>
+            <p>
+              ✓ <span className="font-semibold">Confluence zones:</span> Look where levels align across timeframes
+            </p>
+            <p>
+              ✓ <span className="font-semibold">Trend alignment:</span> Best trades when all timeframes agree
+            </p>
+            <p>
+              ✓ <span className="font-semibold">Stop logic:</span> Place below support on your bias timeframe
+            </p>
           </div>
         </div>
 

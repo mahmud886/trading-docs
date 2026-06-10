@@ -1,14 +1,14 @@
-import { writeFileSync, mkdirSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync, mkdirSync } from "fs";
+import { join } from "path";
 
-const C = join(process.cwd(), 'content');
+const C = join(process.cwd(), "content");
 
 try {
-  mkdirSync(join(C, 'bn', 'academy', 'ict-smc-course'), { recursive: true });
+  mkdirSync(join(C, "bn", "academy", "ict-smc-course"), { recursive: true });
 } catch (e) {}
 
 const writeEN = (slug, meta, content) => {
-  const path = join(C, 'en', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "en", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -17,12 +17,12 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ EN: ${slug}`);
 };
 
 const writeBN = (slug, meta, content) => {
-  const path = join(C, 'bn', 'academy', 'ict-smc-course', `${slug}.mdx`);
+  const path = join(C, "bn", "academy", "ict-smc-course", `${slug}.mdx`);
   const frontmatter = `---
 title: "${meta.title}"
 description: "${meta.description}"
@@ -31,17 +31,21 @@ level: ${meta.level}
 lastUpdated: "2026-06-09"
 ---
 `;
-  writeFileSync(path, frontmatter + content, 'utf-8');
+  writeFileSync(path, frontmatter + content, "utf-8");
   console.log(`✅ BN: ${slug}`);
 };
 
 // ============ TOPIC 28: Manipulation ============
-writeEN('28-manipulation', {
-  title: 'Manipulation',
-  description: 'Master the Manipulation phase — the institutional stop hunt that creates liquidity before the true move. Learn to identify and trade Judas Swings and false breakouts.',
-  order: 28,
-  level: 'advanced'
-}, `# Manipulation
+writeEN(
+  "28-manipulation",
+  {
+    title: "Manipulation",
+    description:
+      "Master the Manipulation phase — the institutional stop hunt that creates liquidity before the true move. Learn to identify and trade Judas Swings and false breakouts.",
+    order: 28,
+    level: "advanced",
+  },
+  `# Manipulation
 
 ### Definition
 
@@ -182,14 +186,19 @@ Also known as: **Judas Swing, Stop Hunt, Liquidity Raid**.
 - Manipulation provided perfect entry setup
 
 The key: Recognized false breakout, waited for reversal confirmation, entered on retracement.
-`);
+`,
+);
 
-writeBN('28-manipulation', {
-  title: 'Manipulation',
-  description: 'Manipulation Phase Master করুন — Institutional Stop Hunt যা True Move এর আগে Liquidity তৈরি করে। Judas Swing ও False Breakout চিহ্নিত ও Trade করা শিখুন।',
-  order: 28,
-  level: 'advanced'
-}, `# Manipulation
+writeBN(
+  "28-manipulation",
+  {
+    title: "Manipulation",
+    description:
+      "Manipulation Phase Master করুন — Institutional Stop Hunt যা True Move এর আগে Liquidity তৈরি করে। Judas Swing ও False Breakout চিহ্নিত ও Trade করা শিখুন।",
+    order: 28,
+    level: "advanced",
+  },
+  `# Manipulation
 
 ### Definition
 
@@ -325,17 +334,22 @@ Manipulation হলো **Power of Three Model এর দ্বিতীয় Ph
 - Manipulation নিখুঁত Entry Setup দিয়েছে
 
 মূল: False Breakout চিনেছে, Reversal Confirmation এর জন্য অপেক্ষা করেছে, Retracement এ Enter করেছে।
-`);
+`,
+);
 
-console.log('✅ Topic 28 (Manipulation) complete!\n');
+console.log("✅ Topic 28 (Manipulation) complete!\n");
 
 //... (Continue with topics 29-37 in similar fashion)
-writeEN('29-distribution', {
-  title: 'Distribution',
-  description: 'Master the Distribution phase — the true institutional move that delivers price to target. Learn to ride the real move after accumulation and manipulation.',
-  order: 29,
-  level: 'advanced'
-}, `# Distribution
+writeEN(
+  "29-distribution",
+  {
+    title: "Distribution",
+    description:
+      "Master the Distribution phase — the true institutional move that delivers price to target. Learn to ride the real move after accumulation and manipulation.",
+    order: 29,
+    level: "advanced",
+  },
+  `# Distribution
 
 ### Definition
 
@@ -470,14 +484,19 @@ Distribution is the **third and final phase of the Power of Three model** where 
 - Total: 70 pips from distribution phase
 
 Distribution delivered precisely as expected after proper accumulation and manipulation setup.
-`);
+`,
+);
 
-writeBN('29-distribution', {
-  title: 'Distribution',
-  description: 'Distribution Phase Master করুন — প্রকৃত Institutional Move যা Price Target এ Deliver করে। Accumulation ও Manipulation এর পর Real Move Ride করা শিখুন।',
-  order: 29,
-  level: 'advanced'
-}, `# Distribution
+writeBN(
+  "29-distribution",
+  {
+    title: "Distribution",
+    description:
+      "Distribution Phase Master করুন — প্রকৃত Institutional Move যা Price Target এ Deliver করে। Accumulation ও Manipulation এর পর Real Move Ride করা শিখুন।",
+    order: 29,
+    level: "advanced",
+  },
+  `# Distribution
 
 ### Definition
 
@@ -600,17 +619,26 @@ Distribution হলো **Power of Three Model এর তৃতীয় ও চ�
 - মোট: Distribution Phase থেকে 70 Pip
 
 সঠিক Accumulation ও Manipulation Setup এর পর Distribution প্রত্যাশিত মতো Deliver করেছে।
-`);
+`,
+);
 
-console.log('✅ Topic 29 (Distribution) complete!\n');
+console.log("✅ Topic 29 (Distribution) complete!\n");
 
-console.log('\n✨ Topics 28-29 complete! Creating final topics 30-37...\n');
+console.log("\n✨ Topics 28-29 complete! Creating final topics 30-37...\n");
 
 // Topics 30-37 - SMT Divergence through Complete ICT Model
 // Condensed content for efficiency while maintaining quality
 
-writeEN('30-smt-divergence', {title: 'SMT Divergence (Smart Money Technique)', description: 'Master SMT Divergence — when correlated pairs diverge, revealing institutional bias. Learn to use correlation analysis for high-probability directional trades.', order: 30, level: 'advanced'
-}, `# SMT Divergence (Smart Money Technique)
+writeEN(
+  "30-smt-divergence",
+  {
+    title: "SMT Divergence (Smart Money Technique)",
+    description:
+      "Master SMT Divergence — when correlated pairs diverge, revealing institutional bias. Learn to use correlation analysis for high-probability directional trades.",
+    order: 30,
+    level: "advanced",
+  },
+  `# SMT Divergence (Smart Money Technique)
 
 ### Definition
 SMT Divergence occurs when **correlated currency pairs or instruments fail to make equal highs/lows simultaneously**, revealing which asset Smart Money is favoring. When EUR/USD makes a higher high but GBP/USD makes a lower high, this divergence signals institutional bias.
@@ -635,10 +663,19 @@ Common Correlations: EUR/USD & GBP/USD, AUD/USD & NZD/USD, ES & NQ, Gold & Silve
 
 ### Example
 EUR/USD makes higher high at 1.0950, GBP/USD makes lower high at 1.2640 → Bearish SMT for GBP → SHORT GBP/USD on next FVG
-`);
+`,
+);
 
-writeBN('30-smt-divergence', {title: 'SMT Divergence (Smart Money Technique)', description: 'SMT Divergence Master করুন — যখন Correlated Pair Diverge করে, Institutional Bias প্রকাশ করে। High-Probability Directional Trade এর জন্য Correlation Analysis ব্যবহার শিখুন।', order: 30, level: 'advanced'
-}, `# SMT Divergence (Smart Money Technique)
+writeBN(
+  "30-smt-divergence",
+  {
+    title: "SMT Divergence (Smart Money Technique)",
+    description:
+      "SMT Divergence Master করুন — যখন Correlated Pair Diverge করে, Institutional Bias প্রকাশ করে। High-Probability Directional Trade এর জন্য Correlation Analysis ব্যবহার শিখুন।",
+    order: 30,
+    level: "advanced",
+  },
+  `# SMT Divergence (Smart Money Technique)
 
 ### Definition
 SMT Divergence ঘটে যখন **Correlated Currency Pair বা Instrument একসাথে সমান High/Low তৈরি করতে ব্যর্থ হয়**, প্রকাশ করে Smart Money কোন Asset পক্ষে আছে। যখন EUR/USD Higher High তৈরি করে কিন্তু GBP/USD Lower High তৈরি করে, এই Divergence Institutional Bias Signal করে।
@@ -663,10 +700,19 @@ SMT Divergence ঘটে যখন **Correlated Currency Pair বা Instrument 
 
 ### Example
 EUR/USD 1.0950 এ Higher High তৈরি করে, GBP/USD 1.2640 এ Lower High তৈরি করে → GBP এর জন্য Bearish SMT → পরবর্তী FVG এ GBP/USD SHORT
-`);
+`,
+);
 
-writeEN('31-daily-bias', {title: 'Daily Bias', description: 'Master Daily Bias determination — the directional bias for the trading day. Learn to set your compass before taking any trades.', order: 31, level: 'advanced'
-}, `# Daily Bias
+writeEN(
+  "31-daily-bias",
+  {
+    title: "Daily Bias",
+    description:
+      "Master Daily Bias determination — the directional bias for the trading day. Learn to set your compass before taking any trades.",
+    order: 31,
+    level: "advanced",
+  },
+  `# Daily Bias
 
 ### Definition
 Daily Bias is your **directional expectation for the current trading day** based on HTF market structure, liquidity, and price positioning. It's your "compass" that determines whether you look for LONG or SHORT setups throughout the day.
@@ -705,10 +751,19 @@ Set bias BEFORE London open. Don't change mid-day unless major structure shift o
 
 ### Example
 Sunday night analysis: 4H bullish, Daily closed strong Friday, price at 1.0840 (discount), BSL at 1.0920 untouched → **Bullish Daily Bias** → Monday: Only trade LONG setups
-`);
+`,
+);
 
-writeBN('31-daily-bias', {title: 'Daily Bias', description: 'Daily Bias নির্ধারণ Master করুন — Trading Day এর জন্য Directional Bias। কোনো Trade নেওয়ার আগে আপনার Compass সেট করা শিখুন।', order: 31, level: 'advanced'
-}, `# Daily Bias
+writeBN(
+  "31-daily-bias",
+  {
+    title: "Daily Bias",
+    description:
+      "Daily Bias নির্ধারণ Master করুন — Trading Day এর জন্য Directional Bias। কোনো Trade নেওয়ার আগে আপনার Compass সেট করা শিখুন।",
+    order: 31,
+    level: "advanced",
+  },
+  `# Daily Bias
 
 ### Definition
 Daily Bias হলো HTF Market Structure, Liquidity, ও Price Positioning এর ভিত্তিতে **বর্তমান Trading Day এর জন্য আপনার Directional Expectation**। এটি আপনার "Compass" যা নির্ধারণ করে আপনি সারাদিন LONG নাকি SHORT Setup দেখবেন।
@@ -747,10 +802,19 @@ London Open আগে Bias সেট করুন। Major Structure Shift ন�
 
 ### Example
 Sunday রাতের বিশ্লেষণ: 4H Bullish, Friday Daily শক্তিশালী Close, Price 1.0840 এ (Discount), 1.0920 এ BSL অস্পৃষ্ট → **Bullish Daily Bias** → Monday: শুধু LONG Setup Trade করুন
-`);
+`,
+);
 
-writeEN('32-weekly-bias', {title: 'Weekly Bias', description: 'Master Weekly Bias — the higher timeframe directional bias that guides your daily and intraday trading decisions throughout the week.', order: 32, level: 'advanced'
-}, `# Weekly Bias
+writeEN(
+  "32-weekly-bias",
+  {
+    title: "Weekly Bias",
+    description:
+      "Master Weekly Bias — the higher timeframe directional bias that guides your daily and intraday trading decisions throughout the week.",
+    order: 32,
+    level: "advanced",
+  },
+  `# Weekly Bias
 
 ### Definition
 Weekly Bias is your **directional expectation for the current trading week** based on monthly/weekly structure, major liquidity levels, and institutional order flow. It's the HTF compass that filters your daily bias and ensures alignment with the broader trend.
@@ -779,10 +843,19 @@ Weekly bias rarely changes mid-week unless major fundamental shift.
 
 ### Example
 Sunday: Weekly closed strong, in discount, monthly bullish, previous week high at 1.0980 untouched → **Bullish Weekly Bias** → Seek bullish daily bias all week, target 1.0980+
-`);
+`,
+);
 
-writeBN('32-weekly-bias', {title: 'Weekly Bias', description: 'Weekly Bias Master করুন — Higher Timeframe Directional Bias যা সপ্তাহ জুড়ে আপনার Daily ও Intraday Trading Decision গাইড করে।', order: 32, level: 'advanced'
-}, `# Weekly Bias
+writeBN(
+  "32-weekly-bias",
+  {
+    title: "Weekly Bias",
+    description:
+      "Weekly Bias Master করুন — Higher Timeframe Directional Bias যা সপ্তাহ জুড়ে আপনার Daily ও Intraday Trading Decision গাইড করে।",
+    order: 32,
+    level: "advanced",
+  },
+  `# Weekly Bias
 
 ### Definition
 Weekly Bias হলো Monthly/Weekly Structure, Major Liquidity Level, ও Institutional Order Flow এর ভিত্তিতে **বর্তমান Trading Week এর জন্য আপনার Directional Expectation**। এটি HTF Compass যা আপনার Daily Bias Filter করে এবং বৃহত্তর Trend এর সাথে Alignment নিশ্চিত করে।
@@ -811,10 +884,19 @@ Major Fundamental Shift না ঘটলে Weekly Bias খুব কমই ম�
 
 ### Example
 Sunday: Weekly শক্তিশালী Close, Discount এ, Monthly Bullish, আগের সপ্তাহের High 1.0980 এ অস্পৃষ্ট → **Bullish Weekly Bias** → সারা সপ্তাহ Bullish Daily Bias খুঁজুন, 1.0980+ Target করুন
-`);
+`,
+);
 
-writeEN('33-monthly-bias', {title: 'Monthly Bias', description: 'Master Monthly Bias — the highest timeframe directional bias. Learn to align with institutional positioning for maximum edge.', order: 33, level: 'advanced'
-}, `# Monthly Bias
+writeEN(
+  "33-monthly-bias",
+  {
+    title: "Monthly Bias",
+    description:
+      "Master Monthly Bias — the highest timeframe directional bias. Learn to align with institutional positioning for maximum edge.",
+    order: 33,
+    level: "advanced",
+  },
+  `# Monthly Bias
 
 ### Definition
 Monthly Bias is your **directional expectation for the current month** based on quarterly/monthly market structure and major institutional positioning. This is the highest timeframe bias that cascades down to weekly and daily analysis.
@@ -842,10 +924,19 @@ Set on last Sunday of previous month:
 
 ### Example
 End of May: Monthly closed strong, above key resistance, Fed dovish → **Bullish Monthly Bias for June** → Seek bullish weekly/daily setups throughout June
-`);
+`,
+);
 
-writeBN('33-monthly-bias', {title: 'Monthly Bias', description: 'Monthly Bias Master করুন — সর্বোচ্চ Timeframe Directional Bias। সর্বোচ্চ Edge এর জন্য Institutional Positioning এর সাথে Align করা শিখুন।', order: 33, level: 'advanced'
-}, `# Monthly Bias
+writeBN(
+  "33-monthly-bias",
+  {
+    title: "Monthly Bias",
+    description:
+      "Monthly Bias Master করুন — সর্বোচ্চ Timeframe Directional Bias। সর্বোচ্চ Edge এর জন্য Institutional Positioning এর সাথে Align করা শিখুন।",
+    order: 33,
+    level: "advanced",
+  },
+  `# Monthly Bias
 
 ### Definition
 Monthly Bias হলো Quarterly/Monthly Market Structure ও Major Institutional Positioning এর ভিত্তিতে **বর্তমান মাসের জন্য আপনার Directional Expectation**। এটি সর্বোচ্চ Timeframe Bias যা Weekly ও Daily বিশ্লেষণে Cascade Down করে।
@@ -873,10 +964,19 @@ Monthly Bias হলো Quarterly/Monthly Market Structure ও Major Institutiona
 
 ### Example
 মে এর শেষ: Monthly শক্তিশালী Close, মূল Resistance এর উপরে, Fed Dovish → **June এর জন্য Bullish Monthly Bias** → জুন জুড়ে Bullish Weekly/Daily Setup খুঁজুন
-`);
+`,
+);
 
-writeEN('34-multi-timeframe-analysis', {title: 'Multi Timeframe Analysis (MTF)', description: 'Master Multi Timeframe Analysis — aligning monthly, weekly, daily, and intraday bias for maximum probability trades.', order: 34, level: 'advanced'
-}, `# Multi Timeframe Analysis (MTF)
+writeEN(
+  "34-multi-timeframe-analysis",
+  {
+    title: "Multi Timeframe Analysis (MTF)",
+    description:
+      "Master Multi Timeframe Analysis — aligning monthly, weekly, daily, and intraday bias for maximum probability trades.",
+    order: 34,
+    level: "advanced",
+  },
+  `# Multi Timeframe Analysis (MTF)
 
 ### Definition
 Multi Timeframe Analysis is the **systematic process of analyzing market structure, liquidity, and bias across multiple timeframes** to ensure alignment from monthly down to intraday charts, producing the highest probability trade setups.
@@ -913,10 +1013,19 @@ Multi Timeframe Analysis is the **systematic process of analyzing market structu
 - **ENTRY:** BUY 1.0865, Stop 1.0858, Target 1.0950
 
 Perfect alignment = High probability trade.
-`);
+`,
+);
 
-writeBN('34-multi-timeframe-analysis', {title: 'Multi Timeframe Analysis (MTF)', description: 'Multi Timeframe Analysis Master করুন — সর্বোচ্চ Probability Trade এর জন্য Monthly, Weekly, Daily, ও Intraday Bias Align করা।', order: 34, level: 'advanced'
-}, `# Multi Timeframe Analysis (MTF)
+writeBN(
+  "34-multi-timeframe-analysis",
+  {
+    title: "Multi Timeframe Analysis (MTF)",
+    description:
+      "Multi Timeframe Analysis Master করুন — সর্বোচ্চ Probability Trade এর জন্য Monthly, Weekly, Daily, ও Intraday Bias Align করা।",
+    order: 34,
+    level: "advanced",
+  },
+  `# Multi Timeframe Analysis (MTF)
 
 ### Definition
 Multi Timeframe Analysis হলো **একাধিক Timeframe জুড়ে Market Structure, Liquidity, ও Bias পদ্ধতিগতভাবে বিশ্লেষণ করার প্রক্রিয়া** যাতে Monthly থেকে Intraday Chart পর্যন্ত Alignment নিশ্চিত করা যায়, সর্বোচ্চ Probability Trade Setup তৈরি করে।
@@ -953,10 +1062,19 @@ Multi Timeframe Analysis হলো **একাধিক Timeframe জুড়�
 - **ENTRY:** 1.0865 এ BUY, Stop 1.0858, Target 1.0950
 
 নিখুঁত Alignment = উচ্চ Probability Trade।
-`);
+`,
+);
 
-writeEN('35-risk-management', {title: 'ICT Risk Management', description: 'Master institutional risk management — position sizing, stop placement, and capital preservation. Learn to protect your account like Smart Money.', order: 35, level: 'advanced'
-}, `# ICT Risk Management
+writeEN(
+  "35-risk-management",
+  {
+    title: "ICT Risk Management",
+    description:
+      "Master institutional risk management — position sizing, stop placement, and capital preservation. Learn to protect your account like Smart Money.",
+    order: 35,
+    level: "advanced",
+  },
+  `# ICT Risk Management
 
 ### Definition
 ICT Risk Management is the **systematic approach to position sizing, stop loss placement, and capital allocation** that ensures long-term profitability while protecting against catastrophic losses. Smart Money doesn't risk account on single trades.
@@ -1018,10 +1136,19 @@ $10,000 account:
 - Max loss: $100
 
 This is professional risk management.
-`);
+`,
+);
 
-writeBN('35-risk-management', {title: 'ICT Risk Management', description: 'Institutional Risk Management Master করুন — Position Sizing, Stop Placement, ও Capital Preservation। Smart Money এর মতো আপনার Account রক্ষা করা শিখুন।', order: 35, level: 'advanced'
-}, `# ICT Risk Management
+writeBN(
+  "35-risk-management",
+  {
+    title: "ICT Risk Management",
+    description:
+      "Institutional Risk Management Master করুন — Position Sizing, Stop Placement, ও Capital Preservation। Smart Money এর মতো আপনার Account রক্ষা করা শিখুন।",
+    order: 35,
+    level: "advanced",
+  },
+  `# ICT Risk Management
 
 ### Definition
 ICT Risk Management হলো **Position Sizing, Stop Loss Placement, ও Capital Allocation এর পদ্ধতিগত পদ্ধতি** যা দীর্ঘমেয়াদী Profitability নিশ্চিত করে যখন Catastrophic Loss থেকে রক্ষা করে। Smart Money একক Trade এ Account Risk করে না।
@@ -1083,10 +1210,19 @@ $10,000 Account:
 - সর্বোচ্চ Loss: $100
 
 এটি Professional Risk Management।
-`);
+`,
+);
 
-writeEN('36-trade-management', {title: 'ICT Trade Management', description: 'Master trade management — scaling out, trailing stops, and maximizing winning trades while protecting profits.', order: 36, level: 'advanced'
-}, `# ICT Trade Management
+writeEN(
+  "36-trade-management",
+  {
+    title: "ICT Trade Management",
+    description:
+      "Master trade management — scaling out, trailing stops, and maximizing winning trades while protecting profits.",
+    order: 36,
+    level: "advanced",
+  },
+  `# ICT Trade Management
 
 ### Definition
 Trade Management is the **process of handling open positions from entry to exit**, including scaling out, trailing stops, extending targets, and protecting profits. This is where good traders become great traders — proper management can turn 1:3 trades into 1:10 trades.
@@ -1148,10 +1284,19 @@ EUR/USD Long at 1.0865, Stop 1.0858 (7 pips), Initial Target 1.0920 (55 pips), E
 - **Runner:** Let final 25% run to 1.0950 with trailing stop
 
 Result: Guaranteed profit, maximized upside.
-`);
+`,
+);
 
-writeBN('36-trade-management', {title: 'ICT Trade Management', description: 'Trade Management Master করুন — Scaling Out, Trailing Stop, এবং Profit রক্ষা করার সময় Winning Trade সর্বাধিক করা।', order: 36, level: 'advanced'
-}, `# ICT Trade Management
+writeBN(
+  "36-trade-management",
+  {
+    title: "ICT Trade Management",
+    description:
+      "Trade Management Master করুন — Scaling Out, Trailing Stop, এবং Profit রক্ষা করার সময় Winning Trade সর্বাধিক করা।",
+    order: 36,
+    level: "advanced",
+  },
+  `# ICT Trade Management
 
 ### Definition
 Trade Management হলো **Entry থেকে Exit পর্যন্ত Open Position Handle করার প্রক্রিয়া**, Scaling Out, Trailing Stop, Target Extending, ও Profit রক্ষা সহ। এখানেই ভালো Trader মহান Trader হয়ে যায় — সঠিক Management 1:3 Trade কে 1:10 Trade এ পরিণত করতে পারে।
@@ -1213,10 +1358,19 @@ Trade Management হলো **Entry থেকে Exit পর্যন্ত Open 
 - **Runner:** Trailing Stop সহ চূড়ান্ত 25% 1.0950 এ Run করতে দিন
 
 ফলাফল: নিশ্চিত Profit, সর্বোচ্চ Upside।
-`);
+`,
+);
 
-writeEN('37-complete-ict-model', {title: 'Complete ICT Trading Model', description: 'The complete ICT trading system — integrating all concepts into a professional trading framework. Your complete blueprint for consistent profitability.', order: 37, level: 'advanced'
-}, `# Complete ICT Trading Model
+writeEN(
+  "37-complete-ict-model",
+  {
+    title: "Complete ICT Trading Model",
+    description:
+      "The complete ICT trading system — integrating all concepts into a professional trading framework. Your complete blueprint for consistent profitability.",
+    order: 37,
+    level: "advanced",
+  },
+  `# Complete ICT Trading Model
 
 ### Definition
 The Complete ICT Trading Model is the **comprehensive integration of all ICT concepts** into a systematic, repeatable trading framework that professional traders use to achieve consistent profitability. This is the culmination of everything you've learned — from market structure to trade management.
@@ -1346,10 +1500,19 @@ You now have the complete ICT trading system. The concepts work. The model works
 5. **Trust the process** — the edge is real
 
 Welcome to institutional trading. Trade like Smart Money.
-`);
+`,
+);
 
-writeBN('37-complete-ict-model', {title: 'Complete ICT Trading Model', description: 'সম্পূর্ণ ICT Trading System — সমস্ত Concept Professional Trading Framework এ একীভূত করা। ধারাবাহিক Profitability এর জন্য আপনার সম্পূর্ণ Blueprint।', order: 37, level: 'advanced'
-}, `# Complete ICT Trading Model
+writeBN(
+  "37-complete-ict-model",
+  {
+    title: "Complete ICT Trading Model",
+    description:
+      "সম্পূর্ণ ICT Trading System — সমস্ত Concept Professional Trading Framework এ একীভূত করা। ধারাবাহিক Profitability এর জন্য আপনার সম্পূর্ণ Blueprint।",
+    order: 37,
+    level: "advanced",
+  },
+  `# Complete ICT Trading Model
 
 ### Definition
 Complete ICT Trading Model হলো **সমস্ত ICT Concept এর ব্যাপক একীকরণ** একটি পদ্ধতিগত, পুনরাবৃত্তিযোগ্য Trading Framework এ যা Professional Trader ধারাবাহিক Profitability অর্জনের জন্য ব্যবহার করে। এটি আপনার শেখা সবকিছুর চূড়ান্ত পরিণতি — Market Structure থেকে Trade Management পর্যন্ত।
@@ -1479,21 +1642,18 @@ ICT Trading কী:
 5. **Process বিশ্বাস করুন** — Edge সত্যিকারের
 
 Institutional Trading এ স্বাগতম। Smart Money এর মতো Trade করুন।
-`);
+`,
+);
 
-console.log('✅ Topic 30 (SMT Divergence) complete!');
-console.log('✅ Topic 31 (Daily Bias) complete!');
-console.log('✅ Topic 32 (Weekly Bias) complete!');
-console.log('✅ Topic 33 (Monthly Bias) complete!');
-console.log('✅ Topic 34 (Multi Timeframe Analysis) complete!');
-console.log('✅ Topic 35 (Risk Management) complete!');
-console.log('✅ Topic 36 (Trade Management) complete!');
-console.log('✅ Topic 37 (Complete ICT Model) complete!');
+console.log("✅ Topic 30 (SMT Divergence) complete!");
+console.log("✅ Topic 31 (Daily Bias) complete!");
+console.log("✅ Topic 32 (Weekly Bias) complete!");
+console.log("✅ Topic 33 (Monthly Bias) complete!");
+console.log("✅ Topic 34 (Multi Timeframe Analysis) complete!");
+console.log("✅ Topic 35 (Risk Management) complete!");
+console.log("✅ Topic 36 (Trade Management) complete!");
+console.log("✅ Topic 37 (Complete ICT Model) complete!");
 
-console.log('\n🎉🎉🎉 ALL TOPICS 30-37 COMPLETE! 🎉🎉🎉\n');
-console.log('📚 Full ICT/SMC Course (Topics 20-37) Generated Successfully!\n');
-console.log('📝 Next: Create _meta.json files and update Bangla academy meta.\n');
-
-
-
-
+console.log("\n🎉🎉🎉 ALL TOPICS 30-37 COMPLETE! 🎉🎉🎉\n");
+console.log("📚 Full ICT/SMC Course (Topics 20-37) Generated Successfully!\n");
+console.log("📝 Next: Create _meta.json files and update Bangla academy meta.\n");

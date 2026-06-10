@@ -38,6 +38,7 @@ Let's say you have a **$10,000 account**.
 So you risk a maximum of **$100 per trade**.
 
 If your stop loss is **50 pips away**, and you're trading EUR/USD (each pip = $10 on a standard lot):
+
 - **$100 ÷ $10 per pip ÷ 50 pips = 0.2 standard lots** (or 2 micro lots)
 
 That's your position size.
@@ -48,11 +49,11 @@ That's your position size.
 
 With 1% risk, here's what happens after a losing streak:
 
-| Scenario | Position Size | 5 Losses in a Row | 10 Losses | Recovery Needed |
-|----------|---|---|---|---|
-| 1% Risk | Your account after: | -$500 (from $10K to $9,500) | -$1,000 (from $10K to $9,000) | 5-10 wins to recover |
-| 5% Risk | Your account after: | -$2,500 (from $10K to $7,500) | -$5,000 (from $10K to $5,000) | **50+ wins needed** |
-| 10% Risk | Your account after: | -$5,000 (from $10K to $5,000) | -$10,000 (ACCOUNT BLOWN) | **Starting over** |
+| Scenario | Position Size       | 5 Losses in a Row             | 10 Losses                     | Recovery Needed      |
+| -------- | ------------------- | ----------------------------- | ----------------------------- | -------------------- |
+| 1% Risk  | Your account after: | -$500 (from $10K to $9,500)   | -$1,000 (from $10K to $9,000) | 5-10 wins to recover |
+| 5% Risk  | Your account after: | -$2,500 (from $10K to $7,500) | -$5,000 (from $10K to $5,000) | **50+ wins needed**  |
+| 10% Risk | Your account after: | -$5,000 (from $10K to $5,000) | -$10,000 (ACCOUNT BLOWN)      | **Starting over**    |
 
 **See the difference?**
 
@@ -65,6 +66,7 @@ With 1% risk, a 10-loss streak hurts but doesn't kill you. With 10% risk, you're
 The Kelly Criterion is a mathematical formula to calculate the **optimal position size** based on your win rate and reward-to-risk ratio.
 
 **Formula:**
+
 ```
 Position Size % = (Win % × Average Win) - (Loss % × Average Loss)
                   ÷ Average Win
@@ -73,6 +75,7 @@ Position Size % = (Win % × Average Win) - (Loss % × Average Loss)
 ### Example:
 
 If your strategy has:
+
 - **Win rate:** 60%
 - **Average winner:** 100 pips
 - **Average loser:** 50 pips
@@ -94,6 +97,7 @@ This assumes:
 3. You're willing to risk larger positions
 
 Most traders use **Half-Kelly (20%)** for safety, since real trading has slippage and fees that reduce effectiveness.
+
 </Callout>
 
 ---
@@ -110,6 +114,7 @@ Most traders use **Half-Kelly (20%)** for safety, since real trading has slippag
 Position size = $50 ÷ $10 per 100 pips ÷ 40 pips = **0.125 micro lots (12.5 pips per pip value)**
 
 Actually, simplest: Use a **1 micro lot** (10,000 units) = $0.10 per pip
+
 - Risk = $0.10 × 40 pips = $4 per stop (well under 1%)
 
 ---
@@ -126,6 +131,7 @@ Position size = $500 ÷ $20 per pip per lot = **25 lots** (25 × 100 oz = 2,500 
 Verify: 25 lots × $20 per pip × 20 pips = $10,000... **Wait, that's 20% of account!**
 
 Let's recalculate: We want $500 risk
+
 - $500 ÷ $20 per pip = 25 pips
 - So our stop should be 25 pips, not 20
 
@@ -170,15 +176,18 @@ Position Size = Risk Amount ÷ (Stop Loss in Pips × Pip Value)
 ```
 
 ### Standard Lot (100,000 units):
+
 - EUR/USD: 1 pip = $10
 - GBP/USD: 1 pip = $10
 - USD/JPY: 1 pip = $10 (approximately)
 
 ### Micro Lot (10,000 units):
+
 - EUR/USD: 1 pip = $1
 - GBP/USD: 1 pip = $1
 
 ### Example Calculation:
+
 - Account: $5,000 (1% risk = $50)
 - Stop loss: 50 pips
 - Pair: EUR/USD (standard lot, $10 per pip)
@@ -189,12 +198,12 @@ Position size = $50 ÷ ($10 × 50 pips) = **0.1 standard lots** (1 micro lot)
 
 ## Position Sizing in Different Markets
 
-| Market | Pip Value | Risk per Trade (1%) | Common Stop | Position Sizing |
-|--------|-----------|-------|---|---|
-| **Forex** ($10K acct) | $10 per pip (std) | $100 | 40-50 pips | 0.2-0.25 lots |
-| **Gold** ($10K acct) | Varies by lot | $100 | 20-30 pips | 0.3-0.5 lots |
-| **Crypto** ($10K acct) | Variable | $100 | 5-10% of entry | Fraction of coin |
-| **Stocks** ($10K acct) | 1¢ per share | $100 | Risk: 1-2 pts | 50-100 shares |
+| Market                 | Pip Value         | Risk per Trade (1%) | Common Stop    | Position Sizing  |
+| ---------------------- | ----------------- | ------------------- | -------------- | ---------------- |
+| **Forex** ($10K acct)  | $10 per pip (std) | $100                | 40-50 pips     | 0.2-0.25 lots    |
+| **Gold** ($10K acct)   | Varies by lot     | $100                | 20-30 pips     | 0.3-0.5 lots     |
+| **Crypto** ($10K acct) | Variable          | $100                | 5-10% of entry | Fraction of coin |
+| **Stocks** ($10K acct) | 1¢ per share      | $100                | Risk: 1-2 pts  | 50-100 shares    |
 
 ---
 
@@ -203,6 +212,7 @@ Position size = $50 ÷ ($10 × 50 pips) = **0.1 standard lots** (1 micro lot)
 **Position sizing is your shield against disaster.**
 
 Rules:
+
 1. ✅ Risk 1% of your account per trade (1%)
 2. ✅ Recalculate after every trade
 3. ✅ Never adjust your stop loss to "fit" your position
@@ -216,4 +226,3 @@ Boring? Yes. Effective? Absolutely.
 Master position sizing and you'll never blow an account again.
 
 Happy trading! 📈
-

@@ -1,11 +1,7 @@
 import { AlertTriangle, TrendingDown, Info, Heart, ExternalLink, UserX } from "lucide-react";
 import Link from "next/link";
 
-export default async function DisclaimerPage({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
+export default async function DisclaimerPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isBn = lang === "bn";
 
@@ -17,9 +13,7 @@ export default async function DisclaimerPage({
           <AlertTriangle size={14} />
           {isBn ? "আইনি" : "Legal"}
         </div>
-        <h1 className="text-4xl font-bold text-foreground sm:text-5xl">
-          {isBn ? "দায়মুক্তি" : "Disclaimer"}
-        </h1>
+        <h1 className="text-4xl font-bold text-foreground sm:text-5xl">{isBn ? "দায়মুক্তি" : "Disclaimer"}</h1>
         <p className="mt-4 text-muted-foreground">
           {isBn ? "সর্বশেষ আপডেট: জুন ১০, ২০২৬" : "Last updated: June 10, 2026"}
         </p>
@@ -71,12 +65,42 @@ export default async function DisclaimerPage({
           </h2>
           <ul className="mt-4 space-y-3">
             {[
-              { text: isBn ? "ট্রেডিংয়ে উল্লেখযোগ্য মূলধন ক্ষতির ঝুঁকি রয়েছে" : "Trading involves significant risk of capital loss", icon: "💰" },
-              { text: isBn ? "রিটেল ট্রেডারদের ৭০-৮০% ট্রেডিংয়ে অর্থ হারান" : "70-80% of retail traders lose money trading", icon: "📊" },
-              { text: isBn ? "লিভারেজড পণ্য আপনার প্রাথমিক বিনিয়োগের চেয়ে বেশি ক্ষতি করতে পারে" : "Leveraged products can result in losses greater than your initial investment", icon: "⚡" },
-              { text: isBn ? "অতীত পারফরম্যান্স ভবিষ্যত ফলাফলের গ্যারান্টি দেয় না" : "Past performance does not guarantee future results", icon: "📈" },
-              { text: isBn ? "আপনার হারাতে সামর্থ্য আছে তার বেশি অর্থ দিয়ে ট্রেড করবেন না" : "Do not trade with money you cannot afford to lose", icon: "🚫" },
-              { text: isBn ? "ক্রিপ্টোকারেন্সি অত্যন্ত ভোলাটাইল এবং মূল্য শূন্যে নামতে পারে" : "Cryptocurrencies are extremely volatile and can go to zero", icon: "🪙" },
+              {
+                text: isBn
+                  ? "ট্রেডিংয়ে উল্লেখযোগ্য মূলধন ক্ষতির ঝুঁকি রয়েছে"
+                  : "Trading involves significant risk of capital loss",
+                icon: "💰",
+              },
+              {
+                text: isBn
+                  ? "রিটেল ট্রেডারদের ৭০-৮০% ট্রেডিংয়ে অর্থ হারান"
+                  : "70-80% of retail traders lose money trading",
+                icon: "📊",
+              },
+              {
+                text: isBn
+                  ? "লিভারেজড পণ্য আপনার প্রাথমিক বিনিয়োগের চেয়ে বেশি ক্ষতি করতে পারে"
+                  : "Leveraged products can result in losses greater than your initial investment",
+                icon: "⚡",
+              },
+              {
+                text: isBn
+                  ? "অতীত পারফরম্যান্স ভবিষ্যত ফলাফলের গ্যারান্টি দেয় না"
+                  : "Past performance does not guarantee future results",
+                icon: "📈",
+              },
+              {
+                text: isBn
+                  ? "আপনার হারাতে সামর্থ্য আছে তার বেশি অর্থ দিয়ে ট্রেড করবেন না"
+                  : "Do not trade with money you cannot afford to lose",
+                icon: "🚫",
+              },
+              {
+                text: isBn
+                  ? "ক্রিপ্টোকারেন্সি অত্যন্ত ভোলাটাইল এবং মূল্য শূন্যে নামতে পারে"
+                  : "Cryptocurrencies are extremely volatile and can go to zero",
+                icon: "🪙",
+              },
             ].map((item) => (
               <li key={item.text} className="flex items-start gap-3 text-sm text-muted-foreground">
                 <span className="mt-0.5 shrink-0 text-base">{item.icon}</span>
@@ -149,10 +173,16 @@ export default async function DisclaimerPage({
 
       {/* Other Legal Links */}
       <div className="mt-12 flex flex-wrap gap-4">
-        <Link href={`/${lang}/privacy-policy`} className="rounded-lg border border-border bg-card px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-accent-green/30 hover:text-foreground">
+        <Link
+          href={`/${lang}/privacy-policy`}
+          className="rounded-lg border border-border bg-card px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-accent-green/30 hover:text-foreground"
+        >
           {isBn ? "গোপনীয়তা নীতি →" : "Privacy Policy →"}
         </Link>
-        <Link href={`/${lang}/terms`} className="rounded-lg border border-border bg-card px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-accent-green/30 hover:text-foreground">
+        <Link
+          href={`/${lang}/terms`}
+          className="rounded-lg border border-border bg-card px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-accent-green/30 hover:text-foreground"
+        >
           {isBn ? "ব্যবহারের শর্তাবলী →" : "Terms of Service →"}
         </Link>
       </div>

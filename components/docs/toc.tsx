@@ -16,7 +16,7 @@ export function Toc({ items, label }: { items: TocItem[]; label?: string }) {
           }
         }
       },
-      { rootMargin: "0px 0px -80% 0px" }
+      { rootMargin: "0px 0px -80% 0px" },
     );
 
     for (const item of items) {
@@ -36,17 +36,14 @@ export function Toc({ items, label }: { items: TocItem[]; label?: string }) {
       </p>
       <ul className="space-y-1.5 border-l border-border">
         {items.map((item) => (
-          <li
-            key={item.id}
-            style={{ paddingLeft: `${(item.level - 2) * 12 + 12}px` }}
-          >
+          <li key={item.id} style={{ paddingLeft: `${(item.level - 2) * 12 + 12}px` }}>
             <a
               href={`#${item.id}`}
               className={cn(
                 "block text-[13px] leading-relaxed transition-all",
                 activeId === item.id
                   ? "font-medium text-accent-green shadow-[-1px_0_0_var(--accent-green)]"
-                  : "text-muted-foreground hover:text-foreground"
+                  : "text-muted-foreground hover:text-foreground",
               )}
             >
               {item.text}

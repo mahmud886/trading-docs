@@ -69,11 +69,15 @@ export function SessionCard({
       <div className="grid grid-cols-2 gap-px bg-zinc-800/30 p-px">
         <div className="bg-muted p-4">
           <div className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">BD Time (GMT+6)</div>
-          <div className="mt-1 font-mono text-lg font-bold text-foreground">{openBD} → {closeBD}</div>
+          <div className="mt-1 font-mono text-lg font-bold text-foreground">
+            {openBD} → {closeBD}
+          </div>
         </div>
         <div className="bg-muted p-4">
           <div className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">GMT / UTC</div>
-          <div className="mt-1 font-mono text-lg font-bold text-muted-foreground">{openGMT} → {closeGMT}</div>
+          <div className="mt-1 font-mono text-lg font-bold text-muted-foreground">
+            {openGMT} → {closeGMT}
+          </div>
         </div>
       </div>
 
@@ -81,7 +85,9 @@ export function SessionCard({
       <div className="p-6">
         {/* Best Pairs */}
         <div className="mb-4">
-          <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Best Currency Pairs</div>
+          <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            Best Currency Pairs
+          </div>
           <div className="flex flex-wrap gap-1.5">
             {pairs.map((pair) => (
               <span
@@ -96,11 +102,15 @@ export function SessionCard({
 
         {/* Characteristics */}
         <div className="mb-4">
-          <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Characteristics</div>
+          <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            Characteristics
+          </div>
           <ul className="space-y-1.5">
             {characteristics.map((c, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                <span style={{ color }} className="mt-0.5">▹</span>
+                <span style={{ color }} className="mt-0.5">
+                  ▹
+                </span>
                 {c}
               </li>
             ))}
@@ -205,4 +215,3 @@ export function SessionCardsGrid() {
     </div>
   );
 }
-

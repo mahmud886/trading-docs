@@ -11,7 +11,8 @@ lastUpdated: "2026-06-09"
 ICT শেখায় যে Financial Market Random Supply-Demand দ্বারা নয়, বরং **IPDA (Interbank Price Delivery Algorithm)** দ্বারা চালিত যা পদ্ধতিগতভাবে Liquidity Pool ও Imbalance এর মধ্যে Price Deliver করে।
 
 <Callout type="info" title="The Algorithm">
-"Market একটি Price Delivery Algorithm। এটি 'উঠে' বা 'নামে' না। এটি এক Liquidity Pool থেকে অন্যটিতে Price Deliver করে, পথে Imbalance পূরণ করে।" — ICT
+  "Market একটি Price Delivery Algorithm। এটি 'উঠে' বা 'নামে' না। এটি এক Liquidity Pool থেকে অন্যটিতে Price Deliver করে,
+  পথে Imbalance পূরণ করে।" — ICT
 </Callout>
 
 ---
@@ -19,12 +20,14 @@ ICT শেখায় যে Financial Market Random Supply-Demand দ্বা
 ## Algorithm কীভাবে কাজ করে
 
 ### Algorithm এর উদ্দেশ্য (ক্রমানুসারে)
+
 1. **Liquidity খোঁজা** — BSL বা SSL (Stop Order, Pending Order)
 2. **Imbalance পূরণ করা** — FVG, Liquidity Void, Volume Imbalance
 3. **দক্ষভাবে Price Deliver করা** — Premium ও Discount এর মধ্যে চলাচল
 4. **নতুন Liquidity তৈরি করা** — নতুন Swing Point যা নতুন Order আকর্ষণ করে
 
 ### Price Delivery Sequence
+
 ```
 Liquidity Pool A → Imbalance Fill → Liquidity Pool B → Imbalance Fill → ...
 ```
@@ -36,17 +39,20 @@ Price Liquidity Pool এর মধ্যে বাউন্স করে, পথ
 ## IPDA Data Ranges
 
 ### Lookback Period
+
 - **20 Trading Days** — Short-Term Institutional Reference
 - **40 Trading Days** — Medium-Term Reference
 - **60 Trading Days** — Quarterly Institutional Reference
 
 ### কীভাবে ব্যবহার করবেন
+
 1. Daily Chart এ 20/40/60 Candle পিছনে গণনা করুন
 2. প্রতিটি Lookback Period এর HIGH ও LOW Mark করুন
 3. যেকোনো Untouched High বা Low = Algorithm Target
 4. নিকটতম Untouched Level = সবচেয়ে সম্ভাব্য পরবর্তী Target
 
 ### উদাহরণ
+
 - 20-Day Range: 1.0800 - 1.0950
 - বর্তমান Price: 1.0870
 - 20-Day Low (1.0800) = Untouched SSL → সম্ভাব্য Target
@@ -58,13 +64,16 @@ Price Liquidity Pool এর মধ্যে বাউন্স করে, পথ
 ## Algorithmic Patterns
 
 ### Pattern 1: Liquidity → FVG → Liquidity
+
 - Algorithm SSL Sweep করে → উপরের FVG Fill করে → BSL তে Continue করে
 
 ### Pattern 2: FVG Mitigation
+
 - Algorithm আগে তৈরি FVG তে ফিরে আসে Fill করতে
 - এই কারণে "Price সবসময় Gap এ ফিরে আসে"
 
 ### Pattern 3: Time-Scheduled Delivery
+
 - Algorithm নির্দিষ্ট Kill Zone Time এ Active হয়
 - Macro Window (:50-:10) Algorithmic Displacement দেখায়
 - Session Transition = Algorithmic Recalibration

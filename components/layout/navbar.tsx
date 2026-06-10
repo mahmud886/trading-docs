@@ -3,11 +3,7 @@ import { type Locale, getDictionary } from "@/lib/i18n";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { SearchModal } from "@/components/search-modal";
-import {
-  MobileMenuProvider,
-  MobileMenuTrigger,
-  MobileMenuPanel,
-} from "@/components/layout/mobile-menu";
+import { MobileMenuProvider, MobileMenuTrigger, MobileMenuPanel } from "@/components/layout/mobile-menu";
 import { NavbarContent } from "@/components/layout/navbar-content";
 import { NavbarWrapper } from "@/components/layout/navbar-wrapper";
 import { BarChart3 } from "lucide-react";

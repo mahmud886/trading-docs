@@ -6,7 +6,6 @@ level: intermediate
 lastUpdated: "2026-06-09"
 ---
 
-
 ### Definition
 
 Fair Value Gap (FVG) হলো **3-Candle Price Imbalance** যেখানে Candle 1 ও Candle 3 এর Wick Overlap করে না, Candle 2 এর Displacement দ্বারা একটি Gap রেখে যায়। এই Gap দেখায় Price একদিকে খুব আক্রমণাত্মকভাবে Move করেছে, এবং Algorithm সম্ভবত এই Imbalance "Fill" বা "Rebalance" করতে ফিরবে।
@@ -27,6 +26,7 @@ Fair Value Gap (FVG) হলো **3-Candle Price Imbalance** যেখানে C
 ### How It Works
 
 **Bullish FVG গঠন:**
+
 1. Candle 1: যেকোনো Candle (এর HIGH নোট করুন)
 2. Candle 2: শক্তিশালী BULLISH Displacement Candle (Gap তৈরি করে)
 3. Candle 3: যেকোনো Candle (এর LOW নোট করুন)
@@ -43,6 +43,7 @@ Fair Value Gap (FVG) হলো **3-Candle Price Imbalance** যেখানে C
 ### Institutional Logic
 
 **FVG কেন বিদ্যমান:**
+
 - Institutional Displacement এতো আক্রমণাত্মক যে Price দক্ষভাবে Deliver করতে পারে না
 - Algorithm অবশ্যই দক্ষ Price Delivery এর জন্য এই Gap Fill করতে ফিরবে
 - Unfilled FVG Magnet হিসেবে কাজ করে — Price এদের দিকে আকৃষ্ট
@@ -51,6 +52,7 @@ Fair Value Gap (FVG) হলো **3-Candle Price Imbalance** যেখানে C
 ### Trading Application
 
 **Bullish FVG Trading:**
+
 1. UP Displacement চিহ্নিত করুন যা Gap তৈরি করে (C1 High < C3 Low)
 2. FVG Zone Mark করুন (C1 High থেকে C3 Low)
 3. CE Calculate করুন: (C1 High + C3 Low) / 2
@@ -59,6 +61,7 @@ Fair Value Gap (FVG) হলো **3-Candle Price Imbalance** যেখানে C
 6. Target: উপরে পরবর্তী BSL
 
 **Inversion FVG:**
+
 - Bullish FVG সম্পূর্ণ Trade Through হলে (Resistance হয়ে যায়) = Bearish Signal
 - Bearish FVG সম্পূর্ণ Trade Through হলে (Support হয়ে যায়) = Bullish Signal
 - Inverted FVG নতুন Direction এ Re-Entry সুযোগ দেয়

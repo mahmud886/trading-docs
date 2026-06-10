@@ -11,7 +11,8 @@ lastUpdated: "2026-06-09"
 Silver Bullet হলো একটি **Time-Specific Execution Model** যা সংকীর্ণ Time Window এর মধ্যে FVG Entry চিহ্নিত করে। ICT শেখায় যে Algorithm এই নির্দিষ্ট ঘণ্টাগুলোতে Displacement তৈরি করে, পেছনে Tradeable FVG রেখে যায়।
 
 <Callout type="info" title="Precision Timing">
-Silver Bullet আপনার Screen Time প্রতি Session এ মাত্র ১ ঘণ্টায় কমিয়ে দেয়। আপনাকে শুধু নির্দিষ্ট Window এ দেখতে হবে এবং যে FVG তৈরি হয় সেটি নিতে হবে।
+  Silver Bullet আপনার Screen Time প্রতি Session এ মাত্র ১ ঘণ্টায় কমিয়ে দেয়। আপনাকে শুধু নির্দিষ্ট Window এ দেখতে হবে
+  এবং যে FVG তৈরি হয় সেটি নিতে হবে।
 </Callout>
 
 ---
@@ -19,24 +20,27 @@ Silver Bullet আপনার Screen Time প্রতি Session এ মাত�
 ## তিনটি Silver Bullet Window
 
 ### 1. London Silver Bullet
+
 | বিবরণ       | তথ্য                              |
-|-------------|-----------------------------------|
+| ----------- | --------------------------------- |
 | **EST**     | 3:00 AM - 4:00 AM                 |
 | **BD সময়** | দুপুর 1:00 - 2:00                 |
 | **Context** | London Session Early Manipulation |
 | **সেরা**    | EUR/USD, GBP/USD, Gold            |
 
 ### 2. NY AM Silver Bullet
+
 | বিবরণ       | তথ্য                   |
-|-------------|------------------------|
+| ----------- | ---------------------- |
 | **EST**     | 10:00 AM - 11:00 AM    |
 | **BD সময়** | রাত 8:00 - 9:00        |
 | **Context** | Post-News Displacement |
 | **সেরা**    | সব Pair, Indices, Gold |
 
 ### 3. NY PM Silver Bullet
+
 | বিবরণ       | তথ্য                |
-|-------------|---------------------|
+| ----------- | ------------------- |
 | **EST**     | 2:00 PM - 3:00 PM   |
 | **BD সময়** | রাত 12:00 - 1:00 AM |
 | **Context** | PM Session Momentum |
@@ -47,6 +51,7 @@ Silver Bullet আপনার Screen Time প্রতি Session এ মাত�
 ## Silver Bullet কীভাবে Trade করবেন
 
 ### ধাপে ধাপে Process
+
 1. **Daily Bias নির্ধারণ করুন** — প্রথমে Directional Conviction থাকতে হবে
 2. **Silver Bullet Window** Open হওয়ার জন্য অপেক্ষা করুন
 3. **Displacement খুঁজুন** — Window এর মধ্যে FVG তৈরি করা শক্তিশালী Candle
@@ -56,6 +61,7 @@ Silver Bullet আপনার Screen Time প্রতি Session এ মাত�
 7. **Target** — Bias এর Direction এ পরবর্তী Liquidity Pool
 
 ### Rules
+
 - FVG অবশ্যই Silver Bullet Time Window এর মধ্যে তৈরি হতে হবে
 - Displacement অবশ্যই আপনার Daily Bias এর Direction এ হতে হবে
 - প্রতি Session এ শুধু একটি Silver Bullet নিন (প্রথম Valid টি)
@@ -66,6 +72,7 @@ Silver Bullet আপনার Screen Time প্রতি Session এ মাত�
 ## বাস্তব উদাহরণ
 
 ### উদাহরণ ১: NY AM Silver Bullet — EUR/USD Buy
+
 - **Daily Bias:** Bullish (আগের দিন Bullish PO3 Candle)
 - **রাত 8:15 BD:** 5M এ শক্তিশালী Bullish Displacement Candle
 - **FVG Created:** 1.0882 - 1.0890 (রাত 8:00-9:00 Window এর মধ্যে)
@@ -75,6 +82,7 @@ Silver Bullet আপনার Screen Time প্রতি Session এ মাত�
 - **R:R:** 1:4
 
 ### উদাহরণ ২: London Silver Bullet — Gold Sell
+
 - **Daily Bias:** Bearish (Price Premium এ, SSL Draw 2,020)
 - **দুপুর 1:20 BD:** London Window এ 5M Bearish Displacement
 - **FVG Created:** 2,044 - 2,038
@@ -115,7 +123,7 @@ Silver Bullet আপনার Screen Time প্রতি Session এ মাত�
 ## সারসংক্ষেপ
 
 | Window        | BD সময়             | সেরা Pair      | Typical R:R |
-|---------------|---------------------|----------------|-------------|
+| ------------- | ------------------- | -------------- | ----------- |
 | **London SB** | দুপুর 1:00 - 2:00   | EUR, GBP, Gold | 1:3-5       |
 | **NY AM SB**  | রাত 8:00 - 9:00     | সব Major       | 1:3-5       |
 | **NY PM SB**  | রাত 12:00 - 1:00 AM | USD, Indices   | 1:2-4       |

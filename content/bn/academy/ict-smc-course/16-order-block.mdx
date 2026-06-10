@@ -6,7 +6,6 @@ level: intermediate
 lastUpdated: "2026-06-09"
 ---
 
-
 ### Definition
 
 Order Block (OB) হলো **একটি গুরুত্বপূর্ণ Displacement Move এর আগে শেষ বিপরীত Candle** — এটি সেই সঠিক Price Zone দেখায় যেখানে Smart Money তাদের Order রেখেছিল। এটি ICT Methodology তে সবচেয়ে গুরুত্বপূর্ণ PD (Premium/Discount) Array।
@@ -27,12 +26,14 @@ Order Block Institutional Entry Zone চিহ্নিত করে। Price OB
 ### How It Works
 
 **Bullish Order Block চিহ্নিতকরণ:**
+
 1. উপরে একটি গুরুত্বপূর্ণ Displacement Move চিহ্নিত করুন (অবশ্যই FVG তৈরি/Structure Break করতে হবে)
 2. Displacement এর আগে শেষ Candle দেখুন যার DOWN Close আছে (Bearish Candle Body)
 3. সেই Bearish Candle এর RANGE (Open to Low, বা Open to Close) = Bullish Order Block
 4. Price এই Zone এ ফিরলে → BUY সুযোগ
 
 **Bearish Order Block চিহ্নিতকরণ:**
+
 1. নিচে একটি গুরুত্বপূর্ণ Displacement Move চিহ্নিত করুন
 2. Displacement এর আগে শেষ Candle দেখুন যার UP Close আছে (Bullish Candle Body)
 3. সেই Bullish Candle এর RANGE = Bearish Order Block
@@ -50,12 +51,14 @@ Order Block Institutional Entry Zone চিহ্নিত করে। Price OB
 ### Institutional Logic
 
 **Order Block কেন কাজ করে:**
+
 1. **Remaining Order** — Institution খুব কমই একবারে 100% Fill করে। OB তে Return এর জন্য Resting Order রাখে
 2. **Position Defense** — তাদের Entry OB তে থাকলে, তারা অতিরিক্ত Buy/Sell দিয়ে সেই Level Defend করবে
 3. **Algorithmic Memory** — IPDA মনে রাখে Displacement কোথা থেকে শুরু হয়েছে এবং Price সেখানে ফেরায়
 4. **Efficient Delivery** — OB তে ফিরে যাওয়া Continue করার আগে Price Rebalance করে
 
 **কী OB কে "Institutional" করে:**
+
 - এর পরে অবশ্যই Displacement থাকতে হবে (সর্বনিম্ন Wick সহ বড় Candle FVG তৈরি করে)
 - Displacement অবশ্যই Structure Break করবে (BOS বা CHOCH)
 - এগুলো ছাড়া, এটি শুধু একটি Random Candle, Institutional Footprint নয়
@@ -63,6 +66,7 @@ Order Block Institutional Entry Zone চিহ্নিত করে। Price OB
 ### Trading Application
 
 **Bullish Order Block Trading:**
+
 1. Bullish OB চিহ্নিত করুন (UP Displacement + BOS এর আগে শেষ Bearish Candle)
 2. Confirm: OB Range এর Discount Zone এ
 3. Price OB Zone এ RETURN করার অপেক্ষা করুন
@@ -74,6 +78,7 @@ Order Block Institutional Entry Zone চিহ্নিত করে। Price OB
 6. Target: পরবর্তী BSL (উপরে Buy Side Liquidity)
 
 **Bearish Order Block Trading:**
+
 1. Bearish OB চিহ্নিত করুন (DOWN Displacement + BOS এর আগে শেষ Bullish Candle)
 2. Confirm: OB Premium Zone এ
 3. Price OB Zone এ RETURN করার অপেক্ষা করুন
@@ -82,6 +87,7 @@ Order Block Institutional Entry Zone চিহ্নিত করে। Price OB
 6. Target: নিচে পরবর্তী SSL
 
 **Refinement কৌশল:**
+
 - Full Range এর বদলে OB Candle এর Body (Open to Close) ব্যবহার করুন Precision এর জন্য
 - FVG এর সাথে Overlap করা OB = সবচেয়ে শক্তিশালী Entry
 - OB এর প্রথম Touch = সর্বোচ্চ Probability। দ্বিতীয় Touch = ঠিক আছে। তৃতীয় Touch = ব্যর্থ হওয়ার সম্ভাবনা

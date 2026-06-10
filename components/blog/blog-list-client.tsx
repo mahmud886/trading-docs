@@ -12,12 +12,7 @@ interface BlogListProps {
   pageSize?: number;
 }
 
-export function BlogListClient({
-  posts,
-  categories,
-  locale,
-  pageSize = 6,
-}: BlogListProps) {
+export function BlogListClient({ posts, categories, locale, pageSize = 6 }: BlogListProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -36,7 +31,7 @@ export function BlogListClient({
         (post) =>
           post.title.toLowerCase().includes(query) ||
           post.description.toLowerCase().includes(query) ||
-          post.tags.some((tag) => tag.toLowerCase().includes(query))
+          post.tags.some((tag) => tag.toLowerCase().includes(query)),
       );
     }
 
@@ -134,9 +129,7 @@ export function BlogListClient({
               </h3>
 
               {/* Description */}
-              <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {post.description}
-              </p>
+              <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">{post.description}</p>
 
               {/* Metadata */}
               <div className="flex items-center gap-4 border-t border-border/50 pt-4 text-xs text-muted-foreground">
@@ -154,17 +147,12 @@ export function BlogListClient({
               {post.tags.length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-1">
                   {post.tags.slice(0, 2).map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground"
-                    >
+                    <span key={tag} className="rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground">
                       #{tag}
                     </span>
                   ))}
                   {post.tags.length > 2 && (
-                    <span className="text-[10px] text-muted-foreground">
-                      +{post.tags.length - 2}
-                    </span>
+                    <span className="text-[10px] text-muted-foreground">+{post.tags.length - 2}</span>
                   )}
                 </div>
               )}
@@ -175,9 +163,7 @@ export function BlogListClient({
         <div className="rounded-lg border border-border bg-card p-12 text-center">
           <Search className="mx-auto mb-3 h-12 w-12 text-muted-foreground/30" />
           <p className="text-lg font-medium text-foreground">No posts found</p>
-          <p className="text-sm text-muted-foreground">
-            Try adjusting your search or filters
-          </p>
+          <p className="text-sm text-muted-foreground">Try adjusting your search or filters</p>
         </div>
       )}
 
@@ -202,10 +188,7 @@ export function BlogListClient({
               .map((page, idx, arr) => {
                 if (idx > 0 && arr[idx - 1] < page - 1) {
                   return (
-                    <span
-                      key={`dots-${page}`}
-                      className="px-2 py-1 text-sm text-muted-foreground"
-                    >
+                    <span key={`dots-${page}`} className="px-2 py-1 text-sm text-muted-foreground">
                       ...
                     </span>
                   );
@@ -238,4 +221,3 @@ export function BlogListClient({
     </div>
   );
 }
-

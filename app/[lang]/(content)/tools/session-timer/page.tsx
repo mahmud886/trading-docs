@@ -81,11 +81,9 @@ function getSessionProgress(session: Session, currentMinutes: number) {
     elapsedMinutes = isOpen ? currentMinutes - open : 0;
   } else {
     isOpen = currentMinutes >= open || currentMinutes < close;
-    totalDuration = (24 * 60 - open) + close;
+    totalDuration = 24 * 60 - open + close;
     if (isOpen) {
-      elapsedMinutes = currentMinutes >= open
-        ? currentMinutes - open
-        : (24 * 60 - open) + currentMinutes;
+      elapsedMinutes = currentMinutes >= open ? currentMinutes - open : 24 * 60 - open + currentMinutes;
     }
   }
 
@@ -141,9 +139,9 @@ export default function SessionTimer() {
   }, []);
 
   const currentMinutes = currentTime.getUTCHours() * 60 + currentTime.getUTCMinutes();
-  const activeSessions = useMemo(() =>
-    SESSIONS.filter(s => getSessionProgress(s, currentMinutes).isOpen),
-    [currentMinutes]
+  const activeSessions = useMemo(
+    () => SESSIONS.filter((s) => getSessionProgress(s, currentMinutes).isOpen),
+    [currentMinutes],
   );
 
   const isWeekend = currentTime.getUTCDay() === 0 || currentTime.getUTCDay() === 6;
@@ -186,19 +184,25 @@ export default function SessionTimer() {
             {lang === "bn" ? "ট্রেডিং সেশন টাইমার" : "Trading Session Timer"}
           </h1>
           <p className="text-muted-foreground mt-1">
-            {lang === "bn"
-              ? "রিয়েল-টাইম ফরেক্স মার্কেট সেশন মনিটর"
-              : "Real-time forex market session monitor"}
+            {lang === "bn" ? "রিয়েল-টাইম ফরেক্স মার্কেট সেশন মনিটর" : "Real-time forex market session monitor"}
           </p>
         </div>
         <div className="hidden sm:flex items-center gap-2">
-          <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${
-            isWeekend
-              ? "bg-red-500/10 text-red-400 border border-red-500/20"
-              : "bg-green-500/10 text-green-400 border border-green-500/20"
-          }`}>
+          <span
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${
+              isWeekend
+                ? "bg-red-500/10 text-red-400 border border-red-500/20"
+                : "bg-green-500/10 text-green-400 border border-green-500/20"
+            }`}
+          >
             <span className={`w-2 h-2 rounded-full ${isWeekend ? "bg-red-400" : "bg-green-400 animate-pulse"}`}></span>
-            {isWeekend ? (lang === "bn" ? "মার্কেট বন্ধ" : "Market Closed") : (lang === "bn" ? "মার্কেট চালু" : "Market Open")}
+            {isWeekend
+              ? lang === "bn"
+                ? "মার্কেট বন্ধ"
+                : "Market Closed"
+              : lang === "bn"
+                ? "মার্কেট চালু"
+                : "Market Open"}
           </span>
         </div>
       </div>
@@ -219,18 +223,26 @@ export default function SessionTimer() {
                   const ampm = bdHour >= 12 ? "PM" : "AM";
                   return (
                     <>
-                      {String(h12).padStart(2, '0')}
+                      {String(h12).padStart(2, "0")}
                       <span className="text-accent-green animate-pulse">:</span>
-                      {String(currentTime.getUTCMinutes()).padStart(2, '0')}
+                      {String(currentTime.getUTCMinutes()).padStart(2, "0")}
                       <span className="text-accent-green animate-pulse">:</span>
-                      <span className="text-muted-foreground">{String(currentTime.getUTCSeconds()).padStart(2, '0')}</span>
+                      <span className="text-muted-foreground">
+                        {String(currentTime.getUTCSeconds()).padStart(2, "0")}
+                      </span>
                       <span className="text-accent-green text-2xl ml-2">{ampm}</span>
                     </>
                   );
                 })()}
               </p>
               <p className="text-muted-foreground text-sm mt-2">
-                {currentTime.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' })}
+                {currentTime.toLocaleDateString("en-US", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                  timeZone: "UTC",
+                })}
               </p>
             </div>
 
@@ -240,7 +252,7 @@ export default function SessionTimer() {
               </p>
               <div className="flex items-center gap-2">
                 {activeSessions.length > 0 ? (
-                  activeSessions.map(s => (
+                  activeSessions.map((s) => (
                     <span
                       key={s.shortName}
                       className="px-3 py-1.5 rounded-lg text-sm font-bold border"
@@ -254,7 +266,9 @@ export default function SessionTimer() {
                     </span>
                   ))
                 ) : (
-                  <span className="text-muted-foreground text-sm">{lang === "bn" ? "কোন সক্রিয় সেশন নেই" : "No active sessions"}</span>
+                  <span className="text-muted-foreground text-sm">
+                    {lang === "bn" ? "কোন সক্রিয় সেশন নেই" : "No active sessions"}
+                  </span>
                 )}
               </div>
               {activeSessions.length >= 2 && (
@@ -277,8 +291,8 @@ export default function SessionTimer() {
 
         <div className="relative">
           <div className="flex justify-between text-[10px] text-muted-foreground mb-1 px-0.5">
-            {[0, 3, 6, 9, 12, 15, 18, 21].map(h => (
-              <span key={h}>{String(h).padStart(2, '0')}</span>
+            {[0, 3, 6, 9, 12, 15, 18, 21].map((h) => (
+              <span key={h}>{String(h).padStart(2, "0")}</span>
             ))}
           </div>
 
@@ -298,8 +312,8 @@ export default function SessionTimer() {
                       left: `${left}%`,
                       width: `${width}%`,
                       top: `${idx * 25 + 4}%`,
-                      backgroundColor: `${session.color}${status.isOpen ? '40' : '20'}`,
-                      border: `1px solid ${session.color}${status.isOpen ? '80' : '30'}`,
+                      backgroundColor: `${session.color}${status.isOpen ? "40" : "20"}`,
+                      border: `1px solid ${session.color}${status.isOpen ? "80" : "30"}`,
                     }}
                     onClick={() => setSelectedSession(selectedSession === session.shortName ? null : session.shortName)}
                   >
@@ -307,7 +321,10 @@ export default function SessionTimer() {
                       {session.flag} {session.shortName}
                     </span>
                     {status.isOpen && (
-                      <span className="ml-auto w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: session.color }} />
+                      <span
+                        className="ml-auto w-1.5 h-1.5 rounded-full animate-pulse"
+                        style={{ backgroundColor: session.color }}
+                      />
                     )}
                   </div>
                 );
@@ -324,26 +341,31 @@ export default function SessionTimer() {
                         left: `${leftPart}%`,
                         width: `${widthPart1}%`,
                         top: `${idx * 25 + 4}%`,
-                        backgroundColor: `${session.color}${status.isOpen ? '40' : '20'}`,
-                        border: `1px solid ${session.color}${status.isOpen ? '80' : '30'}`,
+                        backgroundColor: `${session.color}${status.isOpen ? "40" : "20"}`,
+                        border: `1px solid ${session.color}${status.isOpen ? "80" : "30"}`,
                       }}
-                      onClick={() => setSelectedSession(selectedSession === session.shortName ? null : session.shortName)}
+                      onClick={() =>
+                        setSelectedSession(selectedSession === session.shortName ? null : session.shortName)
+                      }
                     >
                       <span className="text-[10px] font-bold truncate" style={{ color: session.color }}>
                         {session.flag} {session.shortName}
                       </span>
                       {status.isOpen && (
-                        <span className="ml-auto w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: session.color }} />
+                        <span
+                          className="ml-auto w-1.5 h-1.5 rounded-full animate-pulse"
+                          style={{ backgroundColor: session.color }}
+                        />
                       )}
                     </div>
                     <div
                       className="absolute h-6 rounded-md flex items-center px-2 transition-all duration-300 hover:scale-y-125 hover:z-10"
                       style={{
-                        left: '0%',
+                        left: "0%",
                         width: `${widthPart2}%`,
                         top: `${idx * 25 + 4}%`,
-                        backgroundColor: `${session.color}${status.isOpen ? '40' : '20'}`,
-                        border: `1px solid ${session.color}${status.isOpen ? '80' : '30'}`,
+                        backgroundColor: `${session.color}${status.isOpen ? "40" : "20"}`,
+                        border: `1px solid ${session.color}${status.isOpen ? "80" : "30"}`,
                       }}
                     />
                   </div>
@@ -362,10 +384,12 @@ export default function SessionTimer() {
 
           {/* Legend */}
           <div className="flex items-center gap-4 mt-3 flex-wrap">
-            {SESSIONS.map(s => (
+            {SESSIONS.map((s) => (
               <div key={s.shortName} className="flex items-center gap-1.5">
                 <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: `${s.color}60` }} />
-                <span className="text-[11px] text-muted-foreground">{s.flag} {s.name}</span>
+                <span className="text-[11px] text-muted-foreground">
+                  {s.flag} {s.name}
+                </span>
               </div>
             ))}
           </div>
@@ -384,9 +408,7 @@ export default function SessionTimer() {
               key={session.shortName}
               onClick={() => setSelectedSession(isExpanded ? null : session.shortName)}
               className={`relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-500 cursor-pointer ${
-                status.isOpen
-                  ? "border-opacity-50 shadow-lg"
-                  : "border-border/40 hover:border-border/60"
+                status.isOpen ? "border-opacity-50 shadow-lg" : "border-border/40 hover:border-border/60"
               }`}
               style={{
                 borderColor: status.isOpen ? `${session.color}50` : undefined,
@@ -425,8 +447,14 @@ export default function SessionTimer() {
                 {/* Progress Bar */}
                 <div className="mb-3">
                   <div className="flex justify-between text-[11px] text-muted-foreground mb-1.5">
-                    <span>{String(Math.floor(session.open / 60)).padStart(2, '0')}:{String(session.open % 60).padStart(2, '0')} UTC</span>
-                    <span>{String(Math.floor(session.close / 60)).padStart(2, '0')}:{String(session.close % 60).padStart(2, '0')} UTC</span>
+                    <span>
+                      {String(Math.floor(session.open / 60)).padStart(2, "0")}:
+                      {String(session.open % 60).padStart(2, "0")} UTC
+                    </span>
+                    <span>
+                      {String(Math.floor(session.close / 60)).padStart(2, "0")}:
+                      {String(session.close % 60).padStart(2, "0")} UTC
+                    </span>
                   </div>
                   <div className="h-2 rounded-full bg-muted/80 overflow-hidden">
                     <div
@@ -435,8 +463,8 @@ export default function SessionTimer() {
                         width: `${status.progress}%`,
                         background: status.isOpen
                           ? `linear-gradient(90deg, ${session.color}, ${session.color}cc)`
-                          : 'transparent',
-                        boxShadow: status.isOpen ? `0 0 8px ${session.color}60` : 'none',
+                          : "transparent",
+                        boxShadow: status.isOpen ? `0 0 8px ${session.color}60` : "none",
                       }}
                     />
                   </div>
@@ -446,37 +474,59 @@ export default function SessionTimer() {
                 {status.isOpen && (
                   <div className="grid grid-cols-3 gap-2 mb-3">
                     <div className="bg-black/20 rounded-lg p-2 text-center">
-                      <p className="text-[10px] text-muted-foreground uppercase">{lang === "bn" ? "অতিবাহিত" : "Elapsed"}</p>
+                      <p className="text-[10px] text-muted-foreground uppercase">
+                        {lang === "bn" ? "অতিবাহিত" : "Elapsed"}
+                      </p>
                       <p className="text-sm font-bold text-foreground">{status.elapsed}</p>
                     </div>
                     <div className="bg-black/20 rounded-lg p-2 text-center">
                       <p className="text-[10px] text-muted-foreground uppercase">{lang === "bn" ? "বাকি" : "Left"}</p>
-                      <p className="text-sm font-bold" style={{ color: session.color }}>{status.remaining}</p>
+                      <p className="text-sm font-bold" style={{ color: session.color }}>
+                        {status.remaining}
+                      </p>
                     </div>
                     <div className="bg-black/20 rounded-lg p-2 text-center">
-                      <p className="text-[10px] text-muted-foreground uppercase">{lang === "bn" ? "অগ্রগতি" : "Progress"}</p>
+                      <p className="text-[10px] text-muted-foreground uppercase">
+                        {lang === "bn" ? "অগ্রগতি" : "Progress"}
+                      </p>
                       <p className="text-sm font-bold text-foreground">{status.progress.toFixed(0)}%</p>
                     </div>
                   </div>
                 )}
 
                 {/* Expandable Details */}
-                <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? "max-h-40 opacity-100 mt-3" : "max-h-0 opacity-0"}`}>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${isExpanded ? "max-h-40 opacity-100 mt-3" : "max-h-0 opacity-0"}`}
+                >
                   <div className="border-t border-border pt-3 space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted-foreground">{lang === "bn" ? "ভোলাটিলিটি" : "Volatility"}</span>
-                      <span className={`text-xs font-bold ${
-                        session.volatility === "Very High" ? "text-red-400" :
-                        session.volatility === "High" ? "text-orange-400" :
-                        session.volatility === "Medium" ? "text-yellow-400" :
-                        "text-green-400"
-                      }`}>{session.volatility}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {lang === "bn" ? "ভোলাটিলিটি" : "Volatility"}
+                      </span>
+                      <span
+                        className={`text-xs font-bold ${
+                          session.volatility === "Very High"
+                            ? "text-red-400"
+                            : session.volatility === "High"
+                              ? "text-orange-400"
+                              : session.volatility === "Medium"
+                                ? "text-yellow-400"
+                                : "text-green-400"
+                        }`}
+                      >
+                        {session.volatility}
+                      </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted-foreground">{lang === "bn" ? "সেরা পেয়ার" : "Best Pairs"}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {lang === "bn" ? "সেরা পেয়ার" : "Best Pairs"}
+                      </span>
                       <div className="flex gap-1">
-                        {session.pairs.map(p => (
-                          <span key={p} className="text-[10px] px-1.5 py-0.5 rounded bg-muted text-foreground border border-border">
+                        {session.pairs.map((p) => (
+                          <span
+                            key={p}
+                            className="text-[10px] px-1.5 py-0.5 rounded bg-muted text-foreground border border-border"
+                          >
                             {p}
                           </span>
                         ))}
@@ -504,17 +554,35 @@ export default function SessionTimer() {
           </h3>
           <div className="space-y-3">
             {[
-              { name: lang === "bn" ? "এশিয়ান কিল জোন" : "Asian Kill Zone", time: "00:00 - 04:00 UTC", color: "#ef4444", active: currentMinutes >= 0 && currentMinutes < 240 },
-              { name: lang === "bn" ? "লন্ডন কিল জোন" : "London Kill Zone", time: "07:00 - 10:00 UTC", color: "#3b82f6", active: currentMinutes >= 420 && currentMinutes < 600 },
-              { name: lang === "bn" ? "নিউ ইয়র্ক কিল জোন" : "NY Kill Zone", time: "12:00 - 15:00 UTC", color: "#22c55e", active: currentMinutes >= 720 && currentMinutes < 900 },
-              { name: lang === "bn" ? "লন্ডন ক্লোজ কিল জোন" : "London Close KZ", time: "15:00 - 17:00 UTC", color: "#a855f7", active: currentMinutes >= 900 && currentMinutes < 1020 },
-            ].map(kz => (
+              {
+                name: lang === "bn" ? "এশিয়ান কিল জোন" : "Asian Kill Zone",
+                time: "00:00 - 04:00 UTC",
+                color: "#ef4444",
+                active: currentMinutes >= 0 && currentMinutes < 240,
+              },
+              {
+                name: lang === "bn" ? "লন্ডন কিল জোন" : "London Kill Zone",
+                time: "07:00 - 10:00 UTC",
+                color: "#3b82f6",
+                active: currentMinutes >= 420 && currentMinutes < 600,
+              },
+              {
+                name: lang === "bn" ? "নিউ ইয়র্ক কিল জোন" : "NY Kill Zone",
+                time: "12:00 - 15:00 UTC",
+                color: "#22c55e",
+                active: currentMinutes >= 720 && currentMinutes < 900,
+              },
+              {
+                name: lang === "bn" ? "লন্ডন ক্লোজ কিল জোন" : "London Close KZ",
+                time: "15:00 - 17:00 UTC",
+                color: "#a855f7",
+                active: currentMinutes >= 900 && currentMinutes < 1020,
+              },
+            ].map((kz) => (
               <div
                 key={kz.name}
                 className={`flex items-center justify-between p-3 rounded-lg border transition-all ${
-                  kz.active
-                    ? "border-opacity-50 bg-opacity-10"
-                    : "border border-border"
+                  kz.active ? "border-opacity-50 bg-opacity-10" : "border border-border"
                 }`}
                 style={{
                   borderColor: kz.active ? `${kz.color}50` : undefined,
@@ -522,12 +590,14 @@ export default function SessionTimer() {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  {kz.active && <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: kz.color }} />}
+                  {kz.active && (
+                    <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: kz.color }} />
+                  )}
                   <span className={`text-sm font-medium ${kz.active ? "text-foreground" : "text-muted-foreground"}`}>
                     {kz.name}
                   </span>
                 </div>
-                <span className="text-xs font-mono" style={{ color: kz.active ? kz.color : '#71717a' }}>
+                <span className="text-xs font-mono" style={{ color: kz.active ? kz.color : "#71717a" }}>
                   {kz.time}
                 </span>
               </div>
@@ -543,16 +613,32 @@ export default function SessionTimer() {
           </h3>
           <div className="space-y-3">
             {[
-              { name: lang === "bn" ? "টোকিও-লন্ডন" : "Tokyo-London", time: "08:00 - 09:00", volatility: lang === "bn" ? "মাঝারি" : "Medium", color: "#f59e0b", active: currentMinutes >= 480 && currentMinutes < 540 },
-              { name: lang === "bn" ? "লন্ডন-নিউ ইয়র্ক" : "London-New York", time: "13:00 - 17:00", volatility: lang === "bn" ? "সর্বোচ্চ" : "Highest", color: "#ef4444", active: currentMinutes >= 780 && currentMinutes < 1020 },
-              { name: lang === "bn" ? "সিডনি-টোকিও" : "Sydney-Tokyo", time: "00:00 - 06:00", volatility: lang === "bn" ? "নিম্ন" : "Low", color: "#06b6d4", active: currentMinutes >= 0 && currentMinutes < 360 },
-            ].map(overlap => (
+              {
+                name: lang === "bn" ? "টোকিও-লন্ডন" : "Tokyo-London",
+                time: "08:00 - 09:00",
+                volatility: lang === "bn" ? "মাঝারি" : "Medium",
+                color: "#f59e0b",
+                active: currentMinutes >= 480 && currentMinutes < 540,
+              },
+              {
+                name: lang === "bn" ? "লন্ডন-নিউ ইয়র্ক" : "London-New York",
+                time: "13:00 - 17:00",
+                volatility: lang === "bn" ? "সর্বোচ্চ" : "Highest",
+                color: "#ef4444",
+                active: currentMinutes >= 780 && currentMinutes < 1020,
+              },
+              {
+                name: lang === "bn" ? "সিডনি-টোকিও" : "Sydney-Tokyo",
+                time: "00:00 - 06:00",
+                volatility: lang === "bn" ? "নিম্ন" : "Low",
+                color: "#06b6d4",
+                active: currentMinutes >= 0 && currentMinutes < 360,
+              },
+            ].map((overlap) => (
               <div
                 key={overlap.name}
                 className={`p-3 rounded-lg border transition-all ${
-                  overlap.active
-                    ? "border-opacity-50"
-                    : "border border-border"
+                  overlap.active ? "border-opacity-50" : "border border-border"
                 }`}
                 style={{
                   borderColor: overlap.active ? `${overlap.color}50` : undefined,
@@ -560,18 +646,25 @@ export default function SessionTimer() {
                 }}
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className={`text-sm font-semibold ${overlap.active ? "text-foreground" : "text-muted-foreground"}`}>
+                  <span
+                    className={`text-sm font-semibold ${overlap.active ? "text-foreground" : "text-muted-foreground"}`}
+                  >
                     {overlap.name}
                   </span>
                   {overlap.active && (
-                    <span className="text-[10px] px-2 py-0.5 rounded-full font-bold" style={{ backgroundColor: `${overlap.color}20`, color: overlap.color }}>
+                    <span
+                      className="text-[10px] px-2 py-0.5 rounded-full font-bold"
+                      style={{ backgroundColor: `${overlap.color}20`, color: overlap.color }}
+                    >
                       ACTIVE
                     </span>
                   )}
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-muted-foreground">{overlap.time} UTC</span>
-                  <span className="text-xs" style={{ color: overlap.color }}>{overlap.volatility}</span>
+                  <span className="text-xs" style={{ color: overlap.color }}>
+                    {overlap.volatility}
+                  </span>
                 </div>
               </div>
             ))}
@@ -590,7 +683,7 @@ export default function SessionTimer() {
             { session: "Tokyo", bdTime: "6:00 AM - 3:00 PM", flag: "🇯🇵" },
             { session: "London", bdTime: "2:00 PM - 11:00 PM", flag: "🇬🇧" },
             { session: "New York", bdTime: "7:00 PM - 4:00 AM", flag: "🇺🇸" },
-          ].map(item => (
+          ].map((item) => (
             <div key={item.session} className="bg-muted rounded-xl p-3 text-center border border-border">
               <span className="text-lg">{item.flag}</span>
               <p className="text-xs text-muted-foreground mt-1">{item.session}</p>
@@ -612,12 +705,24 @@ export default function SessionTimer() {
         </h3>
         <div className="grid sm:grid-cols-2 gap-3">
           {[
-            lang === "bn" ? "লন্ডন-নিউ ইয়র্ক ওভারল্যাপে সবচেয়ে বেশি লিকুইডিটি থাকে" : "London-NY overlap has the highest liquidity and volatility",
-            lang === "bn" ? "এশিয়ান সেশনে সাধারণত রেঞ্জ-বাউন্ড মুভমেন্ট দেখা যায়" : "Asian session typically shows range-bound movement",
-            lang === "bn" ? "কিল জোনে উচ্চ সম্ভাবনার সেটআপ খুঁজুন" : "Look for high-probability setups during kill zones",
-            lang === "bn" ? "সেশন ওপেনিং-এ ম্যানিপুলেশন সুইপ ঘটে" : "Session openings often feature manipulation sweeps",
-            lang === "bn" ? "নিউজ ইভেন্টের ৩০ মিনিট আগে ট্রেড এড়িয়ে চলুন" : "Avoid trading 30 min before high-impact news events",
-            lang === "bn" ? "আপনার টাইমজোন অনুযায়ী ট্রেডিং প্ল্যান তৈরি করুন" : "Build your trading plan around your timezone sessions",
+            lang === "bn"
+              ? "লন্ডন-নিউ ইয়র্ক ওভারল্যাপে সবচেয়ে বেশি লিকুইডিটি থাকে"
+              : "London-NY overlap has the highest liquidity and volatility",
+            lang === "bn"
+              ? "এশিয়ান সেশনে সাধারণত রেঞ্জ-বাউন্ড মুভমেন্ট দেখা যায়"
+              : "Asian session typically shows range-bound movement",
+            lang === "bn"
+              ? "কিল জোনে উচ্চ সম্ভাবনার সেটআপ খুঁজুন"
+              : "Look for high-probability setups during kill zones",
+            lang === "bn"
+              ? "সেশন ওপেনিং-এ ম্যানিপুলেশন সুইপ ঘটে"
+              : "Session openings often feature manipulation sweeps",
+            lang === "bn"
+              ? "নিউজ ইভেন্টের ৩০ মিনিট আগে ট্রেড এড়িয়ে চলুন"
+              : "Avoid trading 30 min before high-impact news events",
+            lang === "bn"
+              ? "আপনার টাইমজোন অনুযায়ী ট্রেডিং প্ল্যান তৈরি করুন"
+              : "Build your trading plan around your timezone sessions",
           ].map((tip, i) => (
             <div key={i} className="flex items-start gap-2">
               <span className="text-amber-400 mt-0.5">▸</span>

@@ -11,19 +11,20 @@ lastUpdated: "2026-06-10"
 Mitigation Block হলো একটি **Order Block যা ইতিমধ্যে Price দ্বারা Test/Touch হয়েছে** কিন্তু সম্পূর্ণ ভাঙেনি। Price OB-তে ফিরে React করলে (আংশিক Fill), OB "Mitigated" হয় — এর অবশিষ্ট শক্তি কমে যায়।
 
 <Callout type="warning" title="Mitigated = দুর্বল">
-Fresh, Unmitigated Order Block সবচেয়ে শক্তিশালী। Price প্রতিবার ফিরে React করলে OB গুরুত্ব হারায়। ২-৩ Mitigation-এর পর Level সম্ভবত Exhausted।
+  Fresh, Unmitigated Order Block সবচেয়ে শক্তিশালী। Price প্রতিবার ফিরে React করলে OB গুরুত্ব হারায়। ২-৩ Mitigation-এর
+  পর Level সম্ভবত Exhausted।
 </Callout>
 
 ---
 
 ## Fresh vs. Mitigated
 
-| Status | বর্ণনা | Trade Quality |
-|--------|--------|---------------|
-| **Fresh (Unmitigated)** | কখনো Retest হয়নি | সর্বোচ্চ মান |
-| **1x Mitigated** | একবার Test, ধরেছে | এখনো Tradeable |
-| **2x Mitigated** | দুবার Test | দুর্বল — সতর্কতা |
-| **3x+ Mitigated** | ৩+ বার Test | এড়িয়ে চলুন — ভাঙবে |
+| Status                  | বর্ণনা            | Trade Quality        |
+| ----------------------- | ----------------- | -------------------- |
+| **Fresh (Unmitigated)** | কখনো Retest হয়নি | সর্বোচ্চ মান         |
+| **1x Mitigated**        | একবার Test, ধরেছে | এখনো Tradeable       |
+| **2x Mitigated**        | দুবার Test        | দুর্বল — সতর্কতা     |
+| **3x+ Mitigated**       | ৩+ বার Test       | এড়িয়ে চলুন — ভাঙবে |
 
 ---
 
@@ -45,11 +46,11 @@ Fresh, Unmitigated Order Block সবচেয়ে শক্তিশালী
 
 ## Mitigation vs. Breaker
 
-| বৈশিষ্ট্য | Mitigation Block | Breaker Block |
-|-----------|-----------------|---------------|
-| OB Status | Test হয়েছে কিন্তু ধরেছে | সম্পূর্ণ ভেঙেছে |
-| Direction | মূলের মতো | Flip (বিপরীত) |
-| Trade | একই Direction (দুর্বল হচ্ছে) | নতুন Direction |
+| বৈশিষ্ট্য | Mitigation Block             | Breaker Block   |
+| --------- | ---------------------------- | --------------- |
+| OB Status | Test হয়েছে কিন্তু ধরেছে     | সম্পূর্ণ ভেঙেছে |
+| Direction | মূলের মতো                    | Flip (বিপরীত)   |
+| Trade     | একই Direction (দুর্বল হচ্ছে) | নতুন Direction  |
 
 ---
 

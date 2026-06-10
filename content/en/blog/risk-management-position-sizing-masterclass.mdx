@@ -14,7 +14,8 @@ featured: true
 Most traders know "risk 1-2% per trade." But professional risk management goes far deeper. This guide covers the advanced concepts that separate funded traders from account-blowers.
 
 <Callout type="info" title="The Professional Standard">
-Prop firms don't just look at per-trade risk. They monitor daily drawdown, weekly drawdown, maximum drawdown, correlation exposure, and win-rate adjusted expectancy. Master these and you'll pass any prop firm challenge.
+  Prop firms don't just look at per-trade risk. They monitor daily drawdown, weekly drawdown, maximum drawdown,
+  correlation exposure, and win-rate adjusted expectancy. Master these and you'll pass any prop firm challenge.
 </Callout>
 
 ---
@@ -23,12 +24,12 @@ Prop firms don't just look at per-trade risk. They monitor daily drawdown, weekl
 
 ### Level 1: Per-Trade Risk
 
-| Account Size | Recommended Risk | Max Risk (Aggressive) |
-|-------------|-----------------|----------------------|
-| $1,000 - $5,000 | 1% | 1.5% |
-| $5,000 - $25,000 | 0.5% - 1% | 1.5% |
-| $25,000 - $100,000 | 0.5% | 1% |
-| $100,000+ | 0.25% - 0.5% | 0.75% |
+| Account Size       | Recommended Risk | Max Risk (Aggressive) |
+| ------------------ | ---------------- | --------------------- |
+| $1,000 - $5,000    | 1%               | 1.5%                  |
+| $5,000 - $25,000   | 0.5% - 1%        | 1.5%                  |
+| $25,000 - $100,000 | 0.5%             | 1%                    |
+| $100,000+          | 0.25% - 0.5%     | 0.75%                 |
 
 **Why smaller accounts can risk slightly more:** You need growth. But NEVER exceed 2%.
 
@@ -126,7 +127,8 @@ Recommended: 37% ÷ 4 = 9.25% → Use 5-8%
 ```
 
 <Callout type="warning" title="Kelly Criterion Warning">
-Full Kelly is extremely aggressive and assumes perfect execution with zero psychological factors. ALWAYS use Quarter Kelly (÷4) or less. Most professionals use 1-2% which is well below even Quarter Kelly.
+  Full Kelly is extremely aggressive and assumes perfect execution with zero psychological factors. ALWAYS use Quarter
+  Kelly (÷4) or less. Most professionals use 1-2% which is well below even Quarter Kelly.
 </Callout>
 
 ---
@@ -137,12 +139,12 @@ Full Kelly is extremely aggressive and assumes perfect execution with zero psych
 
 ### Rules:
 
-| Rule | Details |
-|------|---------|
-| **Max portfolio heat** | 5% (never have more than 5% total at risk) |
+| Rule                         | Details                                     |
+| ---------------------------- | ------------------------------------------- |
+| **Max portfolio heat**       | 5% (never have more than 5% total at risk)  |
 | **Max correlated positions** | 2 (e.g., max 2 USD pairs in same direction) |
-| **Max positions** | 3-4 total open |
-| **Same direction max** | 3% exposure in one direction |
+| **Max positions**            | 3-4 total open                              |
+| **Same direction max**       | 3% exposure in one direction                |
 
 ### Example:
 
@@ -167,21 +169,21 @@ Correlated trades multiply your risk unknowingly:
 
 ### High Correlation Pairs (move together):
 
-| Pair 1 | Pair 2 | Correlation |
-|--------|--------|-------------|
-| EUR/USD | GBP/USD | +0.85 |
-| EUR/USD | AUD/USD | +0.70 |
-| USD/CHF | USD/JPY | +0.65 |
-| Gold | Silver | +0.90 |
-| NAS100 | S&P500 | +0.92 |
+| Pair 1  | Pair 2  | Correlation |
+| ------- | ------- | ----------- |
+| EUR/USD | GBP/USD | +0.85       |
+| EUR/USD | AUD/USD | +0.70       |
+| USD/CHF | USD/JPY | +0.65       |
+| Gold    | Silver  | +0.90       |
+| NAS100  | S&P500  | +0.92       |
 
 ### Negative Correlation (move opposite):
 
-| Pair 1 | Pair 2 | Correlation |
-|--------|--------|-------------|
-| EUR/USD | USD/CHF | -0.90 |
-| EUR/USD | DXY | -0.95 |
-| Gold | DXY | -0.80 |
+| Pair 1  | Pair 2  | Correlation |
+| ------- | ------- | ----------- |
+| EUR/USD | USD/CHF | -0.90       |
+| EUR/USD | DXY     | -0.95       |
+| Gold    | DXY     | -0.80       |
 
 **Rule:** If trading two positively correlated instruments in the same direction, count it as ONE position with DOUBLE the risk.
 
@@ -243,16 +245,17 @@ Result: Guaranteed breakeven minimum + potential for large R on runner
 
 ## Prop Firm Risk Rules (Reference)
 
-| Rule | Typical Prop Firm | Your Personal Rule |
-|------|------------------|-------------------|
-| Daily drawdown | 5% max | 3% max (stricter) |
-| Total drawdown | 10% max | 8% max (stricter) |
-| Per-trade risk | Not specified | 0.5-1% |
-| Position limit | 10-20% margin used | Max 3-4 positions |
-| News trading | Often restricted | Skip high-impact news |
+| Rule           | Typical Prop Firm  | Your Personal Rule    |
+| -------------- | ------------------ | --------------------- |
+| Daily drawdown | 5% max             | 3% max (stricter)     |
+| Total drawdown | 10% max            | 8% max (stricter)     |
+| Per-trade risk | Not specified      | 0.5-1%                |
+| Position limit | 10-20% margin used | Max 3-4 positions     |
+| News trading   | Often restricted   | Skip high-impact news |
 
 <Callout type="tip" title="Pro Tip">
-Always trade stricter than the prop firm rules. If they allow 5% daily, your limit is 3%. If they allow 10% total, yours is 8%. This buffer protects you from being cut on a bad day.
+  Always trade stricter than the prop firm rules. If they allow 5% daily, your limit is 3%. If they allow 10% total,
+  yours is 8%. This buffer protects you from being cut on a bad day.
 </Callout>
 
 ---
@@ -281,16 +284,15 @@ Same scenario at 5% risk:
 
 ## Key Takeaways
 
-| Concept | Rule |
-|---------|------|
-| **Per-trade risk** | 0.5-1% (NEVER exceed 2%) |
-| **Daily max loss** | 3% then STOP |
-| **Weekly max loss** | 5% then STOP until Monday |
-| **Max drawdown** | 10% → reassess everything |
-| **Portfolio heat** | Max 5% total open risk |
-| **Correlation** | Max 2 correlated positions |
-| **Position sizing** | Calculate EVERY trade — no exceptions |
-| **Scaling** | Add to winners only, with trailing stops |
+| Concept             | Rule                                     |
+| ------------------- | ---------------------------------------- |
+| **Per-trade risk**  | 0.5-1% (NEVER exceed 2%)                 |
+| **Daily max loss**  | 3% then STOP                             |
+| **Weekly max loss** | 5% then STOP until Monday                |
+| **Max drawdown**    | 10% → reassess everything                |
+| **Portfolio heat**  | Max 5% total open risk                   |
+| **Correlation**     | Max 2 correlated positions               |
+| **Position sizing** | Calculate EVERY trade — no exceptions    |
+| **Scaling**         | Add to winners only, with trailing stops |
 
 Full lesson: [Risk Management](/en/academy/risk-management) and [Position Sizing](/en/academy/position-sizing)
-

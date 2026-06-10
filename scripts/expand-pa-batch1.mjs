@@ -1,7 +1,7 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from "fs";
+import { join } from "path";
 
-const contentDir = join(process.cwd(), 'content');
+const contentDir = join(process.cwd(), "content");
 
 function writeMdx(lang, category, slug, frontmatter, content) {
   const fm = `---
@@ -12,7 +12,7 @@ order: ${frontmatter.order}
 lastUpdated: "2026-06-10"
 ---
 `;
-  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, 'utf-8');
+  writeFileSync(join(contentDir, lang, category, `${slug}.mdx`), fm + content, "utf-8");
   console.log(`✅ ${lang}/${category}/${slug}.mdx`);
 }
 
@@ -24,12 +24,18 @@ lastUpdated: "2026-06-10"
 // ============================
 // 1. REVERSAL CONCEPTS — EN
 // ============================
-writeMdx('en', 'price-action', 'reversal-concepts', {
-  title: "Price Action Reversal Concepts — Complete Guide",
-  description: "Master reversal trading with Price Action. Identify trend exhaustion, reversal candlestick patterns, structure shifts (CHOCH), and high-probability reversal setups.",
-  level: "intermediate",
-  order: 14
-}, `
+writeMdx(
+  "en",
+  "price-action",
+  "reversal-concepts",
+  {
+    title: "Price Action Reversal Concepts — Complete Guide",
+    description:
+      "Master reversal trading with Price Action. Identify trend exhaustion, reversal candlestick patterns, structure shifts (CHOCH), and high-probability reversal setups.",
+    level: "intermediate",
+    order: 14,
+  },
+  `
 ## What Are Price Action Reversals?
 
 A reversal occurs when the **prevailing trend changes direction**. Price Action traders identify reversals through exhaustion signals, key level rejections, and structural changes — all without indicators. Reversal trading is higher risk but offers exceptional reward when correctly identified.
@@ -202,17 +208,24 @@ Never trade a reversal unless you have AT LEAST 3 confluences and a structural s
 - [Candlestick Psychology](/en/price-action/candlestick-psychology) — Reversal patterns
 - [Support & Resistance](/en/price-action/support-resistance) — Key reversal levels
 - [Confluence](/en/price-action/confluence) — Multiple confirmation
-`);
+`,
+);
 
 // ============================
 // 1. REVERSAL CONCEPTS — BN
 // ============================
-writeMdx('bn', 'price-action', 'reversal-concepts', {
-  title: "Price Action Reversal Concept — সম্পূর্ণ গাইড",
-  description: "Price Action দিয়ে Reversal Trading আয়ত্ত করুন। Trend Exhaustion চিহ্নিতকরণ, Reversal Candlestick Pattern, Structure Shift (CHOCH) এবং High-probability Reversal Setup শিখুন।",
-  level: "intermediate",
-  order: 14
-}, `
+writeMdx(
+  "bn",
+  "price-action",
+  "reversal-concepts",
+  {
+    title: "Price Action Reversal Concept — সম্পূর্ণ গাইড",
+    description:
+      "Price Action দিয়ে Reversal Trading আয়ত্ত করুন। Trend Exhaustion চিহ্নিতকরণ, Reversal Candlestick Pattern, Structure Shift (CHOCH) এবং High-probability Reversal Setup শিখুন।",
+    level: "intermediate",
+    order: 14,
+  },
+  `
 ## Price Action Reversal কী?
 
 Reversal ঘটে যখন **বিদ্যমান Trend দিক পরিবর্তন করে**। Price Action Trader Exhaustion Signal, Key Level Rejection এবং Structural Change-এর মাধ্যমে Reversal চিহ্নিত করেন — কোনো Indicator ছাড়াই। Reversal Trading বেশি ঝুঁকিপূর্ণ কিন্তু সঠিকভাবে চিহ্নিত হলে অসাধারণ Reward দেয়।
@@ -374,17 +387,24 @@ Score: ৬-এর মধ্যে ৪+ = HIGH Probability Reversal
 - [Candlestick Psychology](/bn/price-action/candlestick-psychology) — Reversal Pattern
 - [Support ও Resistance](/bn/price-action/support-resistance) — মূল Reversal Level
 - [Confluence](/bn/price-action/confluence) — একাধিক Confirmation
-`);
+`,
+);
 
 // ============================
 // 2. LIQUIDITY — EN
 // ============================
-writeMdx('en', 'price-action', 'liquidity', {
-  title: "Liquidity in Price Action — Complete Guide",
-  description: "Master the concept of liquidity in Price Action trading. Learn how smart money targets liquidity pools, stop hunts, liquidity sweeps, and how to trade with institutional order flow.",
-  level: "intermediate",
-  order: 15
-}, `
+writeMdx(
+  "en",
+  "price-action",
+  "liquidity",
+  {
+    title: "Liquidity in Price Action — Complete Guide",
+    description:
+      "Master the concept of liquidity in Price Action trading. Learn how smart money targets liquidity pools, stop hunts, liquidity sweeps, and how to trade with institutional order flow.",
+    level: "intermediate",
+    order: 15,
+  },
+  `
 ## What is Liquidity?
 
 In Price Action trading, liquidity refers to **clusters of pending orders** (stop losses, limit orders) sitting at predictable price levels. Smart money (institutions) targets these pools to fill their large orders. Understanding liquidity is the key to understanding WHY price moves to certain levels before reversing.
@@ -552,17 +572,24 @@ Understanding this cycle tells you WHERE price is going next.
 - [Reversal Concepts](/en/price-action/reversal-concepts) — Reversals after sweeps
 - [Support & Resistance](/en/price-action/support-resistance) — Where liquidity sits
 - [Entry Models](/en/price-action/entry-models) — Sweep-based entries
-`);
+`,
+);
 
 // ============================
 // 2. LIQUIDITY — BN
 // ============================
-writeMdx('bn', 'price-action', 'liquidity', {
-  title: "Price Action-এ Liquidity — সম্পূর্ণ গাইড",
-  description: "Price Action Trading-এ Liquidity Concept আয়ত্ত করুন। Smart Money কীভাবে Liquidity Pool Target করে, Stop Hunt, Liquidity Sweep এবং Institutional Order Flow-এর সাথে Trade করা শিখুন।",
-  level: "intermediate",
-  order: 15
-}, `
+writeMdx(
+  "bn",
+  "price-action",
+  "liquidity",
+  {
+    title: "Price Action-এ Liquidity — সম্পূর্ণ গাইড",
+    description:
+      "Price Action Trading-এ Liquidity Concept আয়ত্ত করুন। Smart Money কীভাবে Liquidity Pool Target করে, Stop Hunt, Liquidity Sweep এবং Institutional Order Flow-এর সাথে Trade করা শিখুন।",
+    level: "intermediate",
+    order: 15,
+  },
+  `
 ## Liquidity কী?
 
 Price Action Trading-এ Liquidity বলতে বোঝায় পূর্বানুমানযোগ্য Price Level-এ বসে থাকা **Pending Order-এর Cluster** (Stop Loss, Limit Order)। Smart Money (Institution) তাদের বড় Order Fill করতে এই Pool-গুলো Target করে। Liquidity বোঝা হলো Price কেন নির্দিষ্ট Level-এ যায় এবং তারপর Reverse করে — তা বোঝার চাবিকাঠি।
@@ -695,17 +722,24 @@ Price পূর্বানুমানযোগ্য Cycle-এ Liquidity খ�
 - [Reversal Concepts](/bn/price-action/reversal-concepts) — Sweep-এর পর Reversal
 - [Support ও Resistance](/bn/price-action/support-resistance) — যেখানে Liquidity বসে
 - [Entry Models](/bn/price-action/entry-models) — Sweep-based Entry
-`);
+`,
+);
 
 // ============================
 // 3. CONTINUATION — EN
 // ============================
-writeMdx('en', 'price-action', 'continuation', {
-  title: "Continuation Patterns in Price Action — Complete Guide",
-  description: "Master Price Action continuation patterns. Learn flags, pennants, consolidation within trend, BOS confirmation, and how to enter continuation trades with precision.",
-  level: "intermediate",
-  order: 13
-}, `
+writeMdx(
+  "en",
+  "price-action",
+  "continuation",
+  {
+    title: "Continuation Patterns in Price Action — Complete Guide",
+    description:
+      "Master Price Action continuation patterns. Learn flags, pennants, consolidation within trend, BOS confirmation, and how to enter continuation trades with precision.",
+    level: "intermediate",
+    order: 13,
+  },
+  `
 ## What Are Continuation Patterns?
 
 Continuation patterns are **price structures that form within an existing trend** before price continues in the same direction. They represent temporary pauses (rest periods) where the market consolidates before the next impulse move.
@@ -855,17 +889,24 @@ Strong bullish candle
 - [Trend Trading](/en/price-action/trend-trading) — Trading with the trend
 - [Breakouts](/en/price-action/breakouts) — Flag/pennant breakouts
 - [Entry Models](/en/price-action/entry-models) — Precise entry techniques
-`);
+`,
+);
 
 // ============================
 // 3. CONTINUATION — BN
 // ============================
-writeMdx('bn', 'price-action', 'continuation', {
-  title: "Price Action-এ Continuation Pattern — সম্পূর্ণ গাইড",
-  description: "Price Action Continuation Pattern আয়ত্ত করুন। Flag, Pennant, Trend-এর মধ্যে Consolidation, BOS Confirmation এবং সুনির্দিষ্টভাবে Continuation Trade-এ Entry শিখুন।",
-  level: "intermediate",
-  order: 13
-}, `
+writeMdx(
+  "bn",
+  "price-action",
+  "continuation",
+  {
+    title: "Price Action-এ Continuation Pattern — সম্পূর্ণ গাইড",
+    description:
+      "Price Action Continuation Pattern আয়ত্ত করুন। Flag, Pennant, Trend-এর মধ্যে Consolidation, BOS Confirmation এবং সুনির্দিষ্টভাবে Continuation Trade-এ Entry শিখুন।",
+    level: "intermediate",
+    order: 13,
+  },
+  `
 ## Continuation Pattern কী?
 
 Continuation Pattern হলো **বিদ্যমান Trend-এর মধ্যে তৈরি হওয়া Price Structure** যার পর Price একই দিকে চলতে থাকে। এগুলো সাময়িক বিরতি (বিশ্রামের সময়) প্রতিনিধিত্ব করে যেখানে Market পরবর্তী Impulse Move-এর আগে Consolidate করে।
@@ -1000,17 +1041,24 @@ Trend সরলরেখায় চলে না। থামে কারণ:
 - [Trend Trading](/bn/price-action/trend-trading) — Trend-এর সাথে Trading
 - [Breakouts](/bn/price-action/breakouts) — Flag/Pennant Breakout
 - [Entry Models](/bn/price-action/entry-models) — সুনির্দিষ্ট Entry Technique
-`);
+`,
+);
 
 // ============================
 // 4. COMPRESSION — EN
 // ============================
-writeMdx('en', 'price-action', 'compression', {
-  title: "Compression in Price Action — Complete Guide",
-  description: "Master the concept of price compression. Learn how tightening ranges signal explosive moves, identify compression before breakouts, and trade compression setups.",
-  level: "intermediate",
-  order: 16
-}, `
+writeMdx(
+  "en",
+  "price-action",
+  "compression",
+  {
+    title: "Compression in Price Action — Complete Guide",
+    description:
+      "Master the concept of price compression. Learn how tightening ranges signal explosive moves, identify compression before breakouts, and trade compression setups.",
+    level: "intermediate",
+    order: 16,
+  },
+  `
 ## What is Compression?
 
 Compression occurs when price makes **progressively smaller ranges** — lower highs pushing into support, or higher lows pushing into resistance. It represents building pressure that will eventually release in an explosive directional move.
@@ -1156,17 +1204,24 @@ Pro move: Wait for the sweep, THEN enter the reversal.
 - [Support & Resistance](/en/price-action/support-resistance) — The levels that contain compression
 - [Liquidity](/en/price-action/liquidity) — Sweeps at compression boundaries
 - [Confluence](/en/price-action/confluence) — Multiple compression signals
-`);
+`,
+);
 
 // ============================
 // 4. COMPRESSION — BN
 // ============================
-writeMdx('bn', 'price-action', 'compression', {
-  title: "Price Action-এ Compression — সম্পূর্ণ গাইড",
-  description: "Price Compression Concept আয়ত্ত করুন। Tightening Range কীভাবে Explosive Move-এর Signal দেয়, Breakout-এর আগে Compression চিহ্নিতকরণ এবং Compression Setup Trade করা শিখুন।",
-  level: "intermediate",
-  order: 16
-}, `
+writeMdx(
+  "bn",
+  "price-action",
+  "compression",
+  {
+    title: "Price Action-এ Compression — সম্পূর্ণ গাইড",
+    description:
+      "Price Compression Concept আয়ত্ত করুন। Tightening Range কীভাবে Explosive Move-এর Signal দেয়, Breakout-এর আগে Compression চিহ্নিতকরণ এবং Compression Setup Trade করা শিখুন।",
+    level: "intermediate",
+    order: 16,
+  },
+  `
 ## Compression কী?
 
 Compression ঘটে যখন Price **ক্রমাগত ছোট Range** তৈরি করে — Lower High Support-এর দিকে চাপ দেয়, বা Higher Low Resistance-এর দিকে চাপ দেয়। এটি ক্রমবর্ধমান চাপের প্রতিনিধিত্ব করে যা শেষ পর্যন্ত একটি Explosive Directional Move-এ মুক্ত হবে।
@@ -1300,8 +1355,8 @@ Pro Move: Sweep-এর জন্য অপেক্ষা করুন, তা�
 - [Support ও Resistance](/bn/price-action/support-resistance) — Compression ধারণকারী Level
 - [Liquidity](/bn/price-action/liquidity) — Compression Boundary-তে Sweep
 - [Confluence](/bn/price-action/confluence) — একাধিক Compression Signal
-`);
+`,
+);
 
-console.log('\n✅ Price Action Batch 1 Complete: 4 topics × 2 languages = 8 files');
-console.log('Topics: reversal-concepts, liquidity, continuation, compression');
-
+console.log("\n✅ Price Action Batch 1 Complete: 4 topics × 2 languages = 8 files");
+console.log("Topics: reversal-concepts, liquidity, continuation, compression");

@@ -14,14 +14,14 @@ lastUpdated: "2026-06-10"
 
 ## Trading Cost-এর ধরন
 
-| Cost Type | বর্ণনা | প্রভাব মাত্রা |
-|-----------|--------|-------------|
-| **Spread** | Bid-Ask পার্থক্য | বেশি (প্রতিটি Trade) |
-| **Commission** | Broker-এর প্রতি-Lot Fee | মধ্যম-বেশি |
-| **Swap/Rollover** | Overnight Holding Fee | মধ্যম (Swing Trader) |
-| **Slippage** | প্রত্যাশিত vs. প্রকৃত Fill-এর পার্থক্য | পরিবর্তনশীল |
-| **Deposit/Withdrawal** | Transfer Fee | কম |
-| **Inactivity Fee** | নিষ্ক্রিয় Account-এ চার্জ | কম |
+| Cost Type              | বর্ণনা                                 | প্রভাব মাত্রা        |
+| ---------------------- | -------------------------------------- | -------------------- |
+| **Spread**             | Bid-Ask পার্থক্য                       | বেশি (প্রতিটি Trade) |
+| **Commission**         | Broker-এর প্রতি-Lot Fee                | মধ্যম-বেশি           |
+| **Swap/Rollover**      | Overnight Holding Fee                  | মধ্যম (Swing Trader) |
+| **Slippage**           | প্রত্যাশিত vs. প্রকৃত Fill-এর পার্থক্য | পরিবর্তনশীল          |
+| **Deposit/Withdrawal** | Transfer Fee                           | কম                   |
+| **Inactivity Fee**     | নিষ্ক্রিয় Account-এ চার্জ             | কম                   |
 
 ---
 
@@ -29,14 +29,15 @@ lastUpdated: "2026-06-10"
 
 ### Trading Style অনুযায়ী বাৎসরিক প্রভাব:
 
-| Style | দৈনিক Trade | গড় Spread Cost | বাৎসরিক Spread Cost |
-|-------|-----------|-----------------|-------------------|
-| Scalper (1 Lot) | ২০ | $12/Trade | $60,480 |
-| Day Trader (1 Lot) | ৫ | $12/Trade | $15,120 |
-| Swing Trader (1 Lot) | ১/দিন | $12/Trade | $3,024 |
-| Position Trader | ১/সপ্তাহ | $12/Trade | $624 |
+| Style                | দৈনিক Trade | গড় Spread Cost | বাৎসরিক Spread Cost |
+| -------------------- | ----------- | --------------- | ------------------- |
+| Scalper (1 Lot)      | ২০          | $12/Trade       | $60,480             |
+| Day Trader (1 Lot)   | ৫           | $12/Trade       | $15,120             |
+| Swing Trader (1 Lot) | ১/দিন       | $12/Trade       | $3,024              |
+| Position Trader      | ১/সপ্তাহ    | $12/Trade       | $624                |
 
 ### Spread Cost কমানোর উপায়:
+
 1. High-liquidity Session-এ Trade করুন (London/NY Overlap)
 2. ECN/Raw Spread Account ব্যবহার করুন
 3. Major Pair-এ ফোকাস করুন (সংকীর্ণ Spread)
@@ -50,6 +51,7 @@ lastUpdated: "2026-06-10"
 Overnight Position ধরে রাখলে চার্জ হয়। Currency-র মধ্যে Interest Rate পার্থক্যের ভিত্তিতে।
 
 ### Swing Trader-এ Swap-এর প্রভাব:
+
 ```
 উদাহরণ: EUR/USD Short, Swap = -$7.50 প্রতি Lot প্রতি রাত
 
@@ -66,6 +68,7 @@ Overnight Position ধরে রাখলে চার্জ হয়। Curren
 আপনার প্রত্যাশিত Execution Price ও প্রকৃত Fill Price-এর পার্থক্য।
 
 ### Slippage কমানোর উপায়:
+
 - সম্ভব হলে Limit Order ব্যবহার করুন
 - Major News Release-এর সময় Trading এড়িয়ে চলুন
 - Active Session-এ Liquid Instrument Trade করুন

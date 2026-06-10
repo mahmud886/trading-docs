@@ -6,7 +6,6 @@ level: intermediate
 lastUpdated: "2026-06-09"
 ---
 
-
 ### Definition
 
 Mitigation Block হলো একটি **Order Block যা আগে Test হয়েছে (আংশিকভাবে Fill) এবং সম্পূর্ণ Hold করতে ব্যর্থ হয়েছে, কিন্তু Remaining Institutional Order Fill করতে Price ফিরে আসে**। Breaker Block (যেখানে OB সম্পূর্ণ Break Through হয়) এর বিপরীতে, Mitigation Block এমন OB যাতে "Dip" হয়েছে সম্পূর্ণ Fail না করে, Unfilled Order রেখে যা Algorithm ফিরে Fill করবে।
@@ -27,6 +26,7 @@ Mitigation Block হলো একটি **Order Block যা আগে Test হ�
 ### How It Works
 
 **Bullish Mitigation Block প্রক্রিয়া:**
+
 1. Bullish OB তৈরি হয় (Up Displacement এর আগে শেষ Bearish Candle)
 2. OB তৈরি হওয়ার পর Price ওঠে (প্রথম Move Away)
 3. Price OB তে ফেরে → আংশিকভাবে Order Fill → Bounce (প্রথম Reaction)
@@ -36,6 +36,7 @@ Mitigation Block হলো একটি **Order Block যা আগে Test হ�
 7. OB এর এই দ্বিতীয় (বা তৃতীয়) Touch = Mitigation Block Entry
 
 **Bearish Mitigation Block প্রক্রিয়া:**
+
 1. Bearish OB তৈরি হয় (Down Displacement এর আগে শেষ Bullish Candle)
 2. Price নামে → OB তে ফেরে → প্রথম Reaction (Partial Fill)
 3. Price আবার নামে কিন্তু পূর্ণ Target এ পৌঁছায় না
@@ -60,6 +61,7 @@ Mitigation Block হলো একটি **Order Block যা আগে Test হ�
 5. **Break-Even Trader:** OB তে Enter করা Trader যারা এখন Break-Even এ, দ্বিতীয় Touch এ EXIT করবে, Fresh Liquidity দেবে
 
 **Mitigation Block এ Institutional Order Lifecycle:**
+
 - প্রথম Visit: 40% Fill → Price Move → ফেরে
 - দ্বিতীয় Visit (Mitigation): Remaining 60% Fill → পূর্ণ Move শুরু
 - Mitigation Touch প্রায়ই শক্তিশালী Move দেয় কারণ বেশি Order Fill হয়
@@ -67,12 +69,14 @@ Mitigation Block হলো একটি **Order Block যা আগে Test হ�
 ### Trading Application
 
 **Mitigation Block চিহ্নিতকরণ:**
+
 1. একটি OB খুঁজুন যা একবার Touch হয়েছে (Price OB তে গিয়ে Bounce করেছে)
 2. Verify করুন প্রথম Touch OB সম্পূর্ণ Break করেনি (Price Close Through করেনি)
 3. নোট: প্রথম Touch এর পর, Price Move করেছে কিন্তু পূর্ণ Target এ পৌঁছায়নি → আরো Order বাকি আছে ইঙ্গিত
 4. Price আবার OB Zone এ ফিরলে → এটি আপনার Mitigation Block Entry
 
 **Mitigation Block এ Entry:**
+
 1. মূল OB Zone Mark করুন
 2. প্রথম Touch + Reaction এর জন্য অপেক্ষা করুন (Partial Fill)
 3. Price OB Zone এ ফিরে আসার অপেক্ষা করুন (দ্বিতীয় Visit)
@@ -82,6 +86,7 @@ Mitigation Block হলো একটি **Order Block যা আগে Test হ�
    - Target: Liquidity Pool পর্যন্ত পূর্ণ Extension
 
 **Mitigation Block Entry এর Quality Factor:**
+
 - HTF Alignment (Trend এর সাথে হতে হবে)
 - Kill Zone Timing (KZ এ দ্বিতীয় Touch = ভালো)
 - Mitigation Zone এর মধ্যে FVG = অতিরিক্ত Confluence

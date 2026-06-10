@@ -34,6 +34,7 @@ The difference between a backtest stat and real trading success is **the size of
 **What it is:** Your strategy is so precisely tuned to past price action that it only works on that data, not future data.
 
 **Example:**
+
 - You set your RSI level to 28 (instead of 30) because it had 2 extra winning trades in the past 5 years
 - You move your moving average from 50 to 47 periods to catch 3 more winners
 - Your strategy now has 100 rules: if close > open AND (RSI < 28) AND (MA crossed) AND (Volume > avg × 1.23) AND...
@@ -41,6 +42,7 @@ The difference between a backtest stat and real trading success is **the size of
 **The problem:** These micro-adjustments are **random luck**, not signal. They won't repeat in fresh data.
 
 **The test:**
+
 - Optimize your strategy on data from Jan 2020 to Dec 2023
 - Test it on data from Jan 2024 to now WITHOUT re-optimizing
 - If results drop dramatically, you overfit
@@ -54,6 +56,7 @@ The difference between a backtest stat and real trading success is **the size of
 **What it is:** You accidentally used data from the future when deciding if a trade would have won.
 
 **Example:**
+
 ```
 On Bar 1 (closed), you check:
 "Is the next bar (Bar 2) a green candle?"
@@ -65,6 +68,7 @@ If yes, enter NOW (on Bar 1 close).
 This artificially inflates your win rate.
 
 **How to avoid it:**
+
 - Only use data that was known AT THE ENTRY TIME
 - If you enter on Bar 1 close, only look at data up to Bar 1 close
 - Don't peek at Bar 2, 3, or future bars when deciding entry
@@ -78,6 +82,7 @@ This artificially inflates your win rate.
 **What it is:** You backtest only on data from pairs/instruments that currently exist, ignoring ones that failed or delisted.
 
 **Example:**
+
 - You backtest a forex strategy on 20 major pairs (EUR/USD, GBP/USD, etc.)
 - These pairs survived because they're major
 - You don't test on exotic pairs or dead pairs from 2015 that no longer trade
@@ -86,6 +91,7 @@ This artificially inflates your win rate.
 **Real life:** If your strategy works on EUR/USD but fails on AUD/NZD, you have survivorship bias.
 
 **The fix:**
+
 - Test on a mix of major, minor, and exotic pairs
 - Include pairs from different time periods (not just current data)
 - Be honest: your strategy might work on 3/10 pairs. That's fine — just know it.
@@ -97,13 +103,15 @@ This artificially inflates your win rate.
 **What it is:** Your backtest assumes perfect fills at exact prices, but in reality, spreads, commissions, and slippage eat your profits.
 
 **Example:**
+
 - Backtest shows: +100 pips profit, 50 trades = 2 pips per trade
 - Real spreads: 2 pips on EUR/USD
 - Real commission: 0.5 pips
--Real slippage: 0.5 pips
+  -Real slippage: 0.5 pips
 - **Real profit: 2 - 2 - 0.5 - 0.5 = -1 pip per trade** (You're losing money!)
 
 **The fix:**
+
 - In backtesting software, add realistic spreads (use broker average, not best bid/ask)
 - Add commission (usually 0.1-1 pip equivalent per trade)
 - Add slippage (0.5-2 pips for fast markets)
@@ -118,17 +126,20 @@ This artificially inflates your win rate.
 **What it is:** You test your strategy on only 6 months of data, missing longer-term patterns, regime changes, and rare events.
 
 **Example:**
+
 - You backtest from Jan 2024 to June 2024 (6 months, one trend direction)
 - Your strategy makes 200 pips
 - BUT you missed the 2008 financial crisis, the COVID crash, Brexit, etc.
 - Your strategy might fail in a bear market or range
 
 **The fix:**
+
 - Backtest at least **2-3 years** of data
 - Better: 5-10 years if available
 - Try to include at least one bull market, one bear market, and periods of ranging
 
 **Minimum standards:**
+
 - Day/Swing traders: 2+ years minimum
 - Long-term traders: 5+ years minimum
 - For new indicators: 10+ years
@@ -140,6 +151,7 @@ This artificially inflates your win rate.
 ### Step 1: Define Your Rules FIRST (Before any data)
 
 Written, objective rules:
+
 - Entry: "When price closes above the 20-period MA AND close > open"
 - Exit: "When RSI closes above 70" OR "50 pips profit"
 - Position size: "Risk 1% per trade"
@@ -150,6 +162,7 @@ Written, objective rules:
 ### Step 2: Backtest ('Optimization')
 
 Use historical data to test your rules. Get stats:
+
 - Win rate
 - Profit factor
 - Max drawdown
@@ -158,6 +171,7 @@ Use historical data to test your rules. Get stats:
 ### Step 3: Out-of-Sample Backtest ('Validation')
 
 Test your optimized strategy on DATA IT HAS NEVER SEEN:
+
 - If you optimized 2020-2022 data, test on 2023-2024 data
 - If stats are similar → Strategy might be robust
 - If stats drop massively → You overfit
@@ -167,6 +181,7 @@ This is the key test professionals use.
 ### Step 4: Forward Test (Paper Trading)
 
 Trade your strategy live on a demo account for 1-3 months:
+
 - Does it still work?
 - Any issues you didn't expect?
 - Psychological challenges?
@@ -208,6 +223,7 @@ Only after this, go live micro-lot real money.
 **Even a PERFECT backtest doesn't guarantee live success.**
 
 Variables you can't backtest:
+
 - Slippage during news events (much worse than expected)
 - Your emotional decision-making
 - Systems outages when you need to exit
@@ -249,4 +265,3 @@ The best backtest in the world still requires live trading discipline, risk mana
 Your backtest told you the possibility. Your consistency will determine the reality.
 
 Happy testing! 📊
-

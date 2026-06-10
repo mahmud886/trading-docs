@@ -26,12 +26,7 @@ export async function generateMetadata({
   return generateDocMetadata({ lang, slug, category: CATEGORY });
 }
 
-export default async function PriceActionPage({
-  params,
-}: {
-  params: Promise<{ lang: string; slug?: string[] }>;
-}) {
+export default async function PriceActionPage({ params }: { params: Promise<{ lang: string; slug?: string[] }> }) {
   const { lang, slug } = await params;
   return <DocPage lang={lang} slug={slug} category={CATEGORY} />;
 }
-

@@ -1,5 +1,4 @@
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://tradingdocs.vercel.app";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://tradingdocs.vercel.app";
 export const SITE_NAME = "Trading Docs";
 export const SITE_DESCRIPTION =
   "Complete trading education platform for Price Action, Smart Money Concepts, ICT methodology, and institutional order flow — learn how banks and hedge funds move the markets.";
@@ -12,7 +11,18 @@ export const ACCENT_COLORS = {
   red: "#ef4444",
 } as const;
 
-export const CATEGORIES = ["price-action", "smc", "ict", "forex-sessions", "academy", "order-flow", "intermarket", "quantitative", "wyckoff", "auction-market"] as const;
+export const CATEGORIES = [
+  "price-action",
+  "smc",
+  "ict",
+  "forex-sessions",
+  "academy",
+  "order-flow",
+  "intermarket",
+  "quantitative",
+  "wyckoff",
+  "auction-market",
+] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 export const CATEGORY_CONFIG: Record<
@@ -58,8 +68,10 @@ export const CATEGORY_CONFIG: Record<
     label: "Order Flow",
     labelBn: "অর্ডার ফ্লো",
     color: ACCENT_COLORS.red,
-    description: "DOM, volume profile, delta, footprint charts — how institutions actually execute and leave footprints",
-    descriptionBn: "DOM, ভলিউম প্রোফাইল, ডেল্টা, ফুটপ্রিন্ট চার্ট — ইনস্টিটিউশনরা কিভাবে এক্সিকিউট করে এবং ফুটপ্রিন্ট রেখে যায়",
+    description:
+      "DOM, volume profile, delta, footprint charts — how institutions actually execute and leave footprints",
+    descriptionBn:
+      "DOM, ভলিউম প্রোফাইল, ডেল্টা, ফুটপ্রিন্ট চার্ট — ইনস্টিটিউশনরা কিভাবে এক্সিকিউট করে এবং ফুটপ্রিন্ট রেখে যায়",
   },
   intermarket: {
     label: "Intermarket Analysis",
@@ -87,7 +99,8 @@ export const CATEGORY_CONFIG: Record<
     labelBn: "অকশন মার্কেট থিওরি",
     color: ACCENT_COLORS.green,
     description: "Market profile, TPO charts, value areas, initial balance — how price discovers fair value",
-    descriptionBn: "মার্কেট প্রোফাইল, TPO চার্ট, ভ্যালু এরিয়া, ইনিশিয়াল ব্যালেন্স — প্রাইস কিভাবে ফেয়ার ভ্যালু আবিষ্কার করে",
+    descriptionBn:
+      "মার্কেট প্রোফাইল, TPO চার্ট, ভ্যালু এরিয়া, ইনিশিয়াল ব্যালেন্স — প্রাইস কিভাবে ফেয়ার ভ্যালু আবিষ্কার করে",
   },
 };
 

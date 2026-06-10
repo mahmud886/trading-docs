@@ -15,6 +15,7 @@ Execution Model নির্ধারণ করে POI চিহ্নিত ক
 ## তিনটি Model
 
 ### ১. Risk Entry (POI-তে Limit Order)
+
 ```
 - সরাসরি OB/FVG-তে Limit Order
 - Confirmation প্রয়োজন নেই
@@ -25,6 +26,7 @@ Execution Model নির্ধারণ করে POI চিহ্নিত ক
 ```
 
 ### ২. Confirmation Entry (LTF CHOCH)
+
 ```
 - POI-তে LTF Structural Shift অপেক্ষা
 - CHOCH Confirmation-এর পর Enter
@@ -35,6 +37,7 @@ Execution Model নির্ধারণ করে POI চিহ্নিত ক
 ```
 
 ### ৩. Refined Entry (CHOCH-এর মধ্যে FVG)
+
 ```
 - LTF CHOCH অপেক্ষা, তারপর CHOCH-এর তৈরি
   FVG/OB-তে Enter
@@ -49,13 +52,13 @@ Execution Model নির্ধারণ করে POI চিহ্নিত ক
 
 ## কখন কোনটি ব্যবহার
 
-| পরিস্থিতি | Model | কারণ |
-|-----------|-------|------|
-| Perfect A+ Confluence | Risk Entry | সর্বোচ্চ R:R, Zone বিশ্বাস |
-| ভালো Setup, নিরাপত্তা চান | Confirmation | বেশি Win Rate |
-| Precision চান | Refined | সেরা ভারসাম্য |
-| Counter-trend | Confirmation/Refined | অতিরিক্ত প্রমাণ প্রয়োজন |
-| Scalping | Risk/Confirmation | Speed গুরুত্বপূর্ণ |
+| পরিস্থিতি                 | Model                | কারণ                       |
+| ------------------------- | -------------------- | -------------------------- |
+| Perfect A+ Confluence     | Risk Entry           | সর্বোচ্চ R:R, Zone বিশ্বাস |
+| ভালো Setup, নিরাপত্তা চান | Confirmation         | বেশি Win Rate              |
+| Precision চান             | Refined              | সেরা ভারসাম্য              |
+| Counter-trend             | Confirmation/Refined | অতিরিক্ত প্রমাণ প্রয়োজন   |
+| Scalping                  | Risk/Confirmation    | Speed গুরুত্বপূর্ণ         |
 
 ---
 

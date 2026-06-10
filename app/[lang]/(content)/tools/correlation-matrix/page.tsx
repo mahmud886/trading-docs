@@ -6,18 +6,110 @@ import { ArrowLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const pairs = [
-  "EUR/USD", "GBP/USD", "USD/JPY", "AUD/USD", "USD/CAD",
-  "NZD/USD", "EUR/GBP", "EUR/JPY", "GBP/JPY", "AUD/JPY",
-  "USD/CHF", "EUR/AUD", "GBP/AUD", "EUR/CAD", "AUD/NZD"
+  "EUR/USD",
+  "GBP/USD",
+  "USD/JPY",
+  "AUD/USD",
+  "USD/CAD",
+  "NZD/USD",
+  "EUR/GBP",
+  "EUR/JPY",
+  "GBP/JPY",
+  "AUD/JPY",
+  "USD/CHF",
+  "EUR/AUD",
+  "GBP/AUD",
+  "EUR/CAD",
+  "AUD/NZD",
 ];
 
 // Simulated correlation data (in production, fetch from API)
 const correlationData: Record<string, Record<string, number>> = {
-  "EUR/USD": { "EUR/USD": 1.00, "GBP/USD": 0.87, "USD/JPY": -0.62, "AUD/USD": 0.75, "USD/CAD": -0.84, "NZD/USD": 0.72, "EUR/GBP": 0.42, "EUR/JPY": 0.55, "GBP/JPY": 0.48, "AUD/JPY": 0.45, "USD/CHF": -0.92, "EUR/AUD": 0.38, "GBP/AUD": 0.22, "EUR/CAD": 0.65, "AUD/NZD": 0.15 },
-  "GBP/USD": { "EUR/USD": 0.87, "GBP/USD": 1.00, "USD/JPY": -0.55, "AUD/USD": 0.70, "USD/CAD": -0.78, "NZD/USD": 0.65, "EUR/GBP": -0.15, "EUR/JPY": 0.50, "GBP/JPY": 0.62, "AUD/JPY": 0.50, "USD/CHF": -0.85, "EUR/AUD": 0.25, "GBP/AUD": 0.40, "EUR/CAD": 0.55, "AUD/NZD": 0.10 },
-  "USD/JPY": { "EUR/USD": -0.62, "GBP/USD": -0.55, "USD/JPY": 1.00, "AUD/USD": -0.35, "USD/CAD": 0.55, "NZD/USD": -0.30, "EUR/GBP": -0.10, "EUR/JPY": 0.58, "GBP/JPY": 0.65, "AUD/JPY": 0.70, "USD/CHF": 0.58, "EUR/AUD": -0.20, "GBP/AUD": -0.15, "EUR/CAD": -0.40, "AUD/NZD": -0.05 },
-  "AUD/USD": { "EUR/USD": 0.75, "GBP/USD": 0.70, "USD/JPY": -0.35, "AUD/USD": 1.00, "USD/CAD": -0.72, "NZD/USD": 0.92, "EUR/GBP": 0.15, "EUR/JPY": 0.40, "GBP/JPY": 0.45, "AUD/JPY": 0.72, "USD/CHF": -0.70, "EUR/AUD": -0.35, "GBP/AUD": -0.30, "EUR/CAD": 0.50, "AUD/NZD": 0.45 },
-  "USD/CAD": { "EUR/USD": -0.84, "GBP/USD": -0.78, "USD/JPY": 0.55, "AUD/USD": -0.72, "USD/CAD": 1.00, "NZD/USD": -0.68, "EUR/GBP": -0.20, "EUR/JPY": -0.35, "GBP/JPY": -0.30, "AUD/JPY": -0.28, "USD/CHF": 0.80, "EUR/AUD": -0.30, "GBP/AUD": -0.18, "EUR/CAD": -0.75, "AUD/NZD": -0.12 },
+  "EUR/USD": {
+    "EUR/USD": 1.0,
+    "GBP/USD": 0.87,
+    "USD/JPY": -0.62,
+    "AUD/USD": 0.75,
+    "USD/CAD": -0.84,
+    "NZD/USD": 0.72,
+    "EUR/GBP": 0.42,
+    "EUR/JPY": 0.55,
+    "GBP/JPY": 0.48,
+    "AUD/JPY": 0.45,
+    "USD/CHF": -0.92,
+    "EUR/AUD": 0.38,
+    "GBP/AUD": 0.22,
+    "EUR/CAD": 0.65,
+    "AUD/NZD": 0.15,
+  },
+  "GBP/USD": {
+    "EUR/USD": 0.87,
+    "GBP/USD": 1.0,
+    "USD/JPY": -0.55,
+    "AUD/USD": 0.7,
+    "USD/CAD": -0.78,
+    "NZD/USD": 0.65,
+    "EUR/GBP": -0.15,
+    "EUR/JPY": 0.5,
+    "GBP/JPY": 0.62,
+    "AUD/JPY": 0.5,
+    "USD/CHF": -0.85,
+    "EUR/AUD": 0.25,
+    "GBP/AUD": 0.4,
+    "EUR/CAD": 0.55,
+    "AUD/NZD": 0.1,
+  },
+  "USD/JPY": {
+    "EUR/USD": -0.62,
+    "GBP/USD": -0.55,
+    "USD/JPY": 1.0,
+    "AUD/USD": -0.35,
+    "USD/CAD": 0.55,
+    "NZD/USD": -0.3,
+    "EUR/GBP": -0.1,
+    "EUR/JPY": 0.58,
+    "GBP/JPY": 0.65,
+    "AUD/JPY": 0.7,
+    "USD/CHF": 0.58,
+    "EUR/AUD": -0.2,
+    "GBP/AUD": -0.15,
+    "EUR/CAD": -0.4,
+    "AUD/NZD": -0.05,
+  },
+  "AUD/USD": {
+    "EUR/USD": 0.75,
+    "GBP/USD": 0.7,
+    "USD/JPY": -0.35,
+    "AUD/USD": 1.0,
+    "USD/CAD": -0.72,
+    "NZD/USD": 0.92,
+    "EUR/GBP": 0.15,
+    "EUR/JPY": 0.4,
+    "GBP/JPY": 0.45,
+    "AUD/JPY": 0.72,
+    "USD/CHF": -0.7,
+    "EUR/AUD": -0.35,
+    "GBP/AUD": -0.3,
+    "EUR/CAD": 0.5,
+    "AUD/NZD": 0.45,
+  },
+  "USD/CAD": {
+    "EUR/USD": -0.84,
+    "GBP/USD": -0.78,
+    "USD/JPY": 0.55,
+    "AUD/USD": -0.72,
+    "USD/CAD": 1.0,
+    "NZD/USD": -0.68,
+    "EUR/GBP": -0.2,
+    "EUR/JPY": -0.35,
+    "GBP/JPY": -0.3,
+    "AUD/JPY": -0.28,
+    "USD/CHF": 0.8,
+    "EUR/AUD": -0.3,
+    "GBP/AUD": -0.18,
+    "EUR/CAD": -0.75,
+    "AUD/NZD": -0.12,
+  },
 };
 
 function getCorrelation(pair1: string, pair2: string): number {
@@ -45,7 +137,10 @@ export default function CorrelationMatrixPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-10">
-      <Link href={`/${lang}/tools`} className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+      <Link
+        href={`/${lang}/tools`}
+        className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+      >
         <ArrowLeft size={16} /> Back to Tools
       </Link>
 
@@ -55,7 +150,8 @@ export default function CorrelationMatrixPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-blue/20 bg-accent-blue/5 p-4 text-sm text-muted-foreground">
-        🏦 Institutional traders never have two highly correlated positions in the same direction. A EUR/USD long + GBP/USD long = double risk on USD weakness. Use this matrix to avoid hidden concentration risk.
+        🏦 Institutional traders never have two highly correlated positions in the same direction. A EUR/USD long +
+        GBP/USD long = double risk on USD weakness. Use this matrix to avoid hidden concentration risk.
       </div>
 
       {/* Timeframe Selector */}
@@ -109,11 +205,21 @@ export default function CorrelationMatrixPage() {
       {/* Legend */}
       <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
         <span className="font-medium">Legend:</span>
-        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded bg-green-500/80"></span> Strong Positive (0.7+)</span>
-        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded bg-green-500/40"></span> Moderate Positive</span>
-        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded bg-zinc-700/50"></span> Neutral</span>
-        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded bg-red-500/40"></span> Moderate Negative</span>
-        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded bg-red-500/80"></span> Strong Negative (−0.7)</span>
+        <span className="flex items-center gap-1">
+          <span className="h-3 w-3 rounded bg-green-500/80"></span> Strong Positive (0.7+)
+        </span>
+        <span className="flex items-center gap-1">
+          <span className="h-3 w-3 rounded bg-green-500/40"></span> Moderate Positive
+        </span>
+        <span className="flex items-center gap-1">
+          <span className="h-3 w-3 rounded bg-zinc-700/50"></span> Neutral
+        </span>
+        <span className="flex items-center gap-1">
+          <span className="h-3 w-3 rounded bg-red-500/40"></span> Moderate Negative
+        </span>
+        <span className="flex items-center gap-1">
+          <span className="h-3 w-3 rounded bg-red-500/80"></span> Strong Negative (−0.7)
+        </span>
       </div>
 
       {/* Tips */}
@@ -130,4 +236,3 @@ export default function CorrelationMatrixPage() {
     </div>
   );
 }
-

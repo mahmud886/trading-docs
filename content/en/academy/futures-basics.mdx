@@ -11,7 +11,8 @@ lastUpdated: "2026-05-12"
 A futures contract is a **legally binding agreement** to buy or sell an asset at a predetermined price on a specific future date. Unlike spot trading where you buy the actual asset, futures let you speculate on price direction with leverage.
 
 <Callout type="info" title="Key Difference">
-In spot trading, you own the asset. In futures trading, you own a contract that represents the asset. This allows trading with much less capital through leverage.
+  In spot trading, you own the asset. In futures trading, you own a contract that represents the asset. This allows
+  trading with much less capital through leverage.
 </Callout>
 
 ---
@@ -22,14 +23,14 @@ In spot trading, you own the asset. In futures trading, you own a contract that 
 
 Every futures contract has standardized specifications:
 
-| Specification | Example (E-mini S&P 500) |
-|--------------|--------------------------|
-| **Underlying Asset** | S&P 500 Index |
-| **Contract Size** | $50 x Index value |
-| **Tick Size** | 0.25 points = $12.50 |
-| **Expiry Months** | March, June, Sept, Dec (quarterly) |
-| **Trading Hours** | Nearly 24 hours (Sun-Fri) |
-| **Margin Required** | ~$12,000 per contract |
+| Specification        | Example (E-mini S&P 500)           |
+| -------------------- | ---------------------------------- |
+| **Underlying Asset** | S&P 500 Index                      |
+| **Contract Size**    | $50 x Index value                  |
+| **Tick Size**        | 0.25 points = $12.50               |
+| **Expiry Months**    | March, June, Sept, Dec (quarterly) |
+| **Trading Hours**    | Nearly 24 hours (Sun-Fri)          |
+| **Margin Required**  | ~$12,000 per contract              |
 
 ### The Two Sides
 
@@ -55,12 +56,12 @@ Every futures contract has standardized specifications:
 **Maintenance Margin** — Minimum equity required to keep the position open
 
 | Futures Market | Contract Value | Margin Required | Effective Leverage |
-|---------------|---------------|----------------|-------------------|
-| E-mini S&P 500 | ~$250,000 | ~$12,000 | ~20:1 |
-| E-mini NAS100 | ~$350,000 | ~$16,000 | ~22:1 |
-| Crude Oil | ~$75,000 | ~$6,000 | ~12:1 |
-| Gold (GC) | ~$230,000 | ~$10,000 | ~23:1 |
-| Euro FX | ~$125,000 | ~$3,000 | ~40:1 |
+| -------------- | -------------- | --------------- | ------------------ |
+| E-mini S&P 500 | ~$250,000      | ~$12,000        | ~20:1              |
+| E-mini NAS100  | ~$350,000      | ~$16,000        | ~22:1              |
+| Crude Oil      | ~$75,000       | ~$6,000         | ~12:1              |
+| Gold (GC)      | ~$230,000      | ~$10,000        | ~23:1              |
+| Euro FX        | ~$125,000      | ~$3,000         | ~40:1              |
 
 ### Mark-to-Market (Daily Settlement)
 
@@ -72,10 +73,12 @@ Every futures contract has standardized specifications:
 ### Contango and Backwardation
 
 **Contango** — Futures price is higher than the spot price
+
 - Normal in most markets (storage costs, interest)
 - Each successive contract month is more expensive
 
 **Backwardation** — Futures price is lower than the spot price
+
 - Indicates strong current demand
 - Common during supply shortages
 
@@ -85,44 +88,44 @@ Every futures contract has standardized specifications:
 
 ### Index Futures
 
-| Contract | Exchange | Tick Value |
-|----------|----------|-----------|
-| E-mini S&P 500 (ES) | CME | $12.50/tick |
-| E-mini NASDAQ (NQ) | CME | $5.00/tick |
-| E-mini Dow (YM) | CBOT | $5.00/tick |
-| Micro E-mini S&P (MES) | CME | $1.25/tick |
-| Micro E-mini NAS (MNQ) | CME | $0.50/tick |
+| Contract               | Exchange | Tick Value  |
+| ---------------------- | -------- | ----------- |
+| E-mini S&P 500 (ES)    | CME      | $12.50/tick |
+| E-mini NASDAQ (NQ)     | CME      | $5.00/tick  |
+| E-mini Dow (YM)        | CBOT     | $5.00/tick  |
+| Micro E-mini S&P (MES) | CME      | $1.25/tick  |
+| Micro E-mini NAS (MNQ) | CME      | $0.50/tick  |
 
 ### Commodity Futures
 
-| Contract | Exchange | Contract Size |
-|----------|----------|--------------|
-| Crude Oil (CL) | NYMEX | 1,000 barrels |
-| Gold (GC) | COMEX | 100 troy oz |
-| Silver (SI) | COMEX | 5,000 troy oz |
-| Natural Gas (NG) | NYMEX | 10,000 MMBtu |
-| Corn (ZC) | CBOT | 5,000 bushels |
+| Contract         | Exchange | Contract Size |
+| ---------------- | -------- | ------------- |
+| Crude Oil (CL)   | NYMEX    | 1,000 barrels |
+| Gold (GC)        | COMEX    | 100 troy oz   |
+| Silver (SI)      | COMEX    | 5,000 troy oz |
+| Natural Gas (NG) | NYMEX    | 10,000 MMBtu  |
+| Corn (ZC)        | CBOT     | 5,000 bushels |
 
 ### Currency Futures
 
-| Contract | Exchange | Contract Size |
-|----------|----------|--------------|
-| Euro FX (6E) | CME | 125,000 EUR |
-| British Pound (6B) | CME | 62,500 GBP |
-| Japanese Yen (6J) | CME | 12,500,000 JPY |
+| Contract           | Exchange | Contract Size  |
+| ------------------ | -------- | -------------- |
+| Euro FX (6E)       | CME      | 125,000 EUR    |
+| British Pound (6B) | CME      | 62,500 GBP     |
+| Japanese Yen (6J)  | CME      | 12,500,000 JPY |
 
 ---
 
 ## Futures vs Forex vs Stocks
 
-| Feature | Futures | Forex | Stocks |
-|---------|---------|-------|--------|
-| **Market Hours** | ~23 hours (Sun-Fri) | 24/5 | Limited hours |
-| **Leverage** | High (regulated) | High | Low-Moderate |
-| **Regulation** | CME/CBOT (highly regulated) | Varies by broker | Highly regulated |
-| **Commissions** | Per contract | Spread-based | Per share/trade |
-| **Short Selling** | Easy (equal to going long) | Easy | Restrictions apply |
-| **Transparency** | Centralized exchange | OTC (decentralized) | Centralized exchange |
+| Feature           | Futures                     | Forex               | Stocks               |
+| ----------------- | --------------------------- | ------------------- | -------------------- |
+| **Market Hours**  | ~23 hours (Sun-Fri)         | 24/5                | Limited hours        |
+| **Leverage**      | High (regulated)            | High                | Low-Moderate         |
+| **Regulation**    | CME/CBOT (highly regulated) | Varies by broker    | Highly regulated     |
+| **Commissions**   | Per contract                | Spread-based        | Per share/trade      |
+| **Short Selling** | Easy (equal to going long)  | Easy                | Restrictions apply   |
+| **Transparency**  | Centralized exchange        | OTC (decentralized) | Centralized exchange |
 
 ---
 
@@ -130,15 +133,16 @@ Every futures contract has standardized specifications:
 
 Micro futures are **1/10th the size** of standard contracts — perfect for learning:
 
-| Micro Contract | Symbol | Margin Required | Tick Value |
-|---------------|--------|----------------|-----------|
-| Micro E-mini S&P | MES | ~$1,200 | $1.25 |
-| Micro E-mini NASDAQ | MNQ | ~$1,600 | $0.50 |
-| Micro Gold | MGC | ~$1,000 | $1.00 |
-| Micro Crude Oil | MCL | ~$600 | $1.00 |
+| Micro Contract      | Symbol | Margin Required | Tick Value |
+| ------------------- | ------ | --------------- | ---------- |
+| Micro E-mini S&P    | MES    | ~$1,200         | $1.25      |
+| Micro E-mini NASDAQ | MNQ    | ~$1,600         | $0.50      |
+| Micro Gold          | MGC    | ~$1,000         | $1.00      |
+| Micro Crude Oil     | MCL    | ~$600           | $1.00      |
 
 <Callout type="info" title="Start with Micros">
-If you are new to futures, always start with micro contracts. They provide the same market exposure at 1/10th the risk. Graduate to E-mini contracts only after consistent profitability.
+  If you are new to futures, always start with micro contracts. They provide the same market exposure at 1/10th the
+  risk. Graduate to E-mini contracts only after consistent profitability.
 </Callout>
 
 ---
@@ -146,21 +150,25 @@ If you are new to futures, always start with micro contracts. They provide the s
 ## Futures Trading Strategies
 
 ### 1. Trend Following
+
 - Identify the prevailing trend on daily/4H charts
 - Enter on pullbacks to key levels
 - Use trailing stops to capture large moves
 
 ### 2. Mean Reversion
+
 - Trade reversals when price is extended from moving averages
 - Use RSI or Bollinger Bands for overbought/oversold conditions
 - Best in ranging markets
 
 ### 3. Spread Trading
+
 - Trade the price difference between two related contracts
 - Example: Long September crude, short December crude
 - Lower risk than outright directional trades
 
 ### 4. Scalping the DOM
+
 - Use the Depth of Market (order book) for ultra-short-term trades
 - Read order flow to identify buying/selling pressure
 - Requires fast execution and deep market knowledge
@@ -187,15 +195,15 @@ If you are new to futures, always start with micro contracts. They provide the s
 
 ## Summary
 
-| Aspect | Key Points |
-|--------|-----------|
-| **What** | Contracts to buy/sell assets at future prices |
-| **Leverage** | Significant — both opportunity and risk |
-| **Settlement** | Daily mark-to-market |
-| **Expiry** | Quarterly (roll to next contract) |
-| **Best Start** | Micro contracts (MES, MNQ) |
-| **Key Concept** | Understand margin, tick value, and contract specs |
-| **Risk Rule** | Never trade without understanding the contract you are in |
+| Aspect          | Key Points                                                |
+| --------------- | --------------------------------------------------------- |
+| **What**        | Contracts to buy/sell assets at future prices             |
+| **Leverage**    | Significant — both opportunity and risk                   |
+| **Settlement**  | Daily mark-to-market                                      |
+| **Expiry**      | Quarterly (roll to next contract)                         |
+| **Best Start**  | Micro contracts (MES, MNQ)                                |
+| **Key Concept** | Understand margin, tick value, and contract specs         |
+| **Risk Rule**   | Never trade without understanding the contract you are in |
 
 ---
 

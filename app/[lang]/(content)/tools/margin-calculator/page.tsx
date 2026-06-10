@@ -23,21 +23,24 @@ export default function MarginCalculatorPage() {
   ]);
 
   const addPosition = () => {
-    setPositions([...positions, {
-      id: Date.now(),
-      pair: "GBP/USD",
-      direction: "long",
-      lotSize: 0.1,
-      leverage: 100,
-    }]);
+    setPositions([
+      ...positions,
+      {
+        id: Date.now(),
+        pair: "GBP/USD",
+        direction: "long",
+        lotSize: 0.1,
+        leverage: 100,
+      },
+    ]);
   };
 
   const removePosition = (id: number) => {
-    setPositions(positions.filter(p => p.id !== id));
+    setPositions(positions.filter((p) => p.id !== id));
   };
 
   const updatePosition = (id: number, field: keyof Position, value: string | number) => {
-    setPositions(positions.map(p => p.id === id ? { ...p, [field]: value } : p));
+    setPositions(positions.map((p) => (p.id === id ? { ...p, [field]: value } : p)));
   };
 
   // Calculate margin for each position
@@ -53,7 +56,10 @@ export default function MarginCalculatorPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-10">
-      <Link href={`/${lang}/tools`} className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+      <Link
+        href={`/${lang}/tools`}
+        className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+      >
         <ArrowLeft size={16} /> Back to Tools
       </Link>
 
@@ -63,22 +69,29 @@ export default function MarginCalculatorPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-red/20 bg-accent-red/5 p-4 text-sm text-muted-foreground">
-        🏦 Institutional risk management rule: Never use more than 30-50% of available margin. Below 100% margin level = margin call territory. Prop firms margin call at 80-90% equity-to-balance ratio.
+        🏦 Institutional risk management rule: Never use more than 30-50% of available margin. Below 100% margin level =
+        margin call territory. Prop firms margin call at 80-90% equity-to-balance ratio.
       </div>
 
       {/* Account Balance */}
       <div className="mt-8">
         <label className="text-sm font-medium text-foreground">Account Balance ($)</label>
-        <input type="number" value={accountBalance} onChange={(e) => setAccountBalance(Number(e.target.value))}
-          className="mt-2 w-full max-w-xs rounded-lg border border-border bg-card px-4 py-3 text-foreground" />
+        <input
+          type="number"
+          value={accountBalance}
+          onChange={(e) => setAccountBalance(Number(e.target.value))}
+          className="mt-2 w-full max-w-xs rounded-lg border border-border bg-card px-4 py-3 text-foreground"
+        />
       </div>
 
       {/* Positions */}
       <div className="mt-8">
         <div className="flex items-center justify-between">
           <h3 className="font-semibold text-foreground">Open Positions</h3>
-          <button onClick={addPosition}
-            className="flex items-center gap-1 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground">
+          <button
+            onClick={addPosition}
+            className="flex items-center gap-1 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground"
+          >
             <Plus size={14} /> Add Position
           </button>
         </div>
@@ -86,19 +99,32 @@ export default function MarginCalculatorPage() {
         <div className="mt-4 space-y-3">
           {positions.map((pos) => (
             <div key={pos.id} className="flex flex-wrap items-center gap-3 rounded-lg border border-border bg-card p-4">
-              <input value={pos.pair} onChange={(e) => updatePosition(pos.id, "pair", e.target.value)}
-                className="w-24 rounded border border-border bg-background px-2 py-1.5 text-sm text-foreground" />
-              <select value={pos.direction} onChange={(e) => updatePosition(pos.id, "direction", e.target.value)}
-                className="rounded border border-border bg-background px-2 py-1.5 text-sm text-foreground">
+              <input
+                value={pos.pair}
+                onChange={(e) => updatePosition(pos.id, "pair", e.target.value)}
+                className="w-24 rounded border border-border bg-background px-2 py-1.5 text-sm text-foreground"
+              />
+              <select
+                value={pos.direction}
+                onChange={(e) => updatePosition(pos.id, "direction", e.target.value)}
+                className="rounded border border-border bg-background px-2 py-1.5 text-sm text-foreground"
+              >
                 <option value="long">Long</option>
                 <option value="short">Short</option>
               </select>
-              <input type="number" value={pos.lotSize} step="0.01"
+              <input
+                type="number"
+                value={pos.lotSize}
+                step="0.01"
                 onChange={(e) => updatePosition(pos.id, "lotSize", Number(e.target.value))}
-                className="w-20 rounded border border-border bg-background px-2 py-1.5 text-sm text-foreground" />
+                className="w-20 rounded border border-border bg-background px-2 py-1.5 text-sm text-foreground"
+              />
               <span className="text-xs text-muted-foreground">lots</span>
-              <select value={pos.leverage} onChange={(e) => updatePosition(pos.id, "leverage", Number(e.target.value))}
-                className="rounded border border-border bg-background px-2 py-1.5 text-sm text-foreground">
+              <select
+                value={pos.leverage}
+                onChange={(e) => updatePosition(pos.id, "leverage", Number(e.target.value))}
+                className="rounded border border-border bg-background px-2 py-1.5 text-sm text-foreground"
+              >
                 <option value={30}>1:30</option>
                 <option value={50}>1:50</option>
                 <option value={100}>1:100</option>
@@ -122,19 +148,23 @@ export default function MarginCalculatorPage() {
         </div>
         <div className="rounded-xl border border-border bg-card p-6">
           <div className="text-xs text-muted-foreground">Free Margin</div>
-          <div className={`mt-1 text-xl font-bold ${freeMargin > 0 ? 'text-green-400' : 'text-red-400'}`}>
+          <div className={`mt-1 text-xl font-bold ${freeMargin > 0 ? "text-green-400" : "text-red-400"}`}>
             ${freeMargin.toFixed(0)}
           </div>
         </div>
         <div className="rounded-xl border border-border bg-card p-6">
           <div className="text-xs text-muted-foreground">Margin Level</div>
-          <div className={`mt-1 text-xl font-bold ${marginLevel > 200 ? 'text-green-400' : marginLevel > 100 ? 'text-yellow-400' : 'text-red-400'}`}>
-            {marginLevel === Infinity ? '∞' : marginLevel.toFixed(0)}%
+          <div
+            className={`mt-1 text-xl font-bold ${marginLevel > 200 ? "text-green-400" : marginLevel > 100 ? "text-yellow-400" : "text-red-400"}`}
+          >
+            {marginLevel === Infinity ? "∞" : marginLevel.toFixed(0)}%
           </div>
         </div>
         <div className="rounded-xl border border-border bg-card p-6">
           <div className="text-xs text-muted-foreground">Margin Usage</div>
-          <div className={`mt-1 text-xl font-bold ${marginUsagePercent < 30 ? 'text-green-400' : marginUsagePercent < 50 ? 'text-yellow-400' : 'text-red-400'}`}>
+          <div
+            className={`mt-1 text-xl font-bold ${marginUsagePercent < 30 ? "text-green-400" : marginUsagePercent < 50 ? "text-yellow-400" : "text-red-400"}`}
+          >
             {marginUsagePercent.toFixed(1)}%
           </div>
         </div>
@@ -149,4 +179,3 @@ export default function MarginCalculatorPage() {
     </div>
   );
 }
-

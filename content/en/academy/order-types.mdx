@@ -11,7 +11,8 @@ lastUpdated: "2026-06-10"
 An order is an instruction to your broker to buy or sell an asset. Different order types give you control over **when**, **at what price**, and **under what conditions** your trade executes. Mastering order types is essential for precise trade execution.
 
 <Callout type="info" title="Why Orders Matter">
-The difference between a profitable and losing trade can come down to execution. Using the right order type means better entries, tighter risk management, and avoiding slippage during volatile conditions.
+  The difference between a profitable and losing trade can come down to execution. Using the right order type means
+  better entries, tighter risk management, and avoiding slippage during volatile conditions.
 </Callout>
 
 ---
@@ -22,13 +23,13 @@ The difference between a profitable and losing trade can come down to execution.
 
 Executes **immediately** at the best available price.
 
-| Aspect | Detail |
-|--------|--------|
-| Speed | Instant execution |
-| Price | Current market price (may slip) |
+| Aspect    | Detail                                     |
+| --------- | ------------------------------------------ |
+| Speed     | Instant execution                          |
+| Price     | Current market price (may slip)            |
 | Guarantee | Execution guaranteed, price not guaranteed |
-| Best For | When you MUST enter/exit NOW |
-| Risk | Slippage during volatile conditions |
+| Best For  | When you MUST enter/exit NOW               |
+| Risk      | Slippage during volatile conditions        |
 
 **Use When:** Closing a losing position, entering during fast breakouts, or when exact price matters less than being in the trade.
 
@@ -36,9 +37,9 @@ Executes **immediately** at the best available price.
 
 Executes only at your **specified price or better**.
 
-| Type | Description |
-|------|-------------|
-| **Buy Limit** | Buy at specified price or LOWER (below current price) |
+| Type           | Description                                             |
+| -------------- | ------------------------------------------------------- |
+| **Buy Limit**  | Buy at specified price or LOWER (below current price)   |
 | **Sell Limit** | Sell at specified price or HIGHER (above current price) |
 
 **Use When:** You want a specific entry price, buying at support, selling at resistance, or taking profit.
@@ -47,9 +48,9 @@ Executes only at your **specified price or better**.
 
 Becomes a market order when price reaches your **trigger price**.
 
-| Type | Description |
-|------|-------------|
-| **Buy Stop** | Triggers buy when price rises ABOVE specified level |
+| Type          | Description                                          |
+| ------------- | ---------------------------------------------------- |
+| **Buy Stop**  | Triggers buy when price rises ABOVE specified level  |
 | **Sell Stop** | Triggers sell when price falls BELOW specified level |
 
 **Use When:** Stop losses, breakout entries, or protecting profits.
@@ -97,20 +98,21 @@ Automatically closes your position at a specified loss level.
 
 ## Order Type Summary Table
 
-| Order Type | Execution | Price Control | Best Use Case |
-|-----------|-----------|---------------|---------------|
-| Market | Immediate | None | Urgent entry/exit |
-| Limit | At price or better | Full | Planned entries at S/R |
-| Stop Market | At trigger → market | Trigger only | Stop losses, breakouts |
-| Stop-Limit | At trigger → limit | Full | Controlled stops |
-| Trailing Stop | Moves with price | Dynamic | Riding trends |
-| OCO | One triggers, other cancels | Both orders | SL + TP combo |
+| Order Type    | Execution                   | Price Control | Best Use Case          |
+| ------------- | --------------------------- | ------------- | ---------------------- |
+| Market        | Immediate                   | None          | Urgent entry/exit      |
+| Limit         | At price or better          | Full          | Planned entries at S/R |
+| Stop Market   | At trigger → market         | Trigger only  | Stop losses, breakouts |
+| Stop-Limit    | At trigger → limit          | Full          | Controlled stops       |
+| Trailing Stop | Moves with price            | Dynamic       | Riding trends          |
+| OCO           | One triggers, other cancels | Both orders   | SL + TP combo          |
 
 ---
 
 ## Practical Examples
 
 ### Scenario 1: Buying at Support
+
 ```
 Current price: 1.1050
 Support level: 1.1000
@@ -123,6 +125,7 @@ R:R = 1:3.3
 ```
 
 ### Scenario 2: Breakout Entry
+
 ```
 Current price: 1.1000
 Resistance: 1.1050
@@ -135,6 +138,7 @@ R:R = 1:2.7
 ```
 
 ### Scenario 3: Protecting Profits
+
 ```
 Entry: 1.1000 (Long)
 Current price: 1.1080 (+80 pips)
@@ -149,13 +153,13 @@ Option C: Close 50%, trail rest
 
 ## Common Mistakes
 
-| Mistake | Consequence | Solution |
-|---------|-------------|----------|
-| Market order in low liquidity | Massive slippage | Use limit orders instead |
-| No stop loss | Unlimited loss potential | ALWAYS set SL |
-| Stop too tight | Stopped out by noise | Give room based on ATR |
-| Limit too far from price | Never fills | Set realistic levels |
-| Moving stop loss further | Larger loss than planned | Accept original risk |
+| Mistake                       | Consequence              | Solution                 |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Market order in low liquidity | Massive slippage         | Use limit orders instead |
+| No stop loss                  | Unlimited loss potential | ALWAYS set SL            |
+| Stop too tight                | Stopped out by noise     | Give room based on ATR   |
+| Limit too far from price      | Never fills              | Set realistic levels     |
+| Moving stop loss further      | Larger loss than planned | Accept original risk     |
 
 ---
 

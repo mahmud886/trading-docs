@@ -11,7 +11,8 @@ lastUpdated: "2026-06-10"
 Understanding trading terminology is the foundation of market literacy. Without knowing what a pip is, how lots work, or what leverage means, you cannot properly analyze trades or manage risk.
 
 <Callout type="info" title="Why Terminology Matters">
-Every trading discussion, analysis, and strategy uses standardized terminology. Misunderstanding a single term can lead to incorrect position sizing, miscalculated risk, or missed opportunities.
+  Every trading discussion, analysis, and strategy uses standardized terminology. Misunderstanding a single term can
+  lead to incorrect position sizing, miscalculated risk, or missed opportunities.
 </Callout>
 
 ---
@@ -21,18 +22,19 @@ Every trading discussion, analysis, and strategy uses standardized terminology. 
 A **Pip** (Percentage in Point / Price Interest Point) is the **smallest standard unit of price movement** in forex trading.
 
 ### Pip Measurement:
+
 - **Most currency pairs:** 4th decimal place (0.000**1**)
 - **JPY pairs:** 2nd decimal place (0.0**1**)
 
 ### Examples:
 
-| Pair | Movement | Pip Change |
-|------|----------|------------|
-| EUR/USD | 1.0900 → 1.0910 | +10 pips |
-| EUR/USD | 1.0900 → 1.0885 | -15 pips |
-| USD/JPY | 150.00 → 150.50 | +50 pips |
-| USD/JPY | 150.00 → 149.70 | -30 pips |
-| GBP/USD | 1.2700 → 1.2745 | +45 pips |
+| Pair    | Movement        | Pip Change |
+| ------- | --------------- | ---------- |
+| EUR/USD | 1.0900 → 1.0910 | +10 pips   |
+| EUR/USD | 1.0900 → 1.0885 | -15 pips   |
+| USD/JPY | 150.00 → 150.50 | +50 pips   |
+| USD/JPY | 150.00 → 149.70 | -30 pips   |
+| GBP/USD | 1.2700 → 1.2745 | +45 pips   |
 
 ---
 
@@ -53,14 +55,15 @@ Many modern brokers show pipette-level pricing for more precise entries and exit
 
 ## Points vs. Pips
 
-| Term | Used In | Definition |
-|------|---------|------------|
-| **Pip** | Forex | 4th decimal (0.0001) or 2nd for JPY |
-| **Point** | Indices, Stocks | Minimum price increment for that instrument |
-| **Tick** | Futures | Minimum price movement for futures contracts |
-| **Cent** | Commodities (Gold) | $0.01 movement |
+| Term      | Used In            | Definition                                   |
+| --------- | ------------------ | -------------------------------------------- |
+| **Pip**   | Forex              | 4th decimal (0.0001) or 2nd for JPY          |
+| **Point** | Indices, Stocks    | Minimum price increment for that instrument  |
+| **Tick**  | Futures            | Minimum price movement for futures contracts |
+| **Cent**  | Commodities (Gold) | $0.01 movement                               |
 
 ### Examples:
+
 - **S&P 500:** 1 point = $1 per contract
 - **Gold:** 1 point = $1 (but measured in cents: $0.01 = 1 cent)
 - **Bitcoin:** 1 point = $1
@@ -74,14 +77,15 @@ The monetary value of one pip depends on your **lot size** and the **currency pa
 
 ### Standard Pip Values (USD pairs):
 
-| Lot Size | Name | Units | Pip Value |
-|----------|------|-------|-----------|
-| 1.00 | Standard Lot | 100,000 | $10.00 |
-| 0.10 | Mini Lot | 10,000 | $1.00 |
-| 0.01 | Micro Lot | 1,000 | $0.10 |
-| 0.001 | Nano Lot | 100 | $0.01 |
+| Lot Size | Name         | Units   | Pip Value |
+| -------- | ------------ | ------- | --------- |
+| 1.00     | Standard Lot | 100,000 | $10.00    |
+| 0.10     | Mini Lot     | 10,000  | $1.00     |
+| 0.01     | Micro Lot    | 1,000   | $0.10     |
+| 0.001    | Nano Lot     | 100     | $0.01     |
 
 ### Pip Value Formula:
+
 ```
 Pip Value = (Pip Size ÷ Exchange Rate) × Lot Size in Units
 
@@ -93,7 +97,8 @@ Pip Value = (0.01 ÷ 150.00) × 100,000 = $6.67
 ```
 
 <Callout type="warning" title="Important">
-Pip value varies by pair and exchange rate. For pairs where USD is the quote currency (EUR/USD, GBP/USD), pip value is always $10 per standard lot. For other pairs, it fluctuates.
+  Pip value varies by pair and exchange rate. For pairs where USD is the quote currency (EUR/USD, GBP/USD), pip value is
+  always $10 per standard lot. For other pairs, it fluctuates.
 </Callout>
 
 ---
@@ -106,14 +111,15 @@ A **Lot** is the standardized unit for measuring trade size. It determines how m
 
 ### Forex Lot Sizes:
 
-| Lot Type | Size | 1 Pip Worth | Suitable For |
-|----------|------|-------------|--------------|
-| **Standard** (1.0) | 100,000 units | $10 | $10,000+ accounts |
-| **Mini** (0.10) | 10,000 units | $1 | $1,000-10,000 accounts |
-| **Micro** (0.01) | 1,000 units | $0.10 | $100-1,000 accounts |
-| **Nano** (0.001) | 100 units | $0.01 | Demo/practice |
+| Lot Type           | Size          | 1 Pip Worth | Suitable For           |
+| ------------------ | ------------- | ----------- | ---------------------- |
+| **Standard** (1.0) | 100,000 units | $10         | $10,000+ accounts      |
+| **Mini** (0.10)    | 10,000 units  | $1          | $1,000-10,000 accounts |
+| **Micro** (0.01)   | 1,000 units   | $0.10       | $100-1,000 accounts    |
+| **Nano** (0.001)   | 100 units     | $0.01       | Demo/practice          |
 
 ### Position Sizing Example:
+
 ```
 Account: $5,000
 Risk: 1% = $50
@@ -128,60 +134,61 @@ Lot Size: $2 ÷ $10 = 0.20 lots (2 mini lots)
 
 ### Order & Execution Terms:
 
-| Term | Definition |
-|------|-----------|
-| **Market Order** | Buy/sell at current price immediately |
-| **Limit Order** | Buy/sell at specified price or better |
-| **Stop Order** | Buy/sell when price reaches trigger level |
-| **Stop Loss (SL)** | Order to close position at maximum loss |
-| **Take Profit (TP)** | Order to close position at target profit |
-| **Slippage** | Difference between expected and actual fill price |
-| **Fill** | Confirmation that your order has been executed |
+| Term                 | Definition                                        |
+| -------------------- | ------------------------------------------------- |
+| **Market Order**     | Buy/sell at current price immediately             |
+| **Limit Order**      | Buy/sell at specified price or better             |
+| **Stop Order**       | Buy/sell when price reaches trigger level         |
+| **Stop Loss (SL)**   | Order to close position at maximum loss           |
+| **Take Profit (TP)** | Order to close position at target profit          |
+| **Slippage**         | Difference between expected and actual fill price |
+| **Fill**             | Confirmation that your order has been executed    |
 
 ### Position Terms:
 
-| Term | Definition |
-|------|-----------|
-| **Long** | Buying an asset (profit when price rises) |
-| **Short** | Selling an asset (profit when price falls) |
-| **Entry** | Price where you open a position |
-| **Exit** | Price where you close a position |
-| **Open Position** | Active trade that hasn't been closed |
-| **Flat** | No open positions |
+| Term              | Definition                                 |
+| ----------------- | ------------------------------------------ |
+| **Long**          | Buying an asset (profit when price rises)  |
+| **Short**         | Selling an asset (profit when price falls) |
+| **Entry**         | Price where you open a position            |
+| **Exit**          | Price where you close a position           |
+| **Open Position** | Active trade that hasn't been closed       |
+| **Flat**          | No open positions                          |
 
 ### Risk & Money Terms:
 
-| Term | Definition |
-|------|-----------|
-| **Leverage** | Borrowed capital to control larger positions |
-| **Margin** | Deposit required to open leveraged position |
-| **Margin Call** | Warning that margin is running low |
-| **Stop Out** | Broker forcibly closes positions |
-| **Drawdown** | Peak-to-trough decline in account equity |
-| **Risk-Reward (R:R)** | Ratio of potential loss vs. potential gain |
-| **Win Rate** | Percentage of trades that are profitable |
-| **Equity** | Account balance + floating P&L |
+| Term                  | Definition                                   |
+| --------------------- | -------------------------------------------- |
+| **Leverage**          | Borrowed capital to control larger positions |
+| **Margin**            | Deposit required to open leveraged position  |
+| **Margin Call**       | Warning that margin is running low           |
+| **Stop Out**          | Broker forcibly closes positions             |
+| **Drawdown**          | Peak-to-trough decline in account equity     |
+| **Risk-Reward (R:R)** | Ratio of potential loss vs. potential gain   |
+| **Win Rate**          | Percentage of trades that are profitable     |
+| **Equity**            | Account balance + floating P&L               |
 
 ### Market Analysis Terms:
 
-| Term | Definition |
-|------|-----------|
-| **Support** | Price level where buying pressure is strong |
-| **Resistance** | Price level where selling pressure is strong |
-| **Trend** | General direction of price movement |
-| **Bullish** | Expecting price to rise |
-| **Bearish** | Expecting price to fall |
-| **Consolidation** | Price moving sideways in a range |
-| **Breakout** | Price moving beyond support/resistance |
-| **Pullback** | Temporary reversal against the trend |
-| **Volatility** | Degree of price fluctuation |
-| **Liquidity** | Ease of buying/selling without impacting price |
+| Term              | Definition                                     |
+| ----------------- | ---------------------------------------------- |
+| **Support**       | Price level where buying pressure is strong    |
+| **Resistance**    | Price level where selling pressure is strong   |
+| **Trend**         | General direction of price movement            |
+| **Bullish**       | Expecting price to rise                        |
+| **Bearish**       | Expecting price to fall                        |
+| **Consolidation** | Price moving sideways in a range               |
+| **Breakout**      | Price moving beyond support/resistance         |
+| **Pullback**      | Temporary reversal against the trend           |
+| **Volatility**    | Degree of price fluctuation                    |
+| **Liquidity**     | Ease of buying/selling without impacting price |
 
 ---
 
 ## Leverage & Margin Explained (Brief)
 
 ### Leverage:
+
 Allows you to control a large position with small capital.
 
 ```
@@ -194,6 +201,7 @@ BUT: 1% adverse move = $1,000 loss = YOUR ENTIRE ACCOUNT
 ```
 
 ### Margin:
+
 The collateral (deposit) required to open a leveraged trade.
 
 ```
@@ -209,15 +217,15 @@ Example:
 
 ## Key Formulas Every Trader Must Know
 
-| Formula | Calculation |
-|---------|------------|
-| **Pip Value** | (Pip Size ÷ Rate) × Lot Units |
-| **Position Size** | (Risk $) ÷ (SL pips × Pip Value) |
-| **Risk %** | (SL pips × Pip Value × Lots) ÷ Account × 100 |
-| **Risk-Reward** | TP distance ÷ SL distance |
-| **Margin Required** | Position Size ÷ Leverage |
-| **Profit/Loss** | Pips gained/lost × Pip Value × Lots |
-| **Break Even** | Entry ± (Spread + Commission in pips) |
+| Formula             | Calculation                                  |
+| ------------------- | -------------------------------------------- |
+| **Pip Value**       | (Pip Size ÷ Rate) × Lot Units                |
+| **Position Size**   | (Risk $) ÷ (SL pips × Pip Value)             |
+| **Risk %**          | (SL pips × Pip Value × Lots) ÷ Account × 100 |
+| **Risk-Reward**     | TP distance ÷ SL distance                    |
+| **Margin Required** | Position Size ÷ Leverage                     |
+| **Profit/Loss**     | Pips gained/lost × Pip Value × Lots          |
+| **Break Even**      | Entry ± (Spread + Commission in pips)        |
 
 ---
 

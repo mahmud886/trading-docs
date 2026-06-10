@@ -16,7 +16,8 @@ featured: true
 Global Investment Banks এবং Hedge Funds এর Risk Management Teams শুধু Per-Trade Risk দেখে না — তারা একটি Multi-Layered Risk Framework ব্যবহার করে যেখানে প্রতিটি স্তর একটি Safety Net হিসেবে কাজ করে। Goldman Sachs, JP Morgan, এবং Citadel এর মতো প্রতিষ্ঠান প্রতিদিন তাদের Portfolio Risk কে Real-Time এ Monitor করে এবং Automated Risk Limits ব্যবহার করে।
 
 <Callout type="info" title="The Professional Standard">
-Prop Firms শুধু Per-Trade Risk দেখে না। তারা Daily Drawdown, Weekly Drawdown, Maximum Drawdown, Correlation Exposure, এবং Win-Rate Adjusted Expectancy মনিটর করে। এগুলো Master করলে আপনি যেকোনো Prop Firm Challenge পাস করতে পারবেন।
+  Prop Firms শুধু Per-Trade Risk দেখে না। তারা Daily Drawdown, Weekly Drawdown, Maximum Drawdown, Correlation Exposure,
+  এবং Win-Rate Adjusted Expectancy মনিটর করে। এগুলো Master করলে আপনি যেকোনো Prop Firm Challenge পাস করতে পারবেন।
 </Callout>
 
 ### কেন Risk Management সবচেয়ে গুরুত্বপূর্ণ Skill?
@@ -32,7 +33,7 @@ Institutional Research দেখায় যে **90% এরও বেশি Re
 ### Level 1: Per-Trade Risk — আপনার প্রথম প্রতিরক্ষা স্তর
 
 | Account Size       | Recommended Risk | Max Risk (Aggressive) | Institutional Standard |
-|--------------------|------------------|-----------------------|------------------------|
+| ------------------ | ---------------- | --------------------- | ---------------------- |
 | $1,000 - $5,000    | 1%               | 1.5%                  | Growth Phase           |
 | $5,000 - $25,000   | 0.5% - 1%        | 1.5%                  | Standard Retail        |
 | $25,000 - $100,000 | 0.5%             | 1%                    | Semi-Professional      |
@@ -104,7 +105,7 @@ Total Drawdown Before Reassessment: **10-15%**
 #### Drawdown Recovery Mathematics: একটি গুরুত্বপূর্ণ সত্য
 
 | Drawdown | Recovery Required | Difficulty    |
-|----------|-------------------|---------------|
+| -------- | ----------------- | ------------- |
 | 5%       | 5.3%              | সহজ           |
 | 10%      | 11.1%             | সম্ভব         |
 | 20%      | 25.0%             | কঠিন          |
@@ -174,7 +175,8 @@ Recommended: 37% ÷ 4 = 9.25% → 5-8% ব্যবহার করুন
 ```
 
 <Callout type="warning" title="Kelly Criterion Warning">
-Full Kelly অত্যন্ত Aggressive এবং Zero Psychological Factors সহ Perfect Execution Assume করে। সবসময় Quarter Kelly (÷4) বা তার কম ব্যবহার করুন। বেশিরভাগ Professionals 1-2% ব্যবহার করে যা Quarter Kelly এরও নিচে।
+  Full Kelly অত্যন্ত Aggressive এবং Zero Psychological Factors সহ Perfect Execution Assume করে। সবসময় Quarter Kelly
+  (÷4) বা তার কম ব্যবহার করুন। বেশিরভাগ Professionals 1-2% ব্যবহার করে যা Quarter Kelly এরও নিচে।
 </Callout>
 
 #### Kelly Criterion: Historical Context ও Institutional Use
@@ -211,7 +213,7 @@ Optimal f = Maximum Historical Loss / Account Size Fraction
 ### নিয়মাবলী:
 
 | Rule                         | Details                                   | Institutional Standard |
-|------------------------------|-------------------------------------------|------------------------|
+| ---------------------------- | ----------------------------------------- | ---------------------- |
 | **Max Portfolio Heat**       | 5% (কখনো 5% এর বেশি Total Risk রাখবেন না) | 3-5%                   |
 | **Max Correlated Positions** | 2 (যেমন একই দিকে সর্বোচ্চ 2টি USD Pair)   | 2-3                    |
 | **Max Open Positions**       | 3-4টি Total                               | 5-10 (Larger Accounts) |
@@ -240,6 +242,7 @@ Professional Portfolio Managers **Gross Exposure** এবং **Net Exposure** �
 - **Net Exposure** = Long Positions - Short Positions
 
 উদাহরণ:
+
 ```
 Long Positions: 60% of Capital
 Short Positions: 40% of Capital
@@ -258,7 +261,7 @@ Correlated Trades আপনার Risk অজান্তে গুণিত ক
 ### High Correlation Pairs (একসাথে চলে):
 
 | Pair 1  | Pair 2  | Correlation | Risk Implication   |
-|---------|---------|-------------|--------------------|
+| ------- | ------- | ----------- | ------------------ |
 | EUR/USD | GBP/USD | +0.85       | প্রায় একই Trade   |
 | EUR/USD | AUD/USD | +0.70       | Strong Overlap     |
 | USD/CHF | USD/JPY | +0.65       | Moderate Overlap   |
@@ -269,7 +272,7 @@ Correlated Trades আপনার Risk অজান্তে গুণিত ক
 ### Negative Correlation (বিপরীত দিকে চলে):
 
 | Pair 1  | Pair 2  | Correlation | Hedging Potential    |
-|---------|---------|-------------|----------------------|
+| ------- | ------- | ----------- | -------------------- |
 | EUR/USD | USD/CHF | -0.90       | Natural Hedge        |
 | EUR/USD | DXY     | -0.95       | Dollar Inverse       |
 | Gold    | DXY     | -0.80       | Safe Haven vs Dollar |
@@ -286,6 +289,7 @@ Correlated Trades আপনার Risk অজান্তে গুণিত ক
 ### Dynamic Correlation Monitoring
 
 Professional Traders প্রতি সপ্তাহে তাদের Correlation Matrix Update করে কারণ:
+
 - Correlation Static নয়, সময়ের সাথে পরিবর্তিত হয়
 - Central Bank Policy Changes Correlation কে Shift করতে পারে
 - Geopolitical Events নতুন Correlation তৈরি করতে পারে
@@ -319,7 +323,7 @@ Expectancy = +$37.50 প্রতি Trade
 Professional Trading Desks শুধু Overall Expectancy দেখে না, তারা Segment করে:
 
 | Segment        | Win Rate | Avg Win | Avg Loss | Expectancy |
-|----------------|----------|---------|----------|------------|
+| -------------- | -------- | ------- | -------- | ---------- |
 | London Session | 62%      | 1.8R    | 1R       | +$73/Trade |
 | NY Session     | 51%      | 2.1R    | 1R       | +$58/Trade |
 | Asian Session  | 45%      | 1.2R    | 1R       | -$1/Trade  |
@@ -412,7 +416,7 @@ Professional Traders সময় ভিত্তিক Exit ও ব্যবহ
 ## Prop Firm Risk Rules: Professional Standard Reference
 
 | Rule            | Typical Prop Firm  | Your Personal Rule    | কেন Stricter    |
-|-----------------|--------------------|-----------------------|-----------------|
+| --------------- | ------------------ | --------------------- | --------------- |
 | Daily Drawdown  | 5% Max             | 3% Max (Stricter)     | Buffer রাখুন    |
 | Total Drawdown  | 10% Max            | 8% Max (Stricter)     | Safety Margin   |
 | Per-Trade Risk  | Not Specified      | 0.5-1%                | Consistency     |
@@ -421,7 +425,8 @@ Professional Traders সময় ভিত্তিক Exit ও ব্যবহ
 | Weekend Holding | Usually Allowed    | Close Friday          | Gap Risk        |
 
 <Callout type="tip" title="Pro Tip: Buffer Strategy">
-সবসময় Prop Firm Rules এর চেয়ে Stricter Trade করুন। যদি তারা 5% Daily Allow করে, আপনার Limit 3%। যদি তারা 10% Total Allow করে, আপনারটা 8%। এই Buffer আপনাকে একটি Bad Day তে Cut হওয়া থেকে রক্ষা করে।
+  সবসময় Prop Firm Rules এর চেয়ে Stricter Trade করুন। যদি তারা 5% Daily Allow করে, আপনার Limit 3%। যদি তারা 10% Total
+  Allow করে, আপনারটা 8%। এই Buffer আপনাকে একটি Bad Day তে Cut হওয়া থেকে রক্ষা করে।
 </Callout>
 
 ### Prop Firm Pass Strategy: Risk-First Approach
@@ -536,7 +541,7 @@ Probability of Ruin: 23.1%
 ### The Drawdown Response System
 
 | Drawdown Level | Action             | Emotional State |
-|----------------|--------------------|-----------------|
+| -------------- | ------------------ | --------------- |
 | 0-3%           | Normal Trading     | Confident       |
 | 3-5%           | Reduce Size by 25% | Cautious        |
 | 5-7%           | Reduce Size by 50% | Concerned       |
@@ -608,6 +613,7 @@ Stress Test Scenarios:
 ### Loss Aversion Bias
 
 Behavioral Economics Research (Kahneman & Tversky) দেখায়:
+
 - মানুষ Loss কে Gain এর **2.5× বেশি** তীব্রভাবে অনুভব করে
 - $100 Loss এর Pain = $250 Gain এর Joy
 - এজন্য Traders প্রায়ই Winners তাড়াতাড়ি Close করে এবং Losers ধরে রাখে
@@ -660,7 +666,7 @@ Pre-Trade Risk Check:
 ## Key Takeaways: Professional Risk Management Summary
 
 | Concept             | Rule                                         | Institutional Standard |
-|---------------------|----------------------------------------------|------------------------|
+| ------------------- | -------------------------------------------- | ---------------------- |
 | **Per-Trade Risk**  | 0.5-1% (কখনো 2% অতিক্রম করবেন না)            | 0.1-0.5%               |
 | **Daily Max Loss**  | 3% তারপর STOP                                | 2-3%                   |
 | **Weekly Max Loss** | 5% তারপর সোমবার পর্যন্ত STOP                 | 3-5%                   |
@@ -687,4 +693,3 @@ Risk Management শুধু একটি Tool নয় — এটি একট
 মনে রাখবেন: **আপনার Goal হলো Game এ থাকা।** যতদিন আপনি Game এ আছেন, ততদিন Opportunities আসবে। কিন্তু একবার আপনার Capital শেষ হলে, Game Over।
 
 সম্পূর্ণ পাঠের জন্য দেখুন: [Risk Management](/bn/academy/risk-management) এবং [Position Sizing](/bn/academy/position-sizing)।
-

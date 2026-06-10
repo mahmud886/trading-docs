@@ -1,14 +1,29 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
-const C = join(process.cwd(), 'content');
+import { writeFileSync } from "fs";
+import { join } from "path";
+const C = join(process.cwd(), "content");
 const w = (l, slug, f, c) => {
-  writeFileSync(join(C, l, 'smc', slug + '.mdx'), `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-06-10"\n---\n` + c, 'utf-8');
+  writeFileSync(
+    join(C, l, "smc", slug + ".mdx"),
+    `---\ntitle: "${f.title}"\ndescription: "${f.description}"\nlevel: ${f.level}\norder: ${f.order}\nlastUpdated: "2026-06-10"\n---\n` +
+      c,
+    "utf-8",
+  );
   console.log(`✅ ${l}/smc/${slug}`);
 };
 
 // SMC BATCH 1: accumulation, distribution, reaccumulation, manipulation
 
-w('en', 'accumulation', {title:"SMC Accumulation — Complete Guide",description:"Master the Accumulation phase. Learn how smart money builds positions at discount before markup begins.",level:"intermediate",order:11}, `
+w(
+  "en",
+  "accumulation",
+  {
+    title: "SMC Accumulation — Complete Guide",
+    description:
+      "Master the Accumulation phase. Learn how smart money builds positions at discount before markup begins.",
+    level: "intermediate",
+    order: 11,
+  },
+  `
 ## What is Accumulation?
 
 Accumulation is the **first phase** of the institutional cycle where smart money builds large long positions at discount prices. Market appears ranging/bearish, but institutions are absorbing all sell orders.
@@ -103,9 +118,20 @@ Key: DON'T buy blindly in range. Wait for SWEEP + STRUCTURAL SHIFT.
 - [Liquidity Pools](/en/smc/liquidity-pools) — Sweeps during accumulation
 - [Wyckoff Relation](/en/smc/wyckoff-relation) — Wyckoff accumulation model
 - [Premium & Discount](/en/smc/premium-discount) — Buying at discount zones
-`);
+`,
+);
 
-w('bn', 'accumulation', {title:"SMC Accumulation — সম্পূর্ণ গাইড",description:"Accumulation Phase আয়ত্ত করুন। Markup শুরুর আগে Smart Money কীভাবে Discount-এ Position তৈরি করে শিখুন।",level:"intermediate",order:11}, `
+w(
+  "bn",
+  "accumulation",
+  {
+    title: "SMC Accumulation — সম্পূর্ণ গাইড",
+    description:
+      "Accumulation Phase আয়ত্ত করুন। Markup শুরুর আগে Smart Money কীভাবে Discount-এ Position তৈরি করে শিখুন।",
+    level: "intermediate",
+    order: 11,
+  },
+  `
 ## Accumulation কী?
 
 Accumulation হলো Institutional Cycle-এর **প্রথম Phase** যেখানে Smart Money Discount Price-এ বড় Long Position তৈরি করে। Market Ranging/Bearish দেখায়, কিন্তু Institution সব Sell Order Absorb করছে।
@@ -186,9 +212,19 @@ Institution Market-এ কিনতে পারে না — Size Price Spike 
 - [Reaccumulation](/bn/smc/reaccumulation) — Mid-trend Accumulation
 - [Liquidity Pools](/bn/smc/liquidity-pools) — Accumulation-এ Sweep
 - [Wyckoff Relation](/bn/smc/wyckoff-relation) — Wyckoff Accumulation Model
-`);
+`,
+);
 
-w('en', 'distribution', {title:"SMC Distribution — Complete Guide",description:"Master the Distribution phase — how smart money exits positions at premium before markdown.",level:"intermediate",order:12}, `
+w(
+  "en",
+  "distribution",
+  {
+    title: "SMC Distribution — Complete Guide",
+    description: "Master the Distribution phase — how smart money exits positions at premium before markdown.",
+    level: "intermediate",
+    order: 12,
+  },
+  `
 ## What is Distribution?
 
 Distribution is the **third phase** where smart money offloads positions at premium prices. The market looks bullish — retail traders are buying — but institutions are secretly selling into their buying pressure.
@@ -259,9 +295,19 @@ Short Entry Strategy:
 - [Premium & Discount](/en/smc/premium-discount) — Selling at premium
 - [Manipulation](/en/smc/manipulation) — Distribution sweeps
 - [Wyckoff Relation](/en/smc/wyckoff-relation) — Wyckoff distribution model
-`);
+`,
+);
 
-w('bn', 'distribution', {title:"SMC Distribution — সম্পূর্ণ গাইড",description:"Distribution Phase আয়ত্ত করুন — Markdown-এর আগে Smart Money কীভাবে Premium-এ Position Exit করে।",level:"intermediate",order:12}, `
+w(
+  "bn",
+  "distribution",
+  {
+    title: "SMC Distribution — সম্পূর্ণ গাইড",
+    description: "Distribution Phase আয়ত্ত করুন — Markdown-এর আগে Smart Money কীভাবে Premium-এ Position Exit করে।",
+    level: "intermediate",
+    order: 12,
+  },
+  `
 ## Distribution কী?
 
 Distribution হলো **তৃতীয় Phase** যেখানে Smart Money Premium Price-এ Position ছাড়ে। Market Bullish দেখায় — Retail কিনছে — কিন্তু Institution তাদের Buying Pressure-এ গোপনে বিক্রি করছে।
@@ -320,9 +366,20 @@ Short Entry Strategy:
 - [Premium ও Discount](/bn/smc/premium-discount) — Premium-এ বিক্রি
 - [Manipulation](/bn/smc/manipulation) — Distribution Sweep
 - [Wyckoff Relation](/bn/smc/wyckoff-relation) — Wyckoff Distribution
-`);
+`,
+);
 
-w('en', 'reaccumulation', {title:"SMC Re-accumulation — Complete Guide",description:"Master Re-accumulation — mid-trend consolidation where smart money adds to winning positions before next expansion.",level:"advanced",order:24}, `
+w(
+  "en",
+  "reaccumulation",
+  {
+    title: "SMC Re-accumulation — Complete Guide",
+    description:
+      "Master Re-accumulation — mid-trend consolidation where smart money adds to winning positions before next expansion.",
+    level: "advanced",
+    order: 24,
+  },
+  `
 ## What is Re-accumulation?
 
 Re-accumulation is a **consolidation phase within an uptrend** where smart money adds to existing long positions before pushing price higher. It looks like accumulation but occurs MID-TREND, not at the bottom.
@@ -386,9 +443,20 @@ HIGH PROBABILITY because:
 - [BOS](/en/smc/bos) — Confirming trend continuation
 - [Liquidity Pools](/en/smc/liquidity-pools) — Sweeps in re-accumulation
 - [Premium & Discount](/en/smc/premium-discount) — Buying at range discount
-`);
+`,
+);
 
-w('bn', 'reaccumulation', {title:"SMC Re-accumulation — সম্পূর্ণ গাইড",description:"Re-accumulation আয়ত্ত করুন — পরবর্তী Expansion-এর আগে Smart Money Winner-এ যোগ করার Mid-trend Consolidation।",level:"advanced",order:24}, `
+w(
+  "bn",
+  "reaccumulation",
+  {
+    title: "SMC Re-accumulation — সম্পূর্ণ গাইড",
+    description:
+      "Re-accumulation আয়ত্ত করুন — পরবর্তী Expansion-এর আগে Smart Money Winner-এ যোগ করার Mid-trend Consolidation।",
+    level: "advanced",
+    order: 24,
+  },
+  `
 ## Re-accumulation কী?
 
 Re-accumulation হলো **Uptrend-এর মধ্যে Consolidation Phase** যেখানে Smart Money Price আরো উপরে ঠেলার আগে বিদ্যমান Long Position-এ যোগ করে। Accumulation-এর মতো কিন্তু Bottom-এ নয়, MID-TREND-এ ঘটে।
@@ -450,9 +518,20 @@ HIGH PROBABILITY কারণ:
 - [Accumulation](/bn/smc/accumulation) — প্রাথমিক Position তৈরি
 - [BOS](/bn/smc/bos) — Trend Continuation Confirm
 - [Liquidity Pools](/bn/smc/liquidity-pools) — Re-accumulation-এ Sweep
-`);
+`,
+);
 
-w('en', 'manipulation', {title:"SMC Manipulation — Complete Guide",description:"Master how institutions manipulate price. Learn stop hunts, false breakouts, news manipulation, and how to profit from engineered moves.",level:"intermediate",order:13}, `
+w(
+  "en",
+  "manipulation",
+  {
+    title: "SMC Manipulation — Complete Guide",
+    description:
+      "Master how institutions manipulate price. Learn stop hunts, false breakouts, news manipulation, and how to profit from engineered moves.",
+    level: "intermediate",
+    order: 13,
+  },
+  `
 ## What is Manipulation in SMC?
 
 Manipulation is the **deliberate engineering of price moves** by institutions to trigger retail stop losses, create liquidity, and fill large orders at optimal prices. It's not illegal — it's the natural result of institutions needing liquidity to execute.
@@ -533,9 +612,20 @@ Once you understand WHERE and WHEN institutions manipulate, you stop being the v
 - [Liquidity Pools](/en/smc/liquidity-pools) — Where manipulation targets
 - [Equal Highs & Lows](/en/smc/equal-highs-lows) — Key manipulation targets
 - [Kill Zones](/en/smc/kill-zones) — When manipulation happens most
-`);
+`,
+);
 
-w('bn', 'manipulation', {title:"SMC Manipulation — সম্পূর্ণ গাইড",description:"Institution কীভাবে Price Manipulate করে আয়ত্ত করুন। Stop Hunt, False Breakout, News Manipulation এবং Engineered Move থেকে Profit শিখুন।",level:"intermediate",order:13}, `
+w(
+  "bn",
+  "manipulation",
+  {
+    title: "SMC Manipulation — সম্পূর্ণ গাইড",
+    description:
+      "Institution কীভাবে Price Manipulate করে আয়ত্ত করুন। Stop Hunt, False Breakout, News Manipulation এবং Engineered Move থেকে Profit শিখুন।",
+    level: "intermediate",
+    order: 13,
+  },
+  `
 ## SMC-তে Manipulation কী?
 
 Manipulation হলো Retail Stop Loss Trigger, Liquidity তৈরি ও Optimal Price-এ বড় Order Fill করতে Institution-এর **ইচ্ছাকৃত Price Move Engineering**। এটি অবৈধ নয় — Institution-এর Execution-এ Liquidity প্রয়োজনের স্বাভাবিক ফলাফল।
@@ -616,8 +706,8 @@ Institution কোথায় ও কখন Manipulate করে বুঝল�
 - [Liquidity Pools](/bn/smc/liquidity-pools) — Manipulation কোথায় Target করে
 - [Equal Highs ও Lows](/bn/smc/equal-highs-lows) — মূল Manipulation Target
 - [Kill Zones](/bn/smc/kill-zones) — সবচেয়ে বেশি কখন ঘটে
-`);
+`,
+);
 
-console.log('\n✅ SMC Batch 1 Complete: 4 topics × 2 languages = 8 files');
-console.log('Topics: accumulation, distribution, reaccumulation, manipulation');
-
+console.log("\n✅ SMC Batch 1 Complete: 4 topics × 2 languages = 8 files");
+console.log("Topics: accumulation, distribution, reaccumulation, manipulation");

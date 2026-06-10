@@ -1,7 +1,7 @@
-import { writeFileSync, mkdirSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync, mkdirSync } from "fs";
+import { join } from "path";
 
-const contentDir = join(process.cwd(), 'content');
+const contentDir = join(process.cwd(), "content");
 
 function writeMdx(lang, category, slug, frontmatter, content) {
   const fm = `---
@@ -13,7 +13,7 @@ lastUpdated: "2026-06-10"
 ---
 `;
   const filePath = join(contentDir, lang, category, `${slug}.mdx`);
-  writeFileSync(filePath, fm + content, 'utf-8');
+  writeFileSync(filePath, fm + content, "utf-8");
   console.log(`✅ ${lang}/${category}/${slug}.mdx`);
 }
 
@@ -26,12 +26,18 @@ lastUpdated: "2026-06-10"
 // ============================
 // 1. WHAT IS TRADING — EN
 // ============================
-writeMdx('en', 'academy', 'what-is-trading', {
-  title: "What is Trading? — Complete Beginner Guide",
-  description: "Learn what trading is, how financial markets work, types of tradable instruments, and how to get started with trading. A complete foundational guide for beginners.",
-  level: "beginner",
-  order: 1
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "what-is-trading",
+  {
+    title: "What is Trading? — Complete Beginner Guide",
+    description:
+      "Learn what trading is, how financial markets work, types of tradable instruments, and how to get started with trading. A complete foundational guide for beginners.",
+    level: "beginner",
+    order: 1,
+  },
+  `
 ## What is Trading?
 
 Trading is the act of **buying and selling financial instruments** — such as currencies, stocks, commodities, or cryptocurrencies — with the goal of profiting from price movements. Unlike long-term investing, trading focuses on capturing short-to-medium term price fluctuations.
@@ -294,17 +300,24 @@ After understanding what trading is, continue your education:
 - [Forex Basics](/en/academy/forex-basics) — Learn the largest market
 - [Risk Management](/en/academy/risk-management) — Protect your capital
 - [Trading Psychology](/en/academy/trading-psychology) — Master your mindset
-`);
+`,
+);
 
 // ============================
 // 1. WHAT IS TRADING — BN
 // ============================
-writeMdx('bn', 'academy', 'what-is-trading', {
-  title: "Trading কী? — সম্পূর্ণ বিগিনার গাইড",
-  description: "Trading কী, Financial Market কীভাবে কাজ করে, কোন কোন Instrument Trade করা যায় এবং কীভাবে Trading শুরু করবেন — বিগিনারদের জন্য সম্পূর্ণ ফাউন্ডেশনাল গাইড।",
-  level: "beginner",
-  order: 1
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "what-is-trading",
+  {
+    title: "Trading কী? — সম্পূর্ণ বিগিনার গাইড",
+    description:
+      "Trading কী, Financial Market কীভাবে কাজ করে, কোন কোন Instrument Trade করা যায় এবং কীভাবে Trading শুরু করবেন — বিগিনারদের জন্য সম্পূর্ণ ফাউন্ডেশনাল গাইড।",
+    level: "beginner",
+    order: 1,
+  },
+  `
 ## Trading কী?
 
 Trading হলো **Financial Instrument কেনা-বেচা** করার প্রক্রিয়া — যেমন Currency, Stock, Commodity বা Cryptocurrency — যার মূল উদ্দেশ্য হলো Price Movement থেকে Profit অর্জন করা। Long-term Investing-এর বিপরীতে, Trading মূলত Short-to-medium term Price Fluctuation ক্যাপচার করার উপর ফোকাস করে।
@@ -567,17 +580,24 @@ Trading কী তা বোঝার পর, আপনার শিক্ষা
 - [Forex Basics](/bn/academy/forex-basics) — সবচেয়ে বড় Market শিখুন
 - [Risk Management](/bn/academy/risk-management) — আপনার Capital রক্ষা করুন
 - [Trading Psychology](/bn/academy/trading-psychology) — আপনার Mindset আয়ত্ত করুন
-`);
+`,
+);
 
 // ============================
 // 2. INVESTING VS TRADING — EN
 // ============================
-writeMdx('en', 'academy', 'investing-vs-trading', {
-  title: "Investing vs Trading — Key Differences Explained",
-  description: "Understand the fundamental differences between investing and trading. Learn which approach suits your goals, lifestyle, risk tolerance, and financial situation.",
-  level: "beginner",
-  order: 2
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "investing-vs-trading",
+  {
+    title: "Investing vs Trading — Key Differences Explained",
+    description:
+      "Understand the fundamental differences between investing and trading. Learn which approach suits your goals, lifestyle, risk tolerance, and financial situation.",
+    level: "beginner",
+    order: 2,
+  },
+  `
 ## Investing vs Trading: Two Paths to Wealth
 
 Investing and trading are fundamentally different approaches to profiting from financial markets. Understanding these differences helps you choose the right path — or combine both for optimal results.
@@ -802,17 +822,24 @@ The trading projection assumes consistent profitability which only 10-20% of tra
 - [Risk Management](/en/academy/risk-management) — Capital protection
 - [Trading Plan](/en/academy/trading-plan) — Strategy development
 - [Position Sizing](/en/academy/position-sizing) — Proper risk allocation
-`);
+`,
+);
 
 // ============================
 // 2. INVESTING VS TRADING — BN
 // ============================
-writeMdx('bn', 'academy', 'investing-vs-trading', {
-  title: "Investing vs Trading — মূল পার্থক্য ব্যাখ্যা",
-  description: "Investing ও Trading-এর মৌলিক পার্থক্য বুঝুন। জানুন কোন পদ্ধতি আপনার লক্ষ্য, জীবনধারা, Risk Tolerance এবং আর্থিক পরিস্থিতির জন্য উপযুক্ত।",
-  level: "beginner",
-  order: 2
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "investing-vs-trading",
+  {
+    title: "Investing vs Trading — মূল পার্থক্য ব্যাখ্যা",
+    description:
+      "Investing ও Trading-এর মৌলিক পার্থক্য বুঝুন। জানুন কোন পদ্ধতি আপনার লক্ষ্য, জীবনধারা, Risk Tolerance এবং আর্থিক পরিস্থিতির জন্য উপযুক্ত।",
+    level: "beginner",
+    order: 2,
+  },
+  `
 ## Investing vs Trading: সম্পদ তৈরির দুটি পথ
 
 Investing ও Trading হলো Financial Market থেকে Profit করার মৌলিকভাবে ভিন্ন দুটি পদ্ধতি। এই পার্থক্যগুলো বোঝা আপনাকে সঠিক পথ বেছে নিতে — অথবা সেরা ফলাফলের জন্য উভয়কে সংমিশ্রিত করতে সাহায্য করবে।
@@ -1006,17 +1033,24 @@ Trading Profit ব্যবহার করুন আপনার Investment Por
 - [Risk Management](/bn/academy/risk-management) — Capital সুরক্ষা
 - [Trading Plan](/bn/academy/trading-plan) — Strategy Development
 - [Position Sizing](/bn/academy/position-sizing) — সঠিক Risk Allocation
-`);
+`,
+);
 
 // ============================
 // 3. TYPES OF TRADERS — EN
 // ============================
-writeMdx('en', 'academy', 'types-of-traders', {
-  title: "Types of Traders — Scalper, Day Trader, Swing & Position Trader",
-  description: "Discover the four main types of traders: Scalper, Day Trader, Swing Trader, and Position Trader. Learn which trading style matches your personality, schedule, and goals.",
-  level: "beginner",
-  order: 3
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "types-of-traders",
+  {
+    title: "Types of Traders — Scalper, Day Trader, Swing & Position Trader",
+    description:
+      "Discover the four main types of traders: Scalper, Day Trader, Swing Trader, and Position Trader. Learn which trading style matches your personality, schedule, and goals.",
+    level: "beginner",
+    order: 3,
+  },
+  `
 ## Types of Traders — Find Your Style
 
 Every successful trader has found a style that matches their personality, schedule, and risk tolerance. There is no "best" style — only the best style **for you**.
@@ -1283,17 +1317,24 @@ Ask yourself these questions:
 - [Trading Psychology](/en/academy/trading-psychology) — Master your mindset
 - [Trading Plan](/en/academy/trading-plan) — Build your system
 - [Forex Basics](/en/academy/forex-basics) — Learn the market
-`);
+`,
+);
 
 // ============================
 // 3. TYPES OF TRADERS — BN
 // ============================
-writeMdx('bn', 'academy', 'types-of-traders', {
-  title: "Trader-দের ধরন — Scalper, Day Trader, Swing ও Position Trader",
-  description: "চারটি প্রধান Trader ধরন আবিষ্কার করুন: Scalper, Day Trader, Swing Trader এবং Position Trader। জানুন কোন Trading Style আপনার ব্যক্তিত্ব, সময়সূচি ও লক্ষ্যের সাথে মেলে।",
-  level: "beginner",
-  order: 3
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "types-of-traders",
+  {
+    title: "Trader-দের ধরন — Scalper, Day Trader, Swing ও Position Trader",
+    description:
+      "চারটি প্রধান Trader ধরন আবিষ্কার করুন: Scalper, Day Trader, Swing Trader এবং Position Trader। জানুন কোন Trading Style আপনার ব্যক্তিত্ব, সময়সূচি ও লক্ষ্যের সাথে মেলে।",
+    level: "beginner",
+    order: 3,
+  },
+  `
 ## Trader-দের ধরন — আপনার Style খুঁজুন
 
 প্রতিটি সফল Trader এমন একটি Style খুঁজে পেয়েছেন যা তাঁর ব্যক্তিত্ব, সময়সূচি ও Risk Tolerance-এর সাথে মেলে। কোনো "সেরা" Style নেই — শুধুমাত্র **আপনার জন্য** সেরা Style আছে।
@@ -1505,17 +1546,24 @@ H4/D1 Timeframe-এ **Swing Trading** দিয়ে শুরু করুন�
 - [Trading Psychology](/bn/academy/trading-psychology) — Mindset আয়ত্ত
 - [Trading Plan](/bn/academy/trading-plan) — System তৈরি
 - [Forex Basics](/bn/academy/forex-basics) — Market শিখুন
-`);
+`,
+);
 
 // ============================
 // 4. BID-ASK SPREAD — EN
 // ============================
-writeMdx('en', 'academy', 'bid-ask-spread', {
-  title: "Bid, Ask & Spread — Complete Mechanics Guide",
-  description: "Master bid-ask spread mechanics. Learn how spreads work, why they matter for your profitability, and how to minimize spread costs across different markets.",
-  level: "beginner",
-  order: 4
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "bid-ask-spread",
+  {
+    title: "Bid, Ask & Spread — Complete Mechanics Guide",
+    description:
+      "Master bid-ask spread mechanics. Learn how spreads work, why they matter for your profitability, and how to minimize spread costs across different markets.",
+    level: "beginner",
+    order: 4,
+  },
+  `
 ## Understanding Bid, Ask & Spread
 
 Every time you trade, you encounter the **bid-ask spread** — the difference between the buying and selling price. This is your first cost of trading and understanding it is essential for profitability.
@@ -1709,17 +1757,24 @@ A day trader making 5 trades daily on 1 standard lot can pay over $15,000/year j
 - [Order Types](/en/academy/order-types) — Execute at better prices
 - [Forex Basics](/en/academy/forex-basics) — Market fundamentals
 - [Position Sizing](/en/academy/position-sizing) — Calculate proper lot sizes
-`);
+`,
+);
 
 // ============================
 // 4. BID-ASK SPREAD — BN
 // ============================
-writeMdx('bn', 'academy', 'bid-ask-spread', {
-  title: "Bid, Ask ও Spread — সম্পূর্ণ Mechanics গাইড",
-  description: "Bid-Ask Spread Mechanics আয়ত্ত করুন। জানুন Spread কীভাবে কাজ করে, কেন এটি Profitability-র জন্য গুরুত্বপূর্ণ, এবং কীভাবে বিভিন্ন Market-এ Spread Cost কমাবেন।",
-  level: "beginner",
-  order: 4
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "bid-ask-spread",
+  {
+    title: "Bid, Ask ও Spread — সম্পূর্ণ Mechanics গাইড",
+    description:
+      "Bid-Ask Spread Mechanics আয়ত্ত করুন। জানুন Spread কীভাবে কাজ করে, কেন এটি Profitability-র জন্য গুরুত্বপূর্ণ, এবং কীভাবে বিভিন্ন Market-এ Spread Cost কমাবেন।",
+    level: "beginner",
+    order: 4,
+  },
+  `
 ## Bid, Ask ও Spread বোঝা
 
 প্রতিবার আপনি Trade করেন, আপনি **Bid-Ask Spread**-এর মুখোমুখি হন — কেনা ও বেচার Price-এর মধ্যে পার্থক্য। এটি আপনার Trading-এর প্রথম খরচ এবং Profitability-র জন্য এটি বোঝা অপরিহার্য।
@@ -1900,17 +1955,24 @@ Daily Spread Cost = গড় Spread × Pip Value × Lot Size × Trade সংখ
 - [Order Types](/bn/academy/order-types) — ভালো Price-এ Execute করুন
 - [Forex Basics](/bn/academy/forex-basics) — Market Fundamental
 - [Position Sizing](/bn/academy/position-sizing) — সঠিক Lot Size গণনা
-`);
+`,
+);
 
 // ============================
 // 5. PIPS, POINTS & TERMINOLOGY — EN
 // ============================
-writeMdx('en', 'academy', 'pips-points-terminology', {
-  title: "Pips, Points & Trading Terminology — Complete Guide",
-  description: "Master essential trading terminology: pips, pipettes, points, ticks, lot sizes, leverage, margin, and all the key terms every trader must know.",
-  level: "beginner",
-  order: 5
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "pips-points-terminology",
+  {
+    title: "Pips, Points & Trading Terminology — Complete Guide",
+    description:
+      "Master essential trading terminology: pips, pipettes, points, ticks, lot sizes, leverage, margin, and all the key terms every trader must know.",
+    level: "beginner",
+    order: 5,
+  },
+  `
 ## Pips, Points & Essential Trading Terminology
 
 Understanding trading terminology is the foundation of market literacy. Without knowing what a pip is, how lots work, or what leverage means, you cannot properly analyze trades or manage risk.
@@ -2133,17 +2195,24 @@ Example:
 - [Margin & Leverage](/en/academy/margin-leverage) — Risk of borrowed capital
 - [Forex Basics](/en/academy/forex-basics) — Complete forex guide
 - [Order Types](/en/academy/order-types) — All order types explained
-`);
+`,
+);
 
 // ============================
 // 5. PIPS, POINTS & TERMINOLOGY — BN
 // ============================
-writeMdx('bn', 'academy', 'pips-points-terminology', {
-  title: "Pip, Point ও Trading Terminology — সম্পূর্ণ গাইড",
-  description: "অত্যাবশ্যকীয় Trading Terminology আয়ত্ত করুন: Pip, Pipette, Point, Tick, Lot Size, Leverage, Margin এবং প্রতিটি Trader-এর জানা প্রয়োজনীয় সব Term।",
-  level: "beginner",
-  order: 5
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "pips-points-terminology",
+  {
+    title: "Pip, Point ও Trading Terminology — সম্পূর্ণ গাইড",
+    description:
+      "অত্যাবশ্যকীয় Trading Terminology আয়ত্ত করুন: Pip, Pipette, Point, Tick, Lot Size, Leverage, Margin এবং প্রতিটি Trader-এর জানা প্রয়োজনীয় সব Term।",
+    level: "beginner",
+    order: 5,
+  },
+  `
 ## Pip, Point ও অত্যাবশ্যকীয় Trading Terminology
 
 Trading Terminology বোঝা হলো Market Literacy-র ভিত্তি। Pip কী, Lot কীভাবে কাজ করে, বা Leverage-এর অর্থ কী না জানলে আপনি সঠিকভাবে Trade Analysis বা Risk Manage করতে পারবেন না।
@@ -2366,17 +2435,24 @@ Margin Required = Position Size ÷ Leverage
 - [Margin ও Leverage](/bn/academy/margin-leverage) — ধার করা Capital-এর Risk
 - [Forex Basics](/bn/academy/forex-basics) — সম্পূর্ণ Forex গাইড
 - [Order Types](/bn/academy/order-types) — সব Order Type ব্যাখ্যা
-`);
+`,
+);
 
 // ============================
 // 6. MARGIN & LEVERAGE — EN
 // ============================
-writeMdx('en', 'academy', 'margin-leverage', {
-  title: "Margin & Leverage — Complete Risk Guide",
-  description: "Understand how margin and leverage work in trading. Learn leverage ratios, margin requirements, margin calls, and how to use leverage safely without blowing your account.",
-  level: "beginner",
-  order: 6
-}, `
+writeMdx(
+  "en",
+  "academy",
+  "margin-leverage",
+  {
+    title: "Margin & Leverage — Complete Risk Guide",
+    description:
+      "Understand how margin and leverage work in trading. Learn leverage ratios, margin requirements, margin calls, and how to use leverage safely without blowing your account.",
+    level: "beginner",
+    order: 6,
+  },
+  `
 ## Margin & Leverage Explained
 
 Leverage is the **most powerful and most dangerous** tool in trading. It can multiply your profits — but equally multiply your losses. Understanding margin and leverage is essential for capital preservation.
@@ -2617,17 +2693,24 @@ Start with the "Standard" row (1% risk per trade, 2:1 effective leverage). This 
 - [Pips & Terminology](/en/academy/pips-points-terminology) — Understanding measurements
 - [Forex Basics](/en/academy/forex-basics) — Market fundamentals
 - [Trading Psychology](/en/academy/trading-psychology) — Avoid leverage temptation
-`);
+`,
+);
 
 // ============================
 // 6. MARGIN & LEVERAGE — BN
 // ============================
-writeMdx('bn', 'academy', 'margin-leverage', {
-  title: "Margin ও Leverage — সম্পূর্ণ Risk গাইড",
-  description: "Trading-এ Margin ও Leverage কীভাবে কাজ করে বুঝুন। Leverage Ratio, Margin Requirement, Margin Call এবং Account না উড়িয়ে নিরাপদে Leverage ব্যবহার শিখুন।",
-  level: "beginner",
-  order: 6
-}, `
+writeMdx(
+  "bn",
+  "academy",
+  "margin-leverage",
+  {
+    title: "Margin ও Leverage — সম্পূর্ণ Risk গাইড",
+    description:
+      "Trading-এ Margin ও Leverage কীভাবে কাজ করে বুঝুন। Leverage Ratio, Margin Requirement, Margin Call এবং Account না উড়িয়ে নিরাপদে Leverage ব্যবহার শিখুন।",
+    level: "beginner",
+    order: 6,
+  },
+  `
 ## Margin ও Leverage ব্যাখ্যা
 
 Leverage হলো Trading-এর **সবচেয়ে শক্তিশালী এবং সবচেয়ে বিপজ্জনক** হাতিয়ার। এটি আপনার Profit বাড়াতে পারে — কিন্তু সমানভাবে Loss-ও বাড়াতে পারে। Capital Preservation-এর জন্য Margin ও Leverage বোঝা অপরিহার্য।
@@ -2823,8 +2906,10 @@ Account: $1,000, Leverage: 100:1
 - [Pip ও Terminology](/bn/academy/pips-points-terminology) — পরিমাপ বোঝা
 - [Forex Basics](/bn/academy/forex-basics) — Market Fundamental
 - [Trading Psychology](/bn/academy/trading-psychology) — Leverage Temptation এড়ান
-`);
+`,
+);
 
-console.log('\n✅ Academy Batch 1 Complete: 6 topics × 2 languages = 12 files');
-console.log('Topics: what-is-trading, investing-vs-trading, types-of-traders, bid-ask-spread, pips-points-terminology, margin-leverage');
-
+console.log("\n✅ Academy Batch 1 Complete: 6 topics × 2 languages = 12 files");
+console.log(
+  "Topics: what-is-trading, investing-vs-trading, types-of-traders, bid-ask-spread, pips-points-terminology, margin-leverage",
+);

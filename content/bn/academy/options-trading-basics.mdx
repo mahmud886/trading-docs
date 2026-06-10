@@ -11,35 +11,36 @@ lastUpdated: "2026-06-10"
 Option হলো একটি **Contract যা আপনাকে একটি নির্দিষ্ট সময়ের মধ্যে নির্দিষ্ট Price-এ কোনো Asset কেনা বা বেচার অধিকার (বাধ্যবাধকতা নয়)** দেয়। এই অধিকারের জন্য আপনি Premium প্রদান করেন।
 
 <Callout type="info" title="মূল সুবিধা">
-Options অন্য কোনো Instrument-এ পাওয়া যায় না এমন অনন্য সুবিধা দেয়: সংজ্ঞায়িত Maximum Risk, Leveraged Exposure, Time Decay থেকে Profit করার ক্ষমতা, এবং যেকোনো Market Direction-এ (Up, Down বা Sideways) Profit করার Strategy।
+  Options অন্য কোনো Instrument-এ পাওয়া যায় না এমন অনন্য সুবিধা দেয়: সংজ্ঞায়িত Maximum Risk, Leveraged Exposure, Time
+  Decay থেকে Profit করার ক্ষমতা, এবং যেকোনো Market Direction-এ (Up, Down বা Sideways) Profit করার Strategy।
 </Callout>
 
 ---
 
 ## Call vs. Put Option
 
-| | Call Option | Put Option |
-|--|-------------|------------|
-| **অধিকার** | Strike Price-এ Asset কেনা | Strike Price-এ Asset বেচা |
-| **Buyer Profit করে** | Price বাড়লে | Price কমলে |
+|                       | Call Option                | Put Option                 |
+| --------------------- | -------------------------- | -------------------------- |
+| **অধিকার**            | Strike Price-এ Asset কেনা  | Strike Price-এ Asset বেচা  |
+| **Buyer Profit করে**  | Price বাড়লে               | Price কমলে                 |
 | **Seller Profit করে** | Price Strike-এর নিচে থাকলে | Price Strike-এর উপরে থাকলে |
-| **Max Loss (Buyer)** | প্রদত্ত Premium | প্রদত্ত Premium |
-| **Max Loss (Seller)** | সীমাহীন (Call) / বড় (Put) | Strike Price - Premium |
+| **Max Loss (Buyer)**  | প্রদত্ত Premium            | প্রদত্ত Premium            |
+| **Max Loss (Seller)** | সীমাহীন (Call) / বড় (Put) | Strike Price - Premium     |
 
 ---
 
 ## মূল Options Terminology
 
-| Term | সংজ্ঞা |
-|------|--------|
-| **Strike Price** | যে Price-এ Option Exercise করা যায় |
-| **Premium** | Option Contract কিনতে প্রদত্ত মূল্য |
-| **Expiration** | Option Contract-এর মেয়াদ শেষের তারিখ |
-| **In-the-Money (ITM)** | Option-এর Intrinsic Value আছে |
-| **At-the-Money (ATM)** | Strike ≈ বর্তমান Price |
-| **Out-of-the-Money (OTM)** | Option-এর কোনো Intrinsic Value নেই |
-| **Intrinsic Value** | Strike ও Market Price-এর পার্থক্য |
-| **Time Value** | Premium - Intrinsic Value (সময়ের সাথে ক্ষয় হয়) |
+| Term                       | সংজ্ঞা                                            |
+| -------------------------- | ------------------------------------------------- |
+| **Strike Price**           | যে Price-এ Option Exercise করা যায়               |
+| **Premium**                | Option Contract কিনতে প্রদত্ত মূল্য               |
+| **Expiration**             | Option Contract-এর মেয়াদ শেষের তারিখ             |
+| **In-the-Money (ITM)**     | Option-এর Intrinsic Value আছে                     |
+| **At-the-Money (ATM)**     | Strike ≈ বর্তমান Price                            |
+| **Out-of-the-Money (OTM)** | Option-এর কোনো Intrinsic Value নেই                |
+| **Intrinsic Value**        | Strike ও Market Price-এর পার্থক্য                 |
+| **Time Value**             | Premium - Intrinsic Value (সময়ের সাথে ক্ষয় হয়) |
 
 ---
 
@@ -59,47 +60,51 @@ Time Value: $8 - $5 = $3 (Expiry পর্যন্ত সময়)
 
 ### কী Premium-কে প্রভাবিত করে:
 
-| বিষয় | Call | Put |
-|--------|------|-----|
-| Stock Price বাড়ে | Premium ↑ | Premium ↓ |
-| Stock Price কমে | Premium ↓ | Premium ↑ |
+| বিষয়               | Call      | Put       |
+| ------------------- | --------- | --------- |
+| Stock Price বাড়ে   | Premium ↑ | Premium ↓ |
+| Stock Price কমে     | Premium ↓ | Premium ↑ |
 | Expiry-তে বেশি সময় | Premium ↑ | Premium ↑ |
-| বেশি Volatility | Premium ↑ | Premium ↑ |
+| বেশি Volatility     | Premium ↑ | Premium ↑ |
 
 ---
 
 ## Greek (সংক্ষিপ্ত পরিচিতি)
 
-| Greek | পরিমাপ করে | ব্যবহারিক অর্থ |
-|-------|-----------|----------------|
-| **Delta** | Price সংবেদনশীলতা | Stock $1 Move-এ Option কতটা Move করে |
-| **Gamma** | Delta পরিবর্তনের হার | Delta কত দ্রুত পরিবর্তন হয় |
-| **Theta** | Time Decay | দিনে কত Value হারায় |
-| **Vega** | Volatility সংবেদনশীলতা | Volatility পরিবর্তনের প্রভাব |
+| Greek     | পরিমাপ করে             | ব্যবহারিক অর্থ                       |
+| --------- | ---------------------- | ------------------------------------ |
+| **Delta** | Price সংবেদনশীলতা      | Stock $1 Move-এ Option কতটা Move করে |
+| **Gamma** | Delta পরিবর্তনের হার   | Delta কত দ্রুত পরিবর্তন হয়          |
+| **Theta** | Time Decay             | দিনে কত Value হারায়                 |
+| **Vega**  | Volatility সংবেদনশীলতা | Volatility পরিবর্তনের প্রভাব         |
 
 ---
 
 ## মৌলিক Options Strategy
 
 ### ১. Long Call (Bullish)
+
 - একটি Call Option কিনুন
 - Profit: সীমাহীন Upside সম্ভাবনা
 - Risk: প্রদত্ত Premium-এ সীমাবদ্ধ
 - সেরা যখন: শক্তিশালী ঊর্ধ্বমুখী Move প্রত্যাশা
 
 ### ২. Long Put (Bearish)
+
 - একটি Put Option কিনুন
 - Profit: বড় Downside সম্ভাবনা (শূন্য পর্যন্ত)
 - Risk: প্রদত্ত Premium-এ সীমাবদ্ধ
 - সেরা যখন: শক্তিশালী নিম্নমুখী Move প্রত্যাশা
 
 ### ৩. Covered Call (Income)
+
 - Stock Own করুন + এর বিরুদ্ধে Call Sell করুন
 - Profit: প্রাপ্ত Premium + Strike পর্যন্ত Stock Appreciation
 - Risk: Stock পতন (Premium দ্বারা Offset)
 - সেরা যখন: Neutral থেকে সামান্য Bullish
 
 ### ৪. Protective Put (Insurance)
+
 - Stock Own করুন + সুরক্ষায় Put কিনুন
 - Profit: সীমাহীন Upside, সুরক্ষিত Downside
 - Risk: Premium খরচ Return কমায়
@@ -109,20 +114,21 @@ Time Value: $8 - $5 = $3 (Expiry পর্যন্ত সময়)
 
 ## Options vs. Stock/Forex Trading
 
-| বিষয় | Options | Stock/Forex |
-|--------|---------|-------------|
-| Risk | সংজ্ঞায়িত (Buyer) | বড় হতে পারে |
-| Leverage | Built-in | Margin প্রয়োজন |
-| সময় | আপনার পক্ষে/বিপক্ষে কাজ করে | Neutral |
-| জটিলতা | বেশি | কম |
-| Profit-এর উপায় | Up, Down, Sideways | শুধু Up বা Down |
-| Capital | কম | বেশি |
+| বিষয়           | Options                     | Stock/Forex     |
+| --------------- | --------------------------- | --------------- |
+| Risk            | সংজ্ঞায়িত (Buyer)          | বড় হতে পারে    |
+| Leverage        | Built-in                    | Margin প্রয়োজন |
+| সময়            | আপনার পক্ষে/বিপক্ষে কাজ করে | Neutral         |
+| জটিলতা          | বেশি                        | কম              |
+| Profit-এর উপায় | Up, Down, Sideways          | শুধু Up বা Down |
+| Capital         | কম                          | বেশি            |
 
 ---
 
 ## Options শুরু করুন
 
 ### ধাপ:
+
 1. Terminology ও Basics পুঙ্খানুপুঙ্খভাবে শিখুন
 2. Risk/Reward Profile বুঝুন
 3. ন্যূনতম ২-৩ মাস Paper Trade করুন
