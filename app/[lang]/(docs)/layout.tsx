@@ -1,6 +1,8 @@
 import { Sidebar } from "@/components/layout/sidebar";
+import { SidebarDrawer } from "@/components/layout/sidebar-drawer";
 import { type Locale } from "@/lib/i18n";
 import { Suspense } from "react";
+
 // Loading skeleton for sidebar
 function SidebarSkeleton() {
   return (
@@ -13,6 +15,7 @@ function SidebarSkeleton() {
     </div>
   );
 }
+
 export default async function DocsLayout({
   children,
   params,
@@ -23,11 +26,18 @@ export default async function DocsLayout({
   const { lang } = await params;
   return (
     <div className="mx-auto flex max-w-[1440px]">
+      {/* Desktop sidebar — always visible on lg+ */}
       <Suspense fallback={<SidebarSkeleton />}>
         <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-72 shrink-0 overflow-y-auto border-r border-border/30 lg:block">
           <Sidebar lang={lang as Locale} />
         </aside>
       </Suspense>
+
+      {/* Mobile/Tablet sidebar — slide-in drawer with toggle button */}
+      <SidebarDrawer>
+        <Sidebar lang={lang as Locale} />
+      </SidebarDrawer>
+
       <div className="min-w-0 flex-1">{children}</div>
     </div>
   );

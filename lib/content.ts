@@ -223,24 +223,47 @@ export function getAdjacentDocs(
   prev: { title: string; slug: string } | null;
   next: { title: string; slug: string } | null;
 } {
-  const allSlugs = getAllDocSlugs(locale, category);
+  const orderedSlugs = getOrderedSlugsFromTree(locale, category);
   const currentStr = currentSlug.join("/");
-  const currentIdx = allSlugs.findIndex((s) => s.join("/") === currentStr);
+  const currentIdx = orderedSlugs.findIndex((s) => s.join("/") === currentStr);
 
   let prev = null;
   let next = null;
 
   if (currentIdx > 0) {
-    const prevSlug = allSlugs[currentIdx - 1];
+    const prevSlug = orderedSlugs[currentIdx - 1];
     const prevDoc = getDocBySlug(locale, category, prevSlug);
     if (prevDoc) prev = { title: prevDoc.meta.title, slug: prevSlug.join("/") };
   }
 
-  if (currentIdx >= 0 && currentIdx < allSlugs.length - 1) {
-    const nextSlug = allSlugs[currentIdx + 1];
+  if (currentIdx >= 0 && currentIdx < orderedSlugs.length - 1) {
+    const nextSlug = orderedSlugs[currentIdx + 1];
     const nextDoc = getDocBySlug(locale, category, nextSlug);
     if (nextDoc) next = { title: nextDoc.meta.title, slug: nextSlug.join("/") };
   }
 
   return { prev, next };
+}
+
+/**
+ * Flatten the sidebar tree into an ordered list of slugs.
+ * This ensures category index pages and prev/next navigation
+ * use the exact same order as the sidebar.
+ */
+export function getOrderedSlugsFromTree(locale: Locale, category: string): string[][] {
+  const tree = getSidebarTree(locale, category);
+  const slugs: string[][] = [];
+
+  function flatten(nodes: TreeNode[]) {
+    for (const node of nodes) {
+      if (node.children && node.children.length > 0) {
+        flatten(node.children);
+      } else {
+        slugs.push(node.slug.split("/"));
+      }
+    }
+  }
+
+  flatten(tree);
+  return slugs;
 }

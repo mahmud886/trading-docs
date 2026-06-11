@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { compileMDX } from "next-mdx-remote/rsc";
-import { getDocBySlug, getAllDocSlugs, getAdjacentDocs, getSidebarTree } from "@/lib/content";
+import { getDocBySlug, getAdjacentDocs, getOrderedSlugsFromTree } from "@/lib/content";
 import { extractToc } from "@/lib/toc";
 import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { createMdxComponents } from "@/components/docs/mdx-components";
@@ -50,11 +50,11 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
 
   // If no slug, show category index
   if (!slug || slug.length === 0) {
-    const tree = getSidebarTree(lang as Locale, category);
-    const allSlugs = getAllDocSlugs(lang as Locale, category);
+    // Use the same ordering as the sidebar tree for consistency
+    const orderedSlugs = getOrderedSlugsFromTree(lang as Locale, category);
 
-    // Get all doc metas for cards
-    const docs = allSlugs.map((s) => getDocBySlug(lang as Locale, category, s)).filter(Boolean);
+    // Get all doc metas for cards in sidebar order
+    const docs = orderedSlugs.map((s) => getDocBySlug(lang as Locale, category, s)).filter(Boolean);
 
     return (
       <div className="px-8 py-10">

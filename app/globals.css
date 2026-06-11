@@ -334,3 +334,22 @@ html {
     0 8px 40px rgba(0, 255, 157, 0.08),
     0 0 60px rgba(0, 255, 157, 0.04);
 }
+
+/* ═══ Mobile/Tablet sidebar drawer — smaller text ═══ */
+.sidebar-drawer-mobile nav {
+  padding: 0.5rem;
+}
+.sidebar-drawer-mobile nav a,
+.sidebar-drawer-mobile nav button {
+  font-size: 0.7rem;
+  line-height: 1.25rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+.sidebar-drawer-mobile .border-b {
+  padding: 0.5rem;
+}
+.sidebar-drawer-mobile .border-b a {
+  font-size: 0.65rem;
+  padding: 0.25rem 0.5rem;
+}

@@ -1,197 +1,221 @@
-# Trading Docs - Complete Trading Education Platform
+# 📈 Trading Docs
 
-A comprehensive Next.js-based trading education platform covering Price Action, Smart Money Concepts (SMC), ICT Methodology, Forex Sessions, and Academy fundamentals.
+**The Complete Institutional Trading Education Platform**
 
-## 🎯 Project Overview
+A full-featured, offline-capable Progressive Web App (PWA) built with Next.js 16, delivering 300+ trading topics across 10 categories in English & Bengali — completely free.
 
-**Trading Docs** is a full-stack trading education platform designed to provide complete trading knowledge from beginner to expert level. It features:
+[![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript)](https://typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.x-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
+[![PWA](https://img.shields.io/badge/PWA-Offline_Ready-00ff9d)](#-progressive-web-app-pwa)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-- **5 Major Categories** with 130+ comprehensive topics
-- **2 Languages** (English & Bengali)
-- **Interactive Navigation** with dynamic sidebars
-- **SEO Optimized** documentation
-- **Responsive Design** for all devices
+---
 
-## 📚 Content Structure
+## 🎯 Overview
 
-### 1. **Price Action** (35+ Topics)
+**Trading Docs** is a professional-grade trading education platform designed to teach retail traders how institutional players (banks, hedge funds, prop firms) operate in financial markets. It covers everything from absolute beginner fundamentals to expert-level quantitative strategies.
 
-Master candlestick patterns, market structure, and pure price action trading.
+### Key Highlights
 
-**Key Topics:**
+- **306 Topics** across 10 major categories
+- **2 Languages** — English & Bengali (বাংলা)
+- **23 Interactive Tools** — Calculators, analyzers, simulators
+- **39 Blog Posts** — Market insights & educational articles
+- **Full Offline Mode** — PWA with complete precaching
+- **Mobile-First Design** — Responsive across all devices
+- **SEO Optimized** — Structured data, sitemaps, Open Graph
 
-- Candlestick basics & psychology
-- Market structure analysis
-- Support & resistance
-- Trend & reversal analysis
-- Pullbacks, breakouts & fakeouts
-- Single & multi-candle patterns
-- Volume analysis
-- Trade management & exits
-- _And 20+ more advanced topics_
+---
 
-### 2. **Smart Money Concepts (SMC)** (26+ Topics)
+## 📚 Content Categories
 
-Learn institutional trading concepts and how smart money operates.
+| Category                  | Topics | Description                                         |
+| ------------------------- | ------ | --------------------------------------------------- |
+| **Price Action**          | 49     | Candlesticks, market structure, entries & exits     |
+| **Smart Money Concepts**  | 31     | Order blocks, FVG, liquidity engineering            |
+| **ICT Methodology**       | 31     | Kill zones, PD arrays, market maker models          |
+| **Academy**               | 100    | Markets, psychology, risk, instruments, indicators  |
+| **Forex Sessions**        | 16     | Session timing, overlaps & kill zones (BD timezone) |
+| **Order Flow**            | 8      | DOM, volume profile, delta, footprint charts        |
+| **Intermarket Analysis**  | 8      | DXY, yield curves, cross-asset correlations         |
+| **Quantitative Trading**  | 9      | Expectancy, Kelly criterion, Monte Carlo            |
+| **Wyckoff Method**        | 8      | Composite man, accumulation/distribution            |
+| **Auction Market Theory** | 7      | Market profile, TPO, value areas                    |
 
-**Key Topics:**
+**Total: 306 topics × 2 languages = 612 articles**
 
-- Market structure shifts (BOS/CHOCH)
-- Order blocks & breaker blocks
-- Fair value gaps (FVG)
-- Liquidity & liquidity pools
-- Institutional order flow
-- Distribution, accumulation & reaccumulation
-- Premium & discount zones
-- Entry confirmation & risk models
-- _And 18+ more advanced concepts_
+---
 
-### 3. **ICT Methodology** (27+ Topics)
+## 🛠️ Interactive Trading Tools (23)
 
-In-depth coverage of ICT (Inner Circle Trader) concepts and models.
+| Tool                   | Description                           |
+| ---------------------- | ------------------------------------- |
+| Position Calculator    | Calculate position size based on risk |
+| Risk/Reward Calculator | Visualize R:R ratios                  |
+| Pip Value Calculator   | Calculate pip values for any pair     |
+| Fibonacci Calculator   | Auto-calculate fib levels             |
+| Margin Calculator      | Required margin by leverage           |
+| Lot Converter          | Convert between lot types             |
+| Swap Calculator        | Overnight swap costs                  |
+| TP/SL Calculator       | Take profit & stop loss levels        |
+| ATR Analyzer           | Average True Range analysis           |
+| Drawdown Calculator    | Max drawdown simulation               |
+| Compounding Calculator | Compound growth projection            |
+| Equity Simulator       | Monte Carlo equity curves             |
+| Expectancy Calculator  | System expectancy metrics             |
+| Correlation Matrix     | Currency pair correlations            |
+| Currency Strength      | Real-time strength meter              |
+| Session Timer          | Live forex session clock (BD time)    |
+| Economic Calendar      | Upcoming news events                  |
+| COT Viewer             | Commitment of Traders data            |
+| Journal Template       | Trading journal framework             |
+| MTF Analyzer           | Multi-timeframe analysis              |
+| Portfolio Allocation   | Asset allocation optimizer            |
+| Regime Detector        | Market regime identification          |
+| Dashboard              | Unified trading dashboard             |
 
-**Key Topics:**
+---
 
-- PD Arrays & fair value gaps
-- Interior patterns & dealing ranges
-- Kill zones & optimal trade entries
-- Market maker models
-- Time & price theory
-- Advanced models (Venom, Unicorn, Silver Bullet)
-- Session profiles & daily bias
-- Algorithmic delivery concepts
-- _And 19+ more specialized topics_
+## 📱 Progressive Web App (PWA)
 
-### 4. **Forex Sessions** (16+ Topics)
+Trading Docs is a **fully offline-capable PWA**:
 
-Complete guide to forex trading sessions and session-based strategies.
+- ✅ **Install on any device** — home screen shortcut, standalone mode
+- ✅ **Full offline access** — all 612 articles cached at build time
+- ✅ **Background sync** — content updates when back online
+- ✅ **Fast navigation** — 3-second network timeout, instant cache fallback
+- ✅ **Optimized caching** — 30-day retention, 512+ page cache limit
 
-**Key Topics:**
+### How It Works
 
-- Sydney, Tokyo, London, New York sessions
-- Session overlaps & kill zones
-- Liquidity sweeps & session manipulation
-- Session-based trading strategies
-- Economic releases by session
-- Best trading times (Bangladesh timezone)
-- _And 10+ more session-related topics_
+1. **First visit** — Service worker installs and precaches all pages
+2. **Subsequent visits** — Served from cache (NetworkFirst with 3s timeout)
+3. **Offline** — Everything works, served instantly from cache
+4. **Online** — Fresh content fetched, cache updated in background
 
-### 5. **Academy** (26 Core Topics)
+### Technology
 
-#### Fundamental Trading Knowledge:
+- **Service Worker:** [Serwist](https://serwist.pages.dev) (Workbox successor)
+- **Strategy:** Precache all routes + NetworkFirst runtime caching
+- **Manifest:** Full PWA manifest with themed icons
 
-- **Trading Psychology** - Mental aspects of trading
-- **Risk Management** - Protecting your capital
-- **Position Sizing** - Calculating optimal lot sizes
-- **Trading Journal** - Documenting your trades
-- **Prop Firm Guide** - Funding firm overview
-- **Economic Calendar Guide** - News trading basics
+---
 
-#### Market Instruments:
+## 🏗️ Tech Stack
 
-- **Forex Basics** - Currency pair trading
-- **Futures Basics** - Futures market overview
-- **Crypto Trading** - Cryptocurrency trading
-- **Indices Trading** - Index trading strategies
-- **Gold Trading** - Precious metals trading
+| Layer             | Technology                             |
+| ----------------- | -------------------------------------- |
+| **Framework**     | Next.js 16.2.6 (App Router, Turbopack) |
+| **Language**      | TypeScript 5.x                         |
+| **Styling**       | Tailwind CSS 4.x                       |
+| **Content**       | MDX (Markdown + React components)      |
+| **UI Components** | Radix UI primitives                    |
+| **Animations**    | Framer Motion                          |
+| **Icons**         | Lucide React                           |
+| **PWA**           | Serwist 9.x (@serwist/turbopack)       |
+| **Search**        | cmdk (command palette)                 |
+| **Theming**       | next-themes (dark/light)               |
+| **Deployment**    | Vercel                                 |
 
-#### Technical Analysis Tools:
+---
 
-- **Technical Indicators** - Moving averages, RSI, MACD, Bollinger Bands, Stochastic, ATR
-- **Advanced Support & Resistance** - Zone identification & confluence
-- **Chart Patterns** - Head & shoulders, double tops, triangles, wedges, flags
-- **Trendlines & Channels** - Drawing & trading trendlines
-- **Fibonacci Trading** - Retracements & extensions
-- **Elliott Wave Theory** - Wave counting & projections
-- **Bollinger Bands Trading** - Volatility & mean reversion strategies
-
-#### Trading Strategy & Execution:
-
-- **Order Types Explained** - Market, limit, stop, OCO, OTO orders
-- **Trading Plan Development** - Complete trading system framework
-- **Entry Models & Exit Models** - High-probability setups
-- **Trade Management** - Position management techniques
-- **Confluence Trading** - Multi-factor confirmation
-
-#### Advanced Topics:
-
-- **Advanced Money Management** - Position scaling, portfolio allocation, leverage
-- **Trading Costs & Spreads** - Impact analysis & cost minimization
-- **Backtesting & Forward Testing** - System validation & testing
-- **Performance Tracking & Analytics** - Metrics, analysis & improvement
-- **Options Trading Basics** - Call & put options, Greeks, strategies
-- **Harmonic Patterns** - Gartley, butterfly, crab, bat patterns
-
-## 🌍 Multi-Language Support
-
-All content available in:
-
-- **English** - Complete comprehensive coverage
-- **Bengali** - Full translations for local audience
-
-## 🏗️ Technology Stack
-
-- **Framework:** Next.js 13+ (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Content:** MDX (Markdown + React)
-- **Deployment:** Vercel-ready
-
-## 📁 Directory Structure
+## 📁 Project Structure
 
 ```
 trading-docs/
-├── app/                    # Next.js app directory
-│   ├── [lang]/            # Language routing
-│   ├── api/               # API routes
-│   └── layout.tsx         # Root layout
+├── app/                        # Next.js App Router
+│   ├── [lang]/                 # i18n routing (en/bn)
+│   │   ├── (docs)/             # Documentation layout (sidebar)
+│   │   │   ├── price-action/   # Price Action pages
+│   │   │   ├── smc/            # Smart Money Concepts pages
+│   │   │   ├── ict/            # ICT Methodology pages
+│   │   │   ├── academy/        # Academy pages
+│   │   │   ├── forex-sessions/ # Forex Sessions pages
+│   │   │   ├── order-flow/     # Order Flow pages
+│   │   │   ├── intermarket/    # Intermarket pages
+│   │   │   ├── quantitative/   # Quantitative pages
+│   │   │   ├── wyckoff/        # Wyckoff pages
+│   │   │   └── auction-market/ # Auction Market pages
+│   │   ├── (content)/          # Content layout (no sidebar)
+│   │   │   ├── blog/           # Blog posts
+│   │   │   ├── tools/          # 23 interactive tools
+│   │   │   ├── glossary/       # Trading glossary
+│   │   │   ├── charts/         # Chart analysis
+│   │   │   └── dashboard/      # Trading dashboard
+│   │   └── api/                # API routes
+│   ├── ~offline/               # Offline fallback page
+│   ├── serwist/                # Service worker route
+│   ├── sw.ts                   # Service worker source
+│   ├── manifest.ts             # PWA manifest
+│   ├── icon.tsx                # Dynamic favicon
+│   ├── apple-icon.tsx          # Apple touch icon
+│   └── layout.tsx              # Root layout + metadata
 ├── components/
-│   ├── layout/            # Sidebar, navbar, footer
-│   ├── docs/              # Doc-specific components
-│   └── trading/           # Trading-specific components
+│   ├── layout/                 # Navbar, sidebar, footer
+│   ├── docs/                   # Documentation components
+│   ├── trading/                # Trading-specific UI
+│   ├── blog/                   # Blog components
+│   └── brand/                  # Logo & branding
 ├── content/
-│   ├── en/                # English content
-│   │   ├── academy/       # 26 academy topics
-│   │   ├── price-action/  # 35+ price action topics
-│   │   ├── smc/           # 26+ SMC topics
-│   │   ├── ict/           # 27+ ICT topics
-│   │   └── forex-sessions/# 16+ forex session topics
-│   └── bn/                # Bengali content (parallel structure)
+│   ├── en/                     # English content (306 MDX files)
+│   └── bn/                     # Bengali content (306 MDX files)
 ├── lib/
-│   ├── content.ts         # Content management functions
-│   ├── constants.ts       # Site configuration
-│   ├── i18n.ts           # Internationalization
-│   └── dictionaries/      # Language translations
-├── public/                # Static assets
-└── scripts/              # Utility scripts
+│   ├── content.ts              # Content reading & tree building
+│   ├── constants.ts            # Categories, config
+│   ├── i18n.ts                 # Internationalization
+│   ├── schema.ts               # JSON-LD structured data
+│   ├── toc.ts                  # Table of contents extraction
+│   ├── utils.ts                # Utility functions
+│   ├── brand/                  # PWA icon generation
+│   └── dictionaries/           # UI translations (en/bn)
+├── public/
+│   ├── icons/                  # PWA icons (generated)
+│   └── images/                 # Static images & OG
+├── scripts/                    # Content generation & build scripts
+├── hooks/                      # React hooks
+└── glossaries/                 # Trading terminology data
 ```
+
+---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 16+
-- npm or yarn
+- **Node.js** 18+ (20+ recommended)
+- **npm** 9+ or **pnpm**
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone <repo-url>
+git clone https://github.com/mahmud886/trading-docs.git
 cd trading-docs
 
 # Install dependencies
 npm install
-# or
-yarn install
 
-# Run development server
+# Generate PWA icons
+npm run generate:icons
+
+# Start development server
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Available Scripts
+
+| Command                  | Description                                |
+| ------------------------ | ------------------------------------------ |
+| `npm run dev`            | Start development server (Turbopack)       |
+| `npm run build`          | Format + generate icons + production build |
+| `npm run start`          | Start production server                    |
+| `npm run lint`           | Run ESLint                                 |
+| `npm run format`         | Format all files with Prettier             |
+| `npm run format:check`   | Check formatting without writing           |
+| `npm run generate:icons` | Regenerate PWA icons from SVG              |
 
 ### Build for Production
 
@@ -200,179 +224,248 @@ npm run build
 npm run start
 ```
 
-## 📊 Content Summary - Complete Coverage
+### Deploy to Vercel
 
-### **Academy Section - 26 Comprehensive Topics**
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-1. **Trading Psychology** - Emotional control & mental framework
-2. **Risk Management** - Capital preservation strategies
-3. **Position Sizing** - Optimal lot calculations
-4. **Trading Journal** - Record keeping & analysis
-5. **Prop Firm Guide** - Funding firms overview
-6. **Forex Basics** - Currency pair fundamentals
-7. **Futures Basics** - Futures market introduction
-8. **Crypto Trading** - Digital asset trading
-9. **Indices Trading** - Index-based strategies
-10. **Gold Trading** - Precious metals trading
-11. **Economic Calendar Guide** - News event preparation
-12. **Technical Indicators** - RSI, MACD, Moving Averages, Bollinger Bands, Stochastic, ATR
-13. **Advanced Support & Resistance** - Zone identification & confluence
-14. **Order Types Explained** - Market, Limit, Stop, Stop-Limit, OCO, OTO orders
-15. **Advanced Money Management** - Position scaling, leverage, portfolio allocation
-16. **Trading Plan Development** - Complete system framework
-17. **Fibonacci Trading** - Retracements & extensions
-18. **Options Trading Basics** - Calls, puts, Greeks, strategies
-19. **Harmonic Patterns** - Gartley, Butterfly, Crab, Bat patterns
-20. **Bollinger Bands Trading** - Volatility & breakout strategies
-21. **Backtesting & Forward Testing** - System validation methodology
-22. **Chart Patterns** - Head & Shoulders, Double Tops, Triangles, Wedges, Flags
-23. **Elliott Wave Theory** - Wave counting & price projections
-24. **Trendlines & Channels** - Support/resistance drawing & trading
-25. **Trading Costs & Spreads** - Cost analysis & minimization
-26. **Performance Tracking & Analytics** - Metrics, analysis & improvement
+# Deploy
+vercel
+```
 
-### **Other Sections Summary**
-
-| Section                  | Topics | Focus Area                                       |
-| ------------------------ | ------ | ------------------------------------------------ |
-| **Price Action**         | 35+    | Candlesticks, patterns, market structure, volume |
-| **Smart Money Concepts** | 26+    | Order blocks, liquidity, institutional flow      |
-| **ICT Methodology**      | 27+    | PD Arrays, kill zones, market maker models       |
-| **Forex Sessions**       | 16+    | Session trading, kill zones, economic events     |
-
-**TOTAL: 130+ Trading Topics**
-
-## 🎓 Learning Paths
-
-### For Beginners:
-
-1. Trading Psychology
-2. Risk Management
-3. Position Sizing
-4. Forex Basics
-5. Price Action Fundamentals
-6. Technical Indicators
-7. Order Types
-
-### For Intermediate Traders:
-
-1. Advanced Money Management
-2. Trading Plan Development
-3. Chart Patterns
-4. Fibonacci Trading
-5. Multi-Timeframe Analysis
-6. Smart Money Concepts Intro
-7. Entry & Exit Models
-
-### For Advanced Traders:
-
-1. Elliott Wave Theory
-2. Harmonic Patterns
-3. Advanced Price Action
-4. ICT Methodology
-5. Institutional Order Flow
-6. Backtesting & Validation
-7. Performance Analytics
-
-### For System Development:
-
-1. Trading Plan Framework
-2. Backtesting Methods
-3. Performance Tracking
-4. Trading Costs Analysis
-5. Options Concepts
-6. Advanced Execution Models
-
-## ✨ Key Features
-
-✅ **Comprehensive Coverage** - 130+ topics across all trading styles
-✅ **Multi-Language** - English & Bengali support
-✅ **Organized Navigation** - Intuitive sidebar with category filters
-✅ **Advanced Search** - Find topics easily
-✅ **Responsive Design** - Works on desktop, tablet, mobile
-✅ **SEO Optimized** - All content properly structured
-✅ **MDX Content** - Rich media support in documentation
-✅ **Interactive UI** - Smooth navigation & user experience
-
-## 📢 Content Standards
-
-Each topic includes:
-
-- ✓ Clear explanations for all knowledge levels
-- ✓ Practical, real-world examples
-- ✓ Specific trading rules & criteria
-- ✓ Common mistakes to avoid
-- ✓ Step-by-step implementation guides
-- ✓ Comparison tables & analysis
-- ✓ Advanced techniques for experts
-- ✓ Key takeaways & summaries
-
-## 🔗 Navigation Structure
-
-### Main Categories:
-
-1. **Price Action** (35+ topics) - Pure price movement analysis
-2. **Smart Money Concepts** (26+ topics) - Institutional trading
-3. **ICT Concepts** (27+ topics) - Inner Circle Trading methods
-4. **Forex Sessions** (16+ topics) - Time-zone based trading
-5. **Academy** (26 topics) - Fundamental trading education
-
-## 📖 Documentation Quality
-
-All content maintains professional trading education standards:
-
-- Written for traders at all levels
-- Practical, actionable advice
-- Grounded in trading principles
-- No overconfidence or unrealistic claims
-- Risk-appropriate perspectives
-
-## 🛠️ Customization
-
-### Adding New Topics:
-
-1. Create `.mdx` file in appropriate category directory
-2. Add entry to `_meta.json` file
-3. Topic automatically appears in navigation
-
-### Content Management:
-
-- `_meta.json` controls sidebar order
-- MDX files support React components
-- Full markdown support
-- Syntax highlighting included
-
-## 📱 Browser Support
-
-- ✓ Chrome (latest)
-- ✓ Firefox (latest)
-- ✓ Safari (latest)
-- ✓ Edge (latest)
-- ✓ Mobile browsers
-
-## 📄 License & Usage
-
-This platform is designed for trading education and market knowledge sharing.
-
-## 🤝 Contributing
-
-Content contributions are welcome! Ensure:
-
-- Complete, accurate information
-- Professional trading perspective
-- Clear examples & practical applications
-- Appropriate risk messaging
-- Either English or Bengali language
-
-## 📞 Support
-
-For questions about specific topics or platform issues, refer to relevant documentation.
+Or connect your GitHub repo to [Vercel](https://vercel.com) for automatic deployments.
 
 ---
 
-**Platform Status:** ✅ Active & Maintained
-**Last Updated:** May 2026
-**Version:** 2.0 - Complete Trading Education Platform
-**Languages:** English (Full), Bengali (Full)
-**Total Topics:** 130+ comprehensive guides
-**Content Quality:** Professional trading education standard
+## 🌍 Internationalization (i18n)
+
+The platform supports two languages with full content parity:
+
+- **English** (`/en`) — 306 comprehensive articles
+- **Bengali** (`/bn`) — 306 fully translated articles
+
+### Adding a New Language
+
+1. Add locale to `lib/i18n.ts`
+2. Create dictionary in `lib/dictionaries/`
+3. Create content directory under `content/<locale>/`
+4. Add MDX files mirroring the English structure
+
+---
+
+## 📖 Content Management
+
+### Adding a New Topic
+
+1. Create an `.mdx` file in the appropriate category:
+
+   ```
+   content/en/<category>/<topic-slug>.mdx
+   ```
+
+2. Add frontmatter:
+
+   ```mdx
+   ---
+   title: "Your Topic Title"
+   description: "Brief description for SEO"
+   level: "beginner" | "intermediate" | "advanced" | "expert"
+   order: 1
+   lastUpdated: "2026-06-11"
+   ---
+
+   Your content here...
+   ```
+
+3. Add to `_meta.json` for sidebar ordering:
+
+   ```json
+   {
+     "topic-slug": "Display Title"
+   }
+   ```
+
+4. Create the Bengali version in `content/bn/<category>/`
+
+### Content Levels
+
+| Level          | Target Audience            |
+| -------------- | -------------------------- |
+| `beginner`     | New to trading             |
+| `intermediate` | 6-12 months experience     |
+| `advanced`     | 1-3 years experience       |
+| `expert`       | Professional/institutional |
+
+---
+
+## 🎓 Learning Paths
+
+### 🟢 Beginner Path
+
+1. What is Trading → Types of Traders
+2. Forex Basics → Order Types
+3. Risk Management → Position Sizing
+4. Price Action Fundamentals → Candlestick Patterns
+5. Technical Indicators → Support & Resistance
+
+### 🟡 Intermediate Path
+
+1. Market Structure → Trend Analysis
+2. Chart Patterns → Fibonacci Trading
+3. Smart Money Concepts Intro → Order Blocks
+4. Trading Plan Development → Journal
+5. Advanced Money Management
+
+### 🔴 Advanced Path
+
+1. ICT Methodology → Kill Zones → PD Arrays
+2. Institutional Order Flow → Volume Profile
+3. Elliott Wave → Harmonic Patterns
+4. Wyckoff Method → Auction Market Theory
+5. Quantitative Analysis → Backtesting
+
+### ⚫ Expert/System Builder Path
+
+1. Intermarket Analysis → Regime Detection
+2. Kelly Criterion → Monte Carlo Simulation
+3. Order Flow Analysis → Footprint Charts
+4. Market Maker Models → Algorithmic Delivery
+5. Performance Analytics → Equity Curve Management
+
+---
+
+## ✨ Features
+
+### Core
+
+- ✅ 306 comprehensive trading topics
+- ✅ Full bilingual support (EN/BN)
+- ✅ 23 interactive trading tools
+- ✅ 39 educational blog posts
+- ✅ Trading glossary with 500+ terms
+- ✅ Command palette search (⌘K)
+- ✅ Dark/Light theme
+
+### Technical
+
+- ✅ PWA — full offline support
+- ✅ Responsive — mobile, tablet, desktop
+- ✅ SEO — structured data, sitemaps, robots.txt
+- ✅ Performance — Turbopack, optimized images
+- ✅ Accessibility — semantic HTML, ARIA
+- ✅ Type-safe — full TypeScript
+- ✅ Code quality — ESLint + Prettier
+
+### Navigation
+
+- ✅ Dynamic sidebar with category grouping
+- ✅ Breadcrumbs
+- ✅ Previous/Next article navigation
+- ✅ Table of contents (auto-generated)
+- ✅ Reading time estimates
+- ✅ Level indicators (beginner → expert)
+
+---
+
+## 🔧 Configuration
+
+### Environment Variables
+
+```env
+# Optional
+NEXT_PUBLIC_SITE_URL=https://tradingdocs.vercel.app
+NEXT_PUBLIC_GOOGLE_VERIFICATION=your-verification-code
+VERCEL_GIT_COMMIT_SHA=auto-set-by-vercel
+```
+
+### Customization
+
+- **Colors:** Edit `lib/constants.ts` → `ACCENT_COLORS`
+- **Categories:** Edit `lib/constants.ts` → `CATEGORIES`
+- **Branding:** Edit `public/icons/logo.svg` + run `npm run generate:icons`
+- **Manifest:** Edit `app/manifest.ts`
+
+---
+
+## 📊 Content Standards
+
+Every article follows these quality guidelines:
+
+- ✓ Clear explanations for the target skill level
+- ✓ Practical, real-world trading examples
+- ✓ Specific rules & criteria (not vague advice)
+- ✓ Common mistakes & how to avoid them
+- ✓ Step-by-step implementation guides
+- ✓ Comparison tables & visual aids
+- ✓ Key takeaways & summaries
+- ✓ Appropriate risk disclaimers
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please ensure:
+
+1. **Accuracy** — Trading content must be factually correct
+2. **Completeness** — Cover the topic thoroughly
+3. **Quality** — Professional writing standard
+4. **Risk messaging** — No unrealistic claims or guarantees
+5. **Bilingual** — Provide both EN and BN versions (or flag for translation)
+6. **Formatting** — Run `npm run format` before committing
+
+### Development Workflow
+
+```bash
+# Create feature branch
+git checkout -b feature/new-topic
+
+# Make changes
+# ...
+
+# Format & lint
+npm run format
+npm run lint
+
+# Build to verify
+npm run build
+
+# Commit & push
+git add .
+git commit -m "feat: add new topic"
+git push origin feature/new-topic
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+---
+
+## 👤 Author
+
+**Md. Iqbal Mahmud**
+
+- GitHub: [@mahmud886](https://github.com/mahmud886)
+
+---
+
+## 📈 Stats
+
+| Metric            | Value      |
+| ----------------- | ---------- |
+| Total Topics      | 306        |
+| Languages         | 2 (EN, BN) |
+| Interactive Tools | 23         |
+| Blog Posts        | 39         |
+| Categories        | 10         |
+| Total Articles    | 612+       |
+
+---
+
+**Platform Status:** ✅ Active & Maintained  
+**Last Updated:** June 2026  
+**Version:** 3.0 — Full Offline PWA  
+**Content Quality:** Professional institutional trading education standard

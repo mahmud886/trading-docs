@@ -1,6 +1,6 @@
 export const PWA_BRAND = {
   accent: "#00ff9d",
-  accentMuted: "rgba(0, 255, 157, 0.15)",
+  accentMuted: "rgba(0, 255, 157, 0.08)",
   background: "#000000",
 } as const;
 
@@ -12,10 +12,7 @@ type PwaIconMarkProps = {
 
 export function PwaIconMark({ size, padding, radius }: PwaIconMarkProps) {
   const inner = size - padding * 2;
-  const chartSize = inner * 0.62;
-  const chartX = padding + (inner - chartSize) / 2;
-  const chartY = padding + (inner - chartSize) / 2;
-  const stroke = Math.max(3, size * 0.045);
+  const chartSize = inner * 0.7;
 
   return (
     <div
@@ -26,6 +23,7 @@ export function PwaIconMark({ size, padding, radius }: PwaIconMarkProps) {
         alignItems: "center",
         justifyContent: "center",
         background: PWA_BRAND.background,
+        borderRadius: radius,
       }}
     >
       <div
@@ -35,25 +33,19 @@ export function PwaIconMark({ size, padding, radius }: PwaIconMarkProps) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          borderRadius: radius,
+          borderRadius: radius * 0.8,
           background: PWA_BRAND.accentMuted,
         }}
       >
-        <svg
-          width={chartSize}
-          height={chartSize}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke={PWA_BRAND.accent}
-          strokeWidth={stroke}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          style={{ marginTop: chartSize * 0.04 }}
-        >
-          <path d="M3 3v18h18" />
-          <path d="M18 17V9" />
-          <path d="M13 17V5" />
-          <path d="M8 17v-3" />
+        <svg width={chartSize} height={chartSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Candlestick wicks */}
+          <line x1="7" y1="3" x2="7" y2="21" stroke={PWA_BRAND.accent} strokeWidth="1" strokeLinecap="round" />
+          <line x1="13" y1="2" x2="13" y2="20" stroke={PWA_BRAND.accent} strokeWidth="1" strokeLinecap="round" />
+          <line x1="19" y1="4" x2="19" y2="22" stroke={PWA_BRAND.accent} strokeWidth="1" strokeLinecap="round" />
+          {/* Candlestick bodies */}
+          <rect x="5" y="7" width="4" height="9" rx="0.8" fill={PWA_BRAND.accent} />
+          <rect x="11" y="6" width="4" height="10" rx="0.8" fill="none" stroke={PWA_BRAND.accent} strokeWidth="1" />
+          <rect x="17" y="8" width="4" height="8" rx="0.8" fill={PWA_BRAND.accent} />
         </svg>
       </div>
     </div>

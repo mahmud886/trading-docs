@@ -9,13 +9,16 @@ export default function OfflinePage() {
         Trading<span className="neon-text">Docs</span>
       </h1>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-        You are offline. Reconnect to browse the latest trading education content.
+        You are currently offline. Previously visited pages are still available from cache.
+      </p>
+      <p className="mt-2 text-xs text-muted-foreground/70">
+        This page appears when the requested content hasn&apos;t been cached yet.
       </p>
       <Link
         href="/en"
         className="mt-8 rounded-lg border border-accent-green/30 bg-accent-green/10 px-4 py-2 text-sm font-medium text-accent-green transition-colors hover:bg-accent-green/20"
       >
-        Try again
+        Go to Homepage
       </Link>
     </main>
   );
