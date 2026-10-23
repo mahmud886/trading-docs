@@ -1,6 +1,8 @@
 # SMC Chart Set — OB, FVG, IFVG, Imbalance
 
-These four charts follow the style of the approved prototype in `samples/order-block-chart/`, the Bullish OB chart for EUR/USD.
+Every chart comes in a **light** and a **dark** version (`-light.png` / `-dark.png`); the light version is shown below.
+The Bullish OB chart for EUR/USD (the first prototype) is included in the same v2 style as `bullish-order-block-eurusd-*.png`; its analysis is in `samples/order-block-chart/analysis.md`.
+A 15-second animated walkthrough of chart 2 is in `output/fvg-explainer-{light,dark}.mp4`.
 
 > **Educational illustrations.** All candles are synthetic. They were built around the levels quoted in each lesson and are not historical prices. Arrows toward a target show hypothetical scenarios, not results. Nothing here is financial advice.
 
@@ -15,7 +17,7 @@ These four charts follow the style of the approved prototype in `samples/order-b
 
 ## 1. Bearish Order Block — Premium Retest After Displacement
 
-![Bearish Order Block — NAS100](./output/bearish-order-block-nas100.png)
+![Bearish Order Block — NAS100](./output/bearish-order-block-nas100-light.png)
 
 **Context:** NAS100, 15-minute chart, New York session, times in BD.
 
@@ -50,7 +52,7 @@ These four charts follow the style of the approved prototype in `samples/order-b
 
 ## 2. Bullish Fair Value Gap — Retrace to the 50% Level (CE)
 
-![Bullish FVG — EUR/USD](./output/bullish-fvg-eurusd.png)
+![Bullish FVG — EUR/USD](./output/bullish-fvg-eurusd-light.png)
 
 **Context:** EUR/USD, 15-minute chart, from late London into the New York session, times in BD.
 
@@ -88,7 +90,7 @@ The entry comes from the guide's example narrative. The stop and both targets co
 
 ## 3. Inverse FVG — Bullish Gap Fails, Flips to Resistance
 
-![Bearish IFVG — GBP/USD](./output/bearish-ifvg-gbpusd.png)
+![Bearish IFVG — GBP/USD](./output/bearish-ifvg-gbpusd-light.png)
 
 **Context:** GBP/USD, 1-hour chart, London session on two consecutive days. The overnight hours (00:00–10:00 BD) are left out.
 
@@ -124,7 +126,7 @@ The entry comes from the guide's example narrative. The stop and both targets co
 
 ## 4. Three Types of Price Imbalance
 
-![Three types of imbalance](./output/imbalance-types.png)
+![Three types of imbalance](./output/imbalance-types-light.png)
 
 This is a conceptual comparison. It shows candle shapes only, with no price scale. It uses the three types the guide lists:
 
