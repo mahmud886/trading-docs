@@ -1,0 +1,134 @@
+---
+title: "ICT Time & Price Theory"
+description: "Understand ICT's time-and-price idea: IPDA look-back ranges tell you where price may go, and kill zones, Silver Bullet hours and macros tell you when to look. A full time map in Bangladesh time (summer and winter), the top-down framework, and an animated walkthrough."
+level: advanced
+order: 19
+lastUpdated: "2026-11-13"
+---
+
+## What Is Time and Price?
+
+ICT's central claim is that **time matters as much as price**. A good level is only half a plan: price reacts at a level far more often when it gets there **during an active window**, such as a kill zone, than in a quiet hour.
+
+So the framework pairs two questions:
+
+- **Where?** The liquidity targets from the IPDA look-back ranges and the higher-timeframe PD arrays.
+- **When?** The kill zones, Silver Bullet hours and macros.
+
+<Callout type="info" title="Removed: the 'time is senior' quote">
+  The original opened with an unsourced ICT quote. The idea it expresses, that timing filters out many bad setups, is
+  testable on your own charts; you don't need to take it on authority.
+</Callout>
+
+---
+
+## Where: IPDA Look-Back Ranges
+
+ICT describes price delivery through what he calls the **IPDA** (Interbank Price Delivery Algorithm). Whatever you think of the label, the practical tool is simple: the highs and lows of the last **20, 40 and 60 trading days** are the obvious liquidity for the coming weeks. See [Monthly Profiles](/en/ict/monthly-profiles) for a chart and how to use them.
+
+---
+
+## When: the Time Map
+
+![ICT time map in Bangladesh time: kill zones, Silver Bullet hours and macros](/images/ict/time-and-price-theory/ict-time-map-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/time-map-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+### Macros
+
+**Macros** are short windows, mostly 20–30 minutes, in which ICT says a displacement often starts. The commonly cited list:
+
+| Macro              | New York time    | BD — US summer     | BD — US winter     |
+| ------------------ | ---------------- | ------------------ | ------------------ |
+| London 1           | 2:33 – 3:00 AM   | 12:33 – 1:00 PM    | 1:33 – 2:00 PM     |
+| London 2           | 4:03 – 4:30 AM   | 2:03 – 2:30 PM     | 3:03 – 3:30 PM     |
+| NY AM 1            | 8:50 – 9:10 AM   | 6:50 – 7:10 PM     | 7:50 – 8:10 PM     |
+| NY AM 2            | 9:50 – 10:10 AM  | 7:50 – 8:10 PM     | 8:50 – 9:10 PM     |
+| NY AM 3            | 10:50 – 11:10 AM | 8:50 – 9:10 PM     | 9:50 – 10:10 PM    |
+| NY lunch           | 11:50 AM – 12:10 PM | 9:50 – 10:10 PM | 10:50 – 11:10 PM   |
+| NY PM              | 1:10 – 1:40 PM   | 11:10 – 11:40 PM   | 12:10 – 12:40 AM   |
+| Last hour          | 3:15 – 3:45 PM   | 1:15 – 1:45 AM     | 2:15 – 2:45 AM     |
+
+<Callout type="warning" title="Corrected macro list">
+  The original gave a "London macro" of 1:33 – 4:00 AM and a PM macro of 1:50 – 2:10 PM, labelled EST, with BD times
+  that only fit US summer. The table above uses the commonly cited ICT list and gives BD times for both seasons. Sources
+  differ by a few minutes; treat the windows as approximate.
+</Callout>
+
+### Kill zones and Silver Bullet hours
+
+| Window          | BD — US summer   | BD — US winter   |
+| --------------- | ---------------- | ---------------- |
+| London KZ       | 12 – 3 PM        | 1 – 4 PM         |
+| London SB       | 1 – 2 PM         | 2 – 3 PM         |
+| NY AM KZ        | 5 – 8 PM         | 6 – 9 PM         |
+| NY AM SB        | 8 – 9 PM         | 9 – 10 PM        |
+| NY PM KZ        | 11:30 PM – 2 AM  | 12:30 – 3 AM     |
+| NY PM SB        | 12 – 1 AM        | 1 – 2 AM         |
+
+See [Kill Zones](/en/ict/ict-kill-zones) and [Silver Bullet](/en/ict/silver-bullet).
+
+---
+
+## The Top-Down Framework
+
+| Step | Timeframe        | Question                                    | Tool                                 |
+| ---- | ---------------- | ------------------------------------------- | ------------------------------------ |
+| 1    | Monthly / weekly | Which liquidity is the target?              | 20/40/60-day ranges, [Weekly Profiles](/en/ict/weekly-profiles) |
+| 2    | Daily            | Bullish or bearish today?                   | [Daily Bias](/en/ict/daily-bias)     |
+| 3    | Session          | Which kill zone?                            | Kill zones                           |
+| 4    | Minutes          | Is there a displacement in a macro or SB hour? | Macros, Silver Bullet             |
+| 5    | Entry            | Which PD array did it leave?                | [FVG](/en/ict/fvg), [order block](/en/smc/order-blocks) |
+
+### Example (from the original)
+
+| Step         | Reading                                                           |
+| ------------ | ----------------------------------------------------------------- |
+| IPDA 20-day  | Low 1.0780, high **1.0960** (untouched buy-side)                  |
+| Day          | Wednesday                                                         |
+| Bias         | Bullish (yesterday was a bullish PO3 candle)                      |
+| Session      | NY AM kill zone, 5 – 8 PM BD (summer)                             |
+| Macro        | 7:50 – 8:10 PM BD (summer)                                        |
+| Trigger      | 7:55 PM BD: a bullish displacement leaves an FVG → buy the retrace |
+| Target       | 1.0960                                                            |
+
+---
+
+## Common Mistakes
+
+| Mistake                              | Fix                                                        |
+| ------------------------------------ | ---------------------------------------------------------- |
+| Trading levels at any hour           | Wait for the level and the window to line up               |
+| Treating macros as signals           | A macro is when to look; you still need a setup            |
+| Using summer times in winter         | Add one hour from early November to mid-March              |
+| Ignoring the bigger picture          | Time without a target is just a clock                      |
+
+---
+
+## Practice
+
+1. Print the time map in your local time and keep it next to your screen.
+2. For 20 sessions, note when the session's main displacement started and whether it fell in a macro.
+3. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element                   | Answers   |
+| ------------------------- | --------- |
+| **20/40/60-day ranges**   | Where     |
+| **Daily bias**            | Which way |
+| **Kill zone**             | When (hours) |
+| **Macro / SB hour**       | When (minutes) |
+| **PD array**              | Exactly where to enter |
+
+---
+
+## Related Topics
+
+- [ICT Kill Zones](/en/ict/ict-kill-zones) — session windows
+- [Silver Bullet](/en/ict/silver-bullet) — a time-based entry
+- [Daily Bias](/en/ict/daily-bias) — which way
+- [Weekly Profiles](/en/ict/weekly-profiles) — weekly timing
+- [Monthly Profiles](/en/ict/monthly-profiles) — the 20/40/60-day ranges
