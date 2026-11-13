@@ -1,0 +1,127 @@
+---
+title: "Market Structure Shift (MSS) — Complete Guide"
+description: "Master the market structure shift (MSS): a change of character made with displacement, usually after a liquidity sweep. How to identify bullish and bearish MSS, the sweep-displacement-retrace model, FVG and order-block entries, and worked examples with a chart and an animated walkthrough."
+level: intermediate
+order: 3
+lastUpdated: "2026-11-13"
+---
+
+## What Is a Market Structure Shift?
+
+A **market structure shift (MSS)** is a break of the last swing **against** the trend, made with **displacement**: one or more large, decisive candles that usually leave a [fair value gap](/en/smc/fair-value-gap).
+
+Many traders use MSS and [CHOCH](/en/smc/choch) interchangeably. The useful distinction: **a CHOCH is any first close against the trend; an MSS is a CHOCH with displacement.** The displacement is what makes it more convincing.
+
+<Callout type="info" title="Corrected: 'the algorithm's intent'">
+  The original said an MSS shows the "market-making algorithm" changing its intent. That's ICT's framing, not a fact.
+  What the chart shows is simpler: the side that was winning lost control decisively.
+</Callout>
+
+---
+
+## BOS vs CHOCH vs MSS
+
+| Concept   | What it is                                   | Direction     |
+| --------- | -------------------------------------------- | ------------- |
+| **BOS**   | Close beyond the last swing, with the trend   | Continuation  |
+| **CHOCH** | First close beyond the last swing, against the trend | Possible reversal |
+| **MSS**   | A CHOCH with displacement                    | Stronger reversal signal |
+
+---
+
+## The Sweep → Displacement → Retrace Model
+
+![Bullish MSS: a sweep of 1.0805 to 1.0800, three strong candles close above the 1.0830 lower high, the higher low retraces into the FVG](/images/smc/market-structure-shift/bullish-mss-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/smc/mss-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this example">
+  The candles are **synthetic**, built to show the model. They are not real prices or a real trade. R:R is the planned
+  risk-to-reward.
+</Callout>
+
+1. **Downtrend:** lower highs and lower lows.
+2. **Sweep:** price drops to **1.0800**, under the 1.0805 low, and closes back above. Sell-side stops are taken.
+3. **MSS:** three strong bullish candles (31 pips together) close above the **1.0830** lower high and leave an FVG at **1.0821 – 1.0825**.
+4. **Retrace:** the first pullback forms a higher low at **1.0825**, in the FVG. Buy.
+5. **Confirmation:** a BOS above 1.0862 later confirms the new uptrend.
+
+| Level   | Price  | Note                           |
+| ------- | ------ | ------------------------------ |
+| Entry   | 1.0825 | Top of the FVG                 |
+| Stop    | 1.0798 | Below the 1.0800 sweep         |
+| Target  | 1.0880 | Buy-side liquidity above       |
+| **R:R** | **1 : 2.0** | Risk 27 pips, reward 55 pips |
+
+---
+
+## Identifying an MSS
+
+| Bullish MSS                                   | Bearish MSS                                     |
+| --------------------------------------------- | ----------------------------------------------- |
+| Downtrend: lower highs, lower lows            | Uptrend: higher highs, higher lows              |
+| Sell-side sweep under a key low               | Buy-side sweep over a key high                  |
+| Displacement closes **above** the last lower high | Displacement closes **below** the last higher low |
+| FVG/OB left below                             | FVG/OB left above                               |
+
+---
+
+## Entry Models
+
+| Model          | Entry                                        | Stop                    | Notes                         |
+| -------------- | -------------------------------------------- | ----------------------- | ----------------------------- |
+| **MSS + FVG**  | Limit in the FVG (top, or its 50%)           | Beyond the sweep        | Deeper entry = better R:R, more misses |
+| **MSS + OB**   | The last opposite candle before the displacement | Beyond the sweep or the OB | Can confirm with a lower-timeframe CHOCH in the OB |
+
+Target the next liquidity in the new direction: the last lower high's highs, equal highs, or a higher-timeframe level.
+
+---
+
+## Worked Examples (no chart)
+
+| Example               | Setup                                                    | Entry  | Stop   | Target | Planned R:R |
+| --------------------- | -------------------------------------------------------- | ------ | ------ | ------ | ----------- |
+| **EUR/USD 4H, bullish** | Weekly demand; sweep below 1.0650; 3-candle displacement closes above the 1.0720 LH; FVG 1.0690 – 1.0710 | 1.0700 | 1.0640 | 1.0850 | **1 : 2.5** (60 / 150 pips) |
+| **Gold 1H, bearish**  | Sweep above 2,480; displacement closes below the 2,440 HL; bearish OB 2,460 – 2,470 | 2,465 | 2,485 | 2,380 | **1 : 4.25** ($20 / $85) |
+
+The original showed these as results ("+150 pips, 2.5R"); they're shown here as plans.
+
+---
+
+## Common Mistakes
+
+| Mistake                              | Fix                                                    |
+| ------------------------------------ | ------------------------------------------------------ |
+| Calling a slow drift through a swing an MSS | No displacement = a CHOCH at most                 |
+| Entering on the displacement candle  | Wait for the retrace into the FVG/OB                   |
+| Ignoring the sweep                   | An MSS without a sweep fails more often                |
+| Tight stop inside the sweep          | The stop goes beyond the sweep extreme                 |
+
+---
+
+## Practice
+
+1. Find 10 MSS on 1H charts. Mark the sweep, the displacement candles, the FVG and the retrace.
+2. Measure how deep each retrace went into the FVG (top, 50%, bottom, through).
+3. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Step             | Rule                                          |
+| ---------------- | --------------------------------------------- |
+| **Sweep**        | Liquidity taken beyond the last swing         |
+| **Displacement** | Strong candles break the opposite swing       |
+| **Retrace**      | Enter in the FVG/OB the displacement left     |
+| **Stop / target** | Beyond the sweep / the next liquidity        |
+
+---
+
+## Related Topics
+
+- [CHOCH](/en/smc/choch) — the first break against the trend
+- [BOS](/en/smc/bos) — continuation
+- [Fair Value Gap](/en/smc/fair-value-gap) — the entry zone
+- [Liquidity Pools](/en/smc/liquidity-pools) — the sweep
+- [ICT MSS](/en/ict/mss) — the ICT version

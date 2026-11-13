@@ -1,0 +1,126 @@
+---
+title: "Market Structure Shift (MSS) — সম্পূর্ণ গাইড"
+description: "Market Structure Shift (MSS) আয়ত্ত করুন: Displacement সহ Change of Character, সাধারণত Liquidity Sweep এর পরে। Bullish আর Bearish MSS চেনা, Sweep-Displacement-Retrace মডেল, FVG আর Order Block এন্ট্রি, আর চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ উদাহরণ।"
+level: intermediate
+order: 3
+lastUpdated: "2026-11-13"
+---
+
+## Market Structure Shift কী?
+
+**Market Structure Shift (MSS)** হলো ট্রেন্ডের **বিপরীতে** শেষ Swing এর ভাঙন, **Displacement** সহ: এক বা একাধিক বড়, দৃঢ় ক্যান্ডেল যা সাধারণত একটি [Fair Value Gap](/bn/smc/fair-value-gap) রেখে যায়।
+
+অনেক ট্রেডার MSS আর [CHOCH](/bn/smc/choch) একই অর্থে ব্যবহার করেন। কাজের পার্থক্য: **CHOCH হলো ট্রেন্ডের বিপরীতে যেকোনো প্রথম Close; MSS হলো Displacement সহ CHOCH।** Displacement টাই এটাকে বেশি বিশ্বাসযোগ্য করে।
+
+<Callout type="info" title="সংশোধিত: 'অ্যালগরিদমের উদ্দেশ্য'">
+  মূল লেসনে বলা ছিল MSS দেখায় "মার্কেট-মেকিং অ্যালগরিদম" তার উদ্দেশ্য বদলাচ্ছে। এটা ICT এর ব্যাখ্যা, তথ্য নয়। চার্ট যা দেখায়
+  তা সহজ: যে পক্ষ জিতছিল সে দৃঢ়ভাবে নিয়ন্ত্রণ হারিয়েছে।
+</Callout>
+
+---
+
+## BOS বনাম CHOCH বনাম MSS
+
+| ধারণা      | এটা কী                                              | দিক                  |
+| --------- | --------------------------------------------------- | -------------------- |
+| **BOS**   | ট্রেন্ডের দিকে শেষ Swing এর বাইরে Close               | Continuation         |
+| **CHOCH** | ট্রেন্ডের বিপরীতে শেষ Swing এর বাইরে প্রথম Close      | সম্ভাব্য রিভার্সাল     |
+| **MSS**   | Displacement সহ CHOCH                               | শক্তিশালী রিভার্সাল সিগন্যাল |
+
+---
+
+## Sweep → Displacement → Retrace মডেল
+
+![Bullish MSS: 1.0805 এর Sweep 1.0800 পর্যন্ত, তিনটি শক্তিশালী ক্যান্ডেল 1.0830 Lower High এর উপরে ক্লোজ করে, Higher Low FVG তে রিট্রেস করে](/images/smc/market-structure-shift/bullish-mss-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/smc/mss-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  ক্যান্ডেলগুলো মডেলটা দেখানোর জন্য তৈরি **সিন্থেটিক**। এগুলো আসল প্রাইস বা আসল ট্রেড নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড।
+</Callout>
+
+1. **Downtrend:** Lower High আর Lower Low।
+2. **Sweep:** Price 1.0805 Low এর নিচে **1.0800** পর্যন্ত নামে আর উপরে ক্লোজ করে। Sell-Side Stop নেওয়া হয়।
+3. **MSS:** তিনটি শক্তিশালী Bullish ক্যান্ডেল (মোট ৩১ পিপ) **1.0830** Lower High এর উপরে ক্লোজ করে আর **1.0821 – 1.0825** এ FVG রেখে যায়।
+4. **Retrace:** প্রথম পুলব্যাক FVG এর ভেতরে **1.0825** এ Higher Low তৈরি করে। Buy।
+5. **নিশ্চয়তা:** পরে 1.0862 এর উপরে BOS নতুন Uptrend নিশ্চিত করে।
+
+| লেভেল    | প্রাইস  | নোট                            |
+| ------- | ------- | ------------------------------ |
+| এন্ট্রি  | 1.0825  | FVG এর উপরের প্রান্ত            |
+| Stop    | 1.0798  | 1.0800 Sweep এর নিচে            |
+| টার্গেট  | 1.0880  | উপরের Buy-Side Liquidity        |
+| **R:R** | **১ : ২.০** | রিস্ক ২৭ পিপ, রিওয়ার্ড ৫৫ পিপ |
+
+---
+
+## MSS চেনা
+
+| Bullish MSS                                     | Bearish MSS                                       |
+| ----------------------------------------------- | ------------------------------------------------- |
+| Downtrend: Lower High, Lower Low                | Uptrend: Higher High, Higher Low                  |
+| গুরুত্বপূর্ণ Low এর নিচে Sell-Side Sweep           | গুরুত্বপূর্ণ High এর উপরে Buy-Side Sweep             |
+| Displacement শেষ Lower High এর **উপরে** ক্লোজ করে | Displacement শেষ Higher Low এর **নিচে** ক্লোজ করে  |
+| নিচে FVG/OB রেখে যায়                             | উপরে FVG/OB রেখে যায়                               |
+
+---
+
+## এন্ট্রি মডেল
+
+| মডেল           | এন্ট্রি                                         | Stop                     | নোট                           |
+| -------------- | ---------------------------------------------- | ------------------------ | ----------------------------- |
+| **MSS + FVG**  | FVG তে লিমিট (উপরের প্রান্ত, বা ৫০%)              | Sweep এর বাইরে            | গভীর এন্ট্রি = ভালো R:R, বেশি মিস |
+| **MSS + OB**   | Displacement এর আগের শেষ বিপরীত ক্যান্ডেল         | Sweep বা OB এর বাইরে       | OB তে Lower Timeframe CHOCH দিয়ে নিশ্চিত করা যায় |
+
+নতুন দিকে পরের Liquidity টার্গেট করুন: শেষ Lower High গুলোর High, Equal High, বা Higher Timeframe লেভেল।
+
+---
+
+## উদাহরণ (চার্ট ছাড়া)
+
+| উদাহরণ                | সেটআপ                                                   | এন্ট্রি  | Stop   | টার্গেট | পরিকল্পিত R:R |
+| --------------------- | ------------------------------------------------------- | ------- | ------ | ------ | ------------- |
+| **EUR/USD 4H, Bullish** | Weekly Demand; 1.0650 এর নিচে Sweep; ৩ ক্যান্ডেলের Displacement 1.0720 LH এর উপরে ক্লোজ; FVG 1.0690 – 1.0710 | 1.0700 | 1.0640 | 1.0850 | **১ : ২.৫** (৬০ / ১৫০ পিপ) |
+| **Gold 1H, Bearish**  | 2,480 এর উপরে Sweep; Displacement 2,440 HL এর নিচে ক্লোজ; Bearish OB 2,460 – 2,470 | 2,465 | 2,485 | 2,380 | **১ : ৪.২৫** ($20 / $85) |
+
+মূল লেসনে এগুলো ফলাফল হিসেবে দেখানো হয়েছিল ("+১৫০ পিপ, 2.5R"); এখানে পরিকল্পনা হিসেবে।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                       | সমাধান                                                  |
+| ----------------------------------------- | ------------------------------------------------------ |
+| Swing এর মধ্য দিয়ে ধীরে গড়িয়ে যাওয়াকে MSS বলা | Displacement নেই = বড়জোর CHOCH                       |
+| Displacement ক্যান্ডেলে এন্ট্রি             | FVG/OB তে রিট্রেসের অপেক্ষা করুন                        |
+| Sweep উপেক্ষা                              | Sweep ছাড়া MSS বেশি ব্যর্থ হয়                          |
+| Sweep এর ভেতরে টাইট Stop                    | Stop Sweep এক্সট্রিমের বাইরে                            |
+
+---
+
+## অনুশীলন
+
+1. 1H চার্টে ১০টি MSS খুঁজুন। Sweep, Displacement ক্যান্ডেল, FVG আর রিট্রেস মার্ক করুন।
+2. প্রতিটি রিট্রেস FVG তে কত গভীরে গেছে মাপুন (উপরের প্রান্ত, ৫০%, নিচের প্রান্ত, পার হয়ে)।
+3. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধাপ              | নিয়ম                                            |
+| ---------------- | ----------------------------------------------- |
+| **Sweep**        | শেষ Swing এর বাইরে Liquidity নেওয়া               |
+| **Displacement** | শক্তিশালী ক্যান্ডেল বিপরীত Swing ভাঙে             |
+| **Retrace**      | Displacement এর রেখে যাওয়া FVG/OB তে এন্ট্রি      |
+| **Stop / টার্গেট** | Sweep এর বাইরে / পরের Liquidity                |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [CHOCH](/bn/smc/choch) — ট্রেন্ডের বিপরীতে প্রথম ভাঙন
+- [BOS](/bn/smc/bos) — Continuation
+- [Fair Value Gap](/bn/smc/fair-value-gap) — এন্ট্রি জোন
+- [Liquidity Pools](/bn/smc/liquidity-pools) — Sweep
+- [ICT MSS](/bn/ict/mss) — ICT সংস্করণ
