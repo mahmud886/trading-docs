@@ -1,82 +1,136 @@
 ---
 title: "SMC Kill Zones — Complete Guide"
-description: "Master Kill Zones — the specific time windows where institutional SMC setups have the highest success rate."
+description: "Learn the SMC kill zones in Bangladesh time: the Asian range, the London and New York AM kill zones and the London close, with correct BD times for US summer and winter, what typically happens in each, and how to plan a trading day around them, with a chart and an animated walkthrough."
 level: beginner
 order: 14
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## What are Kill Zones?
+## What Are Kill Zones?
 
-Kill Zones are **specific time windows** during the trading day when smart money is most active. SMC setups (OB entries, FVG fills, liquidity sweeps) have significantly higher success rates during these windows.
+Kill zones are **time windows** in the trading day when the big sessions open and trading volume rises. More volume means larger, cleaner moves, so SMC setups (sweeps, OB and FVG entries) tend to work better in these windows than in quiet hours.
 
----
-
-## The Three Kill Zones
-
-| Kill Zone        | Time (EST)       | Characteristics                    |
-| ---------------- | ---------------- | ---------------------------------- |
-| **London**       | 2:00 - 5:00 AM   | Trend initiation, sweeps Asian     |
-| **New York**     | 7:00 - 10:00 AM  | Continuation or reversal of London |
-| **London Close** | 10:00 - 12:00 PM | Profit-taking, reversals           |
+<Callout type="info" title="Clarified: 'success rate'">
+  The original said setups have "significantly higher success rates" in kill zones. That's a widely held view, and it
+  fits how volume moves through the day, but no figure supports it here. Test it on your own trades: log the time of
+  each one and compare.
+</Callout>
 
 ---
 
-## Why Kill Zones Matter for SMC
+## The Windows in Bangladesh Time
 
-```
-Institutional participation peaks during Kill Zones:
-- Orders are placed/executed
-- Liquidity sweeps happen
-- OB/FVG setups get activated
-- Real directional moves start
+The windows are fixed in **New York time**. New York changes its clocks twice a year and Bangladesh doesn't, so the BD times shift by one hour.
 
-Outside Kill Zones:
-- Low volume, choppy price action
-- SMC setups less reliable
-- More false signals
-- Avoid trading
-```
+| Window           | New York time       | BD — US summer (mid-Mar → early Nov) | BD — US winter (early Nov → mid-Mar) |
+| ---------------- | ------------------- | ------------------------------------ | ------------------------------------ |
+| Asian range      | 8 PM – 2 AM         | 6:00 AM – 12:00 PM                   | 7:00 AM – 1:00 PM                    |
+| **London KZ**    | 2:00 – 5:00 AM      | **12:00 – 3:00 PM**                  | **1:00 – 4:00 PM**                   |
+| **NY AM KZ**     | 7:00 – 10:00 AM     | **5:00 – 8:00 PM**                   | **6:00 – 9:00 PM**                   |
+| **London close** | 10:00 AM – 12:00 PM | **8:00 – 10:00 PM**                  | **9:00 – 11:00 PM**                  |
+| NY lunch (avoid) | 12:00 – 2:00 PM     | 10:00 PM – 12:00 AM                  | 11:00 PM – 1:00 AM                   |
 
----
-
-## Kill Zone Strategy
-
-### London Kill Zone:
-
-- Asian range = reference (mark H/L)
-- London often sweeps Asian H or L first
-- Then real direction begins
-- Best for: Trend initiation, OB entries
-
-### New York Kill Zone:
-
-- London direction = reference
-- NY either continues London or reverses it
-- Look for OB/FVG entries aligned with bias
-- Best for: Continuation setups, high-volume moves
-
-### London Close Kill Zone:
-
-- Day's move often peaks here
-- Profit-taking creates reversals
-- Best for: Counter-trend scalps (advanced)
-- Caution: Less reliable than London/NY open
+<Callout type="warning" title="Corrected: EST">
+  The original labelled these times "EST". EST is only New York's **winter** time. The windows follow New York's clock
+  all year, so in summer (EDT) they're the same New York times but one hour earlier in Bangladesh. Use the column that
+  matches the date.
+</Callout>
 
 ---
 
-## Rules
+## One Day Through the Kill Zones
 
-1. **Only take SMC setups during Kill Zones**
-2. **Asian session = preparation** (mark levels, don't trade)
-3. **Best entries:** First 2 hours of London or NY
-4. **Avoid:** 12 PM - 2 PM EST (dead zone)
-5. **Close all before end of NY session**
+![One EUR/USD day in Bangladesh time: Asian range 1.0850–1.0870, London sweeps the Asian low, NY AM runs to the previous day's high, London close pulls back](/images/smc/kill-zones/smc-kill-zones-day-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/smc-kill-zones-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**: a typical day built to show the pattern. They are not real prices, and many days don't
+  follow it.
+</Callout>
+
+1. **Asian range (6 AM – 12 PM):** a narrow range, **1.0850 – 1.0870**. Mark its high and low.
+2. **London KZ (12 – 3 PM):** price sweeps the Asian low to **1.0842**, then a strong candle displaces up. That sets the day's direction.
+3. **Between sessions (3 – 5 PM):** a pullback, no new direction.
+4. **NY AM KZ (5 – 8 PM):** the move continues to the **previous day's high (1.0900)**, the buy-side liquidity.
+5. **London close (8 – 10 PM):** profit-taking pulls price back. After it, the range narrows for the night.
+
+---
+
+## What Usually Happens in Each Window
+
+| Window           | Typical behaviour                                                  | SMC use                                                          |
+| ---------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| **Asian range**  | Narrow; builds liquidity above and below                           | Preparation: mark levels, don't trade the middle                 |
+| **London**       | Often sweeps one side of the Asian range, then trends              | Sweep → CHOCH → OB/FVG entry                                     |
+| **NY AM**        | Continues London's move, or reverses it if London reached a target | OB/FVG entries with the bias; PDH/PDL sweeps                     |
+| **London close** | Profit-taking; the day's move often stalls or pulls back           | Manage or close trades; counter-trend scalps only if experienced |
+| **NY lunch**     | Thin, choppy                                                       | Avoid                                                            |
+
+---
+
+## Planning Your Day (BD, US summer)
+
+| BD time      | What to do                                                 |
+| ------------ | ---------------------------------------------------------- |
+| Morning      | Higher-timeframe bias; mark PDH/PDL and key OBs/FVGs       |
+| 6 AM – 12 PM | Watch the Asian range form; mark its high and low at 12 PM |
+| 12 – 3 PM    | London KZ: look for a sweep of the Asian range and a CHOCH |
+| 5 – 8 PM     | NY AM KZ: continuation or reversal setups                  |
+| 8 – 10 PM    | London close: manage open trades                           |
+| After 10 PM  | Done for the day unless you trade the NY PM session        |
+
+Add one hour to every time from early November to mid-March.
+
+### Second example (no chart) — a bearish day
+
+Bias bearish (daily in premium). The Asian range is **1.2700 – 1.2725** on GBP/USD. At **12:30 PM BD** London rallies to **1.2733**, taking the Asian high, then closes back inside and breaks the last 15m higher low. Sell the FVG at **1.2722**, stop **1.2738**, target the previous day's low at **1.2668**: risk 16 pips, reward 54 pips, **R:R 1 : 3.4** (planned). If London ends without reaching it, NY AM (5 – 8 PM BD) is where the target is most likely to be tested.
+
+---
+
+## Common Mistakes
+
+| Mistake                                      | Fix                                                     |
+| -------------------------------------------- | ------------------------------------------------------- |
+| Using summer BD times in winter              | Add one hour from early November to mid-March           |
+| Trading the Asian range middle               | It's for marking levels                                 |
+| Taking any setup because it's in a kill zone | Time is a filter, not a signal; the setup must be there |
+| Entering new trades at London close          | It's for managing trades; reversals are common          |
+| Trading through NY lunch                     | Thin and choppy; wait or stop for the day               |
+
+---
+
+## Practice
+
+1. For two weeks, mark the Asian range each day.
+2. Note which side London took first, and whether the day then went the other way.
+3. Log the BD time of every trade you take, and compare results inside and outside the kill zones.
+4. Use your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Window       | BD (summer)  | Role                     |
+| ------------ | ------------ | ------------------------ |
+| Asian range  | 6 AM – 12 PM | Mark levels              |
+| London KZ    | 12 – 3 PM    | Sweep and direction      |
+| NY AM KZ     | 5 – 8 PM     | Continuation or reversal |
+| London close | 8 – 10 PM    | Profit-taking            |
 
 ---
 
 ## Related Topics
 
-- [Session Liquidity](/en/smc/session-liquidity) — Session-based targets
-- [Manipulation](/en/smc/manipulation) — Kill Zone sweeps
-- [Entry Confirmation](/en/smc/entry-confirmation) — Timing entries
+- [ICT Kill Zones](/en/ict/ict-kill-zones) — the ICT version, with NY PM and macro times
+- [Session Liquidity](/en/smc/session-liquidity) — session highs and lows as targets
+- [Manipulation](/en/smc/manipulation) — the kill-zone sweep
+- [Entry Confirmation](/en/smc/entry-confirmation) — timing the entry
