@@ -1,88 +1,127 @@
 ---
 title: "Equal Highs & Lows in SMC — Complete Guide"
-description: "Master Equal Highs and Equal Lows — engineered liquidity targets that smart money uses to fill large orders."
+description: "Master equal highs and equal lows: how close is 'equal', why stops stack beyond them, how to tell a sweep from a run, how to trade the sweep-and-reject setup with a target at the opposite pool, and where not to put your own stop, with a chart and an animated walkthrough."
 level: beginner
 order: 9
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## What are Equal Highs & Lows?
+## What Are Equal Highs and Lows?
 
-Equal Highs (EQH) and Equal Lows (EQL) are **two or more swing points at approximately the same price level**. In SMC, they represent engineered liquidity pools — retail traders place stops just beyond them, making them prime targets for institutional sweeps.
+**Equal highs (EQH)** and **equal lows (EQL)** are two or more swing points at **about the same price**. Because they look like strong resistance or support, many traders put stops just beyond them and breakout orders there too. That makes them **concentrated liquidity**.
 
-<Callout type="warning" title="Equal = Target">
-  When you see equal highs or equal lows on ANY timeframe, expect price to eventually sweep them. The more obvious the
-  equal level, the more liquidity sits there, and the more likely institutions will target it.
+| Level           | Liquidity             | Stops of…                     |
+| --------------- | --------------------- | ----------------------------- |
+| **Equal highs** | Buy-side, just above  | Shorts; plus breakout buyers  |
+| **Equal lows**  | Sell-side, just below | Longs; plus breakdown sellers |
+
+**How equal is equal?** There's no fixed rule. A practical one: within about **0.1 × ATR** of the timeframe, or a couple of pips on a 1H forex chart. Exact matches are rare.
+
+---
+
+## One Swept, One Run
+
+![Equal highs at 1.0950/1.0949 are swept to 1.0957 and rejected; equal lows at 1.0910/1.0911 are later run](/images/smc/equal-highs-lows/equal-highs-lows-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/equal-highs-lows-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this example">
+  The candles are **synthetic**, built to show the concept. They are not real prices or a real trade. R:R is the planned
+  risk-to-reward.
 </Callout>
 
----
+1. Highs at **1.0950** and **1.0949**, lows at **1.0910** and **1.0911**: a range with obvious stops on both sides.
+2. **Sweep:** hour 15 trades to **1.0957**, above the equal highs, and closes back below at 1.0946.
+3. **Entry:** sell **1.0942** as price falls back; stop **1.0960** above the sweep; target **1.0905**, just beyond the opposite pool.
+4. **Run:** the drop closes **through** the equal lows. That pool wasn't a reversal; it was the target.
 
-## Why Equal Levels Form
+| Level   | Price       | Note                         |
+| ------- | ----------- | ---------------------------- |
+| Entry   | 1.0942      | Back below the equal highs   |
+| Stop    | 1.0960      | Above the 1.0957 sweep       |
+| Target  | 1.0905      | Beyond the equal lows        |
+| **R:R** | **1 : 2.1** | Risk 18 pips, reward 37 pips |
 
-| Reason                | Explanation                               |
-| --------------------- | ----------------------------------------- |
-| Retail stop placement | Traders put SL above EQH / below EQL      |
-| Breakout orders       | Buy stops above EQH, sell stops below EQL |
-| Obvious level         | Creates massive order cluster             |
-| Institutional target  | Perfect liquidity source for fills        |
-
----
-
-## Types
-
-### Equal Highs (EQH) — Buy-Side Liquidity
-
-```
-═══ EQH ═══════════════════════
- ╱╲      ╱╲     ╱╲
-╱  ╲    ╱  ╲   ╱  ╲
-    ╲  ╱    ╲ ╱
-     ╲╱      ╲╱
-
-Above EQH: Short stop losses + buy stops
-→ Smart money targets this for SHORTS (sweep + sell)
-```
-
-### Equal Lows (EQL) — Sell-Side Liquidity
-
-```
-     ╱╲      ╱╲
-    ╱  ╲    ╱  ╲   ╱
-╲  ╱    ╲  ╱    ╲ ╱
- ╲╱      ╲╱      ╲╱
-═══ EQL ═══════════════════════
-
-Below EQL: Long stop losses + sell stops
-→ Smart money targets this for LONGS (sweep + buy)
-```
+<Callout type="warning" title="Corrected: 'expect price to sweep them'">
+  The original said to expect equal levels to be swept and called the area after a sweep a "high-probability reversal
+  zone". Equal levels are **targets**, but price can also **run** them and keep going, as the equal lows do here. Only a
+  close back inside, plus a shift in structure, makes it a reversal setup.
+</Callout>
 
 ---
 
 ## Trading Equal Levels
 
-### Strategy: Wait for Sweep
+| Step | Action                                                                    |
+| ---- | ------------------------------------------------------------------------- |
+| 1    | Mark equal highs/lows (2+ touches) on your timeframe                      |
+| 2    | Don't buy the break of EQH or sell the break of EQL blindly               |
+| 3    | Wait: sweep (close back inside) or run (close beyond and hold)?           |
+| 4    | After a sweep: look for a lower-timeframe CHOCH, then enter the other way |
+| 5    | Stop beyond the sweep's wick                                              |
+| 6    | Target the opposite pool: EQH sweep → EQL, and vice versa                 |
 
-```
-1. Identify EQH or EQL (2+ tests at same level)
-2. DON'T trade the breakout — it's likely a sweep
-3. Wait for price to pierce the level (wick beyond)
-4. Wait for reversal candle / LTF CHOCH
-5. Enter OPPOSITE to the sweep direction
-6. Stop: Beyond the sweep wick
-7. Target: Opposite liquidity (EQH → target EQL, vice versa)
-```
+After a **run** with displacement, the old level often becomes support (for EQH) or resistance (for EQL) instead.
 
-### Rules:
+---
 
-- More touches at equal level = more liquidity = better sweep
-- NEVER place stops just above EQH or below EQL
-- Expect the sweep — don't be surprised by it
-- After sweep: high-probability reversal zone
+## More Touches: Stronger or Weaker?
+
+The original said "more touches = more liquidity = better sweep". More touches do mean more stops. But each touch also absorbs orders on the other side, so a level tested many times is also **more likely to break and run**. Treat three or more touches as a sign that a big move through the level is coming, and let the close tell you which way.
+
+---
+
+## Where Not to Put Your Stop
+
+| Your trade     | Avoid                   | Better                                          |
+| -------------- | ----------------------- | ----------------------------------------------- |
+| Short near EQH | Stop 1–2 pips above EQH | Beyond a likely sweep, or skip the trade        |
+| Long near EQL  | Stop 1–2 pips below EQL | Beyond a likely sweep, or enter after the sweep |
+
+---
+
+## Common Mistakes
+
+| Mistake                              | Fix                                                        |
+| ------------------------------------ | ---------------------------------------------------------- |
+| Treating every EQH/EQL as a reversal | Wait for the close: sweep or run                           |
+| Stops right at the equal level       | That's the pool                                            |
+| Calling 10-pip-apart highs "equal"   | Keep the tolerance small for your timeframe                |
+| Ignoring the higher-timeframe trend  | In a trend, the pool in the trend direction is usually run |
+
+---
+
+## Practice
+
+1. Mark 10 sets of equal highs/lows on 1H charts.
+2. For each, record: swept (closed back) or run (closed beyond)?
+3. Note the higher-timeframe trend each time. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element       | Key point                                      |
+| ------------- | ---------------------------------------------- |
+| **EQH / EQL** | Two or more swings at about the same price     |
+| **Liquidity** | Stops stacked just beyond                      |
+| **Sweep**     | Through and back: reversal setup after a CHOCH |
+| **Run**       | Through and beyond: continuation               |
+| **Target**    | The opposite pool                              |
 
 ---
 
 ## Related Topics
 
-- [Liquidity Pools](/en/smc/liquidity-pools) — EQH/EQL are liquidity
-- [Manipulation](/en/smc/manipulation) — Sweeping equal levels
-- [Inducement](/en/smc/inducement) — Building equal levels as traps
+- [Liquidity Pools](/en/smc/liquidity-pools) — liquidity in general
+- [Inducement](/en/smc/inducement) — equal levels as bait
+- [Manipulation](/en/smc/manipulation) — sweeping equal levels
+- [ICT Turtle Soup](/en/ict/turtle-soup) — the false-break trade

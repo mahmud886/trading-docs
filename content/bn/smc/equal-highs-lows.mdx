@@ -1,72 +1,127 @@
 ---
-title: "SMC-তে Equal Highs ও Lows — সম্পূর্ণ গাইড"
-description: "Equal Highs ও Equal Lows আয়ত্ত করুন — Engineered Liquidity Target যা Smart Money বড় Order Fill-এ ব্যবহার করে।"
+title: "SMC তে Equal Highs & Lows — সম্পূর্ণ গাইড"
+description: "Equal High আর Equal Low আয়ত্ত করুন: কতটা কাছে হলে 'সমান', কেন তাদের বাইরে Stop জমে, Sweep আর Run এর পার্থক্য, উল্টো Pool টার্গেট করে Sweep-and-Reject সেটআপ কীভাবে ট্রেড করবেন, আর নিজের Stop কোথায় রাখবেন না — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: beginner
 order: 9
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## Equal Highs ও Lows কী?
+## Equal High আর Low কী?
 
-Equal Highs (EQH) ও Equal Lows (EQL) হলো **প্রায় একই Price Level-এ দুই বা তার বেশি Swing Point**। SMC-তে এগুলো Engineered Liquidity Pool — Retail Trader এদের ঠিক বাইরে Stop রাখে, তাই Institutional Sweep-এর প্রধান Target।
+**Equal High (EQH)** আর **Equal Low (EQL)** হলো **প্রায় একই প্রাইসে** দুই বা ততোধিক Swing Point। এগুলো শক্ত Resistance বা Support মনে হয় বলে অনেক ট্রেডার এর ঠিক বাইরে Stop রাখে, Breakout অর্ডারও সেখানে। এতে এগুলো **ঘন Liquidity** হয়ে যায়।
 
-<Callout type="warning" title="Equal = Target">
-  যেকোনো Timeframe-এ Equal High বা Equal Low দেখলে, আশা করুন Price শেষ পর্যন্ত Sweep করবে। Equal Level যত সুস্পষ্ট, তত
-  বেশি Liquidity বসে, তত বেশি সম্ভাবনা Institution Target করবে।
+| লেভেল          | Liquidity           | কার Stop…                       |
+| -------------- | ------------------- | ------------------------------- |
+| **Equal High** | Buy-Side, ঠিক উপরে  | Short দের; সাথে Breakout Buyer  |
+| **Equal Low**  | Sell-Side, ঠিক নিচে | Long দের; সাথে Breakdown Seller |
+
+**কতটা সমান হলে সমান?** নির্দিষ্ট নিয়ম নেই। ব্যবহারিক একটা: সেই Timeframe এর প্রায় **০.১ × ATR** এর মধ্যে, বা 1H ফরেক্স চার্টে কয়েক পিপ। হুবহু মিল কম হয়।
+
+---
+
+## একটা Sweep, একটা Run
+
+![1.0950/1.0949 এর Equal High 1.0957 পর্যন্ত Sweep হয়ে প্রত্যাখ্যাত; 1.0910/1.0911 এর Equal Low পরে Run হয়](/images/smc/equal-highs-lows/equal-highs-lows-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/equal-highs-lows-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  ক্যান্ডেলগুলো ধারণাটা দেখানোর জন্য তৈরি **সিন্থেটিক**। এগুলো আসল প্রাইস বা আসল ট্রেড নয়। R:R হলো পরিকল্পিত
+  রিস্ক-রিওয়ার্ড।
+</Callout>
+
+1. **1.0950** আর **1.0949** এ High, **1.0910** আর **1.0911** এ Low: দুই দিকে স্পষ্ট Stop সহ একটি রেঞ্জ।
+2. **Sweep:** ১৫তম ঘণ্টা Equal High এর উপরে **1.0957** পর্যন্ত যায় আর 1.0946 এ নিচে ক্লোজ করে।
+3. **এন্ট্রি:** Price নিচে ফিরলে **1.0942** এ Sell; Stop Sweep এর উপরে **1.0960**; টার্গেট উল্টো Pool এর ঠিক বাইরে **1.0905**।
+4. **Run:** পতন Equal Low এর **মধ্য দিয়ে** ক্লোজ করে। সেই Pool রিভার্সাল ছিল না; ছিল টার্গেট।
+
+| লেভেল   | প্রাইস      | নোট                            |
+| ------- | ----------- | ------------------------------ |
+| এন্ট্রি | 1.0942      | Equal High এর নিচে ফেরত        |
+| Stop    | 1.0960      | 1.0957 Sweep এর উপরে           |
+| টার্গেট | 1.0905      | Equal Low এর বাইরে             |
+| **R:R** | **১ : ২.১** | রিস্ক ১৮ পিপ, রিওয়ার্ড ৩৭ পিপ |
+
+<Callout type="warning" title="সংশোধিত: 'Sweep হবে আশা করুন'">
+  মূল লেসনে বলা ছিল Equal লেভেল Sweep হবে আশা করুন, আর Sweep এর পরের জায়গাকে "উচ্চ সম্ভাবনার রিভার্সাল জোন" বলা
+  হয়েছিল। Equal লেভেল **টার্গেট**, কিন্তু Price এগুলো **Run** করে চলেও যেতে পারে, যেমন এখানে Equal Low। শুধু ভিতরে ফিরে
+  Close আর Structure এর Shift হলেই এটা রিভার্সাল সেটআপ।
 </Callout>
 
 ---
 
-## কেন Equal Level তৈরি হয়
+## Equal লেভেল ট্রেড করা
 
-| কারণ                  | ব্যাখ্যা                                    |
-| --------------------- | ------------------------------------------- |
-| Retail Stop Placement | Trader EQH-এর উপরে / EQL-এর নিচে SL রাখে    |
-| Breakout Order        | EQH-এর উপরে Buy Stop, EQL-এর নিচে Sell Stop |
-| সুস্পষ্ট Level        | বিশাল Order Cluster তৈরি                    |
-| Institutional Target  | Fill-এর জন্য নিখুঁত Liquidity Source        |
+| ধাপ | করণীয়                                                                |
+| --- | --------------------------------------------------------------------- |
+| ১   | আপনার Timeframe এ Equal High/Low (২+ স্পর্শ) মার্ক করুন               |
+| ২   | EQH এর ভাঙনে বা EQL এর ভাঙনে অন্ধভাবে Buy/Sell করবেন না               |
+| ৩   | অপেক্ষা: Sweep (ভিতরে ফিরে Close) নাকি Run (বাইরে Close আর ধরে রাখা)? |
+| ৪   | Sweep এর পরে: Lower Timeframe CHOCH খুঁজুন, তারপর উল্টো দিকে এন্ট্রি  |
+| ৫   | Sweep এর Wick এর বাইরে Stop                                           |
+| ৬   | উল্টো Pool টার্গেট: EQH Sweep → EQL, আর উল্টোটা                       |
 
----
-
-## ধরন
-
-### Equal Highs (EQH) — Buy-Side Liquidity
-
-- EQH-এর উপরে: Short-এর Stop Loss + Buy Stop
-- Smart Money এটি SHORT-এর জন্য Target করে (Sweep + Sell)
-
-### Equal Lows (EQL) — Sell-Side Liquidity
-
-- EQL-এর নিচে: Long-এর Stop Loss + Sell Stop
-- Smart Money এটি LONG-এর জন্য Target করে (Sweep + Buy)
+Displacement সহ **Run** এর পরে পুরনো লেভেল প্রায়ই Support (EQH এর জন্য) বা Resistance (EQL এর জন্য) হয়ে যায়।
 
 ---
 
-## Equal Level Trade করা
+## বেশি স্পর্শ: শক্তিশালী নাকি দুর্বল?
 
-### Strategy: Sweep-এর জন্য অপেক্ষা
+মূল লেসনে বলা ছিল "বেশি স্পর্শ = বেশি Liquidity = ভালো Sweep"। বেশি স্পর্শ মানে বেশি Stop, ঠিক। কিন্তু প্রতিটি স্পর্শ অন্য পাশের অর্ডারও শোষণ করে, তাই বহুবার টেস্ট হওয়া লেভেল **ভেঙে Run হওয়ার সম্ভাবনাও বেশি**। তিন বা তার বেশি স্পর্শকে লেভেলের মধ্য দিয়ে বড় Move আসছে এমন লক্ষণ হিসেবে দেখুন, আর কোন দিকে তা Close কে বলতে দিন।
 
-```
-1. EQH বা EQL চিহ্নিত (একই Level-এ ২+ Test)
-2. Breakout Trade করবেন না — সম্ভবত Sweep
-3. Price Level Pierce করার অপেক্ষা (বাইরে Wick)
-4. Reversal Candle / LTF CHOCH অপেক্ষা
-5. Sweep Direction-এর বিপরীতে Enter
-6. Stop: Sweep Wick-এর বাইরে
-7. Target: বিপরীত Liquidity (EQH → EQL Target, উল্টো)
-```
+---
 
-### নিয়ম:
+## নিজের Stop কোথায় রাখবেন না
 
-- Equal Level-এ বেশি Touch = বেশি Liquidity = ভালো Sweep
-- কখনো EQH-এর ঠিক উপরে বা EQL-এর ঠিক নিচে Stop রাখবেন না
-- Sweep আশা করুন — অবাক হবেন না
-- Sweep-এর পর: High-probability Reversal Zone
+| আপনার ট্রেড       | এড়ান                    | ভালো                                             |
+| ----------------- | ------------------------ | ------------------------------------------------ |
+| EQH এর কাছে Short | EQH এর ১–২ পিপ উপরে Stop | সম্ভাব্য Sweep এর বাইরে, বা ট্রেড বাদ            |
+| EQL এর কাছে Long  | EQL এর ১–২ পিপ নিচে Stop | সম্ভাব্য Sweep এর বাইরে, বা Sweep এর পরে এন্ট্রি |
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                              | সমাধান                                         |
+| -------------------------------- | ---------------------------------------------- |
+| প্রতিটি EQH/EQL কে রিভার্সাল ধরা | Close এর অপেক্ষা: Sweep নাকি Run               |
+| ঠিক Equal লেভেলে Stop            | Pool টা সেখানেই                                |
+| ১০ পিপ দূরের High কে "সমান" বলা  | আপনার Timeframe এর জন্য টলারেন্স ছোট রাখুন     |
+| Higher Timeframe ট্রেন্ড উপেক্ষা | ট্রেন্ডে, ট্রেন্ডের দিকের Pool সাধারণত Run হয় |
+
+---
+
+## অনুশীলন
+
+1. 1H চার্টে ১০ সেট Equal High/Low মার্ক করুন।
+2. প্রতিটির জন্য লিখুন: Sweep (ভিতরে Close) নাকি Run (বাইরে Close)?
+3. প্রতিবার Higher Timeframe ট্রেন্ড লিখুন। আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| উপাদান        | মূল কথা                                             |
+| ------------- | --------------------------------------------------- |
+| **EQH / EQL** | প্রায় একই প্রাইসে দুই বা ততোধিক Swing              |
+| **Liquidity** | ঠিক বাইরে Stop জমা                                  |
+| **Sweep**     | ভেতর দিয়ে গিয়ে ফেরা: CHOCH এর পরে রিভার্সাল সেটআপ |
+| **Run**       | ভেতর দিয়ে গিয়ে বাইরে থাকা: Continuation           |
+| **টার্গেট**   | উল্টো Pool                                          |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Liquidity Pools](/bn/smc/liquidity-pools) — EQH/EQL হলো Liquidity
-- [Manipulation](/bn/smc/manipulation) — Equal Level Sweep করা
-- [Inducement](/bn/smc/inducement) — Trap হিসেবে Equal Level তৈরি
+- [Liquidity Pools](/bn/smc/liquidity-pools) — সাধারণভাবে Liquidity
+- [Inducement](/bn/smc/inducement) — টোপ হিসেবে Equal লেভেল
+- [Manipulation](/bn/smc/manipulation) — Equal লেভেল Sweep করা
+- [ICT Turtle Soup](/bn/ict/turtle-soup) — মিথ্যা-ভাঙনের ট্রেড
