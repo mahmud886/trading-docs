@@ -1,0 +1,152 @@
+---
+title: "Fair Value Gap (FVG) — Complete Guide"
+description: "Master fair value gaps in Smart Money Concepts: the three-candle anatomy, bullish and bearish FVGs, how price reacts (full fill, 50%, edge, invalidation), three entry models, multi-timeframe use, inversion FVGs, and worked examples, with a chart and an animated walkthrough."
+level: intermediate
+order: 12
+lastUpdated: "2026-11-13"
+---
+
+## What Is a Fair Value Gap?
+
+A **fair value gap (FVG)** is a three-candle pattern where the middle candle moves so far that the **first and third candles don't overlap**. The price range between them was traded only in one direction, quickly. Price often comes back to it later.
+
+| Candle       | Role                                            |
+| ------------ | ----------------------------------------------- |
+| **Candle 1** | Its **high** (bullish FVG) or **low** (bearish FVG) is one edge |
+| **Candle 2** | The displacement candle: large body, little overlap |
+| **Candle 3** | Its **low** (bullish) or **high** (bearish) is the other edge |
+
+- **Bullish FVG:** candle 3's low is **above** candle 1's high.
+- **Bearish FVG:** candle 3's high is **below** candle 1's low.
+
+The midpoint is the **consequent encroachment (CE)**, the 50% level.
+
+---
+
+## A Bullish FVG, Step by Step
+
+![Bullish FVG: a London drop to 1.0850, a three-candle rally leaving a gap at 1.0870–1.0885, a slow retrace, an entry at the 50% level](/images/smc/fair-value-gap/eurusd-bullish-fvg-smc-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/smc/smc-fvg-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this example">
+  The candles are **synthetic**, built around the levels in this lesson (BD time, US summer). They are not real prices
+  or a real trade. R:R is the planned risk-to-reward.
+</Callout>
+
+1. **London** drops to **1.0850**, then three candles rally to **1.0920**.
+2. Candle 1's high is **1.0870**, candle 3's low is **1.0885**: a bullish FVG at **1.0870 – 1.0885**, CE **1.0878**.
+3. Price drifts back over the next few hours, touches the top of the gap, then reaches the CE at **5 PM BD**, the start of the NY session.
+4. Buy **1.0878**.
+
+| Level   | Price  | Note                          |
+| ------- | ------ | ----------------------------- |
+| Entry   | 1.0878 | CE of the FVG                 |
+| Stop    | 1.0866 | Below the FVG                 |
+| Target  | 1.0950 | Above the 1.0920 high         |
+| **R:R** | **1 : 6.0** | Risk 12 pips, reward 72 pips |
+
+---
+
+## How Price Reacts to an FVG
+
+| Reaction            | What happens                                   | Reading                              |
+| ------------------- | ---------------------------------------------- | ------------------------------------ |
+| **Edge rejection**  | Touches the near edge and turns                | Strong; you may miss a CE entry      |
+| **50% (CE)**        | Fills to the midpoint and turns                | The classic entry                    |
+| **Full fill**       | Trades through the whole gap, then turns       | Still valid if it closes back        |
+| **Invalidation**    | **Closes** beyond the far edge                 | The FVG has failed; it may become an [inversion FVG](/en/ict/fvg) |
+
+<Callout type="warning" title="Corrected: 'price will return'">
+  The original called FVGs "unfinished business" that price "has a natural tendency" to fill, and said institutions
+  have orders there. Many FVGs are revisited; many in strong trends are not, for days or weeks. And nobody can see whose
+  orders are in the gap. Treat an FVG as a likely reaction zone in the direction of the trend, not a promise.
+</Callout>
+
+---
+
+## Entry Models
+
+| Model                        | How                                                          | Trade-off                     |
+| ---------------------------- | ------------------------------------------------------------ | ----------------------------- |
+| **1. Limit at the CE**       | Limit order at the 50%; stop beyond the FVG                  | Best price; misses edge rejections |
+| **2. Reaction entry**        | Wait for a rejection or lower-timeframe CHOCH inside the FVG | More confirmation; worse price |
+| **3. FVG + OB confluence**   | Enter where the FVG overlaps the [order block](/en/smc/order-blocks) | Fewer setups, cleaner zones |
+
+**Stop:** beyond the far edge of the FVG, or beyond the swing it came from. **Target:** the next liquidity.
+
+---
+
+## FVGs With Other Concepts
+
+| Combination                   | Why it helps                                              |
+| ----------------------------- | --------------------------------------------------------- |
+| **Sweep → FVG**               | The FVG comes from the reversal after liquidity was taken |
+| **MSS → FVG**                 | The FVG is in the displacement that broke structure. See [MSS](/en/smc/market-structure-shift). |
+| **FVG in discount / premium** | Buy FVGs in discount, sell FVGs in premium. See [Premium & Discount](/en/smc/premium-discount). |
+
+---
+
+## Multi-Timeframe Use
+
+| Timeframe   | Use                                                    |
+| ----------- | ------------------------------------------------------ |
+| Daily / 4H  | Zones and targets: price often reacts at HTF FVGs      |
+| 1H / 15m    | The setup FVG                                          |
+| 5m / 1m     | Entry: a CHOCH inside the HTF FVG                      |
+
+---
+
+## Worked Examples (no chart)
+
+| Example              | Setup                                                    | Entry  | Stop   | Target | Planned R:R |
+| -------------------- | -------------------------------------------------------- | ------ | ------ | ------ | ----------- |
+| **Gold, bullish**    | 1 PM BD (London): Asian low swept, rally leaves FVG 2,328 – 2,335 | 2,332 | 2,325 | 2,355 | **1 : 3.3** ($7 / $23) |
+| **NAS100, bearish**  | After NFP (6:30 PM BD, summer): spike to 18,500, reversal leaves FVG 18,420 – 18,450 | 18,435 | 18,460 | 18,350 | **1 : 3.4** (25 / 85) |
+| **BTC, bullish**     | Break above 70,000 leaves FVG 69,200 – 69,800; CE retest two days later | 69,500 | 68,900 | 72,000 | **1 : 4.2** (600 / 2,500) |
+
+<Callout type="warning" title="Corrected: the gold example">
+  The original said gold "drops from 2,350 to 2,320, creating a bullish FVG". A drop creates a **bearish** FVG. A
+  bullish FVG at 2,328 – 2,335 has to come from the rally **after** the low. It also gave R:R 1:3.7 using the result
+  ($26); the plan (entry 2,332, stop 2,325, target 2,355) is **1:3.3**.
+</Callout>
+
+---
+
+## Common Mistakes
+
+| Mistake                              | Fix                                                    |
+| ------------------------------------ | ------------------------------------------------------ |
+| Trading every FVG                    | Only FVGs from displacement, in the trend direction    |
+| Counter-trend FVGs in strong trends  | They often don't hold                                  |
+| Stop inside the FVG                  | Beyond the far edge                                    |
+| FVGs in dead sessions                | Gaps from thin markets mean less                       |
+| Treating a wick through as failure   | Only a close beyond the far edge invalidates it        |
+
+---
+
+## Practice
+
+1. Mark 20 FVGs on 15m–1H charts.
+2. For each, record: edge, CE, full fill, or invalidated?
+3. Note whether it was with or against the 4H trend. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element        | Rule                                                 |
+| -------------- | ---------------------------------------------------- |
+| **FVG**        | Candle 1 and candle 3 don't overlap                  |
+| **CE**         | The 50% level, the classic entry                     |
+| **Valid**      | Until a candle closes beyond the far edge            |
+| **Best**       | From displacement, after a sweep/MSS, in the trend direction |
+
+---
+
+## Related Topics
+
+- [Imbalance](/en/smc/imbalance) — FVGs and other inefficiencies
+- [Order Blocks](/en/smc/order-blocks) — confluence with FVGs
+- [Market Structure Shift](/en/smc/market-structure-shift) — the displacement that leaves FVGs
+- [ICT FVG](/en/ict/fvg) — inversion FVGs and more examples
