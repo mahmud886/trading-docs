@@ -1,83 +1,144 @@
 ---
 title: "SMC Entry Confirmation — Complete Guide"
-description: "Master entry confirmation techniques in SMC. Learn LTF CHOCH, displacement, candle confirmation, and grading setup quality."
+description: "Learn how to confirm an SMC entry at a point of interest: risk entries, candle confirmation, and lower-timeframe CHOCH with displacement and an FVG, what each one costs in R:R, and a setup-grading checklist, with a chart and an animated walkthrough."
 level: intermediate
 order: 15
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## What is Entry Confirmation?
+## What Is Entry Confirmation?
 
-Entry confirmation is the **final trigger** that validates entering a trade after reaching your Point of Interest (POI). In SMC, you don't enter just because price touches an OB — you wait for confirmation that smart money is reacting.
+Entry confirmation is the **final trigger** before you enter at your point of interest (POI): an order block, FVG or other zone you marked on the higher timeframe.
+
+Price touching a POI doesn't mean the zone will hold. Confirmation is evidence, on the lower timeframe, that price is actually reacting there. The trade-off: **the more evidence you wait for, the worse your entry price, and the lower your R:R.**
+
+---
+
+## Three Entries at the Same POI
+
+![Three entries at a 1H bullish order block on EUR/USD 5m: risk entry 1.0850 (1:4.2), engulfing close 1.0854 (1:2.9), CHOCH + FVG 1.0861 (1:1.7)](/images/smc/entry-confirmation/entry-confirmation-tiers-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/entry-confirmation-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
+
+All three use the same POI (a 1H bullish OB at **1.0840 – 1.0850**), the same stop (**1.0838**, below the OB) and the same target (**1.0900**):
+
+| Entry | Trigger                                                            | Price  | Risk    | Reward  | **R:R**     |
+| ----- | ------------------------------------------------------------------ | ------ | ------- | ------- | ----------- |
+| **A** | Risk entry: limit order at the OB's top                            | 1.0850 | 12 pips | 50 pips | **1 : 4.2** |
+| **B** | Candle: a bullish engulfing closes at 1.0854                       | 1.0854 | 16 pips | 46 pips | **1 : 2.9** |
+| **C** | Structure: CHOCH above the 1.0866 lower high, entry in the new FVG | 1.0861 | 23 pips | 39 pips | **1 : 1.7** |
+
+Entry A gets the best price but has no evidence the zone will hold; it's also filled on every setup that fails. Entry C has the most evidence but the smallest reward. Many traders using C move the stop up to just below the swing low that made the CHOCH (here 1.0843, so a stop near 1.0840), which brings its R:R back toward 1 : 2.
 
 ---
 
 ## Confirmation Methods
 
-### 1. LTF CHOCH (Best)
+### 1. Lower-timeframe CHOCH (strongest)
 
-```
-1. Price reaches your HTF POI (OB, FVG, etc.)
-2. Drop to lower timeframe (M5/M15)
-3. Wait for CHOCH in your trade direction
-4. Enter after the CHOCH
-5. Stop: Beyond the CHOCH swing point
+1. Price reaches your HTF POI.
+2. Drop to the 5m or 15m chart.
+3. Wait for a CHOCH in your trade direction: a close beyond the last lower high (for a long) or higher low (for a short).
+4. Enter on the retrace into the FVG or OB the CHOCH left behind.
+5. Stop beyond the swing that made the CHOCH, or beyond the POI.
 
-This is the HIGHEST CONFIDENCE confirmation.
-```
+### 2. Displacement + new FVG
 
-### 2. Displacement + FVG Creation
+A strong, large-bodied candle away from the POI that leaves an FVG. It usually _is_ the CHOCH candle, so this and method 1 often arrive together. Enter on the retrace into the new FVG.
 
-```
-1. Price reaches POI
-2. Strong displacement candle appears (Marubozu-like)
-3. Creates a new FVG in your direction
-4. Enter on retracement to the new FVG
-5. Shows institutional commitment
-```
+### 3. Candle pattern
 
-### 3. Candle Confirmation
+An engulfing candle, a pin bar or a strong close at the POI. It's the earliest and weakest form of confirmation, so use it with other confluence.
 
-- Engulfing pattern at POI
-- Pin bar/rejection at POI
-- Strong close in your direction
-- Weakest form of confirmation (use with confluence)
+<Callout type="info" title="Clarified: the hierarchy">
+  The original ranked "displacement + FVG" as having higher R:R than a CHOCH entry. The two are usually the same move:
+  the displacement candle is what breaks structure. What changes R:R is where you enter and where you put the stop, not
+  the name of the trigger.
+</Callout>
 
----
-
-## Confirmation Hierarchy
-
-| Rank | Method                       | Confidence | R:R      |
-| ---- | ---------------------------- | ---------- | -------- |
-| 1    | LTF CHOCH                    | Highest    | Moderate |
-| 2    | Displacement + FVG           | High       | High     |
-| 3    | Engulfing at POI             | Moderate   | Moderate |
-| 4    | No confirmation (risk entry) | Low        | Highest  |
+| Rank | Method                       | Evidence | Entry price |
+| ---- | ---------------------------- | -------- | ----------- |
+| 1    | LTF CHOCH + FVG retrace      | Most     | Latest      |
+| 2    | Displacement candle close    | High     | Late        |
+| 3    | Engulfing / pin bar at POI   | Some     | Early       |
+| 4    | Risk entry (no confirmation) | None     | Best        |
 
 ---
 
-## Grading Setup Quality
+## Grading the Setup
 
-```
-A+ Setup (take full size):
-- HTF trend aligned ✓
-- At unmitigated OB/FVG ✓
-- In discount/premium zone ✓
-- LTF CHOCH confirmed ✓
-- Kill Zone timing ✓
+Score each setup before you take it:
 
-B Setup (take reduced size):
-- 3-4 of the above criteria met
+| Criterion                                    | ✓   |
+| -------------------------------------------- | --- |
+| Higher-timeframe trend agrees                |     |
+| POI is unmitigated (first touch)             |     |
+| POI is in discount (long) or premium (short) |     |
+| LTF confirmation (CHOCH) present             |     |
+| Inside a [kill zone](/en/smc/kill-zones)     |     |
 
-C Setup (skip):
-- Fewer than 3 criteria met
-```
+| Score | Grade | Action       |
+| ----- | ----- | ------------ |
+| 5 / 5 | A+    | Normal risk  |
+| 3–4   | B     | Reduced risk |
+| 0–2   | C     | Skip         |
+
+This is a checklist for consistency, not a measured win rate. Track your own results by grade in your journal to see whether A+ setups really do better for you.
+
+### Second example (no chart) — Gold, short at a 4H OB
+
+A 4H bearish OB at **2,418 – 2,425**. Price taps it in the NY kill zone. On 5m, a CHOCH below **2,412** leaves an FVG; sell the retrace at **2,414**, stop **2,427** above the OB, target **2,385**: risk $13, reward $29, **R:R 1 : 2.2** (planned). A risk entry at the OB's bottom (2,418) with the same stop and target would have been 1 : 3.7, with no evidence.
+
+---
+
+## Common Mistakes
+
+| Mistake                                         | Fix                                                       |
+| ----------------------------------------------- | --------------------------------------------------------- |
+| Entering on the touch with no plan              | Decide in advance: risk entry or confirmation             |
+| Waiting for confirmation, then using a POI stop | The R:R gets poor; consider the CHOCH-swing stop          |
+| Calling any small candle "confirmation"         | Use structure (a CHOCH), not a single candle, when unsure |
+| Chasing after confirmation                      | If you missed the FVG retrace, the trade is gone          |
+| Taking C-grade setups                           | Skip them; there will be others                           |
+
+---
+
+## Practice
+
+1. Find 20 HTF POI touches.
+2. For each, record where A, B and C entries would have been, with the same stop and target.
+3. Note which ones failed before a CHOCH ever formed: those are losses that only the risk entry took.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Entry           | Evidence | R:R                                   |
+| --------------- | -------- | ------------------------------------- |
+| Risk entry      | None     | Best                                  |
+| Candle pattern  | Some     | Middle                                |
+| LTF CHOCH + FVG | Most     | Lowest (unless the stop is tightened) |
 
 ---
 
 ## Related Topics
 
-- [Entry Models](/en/price-action/entry-models) — Risk vs. confirmation entry
-- [CHOCH](/en/smc/choch) — Understanding CHOCH
-- [Order Blocks](/en/smc/order-blocks) — POI for entries
-- [Kill Zones](/en/smc/kill-zones) — Timing confirmation
+- [Entry Models](/en/price-action/entry-models) — risk vs confirmation entries
+- [CHOCH](/en/smc/choch) — the main confirmation
+- [Order Blocks](/en/smc/order-blocks) — the POI
+- [Kill Zones](/en/smc/kill-zones) — timing
+- [Risk Models](/en/smc/risk-models) — sizing by grade

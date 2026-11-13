@@ -1,83 +1,143 @@
 ---
 title: "SMC Entry Confirmation — সম্পূর্ণ গাইড"
-description: "SMC-তে Entry Confirmation Technique আয়ত্ত করুন। LTF CHOCH, Displacement, Candle Confirmation ও Setup Quality Grading শিখুন।"
+description: "Point of Interest এ SMC এন্ট্রি কীভাবে নিশ্চিত করবেন শিখুন: Risk Entry, ক্যান্ডেল Confirmation, আর Displacement ও FVG সহ Lower Timeframe CHOCH, প্রতিটির R:R খরচ, আর সেটআপ গ্রেডিং চেকলিস্ট — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 15
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
 ## Entry Confirmation কী?
 
-Entry Confirmation হলো Point of Interest (POI)-এ পৌঁছানোর পর Trade-এ Enter Validate করার **চূড়ান্ত Trigger**। SMC-তে শুধু Price OB Touch করলেই Enter করেন না — Smart Money React করছে এমন Confirmation অপেক্ষা করেন।
+Entry Confirmation হলো আপনার Point of Interest (POI) এ এন্ট্রির আগে **শেষ ট্রিগার**: Higher Timeframe এ মার্ক করা Order Block, FVG বা অন্য Zone।
+
+Price POI ছুঁলেই Zone টা হোল্ড করবে এমন নয়। Confirmation হলো Lower Timeframe এ প্রমাণ যে Price সত্যিই সেখানে রিঅ্যাক্ট করছে। বিনিময়: **যত বেশি প্রমাণের অপেক্ষা করবেন, এন্ট্রি প্রাইস তত খারাপ, R:R তত কম।**
 
 ---
 
-## Confirmation পদ্ধতি
+## একই POI তে তিনটি এন্ট্রি
 
-### ১. LTF CHOCH (সেরা)
+![EUR/USD 5m এ 1H Bullish Order Block এ তিনটি এন্ট্রি: Risk Entry 1.0850 (1:4.2), Engulfing Close 1.0854 (1:2.9), CHOCH + FVG 1.0861 (1:1.7)](/images/smc/entry-confirmation/entry-confirmation-tiers-dark.png)
 
-```
-1. Price HTF POI-তে পৌঁছায় (OB, FVG ইত্যাদি)
-2. Lower Timeframe-এ নামুন (M5/M15)
-3. Trade Direction-এ CHOCH-এর জন্য অপেক্ষা
-4. CHOCH-এর পর Enter
-5. Stop: CHOCH Swing Point-এর বাইরে
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/entry-confirmation-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-সর্বোচ্চ CONFIDENCE Confirmation।
-```
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
+</Callout>
 
-### ২. Displacement + FVG তৈরি
+তিনটিতেই একই POI (1H Bullish OB **1.0840 – 1.0850**), একই Stop (**1.0838**, OB এর নিচে) আর একই টার্গেট (**1.0900**):
 
-```
-1. Price POI-তে পৌঁছায়
-2. শক্তিশালী Displacement Candle দেখা দেয় (Marubozu-সদৃশ)
-3. আপনার Direction-এ নতুন FVG তৈরি
-4. নতুন FVG-তে Retracement-এ Enter
-5. Institutional Commitment দেখায়
-```
+| এন্ট্রি | ট্রিগার                                                         | প্রাইস | রিস্ক  | রিওয়ার্ড | **R:R**     |
+| ------- | --------------------------------------------------------------- | ------ | ------ | --------- | ----------- |
+| **A**   | Risk Entry: OB এর উপরে Limit Order                              | 1.0850 | ১২ পিপ | ৫০ পিপ    | **১ : ৪.২** |
+| **B**   | ক্যান্ডেল: একটি Bullish Engulfing 1.0854 এ Close                | 1.0854 | ১৬ পিপ | ৪৬ পিপ    | **১ : ২.৯** |
+| **C**   | Structure: 1.0866 Lower High এর উপরে CHOCH, নতুন FVG তে এন্ট্রি | 1.0861 | ২৩ পিপ | ৩৯ পিপ    | **১ : ১.৭** |
 
-### ৩. Candle Confirmation
-
-- POI-তে Engulfing Pattern
-- POI-তে Pin Bar/Rejection
-- আপনার Direction-এ শক্তিশালী Close
-- দুর্বলতম Confirmation (Confluence-সহ ব্যবহার)
+এন্ট্রি A সেরা প্রাইস পায় কিন্তু Zone হোল্ড করার কোনো প্রমাণ নেই; ব্যর্থ প্রতিটি সেটআপেও এটা Fill হয়। এন্ট্রি C তে সবচেয়ে বেশি প্রমাণ কিন্তু রিওয়ার্ড সবচেয়ে কম। C ব্যবহার করা অনেক ট্রেডার Stop কে CHOCH তৈরি করা Swing Low এর ঠিক নিচে তোলেন (এখানে 1.0843, তাই Stop 1.0840 এর কাছে), যাতে R:R আবার ১ : ২ এর দিকে আসে।
 
 ---
 
-## Confirmation স্তরবিন্যাস
+## Confirmation এর পদ্ধতি
 
-| Rank | পদ্ধতি                          | Confidence | R:R      |
-| ---- | ------------------------------- | ---------- | -------- |
-| ১    | LTF CHOCH                       | সর্বোচ্চ   | মধ্যম    |
-| ২    | Displacement + FVG              | উচ্চ       | উচ্চ     |
-| ৩    | POI-তে Engulfing                | মধ্যম      | মধ্যম    |
-| ৪    | Confirmation ছাড়া (Risk Entry) | নিম্ন      | সর্বোচ্চ |
+### ১. Lower Timeframe CHOCH (সবচেয়ে শক্তিশালী)
+
+1. Price আপনার HTF POI তে পৌঁছায়।
+2. 5m বা 15m চার্টে নামুন।
+3. ট্রেডের দিকে CHOCH এর অপেক্ষা করুন: শেষ Lower High (Long এর জন্য) বা Higher Low (Short এর জন্য) এর ওপারে Close।
+4. CHOCH এর রেখে যাওয়া FVG বা OB তে রিট্রেসে এন্ট্রি নিন।
+5. Stop CHOCH তৈরি করা Swing এর ওপারে, অথবা POI এর ওপারে।
+
+### ২. Displacement + নতুন FVG
+
+POI থেকে দূরে একটি শক্তিশালী, বড় Body র ক্যান্ডেল যা FVG রেখে যায়। এটা সাধারণত নিজেই CHOCH ক্যান্ডেল, তাই এটা আর পদ্ধতি ১ প্রায়ই একসাথে আসে। নতুন FVG তে রিট্রেসে এন্ট্রি নিন।
+
+### ৩. ক্যান্ডেল প্যাটার্ন
+
+POI তে Engulfing ক্যান্ডেল, Pin Bar বা শক্তিশালী Close। এটা সবচেয়ে আগের আর সবচেয়ে দুর্বল Confirmation, তাই অন্য Confluence এর সাথে ব্যবহার করুন।
+
+<Callout type="info" title="স্পষ্ট করা: ক্রম">
+  মূল লেসনে "Displacement + FVG" কে CHOCH এন্ট্রির চেয়ে বেশি R:R বলা হয়েছিল। দুটো সাধারণত একই Move: Displacement
+  ক্যান্ডেলই Structure ভাঙে। R:R বদলায় আপনি কোথায় এন্ট্রি নেন আর Stop কোথায় রাখেন তাতে, ট্রিগারের নামে নয়।
+</Callout>
+
+| ক্রম | পদ্ধতি                        | প্রমাণ       | এন্ট্রি প্রাইস |
+| ---- | ----------------------------- | ------------ | -------------- |
+| ১    | LTF CHOCH + FVG রিট্রেস       | সবচেয়ে বেশি | সবচেয়ে দেরিতে |
+| ২    | Displacement ক্যান্ডেল Close  | বেশি         | দেরিতে         |
+| ৩    | POI তে Engulfing / Pin Bar    | কিছুটা       | আগে            |
+| ৪    | Risk Entry (Confirmation নেই) | নেই          | সেরা           |
 
 ---
 
-## Setup Quality Grading
+## সেটআপ গ্রেডিং
 
-```
-A+ Setup (পূর্ণ Size নিন):
-- HTF Trend Aligned ✓
-- Unmitigated OB/FVG-তে ✓
-- Discount/Premium Zone-এ ✓
-- LTF CHOCH Confirmed ✓
-- Kill Zone Timing ✓
+নেওয়ার আগে প্রতিটি সেটআপের স্কোর করুন:
 
-B Setup (কম Size নিন):
-- উপরের ৩-৪টি Criteria পূর্ণ
+| মানদণ্ড                                    | ✓   |
+| ------------------------------------------ | --- |
+| Higher Timeframe ট্রেন্ড একমত              |     |
+| POI Unmitigated (প্রথম ছোঁয়া)             |     |
+| POI Discount এ (Long) বা Premium এ (Short) |     |
+| LTF Confirmation (CHOCH) আছে               |     |
+| [Kill Zone](/bn/smc/kill-zones) এর ভিতরে   |     |
 
-C Setup (Skip করুন):
-- ৩-এর কম Criteria পূর্ণ
-```
+| স্কোর | গ্রেড | করণীয়          |
+| ----- | ----- | --------------- |
+| ৫ / ৫ | A+    | স্বাভাবিক রিস্ক |
+| ৩–৪   | B     | কম রিস্ক        |
+| ০–২   | C     | বাদ দিন         |
+
+এটা ধারাবাহিকতার জন্য একটা চেকলিস্ট, মাপা Win Rate নয়। জার্নালে গ্রেড অনুযায়ী নিজের ফলাফল ট্র্যাক করুন, দেখুন A+ সেটআপ আপনার জন্য সত্যিই ভালো করে কি না।
+
+### দ্বিতীয় উদাহরণ (চার্ট ছাড়া) — Gold, 4H OB তে Short
+
+একটি 4H Bearish OB **2,418 – 2,425**। NY Kill Zone এ Price এটা ছোঁয়। 5m এ **2,412** এর নিচে CHOCH একটি FVG রেখে যায়; **2,414** এ রিট্রেসে Sell, Stop **2,427** OB এর উপরে, টার্গেট **2,385**: রিস্ক $13, রিওয়ার্ড $29, **R:R ১ : ২.২** (পরিকল্পিত)। একই Stop আর টার্গেটে OB এর নিচের দিকে (2,418) Risk Entry হলে R:R হতো ১ : ৩.৭, কিন্তু কোনো প্রমাণ ছাড়া।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                        | সমাধান                                                        |
+| ------------------------------------------ | ------------------------------------------------------------- |
+| পরিকল্পনা ছাড়া ছোঁয়াতেই এন্ট্রি          | আগে ঠিক করুন: Risk Entry নাকি Confirmation                    |
+| Confirmation এর অপেক্ষা, তারপর POI এর Stop | R:R খারাপ হয়; CHOCH-Swing Stop বিবেচনা করুন                  |
+| যেকোনো ছোট ক্যান্ডেলকে "Confirmation" বলা  | সন্দেহ হলে একটি ক্যান্ডেল নয়, Structure (CHOCH) ব্যবহার করুন |
+| Confirmation এর পর পেছনে দৌড়ানো           | FVG রিট্রেস মিস করলে ট্রেডটা চলে গেছে                         |
+| C গ্রেড সেটআপ নেওয়া                       | বাদ দিন; আরও আসবে                                             |
+
+---
+
+## অনুশীলন
+
+1. ২০টি HTF POI ছোঁয়া খুঁজুন।
+2. প্রতিটির জন্য একই Stop আর টার্গেটে A, B আর C এন্ট্রি কোথায় হতো লিখুন।
+3. কোনগুলো CHOCH তৈরির আগেই ব্যর্থ হয়েছে লিখুন: সেগুলো এমন লস যা শুধু Risk Entry নিয়েছে।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| এন্ট্রি             | প্রমাণ       | R:R                            |
+| ------------------- | ------------ | ------------------------------ |
+| Risk Entry          | নেই          | সেরা                           |
+| ক্যান্ডেল প্যাটার্ন | কিছুটা       | মাঝামাঝি                       |
+| LTF CHOCH + FVG     | সবচেয়ে বেশি | সবচেয়ে কম (Stop টাইট না করলে) |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Entry Models](/bn/price-action/entry-models) — Risk vs. Confirmation Entry
-- [CHOCH](/bn/smc/choch) — CHOCH বোঝা
-- [Order Blocks](/bn/smc/order-blocks) — Entry-র জন্য POI
-- [Kill Zones](/bn/smc/kill-zones) — Confirmation Timing
+- [Entry Models](/bn/price-action/entry-models) — Risk বনাম Confirmation এন্ট্রি
+- [CHOCH](/bn/smc/choch) — প্রধান Confirmation
+- [Order Blocks](/bn/smc/order-blocks) — POI
+- [Kill Zones](/bn/smc/kill-zones) — সময়
+- [Risk Models](/bn/smc/risk-models) — গ্রেড অনুযায়ী সাইজ
