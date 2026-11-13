@@ -1,76 +1,116 @@
 ---
-title: "SMC-তে Price Imbalance — সম্পূর্ণ গাইড"
-description: "Price Imbalance আয়ত্ত করুন — Candle-এর মধ্যে Gap যা Institutional Aggression দেখায় ও Price ফিরে Fill করবে।"
+title: "SMC তে Price Imbalance — সম্পূর্ণ গাইড"
+description: "Smart Money Concepts এ Price Imbalance শিখুন: Fair Value Gap, Volume Imbalance আর Liquidity Void, কেন Price প্রায়ই সেখানে ফেরে, ট্রেন্ডের দিকে রিটেস্ট কীভাবে ট্রেড করবেন, আর কখন Imbalance ভরে না — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 10
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## Price Imbalance কী?
+## Imbalance কী?
 
-Price Imbalance (Inefficiency-ও বলে) ঘটে যখন Price একদিকে এত আক্রমণাত্মকভাবে চলে যে **Candle Wick-এর মধ্যে Gap** তৈরি হয় — যেখানে দুই-পক্ষীয় Trading হয়নি। এই Gap Institutional Urgency প্রতিনিধিত্ব করে এবং Price সাধারণত ফিরে এসে Fill করে।
+**Imbalance** (বা **Inefficiency**) হলো এমন একটি প্রাইস রেঞ্জ যেখানে **শুধু এক দিকে, দ্রুত** লেনদেন হয়েছে। Buyer (বা Seller) রা এত বেশি শক্তিশালী ছিল যে অন্য পক্ষ সেখানে প্রায় পূর্ণ হতে পারেনি। চার্টে এটা ক্যান্ডেলের মাঝে Gap বা কম ওভারল্যাপের বড় ক্যান্ডেলের সারি হিসেবে দেখা যায়।
 
-<Callout type="info" title="Imbalance = চুম্বক">
-  Price Imbalance-এর দিকে চুম্বকের মতো আকৃষ্ট। Unfilled Imbalance Target হিসেবে কাজ করে — Price প্রায় সবসময় Continue
-  করার আগে ফিরে Fill করে। Entry ও Target-এ এই জ্ঞান ব্যবহার করুন।
+Imbalance গুরুত্বপূর্ণ কারণ Price **প্রায়ই** সেখানে ফেরে, আর ফিরলে মূল পক্ষ প্রায়ই তা রক্ষা করে।
+
+<Callout type="warning" title="সংশোধিত: 'Price প্রায় সবসময় ফেরে'">
+  মূল লেসনে বলা ছিল Price Imbalance এ "প্রায় সবসময়" ফেরে, আর এগুলোকে চুম্বক বলা হয়েছিল। অনেক Imbalance এ Price ফেরে,
+  কিন্তু শক্তিশালী ট্রেন্ডে অনেকগুলো দীর্ঘদিন খোলা থাকে। ট্রেন্ডের দিকে এগুলোকে সম্ভাব্য প্রতিক্রিয়ার জোন হিসেবে দেখুন,
+  নিশ্চয়তা হিসেবে নয়।
 </Callout>
 
 ---
 
-## Imbalance-এর ধরন
+## তিন ধরন
 
-### Fair Value Gap (FVG) — সবচেয়ে সাধারণ
+![তিন ধরনের Imbalance: Fair Value Gap, Volume Imbalance (Body Gap) আর Liquidity Void (দ্রুত একমুখী দৌড়)](/images/smc/imbalance/imbalance-types-dark.png)
 
-- ৩-Candle Pattern যেখানে Middle Candle Gap তৈরি করে
-- Candle 1 High Candle 3 Low-এর সাথে Overlap করে না (Bullish)
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/imbalance-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Volume Imbalance
+| ধরন                  | কীভাবে চিনবেন                                                                               | নোট                                                       |
+| -------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| **Fair Value Gap**   | ক্যান্ডেল ১ এর High আর ক্যান্ডেল ৩ এর Low ওভারল্যাপ করে না (বা উল্টো)                       | সবচেয়ে বেশি ব্যবহৃত; দেখুন [FVG](/bn/smc/fair-value-gap) |
+| **Volume Imbalance** | এক ক্যান্ডেলের **Body** যেখানে শেষ, পরেরটা অন্য প্রাইসে শুরু, কিন্তু **Wick ওভারল্যাপ করে** | সেশন ওপেনে সাধারণ; ছোট, প্রায়ই দ্রুত ভরে                 |
+| **Liquidity Void**   | এক দিকে কয়েকটি বড় ক্যান্ডেল, প্রায় কোনো ওভারল্যাপ নেই                                    | পুরো একটা Leg; Price ধাপে ধাপে এতে রিট্রেস করতে পারে      |
 
-- পরপর Candle Body-র মধ্যে Gap
-- এক Candle Close ও পরেরটি ভিন্ন Price-এ Open
-- Session Open-এ সাধারণ
-
-### Liquidity Void
-
-- প্রায় কোনো Wick ছাড়া বড় Single Candle
-- একতরফা Movement প্রতিনিধিত্ব করে
-- Price Body Fill করতে ফেরে
-
----
-
-## কেন Price Imbalance-এ ফেরে
-
-| কারণ                   | ব্যাখ্যা                          |
-| ---------------------- | --------------------------------- |
-| Unfilled Order         | Gap-এ Limit Order বসে আছে         |
-| Fair Value Seeking     | Market Equilibrium খোঁজে          |
-| Institutional Re-entry | Smart Money ভালো Price-এ Re-enter |
-| Efficiency             | Market Inefficiency পছন্দ করে না  |
+চার্টে প্রতিটি আকৃতি দেখাতে ধারণাগত ক্যান্ডেল ব্যবহার করা হয়েছে।
 
 ---
 
-## Imbalance Trade করা
+## কেন Price এগুলোতে ফেরে
 
-### FVG Fill-এ Entry:
+| প্রচলিত ব্যাখ্যা       | আসলে যা দেখা যায়                               |
+| ---------------------- | ----------------------------------------------- |
+| Gap এ অপূর্ণ অর্ডার    | সেখানে খুব কম লেনদেন হয়েছে                     |
+| "Fair Value খোঁজা"     | দ্রুত Move এর মধ্য দিয়ে Price প্রায়ই ফিরে আসে |
+| মূল পক্ষের আবার প্রবেশ | প্রথম রিটেস্ট প্রায়ই ট্রেন্ডের দিকে টিকে যায়  |
 
-```
-1. FVG চিহ্নিত (C1 ও C3-এর মধ্যে Gap)
-2. Price FVG Zone-এ ফেরার অপেক্ষা
-3. মূল Impulse-এর Direction-এ Enter
-4. Stop: FVG-এর বাইরে (Full Candle Range)
-5. Target: পরবর্তী Structural Level বা Liquidity
-```
+"প্রতিষ্ঠান আবার ঢোকে" গল্পটা প্রচলিত কিন্তু চার্টে দেখা যায় না। ট্রেড করার জন্য দেখা যায় এমন অংশটুকুই যথেষ্ট।
 
-### সব Imbalance Fill হয় না:
+---
 
-- শক্তিশালী Trend-এ HTF Imbalance দিন/সপ্তাহ Fill নাও হতে পারে
-- শক্তিশালী Trend-এ Counter-trend FVG প্রায়ই Fill হয় না
-- HTF Trend-এর সাথে Aligned Imbalance সর্বোচ্চ Probability
+## Imbalance রিটেস্ট ট্রেড করা
+
+1. Higher Timeframe ট্রেন্ডের দিকে **Displacement** থেকে তৈরি একটি Imbalance খুঁজুন।
+2. Price এতে ফেরা পর্যন্ত অপেক্ষা করুন।
+3. **মূল দিকে** এন্ট্রি: কাছের প্রান্তে, ৫০% লেভেলে, বা এর ভেতরে Lower Timeframe CHOCH এর পরে।
+4. **Stop** Imbalance এর বাইরে (বা যে Swing থেকে এসেছে তার বাইরে)।
+5. **টার্গেট** পরের Structure লেভেল বা Liquidity।
+
+**উদাহরণ (Bullish FVG):** একটি র‍্যালি **1.1000 – 1.1020** এ Gap রেখে যায়। Price **1.1010** এ (৫০% লেভেল) ফেরে। 1.1010 এ Buy, Stop **1.0990** এর নিচে। রিস্ক ২০ পিপ; টার্গেট পরের Swing High, তাই R:R নির্ভর করে সেটা কোথায় তার ওপর।
+
+---
+
+## কখন Imbalance ভরে না
+
+| অবস্থা                                      | আশা করুন                                   |
+| ------------------------------------------- | ------------------------------------------ |
+| শক্তিশালী ট্রেন্ড, ট্রেন্ডের দিকে Imbalance | দিন বা সপ্তাহ ধরে ফিরে না আসতে পারে        |
+| শক্তিশালী ট্রেন্ডে বিপরীতমুখী Imbalance     | প্রায়ই সোজা পার হয়ে যায়                 |
+| নিউজ স্পাইক                                 | রিটেস্ট এলোমেলো; Structure এর অপেক্ষা করুন |
+| পাতলা সেশন (NY এর শেষ, ছুটি)                | Gap এর গুরুত্ব কম                          |
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                        | সমাধান                                            |
+| ------------------------------------------ | ------------------------------------------------- |
+| প্রতিটি Gap কে টার্গেট ধরা                 | শুধু Displacement থেকে আসা Imbalance গুরুত্বপূর্ণ |
+| Imbalance এ ট্রেন্ডের বিপরীতে Fade         | ট্রেন্ডের দিকে রিটেস্ট ট্রেড করুন                 |
+| Body Gap কে FVG বলা                        | Wick ওভারল্যাপ করে কিনা দেখুন                     |
+| Stop পরিকল্পনা ছাড়া প্রথম স্পর্শে এন্ট্রি | Imbalance এর বাইরে Stop                           |
+
+---
+
+## অনুশীলন
+
+1. 1H চার্টে ১০টি FVG, ১০টি Volume Imbalance আর ৫টি Liquidity Void মার্ক করুন।
+2. কোনগুলো ২০ ক্যান্ডেলের মধ্যে আবার দেখা হয়েছে, আর Price কীভাবে প্রতিক্রিয়া দিয়েছে লিখুন।
+3. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধরন                  | আকৃতি                             | সাধারণ ব্যবহার           |
+| -------------------- | --------------------------------- | ------------------------ |
+| **FVG**              | ক্যান্ডেল ১ আর ৩ ওভারল্যাপ করে না | মূল এন্ট্রি জোন          |
+| **Volume Imbalance** | Body মেলে না, Wick মেলে           | ছোট প্রতিক্রিয়া লেভেল   |
+| **Liquidity Void**   | দ্রুত একমুখী দৌড়                 | রিট্রেসমেন্ট টার্গেট জোন |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Fair Value Gap](/bn/smc/fair-value-gap) — বিস্তারিত FVG Guide
-- [Order Blocks](/bn/smc/order-blocks) — Imbalance-এর কাছে OB
-- [Premium ও Discount](/bn/smc/premium-discount) — Discount-এ Imbalance
+- [Fair Value Gap](/bn/smc/fair-value-gap) — বিস্তারিত FVG গাইড
+- [Order Blocks](/bn/smc/order-blocks) — Imbalance এর পাশের জোন
+- [Premium & Discount](/bn/smc/premium-discount) — রেঞ্জে Imbalance কোথায়
+- [ICT FVG](/bn/ict/fvg) — Inversion FVG

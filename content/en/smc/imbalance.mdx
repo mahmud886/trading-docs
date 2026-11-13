@@ -1,84 +1,116 @@
 ---
 title: "Price Imbalance in SMC — Complete Guide"
-description: "Master price imbalance — gaps between candles showing institutional aggression and areas price must return to fill."
+description: "Learn price imbalance in Smart Money Concepts: fair value gaps, volume imbalances and liquidity voids, why price often revisits them, how to trade a retest in the trend direction, and when imbalances don't fill, with a chart and an animated walkthrough."
 level: intermediate
 order: 10
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## What is Price Imbalance?
+## What Is an Imbalance?
 
-Price imbalance (also called inefficiency) occurs when price moves so aggressively in one direction that it creates **gaps between candle wicks** — areas where there was no two-sided trading. These gaps represent institutional urgency and price typically returns to fill them.
+An **imbalance** (or **inefficiency**) is a price range that was traded **only one way, quickly**. Buyers (or sellers) were so much stronger that the other side barely got filled there. On the chart it shows up as gaps between candles or as a run of large candles with little overlap.
 
-<Callout type="info" title="Imbalance = Magnet">
-  Price is attracted to imbalances like a magnet. Unfilled imbalances act as targets — price will almost always return
-  to fill them before continuing. Use this knowledge for entries and targets.
+Imbalances matter because price **often** comes back to them, and when it does, the original side often defends them.
+
+<Callout type="warning" title="Corrected: 'price will almost always return'">
+  The original said price returns to imbalances "almost always" and called them magnets. Many imbalances are revisited,
+  but in strong trends many stay open for a long time. Use them as likely reaction zones in the trend direction, not as
+  certainties.
 </Callout>
 
 ---
 
-## Types of Imbalance
+## Three Kinds
 
-### Fair Value Gap (FVG) — Most Common
+![Three kinds of imbalance: a fair value gap, a volume imbalance (body gap) and a liquidity void (a fast one-sided run)](/images/smc/imbalance/imbalance-types-dark.png)
 
-- 3-candle pattern where middle candle creates a gap
-- Candle 1 high doesn't overlap Candle 3 low (bullish)
-- Or Candle 1 low doesn't overlap Candle 3 high (bearish)
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/imbalance-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Volume Imbalance
+| Type                 | How to spot it                                                                                       | Notes                                                  |
+| -------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| **Fair value gap**   | Candle 1's high and candle 3's low don't overlap (or the reverse)                                    | The most used; see [FVG](/en/smc/fair-value-gap)       |
+| **Volume imbalance** | One candle's **body** ends and the next one's starts at a different price, but the **wicks overlap** | Common at session opens; smaller, often filled quickly |
+| **Liquidity void**   | Several large candles in one direction with little or no overlap                                     | A whole leg; price may retrace into it in steps        |
 
-- Gap between consecutive candle bodies
-- One candle closes and next opens at different price
-- Common at session opens
-
-### Liquidity Void
-
-- Large single candle with barely any wicks
-- Represents one-sided movement
-- Price returns to fill the body
-
----
-
-## Why Price Returns to Imbalance
-
-| Reason                | Explanation                           |
-| --------------------- | ------------------------------------- |
-| Unfilled orders       | Limit orders sitting in the gap       |
-| Fair value seeking    | Market seeks equilibrium              |
-| Institutional reentry | Smart money re-enters at better price |
-| Efficiency            | Markets hate inefficiency             |
+The chart uses conceptual candles to show each shape.
 
 ---
 
-## Trading Imbalance
+## Why Price Revisits Them
 
-### Entry at FVG Fill:
+| Common explanation            | What you can actually observe                       |
+| ----------------------------- | --------------------------------------------------- |
+| Unfilled orders in the gap    | Little trading happened there                       |
+| "Seeking fair value"          | Price often rotates back through fast moves         |
+| Re-entry by the original side | The first retest often holds in the trend direction |
 
-```
-1. Identify FVG (gap between C1 and C3)
-2. Wait for price to return to the FVG zone
-3. Enter in the direction of the original impulse
-4. Stop: Beyond the FVG (full candle range)
-5. Target: Next structural level or liquidity
+The "institutions re-enter" story is common but can't be seen on a chart. The observable part is enough to trade.
 
-Example (Bullish FVG):
-- Strong bullish move creates FVG at 1.1000-1.1020
-- Price returns to 1.1010 (filling the gap)
-- Enter long at 1.1010
-- Stop: Below 1.0990 (below the FVG)
-- Target: Next swing high
-```
+---
 
-### Not All Imbalances Fill:
+## Trading an Imbalance Retest
 
-- HTF imbalances in strong trends may not fill for days/weeks
-- Counter-trend FVGs in strong trends often DON'T fill
-- Use imbalances aligned with HTF trend for highest probability
+1. Find an imbalance created by **displacement** in the higher-timeframe trend direction.
+2. Wait for price to come back into it.
+3. Enter in the **original direction**: at the near edge, the 50% level, or after a lower-timeframe CHOCH inside it.
+4. **Stop** beyond the imbalance (or beyond the swing it came from).
+5. **Target** the next structure level or liquidity.
+
+**Example (bullish FVG):** a rally leaves a gap at **1.1000 – 1.1020**. Price returns to **1.1010** (the 50% level). Buy 1.1010, stop below **1.0990**. Risk 20 pips; the target is the next swing high, so R:R depends on where that is.
+
+---
+
+## When Imbalances Don't Fill
+
+| Situation                                      | Expect                                 |
+| ---------------------------------------------- | -------------------------------------- |
+| Strong trend, imbalance in the trend direction | May not be revisited for days or weeks |
+| Counter-trend imbalance in a strong trend      | Often runs straight through            |
+| News spike                                     | Retests are messy; wait for structure  |
+| Thin session (late NY, holidays)               | Gaps mean less                         |
+
+---
+
+## Common Mistakes
+
+| Mistake                                       | Fix                                      |
+| --------------------------------------------- | ---------------------------------------- |
+| Treating every gap as a target                | Only imbalances from displacement matter |
+| Fading the trend at an imbalance              | Trade retests in the trend direction     |
+| Calling a body gap an FVG                     | Check whether the wicks overlap          |
+| Entering on the first touch with no stop plan | Stop beyond the imbalance                |
+
+---
+
+## Practice
+
+1. On 1H charts, mark 10 FVGs, 10 volume imbalances and 5 liquidity voids.
+2. Record which were revisited within 20 candles, and how price reacted.
+3. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Type                 | Shape                         | Typical use             |
+| -------------------- | ----------------------------- | ----------------------- |
+| **FVG**              | Candles 1 and 3 don't overlap | Main entry zone         |
+| **Volume imbalance** | Bodies don't meet, wicks do   | Small reaction level    |
+| **Liquidity void**   | Fast one-sided run            | Retracement target zone |
 
 ---
 
 ## Related Topics
 
-- [Fair Value Gap](/en/smc/fair-value-gap) — Detailed FVG guide
-- [Order Blocks](/en/smc/order-blocks) — OBs near imbalances
-- [Premium & Discount](/en/smc/premium-discount) — Imbalance in discount
+- [Fair Value Gap](/en/smc/fair-value-gap) — the detailed FVG guide
+- [Order Blocks](/en/smc/order-blocks) — zones beside imbalances
+- [Premium & Discount](/en/smc/premium-discount) — where an imbalance sits in the range
+- [ICT FVG](/en/ict/fvg) — inversion FVGs
