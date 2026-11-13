@@ -1,0 +1,281 @@
+---
+title: "ICT Market Structure Shift (MSS) — Complete Guide"
+description: "Learn exactly what makes a Market Structure Shift: reading swing structure, BOS vs CHOCH vs MSS, the role of displacement, the swing that matters, the MSS entry model, invalidation, and two worked examples with charts and an animated walkthrough."
+level: intermediate
+order: 8
+lastUpdated: "2026-11-13"
+---
+
+## Why MSS Matters
+
+The three previous lessons ([Liquidity](/en/ict/liquidity), [Liquidity Sweep](/en/ict/liquidity-sweep) and [Turtle Soup](/en/ict/turtle-soup)) all end with the same question: *has the market really turned, or is this just a pause?*
+
+The **Market Structure Shift** answers that question. It is the moment price shows, with a strong move, that order flow has changed direction.
+
+<Callout type="info" title="Definition">
+  A **Market Structure Shift (MSS)** happens when price, usually right after taking liquidity, **displaces** through
+  the most recent swing point that defined the old trend, and **closes beyond it**. In a downtrend that is the last
+  lower high; in an uptrend, the last higher low.
+</Callout>
+
+---
+
+## Key Terms
+
+| Term                  | Meaning                                                                     |
+| --------------------- | --------------------------------------------------------------------------- |
+| **Swing high / low**  | A candle whose high (low) is higher (lower) than the candles on each side of it |
+| **HH / HL**           | Higher high / higher low: the building blocks of an uptrend                 |
+| **LH / LL**           | Lower high / lower low: the building blocks of a downtrend                  |
+| **BOS**               | Break of Structure: a close beyond a swing **in the trend's direction**     |
+| **CHOCH**             | Change of Character: the **first** close through a swing **against** the trend |
+| **Displacement**      | A strong, large-bodied move, usually leaving an FVG                         |
+| **MSS**               | A CHOCH made **with displacement**, usually after a liquidity sweep         |
+
+---
+
+## Reading Structure First
+
+You can't see a shift until you can see the structure it shifts *from*.
+
+1. **Mark swing points** on your execution timeframe. A swing high is a candle with lower highs on both sides; a swing low is the mirror image.
+2. **Name them:** in a downtrend, each high is a **LH** and each low a **LL**.
+3. **Find the swing that matters.** For a bullish MSS, it is the **lower high that started the leg down to the latest low**. Small bounces inside that leg are internal structure. Breaking them is not an MSS.
+
+In the EUR/USD example below, price falls from 1.0902 to a low at 1.0850 (the LL). It bounces to **1.0875** (the LH), then falls again. The 1.0875 high started the leg that is about to sweep the low, so that is the level an MSS must close above.
+
+---
+
+## BOS vs CHOCH vs MSS
+
+![BOS, a weak break, or an MSS — same uptrend, three outcomes](/images/ict/mss/bos-weak-break-mss-dark.png)
+
+| Event     | Direction           | What it looks like                                          | What it tells you                   |
+| --------- | ------------------- | ----------------------------------------------------------- | ----------------------------------- |
+| **BOS**   | With the trend      | Close beyond the last HH (uptrend) or LL (downtrend)        | The trend continues                 |
+| **CHOCH** | Against the trend   | First close through the last HL (uptrend) or LH (downtrend) | An early warning, nothing more      |
+| **MSS**   | Against the trend   | The same close, made with **displacement**, usually **after a sweep** | Order flow has turned: look for entries the new way |
+
+The middle panel shows why displacement matters. Price drifts below the higher low on small candles and leaves no FVG. Technically that is a CHOCH, but there is no force behind it, and the uptrend resumes.
+
+<Callout type="tip" title="A note on terms">
+  ICT mostly says "MSS"; many SMC traders say "CHOCH" for the same event. On this site, **CHOCH** is the first break
+  against the trend, and **MSS** is a CHOCH that also has displacement. Whatever you call it, the requirements below
+  are what matter.
+</Callout>
+
+---
+
+## What Counts as Displacement
+
+| Requirement                         | How to check it                                                   |
+| ----------------------------------- | ----------------------------------------------------------------- |
+| **Large body**                      | At least **2× the average body** of the recent candles (the same rule as the [Order Blocks](/en/smc/order-blocks) guide) |
+| **Closes beyond the swing**         | The **close**, not a wick, is past the LH (bullish) or HL (bearish) |
+| **Little opposing wick**            | The candle closes near its extreme                                 |
+| **Leaves an FVG**                   | A gap between candle 1 and candle 3 of the move; that becomes the entry zone |
+
+In the examples, the MSS candles have a 16-pip body against a 5-pip average (EUR/USD), and a 30-point body against a 14-point average (NAS100).
+
+---
+
+## The Three Ingredients of a Valid MSS
+
+| ✓ | Ingredient                                                    | Why                                                  |
+| - | ------------------------------------------------------------- | ---------------------------------------------------- |
+| ☐ | **Liquidity first:** a sweep of the last low (bullish) or high (bearish) | Shows where the opposing orders were filled  |
+| ☐ | **Displacement** through the swing that matters               | Shows force, not drift                               |
+| ☐ | A **candle close** beyond that swing on your chosen timeframe  | A wick through the level is not a shift              |
+
+Then check the context: does the MSS point toward the **higher-timeframe draw on liquidity**? Did it happen in a **kill zone**?
+
+### Bullish MSS (downtrend → up)
+
+1. Price makes LHs and LLs.
+2. It sweeps the sell-side liquidity below the last LL.
+3. A bullish displacement closes **above the LH** that started the leg down.
+4. The move leaves an FVG. Look for buys.
+
+### Bearish MSS (uptrend → down)
+
+1. Price makes HHs and HLs.
+2. It sweeps the buy-side liquidity above the last HH.
+3. A bearish displacement closes **below the HL** that started the leg up.
+4. The move leaves an FVG. Look for sells.
+
+---
+
+## The MSS Entry Model
+
+![Bullish MSS — EUR/USD 15m: sweep of the last low, displacement through the lower high, FVG entry](/images/ict/mss/eurusd-bullish-mss-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/mss-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+1. **HTF bias:** decide the Daily or 4H direction, or at least where price sits in its range.
+2. **Liquidity sweep:** price takes the BSL or SSL on your execution timeframe (5m or 15m).
+3. **MSS:** a displacement closes through the swing that matters.
+4. **FVG:** mark the gap the displacement left. Its 50% level is the **CE**.
+5. **Entry:** a limit order at the CE (or at the edge of the FVG).
+6. **Stop:** beyond the sweep extreme.
+7. **Target:** the opposing liquidity pool.
+
+---
+
+## Example 1 — EUR/USD Bullish MSS (15m, London)
+
+<Callout type="info" title="About these examples">
+  Both charts use **synthetic candles** built around the levels in this lesson. They show how the method works and are
+  not records of real trades. R:R values are the planned risk-to-reward, not results.
+</Callout>
+
+**Context:** the 4H trend is bearish, but the Daily is in discount, so a reversal is possible.
+
+**Observations**
+
+1. **Structure:** the 15m chart makes lower highs and lower lows. The last LL is **1.0850**. The LH that started the next leg down is **1.0875**.
+2. **Sweep:** at 12:15 PM BD, in the London kill zone, price wicks to **1.0845**, taking the SSL below 1.0850, and closes back above it.
+3. **MSS:** two candles later, a 16-pip bullish displacement closes above **1.0875**.
+4. **FVG:** the move leaves a gap at **1.0868 – 1.0878**, with its CE at 1.0873.
+5. **Entry:** at 1:30 PM BD price touches the CE for the first time. Buy at **1.0873**.
+
+| Level     | Price  | Rationale                            |
+| --------- | ------ | ------------------------------------ |
+| Entry     | 1.0873 | FVG CE                               |
+| Stop      | 1.0842 | 3 pips below the 1.0845 sweep low    |
+| Target    | 1.0930 | Buy-side liquidity (higher timeframe) |
+| Risk      | 31 pips | 1.0873 − 1.0842                     |
+| Reward    | 57 pips | 1.0930 − 1.0873                     |
+| **R:R**   | **1 : 1.8** | 57 ÷ 31                          |
+
+**Invalidation:** a 15m close below 1.0845.
+
+<Callout type="warning" title="Corrected R:R">
+  The original version of this lesson listed this trade as 1 : 5.5. With these levels it is 57 ÷ 31 = **1 : 1.8**. The
+  stop has to sit below the sweep, and the entry is well above it, so the risk is large compared with the target. That
+  is common with MSS entries. Always calculate R:R from the actual stop. Here it falls below the 1 : 2 minimum many
+  traders use, so reduce the size, look for a closer entry, or skip the trade.
+</Callout>
+
+---
+
+## Example 2 — NAS100 Bearish MSS (5m, NY AM)
+
+![Bearish MSS — NAS100 5m: sweep of the last high, displacement through the higher low, FVG entry](/images/ict/mss/nas100-bearish-mss-dark.png)
+
+**Context:** the Daily chart is in premium, so a sell-off is expected.
+
+**Observations**
+
+1. **Structure:** the 5m chart makes higher highs and higher lows. The last HH is **17,940**. The HL that started the next leg up is **17,880**.
+2. **Sweep:** in the NY AM kill zone price wicks to **17,950**, taking the BSL above 17,940, and closes back below it.
+3. **MSS:** a 30-point bearish displacement closes below **17,880**.
+4. **FVG:** the move leaves a gap at **17,870 – 17,890**, with its CE at 17,880.
+5. **Entry:** price retraces to the CE. Sell at **17,880**.
+
+| Level     | Price   | Rationale                           |
+| --------- | ------- | ----------------------------------- |
+| Entry     | 17,880  | FVG CE                              |
+| Stop      | 17,955  | Above the 17,950 sweep high         |
+| Target    | 17,750  | Sell-side liquidity below           |
+| Risk      | 75 pts  | 17,955 − 17,880                     |
+| Reward    | 130 pts | 17,880 − 17,750                     |
+| **R:R**   | **1 : 1.7** | 130 ÷ 75                        |
+
+**Invalidation:** a 5m close above 17,950.
+
+---
+
+## Timeframes
+
+| Style            | MSS timeframe | Entry timeframe | HTF bias from |
+| ---------------- | ------------- | --------------- | ------------- |
+| Scalping         | 5m            | 1m              | 1H / 4H       |
+| Day trading      | 15m           | 5m              | 4H / Daily    |
+| Swing trading    | 4H            | 1H              | Daily / Weekly |
+| Position trading | Daily         | 4H              | Weekly / Monthly |
+
+A lower-timeframe MSS against the higher-timeframe bias is usually just a pullback inside the bigger trend.
+
+---
+
+## Invalidation
+
+- **After the MSS:** price closes back beyond the **sweep extreme**. The shift has failed.
+- **Before entry:** price closes back through the swing it just broke (below the LH for a bullish MSS) without reaching your entry. The shift is in doubt; cancel the order.
+- **Context changes:** the higher-timeframe bias flips, or major news is due before the retrace.
+
+---
+
+## Common Mistakes
+
+| Mistake                                         | Fix                                                        |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| Calling every break an MSS                      | Require displacement and a candle close                   |
+| Breaking a minor internal swing                 | Use the swing that started the leg to the swept extreme   |
+| No liquidity taken first                        | An MSS without a sweep is weaker; treat it with suspicion |
+| Entering before the MSS candle closes           | Wait for the close; then wait for the retrace             |
+| Trusting a quoted R:R                           | Calculate it from your actual entry and stop               |
+| A lower-timeframe MSS against the HTF trend     | Expect a pullback, not a reversal                          |
+
+---
+
+## Risk Management
+
+| Component            | Guideline                                                        |
+| -------------------- | ---------------------------------------------------------------- |
+| **Risk per trade**   | 1–2% of the account; less while learning                         |
+| **Position size**    | Account risk ÷ stop distance ([calculator](/en/tools/position-calculator)) |
+| **Stop**             | Beyond the sweep extreme, plus a small buffer                     |
+| **Minimum R:R**      | Decide it in advance (for example 1 : 2) and skip trades below it |
+| **Partial (optional)** | At the first internal liquidity                                |
+
+---
+
+## Practice
+
+1. On a 15m chart, mark swing highs and lows for one week. Label each one HH/HL or LH/LL.
+2. Find every CHOCH, then sort them: **with** displacement (body ≥ 2× average) and **without**. How often did each kind lead to a real trend change?
+3. For each MSS, check whether a sweep came first.
+4. For each MSS with a sweep, plan the FVG entry, the stop beyond the sweep and the target. **Calculate the R:R** and note how many would pass a 1 : 2 minimum. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## FAQ
+
+### Is MSS the same as CHOCH?
+
+They describe the same break against the trend. On this site, an MSS is a CHOCH *with displacement*. That is the version worth trading.
+
+### Does every MSS leave an FVG?
+
+Usually, because displacement tends to leave a gap. If there is none, use the order block at the origin of the displacement instead.
+
+### What if price comes back below the broken swing?
+
+If it closes back through the swing before you are filled, cancel the order. If it closes beyond the sweep extreme after you are filled, you are stopped out: the shift failed.
+
+---
+
+## Summary
+
+| Aspect               | Key point                                                     |
+| -------------------- | ------------------------------------------------------------- |
+| **Definition**       | Displacement that closes through the swing that defined the old trend |
+| **Swing that matters** | The LH (or HL) that started the leg to the swept extreme    |
+| **Ingredients**      | Liquidity first · displacement · candle close                 |
+| **vs BOS**           | BOS continues the trend; MSS turns it                         |
+| **vs CHOCH**         | MSS = CHOCH with displacement                                 |
+| **Entry**            | FVG CE (or OB) after the MSS                                  |
+| **Stop**             | Beyond the sweep extreme                                      |
+| **R:R**              | Always calculated from the real stop; the original 1 : 5.5 was corrected to 1 : 1.8 |
+
+---
+
+## Related Topics
+
+- [Liquidity](/en/ict/liquidity) — what gets swept before an MSS
+- [Liquidity Sweep](/en/ict/liquidity-sweep) — the sweep + MSS execution model
+- [Fair Value Gap](/en/ict/fvg) — the entry zone the displacement leaves
+- [OTE](/en/ict/ote) — retracement levels after an MSS
+- [Daily Bias](/en/ict/daily-bias) — the higher-timeframe filter
+- [CHOCH](/en/smc/choch) and [BOS](/en/smc/bos) — the SMC view of the same structure
