@@ -1,0 +1,129 @@
+---
+title: "ICT Unicorn Model"
+description: "Master the ICT Unicorn: a breaker block and a fair value gap overlapping at the same price. The correct bullish and bearish sequences, how to find the overlap, entry, stop and target rules, and a worked EUR/USD example with a chart and an animated walkthrough."
+level: advanced
+order: 16
+lastUpdated: "2026-11-13"
+---
+
+## What Is the Unicorn Model?
+
+The **Unicorn** is an entry where a **[breaker block](/en/ict/pd-arrays)** and a **[fair value gap](/en/ict/fvg)** overlap. The overlap is the entry zone: two reasons for price to react at one price.
+
+It's named for being uncommon. When the breaker and the FVG don't actually overlap, it isn't a Unicorn.
+
+---
+
+## How It Forms
+
+<Callout type="warning" title="Corrected: the breaker sequence">
+  The original's bullish steps said "price is in an uptrend… a bearish OB forms… price breaks **down** through it". That
+  describes a working bearish OB, not a failed one. A bullish breaker forms when price breaks **up** through a bearish
+  OB after sweeping sell-side liquidity. The steps below are the corrected sequence.
+</Callout>
+
+### Bullish Unicorn
+
+1. Price makes a low, rallies, and the **last up-close candle** before the next drop is a **bearish OB**.
+2. Price drops to a **lower low**, sweeping the sell-side under the first low.
+3. Price reverses with **displacement** and closes **above the bearish OB**. The failed OB is now a **bullish breaker**.
+4. That displacement leaves a **bullish FVG**.
+5. Where the breaker and the FVG overlap is the **Unicorn zone**. Buy when price returns to it.
+
+### Bearish Unicorn
+
+The mirror image: the last down-close candle (a bullish OB) before a rally, a higher high sweeping buy-side, then a displacement **below** the bullish OB. It becomes a bearish breaker, the displacement leaves a bearish FVG, and you sell the overlap.
+
+| Step              | Bullish                         | Bearish                         |
+| ----------------- | ------------------------------- | ------------------------------- |
+| The OB            | Last up-close candle (bearish OB) | Last down-close candle (bullish OB) |
+| The sweep         | Lower low (sell-side taken)      | Higher high (buy-side taken)     |
+| The break         | Displacement closes above the OB | Displacement closes below the OB |
+| The entry         | Retrace down into breaker ∩ FVG  | Retrace up into breaker ∩ FVG    |
+| The stop          | Below the breaker                | Above the breaker                |
+
+---
+
+## Worked Example — Bullish Unicorn, EUR/USD (15m)
+
+![Bullish Unicorn — EUR/USD 15m: bearish OB 1.0870–1.0880 broken upward, FVG 1.0875–1.0885, overlap 1.0875–1.0880](/images/ict/unicorn-model/eurusd-bullish-unicorn-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/unicorn-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this example">
+  The chart uses **synthetic candles** built around the levels in this lesson. It shows how the method works and is not
+  a record of a real trade. R:R is the planned risk-to-reward.
+</Callout>
+
+1. **Context:** daily bullish, price pulled back into discount.
+2. **Bearish OB:** the last up-close candle before the drop, **1.0870 – 1.0880**.
+3. **Sweep:** price drops to 1.0855, under the 1.0862 low.
+4. **Breaker + FVG:** a 20-pip displacement closes above the OB, which becomes a bullish breaker, and leaves an FVG at **1.0875 – 1.0885**.
+5. **Unicorn zone:** the overlap is **1.0875 – 1.0880**. The original called the whole FVG the Unicorn zone; only the overlap qualifies.
+6. **Entry:** price rallies to 1.0930, then returns. Buy **1.0880**, the top of the overlap.
+
+| Level   | Price  | Note                         |
+| ------- | ------ | ---------------------------- |
+| Entry   | 1.0880 | Top of the Unicorn zone      |
+| Stop    | 1.0868 | Below the breaker (1.0870)   |
+| Target  | 1.0960 | Buy-side liquidity           |
+| **R:R** | **1 : 6.7** | Risk 12 pips, reward 80 pips |
+
+### Bearish Unicorn — NAS100 (no chart)
+
+A 4H bullish OB at 17,900 – 17,930 fails as price crashes through it; the drop leaves an FVG at 17,890 – 17,920. The overlap is **17,900 – 17,920**. After a fall to 17,750 price retraces. Sell **17,905**, stop **17,935**, target **17,700**: risk 30, reward 205 points, **R:R 1 : 6.8** (planned).
+
+---
+
+## Why It Can Work
+
+- **Two reasons at one price:** traders who bought the failed OB want out at breakeven, and the FVG is an imbalance price often revisits.
+- **A defined stop:** the breaker's far side.
+- **Context does the rest:** without a bias and a draw on liquidity, it's just a zone.
+
+<Callout type="info" title="Removed claim">
+  The original said the Unicorn "often produces 1:5+ R:R". R:R depends on where the target is, not the pattern. Plan it
+  from the actual stop and target.
+</Callout>
+
+---
+
+## Common Mistakes
+
+| Mistake                                   | Fix                                                       |
+| ----------------------------------------- | --------------------------------------------------------- |
+| Calling a non-overlapping breaker + FVG a Unicorn | They must share prices                            |
+| Mixing up breaker direction               | A bullish breaker comes from a bearish OB broken **upward** |
+| No sweep before the break                 | The lower low (or higher high) is part of the setup       |
+| No higher-timeframe bias                  | Trade it only in the bias direction                       |
+| Seeing Unicorns everywhere                | If you have to squint, skip it                            |
+
+---
+
+## Practice
+
+1. Find 10 breakers on 15m–1H charts and check how many had an FVG overlapping.
+2. For each Unicorn, mark the overlap, the stop and the nearest liquidity, and compute the planned R:R.
+3. Log them in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element       | Bullish Unicorn                                  |
+| ------------- | ------------------------------------------------ |
+| **Breaker**   | Bearish OB broken upward after a sell-side sweep |
+| **FVG**       | Left by the same displacement                    |
+| **Zone**      | Only the overlap of the two                      |
+| **Stop**      | Below the breaker                                |
+| **Target**    | Next buy-side liquidity                          |
+
+---
+
+## Related Topics
+
+- [PD Arrays](/en/ict/pd-arrays) — breakers and FVGs
+- [FVG](/en/ict/fvg) — half of the Unicorn
+- [Order Blocks](/en/smc/order-blocks) — where breakers come from
+- [Venom Model](/en/ict/venom-model) — another advanced model
+- [Advanced ICT Models](/en/ict/advanced-ict-models) — the full overview

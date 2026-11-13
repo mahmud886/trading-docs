@@ -1,0 +1,129 @@
+---
+title: "ICT Unicorn Model"
+description: "ICT Unicorn আয়ত্ত করুন: একই প্রাইসে একটি Breaker Block আর একটি Fair Value Gap এর ওভারল্যাপ। সঠিক Bullish আর Bearish ক্রম, ওভারল্যাপ কীভাবে খুঁজবেন, এন্ট্রি, Stop আর টার্গেটের নিয়ম, এবং চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ একটি EUR/USD উদাহরণ।"
+level: advanced
+order: 16
+lastUpdated: "2026-11-13"
+---
+
+## Unicorn Model কী?
+
+**Unicorn** হলো এমন একটি এন্ট্রি যেখানে একটি **[Breaker Block](/bn/ict/pd-arrays)** আর একটি **[Fair Value Gap](/bn/ict/fvg)** ওভারল্যাপ করে। ওভারল্যাপটাই এন্ট্রি জোন: এক প্রাইসে Price এর প্রতিক্রিয়ার দুটি কারণ।
+
+এটা কম দেখা যায় বলে এই নাম। Breaker আর FVG আসলে ওভারল্যাপ না করলে সেটা Unicorn নয়।
+
+---
+
+## কীভাবে তৈরি হয়
+
+<Callout type="warning" title="সংশোধিত: Breaker এর ক্রম">
+  মূল লেসনের Bullish ধাপে বলা ছিল "Price Uptrend এ… একটি Bearish OB তৈরি হয়… Price এর মধ্য দিয়ে **নিচে** ভাঙে"। এটা একটি
+  কাজ করা Bearish OB এর বর্ণনা, ব্যর্থ OB এর নয়। Bullish Breaker তৈরি হয় যখন Sell-Side Liquidity Sweep এর পরে Price একটি
+  Bearish OB এর মধ্য দিয়ে **উপরে** ভাঙে। নিচের ধাপগুলো সংশোধিত ক্রম।
+</Callout>
+
+### Bullish Unicorn
+
+1. Price একটি Low তৈরি করে, র‍্যালি করে, আর পরের পতনের আগের **শেষ Up-Close ক্যান্ডেল** হলো একটি **Bearish OB**।
+2. Price একটি **Lower Low** তে নামে, প্রথম Low এর নিচের Sell-Side Sweep করে।
+3. Price **Displacement** সহ উল্টে **Bearish OB এর উপরে** ক্লোজ করে। ব্যর্থ OB এখন একটি **Bullish Breaker**।
+4. সেই Displacement একটি **Bullish FVG** রেখে যায়।
+5. Breaker আর FVG যেখানে ওভারল্যাপ করে সেটাই **Unicorn জোন**। Price সেখানে ফিরলে Buy।
+
+### Bearish Unicorn
+
+উল্টো ছবি: র‍্যালির আগের শেষ Down-Close ক্যান্ডেল (একটি Bullish OB), Buy-Side Sweep করা একটি Higher High, তারপর Bullish OB এর **নিচে** Displacement। এটা Bearish Breaker হয়, Displacement একটি Bearish FVG রেখে যায়, আর আপনি ওভারল্যাপে Sell করেন।
+
+| ধাপ             | Bullish                               | Bearish                               |
+| --------------- | ------------------------------------- | ------------------------------------- |
+| OB              | শেষ Up-Close ক্যান্ডেল (Bearish OB)    | শেষ Down-Close ক্যান্ডেল (Bullish OB)  |
+| Sweep           | Lower Low (Sell-Side নেওয়া)            | Higher High (Buy-Side নেওয়া)           |
+| ভাঙন            | Displacement OB এর উপরে ক্লোজ করে      | Displacement OB এর নিচে ক্লোজ করে      |
+| এন্ট্রি          | নিচে রিট্রেস করে Breaker ∩ FVG তে       | উপরে রিট্রেস করে Breaker ∩ FVG তে       |
+| Stop            | Breaker এর নিচে                        | Breaker এর উপরে                        |
+
+---
+
+## সম্পূর্ণ উদাহরণ — Bullish Unicorn, EUR/USD (15m)
+
+![Bullish Unicorn — EUR/USD 15m: Bearish OB 1.0870–1.0880 উপরে ভাঙা, FVG 1.0875–1.0885, ওভারল্যাপ 1.0875–1.0880](/images/ict/unicorn-model/eurusd-bullish-unicorn-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/unicorn-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  চার্টে এই লেসনের লেভেলের চারপাশে তৈরি **সিন্থেটিক ক্যান্ডেল** ব্যবহার করা হয়েছে। এটি পদ্ধতিটি দেখানোর জন্য, আসল ট্রেডের
+  রেকর্ড নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড।
+</Callout>
+
+1. **কনটেক্সট:** Daily Bullish, Price পুলব্যাক করে Discount এ।
+2. **Bearish OB:** পতনের আগের শেষ Up-Close ক্যান্ডেল, **1.0870 – 1.0880**।
+3. **Sweep:** Price 1.0862 Low এর নিচে 1.0855 পর্যন্ত নামে।
+4. **Breaker + FVG:** ২০ পিপের Displacement OB এর উপরে ক্লোজ করে, যা Bullish Breaker হয়, আর **1.0875 – 1.0885** এ একটি FVG রেখে যায়।
+5. **Unicorn জোন:** ওভারল্যাপ **1.0875 – 1.0880**। মূল লেসনে পুরো FVG কে Unicorn জোন বলা হয়েছিল; শুধু ওভারল্যাপই যোগ্য।
+6. **এন্ট্রি:** Price 1.0930 পর্যন্ত র‍্যালি করে ফেরে। ওভারল্যাপের উপরের প্রান্ত **1.0880** এ Buy।
+
+| লেভেল    | প্রাইস  | নোট                          |
+| ------- | ------- | ---------------------------- |
+| এন্ট্রি  | 1.0880  | Unicorn জোনের উপরের প্রান্ত   |
+| Stop    | 1.0868  | Breaker (1.0870) এর নিচে      |
+| টার্গেট  | 1.0960  | Buy-Side Liquidity           |
+| **R:R** | **১ : ৬.৭** | রিস্ক ১২ পিপ, রিওয়ার্ড ৮০ পিপ |
+
+### Bearish Unicorn — NAS100 (চার্ট ছাড়া)
+
+17,900 – 17,930 এর একটি 4H Bullish OB ব্যর্থ হয় যখন Price এর মধ্য দিয়ে ধসে পড়ে; পতন 17,890 – 17,920 এ একটি FVG রেখে যায়। ওভারল্যাপ **17,900 – 17,920**। 17,750 পর্যন্ত নামার পর Price রিট্রেস করে। **17,905** এ Sell, Stop **17,935**, টার্গেট **17,700**: রিস্ক ৩০, রিওয়ার্ড ২০৫ পয়েন্ট, **R:R ১ : ৬.৮** (পরিকল্পিত)।
+
+---
+
+## কেন কাজ করতে পারে
+
+- **এক প্রাইসে দুটি কারণ:** যারা ব্যর্থ OB তে কিনেছিল তারা ব্রেকইভেনে বের হতে চায়, আর FVG একটি Imbalance যা Price প্রায়ই আবার দেখে।
+- **নির্দিষ্ট Stop:** Breaker এর অন্য প্রান্ত।
+- **বাকিটা কনটেক্সটের কাজ:** Bias আর Draw on Liquidity ছাড়া এটা শুধু একটা জোন।
+
+<Callout type="info" title="বাদ দেওয়া দাবি">
+  মূল লেসনে বলা ছিল Unicorn "প্রায়ই 1:5+ R:R দেয়"। R:R প্যাটার্নের ওপর নয়, টার্গেট কোথায় তার ওপর নির্ভর করে। আসল Stop আর
+  টার্গেট থেকে পরিকল্পনা করুন।
+</Callout>
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                        | সমাধান                                                     |
+| ------------------------------------------ | ---------------------------------------------------------- |
+| ওভারল্যাপ না করা Breaker + FVG কে Unicorn বলা | দুটোর কিছু প্রাইস মিলতে হবে                               |
+| Breaker এর দিক গুলিয়ে ফেলা                 | Bullish Breaker আসে **উপরে** ভাঙা Bearish OB থেকে          |
+| ভাঙনের আগে কোনো Sweep নেই                  | Lower Low (বা Higher High) সেটআপের অংশ                    |
+| Higher Timeframe Bias নেই                   | শুধু Bias এর দিকে ট্রেড করুন                               |
+| সবখানে Unicorn দেখা                         | চোখ কুঁচকে খুঁজতে হলে বাদ দিন                              |
+
+---
+
+## অনুশীলন
+
+1. 15m–1H চার্টে ১০টি Breaker খুঁজুন আর দেখুন কতগুলোতে FVG ওভারল্যাপ ছিল।
+2. প্রতিটি Unicorn এ ওভারল্যাপ, Stop আর সবচেয়ে কাছের Liquidity মার্ক করে পরিকল্পিত R:R হিসাব করুন।
+3. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| উপাদান        | Bullish Unicorn                                    |
+| ------------- | -------------------------------------------------- |
+| **Breaker**   | Sell-Side Sweep এর পরে উপরে ভাঙা Bearish OB         |
+| **FVG**       | একই Displacement এর রেখে যাওয়া                     |
+| **জোন**       | শুধু দুটোর ওভারল্যাপ                               |
+| **Stop**      | Breaker এর নিচে                                    |
+| **টার্গেট**    | পরের Buy-Side Liquidity                            |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [PD Arrays](/bn/ict/pd-arrays) — Breaker আর FVG
+- [FVG](/bn/ict/fvg) — Unicorn এর অর্ধেক
+- [Order Blocks](/bn/smc/order-blocks) — Breaker কোথা থেকে আসে
+- [Venom Model](/bn/ict/venom-model) — আরেকটি অ্যাডভান্সড মডেল
+- [Advanced ICT Models](/bn/ict/advanced-ict-models) — পূর্ণ ওভারভিউ
