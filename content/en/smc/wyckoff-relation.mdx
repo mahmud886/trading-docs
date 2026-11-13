@@ -1,58 +1,125 @@
 ---
 title: "Wyckoff & SMC Relation — Complete Guide"
-description: "Understand how Wyckoff theory maps to SMC concepts. Learn Wyckoff phases as accumulation/distribution, Spring as sweep, UTAD as manipulation."
+description: "See how Richard Wyckoff's method maps to Smart Money Concepts: his three laws, the accumulation phases A to E, and a term-by-term translation (spring = sell-side sweep, SOS = BOS, LPS = OB retest), plus how to use Wyckoff for context and SMC for entries, with a chart and an animated walkthrough."
 level: advanced
 order: 22
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## How Wyckoff Relates to SMC
+## Where SMC's Ideas Come From
 
-Wyckoff theory (1930s) describes the same institutional behavior that SMC codifies. Wyckoff called it "Composite Man" — SMC calls it "Smart Money." The concepts are the same; only the terminology differs.
+**Richard Wyckoff** studied how large operators moved stock prices in the early 1900s and taught his method up to the 1930s. His idea of a **"Composite Man"**, one imaginary big player behind the market's moves, is close to what SMC calls **smart money**.
 
----
-
-## Wyckoff → SMC Translation
-
-| Wyckoff Term           | SMC Equivalent        | Meaning               |
-| ---------------------- | --------------------- | --------------------- |
-| Accumulation           | Accumulation          | Buying at discount    |
-| Distribution           | Distribution          | Selling at premium    |
-| Markup                 | Delivery (bullish)    | Price rising          |
-| Markdown               | Delivery (bearish)    | Price falling         |
-| Spring                 | Liquidity Sweep (SSL) | False breakdown       |
-| UTAD (Upthrust)        | Liquidity Sweep (BSL) | False breakout        |
-| Creek/Ice              | Key structure level   | BOS level             |
-| SOS (Sign of Strength) | BOS                   | Break of structure    |
-| SOW (Sign of Weakness) | CHOCH                 | Change of character   |
-| Composite Man          | Smart Money           | Institutional players |
+Much of SMC is Wyckoff's model in new words: ranges where positions are built, false breaks that take stops, and a break of structure that starts the trend.
 
 ---
 
-## Wyckoff Accumulation = SMC Accumulation
+## Wyckoff's Three Laws
 
-```
-Wyckoff Phases:        SMC Reading:
-Phase A (Selling Climax) = Markdown exhaustion, initial demand
-Phase B (Building Cause) = Range, Order Blocks forming
-Phase C (Spring)          = Liquidity sweep below range
-Phase D (SOS + BOS)       = Break of structure bullish
-Phase E (Markup)          = Expansion/delivery
-```
+| Law                   | Meaning                                                                          | SMC echo                              |
+| --------------------- | -------------------------------------------------------------------------------- | ------------------------------------- |
+| **Supply and demand** | Price rises when demand exceeds supply, and vice versa                           | Order flow                            |
+| **Cause and effect**  | A bigger range (cause) tends to produce a bigger trend (effect)                  | Longer accumulation, bigger expansion |
+| **Effort vs result**  | Volume (effort) should match the price move (result); a mismatch warns of a turn | Displacement vs weak pushes           |
+
+---
+
+## The Phases in SMC Terms
+
+![Wyckoff accumulation phases A to E on a chart, each with the matching SMC term](/images/smc/wyckoff-relation/wyckoff-smc-phases-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/wyckoff-phases-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic** (the same series as the [Accumulation](/en/smc/accumulation) lesson). They are not real
+  prices.
+</Callout>
+
+| Phase | Wyckoff                                 | SMC reading                                   |
+| ----- | --------------------------------------- | --------------------------------------------- |
+| **A** | Stopping the decline: PS, SC, AR, ST    | Markdown exhausted; the range's edges are set |
+| **B** | Building the cause                      | The range: internal liquidity, order blocks   |
+| **C** | Spring and test                         | **Sell-side liquidity sweep**                 |
+| **D** | Sign of strength, last point of support | **BOS** up, then the **OB retest**            |
+| **E** | Markup                                  | Expansion toward buy-side liquidity           |
+
+---
+
+## Term-by-Term Translation
+
+| Wyckoff              | SMC                                                  | Meaning                              |
+| -------------------- | ---------------------------------------------------- | ------------------------------------ |
+| Accumulation         | Accumulation                                         | Range at a low before markup         |
+| Distribution         | Distribution                                         | Range at a high before markdown      |
+| Markup / markdown    | Expansion / delivery                                 | The trend                            |
+| **Spring**           | **Sell-side sweep**                                  | False break below the range          |
+| **UTAD**             | **Buy-side sweep**                                   | False break above the range          |
+| Creek (accumulation) | Range high / BOS level                               | The level the SOS must clear         |
+| Ice (distribution)   | Range low / BOS level                                | The level the SOW must break         |
+| **SOS**              | **BOS** up                                           | Break above the range with strength  |
+| **SOW**              | **BOS** down (a CHOCH relative to the prior uptrend) | Break below the range                |
+| **LPS / LPSY**       | **OB / FVG retest**                                  | The pullback entry after the break   |
+| Composite Man        | Smart money                                          | The large participants, taken as one |
+
+<Callout type="info" title="Clarified: SOW">
+  The original mapped SOW straight to CHOCH. A sign of weakness breaks **below the distribution range**. Relative to the
+  uptrend before it, that's a CHOCH; relative to the range, it's a BOS down. Both names are used.
+</Callout>
 
 ---
 
 ## Using Both Together
 
-1. **Wyckoff gives context** — Which phase is the market in?
-2. **SMC gives entry** — Where exactly to enter (OB, FVG)
-3. **Together** = understanding the WHY (Wyckoff) + the WHERE (SMC)
+| Tool        | Answers                                                                                               |
+| ----------- | ----------------------------------------------------------------------------------------------------- |
+| **Wyckoff** | Which phase is the market in? Is this a range at a low, mid-trend, or at a high? Does volume confirm? |
+| **SMC**     | Exactly where to enter, where to put the stop, what liquidity to target                               |
+
+A practical sequence: identify the phase on the 4H/daily → wait for phase C (the sweep) → enter on the lower-timeframe CHOCH and OB/FVG → manage through phases D and E.
+
+---
+
+## Common Mistakes
+
+| Mistake                              | Fix                                          |
+| ------------------------------------ | -------------------------------------------- |
+| Forcing every range into a schematic | Many ranges don't complete one               |
+| Ignoring volume                      | Wyckoff's method depends on effort vs result |
+| Trading phase B                      | It's the least predictable part; wait for C  |
+| Treating the "Composite Man" as real | It's a teaching device, not a person         |
+
+---
+
+## Practice
+
+1. Pick three daily charts that ended a decline with a range.
+2. Label phases A–E and the matching SMC terms.
+3. Note where each SMC entry would have been. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Wyckoff       | SMC                   |
+| ------------- | --------------------- |
+| Spring / UTAD | Liquidity sweep       |
+| SOS / SOW     | BOS (or CHOCH)        |
+| LPS / LPSY    | OB / FVG retest       |
+| Phases        | Context for the entry |
 
 ---
 
 ## Related Topics
 
-- [Accumulation](/en/smc/accumulation) — SMC accumulation
-- [Distribution](/en/smc/distribution) — SMC distribution
-- [Manipulation](/en/smc/manipulation) — Spring/UTAD
-- [Liquidity Pools](/en/smc/liquidity-pools) — Sweep concepts
+- [Accumulation](/en/smc/accumulation) — the full accumulation schematic
+- [Distribution](/en/smc/distribution) — the full distribution schematic
+- [Manipulation](/en/smc/manipulation) — springs and upthrusts as false moves
+- [Liquidity Pools](/en/smc/liquidity-pools) — the sweeps
