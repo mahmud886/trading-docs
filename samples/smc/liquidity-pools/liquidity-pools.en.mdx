@@ -1,0 +1,142 @@
+---
+title: "Liquidity Pools — Complete Guide"
+description: "Master liquidity pools in Smart Money Concepts: buy-side and sell-side liquidity, where stops cluster, sweeps vs runs, internal vs external liquidity, how to read which pools price is likely to take next, and four worked examples, with a chart and an animated walkthrough."
+level: intermediate
+order: 6
+lastUpdated: "2026-11-13"
+---
+
+## What Is Liquidity?
+
+In SMC, **liquidity** means clusters of **resting orders**, mostly stop-losses and breakout entries, at predictable prices. Large traders need someone to trade against: a big buy order fills most easily where many sell orders sit, and vice versa. So price tends to move **from one pool of resting orders to the next**.
+
+| Pool                       | Where                 | What sits there                                      |
+| -------------------------- | --------------------- | ---------------------------------------------------- |
+| **Buy-side (BSL)**         | Above swing highs     | Shorts' stop-losses (buy stops), breakout buy orders |
+| **Sell-side (SSL)**        | Below swing lows      | Longs' stop-losses (sell stops), breakdown sell orders |
+
+<Callout type="info" title="A model, not a guarantee">
+  The original said price is "attracted to liquidity like a magnet" and that liquidity shows "where price will go
+  next". Pools are likely targets, not certainties. Use them to plan targets and to avoid putting your own stop in the
+  obvious place.
+</Callout>
+
+---
+
+## Reading Pools on a Chart
+
+![Liquidity pools: buy-side above swing highs, sell-side below swing lows, a sweep of 1.0925, a run through 1.0868 and 1.0862, and 1.0822 still resting](/images/smc/liquidity-pools/liquidity-pools-map-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/smc/liquidity-pools-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built to show the concept. They are not real prices.
+</Callout>
+
+1. Every swing high has **buy-side** liquidity above it; every swing low has **sell-side** below it.
+2. In the uptrend, each new high takes the buy-side above the last one. That's normal trend behaviour.
+3. At hour 28, price runs above 1.0925 to 1.0930 and **closes back below**. That's a **sweep**: stops taken, move rejected.
+4. The drop then **runs** the sell-side under 1.0900, 1.0868 and 1.0862 without stopping.
+5. The sell-side under **1.0822** is still resting: the next obvious target.
+
+---
+
+## Sweep vs Run
+
+| Type      | What happens                                   | What it suggests                    |
+| --------- | ---------------------------------------------- | ----------------------------------- |
+| **Sweep** | Price trades through the level and **closes back** inside | The move was for the stops; possible reversal |
+| **Run**   | Price **closes beyond** and keeps going        | The move is real; continuation      |
+
+You only know which one it was after the candle closes. See [Liquidity Sweep](/en/ict/liquidity-sweep).
+
+---
+
+## Where Liquidity Builds
+
+| Pattern                    | Why stops cluster there                              | Lesson                                        |
+| -------------------------- | ---------------------------------------------------- | --------------------------------------------- |
+| **Equal highs / lows**     | Two touches look like strong support/resistance      | [Equal Highs & Lows](/en/smc/equal-highs-lows) |
+| **Trendlines**             | Stops sit just beyond the line                       |                                               |
+| **Session highs / lows**   | Asian range, previous day high/low                   | [Session Liquidity](/en/smc/session-liquidity) |
+| **Obvious swing points**   | Where most traders place stops                       |                                               |
+| **Round numbers**          | 1.1000, 2,000 etc.                                   |                                               |
+
+---
+
+## Internal vs External Liquidity
+
+| Type          | What it is                                       | Examples                    |
+| ------------- | ------------------------------------------------ | --------------------------- |
+| **External**  | The range's swing highs and lows                 | BSL above, SSL below        |
+| **Internal**  | Inefficiencies inside the range                  | FVGs, order blocks          |
+
+A common rule of thumb: price alternates between the two, running external liquidity, retracing into internal liquidity, then running the next external pool. See [Internal & External Liquidity](/en/smc/internal-external-liquidity).
+
+---
+
+## Worked Examples (no chart)
+
+| Example                      | Setup                                                       | Entry  | Stop   | Target | Planned R:R |
+| ---------------------------- | ----------------------------------------------------------- | ------ | ------ | ------ | ----------- |
+| **EUR/USD daily, SSL sweep** | Equal lows at 1.0700 swept to 1.0680, close back above; 4H CHOCH; 1H FVG | 1.0720 | 1.0670 | 1.0900 | **1 : 3.6** (50 / 180 pips) |
+| **Gold, BSL sweep**          | Highs near 2,450 swept to 2,458 in NY; 15m CHOCH             | 2,445  | 2,462  | 2,390  | **1 : 3.2** ($17 / $55) |
+| **BTC, range to range**      | Equal lows at 59,800 swept to 59,500; 4H CHOCH; OB           | 60,500 | 59,200 | 65,200 | **1 : 3.6** (1,300 / 4,700) |
+| **NAS100, session**          | London sweeps the Asian low 18,200 to 18,180; FVG 18,200 – 18,250 | 18,225 | 18,170 | 18,350 / 18,450 | **1 : 2.3 / 1 : 4.1** |
+
+<Callout type="warning" title="Corrected times and results">
+  The original gave the Asian session as "12 AM – 9 AM BD" and London's open as "2 PM BD". In Bangladesh the Asian
+  session runs **6 AM – 12 PM** and London opens at **12 PM** in US summer (7 AM – 1 PM and 1 PM in winter). The
+  examples' "Result" lines are shown here as planned R:R.
+</Callout>
+
+---
+
+## Using Liquidity in Your Own Trading
+
+| Use                       | How                                                        |
+| ------------------------- | ---------------------------------------------------------- |
+| **Targets**               | The next resting pool in your direction                    |
+| **Entries**               | After a sweep and a CHOCH, not before                      |
+| **Your own stop**         | Not exactly at the obvious level: a little beyond, or beyond the sweep that already happened |
+
+---
+
+## Common Mistakes
+
+| Mistake                              | Fix                                                     |
+| ------------------------------------ | ------------------------------------------------------- |
+| Fading every break of a high         | In a trend, highs are taken and held (runs)             |
+| Calling a sweep before the close     | Wait for the candle to close back inside                |
+| Marking every tiny swing             | Mark obvious levels on your timeframe                   |
+| Stop right at the obvious level      | That's where the pool is                                |
+
+---
+
+## Practice
+
+1. On a 1H chart, mark the obvious BSL and SSL for one week.
+2. For each one price reached, note whether it was a sweep or a run.
+3. Record what price did next. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element      | Key point                                       |
+| ------------ | ----------------------------------------------- |
+| **BSL**      | Above highs; shorts' stops, breakout buys        |
+| **SSL**      | Below lows; longs' stops, breakdown sells        |
+| **Sweep**    | Through and back: possible reversal              |
+| **Run**      | Through and beyond: continuation                 |
+| **Target**   | The next untouched pool                          |
+
+---
+
+## Related Topics
+
+- [Equal Highs & Lows](/en/smc/equal-highs-lows) — the strongest pools
+- [Inducement](/en/smc/inducement) — liquidity used as bait
+- [Internal & External Liquidity](/en/smc/internal-external-liquidity) — the flow between them
+- [Session Liquidity](/en/smc/session-liquidity) — session highs and lows
+- [ICT Liquidity Sweep](/en/ict/liquidity-sweep) — sweeps in detail
