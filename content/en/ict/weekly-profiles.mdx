@@ -1,120 +1,134 @@
 ---
 title: "ICT Weekly Profiles"
-description: "Master ICT Weekly Profiles — understand how each day of the week has a unique character and how to use weekly templates for bias determination and trade planning."
+description: "Learn ICT weekly profiles: the usual character of each weekday, three weekly templates for where the week's high or low forms, how to plan the week from Monday's range and the draw on liquidity, and a worked EUR/USD week with charts and an animated walkthrough."
 level: intermediate
 order: 20
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-11-13"
 ---
 
-## What are Weekly Profiles?
+## What Are Weekly Profiles?
 
-Weekly Profiles describe the **typical behavior pattern** of each day within a trading week. ICT teaches that the algorithm follows predictable weekly cycles — certain days tend to create manipulation while others create expansion.
+A **weekly profile** is a template for how a trading week tends to unfold: which day usually builds the range, which day makes the week's high or low, and which days carry the expansion.
 
-<Callout type="info" title="Weekly Roadmap">
-  Understanding weekly profiles gives you a roadmap before the week starts. You know WHICH days to trade aggressively
-  and which to sit out.
+It's the [AMD](/en/ict/amd) cycle on a weekly scale. The useful question isn't "what does Wednesday do?" but **"has the week's high or low already formed?"**. Once you think it has, you only look for trades away from it.
+
+<Callout type="info" title="Tendencies, not rules">
+  The original said "the algorithm follows predictable weekly cycles". Weekly tendencies are real enough to plan with,
+  but they change with news weeks, holidays and month-end. Plan with them; don't bet on them.
 </Callout>
 
 ---
 
-## Day-by-Day Profiles
+## Day by Day
 
-### Monday — The Accumulation Day
+| Day           | Usual character                                                                    | What to do                                     |
+| ------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------- |
+| **Monday**    | Builds the week's opening range; often quiet                                       | Mark Monday's high and low; observe            |
+| **Tuesday**   | Often runs one side of Monday's range and makes the week's high or low             | Look for the reversal after an MSS             |
+| **Wednesday** | Often the expansion day, or the mid-week reversal                                  | Trade with the week's direction                |
+| **Thursday**  | Continues, or reverses if the weekly target is already hit; US data often moves it | Manage trades; new entries only with structure |
+| **Friday**    | Profit-taking; can retrace the week's move                                         | Reduce risk; avoid new entries after NY lunch  |
 
-- Creates the week's initial range
-- Often low-volatility, consolidation
-- Price may probe one direction's liquidity
-- **Action:** Mark Monday's range (high/low) — this is the week's "Asian range"
-
-### Tuesday — The Judas Day
-
-- The weekly manipulation day
-- Often creates the week's high OR low (the false move)
-- Retail traders get trapped on the wrong side
-- **Action:** Watch for reversal setups, especially if Monday was range-bound
-
-### Wednesday — The Expansion Day
-
-- Highest probability expansion day of the week
-- If Tuesday created the manipulation, Wednesday distributes
-- Largest daily range often occurs on Wednesday
-- **Action:** Trade aggressively with bias — best day for R:R
-
-### Thursday — The Continuation/Reversal Day
-
-- Can continue Wednesday's direction or start reversal
-- If weekly target hit on Wednesday, Thursday may reverse
-- If not hit yet, Thursday continues
-- **Action:** Manage open positions or take continuation trades
-
-### Friday — The Profit-Taking Day
-
-- Institutions close positions before weekend
-- Reduced reliability on setups
-- Can see reversals as profits are taken
-- **Action:** Reduce risk, close positions, avoid new entries after 12 PM EST
+<Callout type="warning" title="Corrected: Friday cut-off time">
+  The original said "avoid new entries after 12 PM EST". In Bangladesh that is **10 PM BD** in US summer and **11 PM
+  BD** in US winter (New York noon).
+</Callout>
 
 ---
 
-## Weekly Profile Templates
+## Three Weekly Templates
 
-### Template 1: Classic AMD Week
+![Three weekly templates: classic AMD week, Tuesday-low week, Wednesday-reversal week](/images/ict/weekly-profiles/weekly-profile-templates-dark.png)
 
-| Day | Role         | Example                       |
-| --- | ------------ | ----------------------------- |
-| Mon | Accumulation | Range: 1.0850-1.0870          |
-| Tue | Manipulation | Sweeps above to 1.0885 (trap) |
-| Wed | Distribution | Drops to 1.0790 (expansion)   |
-| Thu | Continuation | Reaches 1.0760 (target)       |
-| Fri | Profit-take  | Bounces to 1.0790             |
+| Template                    | The trap                                          | The rest of the week                           |
+| --------------------------- | ------------------------------------------------- | ---------------------------------------------- |
+| **Classic AMD week**        | Tuesday runs above Monday and fails               | Wednesday–Thursday expand down; Friday bounces |
+| **Tuesday-low week**        | Tuesday runs below Monday and fails               | Wednesday–Thursday rally; Friday consolidates  |
+| **Wednesday-reversal week** | Monday–Tuesday trend, Wednesday makes the extreme | Thursday–Friday deliver the other way          |
 
-### Template 2: Tuesday Reversal Week
-
-- Monday ranges
-- Tuesday creates weekly LOW (Judas swing down)
-- Wednesday-Thursday rally to weekly HIGH
-- Friday consolidates
-
-### Template 3: Wednesday Reversal Week
-
-- Monday-Tuesday trend in one direction
-- Wednesday creates the extreme and reverses
-- Thursday-Friday deliver the opposite direction
+The original's classic AMD example in numbers: Monday ranges 1.0850 – 1.0870, Tuesday sweeps to 1.0885, Wednesday drops to 1.0790, Thursday reaches 1.0760, Friday bounces to 1.0790.
 
 ---
 
-## Real Example: EUR/USD Week
+## Worked Example — A Tuesday-Low Week, EUR/USD (4H)
 
-- **Monday:** Opens 1.0900, ranges 1.0890-1.0915 (accumulation)
-- **Tuesday:** Drops to 1.0870 sweeping SSL (manipulation down)
-- **Tuesday PM:** MSS bullish on 4H at 1.0880
-- **Wednesday:** Expansion — rallies to 1.0960 (weekly target BSL)
-- **Thursday:** Retraces to 1.0930, holds
-- **Friday:** Closes at 1.0945
+![Tuesday-low week — EUR/USD 4H: Monday range, Tuesday drop to 1.0870, 4H MSS, Wednesday rally to 1.0960](/images/ict/weekly-profiles/eurusd-weekly-profile-dark.png)
 
-**Key Learning:** Tuesday's low WAS the entry. Wednesday delivered the reward.
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/weekly-profile-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this example">
+  The chart uses **synthetic candles** built around the levels in this lesson. It shows how to read a week and is not a
+  record of real prices.
+</Callout>
+
+| Day        | What happened                               | Reading                        |
+| ---------- | ------------------------------------------- | ------------------------------ |
+| Before     | Last week's high at **1.0960** is untouched | The draw — weekly bias bullish |
+| Monday     | Opens 1.0900, ranges **1.0890 – 1.0915**    | Accumulation                   |
+| Tuesday    | Drops below Monday's low to **1.0870**      | Manipulation (Judas swing)     |
+| Tuesday PM | 4H closes back above **1.0880**             | MSS — the week's low may be in |
+| Wednesday  | Rallies to **1.0960**                       | Distribution; draw reached     |
+| Thursday   | Retraces to 1.0930, holds                   | Continuation holds             |
+| Friday     | Closes 1.0945                               | Profit-taking                  |
+
+The lesson: with a bullish weekly bias, Tuesday's drop below Monday was the buying opportunity, not a reason to sell. The daily execution follows [Daily Bias](/en/ict/daily-bias) and [London Open](/en/ict/london-open).
+
+---
+
+## Planning the Week
+
+1. **Sunday/Monday:** set the weekly bias from the weekly and daily dealing range and the draw on liquidity (previous week's high or low, monthly levels).
+2. **Mark** the previous week's high and low and Monday's range.
+3. **Tuesday–Wednesday:** wait for a run of Monday's range against your bias and an MSS on 1H–4H.
+4. **Once the week's extreme looks in,** trade only away from it, toward the draw.
+5. **Thursday–Friday:** manage, take profit near the draw, and keep high-impact US data in mind.
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Weekly Profile Errors">
+| Mistake                          | Fix                                                          |
+| -------------------------------- | ------------------------------------------------------------ |
+| Trading Monday aggressively      | Monday is mostly for marking the range                       |
+| Following Tuesday's break        | Against your bias, it's often the trap                       |
+| Ignoring Friday risk             | Reduce size; profit-taking can retrace the week              |
+| Treating weekdays as fixed rules | News weeks and holidays change the profile                   |
+| Not marking weekly levels        | Previous week high/low and Monday's range are the references |
 
-**❌ Trading Monday aggressively** — Monday is for observation, not execution
+---
 
-**❌ Following Tuesday's direction** — Tuesday CREATES the trap. Don't fall for it
+## Practice
 
-**❌ Ignoring Friday risk** — Reduced liquidity + profit-taking = unreliable signals
+1. For 10 weeks, record which day made the week's high and which made the low.
+2. Note which template each week fitted, or "none".
+3. Compare with your weekly bias at the start of each week. Log it in your [trading journal](/en/tools/journal-template).
 
-**❌ Not marking weekly levels** — PWH/PWL, Monday range are critical references
+---
 
-</Callout>
+## Summary
+
+| Day       | Usual role                    | Your job            |
+| --------- | ----------------------------- | ------------------- |
+| Monday    | Opening range                 | Mark it             |
+| Tuesday   | Week's high or low (the trap) | Wait for the MSS    |
+| Wednesday | Expansion or reversal         | Trade with the week |
+| Thursday  | Continuation or reversal      | Manage              |
+| Friday    | Profit-taking                 | Reduce risk         |
 
 ---
 
 ## Related Topics
 
-- [Daily Bias](/en/ict/daily-bias) — Daily direction within weekly context
-- [Monthly Profiles](/en/ict/monthly-profiles) — Monthly tendencies
-- [AMD](/en/ict/amd) — Weekly AMD cycle
-- [ICT Kill Zones](/en/ict/ict-kill-zones) — Daily timing within weekly structure
+- [AMD](/en/ict/amd) — the weekly AMD cycle
+- [Daily Bias](/en/ict/daily-bias) — daily direction inside the week
+- [Monthly Profiles](/en/ict/monthly-profiles) — the same idea over a month
+- [Judas Swing](/en/ict/judas-swing) — the trap on any timeframe
+- [ICT Kill Zones](/en/ict/ict-kill-zones) — daily timing in BD
