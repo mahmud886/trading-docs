@@ -1,192 +1,210 @@
 ---
-title: "ICT PD Arrays (Premium/Discount Arrays)"
-description: "সম্পূর্ণ ICT PD Array Matrix আয়ত্ত করুন — Order Block, FVG, Breaker Block, Mitigation Block এবং Liquidity Void। Premium ও Discount Zone এ প্রতিটি PD Array চিহ্নিত ও Trade করতে শিখুন।"
+title: "ICT PD Arrays (Premium/Discount Arrays) — সম্পূর্ণ গাইড"
+description: "ICT এর PD Array কে একটি পুরো ব্যবস্থা হিসেবে বুঝুন: PD Array Matrix, কোন Array Premium এ আর কোনটি Discount এ, Order Block, FVG, Liquidity Void, Breaker বনাম Mitigation Block, Rejection Block, Array বেছে নেওয়ার নিয়ম, এবং চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ একটি সম্পূর্ণ কনফ্লুয়েন্স ট্রেড।"
 level: intermediate
 order: 10
-lastUpdated: "2026-06-09"
+lastUpdated: "2026-11-13"
 ---
 
-## PD Arrays কী?
+## অনেক জোনের এক নাম
 
-PD Arrays (Premium/Discount Arrays) হলো Smart Money Operation এর পেছনে ফেলে যাওয়া **Institutional Price Level**। এগুলো Magnet ও Entry Zone হিসেবে কাজ করে, ICT এর Entry Methodology এর মেরুদণ্ড তৈরি করে। "PD" বলতে এগুলোকে Premium (Sell Zone) বা Discount (Buy Zone) এর Context এ ব্যবহার করা বোঝায়।
+আগের লেসনগুলো প্রতিটি একটি করে রেফারেন্স পয়েন্ট নিয়ে ছিল: [Liquidity](/bn/ict/liquidity), [FVG](/bn/ict/fvg), [Order Block](/bn/smc/order-blocks), [Dealing Range](/bn/ict/dealing-range) আর [OTE](/bn/ict/ote)। **PD Array** হলো ICT এর দেওয়া নাম, যেসব দামের রেফারেন্স থেকে ট্রেড করা যায় তাদের সবার জন্য, রেঞ্জে তাদের অবস্থান অনুযায়ী সাজানো।
 
-<Callout type="info" title="The Matrix">
-  ICT সমস্ত PD Arrays একটি Hierarchy তে সাজায়। Higher Timeframe PD Arrays Lower Timeframe এর তুলনায় বেশি গুরুত্বপূর্ণ।
-  কোনটি Prioritize করবেন তা বোঝাই Consistent Execution এর চাবিকাঠি।
+<Callout type="info" title="সংজ্ঞা">
+  **PD Array** (Premium/Discount Array) হলো এমন যেকোনো দামের রেফারেন্স, যেখানে Price রিঅ্যাক্ট করার সম্ভাবনা আছে: Order
+  Block, Fair Value Gap, Breaker, Liquidity Pool ইত্যাদি। "PD" মানে Array টি প্রেক্ষাপট মেনে ব্যবহার হয়। **Discount
+  Array** Buy এর জন্য, **Premium Array** Sell এর জন্য, আর Price কোন অর্ধেকে আছে তা ঠিক করে Dealing Range।
 </Callout>
 
 ---
 
-## সম্পূর্ণ PD Array তালিকা
+## PD Array Matrix
 
-### Discount Arrays (Buy করার জন্য)
+![PD Array Matrix — রেঞ্জের প্রান্ত থেকে Equilibrium পর্যন্ত প্রতিটি Array সাধারণত কোথায় থাকে](/images/ict/pd-arrays/pd-array-matrix-dark.png)
 
-সবচেয়ে বেশি থেকে কম গুরুত্বপূর্ণ:
+ICT রেঞ্জের প্রতিটি দিকে Array গুলো একটি নির্দিষ্ট ক্রমে সাজান:
 
-1. **Order Block (OB)** — Bullish Displacement এর আগে শেষ Bearish (Down-Close) Candle
-2. **Bullish Fair Value Gap (BISI)** — 3-Candle Buy-Side Imbalance
-3. **Bullish Breaker Block** — ব্যর্থ Bearish OB এখন Support হিসেবে কাজ করছে
-4. **Mitigation Block** — আংশিকভাবে পূর্ণ OB
-5. **Liquidity Void** — বড় একক-Candle Gap
+| #   | Premium (Sell এর জন্য)        | Discount (Buy এর জন্য)        |
+| --- | ----------------------------- | ----------------------------- |
+| ১   | Old High / Buy-Side Liquidity | Old Low / Sell-Side Liquidity |
+| ২   | Rejection Block               | Rejection Block               |
+| ৩   | Bearish Order Block           | Bullish Order Block           |
+| ৪   | Bearish FVG (SIBI)            | Bullish FVG (BISI)            |
+| ৫   | Liquidity Void                | Liquidity Void                |
+| ৬   | Bearish Breaker               | Bullish Breaker               |
+| ৭   | Bearish Mitigation Block      | Bullish Mitigation Block      |
 
-### Premium Arrays (Sell করার জন্য)
+**কীভাবে পড়বেন:** ১ নম্বর রেঞ্জের প্রান্তে, ৭ নম্বর Equilibrium এর সবচেয়ে কাছে। এটা বলে Array গুলো সাধারণত **কোথায়** থাকে, কোনটি কতটা নির্ভরযোগ্য তা নয়।
 
-সবচেয়ে বেশি থেকে কম গুরুত্বপূর্ণ:
-
-1. **Order Block (OB)** — Bearish Displacement এর আগে শেষ Bullish (Up-Close) Candle
-2. **Bearish Fair Value Gap (SIBI)** — 3-Candle Sell-Side Imbalance
-3. **Bearish Breaker Block** — ব্যর্থ Bullish OB এখন Resistance হিসেবে কাজ করছে
-4. **Mitigation Block** — আংশিকভাবে পূর্ণ OB
-5. **Liquidity Void** — বড় একক-Candle Gap
-
----
-
-## Order Blocks (OB)
-
-Displacement Move এর আগে **শেষ বিপরীত Candle**:
-
-### Bullish OB
-
-- Bullish Displacement এর আগে শেষ Bearish (Down-Close) Candle
-- Candle এর Range চিহ্নিত করুন (Open থেকে Low)
-- Price এই Zone এ ফিরে আসলে Buy Entry
-
-### Bearish OB
-
-- Bearish Displacement এর আগে শেষ Bullish (Up-Close) Candle
-- Candle এর Range চিহ্নিত করুন (Open থেকে High)
-- Price এই Zone এ ফিরে আসলে Sell Entry
-
-### OB Validity Rules
-
-- Displacement থাকতে হবে (FVG তৈরি করে শক্তিশালী Move)
-- Structure Break করা উচিত (BOS বা MSS)
-- One-Touch Entry সবচেয়ে ভালো (প্রথম Return সবচেয়ে শক্তিশালী)
+<Callout type="warning" title="সংশোধিত: অবস্থান, র‍্যাংক নয়">
+  মূল লেসনে তালিকাটিকে "সবচেয়ে থেকে কম গুরুত্বপূর্ণ" হিসেবে দেখানো হয়েছিল, আর বলা হয়েছিল "OB, FVG এর চেয়ে
+  শক্তিশালী"। নির্দিষ্ট শক্তির র‍্যাংকের পক্ষে কোনো তথ্য নেই। এই গাইড Matrix কে রেঞ্জে অবস্থানের ক্রম হিসেবে ব্যবহার
+  করে, আর প্রতিটি Array কে তার নিজের মান দিয়ে বিচার করে: Displacement, ফ্রেশ কিনা, আর প্রেক্ষাপট।
+</Callout>
 
 ---
 
-## Fair Value Gaps (FVG)
+## একে একে Array গুলো
 
-3-Candle Imbalance — বিস্তারিত [FVG Lesson](/bn/ict/fvg) এ আছে।
-
-Quick Reference:
-
-- **BISI** (Bullish): C1 High ও C3 Low এর মধ্যে Gap → Buy Zone
-- **SIBI** (Bearish): C1 Low ও C3 High এর মধ্যে Gap → Sell Zone
-- **CE** (Consequent Encroachment): FVG এর 50% = আদর্শ Entry
-
----
-
-## Breaker Blocks
-
-একটি **ব্যর্থ Order Block** যা পরবর্তীতে অন্য দিক থেকে Support/Resistance হিসেবে কাজ করে:
-
-### Breaker কীভাবে তৈরি হয়
-
-1. Bullish OB তৈরি হয় → Price এটিকে Support হিসেবে ব্যবহার করে
-2. Price শেষ পর্যন্ত OB এর নিচে ভেঙে পড়ে (OB ব্যর্থ)
-3. ব্যর্থ OB এখন নিচ থেকে Resistance হিসেবে কাজ করে
-4. এটি এখন **Bearish Breaker Block**
-
-### Breaker Trading
-
-- নিচের দিক থেকে Price যখন Breaker এ ফিরে আসে তখন Entry
-- সাধারণ S/R থেকে শক্তিশালী কারণ এগুলো Trap ও Reversal প্রতিনিধিত্ব করে
-- OTE Zone এর সাথে Align হলে বিশেষভাবে শক্তিশালী
+| Array                | কী                                                                       | এন্ট্রির রেফারেন্স           | লেসন                                          |
+| -------------------- | ------------------------------------------------------------------------ | ---------------------------- | --------------------------------------------- |
+| **Old High / Low**   | একটি Swing এক্সট্রিম, যার বাইরে Stop জমে আছে                             | Sweep এর বিপরীতে (MSS সহ)    | [Liquidity](/bn/ict/liquidity)                |
+| **Rejection Block**  | প্রত্যাখ্যাত একটি Swing এক্সট্রিমের Wick                                 | Wick এর বডির প্রান্ত         | —                                             |
+| **Order Block**      | Displacement এর আগের শেষ বিপরীত (Down-Close / Up-Close) ক্যান্ডেল        | Proximal প্রান্ত বা বডির ৫০% | [Order Block](/bn/smc/order-blocks)           |
+| **FVG**              | তিন ক্যান্ডেলের Gap; BISI Bullish, SIBI Bearish                          | CE (৫০%)                     | [FVG](/bn/ict/fvg)                            |
+| **Liquidity Void**   | একমুখী লম্বা একটি ক্যান্ডেল বা ক্যান্ডেলের সারি, প্রায় কোনো Overlap নেই | Void এ ফিরে পূরণ             | [Imbalance](/bn/smc/imbalance)                |
+| **Breaker Block**    | যে Order Block **Liquidity নিয়েছে**, তারপর ব্যর্থ হয়েছে                | রিটেস্টে এর প্রান্ত          | [Breaker Block](/bn/smc/breaker-blocks)       |
+| **Mitigation Block** | যে Order Block **Liquidity নিতে পারেনি**, তারপর ব্যর্থ হয়েছে            | রিটেস্টে এর প্রান্ত          | [Mitigation Block](/bn/smc/mitigation-blocks) |
 
 ---
 
-## Mitigation Blocks
+## Breaker বনাম Mitigation Block
 
-একটি Order Block যা **আংশিকভাবে পূর্ণ** হওয়ার পর Price সরে গেছে:
+![Breaker নাকি Mitigation Block — আগের Low একইভাবে ভাঙে; পার্থক্য হলো আগের High আগে নেওয়া হয়েছিল কিনা](/images/ict/pd-arrays/breaker-vs-mitigation-dark.png)
 
-### কীভাবে কাজ করে
+দুটোই ব্যর্থ Order Block, যা উল্টো ভূমিকায় চলে যায়। পার্থক্য হলো ব্যর্থতার **আগে** কী ঘটেছিল:
 
-1. একটি Level এ OB তৈরি হয়
-2. Price OB তে ফিরে আসে কিন্তু আংশিকভাবে Fill করে (পুরো Range Trade Through করে না)
-3. Price আবার সরে যায়
-4. দ্বিতীয়বার Price ফিরলে, অবশিষ্ট Unfilled অংশ = Mitigation Block
+| Bearish উদাহরণ | **Breaker Block**                                 | **Mitigation Block**                      |
+| -------------- | ------------------------------------------------- | ----------------------------------------- |
+| ভাঙার আগে      | Price **আগের High এর উপরে** যায় (Liquidity নেয়) | Price আগের High এ **পৌঁছাতে পারে না**     |
+| জোন            | সেই Move এর Up-Close ক্যান্ডেল                    | সেই দুর্বল র‍্যালির Up-Close ক্যান্ডেল    |
+| তারপর          | একটি Displacement আগের Low ভাঙে                   | একটি Displacement আগের Low ভাঙে           |
+| ট্রেড          | জোনের রিটেস্টে Sell                               | জোনের রিটেস্টে Sell                       |
+| কেন কাজ করে    | নতুন High এর পেছনে কেনা Buyer রা আটকে যায়        | দুর্বল High এ কেনা Buyer রা লসে পড়ে থাকে |
 
-### Trading Approach
+Bullish সংস্করণগুলো ঠিক উল্টো।
 
-- OB এর Unfilled অংশে Entry
-- Tighter Stop সম্ভব (শুধু Mitigation Range Cover করতে হয়)
-- Fresh OB এর তুলনায় সামান্য কম Probability
-
----
-
-## PD Array নির্বাচন Rules
-
-### Rule 1: Higher Timeframe > Lower Timeframe
-
-Daily OB সবসময় 15M OB কে Beat করে। সর্বদা HTF Arrays প্রথমে Respect করুন।
-
-### Rule 2: Premium/Discount Context
-
-- শুধু Discount Arrays Buy এর জন্য (Price Range এর 50% এর নিচে)
-- শুধু Premium Arrays Sell এর জন্য (Price Range এর 50% এর উপরে)
-
-### Rule 3: Nearest Array First
-
-Price সবসময় নিকটতম PD Array এর সাথে আগে Interact করবে। Array Skip করবেন না।
-
-### Rule 4: Confluence Stacks
-
-একাধিক PD Array Overlap করলে (OB + FVG + OTE Zone), Probability অনেক বেড়ে যায়।
+<Callout type="warning" title="সংশোধিত সংজ্ঞা">
+  মূল লেসনে Mitigation Block কে বলা হয়েছিল "আংশিক পূরণ হওয়া OB" আর তার না-পূরণ হওয়া অংশ। সেটা Mitigated Order Block
+  এর বর্ণনা, ICT এর Mitigation Block নয়। এই গাইড উপরের প্রচলিত সংজ্ঞা ব্যবহার করে, যেটা [Order
+  Block](/bn/smc/order-blocks) গাইডেও ব্যবহার করা হয়েছে।
+</Callout>
 
 ---
 
-## বাস্তব উদাহরণ: Multi-PD Array Trade
+## Array বেছে নেওয়া
 
-### EUR/USD Long Setup
+1. **আগে Higher Timeframe।** একটি Daily Array একটি 15m Array এর চেয়ে বেশি গুরুত্বপূর্ণ। Higher Timeframe Array এর **ভেতরে** থাকা লোয়ার টাইমফ্রেম Array খুঁজুন।
+2. **রেঞ্জের সঠিক অর্ধেক।** Buy এর জন্য Discount Array, Sell এর জন্য Premium Array। ভুল অর্ধেকে থাকা Array অপেক্ষার কারণ।
+3. **কাছেরটা আগে।** Price সাধারণত সবচেয়ে কাছের Array এ আগে পৌঁছায়। পছন্দের Array তে সরাসরি না গিয়ে সেটার জন্য পরিকল্পনা করুন।
+4. **মান।** Displacement সহ, Kill Zone এ তৈরি, আর এখনো ফেরা হয়নি এমন Array বেছে নিন।
+5. **স্তূপ।** দুই-তিনটি Array এক দামে মিললে সেই দাম বেশি স্পষ্ট। মেলার জায়গা এন্ট্রিকে সরু করে, আর রিঅ্যাকশনের পক্ষে বেশি কারণ দেয়।
 
-- **HTF:** Daily Discount এ, Bullish Bias
-- **15M:** London KZ এ SSL Sweep এর পর
-- **Entry Zone এ PD Arrays:**
-  - ✅ 15M Bullish OB 1.0852 তে
-  - ✅ 15M Bullish FVG 1.0848-1.0856
-  - ✅ OTE Zone (62-79%) 1.0845-1.0855
-- **Entry:** 1.0852 (OB + FVG + OTE Confluence)
-- **Stop:** 1.0840
-- **Target:** 1.0920 (BSL)
-- **R:R:** 1:5.7
+---
+
+## সম্পূর্ণ উদাহরণ — স্তূপ করা Array, EUR/USD (15m, London)
+
+![স্তূপ করা PD Array — EUR/USD 15m: একটি Bullish OB, একটি Bullish FVG আর OTE জোন 1.0852 এ মিলেছে](/images/ict/pd-arrays/eurusd-pd-confluence-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/pd-arrays-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  চার্টে এই লেসনের লেভেলের চারপাশে তৈরি **সিন্থেটিক ক্যান্ডেল** ব্যবহার করা হয়েছে। এটি পদ্ধতিটি দেখানোর জন্য, আসল
+  ট্রেডের রেকর্ড নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড, ফলাফল নয়।
+</Callout>
+
+**প্রেক্ষাপট:** Daily চার্ট Discount এ, Bias Bullish।
+
+**পর্যবেক্ষণ**
+
+1. **Sweep:** দুপুর ১২:১৫ BD তে, London Kill Zone এ, Price **1.0838** এর নিচের Sell Stop নেয়, **1.0833** পর্যন্ত Wick করে।
+2. **MSS:** ২৩ পিপের Displacement (গড় ৬ পিপ) **1.0868** Lower High এর উপরে ক্লোজ করে।
+3. **এক দামে তিনটি Array:**
+   - **Bullish Order Block:** Move এর আগের শেষ Down-Close ক্যান্ডেল, 1.0845 – 1.0859, যার ৫০% **1.0852**।
+   - **Bullish FVG:** **1.0848 – 1.0856**, Displacement এর রেখে যাওয়া।
+   - **OTE:** 1.0833 → 1.0892 Leg এর ৬২–৭৯% হলো **1.0855 – 1.0845**।
+4. **এন্ট্রি:** **দুপুর ২:৩০ BD** তে প্রথম ফেরা **1.0852** এ পৌঁছায়, তিনটিরই ভেতরে। Buy।
+
+| লেভেল     | প্রাইস      | যুক্তি              |
+| --------- | ----------- | ------------------- |
+| এন্ট্রি   | 1.0852      | OB ৫০% + FVG + OTE  |
+| Stop      | 1.0840      | তিনটি Array এর নিচে |
+| টার্গেট   | 1.0920      | Buy-Side Liquidity  |
+| রিস্ক     | ১২ পিপ      | 1.0852 − 1.0840     |
+| রিওয়ার্ড | ৬৮ পিপ      | 1.0920 − 1.0852     |
+| **R:R**   | **১ : ৫.৭** | ৬৮ ÷ ১২             |
+
+**Invalidation:** 15m ক্যান্ডেল 1.0845 এর নিচে ক্লোজ করলে, যা তিনটি Array এরই তলা।
+
+**Stop এর সিদ্ধান্ত:** 1.0840 এর Stop তিনটি Array এর নিচে, কিন্তু **Leg এর 1.0833 Low এর উপরে**। [OTE](/bn/ict/ote) লেসনে Stop রাখা হয় Leg এর শুরুর বাইরে, এখানে প্রায় 1.0830: রিস্ক ২২ পিপ আর **R:R ১ : ৩.১**। ছোট Stop বেশি R:R দেয়, কিন্তু Structure না ভেঙেই গভীর একটি পুলব্যাকে হিট হতে পারে। সেটআপ আসার আগেই ঠিক করুন কোন নিয়ম ব্যবহার করবেন।
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="PD Array এ ভুল">
-
-**❌ HTF Bias এর বিরুদ্ধে PD Array Trade করা** — Array শুধু Trend এর দিকে কাজ করে
-
-**❌ Premium Arrays Buy এর জন্য ব্যবহার করা** — Premium এ Buy করা = Institution এর বিরুদ্ধে যাওয়া
-
-**❌ Hierarchy উপেক্ষা করা** — ICT Framework এ OB, FVG এর চেয়ে শক্তিশালী
-
-**❌ Displacement Check ছাড়া** — Valid PD Arrays তৈরি হতে Displacement দরকার
-
-**❌ পুরনো Arrays Trade করা** — Fresh Array (20 Candle) সবচেয়ে নির্ভরযোগ্য
-
-</Callout>
+| ভুল                               | সমাধান                                                              |
+| --------------------------------- | ------------------------------------------------------------------- |
+| রেঞ্জের ভুল অর্ধেকে Array ব্যবহার | Buy এর জন্য Discount Array, Sell এর জন্য Premium Array              |
+| Matrix কে শক্তির র‍্যাংক মনে করা  | এটা অবস্থানের ক্রম; প্রতিটি Array কে তার নিজের মান দিয়ে বিচার করুন |
+| কাছের Array এড়িয়ে যাওয়া        | আগে সেখানেই রিঅ্যাকশন আশা করুন                                      |
+| প্রতিটি ব্যর্থ OB কে Breaker বলা  | Breaker = আগে Liquidity নিয়েছে; Mitigation = নেয়নি                |
+| Higher Timeframe উপেক্ষা করা      | Higher Timeframe Array এর ভেতরে লোয়ার টাইমফ্রেম Array খুঁজুন       |
+| Displacement ছাড়া Array          | Array থেকে শক্তিশালী Move লাগবে                                     |
 
 ---
 
-## সারসংক্ষেপ
+## রিস্ক ম্যানেজমেন্ট
 
-| PD Array             | এটি কী                                | Entry Direction          |
-| -------------------- | ------------------------------------- | ------------------------ |
-| **Order Block**      | Displacement এর আগে শেষ বিপরীত Candle | Displacement এর দিকে     |
-| **FVG**              | 3-Candle Imbalance                    | Gap এ Retracement        |
-| **Breaker Block**    | ব্যর্থ OB নতুন S/R হিসেবে             | ব্যর্থ দিক থেকে Reversal |
-| **Mitigation Block** | আংশিকভাবে পূর্ণ OB                    | Unfilled অংশে            |
-| **Liquidity Void**   | বড় একক-Candle Gap                    | Void Fill                |
+| বিষয়                  | নির্দেশিকা                                                                       |
+| ---------------------- | -------------------------------------------------------------------------------- |
+| **প্রতি ট্রেডে রিস্ক** | অ্যাকাউন্টের ১–২%; শেখার সময় আরও কম                                             |
+| **পজিশন সাইজ**         | অ্যাকাউন্ট রিস্ক ÷ Stop এর দূরত্ব ([ক্যালকুলেটর](/bn/tools/position-calculator)) |
+| **Stop**               | Array এর বাইরে (ছোট) বা Swing এর বাইরে (নিরাপদ); আগেই ঠিক করুন                   |
+| **টার্গেট**            | ট্রেডের দিকে পরবর্তী Array বা Liquidity Pool                                     |
+
+---
+
+## অনুশীলন
+
+1. একটি 4H চার্টে Dealing Range আঁকুন। Premium আর Discount এর প্রতিটি Array মার্ক করুন, আর Matrix অনুযায়ী নম্বর দিন।
+2. 15m চার্টে এমন সেটআপ খুঁজুন যেখানে দুই বা তার বেশি Array মিলেছে। মেলার জায়গা কতটা চওড়া আর Price কীভাবে রিঅ্যাক্ট করল লিখুন।
+3. পাঁচটি ব্যর্থ Order Block খুঁজে প্রতিটিকে Breaker বা Mitigation Block হিসেবে ভাগ করুন। রিটেস্টে কী হলো দেখুন।
+4. ফলাফল আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## প্রশ্ন ও উত্তর
+
+### Order Block কি FVG এর চেয়ে শক্তিশালী?
+
+নির্দিষ্ট কোনো র‍্যাংকের পক্ষে নির্ভরযোগ্য প্রমাণ নেই। দুটোই সবচেয়ে ভালো কাজ করে Displacement, ফ্রেশনেস আর রেঞ্জের সঠিক অর্ধেকে।
+
+### সব Array কি লাগবে?
+
+না। বেশিরভাগ Trader দুই-তিনটি ভালোভাবে ব্যবহার করেন: সাধারণত Order Block, FVG আর Liquidity। বাকিগুলো চিনে রাখার জন্য শিখুন।
+
+### দুটো Array একে অপরের বিপরীতে থাকলে?
+
+আপনার Discount এন্ট্রির ঠিক উপরে একটি Premium Array থাকলে সেটাই প্রথম বাধা। সেখানে আংশিক প্রফিট নিন বা অন্য ট্রেড বেছে নিন।
+
+---
+
+## সারাংশ
+
+| বিষয়            | মূল কথা                                                                             |
+| ---------------- | ----------------------------------------------------------------------------------- |
+| **PD Array**     | যেকোনো দামের রেফারেন্স যেখানে Price রিঅ্যাক্ট করতে পারে, প্রেক্ষাপট মেনে ব্যবহার    |
+| **Matrix**       | প্রতিদিকে সাতটি Array, প্রান্ত থেকে Equilibrium পর্যন্ত সাজানো (অবস্থান, শক্তি নয়) |
+| **ব্যবহার**      | Buy এর জন্য Discount Array, Sell এর জন্য Premium Array                              |
+| **Breaker**      | আগে Liquidity নিয়েছে এমন ব্যর্থ OB                                                 |
+| **Mitigation**   | Liquidity নিতে পারেনি এমন ব্যর্থ OB                                                 |
+| **সেরা এন্ট্রি** | সঠিক অর্ধেকে এক দামে কয়েকটি Array এর স্তূপ                                         |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [FVG](/bn/ict/fvg) — বিস্তারিত Fair Value Gap Guide
-- [OTE](/bn/ict/ote) — PD Arrays সহ Optimal Trade Entry
-- [MSS](/bn/ict/mss) — PD Arrays Validate করে Structure Shift
-- [Daily Bias](/bn/ict/daily-bias) — Direction নির্ধারণ করে কোন Array ব্যবহার করবেন
-- [Dealing Range](/bn/ict/dealing-range) — PD Array নির্বাচনের Context
+- [Dealing Range](/bn/ict/dealing-range) — কোন অর্ধেক Premium আর কোনটি Discount
+- [Fair Value Gap](/bn/ict/fvg) ও [Order Block](/bn/smc/order-blocks) — সবচেয়ে বেশি ব্যবহৃত দুটি Array
+- [OTE](/bn/ict/ote) — যে রিট্রেসমেন্ট জোনের ভেতরে প্রায়ই Array থাকে
+- [Breaker Block](/bn/smc/breaker-blocks) ও [Mitigation Block](/bn/smc/mitigation-blocks)
+- [Market Structure Shift](/bn/ict/mss) — Array ব্যবহারের আগের কনফার্মেশন
+- [Daily Bias](/bn/ict/daily-bias) — দিক বেছে নেওয়া

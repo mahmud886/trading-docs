@@ -1,0 +1,202 @@
+---
+title: "ICT PD Arrays (Premium/Discount Arrays) — Complete Guide"
+description: "Understand ICT's PD arrays as one system: the PD array matrix, which arrays belong in premium and which in discount, order blocks, FVGs, liquidity voids, breaker vs mitigation blocks, rejection blocks, how to choose between arrays, and a worked stacked-confluence trade with charts and an animated walkthrough."
+level: intermediate
+order: 10
+lastUpdated: "2026-11-13"
+---
+
+## One Name for Many Zones
+
+The previous lessons each covered one reference point: [liquidity](/en/ict/liquidity), [FVGs](/en/ict/fvg), [order blocks](/en/smc/order-blocks), the [dealing range](/en/ict/dealing-range) and [OTE](/en/ict/ote). **PD arrays** is ICT's name for all the price references you can trade from, organised by where they sit in the range.
+
+<Callout type="info" title="Definition">
+  A **PD array** (premium/discount array) is any price reference that price is likely to react to: an order block, a
+  fair value gap, a breaker, a liquidity pool and so on. "PD" means the array is used in context. **Discount arrays**
+  are for buys, **premium arrays** for sells, and which half price is in comes from the dealing range.
+</Callout>
+
+---
+
+## The PD Array Matrix
+
+![The PD array matrix — where each array usually sits between the range extreme and equilibrium](/images/ict/pd-arrays/pd-array-matrix-dark.png)
+
+ICT lists the arrays in a fixed order on each side of the range:
+
+| # | Premium (sell from)          | Discount (buy from)          |
+| - | ---------------------------- | ---------------------------- |
+| 1 | Old high / buy-side liquidity | Old low / sell-side liquidity |
+| 2 | Rejection block              | Rejection block              |
+| 3 | Bearish order block          | Bullish order block          |
+| 4 | Bearish FVG (SIBI)           | Bullish FVG (BISI)           |
+| 5 | Liquidity void               | Liquidity void               |
+| 6 | Bearish breaker              | Bullish breaker              |
+| 7 | Bearish mitigation block     | Bullish mitigation block     |
+
+**How to read it:** item 1 is at the range extreme, item 7 is nearest equilibrium. It describes **where** arrays usually appear, not how reliable they are.
+
+<Callout type="warning" title="Corrected: position, not ranking">
+  The original lesson presented its list as "most to least significant" and said that "OBs are stronger than FVGs".
+  There is no data behind a fixed strength ranking. This guide uses the matrix as an ordering by position in the range
+  and judges each array by its own quality: displacement, freshness, and context.
+</Callout>
+
+---
+
+## The Arrays, One by One
+
+| Array                 | What it is                                                                 | Entry reference                    | Lesson |
+| --------------------- | -------------------------------------------------------------------------- | ---------------------------------- | ------ |
+| **Old high / low**    | A swing extreme with resting stops beyond it                               | Fade the sweep (with an MSS)       | [Liquidity](/en/ict/liquidity) |
+| **Rejection block**   | The wicks of a swing extreme that was rejected                             | The wick bodies' edge              | — |
+| **Order block**       | The last opposing (down-close / up-close) candle before displacement       | Proximal edge or 50 % of the body  | [Order Blocks](/en/smc/order-blocks) |
+| **FVG**               | A three-candle gap; BISI bullish, SIBI bearish                             | The CE (50 %)                      | [FVG](/en/ict/fvg) |
+| **Liquidity void**    | A long one-sided candle or run of candles with little overlap              | A fill back into the void          | [Imbalance](/en/smc/imbalance) |
+| **Breaker block**     | An order block that **took liquidity** and then failed                     | Its edge on the retest             | [Breaker Blocks](/en/smc/breaker-blocks) |
+| **Mitigation block**  | An order block that **failed to take liquidity** and then failed            | Its edge on the retest             | [Mitigation Blocks](/en/smc/mitigation-blocks) |
+
+---
+
+## Breaker vs Mitigation Block
+
+![Breaker or mitigation block — same break of the prior low; the difference is whether the prior high was taken first](/images/ict/pd-arrays/breaker-vs-mitigation-dark.png)
+
+Both are failed order blocks that flip into the opposite role. The difference is what happened **before** the failure:
+
+| Bearish example | **Breaker block**                                    | **Mitigation block**                                    |
+| --------------- | ---------------------------------------------------- | ------------------------------------------------------- |
+| Before the break | Price runs **above the prior high** (takes liquidity) | Price **fails to reach** the prior high                 |
+| The zone        | The up-close candle(s) of that run                   | The up-close candle(s) of that weaker rally              |
+| Then            | A displacement breaks the prior low                  | A displacement breaks the prior low                      |
+| Trade           | Sell the retest of the zone                          | Sell the retest of the zone                              |
+| Why it works    | Buyers who chased the new high are trapped           | Buyers who bought the weaker high are left at a loss     |
+
+The bullish versions are mirror images.
+
+<Callout type="warning" title="Corrected definition">
+  The original lesson defined a mitigation block as a "partially filled OB" and its remaining unfilled part. That
+  describes a mitigated order block, not ICT's mitigation block. This guide uses the standard definition above, the
+  same one used in the [Order Blocks](/en/smc/order-blocks) guide.
+</Callout>
+
+---
+
+## Choosing Between Arrays
+
+1. **Higher timeframe first.** A daily array outweighs a 15m one. Look for lower-timeframe arrays **inside** higher-timeframe ones.
+2. **Correct half of the range.** Discount arrays for buys, premium arrays for sells. An array in the wrong half is a reason to wait.
+3. **Nearest first.** Price usually meets the closest array first. Plan for it rather than skipping straight to the one you like best.
+4. **Quality.** Prefer arrays formed with displacement, during a kill zone, and not yet revisited.
+5. **Stack.** When two or three arrays overlap at one price, that price is better defined. The overlap gives a narrower entry and more reasons for a reaction.
+
+---
+
+## Worked Example — Stacked Arrays, EUR/USD (15m, London)
+
+![Stacked PD arrays — EUR/USD 15m: a bullish OB, a bullish FVG and the OTE zone overlap at 1.0852](/images/ict/pd-arrays/eurusd-pd-confluence-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/pd-arrays-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this example">
+  The chart uses **synthetic candles** built around the levels in this lesson. It shows how the method works and is not
+  a record of a real trade. R:R values are the planned risk-to-reward, not results.
+</Callout>
+
+**Context:** the Daily chart is in discount with a bullish bias.
+
+**Observations**
+
+1. **Sweep:** at 12:15 PM BD, in the London kill zone, price takes the sell stops below **1.0838**, wicking to **1.0833**.
+2. **MSS:** a 23-pip displacement (against a 6-pip average) closes above the **1.0868** lower high.
+3. **Three arrays at one price:**
+   - **Bullish order block:** the last down-close candle before the move, 1.0845 – 1.0859, with its 50 % at **1.0852**.
+   - **Bullish FVG:** **1.0848 – 1.0856**, left by the displacement.
+   - **OTE:** 62–79 % of the 1.0833 → 1.0892 leg is **1.0855 – 1.0845**.
+4. **Entry:** at **2:30 PM BD** the first return reaches **1.0852**, inside all three. Buy.
+
+| Level     | Price  | Rationale                                  |
+| --------- | ------ | ------------------------------------------ |
+| Entry     | 1.0852 | OB 50 % + FVG + OTE                        |
+| Stop      | 1.0840 | Below all three arrays                     |
+| Target    | 1.0920 | Buy-side liquidity                         |
+| Risk      | 12 pips | 1.0852 − 1.0840                           |
+| Reward    | 68 pips | 1.0920 − 1.0852                           |
+| **R:R**   | **1 : 5.7** | 68 ÷ 12                               |
+
+**Invalidation:** a 15m close below 1.0845, the bottom of all three arrays.
+
+**The stop choice:** the 1.0840 stop sits below the arrays but **above the leg's 1.0833 low**. The [OTE](/en/ict/ote) lesson puts the stop beyond the leg's start, which here means about 1.0830: risk 22 pips and **R:R 1 : 3.1**. The tighter stop gives the higher R:R but can be hit by a deep pullback that never breaks structure. Decide which rule you use before the setup appears.
+
+---
+
+## Common Mistakes
+
+| Mistake                                         | Fix                                                        |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| Using an array in the wrong half of the range   | Discount arrays for buys, premium arrays for sells         |
+| Treating the matrix as a strength ranking       | It's positional; judge each array by its own quality       |
+| Skipping the nearest array                      | Expect a reaction there first                              |
+| Calling every failed OB a breaker               | Breaker = took liquidity first; mitigation = didn't        |
+| Ignoring the higher timeframe                   | Look for lower-timeframe arrays inside higher-timeframe ones |
+| Arrays without displacement                     | Require a strong move away from the array                  |
+
+---
+
+## Risk Management
+
+| Component            | Guideline                                                        |
+| -------------------- | ---------------------------------------------------------------- |
+| **Risk per trade**   | 1–2% of the account; less while learning                         |
+| **Position size**    | Account risk ÷ stop distance ([calculator](/en/tools/position-calculator)) |
+| **Stop**             | Beyond the array (tight) or beyond the swing (safe); decide in advance |
+| **Target**           | The next array or liquidity pool in the trade's direction        |
+
+---
+
+## Practice
+
+1. Draw the dealing range on a 4H chart. Mark every array in premium and in discount, and number them from the matrix.
+2. On the 15m chart, find setups where two or more arrays overlap. Record the overlap's width and how price reacted.
+3. Find five failed order blocks and classify each as a breaker or a mitigation block. Check what the retest did.
+4. Log the results in your [trading journal](/en/tools/journal-template).
+
+---
+
+## FAQ
+
+### Are order blocks stronger than FVGs?
+
+There's no reliable evidence for a fixed ranking. Both work best with displacement, freshness and the right half of the range.
+
+### Do I need all the arrays?
+
+No. Most traders use two or three well: typically order blocks, FVGs and liquidity. Learn the rest so you recognise them.
+
+### What if two arrays conflict?
+
+If a premium array sits just above your discount entry, it's the first obstacle. Take partial profit there or choose a different trade.
+
+---
+
+## Summary
+
+| Aspect          | Key point                                                       |
+| --------------- | --------------------------------------------------------------- |
+| **PD array**    | Any price reference price is likely to react to, used in context |
+| **Matrix**      | Seven arrays per side, ordered from the extreme to equilibrium (position, not strength) |
+| **Use**         | Discount arrays for buys, premium arrays for sells              |
+| **Breaker**     | Failed OB that took liquidity first                             |
+| **Mitigation**  | Failed OB that did not take liquidity                           |
+| **Best entries** | Several arrays stacked at one price, in the right half          |
+
+---
+
+## Related Topics
+
+- [Dealing Range](/en/ict/dealing-range) — which half is premium and which is discount
+- [Fair Value Gap](/en/ict/fvg) and [Order Blocks](/en/smc/order-blocks) — the two most used arrays
+- [OTE](/en/ict/ote) — the retracement zone arrays often sit inside
+- [Breaker Blocks](/en/smc/breaker-blocks) and [Mitigation Blocks](/en/smc/mitigation-blocks)
+- [Market Structure Shift](/en/ict/mss) — the confirmation before using an array
+- [Daily Bias](/en/ict/daily-bias) — choosing the direction
