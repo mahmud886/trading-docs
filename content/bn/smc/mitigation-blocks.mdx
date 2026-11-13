@@ -1,71 +1,133 @@
 ---
-title: "SMC-তে Mitigation Block — সম্পূর্ণ গাইড"
-description: "Mitigation Block আয়ত্ত করুন — আংশিকভাবে Fill/Test হওয়া Order Block। কখন এখনো মূল্যবান ও কখন এড়াবেন শিখুন।"
+title: "SMC তে Mitigation Block — সম্পূর্ণ গাইড"
+description: "Mitigation Block শিখুন: যে Order Block এর থেকে আসা Move নতুন High বা Low তৈরি করতে না পারার পরে ব্যর্থ হয়। ICT সংজ্ঞা আর প্রচলিত 'টেস্ট হওয়া OB' ব্যবহারের পার্থক্য, Breaker থেকে পার্থক্য, রিটেস্ট কীভাবে ট্রেড করবেন, আর বারবার টেস্ট কীভাবে জোন দুর্বল করে — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 8
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## Mitigation Block কী?
+## "Mitigation" এর দুটি অর্থ
 
-Mitigation Block হলো একটি **Order Block যা ইতিমধ্যে Price দ্বারা Test/Touch হয়েছে** কিন্তু সম্পূর্ণ ভাঙেনি। Price OB-তে ফিরে React করলে (আংশিক Fill), OB "Mitigated" হয় — এর অবশিষ্ট শক্তি কমে যায়।
+শব্দটা দুইভাবে ব্যবহার হয়, আর গুলিয়ে ফেললে বিভ্রান্তি হয়:
 
-<Callout type="warning" title="Mitigated = দুর্বল">
-  Fresh, Unmitigated Order Block সবচেয়ে শক্তিশালী। Price প্রতিবার ফিরে React করলে OB গুরুত্ব হারায়। ২-৩ Mitigation-এর
-  পর Level সম্ভবত Exhausted।
+| ব্যবহার                          | অর্থ                                                                                            | ট্রেড                             |
+| -------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------- |
+| **Mitigation Block** (ICT)       | এমন Order Block যা **ব্যর্থ** হয়েছে যখন এর থেকে আসা Move **নতুন High বা Low তৈরি করতে পারেনি** | রিটেস্টে **উল্টো** দিকে           |
+| **"Mitigated" OB** (প্রচলিত SMC) | এমন Order Block যেখানে Price **আগেই ফিরে এসেছে** আর প্রতিক্রিয়া দিয়েছে                        | **একই** দিকে, তবে প্রতিবার দুর্বল |
+
+<Callout type="warning" title="সংশোধিত: সংজ্ঞা">
+  মূল পেজে শুধু দ্বিতীয় অর্থ ব্যবহার করে সেটাকে "Mitigation Block" বলা হয়েছিল। এই সাইটে **Mitigation Block** ICT
+  সংজ্ঞা মেনে চলে, যা [Breaker Blocks](/bn/smc/breaker-blocks) আর [ICT PD Arrays](/bn/ict/pd-arrays) লেসনের সাথে মেলে।
+  টেস্ট হওয়া OB এই পেজের শেষে আর [Fresh vs Tested Zones](/bn/smc/fresh-vs-tested) এ আছে।
 </Callout>
 
 ---
 
-## Fresh vs. Mitigated
+## ধাপে ধাপে একটি Bearish Mitigation Block
 
-| Status                  | বর্ণনা            | Trade Quality        |
-| ----------------------- | ----------------- | -------------------- |
-| **Fresh (Unmitigated)** | কখনো Retest হয়নি | সর্বোচ্চ মান         |
-| **1x Mitigated**        | একবার Test, ধরেছে | এখনো Tradeable       |
-| **2x Mitigated**        | দুবার Test        | দুর্বল — সতর্কতা     |
-| **3x+ Mitigated**       | ৩+ বার Test       | এড়িয়ে চলুন — ভাঙবে |
+![Bearish Mitigation Block: 1.0860–1.0865 এ Bullish OB, 1.0880 High এর নিচে 1.0874 এ ব্যর্থ র‍্যালি, OB এর নিচে Close, তারপর রিটেস্ট আর 1.0861 এ Sell](/images/smc/mitigation-blocks/bearish-mitigation-block-dark.png)
 
----
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/mitigation-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-## Mitigation কীভাবে কাজ করে
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  ক্যান্ডেলগুলো ধারণাটা দেখানোর জন্য তৈরি **সিন্থেটিক**। এগুলো আসল প্রাইস বা আসল ট্রেড নয়। R:R হলো পরিকল্পিত
+  রিস্ক-রিওয়ার্ড।
+</Callout>
 
-```
-1. 1.1000-এ Bullish OB তৈরি (Fresh)
-2. Price Rally, তারপর OB-তে Pull Back
-3. Price OB Touch করে, Bounce = 1st Mitigation
-4. কিছু Institutional Order Fill, কিন্তু সব নয়
-5. Price আবার Rally, আবার OB-তে Pull Back
-6. 2nd Touch = 2nd Mitigation (এখন দুর্বল)
-7. অবশেষে: OB Break (সব Order Fill/Exhausted)
+1. **Bullish OB:** র‍্যালির আগের শেষ Down-Close ক্যান্ডেল, **1.0860 – 1.0865**।
+2. **Failure Swing:** এর থেকে র‍্যালি **1.0874** এ থেমে যায়। 1.0880 High এ **পৌঁছাতে পারে না**। Buyer রা দুর্বল।
+3. **ভাঙন:** একটি ক্যান্ডেল 1.0855 এ, **OB এর নিচে** ক্লোজ করে।
+4. **Mitigation Block:** জোনটা এখন Resistance হিসেবে কাজ করে।
+5. **রিটেস্ট:** Price 1.0863 পর্যন্ত, জোনের ভেতরে ফেরে। **1.0861** এ Sell।
 
-নিয়ম: প্রথম Touch Trade করুন। 3rd+ Touch এড়িয়ে চলুন।
-```
-
----
-
-## Mitigation vs. Breaker
-
-| বৈশিষ্ট্য | Mitigation Block             | Breaker Block   |
-| --------- | ---------------------------- | --------------- |
-| OB Status | Test হয়েছে কিন্তু ধরেছে     | সম্পূর্ণ ভেঙেছে |
-| Direction | মূলের মতো                    | Flip (বিপরীত)   |
-| Trade     | একই Direction (দুর্বল হচ্ছে) | নতুন Direction  |
+| লেভেল   | প্রাইস      | নোট                           |
+| ------- | ----------- | ----------------------------- |
+| এন্ট্রি | 1.0861      | Mitigation Block এর ভেতরে     |
+| Stop    | 1.0870      | OB ক্যান্ডেলের High এর উপরে   |
+| টার্গেট | 1.0820      | 1.0838 Low এর নিচে            |
+| **R:R** | **১ : ৪.৬** | রিস্ক ৯ পিপ, রিওয়ার্ড ৪১ পিপ |
 
 ---
 
-## Trading নিয়ম
+## Mitigation Block বনাম Breaker Block
 
-1. **সবসময় Fresh OB পছন্দ করুন** Mitigated-এর চেয়ে
-2. **1st Mitigation** = Reaction শক্তিশালী হলে Valid
-3. **2nd Mitigation** = শুধু শক্তিশালী Confluence-সহ
-4. **3+ Mitigation** = সম্পূর্ণ এড়িয়ে চলুন
-5. **Mitigation-এ সামান্য React** করলে = OB মরছে
+| বিষয়             | Breaker Block                                   | Mitigation Block                    |
+| ----------------- | ----------------------------------------------- | ----------------------------------- |
+| OB থেকে আসা Move… | **নতুন এক্সট্রিম তৈরি করেছে** (Liquidity Sweep) | নতুন এক্সট্রিম তৈরি করতে **ব্যর্থ** |
+| তারপর             | OB এর মধ্য দিয়ে ক্লোজ করে                      | OB এর মধ্য দিয়ে ক্লোজ করে          |
+| ট্রেড             | রিটেস্টে, উল্টো দিকে                            | রিটেস্টে, উল্টো দিকে                |
+| কী দেখায়         | Liquidity Grab এর পরে ফাঁদ                      | দুর্বলতা: ট্রেন্ডের জ্বালানি শেষ    |
+
+দুটোই একইভাবে ট্রেড হয়। Breaker এ সাধারণত বেশি ট্রেডার আটকে থাকে (যারা Sweep এর পেছনে দৌড়েছিল), তাই অনেকে এটাকে একটু উপরে রাখেন।
+
+---
+
+## ট্রেড করা
+
+1. ট্রেন্ডে একটি OB খুঁজুন।
+2. এর থেকে পরের Swing দেখুন: **নতুন High নেই** (Bullish OB এর জন্য) বা **নতুন Low নেই** (Bearish OB এর জন্য)।
+3. OB এর মধ্য দিয়ে **Close** এর অপেক্ষা করুন।
+4. উল্টো দিক থেকে জোনের **রিটেস্টে** Sell (বা Buy) করুন।
+5. **Stop** OB ক্যান্ডেলের বাইরে; **টার্গেট** পরের Liquidity।
+
+---
+
+## "Mitigated" Order Block (অন্য ব্যবহার)
+
+Price একটি OB তে ফিরে প্রতিক্রিয়া দিলে সেখানের কিছু অর্ডার পূর্ণ হয়। প্রতিবার ফেরার পর কম থাকে:
+
+| অবস্থা                             | ট্রেডের মান                       |
+| ---------------------------------- | --------------------------------- |
+| **Fresh** (টেস্ট হয়নি)            | সেরা                              |
+| **একবার টেস্ট**, শক্ত প্রতিক্রিয়া | এখনো ট্রেড করা যায়               |
+| **দুবার টেস্ট**                    | শুধু শক্তিশালী কনফ্লুয়েন্স সহ    |
+| **৩+ বার টেস্ট**                   | এড়িয়ে চলুন: ভাঙার সম্ভাবনা বেশি |
+
+এগুলো অভিজ্ঞতার নিয়ম। মূল লেসনের "২–৩ বার Mitigation এর পরে লেভেল সম্ভবত নিঃশেষ" একটা প্রচলিত বিশ্বাস, মাপা পরিসংখ্যান নয়।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                     | সমাধান                                                      |
+| --------------------------------------- | ----------------------------------------------------------- |
+| দুটি অর্থ গুলিয়ে ফেলা                  | Mitigation Block = ব্যর্থ OB; Mitigated OB = টেস্ট হওয়া OB |
+| নতুন এক্সট্রিম তৈরি হয়েছে কিনা না দেখা | এটাই Breaker নাকি Mitigation ঠিক করে                        |
+| ভাঙনেই এন্ট্রি                          | রিটেস্টের অপেক্ষা করুন                                      |
+| OB এর তৃতীয় টেস্টে ট্রেড               | সাধারণত বাদ দিন                                             |
+
+---
+
+## অনুশীলন
+
+1. 1H চার্টে ১০টি ব্যর্থ Order Block খুঁজুন।
+2. প্রতিটিকে Breaker (আগে নতুন এক্সট্রিম) বা Mitigation Block (নতুন এক্সট্রিম নেই) হিসেবে লেবেল করুন।
+3. প্রতিটি রিটেস্টে কী প্রতিক্রিয়া হয়েছে লিখুন। আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| উপাদান               | নিয়ম                                                   |
+| -------------------- | ------------------------------------------------------- |
+| **Mitigation Block** | নতুন এক্সট্রিম তৈরি করতে না পারা Swing এর পরে OB ব্যর্থ |
+| **এন্ট্রি**          | উল্টো দিক থেকে রিটেস্টে                                 |
+| **Stop**             | OB ক্যান্ডেলের বাইরে                                    |
+| **টেস্ট হওয়া OB**   | একই দিকে, প্রতিটি টেস্টে দুর্বল                         |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Order Blocks](/bn/smc/order-blocks) — Fresh OB Entry
-- [Breaker Blocks](/bn/smc/breaker-blocks) — OB ভাঙলে কী হয়
-- [Fair Value Gap](/bn/smc/fair-value-gap) — OB-র মধ্যে FVG
+- [Breaker Blocks](/bn/smc/breaker-blocks) — Sweep সংস্করণ
+- [Order Blocks](/bn/smc/order-blocks) — যেখান থেকে দুটোই শুরু
+- [Fresh vs Tested Zones](/bn/smc/fresh-vs-tested) — টেস্ট হওয়া OB
+- [ICT PD Arrays](/bn/ict/pd-arrays) — ICT সংজ্ঞা

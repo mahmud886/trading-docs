@@ -1,72 +1,134 @@
 ---
 title: "Mitigation Blocks in SMC — Complete Guide"
-description: "Master Mitigation Blocks — Order Blocks that have been partially filled/tested. Learn when they still hold value and when to avoid them."
+description: "Learn mitigation blocks: an order block that fails after the move from it couldn't make a new high or low. How the ICT definition differs from the common 'tested OB' usage, how it differs from a breaker, how to trade the retest, and how repeated tests weaken a zone, with a chart and an animated walkthrough."
 level: intermediate
 order: 8
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## What is a Mitigation Block?
+## Two Meanings of "Mitigation"
 
-A Mitigation Block is an **Order Block that has already been tested/touched by price** but didn't fully break. When price returns to an OB and reacts (partially fills), the OB becomes "mitigated" — its remaining power is reduced.
+The term is used in two different ways, and mixing them up causes confusion:
 
-<Callout type="warning" title="Mitigated = Weaker">
-  Fresh, unmitigated Order Blocks are STRONGEST. Each time price returns and reacts, the OB loses significance. After
-  2-3 mitigations, the level is likely exhausted.
+| Usage                           | Meaning                                                                                    | Trade                                        |
+| ------------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------- |
+| **Mitigation block** (ICT)      | An order block that **failed** after the move from it **could not make a new high or low** | The **opposite** direction, on the retest    |
+| **"Mitigated" OB** (common SMC) | An order block that price has **already returned to** and reacted from                     | The **same** direction, but weaker each time |
+
+<Callout type="warning" title="Corrected: definition">
+  The original page used only the second meaning and called it a "mitigation block". On this site, a **mitigation
+  block** follows the ICT definition, matching the [Breaker Blocks](/en/smc/breaker-blocks) and [ICT PD
+  Arrays](/en/ict/pd-arrays) lessons. A tested OB is covered at the end of this page and in [Fresh vs Tested
+  Zones](/en/smc/fresh-vs-tested).
 </Callout>
 
 ---
 
-## Fresh vs. Mitigated
+## A Bearish Mitigation Block, Step by Step
 
-| Status                  | Description         | Trade Quality           |
-| ----------------------- | ------------------- | ----------------------- |
-| **Fresh (Unmitigated)** | Never been retested | Highest quality         |
-| **1x Mitigated**        | Tested once, held   | Still tradeable         |
-| **2x Mitigated**        | Tested twice        | Weak — caution          |
-| **3x+ Mitigated**       | Tested 3+ times     | Avoid — likely to break |
+![Bearish mitigation block: a bullish OB at 1.0860–1.0865, a rally that fails at 1.0874 under the 1.0880 high, a close below the OB, then a retest and a sell at 1.0861](/images/smc/mitigation-blocks/bearish-mitigation-block-dark.png)
 
----
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/mitigation-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-## How Mitigation Works
+<Callout type="info" title="About this example">
+  The candles are **synthetic**, built to show the concept. They are not real prices or a real trade. R:R is the planned
+  risk-to-reward.
+</Callout>
 
-```
-1. Bullish OB forms at 1.1000 (fresh)
-2. Price rallies, then pulls back to OB
-3. Price touches OB, bounces = 1st mitigation
-4. Some institutional orders filled, but not all
-5. Price rallies again, pulls back to OB again
-6. 2nd touch = 2nd mitigation (weaker now)
-7. Eventually: OB breaks (all orders filled/exhausted)
+1. **Bullish OB:** the last down-close candle before the rally, **1.0860 – 1.0865**.
+2. **Failure swing:** the rally from it stops at **1.0874**. It **can't reach** the 1.0880 high. Buyers are weak.
+3. **Break:** a candle closes at 1.0855, **below the OB**.
+4. **Mitigation block:** the zone now acts as resistance.
+5. **Retest:** price returns to 1.0863, into the zone. Sell **1.0861**.
 
-Rule: Trade the FIRST touch. Avoid 3rd+ touch.
-```
-
----
-
-## Mitigation vs. Breaker
-
-| Feature       | Mitigation Block            | Breaker Block             |
-| ------------- | --------------------------- | ------------------------- |
-| OB status     | Tested but holding          | Completely broken         |
-| Direction     | Same as original            | Flipped (opposite)        |
-| Trade         | Same direction (weakening)  | New direction             |
-| What happened | Price touched but respected | Price violated completely |
+| Level   | Price       | Note                        |
+| ------- | ----------- | --------------------------- |
+| Entry   | 1.0861      | Inside the mitigation block |
+| Stop    | 1.0870      | Above the OB candle's high  |
+| Target  | 1.0820      | Below the 1.0838 low        |
+| **R:R** | **1 : 4.6** | Risk 9 pips, reward 41 pips |
 
 ---
 
-## Trading Rules
+## Mitigation Block vs Breaker Block
 
-1. **Always prefer fresh OBs** over mitigated ones
-2. **1st mitigation** = still valid if reaction was strong
-3. **2nd mitigation** = only trade with strong confluence
-4. **3+ mitigations** = avoid entirely
-5. **If price barely reacts** at mitigation = OB is dying
+| Feature           | Breaker block                            | Mitigation block                    |
+| ----------------- | ---------------------------------------- | ----------------------------------- |
+| Move from the OB… | **Made a new extreme** (swept liquidity) | **Failed** to make a new extreme    |
+| Then              | Closes through the OB                    | Closes through the OB               |
+| Trade             | Retest, opposite direction               | Retest, opposite direction          |
+| What it shows     | A trap after a liquidity grab            | Weakness: the trend ran out of fuel |
+
+Both are traded the same way. The breaker usually comes with more trapped traders (those who chased the sweep), so many traders rate it slightly higher.
+
+---
+
+## Trading It
+
+1. Find an OB in a trend.
+2. Check the next swing from it: **no new high** (for a bullish OB) or **no new low** (for a bearish OB).
+3. Wait for a **close through** the OB.
+4. Sell (or buy) the **retest** of the zone from the other side.
+5. **Stop** beyond the OB candle; **target** the next liquidity.
+
+---
+
+## "Mitigated" Order Blocks (the Other Usage)
+
+When price returns to an OB and reacts, some of the orders there are filled. Each return leaves fewer:
+
+| Status                           | Trade quality               |
+| -------------------------------- | --------------------------- |
+| **Fresh** (untested)             | Best                        |
+| **Tested once**, strong reaction | Still tradeable             |
+| **Tested twice**                 | Only with strong confluence |
+| **Tested 3+ times**              | Avoid: more likely to break |
+
+These are rules of thumb. The original's "after 2–3 mitigations, the level is likely exhausted" is a common belief, not a measured statistic.
+
+---
+
+## Common Mistakes
+
+| Mistake                                   | Fix                                                    |
+| ----------------------------------------- | ------------------------------------------------------ |
+| Mixing up the two meanings                | Mitigation block = failed OB; mitigated OB = tested OB |
+| Not checking whether a new extreme formed | That decides breaker vs mitigation                     |
+| Entering on the break                     | Wait for the retest                                    |
+| Trading a 3rd test of an OB               | Usually skip                                           |
+
+---
+
+## Practice
+
+1. Find 10 failed order blocks on 1H charts.
+2. Label each as breaker (new extreme first) or mitigation block (no new extreme).
+3. Record how each retest reacted. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element              | Rule                                                    |
+| -------------------- | ------------------------------------------------------- |
+| **Mitigation block** | OB fails after a swing that couldn't make a new extreme |
+| **Entry**            | Retest from the other side                              |
+| **Stop**             | Beyond the OB candle                                    |
+| **Tested OB**        | Same direction, weaker with each test                   |
 
 ---
 
 ## Related Topics
 
-- [Order Blocks](/en/smc/order-blocks) — Fresh OB entries
-- [Breaker Blocks](/en/smc/breaker-blocks) — When OBs break
-- [Fair Value Gap](/en/smc/fair-value-gap) — FVG within OBs
+- [Breaker Blocks](/en/smc/breaker-blocks) — the sweep version
+- [Order Blocks](/en/smc/order-blocks) — where both start
+- [Fresh vs Tested Zones](/en/smc/fresh-vs-tested) — tested OBs
+- [ICT PD Arrays](/en/ict/pd-arrays) — the ICT definitions
