@@ -1,0 +1,94 @@
+---
+title: "Advanced ICT Trading Models"
+description: "An overview of the advanced ICT entry models: Silver Bullet, Unicorn, Venom, Market Maker Models, Turtle Soup and the 2022 model. What triggers each one, where the entry and stop go, how to choose one, and how to build and test a simple plan around it, with a comparison chart and an animated walkthrough."
+level: advanced
+order: 23
+lastUpdated: "2026-11-13"
+---
+
+## Overview
+
+The advanced ICT models are **entry recipes**. They all use the same ingredients: a bias, a liquidity sweep, a displacement, and a PD array to enter from. What differs is the **trigger** and **where you get in**.
+
+You don't need all of them. Pick one, test it on your pair and session, and trade only that until your journal says it works for you.
+
+---
+
+## Where Each Model Gets You In
+
+![Four ICT entry models side by side: Silver Bullet, Unicorn, Venom and Market Maker Buy Model](/images/ict/advanced-ict-models/advanced-ict-models-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/advanced-models-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+---
+
+## Model Comparison
+
+| Model                | Trigger                                  | Entry                         | Stop                     | Timeframe       |
+| -------------------- | ---------------------------------------- | ----------------------------- | ------------------------ | --------------- |
+| **[Silver Bullet](/en/ict/silver-bullet)** | Displacement inside a fixed hour | First FVG of the window (CE) | Beyond the swing it left | 1m–5m          |
+| **[Unicorn](/en/ict/unicorn-model)**       | Breaker forms after a sweep, with an FVG | Breaker ∩ FVG overlap   | Beyond the breaker       | 5m–1H          |
+| **[Venom](/en/ict/venom-model)**           | Kill-zone sweep + immediate displacement | First touch of the FVG CE | Beyond the sweep       | 1m–5m          |
+| **[Market Maker Models](/en/ict/market-maker-models)** | Smart-money reversal on the HTF | Pullback after the first leg | Beyond the reversal | 4H–daily       |
+| **[Turtle Soup](/en/ict/turtle-soup)**     | False break of an obvious high/low | After the close back inside | Beyond the false break | 5m–1H        |
+| **[2022 model](/en/ict/2022-mentorship-concepts)** | Sweep + MSS with displacement in a kill zone | FVG CE, ideally in OTE | Beyond the sweep | 5m–15m |
+
+<Callout type="warning" title="Removed: the ratings, frequencies and average R:R">
+  The original table gave star difficulty ratings, how often each model appears ("2–3x/week", "1–2x/month") and an
+  "Avg R:R" for each (up to "1:5–10"). None of these had data behind them, and R:R depends on your stop and target, not
+  the model's name. Measure them in your own backtest instead.
+</Callout>
+
+---
+
+## Building a Simple Plan
+
+1. **One session.** London (12 – 3 PM BD, US summer) or NY AM (5 – 8 PM BD). Add one hour in US winter.
+2. **One model.** The Silver Bullet and the 2022 model have the clearest rules, so they're the easiest to test.
+3. **Backtest.** Replay at least 50 sessions. Mark every setup, taken or not.
+4. **Measure.** Win rate, average R, and the worst losing streak. The original's "target 60%+ win rate with 1:3+" is not a realistic starting goal; a positive average R across a large sample is what matters.
+5. **Trade small.** Forward-test on a demo or with minimal size for at least a month.
+6. **Then add.** Only after the results hold, add one filter (e.g. [Weekly Profiles](/en/ict/weekly-profiles)) or a second model.
+
+---
+
+## Combining Models
+
+| Combination                         | How it fits                                                |
+| ----------------------------------- | ---------------------------------------------------------- |
+| **Market Maker Model + Unicorn**    | The MMBM gives the swing direction; the Unicorn gives the entry on the pullback |
+| **Silver Bullet + Weekly Profile**  | Take Silver Bullets only once the week's high or low looks in |
+| **Turtle Soup + Kill Zone**         | Fade false breaks only during kill zones                   |
+| **Venom + London Open**             | Use the London open's Judas swing as the Venom sweep       |
+
+---
+
+## Common Mistakes
+
+| Mistake                        | Fix                                                       |
+| ------------------------------ | --------------------------------------------------------- |
+| Model hopping after losses     | Judge a model on 50+ trades, not three                    |
+| Trading every model at once    | One model, one session                                    |
+| No backtest                    | Test on your pair and session first                       |
+| Skipping the basics            | Liquidity, MSS, FVG and bias come before any model        |
+
+---
+
+## Summary
+
+| Question                 | Answer                                        |
+| ------------------------ | --------------------------------------------- |
+| **What do they share?**  | Bias → sweep → displacement → PD array entry  |
+| **What differs?**        | The trigger and the entry location            |
+| **Which first?**         | Silver Bullet or the 2022 model               |
+| **How to judge one?**    | Your own backtest and journal                 |
+
+---
+
+## Related Topics
+
+- [Silver Bullet](/en/ict/silver-bullet) — time-boxed FVG entry
+- [Unicorn Model](/en/ict/unicorn-model) — breaker + FVG
+- [Venom Model](/en/ict/venom-model) — first touch after a sweep
+- [Market Maker Models](/en/ict/market-maker-models) — the swing framework
+- [2022 Mentorship](/en/ict/2022-mentorship-concepts) — the core model
