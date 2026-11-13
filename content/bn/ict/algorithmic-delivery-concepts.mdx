@@ -1,104 +1,116 @@
 ---
 title: "ICT Algorithmic Delivery Concepts"
-description: "IPDA (Interbank Price Delivery Algorithm) বুঝুন — কীভাবে Price Algorithmically Liquidity Pool ও Imbalance এ পূর্বানুমানযোগ্য ও পুনরাবৃত্তিযোগ্যভাবে Deliver হয়।"
+description: "ICT এর Algorithmic Price Delivery (IPDA) ধারণা বুঝুন: Price এক Liquidity Pool থেকে আরেকটিতে যায়, পথে Imbalance রিব্যালেন্স করে। মডেলটা কী বলে, ২০/৪০/৬০ দিনের রেঞ্জের সাথে কীভাবে ব্যবহার করবেন, কোথায় এটা বাড়াবাড়ি করে, আর চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ একটি উদাহরণ।"
 level: advanced
 order: 24
-lastUpdated: "2026-06-09"
+lastUpdated: "2026-11-13"
 ---
 
 ## Algorithmic Price Delivery কী?
 
-ICT শেখায় যে Financial Market Random Supply-Demand দ্বারা নয়, বরং **IPDA (Interbank Price Delivery Algorithm)** দ্বারা চালিত যা পদ্ধতিগতভাবে Liquidity Pool ও Imbalance এর মধ্যে Price Deliver করে।
+ICT বর্ণনা করেন Price কে **ডেলিভার** করে যাকে তিনি **Interbank Price Delivery Algorithm (IPDA)** বলেন: Price এক Liquidity Pool থেকে আরেকটিতে যায়, আর পথে অদক্ষতা (Imbalance) রিব্যালেন্স করে।
 
-<Callout type="info" title="The Algorithm">
-  "Market একটি Price Delivery Algorithm। এটি 'উঠে' বা 'নামে' না। এটি এক Liquidity Pool থেকে অন্যটিতে Price Deliver করে,
-  পথে Imbalance পূরণ করে।" — ICT
+একটি একক "অ্যালগরিদম" থাকুক বা না থাকুক, মডেলটা একটি কাজের **মানচিত্র**: এটা বলে Price এরপর কী ধরতে যাচ্ছে (Liquidity) আর পথে কোথায় থামতে বা উল্টাতে পারে (Imbalance)।
+
+<Callout type="warning" title="একটি মডেল, তথ্য নয়">
+  মূল লেসনে বলা ছিল মার্কেট "এলোমেলো চাহিদা-যোগান দিয়ে চলে না" বরং IPDA দিয়ে চলে, আর সূত্র ছাড়া ICT এর উক্তি দেওয়া
+  ছিল। এটা ICT এর দাবি, মার্কেট কীভাবে কাজ করে সে সম্পর্কে প্রতিষ্ঠিত তথ্য নয়। মডেলটা যা ভালো করে — Liquidity আর
+  Imbalance গুছিয়ে দেখানো — তার জন্য ব্যবহার করুন, আর নিজের ফলাফল দিয়ে বিচার করুন।
 </Callout>
 
 ---
 
-## Algorithm কীভাবে কাজ করে
+## ক্রম
 
-### Algorithm এর উদ্দেশ্য (ক্রমানুসারে)
+| ধাপ | কী হয়                                             | কী দেখেন                               |
+| --- | -------------------------------------------------- | -------------------------------------- |
+| ①   | Price একটি **Liquidity** Pool (A) নেয়             | Equal High/Low বা পুরনো Swing এর Sweep |
+| ②   | Displacement সহ উল্টে একটি **Imbalance** রেখে যায় | একটি FVG বা Liquidity Void             |
+| ③   | প্রায়ই এর কিছু অংশ **রিব্যালেন্স** করতে ফেরে      | FVG তে রিট্রেস                         |
+| ④   | পরের **Liquidity** Pool (B) এর দিকে চলে যায়       | বিপরীত High/Low নেওয়া হয়             |
 
-1. **Liquidity খোঁজা** — BSL বা SSL (Stop Order, Pending Order)
-2. **Imbalance পূরণ করা** — FVG, Liquidity Void, Volume Imbalance
-3. **দক্ষভাবে Price Deliver করা** — Premium ও Discount এর মধ্যে চলাচল
-4. **নতুন Liquidity তৈরি করা** — নতুন Swing Point যা নতুন Order আকর্ষণ করে
+![Liquidity → Imbalance → Liquidity: Equal Low Sweep, FVG রেখে যাওয়া, রিট্রেস, Equal High নেওয়া](/images/ict/algorithmic-delivery-concepts/liquidity-imbalance-liquidity-dark.png)
 
-### Price Delivery Sequence
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/delivery-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-```
-Liquidity Pool A → Imbalance Fill → Liquidity Pool B → Imbalance Fill → ...
-```
-
-Price Liquidity Pool এর মধ্যে বাউন্স করে, পথে FVG Fill করে। এটি Random নয় — এটি IPDA Data Range অনুসরণ করে।
-
----
-
-## IPDA Data Ranges
-
-### Lookback Period
-
-- **20 Trading Days** — Short-Term Institutional Reference
-- **40 Trading Days** — Medium-Term Reference
-- **60 Trading Days** — Quarterly Institutional Reference
-
-### কীভাবে ব্যবহার করবেন
-
-1. Daily Chart এ 20/40/60 Candle পিছনে গণনা করুন
-2. প্রতিটি Lookback Period এর HIGH ও LOW Mark করুন
-3. যেকোনো Untouched High বা Low = Algorithm Target
-4. নিকটতম Untouched Level = সবচেয়ে সম্ভাব্য পরবর্তী Target
-
-### উদাহরণ
-
-- 20-Day Range: 1.0800 - 1.0950
-- বর্তমান Price: 1.0870
-- 20-Day Low (1.0800) = Untouched SSL → সম্ভাব্য Target
-- 20-Day High (1.0950) = Untouched BSL → সম্ভাব্য Target
-- Daily Bias নির্ধারণ করে Price কোনটি আগে খুঁজবে
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  চার্টে ক্রমটা দেখানোর জন্য তৈরি **সিন্থেটিক ক্যান্ডেল** ব্যবহার করা হয়েছে। এটা আসল প্রাইসের রেকর্ড নয়।
+</Callout>
 
 ---
 
-## Algorithmic Patterns
+## ২০/৪০/৬০ দিনের রেঞ্জ ব্যবহার
 
-### Pattern 1: Liquidity → FVG → Liquidity
+IPDA রেঞ্জ "কোথায়" এর উত্তর দেয়:
 
-- Algorithm SSL Sweep করে → উপরের FVG Fill করে → BSL তে Continue করে
+1. Daily চার্টে শেষ **২০, ৪০ আর ৬০** ট্রেডিং দিনের High আর Low মার্ক করুন।
+2. না-ছোঁয়া এক্সট্রিমগুলো সম্ভাব্য টার্গেট।
+3. আপনার **Daily Bias** ঠিক করে Price আগে কোন দিক খুঁজবে।
 
-### Pattern 2: FVG Mitigation
+**উদাহরণ:** ২০ দিনের রেঞ্জ **1.0800 – 1.0950** আর Price **1.0870** এ। দুই এক্সট্রিমই না-ছোঁয়া। Bullish Bias এ 1.0950 Draw; Bearish এ 1.0800।
 
-- Algorithm আগে তৈরি FVG তে ফিরে আসে Fill করতে
-- এই কারণে "Price সবসময় Gap এ ফিরে আসে"
+চার্টসহ পূর্ণ ওয়াকথ্রু আছে [Monthly Profiles](/bn/ict/monthly-profiles) এ।
 
-### Pattern 3: Time-Scheduled Delivery
+---
 
-- Algorithm নির্দিষ্ট Kill Zone Time এ Active হয়
-- Macro Window (:50-:10) Algorithmic Displacement দেখায়
-- Session Transition = Algorithmic Recalibration
+## তিনটি প্যাটার্ন
+
+| প্যাটার্ন                       | বাস্তবে                                                                                                    |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Liquidity → FVG → Liquidity** | উপরের ক্রম; ধাপ ③ এর রিট্রেসে এন্ট্রি                                                                      |
+| **FVG রিব্যালেন্সিং**           | Price প্রায়ই সাম্প্রতিক FVG আবার দেখে, তবে সবসময় নয়, আর সবসময় পুরোটা নয়                               |
+| **সময়-ভিত্তিক ডেলিভারি**       | Displacement সাধারণত Kill Zone আর Macro তে শুরু হয়; দেখুন [Time and Price](/bn/ict/time-and-price-theory) |
+
+<Callout type="warning" title="সংশোধিত: 'Price সবসময় Gap এ ফেরে'">
+  মূল লেসনে বলা ছিল এই কারণেই "Price সবসময় Gap এ ফিরে আসে"। সবসময় ফেরে না। শক্তিশালী ট্রেন্ড এমন FVG রেখে যায় যা
+  অনেকদিন খোলা থাকে। FVG কে সম্ভাব্য প্রতিক্রিয়ার জোন হিসেবে দেখুন, প্রতিশ্রুতি হিসেবে নয়।
+</Callout>
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="Algorithm এ ভুল">
+| ভুল                                  | সমাধান                                      |
+| ------------------------------------ | ------------------------------------------- |
+| প্রতিটি Move কে "প্রোগ্রাম করা" ভাবা | এটা একটা মডেল; অনেক Move এর সাথে মেলে না    |
+| একসাথে দুই Pool টার্গেট করা          | Bias ঠিক করে কোন Pool আগে                   |
+| প্রতিটি FVG ভরবে আশা করা             | কিছু কখনো ভরে না; কনফার্মেশনের অপেক্ষা করুন |
+| নিউজ উপেক্ষা                         | বড় ডেটা যেকোনো মানচিত্র উল্টে দিতে পারে    |
 
-**❌ Market Random মনে করা** — Algorithm এর উদ্দেশ্য বুঝলে এটি পূর্বানুমানযোগ্য
+---
 
-**❌ IPDA Range উপেক্ষা করা** — এগুলো Algorithm এর Reference Level
+## অনুশীলন
 
-**❌ Algorithm এর বিরুদ্ধে লড়া** — এর উদ্দেশ্যের সাথে Align করুন, Counter-Trade করবেন না
+1. ২০ দিনের 1H চার্টে London খোলার আগে উপরে আর নিচে সবচেয়ে কাছের Liquidity মার্ক করুন।
+2. কোনটা আগে নেওয়া হয়েছে আর পথে কোনো FVG রিব্যালেন্স হয়েছে কিনা লিখুন।
+3. ফলাফল আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
 
-**❌ অতিরিক্ত জটিল করা** — Algorithm দুটি কাজ করে: Liquidity খোঁজে ও Imbalance পূরণ করে
+---
 
-</Callout>
+## সারাংশ
+
+| উপাদান         | ভূমিকা                                          |
+| -------------- | ----------------------------------------------- |
+| **Liquidity**  | Price কোথায় যাচ্ছে (Pool A আর B)               |
+| **Imbalance**  | পথে কোথায় থামতে বা ঘুরতে পারে                  |
+| **IPDA রেঞ্জ** | কোন Pool গুরুত্বপূর্ণ (২০/৪০/৬০ দিনের High/Low) |
+| **Bias**       | কোন Pool আগে                                    |
+| **সময়**       | Move কখন শুরু হওয়ার সম্ভাবনা                   |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Time & Price Theory](/bn/ict/time-and-price-theory) — Time Algorithm চালায়
-- [FVG](/bn/ict/fvg) — Imbalance যা Algorithm Fill করে
-- [Liquidity](/bn/ict/liquidity) — Pool যা Algorithm Target করে
-- [2022 Mentorship](/bn/ict/2022-mentorship-concepts) — যেখানে IPDA পরিশোধিত হয়েছে
+- [Time and Price Theory](/bn/ict/time-and-price-theory) — "কখন"
+- [FVG](/bn/ict/fvg) — Imbalance
+- [Liquidity](/bn/ict/liquidity) — Pool
+- [Monthly Profiles](/bn/ict/monthly-profiles) — ২০/৪০/৬০ দিনের রেঞ্জ
+- [2022 Mentorship](/bn/ict/2022-mentorship-concepts) — এর ওপর তৈরি এন্ট্রি মডেল

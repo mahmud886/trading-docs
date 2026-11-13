@@ -1,104 +1,116 @@
 ---
 title: "ICT Algorithmic Delivery Concepts"
-description: "Understand the Interbank Price Delivery Algorithm (IPDA) — how price is algorithmically delivered to liquidity pools and imbalances in a predictable, repeatable manner."
+description: "Understand ICT's idea of algorithmic price delivery (the IPDA): price moving from one pool of liquidity to the next and rebalancing imbalances along the way. What the model says, how to use it with the 20/40/60-day ranges, where it overreaches, and a worked example with a chart and an animated walkthrough."
 level: advanced
 order: 24
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-11-13"
 ---
 
-## What is Algorithmic Price Delivery?
+## What Is Algorithmic Price Delivery?
 
-ICT teaches that financial markets are NOT driven by random supply and demand but by an **Interbank Price Delivery Algorithm (IPDA)** that systematically delivers price between liquidity pools and imbalances.
+ICT describes price as being **delivered** by what he calls the **Interbank Price Delivery Algorithm (IPDA)**: price moves from one pool of liquidity to another, and rebalances inefficiencies (imbalances) on the way.
 
-<Callout type="info" title="The Algorithm">
-  "The market is a price delivery algorithm. It doesn't 'go up' or 'go down.' It delivers price from one liquidity pool
-  to another, filling imbalances along the way." — ICT
+Whether or not a single "algorithm" exists, the model is a useful **map**: it tells you what price is likely reaching for next (liquidity) and where it may pause or reverse on the way (imbalances).
+
+<Callout type="warning" title="A model, not a fact">
+  The original stated that markets "are NOT driven by random supply and demand" but by the IPDA, and quoted ICT without
+  a source. That's ICT's claim, not an established fact about how markets work. Use the model for what it does well,
+  organising liquidity and imbalances, and judge it by your own results.
 </Callout>
 
 ---
 
-## How the Algorithm Works
+## The Sequence
 
-### The Algorithm's Objectives (in order)
+| Step | What happens                                              | What you see                                |
+| ---- | --------------------------------------------------------- | ------------------------------------------- |
+| ①    | Price runs a pool of **liquidity** (A)                    | A sweep of equal highs/lows or an old swing |
+| ②    | It reverses with displacement and leaves an **imbalance** | An FVG or liquidity void                    |
+| ③    | It often returns to **rebalance** part of it              | A retrace into the FVG                      |
+| ④    | It moves on to the next pool of **liquidity** (B)         | The opposite highs/lows are taken           |
 
-1. **Seek liquidity** — BSL or SSL (stop orders, pending orders)
-2. **Fill imbalances** — FVGs, liquidity voids, volume imbalances
-3. **Deliver price efficiently** — Move between premium and discount
-4. **Create new liquidity** — Form new swing points that attract new orders
+![Liquidity → imbalance → liquidity: equal lows swept, FVG left, retraced, equal highs taken](/images/ict/algorithmic-delivery-concepts/liquidity-imbalance-liquidity-dark.png)
 
-### The Price Delivery Sequence
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/delivery-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-```
-Liquidity Pool A → Imbalance Fill → Liquidity Pool B → Imbalance Fill → ...
-```
-
-Price bounces between liquidity pools, filling FVGs along the way. This is NOT random — it follows the IPDA data ranges.
-
----
-
-## IPDA Data Ranges
-
-### The Lookback Periods
-
-- **20 trading days** — Short-term institutional reference
-- **40 trading days** — Medium-term reference
-- **60 trading days** — Quarterly institutional reference
-
-### How to Use
-
-1. Count back 20/40/60 candles on the Daily chart
-2. Mark the HIGH and LOW of each lookback period
-3. Any UNTOUCHED high or low = algorithm target
-4. The nearest untouched level = most likely next target
-
-### Example
-
-- 20-day range: 1.0800 - 1.0950
-- Current price: 1.0870
-- 20-day low (1.0800) = untouched SSL → potential target
-- 20-day high (1.0950) = untouched BSL → potential target
-- Daily bias determines which one price seeks first
+<Callout type="info" title="About this chart">
+  The chart uses **synthetic candles** built to show the sequence. It is not a record of real prices.
+</Callout>
 
 ---
 
-## Algorithmic Patterns
+## Using the 20/40/60-Day Ranges
 
-### Pattern 1: Liquidity → FVG → Liquidity
+The IPDA ranges give the "where":
 
-- Algorithm sweeps SSL → fills overhead FVG → continues to BSL
+1. On the daily chart, mark the high and low of the last **20, 40 and 60** trading days.
+2. Untouched extremes are potential targets.
+3. Your **daily bias** decides which side price is likely to seek first.
 
-### Pattern 2: FVG Mitigation
+**Example:** the 20-day range is **1.0800 – 1.0950** and price is at **1.0870**. Both extremes are untouched. With a bullish bias, 1.0950 is the draw; with a bearish one, 1.0800.
 
-- Algorithm returns to previously created FVGs to fill them
-- This is why "price always comes back to the gap"
+A full walkthrough with a chart is in [Monthly Profiles](/en/ict/monthly-profiles).
 
-### Pattern 3: Time-Scheduled Delivery
+---
 
-- Algorithm activates at specific Kill Zone times
-- Macro windows (:50-:10) show algorithmic displacement
-- Sessions transition = algorithmic recalibration
+## Three Patterns
+
+| Pattern                         | In practice                                                                                               |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| **Liquidity → FVG → liquidity** | The sequence above; enter on the step-③ retrace                                                           |
+| **FVG rebalancing**             | Price often revisits recent FVGs, but not always, and not always fully                                    |
+| **Time-based delivery**         | Displacement tends to start in kill zones and macros; see [Time and Price](/en/ict/time-and-price-theory) |
+
+<Callout type="warning" title="Corrected: 'price always comes back to the gap'">
+  The original said this is "why price always comes back to the gap". It doesn't always. Strong trends leave FVGs that
+  stay open for a long time. Treat an FVG as a likely reaction zone, not a promise.
+</Callout>
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Algorithm Errors">
+| Mistake                              | Fix                                     |
+| ------------------------------------ | --------------------------------------- |
+| Believing every move is "programmed" | It's a model; plenty of moves don't fit |
+| Targeting both pools at once         | Bias decides which pool comes first     |
+| Expecting every FVG to fill          | Some never do; wait for confirmation    |
+| Ignoring news                        | Big data can override any map           |
 
-**❌ Thinking markets are random** — The algorithm is predictable once you understand its objectives
+---
 
-**❌ Ignoring IPDA ranges** — These are the algorithm's reference levels
+## Practice
 
-**❌ Fighting the algorithm** — Align with its objectives, don't counter-trade them
+1. On 20 days of 1H charts, mark the nearest liquidity above and below before London opens.
+2. Note which was taken first and whether an FVG was rebalanced on the way.
+3. Log the results in your [trading journal](/en/tools/journal-template).
 
-**❌ Overcomplicating** — The algorithm does TWO things: seek liquidity and fill imbalances
+---
 
-</Callout>
+## Summary
+
+| Element         | Role                                         |
+| --------------- | -------------------------------------------- |
+| **Liquidity**   | Where price is going (pools A and B)         |
+| **Imbalance**   | Where it may pause or turn on the way        |
+| **IPDA ranges** | Which pools matter (20/40/60-day highs/lows) |
+| **Bias**        | Which pool comes first                       |
+| **Time**        | When the move is likely to start             |
 
 ---
 
 ## Related Topics
 
-- [Time & Price Theory](/en/ict/time-and-price-theory) — Time drives the algorithm
-- [FVG](/en/ict/fvg) — Imbalances the algorithm fills
-- [Liquidity](/en/ict/liquidity) — Pools the algorithm targets
-- [2022 Mentorship](/en/ict/2022-mentorship-concepts) — Where IPDA was refined
+- [Time and Price Theory](/en/ict/time-and-price-theory) — the "when"
+- [FVG](/en/ict/fvg) — the imbalances
+- [Liquidity](/en/ict/liquidity) — the pools
+- [Monthly Profiles](/en/ict/monthly-profiles) — the 20/40/60-day ranges
+- [2022 Mentorship](/en/ict/2022-mentorship-concepts) — the entry model built on this
