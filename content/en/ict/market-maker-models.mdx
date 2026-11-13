@@ -1,122 +1,133 @@
 ---
 title: "ICT Market Maker Models"
-description: "Understand how the Market Maker algorithm delivers price. Learn the Market Maker Buy Model (MMBM) and Market Maker Sell Model (MMSM) — the complete price delivery framework."
+description: "Learn the ICT Market Maker Buy and Sell Models: the stages from original consolidation through the smart-money reversal to the second leg, where the entry sits, how to place the stop honestly, and a worked EUR/USD MMBM with a chart and an animated walkthrough."
 level: advanced
 order: 18
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-11-13"
 ---
 
-## What are Market Maker Models?
+## What Are Market Maker Models?
 
-Market Maker Models describe the **complete cycle of price delivery** by the interbank algorithm. They map out how price moves from accumulation through manipulation to distribution — giving you a roadmap of where you are in the cycle and what comes next.
+**Market Maker Models** are ICT's map of a full swing: where price ranges, where it reverses, and where it expands. The **Market Maker Buy Model (MMBM)** describes a bullish swing; the **Market Maker Sell Model (MMSM)** is its mirror. They are [AMD](/en/ict/amd) on a larger scale.
 
-<Callout type="info" title="The Algorithm's Pattern">
-  The algorithm repeats the same pattern over and over: sweep one side, displace to the other side, retrace, then
-  expand. Market Maker Models help you identify which stage you're in.
+Their use is orientation: knowing which stage you're in tells you whether to wait, prepare, enter or take profit.
+
+<Callout type="info" title="The classic picture">
+  ICT usually draws the MMBM as a curve: price steps **down** through a series of consolidations (the sell side of the
+  curve), reverses at a smart-money reversal, then steps back **up** through the same levels (the buy side of the curve)
+  toward the original consolidation. The stage list below is the buy-side half, which is where the trades are.
 </Callout>
 
 ---
 
-## Market Maker Buy Model (MMBM)
+## The Stages
 
-The blueprint for a bullish cycle:
+| Stage | MMBM (bullish)                                              | MMSM (bearish)                                         |
+| ----- | ----------------------------------------------------------- | ------------------------------------------------------ |
+| ①     | Original consolidation at the low                           | Original consolidation at the high                     |
+| ②     | **Smart-money reversal**: sell-side swept, then MSS up      | Buy-side swept, then MSS down                          |
+| ③     | First displacement leg up, leaving FVGs and OBs             | First leg down, leaving bearish FVGs and OBs           |
+| ④     | **Re-accumulation**: pullback into those arrays — the entry | **Re-distribution**: pullback up into them — the entry |
+| ⑤     | Second leg up toward buy-side liquidity                     | Second leg down toward sell-side liquidity             |
+| ⑥     | Price reaches premium and stalls                            | Price reaches discount and stalls                      |
 
-### Stages
-
-1. **Original Consolidation** — Price ranges at the low (accumulation)
-2. **Smart Money Reversal** — SSL sweep + MSS (manipulation)
-3. **First displacement leg up** — Creates OBs and FVGs
-4. **Re-accumulation** — Pullback to OB/FVG (this is your entry)
-5. **Second leg up** — Expansion toward BSL targets
-6. **Distribution** — Price reaches premium, starts topping out
-
-### Entry Point
-
-The ideal entry is during **Stage 4 (re-accumulation)**:
-
-- Price pulls back to the FVG/OB from Stage 3
-- This pullback often reaches OTE (62-79% retracement)
-- Enter with stop below the Stage 2 manipulation low
+**Stop:** beyond the stage-② reversal extreme. **Target:** the liquidity at the far side of the curve.
 
 ---
 
-## Market Maker Sell Model (MMSM)
+## Worked Example — MMBM, EUR/USD (daily)
 
-The blueprint for a bearish cycle:
+![Market Maker Buy Model — EUR/USD daily: consolidation, sweep to 1.0785, first leg to 1.0880, FVG pullback to 1.0848, second leg](/images/ict/market-maker-models/eurusd-mmbm-dark.png)
 
-### Stages
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/mmbm-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-1. **Original Consolidation** — Price ranges at the high (distribution)
-2. **Smart Money Reversal** — BSL sweep + MSS (manipulation)
-3. **First displacement leg down** — Creates bearish OBs and FVGs
-4. **Re-distribution** — Pullback into bearish OB/FVG (entry)
-5. **Second leg down** — Expansion toward SSL targets
-6. **Accumulation** — Price reaches discount, starts bottoming
+<Callout type="info" title="About this example">
+  The chart uses **synthetic candles** built around the levels in this lesson. It shows how the model works and is not a
+  record of a real trade. R:R is the planned risk-to-reward.
+</Callout>
 
-### Entry Point
+1. **Consolidation:** five days at **1.0800 – 1.0830**.
+2. **Reversal:** sell-side swept to **1.0785**, close back inside, then MSS above 1.0830.
+3. **First leg:** to **1.0880**, leaving an FVG at **1.0840 – 1.0855**.
+4. **Re-accumulation:** the pullback reaches the FVG's CE at **1.0848**. Buy.
+5. **Second leg:** expansion toward buy-side at **1.0970**.
 
-Enter during **Stage 4 (re-distribution)**:
+| Level   | Price       | Note                          |
+| ------- | ----------- | ----------------------------- |
+| Entry   | 1.0848      | FVG CE                        |
+| Stop    | 1.0780      | Below the 1.0785 reversal low |
+| Target  | 1.0970      | Buy-side liquidity            |
+| **R:R** | **1 : 1.8** | Risk 68 pips, reward 122 pips |
 
-- Price retraces into the bearish FVG/OB from Stage 3
-- Often reaches OTE zone
-- Stop above the Stage 2 manipulation high
+<Callout type="warning" title="Corrected: R:R and OTE">
+  The original said the pullback hit "FVG CE + OTE zone" and gave **R:R 1:8+**. Neither holds. With the stop below the
+  reversal low, as the model says, the risk is 68 pips and the reward 122: **1 : 1.8**. And the OTE zone of the 1.0785 →
+  1.0880 leg is **1.0805 – 1.0821**; 1.0848 is only a 34% retracement, so it's an FVG entry, not an OTE entry. A better
+  R:R needs either an entry deeper in OTE or a tighter stop below the FVG, which is more likely to be hit.
+</Callout>
+
+### MMSM — NAS100 (4H, no chart)
+
+Consolidation 18,000 – 18,100, buy-side swept to 18,150 and a bearish MSS, first leg down to 17,900, retrace to the bearish OB at **18,020**: sell. The stop above the reversal is **18,160**, the target **17,500**: risk 140, reward 520 points, **R:R 1 : 3.7**. The original said 1:7, which would need a stop of about 74 points, inside the reversal range. The OTE zone of that leg is 18,055 – 18,098, so 18,020 is again shallower than OTE.
 
 ---
 
-## Real Examples
+## Where Am I in the Model?
 
-### Example 1: MMBM on EUR/USD (Daily)
-
-- **Stage 1:** 1.0800-1.0830 consolidation for 5 days
-- **Stage 2:** SSL sweep to 1.0785, then MSS bullish
-- **Stage 3:** Displacement to 1.0880, creating FVG at 1.0840-1.0855
-- **Stage 4:** Pullback to 1.0848 (FVG CE + OTE zone) — **ENTRY BUY**
-- **Stage 5:** Expansion to 1.0970
-- **R:R from entry:** 1:8+
-
-### Example 2: MMSM on NAS100 (4H)
-
-- **Stage 1:** Consolidation at 18,000-18,100
-- **Stage 2:** BSL sweep to 18,150, bearish MSS
-- **Stage 3:** Displacement to 17,900 creating OBs
-- **Stage 4:** Retracement to 18,020 (bearish OB) — **ENTRY SELL**
-- **Stage 5:** Expansion to 17,500
-- **R:R:** 1:7
-
----
-
-## Identifying Your Position in the Model
-
-| If Price Is...                       | You're in Stage...  | Action               |
-| ------------------------------------ | ------------------- | -------------------- |
-| Ranging at support                   | 1 (Consolidation)   | Wait for sweep       |
-| Sweeping lows with displacement up   | 2-3 (Reversal)      | Prepare for buy      |
-| Pulling back to FVG/OB after up move | 4 (Re-accumulation) | ENTER BUY            |
-| Expanding toward highs               | 5 (Expansion)       | Hold / take partials |
-| Ranging at resistance                | 6 (Distribution)    | Prepare for MMSM     |
+| If price is…                      | Stage             | Action                         |
+| --------------------------------- | ----------------- | ------------------------------ |
+| Ranging after a decline           | ① Consolidation   | Wait for the sweep             |
+| Sweeping lows, then displacing up | ②–③ Reversal      | Mark the new FVGs/OBs          |
+| Pulling back into those arrays    | ④ Re-accumulation | Enter                          |
+| Expanding toward highs            | ⑤ Expansion       | Hold; take partials            |
+| Stalling in premium               | ⑥                 | Take profit; watch for an MMSM |
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Market Maker Model Errors">
+| Mistake                            | Fix                                           |
+| ---------------------------------- | --------------------------------------------- |
+| Entering during consolidation      | It can last weeks; wait for the reversal      |
+| Chasing the first leg              | Wait for the stage-④ pullback                 |
+| Claiming big R:R with a tight stop | Measure risk from where the model invalidates |
+| Wrong timeframe                    | Daily/4H for the model, 15m–1H for the entry  |
+| Forgetting the cycle               | An MMBM's top is where an MMSM can start      |
 
-**❌ Entering at Stage 1** — Consolidation can last days/weeks. Wait for the sweep
+---
 
-**❌ Chasing Stage 3** — The first displacement is not the entry. Wait for Stage 4 pullback
+## Practice
 
-**❌ Wrong timeframe** — Use Daily/4H for the model structure, LTF for execution
+1. On daily charts of three pairs, find one MMBM and one MMSM from the past year.
+2. Label the six stages and measure the R:R with the stop beyond stage ②.
+3. Check whether the stage-④ pullback reached OTE or only the FVG. Log it in your [trading journal](/en/tools/journal-template).
 
-**❌ Forgetting it's a cycle** — MMBM ends → MMSM begins. It's continuous
+---
 
-</Callout>
+## Summary
+
+| Element     | MMBM                                           |
+| ----------- | ---------------------------------------------- |
+| **Trigger** | Sell-side sweep + MSS (stage ②)                |
+| **Entry**   | Pullback into the leg's FVG/OB (stage ④)       |
+| **Stop**    | Below the reversal low                         |
+| **Target**  | Buy-side liquidity                             |
+| **R:R**     | Whatever the stop and target give — measure it |
 
 ---
 
 ## Related Topics
 
-- [AMD](/en/ict/amd) — Market Maker Models are expanded AMD
-- [PD Arrays](/en/ict/pd-arrays) — Entry vehicles within the model
-- [OTE](/en/ict/ote) — Stage 4 pullback often reaches OTE
-- [Dealing Range](/en/ict/dealing-range) — Context for the model stages
-- [Liquidity](/en/ict/liquidity) — Sweep targets at each stage
+- [AMD](/en/ict/amd) — the same cycle, smaller
+- [PD Arrays](/en/ict/pd-arrays) — the entry arrays
+- [OTE](/en/ict/ote) — the deeper entry option
+- [Dealing Range](/en/ict/dealing-range) — premium and discount within the model
+- [Liquidity](/en/ict/liquidity) — the targets

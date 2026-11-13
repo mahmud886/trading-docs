@@ -1,0 +1,125 @@
+---
+title: "ICT Market Maker Models"
+description: "ICT Market Maker Buy আর Sell Model শিখুন: Original Consolidation থেকে Smart-Money Reversal হয়ে দ্বিতীয় Leg পর্যন্ত ধাপগুলো, এন্ট্রি কোথায়, Stop সৎভাবে কোথায় রাখবেন, এবং চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ একটি EUR/USD MMBM উদাহরণ।"
+level: advanced
+order: 18
+lastUpdated: "2026-11-13"
+---
+
+## Market Maker Model কী?
+
+**Market Maker Model** হলো একটি পূর্ণ Swing এর ICT মানচিত্র: Price কোথায় রেঞ্জে থাকে, কোথায় উল্টায়, আর কোথায় Expand করে। **Market Maker Buy Model (MMBM)** একটি Bullish Swing বর্ণনা করে; **Market Maker Sell Model (MMSM)** তার উল্টো। এগুলো বড় স্কেলে [AMD](/bn/ict/amd)।
+
+এর কাজ হলো দিক-নির্ণয়: কোন ধাপে আছেন জানলে বোঝেন অপেক্ষা করবেন, প্রস্তুতি নেবেন, এন্ট্রি নেবেন নাকি প্রফিট নেবেন।
+
+<Callout type="info" title="ক্লাসিক ছবি">
+  ICT সাধারণত MMBM কে একটি বাঁক হিসেবে আঁকেন: Price কয়েকটি Consolidation এর মধ্য দিয়ে ধাপে ধাপে **নামে** (বাঁকের Sell
+  Side), একটি Smart-Money Reversal এ উল্টায়, তারপর একই লেভেলগুলো দিয়ে ধাপে ধাপে **ওঠে** (বাঁকের Buy Side) Original
+  Consolidation এর দিকে। নিচের ধাপের তালিকা হলো Buy-Side অর্ধেক, যেখানে ট্রেডগুলো থাকে।
+</Callout>
+
+---
+
+## ধাপগুলো
+
+| ধাপ | MMBM (Bullish)                                      | MMSM (Bearish)                                      |
+| --- | --------------------------------------------------- | --------------------------------------------------- |
+| ①   | নিচে Original Consolidation                          | উপরে Original Consolidation                          |
+| ②   | **Smart-Money Reversal**: Sell-Side Sweep, তারপর উপরে MSS | Buy-Side Sweep, তারপর নিচে MSS                 |
+| ③   | উপরে প্রথম Displacement Leg, FVG আর OB রেখে যায়      | নিচে প্রথম Leg, Bearish FVG আর OB রেখে যায়          |
+| ④   | **Re-accumulation**: সেই Array তে পুলব্যাক — এন্ট্রি    | **Re-distribution**: উপরে পুলব্যাক — এন্ট্রি         |
+| ⑤   | Buy-Side Liquidity র দিকে দ্বিতীয় Leg               | Sell-Side Liquidity র দিকে দ্বিতীয় Leg              |
+| ⑥   | Price Premium এ পৌঁছে থেমে যায়                       | Price Discount এ পৌঁছে থেমে যায়                      |
+
+**Stop:** ধাপ ② এর Reversal এক্সট্রিমের বাইরে। **টার্গেট:** বাঁকের অন্য প্রান্তের Liquidity।
+
+---
+
+## সম্পূর্ণ উদাহরণ — MMBM, EUR/USD (Daily)
+
+![Market Maker Buy Model — EUR/USD Daily: Consolidation, 1.0785 পর্যন্ত Sweep, 1.0880 পর্যন্ত প্রথম Leg, 1.0848 এ FVG পুলব্যাক, দ্বিতীয় Leg](/images/ict/market-maker-models/eurusd-mmbm-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/mmbm-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  চার্টে এই লেসনের লেভেলের চারপাশে তৈরি **সিন্থেটিক ক্যান্ডেল** ব্যবহার করা হয়েছে। এটি মডেলটি দেখানোর জন্য, আসল ট্রেডের
+  রেকর্ড নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড।
+</Callout>
+
+1. **Consolidation:** পাঁচ দিন **1.0800 – 1.0830** এ।
+2. **Reversal:** **1.0785** পর্যন্ত Sell-Side Sweep, ভিতরে ফিরে Close, তারপর 1.0830 এর উপরে MSS।
+3. **প্রথম Leg:** **1.0880** পর্যন্ত, **1.0840 – 1.0855** এ FVG রেখে যায়।
+4. **Re-accumulation:** পুলব্যাক FVG এর CE **1.0848** এ পৌঁছায়। Buy।
+5. **দ্বিতীয় Leg:** **1.0970** এর Buy-Side এর দিকে Expansion।
+
+| লেভেল    | প্রাইস  | নোট                               |
+| ------- | ------- | --------------------------------- |
+| এন্ট্রি  | 1.0848  | FVG CE                            |
+| Stop    | 1.0780  | 1.0785 Reversal Low এর নিচে        |
+| টার্গেট  | 1.0970  | Buy-Side Liquidity                |
+| **R:R** | **১ : ১.৮** | রিস্ক ৬৮ পিপ, রিওয়ার্ড ১২২ পিপ |
+
+<Callout type="warning" title="সংশোধিত: R:R আর OTE">
+  মূল লেসনে বলা ছিল পুলব্যাক "FVG CE + OTE জোন" এ পৌঁছেছে আর **R:R 1:8+**। কোনোটাই টেকে না। মডেল অনুযায়ী Stop Reversal Low
+  এর নিচে রাখলে রিস্ক ৬৮ পিপ আর রিওয়ার্ড ১২২: **১ : ১.৮**। আর 1.0785 → 1.0880 Leg এর OTE জোন **1.0805 – 1.0821**; 1.0848
+  মাত্র ৩৪% রিট্রেসমেন্ট, তাই এটা FVG এন্ট্রি, OTE এন্ট্রি নয়। ভালো R:R পেতে হলে OTE তে আরও গভীরে এন্ট্রি, বা FVG এর নিচে
+  টাইট Stop লাগবে, যেটা হিট হওয়ার সম্ভাবনা বেশি।
+</Callout>
+
+### MMSM — NAS100 (4H, চার্ট ছাড়া)
+
+Consolidation 18,000 – 18,100, 18,150 পর্যন্ত Buy-Side Sweep আর Bearish MSS, 17,900 পর্যন্ত প্রথম Leg নিচে, **18,020** এর Bearish OB তে রিট্রেস: Sell। Reversal এর উপরে Stop **18,160**, টার্গেট **17,500**: রিস্ক ১৪০, রিওয়ার্ড ৫২০ পয়েন্ট, **R:R ১ : ৩.৭**। মূল লেসনে 1:7 বলা ছিল, যার জন্য প্রায় ৭৪ পয়েন্টের Stop লাগত, Reversal রেঞ্জের ভেতরে। এই Leg এর OTE জোন 18,055 – 18,098, তাই 18,020 আবারও OTE এর চেয়ে অগভীর।
+
+---
+
+## আমি মডেলের কোথায়?
+
+| Price যদি…                                    | ধাপ              | করণীয়                        |
+| -------------------------------------------- | ---------------- | ---------------------------- |
+| পতনের পর রেঞ্জে                               | ① Consolidation  | Sweep এর অপেক্ষা              |
+| Low Sweep করে উপরে Displacement               | ②–③ Reversal     | নতুন FVG/OB মার্ক করুন        |
+| সেই Array তে পুলব্যাক                          | ④ Re-accumulation | এন্ট্রি                      |
+| High এর দিকে Expand                          | ⑤ Expansion      | ধরে রাখুন; আংশিক প্রফিট       |
+| Premium এ থেমে আছে                            | ⑥                | প্রফিট নিন; MMSM এর দিকে নজর  |
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                    | সমাধান                                                     |
+| -------------------------------------- | ---------------------------------------------------------- |
+| Consolidation চলাকালীন এন্ট্রি          | সপ্তাহব্যাপী চলতে পারে; Reversal এর অপেক্ষা করুন           |
+| প্রথম Leg এর পেছনে দৌড়ানো              | ধাপ ④ এর পুলব্যাকের অপেক্ষা করুন                           |
+| টাইট Stop দিয়ে বড় R:R দাবি            | মডেল যেখানে বাতিল হয় সেখান থেকে রিস্ক মাপুন                |
+| ভুল Timeframe                          | মডেলের জন্য Daily/4H, এন্ট্রির জন্য 15m–1H                  |
+| চক্রটা ভুলে যাওয়া                       | MMBM এর চূড়াতেই MMSM শুরু হতে পারে                         |
+
+---
+
+## অনুশীলন
+
+1. তিনটি পেয়ারের Daily চার্টে গত বছরের একটি MMBM আর একটি MMSM খুঁজুন।
+2. ছয়টি ধাপ লেবেল করুন আর ধাপ ② এর বাইরে Stop রেখে R:R মাপুন।
+3. ধাপ ④ এর পুলব্যাক OTE পর্যন্ত গেছে নাকি শুধু FVG পর্যন্ত, দেখুন। আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| উপাদান        | MMBM                                       |
+| ------------- | ------------------------------------------ |
+| **ট্রিগার**    | Sell-Side Sweep + MSS (ধাপ ②)              |
+| **এন্ট্রি**    | Leg এর FVG/OB তে পুলব্যাক (ধাপ ④)           |
+| **Stop**      | Reversal Low এর নিচে                       |
+| **টার্গেট**    | Buy-Side Liquidity                         |
+| **R:R**       | Stop আর টার্গেট যা দেয় — মেপে দেখুন         |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [AMD](/bn/ict/amd) — একই চক্র, ছোট আকারে
+- [PD Arrays](/bn/ict/pd-arrays) — এন্ট্রির Array
+- [OTE](/bn/ict/ote) — গভীর এন্ট্রির বিকল্প
+- [Dealing Range](/bn/ict/dealing-range) — মডেলের ভেতরে Premium আর Discount
+- [Liquidity](/bn/ict/liquidity) — টার্গেট
