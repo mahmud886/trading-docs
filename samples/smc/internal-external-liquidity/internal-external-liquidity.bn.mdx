@@ -1,0 +1,96 @@
+---
+title: "Internal & External Liquidity — সম্পূর্ণ গাইড"
+description: "SMC তে Internal বনাম External Liquidity আয়ত্ত করুন: টার্গেট হিসেবে External Liquidity (Swing High আর Low), পথ আর এন্ট্রি হিসেবে Internal Liquidity (FVG, Order Block), External থেকে Internal চক্র, আর এটা দিয়ে এন্ট্রি আর টার্গেট পরিকল্পনা — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
+level: intermediate
+order: 21
+lastUpdated: "2026-11-13"
+---
+
+## দুই ধরনের Liquidity
+
+| ধরন           | কোথায়                                  | উদাহরণ                               | ব্যবহার            |
+| ------------ | -------------------------------------- | ----------------------------------- | ----------------- |
+| **External** | রেঞ্জের Swing High আর Low এর বাইরে       | Swing High/Low, Equal High/Low, সেশন High/Low | **টার্গেট** |
+| **Internal** | রেঞ্জের ভেতরে                           | FVG, Order Block, Breaker           | **এন্ট্রি** আর বিরতি |
+
+External Liquidity হলো যেখানে Stop থাকে। Internal Liquidity হলো রেঞ্জের মধ্য দিয়ে যাওয়ার সময় Price যেখানে অদক্ষতা রেখে গেছে।
+
+---
+
+## চক্র
+
+Price পড়ার একটি প্রচলিত উপায় হলো একটি লুপ:
+
+1. Price **External Liquidity নেয়** (একটি Swing High বা Low)।
+2. **Internal Liquidity তে রিট্রেস করে** (রেঞ্জের ভেতরের FVG বা OB)।
+3. সেখান থেকে **পরের External Pool** এর দিকে যায়।
+
+![Internal বনাম External: 1.0925 এর External High নেওয়া হয়, Price দুটি Internal FVG তে ফেরে, 1.0822 এর External Low পরের টার্গেট](/images/smc/internal-external-liquidity/internal-external-liquidity-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/smc/internal-external-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো ধারণাটা দেখানোর জন্য তৈরি **সিন্থেটিক**। এগুলো আসল প্রাইস নয়।
+</Callout>
+
+1. **External:** রেঞ্জের High **1.0925** (Buy-Side) আর Low **1.0822** (Sell-Side)।
+2. **Internal:** Uptrend এর ভাঙনের রেখে যাওয়া দুটি Bullish FVG, **1.0891 – 1.0900** আর **1.0851 – 1.0860**।
+3. **①** Price 1.0930 পর্যন্ত Wick দিয়ে External Buy-Side নেয়।
+4. **②** কাছের Internal FVG তে ফিরে আসে।
+5. **③** তারপর গভীরটাতে।
+6. **④** পরের **External** Pool, 1.0822, এখনো নিচে অপেক্ষমাণ: পরের টার্গেট।
+
+---
+
+## এটা দিয়ে ট্রেড করা
+
+| ধাপ                        | কী করবেন                                                      |
+| ------------------------- | ------------------------------------------------------------ |
+| **টার্গেট**                | আপনার দিকে পরের না-ছোঁয়া External Pool                        |
+| **অপেক্ষা**               | উল্টো দিকের External Pool নেওয়া (একটি Sweep) পর্যন্ত             |
+| **এন্ট্রি**                | সেই Sweep এর পরে Internal Liquidity তে: রিভার্সালের FVG বা OB    |
+| **Stop**                  | Sweep এর বাইরে                                                |
+| **নামার পথে Bullish Gap?** | Downtrend এ পুরনো Bullish FVG হলো যেখানে Price পার হয় বা থামে, নিজে থেকে Buy নয় |
+
+<Callout type="info" title="স্পষ্ট করা: মূল লেসনের উদাহরণ">
+  মূল লেসনের ধাপ ৩ ছিল "Price FVG থেকে Bullish প্রতিক্রিয়া দেয়? না → রিভার্সাল", যা কোনো নিয়ম নয়। সহজভাবে বললে: Price একটি
+  Internal Gap ভরে পুরনো দিকে প্রতিক্রিয়া **না** দিলে, সেটা লক্ষণ যে অন্য পাশের পরের External Pool টাই টার্গেট।
+</Callout>
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                     | সমাধান                                                 |
+| --------------------------------------- | ----------------------------------------------------- |
+| Internal লেভেলকে টার্গেট করা               | টার্গেট External; Internal লেভেলে Price থামে            |
+| External নেওয়ার আগে Internal এ এন্ট্রি      | আগে Sweep এর অপেক্ষা করুন                              |
+| প্রতিটি পুরনো Gap কে Support ধরা            | নতুন দিকের বিপরীতের পুরনো Gap প্রায়ই পার হয়ে যায়        |
+| Timeframe মিশিয়ে ফেলা                     | "রেঞ্জ" এক Timeframe এ সংজ্ঞায়িত করুন                    |
+
+---
+
+## অনুশীলন
+
+1. 1H চার্টে রেঞ্জের External High আর Low আর ভেতরের প্রতিটি FVG/OB মার্ক করুন।
+2. প্রতিটি External Sweep এর পরে Price এরপর কোন Internal লেভেলে গেছে, আর উল্টো External Pool এ পৌঁছেছে কিনা লিখুন।
+3. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| উপাদান        | ভূমিকা                                            |
+| ------------ | ------------------------------------------------ |
+| **External** | Swing High/Low: টার্গেট                          |
+| **Internal** | FVG/OB: এন্ট্রি আর বিরতি                          |
+| **চক্র**     | External নেওয়া → Internal রিট্রেস → পরের External |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Liquidity Pools](/bn/smc/liquidity-pools) — External Liquidity বিস্তারিত
+- [Fair Value Gap](/bn/smc/fair-value-gap) — Internal Liquidity
+- [Order Blocks](/bn/smc/order-blocks) — Internal Liquidity
+- [Session Liquidity](/bn/smc/session-liquidity) — External Pool হিসেবে সেশনের High/Low

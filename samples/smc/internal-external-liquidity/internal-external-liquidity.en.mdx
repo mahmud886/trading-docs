@@ -1,0 +1,97 @@
+---
+title: "Internal & External Liquidity — Complete Guide"
+description: "Master internal vs external liquidity in SMC: external liquidity (swing highs and lows) as targets, internal liquidity (FVGs, order blocks) as the path and entry, the external-to-internal cycle, and how to plan entries and targets with it, with a chart and an animated walkthrough."
+level: intermediate
+order: 21
+lastUpdated: "2026-11-13"
+---
+
+## Two Kinds of Liquidity
+
+| Type         | Where                                  | Examples                            | Use            |
+| ------------ | -------------------------------------- | ----------------------------------- | -------------- |
+| **External** | Beyond the range's swing highs and lows | Swing highs/lows, equal highs/lows, session highs/lows | **Targets** |
+| **Internal** | Inside the range                       | FVGs, order blocks, breakers        | **Entries** and pauses |
+
+External liquidity is where stops rest. Internal liquidity is where price left inefficiencies on its way through the range.
+
+---
+
+## The Cycle
+
+A common way to read price is as a loop:
+
+1. Price **takes external liquidity** (a swing high or low).
+2. It **retraces into internal liquidity** (an FVG or OB inside the range).
+3. From there it heads to the **next external pool**.
+
+![Internal vs external: the external high at 1.0925 is taken, price trades back into two internal FVGs, the external low at 1.0822 is the next target](/images/smc/internal-external-liquidity/internal-external-liquidity-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/smc/internal-external-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built to show the concept. They are not real prices.
+</Callout>
+
+1. **External:** the range's high at **1.0925** (buy-side) and the low at **1.0822** (sell-side).
+2. **Internal:** two bullish FVGs left by the uptrend's breaks, **1.0891 – 1.0900** and **1.0851 – 1.0860**.
+3. **①** Price takes the external buy-side with a wick to 1.0930.
+4. **②** It falls back into the nearer internal FVG.
+5. **③** Then into the deeper one.
+6. **④** The next **external** pool, 1.0822, is still resting below: the next target.
+
+---
+
+## Trading With It
+
+| Step                       | What to do                                                     |
+| -------------------------- | -------------------------------------------------------------- |
+| **Target**                 | The next untouched external pool in your direction             |
+| **Wait**                   | For the opposite external pool to be taken (a sweep)           |
+| **Entry**                  | At internal liquidity after that sweep: an FVG or OB from the reversal |
+| **Stop**                   | Beyond the sweep                                               |
+| **Bullish gaps on the way down?** | In a downtrend, old bullish FVGs are places price passes through or pauses at, not buys on their own |
+
+<Callout type="info" title="Clarified: the original's example">
+  The original's step 3 read "price reacts from FVG bullishly? No → reversal", which isn't a rule. A simpler way to say
+  it: if price fills an internal gap and **doesn't** react in the old direction, that's a sign the next external pool
+  on the other side is the target.
+</Callout>
+
+---
+
+## Common Mistakes
+
+| Mistake                                | Fix                                                   |
+| -------------------------------------- | ----------------------------------------------------- |
+| Targeting internal levels              | Targets are external; internal levels are where price pauses |
+| Entering at internal liquidity before external is taken | Wait for the sweep first                  |
+| Treating every old gap as support      | Old gaps against the new direction often get run through |
+| Mixing timeframes                      | Define "range" on one timeframe                       |
+
+---
+
+## Practice
+
+1. On 1H charts, mark the range's external highs and lows and every FVG/OB inside.
+2. After each external sweep, record which internal level price went to next, and whether it reached the opposite external pool.
+3. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element        | Role                                           |
+| -------------- | ---------------------------------------------- |
+| **External**   | Swing highs/lows: targets                      |
+| **Internal**   | FVGs/OBs: entries and pauses                   |
+| **Cycle**      | External taken → internal retrace → next external |
+
+---
+
+## Related Topics
+
+- [Liquidity Pools](/en/smc/liquidity-pools) — external liquidity in detail
+- [Fair Value Gap](/en/smc/fair-value-gap) — internal liquidity
+- [Order Blocks](/en/smc/order-blocks) — internal liquidity
+- [Session Liquidity](/en/smc/session-liquidity) — session highs/lows as external pools
