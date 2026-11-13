@@ -1,0 +1,272 @@
+---
+title: "ICT Fair Value Gap (FVG) — Complete Guide"
+description: "Trade the ICT Fair Value Gap with precision: the three-candle anatomy, BISI and SIBI, consequent encroachment (CE), how price respects, weakens or invalidates a gap, quality filters, gap types including inversion, stop placement trade-offs, and three worked examples with charts and an animated walkthrough."
+level: intermediate
+order: 6
+lastUpdated: "2026-11-13"
+---
+
+## Where the FVG Fits
+
+In the [Market Structure Shift](/en/ict/mss) lesson, the displacement that confirms a shift almost always leaves a **Fair Value Gap**. That gap becomes the entry zone. This lesson is about reading and trading that zone precisely.
+
+<Callout type="info" title="Definition">
+  A **Fair Value Gap (FVG)** is a three-candle pattern in which the wicks of candle 1 and candle 3 **do not overlap**.
+  The space between them was crossed by candle 2 so quickly that only one side of the market traded there. Price often
+  comes back to that space before it continues.
+</Callout>
+
+---
+
+## Anatomy
+
+| Candle | Role                                    | Bullish FVG                     | Bearish FVG                     |
+| ------ | --------------------------------------- | ------------------------------- | ------------------------------- |
+| **C1** | Sets one edge                           | Its **high** is the gap's low    | Its **low** is the gap's high    |
+| **C2** | The displacement; usually a large body  | Strong bullish candle           | Strong bearish candle           |
+| **C3** | Sets the other edge; the gap is confirmed when it **closes** | Its **low** is the gap's high | Its **high** is the gap's low |
+
+**Formulas**
+
+- Bullish FVG = from **C1 high** to **C3 low** (only valid if C3 low > C1 high)
+- Bearish FVG = from **C3 high** to **C1 low** (only valid if C3 high < C1 low)
+- **CE** (consequent encroachment) = the midpoint of the gap = (top + bottom) ÷ 2
+
+### BISI and SIBI
+
+ICT gives the two directions their own names:
+
+| Name     | Stands for                                | Means                                                         |
+| -------- | ----------------------------------------- | ------------------------------------------------------------- |
+| **BISI** | Buy-side imbalance, sell-side inefficiency | **Bullish FVG.** Only buying happened in the gap; sellers were never offered those prices |
+| **SIBI** | Sell-side imbalance, buy-side inefficiency | **Bearish FVG.** Only selling happened in the gap; buyers were never offered those prices |
+
+---
+
+## Consequent Encroachment: the Line That Matters
+
+![Three ways price treats an FVG — respected, weakened, invalid](/images/ict/fvg/fvg-reactions-dark.png)
+
+The **CE** is the 50% level of the gap. ICT treats it as the most important line inside the FVG, for two reasons:
+
+1. **Entry:** a limit order at the CE gives a better price than the near edge and a tighter stop than the far edge.
+2. **Reading the reaction:** how price behaves around the CE tells you how strong the gap still is.
+
+| Reaction       | What happens (bullish gap shown)                                        | What it means                          |
+| -------------- | ----------------------------------------------------------------------- | -------------------------------------- |
+| **Respected**  | Price wicks into the gap, reaches the CE, and **closes above** it       | The gap is defended; the setup is intact |
+| **Weakened**   | A candle **body closes below the CE**, but not below the gap's low      | Demand is fading; tighten or reduce    |
+| **Invalid**    | A candle **body closes below the gap's low** (the far edge)              | The gap has failed; it may now act as resistance (an **inversion**) |
+
+<Callout type="warning" title="One consistent rule">
+  The original lesson says both that trading through the CE "violates" the gap and that it "weakens" it. This guide
+  uses one rule. Trading **through the CE weakens** the gap. A **body close beyond the far edge invalidates** it.
+</Callout>
+
+---
+
+## Quality Filters
+
+Not every gap is worth trading. Score each one:
+
+| # | Filter                                                       | Why                                                        |
+| - | ------------------------------------------------------------ | ---------------------------------------------------------- |
+| 1 | **Displacement:** C2's body is clearly large (≥ 2× average)   | Small gaps from small candles carry little information     |
+| 2 | **HTF direction:** the gap points the same way as the Daily/4H bias | Gaps against the bigger trend fail more often        |
+| 3 | **Premium/discount:** bullish gaps in discount, bearish gaps in premium | You buy low and sell high within the dealing range |
+| 4 | **Context:** the gap came from an MSS, or after a liquidity sweep | Gives a reason for the displacement                     |
+| 5 | **Timing:** formed in a kill zone (London 12–3 PM BD, NY AM 5–8 PM BD) | More participation behind the move                |
+| 6 | **Fresh:** first return to the gap                           | Each later visit uses up more of the resting orders        |
+
+**Age:** the original lesson says gaps older than 20–40 candles lose relevance. There is no reliable fixed number. A gap that price has moved far away from, and that sits behind newer structure, matters less. Judge it by distance and context, not by counting candles.
+
+---
+
+## Types of Gaps
+
+| Type                    | What it is                                                                  | See also |
+| ----------------------- | --------------------------------------------------------------------------- | -------- |
+| **Standard FVG**        | The three-candle gap above                                                  | —        |
+| **Implied FVG**         | C1 and C3 wicks overlap slightly, but the bodies leave an obvious inefficiency | —     |
+| **Inversion FVG (IFVG)** | A gap that price closed through; it now works in the opposite direction    | [IFVG lesson](/en/academy/ict-smc-course/20-ifvg) |
+| **Volume imbalance**    | A gap between one candle's close and the next candle's open; wicks overlap   | [Imbalance](/en/smc/imbalance) |
+| **Opening gaps**        | A gap between one session's close and the next session's open               | —        |
+
+<Callout type="tip" title="About the abbreviation 'IFVG'">
+  The original lesson uses "IFVG" for the *implied* FVG, but the academy lesson uses "IFVG" for the *inversion* FVG,
+  which is the more common meaning. To avoid confusion, this guide writes **implied FVG** in full and keeps **IFVG**
+  for inversion.
+</Callout>
+
+---
+
+## Entry and Stop Options
+
+| Choice                  | Option A                                   | Option B                                         |
+| ----------------------- | ------------------------------------------ | ------------------------------------------------ |
+| **Entry**               | Limit at the **CE**: better price, fewer fills | Limit at the **near edge**: more fills, worse price |
+| **Stop**                | Just beyond the **far edge** of the gap: small risk, but noise can stop you out | Beyond the **swing extreme** that the displacement came from: safer, but larger risk |
+
+Both examples below use **CE entry with a far-edge stop**, which gives the high R:R the original lesson quotes. Example 2 also shows what the swing-extreme stop would do to the same trade.
+
+---
+
+## Example 1 — Bullish FVG (BISI), EUR/USD (15m, London)
+
+![Bullish FVG — EUR/USD 15m: displacement from 1.0880, FVG 1.0885–1.0895, buy the CE 1.0890](/images/ict/fvg/eurusd-bullish-fvg-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/ict-fvg-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About these examples">
+  All charts use **synthetic candles** built around the levels in this lesson. They show how the method works and are
+  not records of real trades. R:R values are the planned risk-to-reward, not results.
+</Callout>
+
+**Context:** the Daily chart is bullish and price is in discount. The draw is buy-side liquidity at **1.0950**.
+
+**Observations**
+
+1. **Displacement:** from the 1.0880 low, C2 is an 18-pip bullish candle, against a 3.1-pip average.
+2. **Gap:** at **2:30 PM BD** C3 closes. C1's high is **1.0885** and C3's low is **1.0895**, so the BISI is 1.0885 – 1.0895, with its CE at **1.0890**.
+3. **Retrace:** three candles later price returns for the first time and touches the CE. The limit buy fills, and the candle closes back above the CE (the gap is respected).
+
+| Level     | Price  | Rationale                           |
+| --------- | ------ | ----------------------------------- |
+| Entry     | 1.0890 | CE                                  |
+| Stop      | 1.0882 | 3 pips below the gap's low (1.0885) |
+| Target    | 1.0950 | Buy-side liquidity                  |
+| Risk      | 8 pips | 1.0890 − 1.0882                     |
+| Reward    | 60 pips | 1.0950 − 1.0890                    |
+| **R:R**   | **1 : 7.5** | 60 ÷ 8                         |
+
+**Invalidation:** a 15m body close below 1.0885.
+
+---
+
+## Example 2 — Bearish FVG (SIBI), Gold (5m, NY AM)
+
+![Bearish FVG — Gold 5m: MSS below 2,037.5, FVG 2,038–2,042, sell the CE 2,040](/images/ict/fvg/gold-bearish-fvg-dark.png)
+
+**Context:** the 4H chart is bearish, and price has rallied into premium at **2,045**.
+
+**Observations**
+
+1. **MSS:** a 6-point bearish displacement, against a 1.6-point average, closes below the **2,037.5** higher low.
+2. **Gap:** the move leaves a SIBI at **2,038 – 2,042** (C3 high to C1 low), with its CE at **2,040**.
+3. **Entry:** at **8:00 PM BD**, near the end of the NY AM kill zone, price touches the CE for the first time. Sell at 2,040.
+
+| Level     | Price  | Rationale                                  |
+| --------- | ------ | ------------------------------------------ |
+| Entry     | 2,040  | CE                                         |
+| Stop      | 2,043  | $1 above the gap's high (2,042)            |
+| Target    | 2,015  | Sell-side liquidity                        |
+| Risk      | $3     | 2,043 − 2,040                              |
+| Reward    | $25    | 2,040 − 2,015                              |
+| **R:R**   | **1 : 8.3** | 25 ÷ 3                                |
+
+**Invalidation:** a 5m body close above 2,042.
+
+**A note on units:** the original lesson writes this as "30 pips" of risk and "250 pips" of reward, using 10 pips per dollar. In dollars it is $3 and $25. The R:R is the same either way.
+
+**The stop trade-off:** a stop above the **2,045** rally high (say 2,046) would survive more noise, but it changes the trade to $6 risk for $25 reward, which is **1 : 4.2**. Neither choice is "right". Decide which rule you use before you see the setup.
+
+---
+
+## Example 3 — Inversion FVG, NAS100 (5m)
+
+![Inversion FVG — NAS100 5m: a bearish FVG at 17,820–17,850 is closed through and then holds as support](/images/ict/fvg/nas100-inversion-fvg-dark.png)
+
+1. **Gap:** a sell-off leaves a bearish FVG at **17,820 – 17,850**.
+2. **Inversion:** price rallies back, and a candle **body closes above 17,850**. The gap has been closed through, and its role flips.
+3. **Retest:** price comes back to the top of the old gap, holds, and closes back above it. Buy at **17,850**.
+
+The original lesson gives no stop or target for this example, so none are shown here. Following the inversion rule, the setup is **invalid if a 5m candle closes back below 17,820**. For targets, use the next buy-side liquidity. The full inversion method is in the [IFVG lesson](/en/academy/ict-smc-course/20-ifvg).
+
+---
+
+## Multi-Timeframe FVGs
+
+| Timeframe          | Role                                    | Use                              |
+| ------------------ | --------------------------------------- | -------------------------------- |
+| **Monthly / Weekly** | Large imbalances price may travel to  | Direction, swing targets         |
+| **Daily**          | Key areas for the week                  | Bias and areas of interest       |
+| **4H**             | Refined zones                           | Swing entries                    |
+| **15m / 5m**       | Execution zones                         | Day-trade entries                |
+| **1m**             | Fine-tuning                             | Timing an entry at a 5m/15m CE   |
+
+A lower-timeframe gap that sits **inside** a higher-timeframe gap pointing the same way has the most support. A lower-timeframe gap pointing **against** a higher-timeframe gap is fighting the bigger order flow.
+
+---
+
+## Common Mistakes
+
+| Mistake                                          | Fix                                                        |
+| ------------------------------------------------ | ---------------------------------------------------------- |
+| Trading every gap                                | Score it with the six filters first                        |
+| Using gaps from small, overlapping candles       | Require a displacement C2                                  |
+| Calling a gap before C3 closes                   | The gap only exists once C3 has closed                     |
+| Treating "through the CE" as a stop-out          | It weakens the gap; a body close beyond the far edge invalidates it |
+| Copying R:R without checking the stop rule       | Far-edge stops give high R:R; swing stops are safer but lower |
+| Fading a gap against the HTF trend               | Trade gaps in the direction of the higher-timeframe draw   |
+
+---
+
+## Risk Management
+
+| Component            | Guideline                                                        |
+| -------------------- | ---------------------------------------------------------------- |
+| **Risk per trade**   | 1–2% of the account; less while learning                         |
+| **Position size**    | Account risk ÷ stop distance ([calculator](/en/tools/position-calculator)) |
+| **Stop rule**        | Pick far-edge or swing-extreme in advance and keep to it          |
+| **After a weakening** | Consider reducing the position or moving to break-even sooner    |
+| **Partial (optional)** | At the first internal liquidity                                |
+
+---
+
+## Practice
+
+1. On a 15m chart, mark every FVG from one week. Next to each, write its six-filter score.
+2. For each gap price returned to, label the reaction: **respected**, **weakened** or **invalid**. Compare that with the scores.
+3. For the respected gaps, plan both stop options and calculate the R:R for each.
+4. Find two inversion FVGs and note how price behaved on the retest. Log everything in your [trading journal](/en/tools/journal-template).
+
+---
+
+## FAQ
+
+### Does price always come back to fill an FVG?
+
+No. Many gaps are only partly filled, and some are never revisited, especially in strong trends. That is why entries are limit orders that may not fill, and why gaps are used together with structure and liquidity.
+
+### What's the difference between an FVG and an order block?
+
+The FVG is the *gap* left by the displacement. The [order block](/en/smc/order-blocks) is the *candle* the displacement started from. They often sit next to each other, and the overlap is a strong area.
+
+### Should I use the CE or the whole gap?
+
+The CE is the default. Use the near edge if you would rather have more fills than a better price, and always use the far edge (or beyond it) for the stop.
+
+---
+
+## Summary
+
+| Aspect          | Key point                                                       |
+| --------------- | --------------------------------------------------------------- |
+| **Definition**  | C1 and C3 wicks don't overlap; C2 is the displacement           |
+| **Names**       | BISI = bullish FVG · SIBI = bearish FVG                         |
+| **CE**          | 50% of the gap: the entry, and the line that shows strength     |
+| **Reactions**   | Respected (closes back) · weakened (body past CE) · invalid (body past far edge) |
+| **Filters**     | Displacement, HTF direction, premium/discount, context, kill zone, fresh |
+| **Stop**        | Far edge (tight) or swing extreme (safe); decide in advance     |
+| **Inversion**   | A gap closed through can flip and act from the other side       |
+
+---
+
+## Related Topics
+
+- [Market Structure Shift](/en/ict/mss) — the displacement that creates the gap
+- [Liquidity](/en/ict/liquidity) — internal vs external range liquidity
+- [IFVG lesson](/en/academy/ict-smc-course/20-ifvg) — trading inverted gaps
+- [OTE](/en/ict/ote) — retracement levels that often line up with a CE
+- [PD Arrays](/en/ict/pd-arrays) — where the FVG sits among other reference points
+- [Fair Value Gap (SMC)](/en/smc/fair-value-gap) — the SMC lesson on the same pattern

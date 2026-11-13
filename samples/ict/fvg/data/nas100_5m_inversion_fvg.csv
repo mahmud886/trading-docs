@@ -1,0 +1,21 @@
+# SYNTHETIC DATA - educational illustration only. NOT historical NAS100 quotes.
+# Built around content/en/ict/fvg.mdx -> "Example 3: NAS100 - Inversion FVG": a bearish FVG at 17,820-17,850 is
+# fully filled (closed through), price returns to the zone and it acts as support; buy at the top, 17,850.
+# Timeframe: 5-minute. Time: Bangladesh time (BD, UTC+6). No calendar date implied.
+time_bd,open,high,low,close
+17:00,17880,17885,17866,17870
+17:05,17870,17874,17850,17855
+17:10,17855,17858,17805,17810
+17:15,17810,17820,17795,17800
+17:20,17800,17812,17790,17808
+17:25,17808,17818,17800,17815
+17:30,17815,17835,17812,17830
+17:35,17830,17848,17826,17845
+17:40,17845,17866,17842,17862
+17:45,17862,17878,17858,17874
+17:50,17874,17882,17866,17870
+17:55,17870,17872,17852,17856
+18:00,17856,17860,17849,17858
+18:05,17858,17876,17855,17872
+18:10,17872,17890,17868,17886
+18:15,17886,17898,17880,17895
