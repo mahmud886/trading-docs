@@ -1,0 +1,113 @@
+---
+title: "ICT Venom Model"
+description: "Venom এন্ট্রি শিখুন: Kill Zone এ Liquidity Sweep আর শক্তিশালী Displacement এর পর FVG এর CE এর প্রথম স্পর্শে Buy বা Sell, Stop Sweep এর বাইরে। সম্পূর্ণ ক্রম, নিয়ম, অন্য মডেলের সাথে তুলনা, এবং চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ একটি Gold উদাহরণ।"
+level: advanced
+order: 17
+lastUpdated: "2026-11-13"
+---
+
+## Venom Model কী?
+
+**Venom** মডেল হলো **Liquidity Sweep** এর ঠিক পরের একটি আক্রমণাত্মক এন্ট্রি। Kill Zone এ Price একটি Liquidity Pool Sweep করে শক্তিশালী **Displacement** সহ উল্টালে, সেই Displacement এর রেখে যাওয়া [FVG](/bn/ict/fvg) তে **প্রথম রিট্রেসমেন্টে** এন্ট্রি নেন, Stop থাকে Sweep এর ঠিক বাইরে।
+
+ধারণাটা হলো গতি: দ্বিতীয় রিটেস্ট বা Higher Timeframe কনফার্মেশনের অপেক্ষা করেন না। এটাই এর ঝুঁকিও।
+
+<Callout type="info" title="নাম সম্পর্কে">
+  "Venom" নামটা ICT-ভিত্তিক শিক্ষায় এই এন্ট্রি স্টাইলের জন্য ব্যবহৃত, আলাদাভাবে সংজ্ঞায়িত কোনো ICT প্যাটার্ন নয়। এর কাঠামো
+  হলো একটি [Liquidity Sweep](/bn/ict/liquidity-sweep) আর প্রথম স্পর্শে FVG এন্ট্রি।
+</Callout>
+
+---
+
+## ক্রম
+
+1. **Liquidity টার্গেট:** স্পষ্ট Buy-Side বা Sell-Side, যেমন Equal High/Low বা আগের দিনের High/Low।
+2. **Sweep:** একটি [Kill Zone](/bn/ict/ict-kill-zones) এ Price সেটা নেয়।
+3. **Displacement:** এক বা কয়েকটি শক্তিশালী ক্যান্ডেল সাথে সাথে উল্টায় আর একটি FVG রেখে যায়।
+4. **এন্ট্রি:** FVG এর CE (৫০%) তে লিমিট, **প্রথম** রিট্রেসমেন্টে ফিল।
+5. **Stop:** Sweep এক্সট্রিমের ঠিক বাইরে।
+6. **টার্গেট:** বিপরীত Liquidity Pool।
+
+প্রথম রিট্রেসমেন্ট পুরো FVG পার হয়ে Sweep পর্যন্ত চলে গেলে সেটআপ ব্যর্থ। আবার এন্ট্রি নেবেন না।
+
+---
+
+## সম্পূর্ণ উদাহরণ — Bullish Venom, Gold (5m, US গ্রীষ্মকাল)
+
+![Bullish Venom — Gold 5m: Equal Low 2,020 থেকে 2,016 পর্যন্ত Sweep, Displacement FVG 2,022–2,028, 2,025 এর প্রথম স্পর্শে Buy](/images/ict/venom-model/gold-bullish-venom-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/venom-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  চার্টে এই লেসনের লেভেলের চারপাশে তৈরি **সিন্থেটিক ক্যান্ডেল** ব্যবহার করা হয়েছে। এটি পদ্ধতিটি দেখানোর জন্য, আসল ট্রেডের
+  রেকর্ড নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড।
+</Callout>
+
+1. **Liquidity:** **2,020** এ Equal Low।
+2. **Sweep:** **দুপুর ১:১৫ BD** তে (London Kill Zone) Price **2,016** পর্যন্ত নামে।
+3. **Displacement:** দুপুর ১:২০ BD তে ১৪.৬ পয়েন্টের একটি ক্যান্ডেল 2,032 পর্যন্ত উল্টায় আর **2,022 – 2,028** এ FVG রেখে যায়।
+4. **এন্ট্রি:** প্রথম পুলব্যাক দুপুর ১:৪০ BD তে CE **2,025** এ পৌঁছায়। Buy।
+
+| লেভেল    | প্রাইস | নোট                         |
+| ------- | ------ | --------------------------- |
+| এন্ট্রি  | 2,025  | FVG এর CE, প্রথম স্পর্শ       |
+| Stop    | 2,015  | 2,016 Sweep এর নিচে          |
+| টার্গেট  | 2,060  | উপরের Buy-Side Liquidity    |
+| **R:R** | **১ : ৩.৫** | রিস্ক $10, রিওয়ার্ড $35 |
+
+### Bearish Venom — EUR/USD (চার্ট ছাড়া)
+
+আগের দিনের High **1.0940** হলো Buy-Side। প্রায় **সন্ধ্যা ৬:০০ BD** তে (NY AM, US গ্রীষ্ম) Price **1.0948** পর্যন্ত স্পাইক করে, তারপর তিনটি Bearish ক্যান্ডেল 1.0928 – 1.0935 এ FVG রেখে যায়। CE **1.0932** এ Sell, Stop **1.0950**, টার্গেট **1.0870**: রিস্ক ১৮ পিপ, রিওয়ার্ড ৬২, **R:R ১ : ৩.৪** (পরিকল্পিত)।
+
+---
+
+## অন্য মডেলের সাথে তুলনা
+
+| মডেল              | মূল বৈশিষ্ট্য                         | কখন এন্ট্রি                        |
+| ----------------- | ------------------------------------ | --------------------------------- |
+| **Venom**         | Sweep + Displacement FVG             | শুধু প্রথম রিট্রেসমেন্ট             |
+| **[Unicorn](/bn/ict/unicorn-model)** | Breaker আর FVG ওভারল্যাপ | সাধারণত পরে, গভীর রিট্রেসে       |
+| **[Silver Bullet](/bn/ict/silver-bullet)** | নির্দিষ্ট ঘণ্টার মধ্যে FVG | উইন্ডোর প্রথম FVG          |
+| **[Order Block](/bn/smc/order-blocks)** | Displacement এর আগের শেষ বিপরীত ক্যান্ডেল | যেকোনো বৈধ রিটেস্ট |
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                    | সমাধান                                                    |
+| -------------------------------------- | --------------------------------------------------------- |
+| Sweep চলাকালীন এন্ট্রি                  | পরের Displacement এর অপেক্ষা করুন                        |
+| Displacement এর পেছনে দৌড়ানো           | CE তে লিমিট ব্যবহার করুন                                 |
+| ব্যর্থ প্রথম স্পর্শের পর আবার এন্ট্রি     | একটাই সুযোগ; ব্যর্থ হলে শেষ                               |
+| Kill Zone এর বাইরে                      | সেশনের বাইরের Sweep কম নির্ভরযোগ্য                        |
+| Stop অনেক বড় লাগছে                      | Sweep FVG থেকে অনেক দূরে হলে এটা Venom সেটআপ নয়           |
+
+---
+
+## অনুশীলন
+
+1. ২০টি সেশনে London আর NY এর আগে Equal High/Low মার্ক করুন।
+2. কোনোটা Sweep হলে দেখুন Displacement FVG এসেছে কিনা, আর CE এর প্রথম স্পর্শ টিকেছে কিনা।
+3. পরিকল্পিত আর আসল R:R আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| উপাদান        | নিয়ম                                         |
+| ------------- | -------------------------------------------- |
+| **ট্রিগার**    | স্পষ্ট Liquidity র Kill Zone Sweep            |
+| **প্রমাণ**     | সাথে সাথে Displacement, FVG রেখে যায়          |
+| **এন্ট্রি**    | CE তে লিমিট, শুধু প্রথম স্পর্শ                 |
+| **Stop**      | Sweep এর ঠিক বাইরে                            |
+| **টার্গেট**    | বিপরীত Liquidity Pool                         |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Liquidity Sweep](/bn/ict/liquidity-sweep) — ট্রিগার
+- [FVG](/bn/ict/fvg) — এন্ট্রি
+- [Unicorn Model](/bn/ict/unicorn-model) — ধীর, কনফ্লুয়েন্স-ভিত্তিক এন্ট্রি
+- [MSS](/bn/ict/mss) — Displacement নিশ্চিত করা
+- [ICT Kill Zones](/bn/ict/ict-kill-zones) — কখন Sweep সবচেয়ে গুরুত্বপূর্ণ
