@@ -1,138 +1,125 @@
 ---
 title: "ICT Silver Bullet"
-description: "Master the ICT Silver Bullet — a time-specific execution model using precise windows for FVG entries. Learn the 10AM, 2PM, and 3AM Silver Bullet setups."
+description: "Master the ICT Silver Bullet: three one-hour windows (London, NY AM, NY PM) in Bangladesh time for summer and winter, the rules for taking the first FVG in the window, and a worked NY AM example with a chart and an animated walkthrough."
 level: advanced
 order: 11
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-11-13"
 ---
 
-## What is the Silver Bullet?
+## What Is the Silver Bullet?
 
-The Silver Bullet is a **time-specific execution model** that identifies FVG entries within narrow time windows. ICT teaches that the algorithm creates displacement during these specific hours, leaving behind tradeable FVGs.
+The **Silver Bullet** is a time-based entry model. Inside a fixed one-hour window you wait for a **displacement** in the direction of your bias, mark the [FVG](/en/ict/fvg) it leaves, and enter on the retrace into it.
 
-<Callout type="info" title="Precision Timing">
-  The Silver Bullet reduces your screen time to just 1 hour per session. You only need to watch during the specific
-  window and take the FVG that forms.
+Its strength is discipline: one hour, one setup, a clear "no trade" when nothing forms.
+
+<Callout type="info" title="Why it can work">
+  The original credited "the algorithm" creating moves at these hours. A more checkable reason: these windows follow the
+  London open, the US data releases and the US stock open, when volume and displacement are most likely. Test the
+  windows on your own pair.
 </Callout>
 
 ---
 
-## The Three Silver Bullet Windows
+## The Three Windows (Bangladesh Time)
 
-### 1. London Silver Bullet
+| Window        | New York time | BD — US summer | BD — US winter | Usual context                      |
+| ------------- | ------------- | -------------- | -------------- | ---------------------------------- |
+| **London SB** | 3 – 4 AM      | 1 – 2 PM       | 2 – 3 PM       | After the London open's first move |
+| **NY AM SB**  | 10 – 11 AM    | **8 – 9 PM**   | **9 – 10 PM**  | After US data and the stock open   |
+| **NY PM SB**  | 2 – 3 PM      | 12 – 1 AM      | 1 – 2 AM       | Afternoon continuation             |
 
-| Detail       | Info                              |
-| ------------ | --------------------------------- |
-| **EST**      | 3:00 AM - 4:00 AM                 |
-| **BD Time**  | 1:00 PM - 2:00 PM                 |
-| **Context**  | London session early manipulation |
-| **Best For** | EUR/USD, GBP/USD, Gold            |
-
-### 2. NY AM Silver Bullet
-
-| Detail       | Info                     |
-| ------------ | ------------------------ |
-| **EST**      | 10:00 AM - 11:00 AM      |
-| **BD Time**  | 8:00 PM - 9:00 PM        |
-| **Context**  | Post-news displacement   |
-| **Best For** | All pairs, indices, Gold |
-
-### 3. NY PM Silver Bullet
-
-| Detail       | Info                |
-| ------------ | ------------------- |
-| **EST**      | 2:00 PM - 3:00 PM   |
-| **BD Time**  | 12:00 AM - 1:00 AM  |
-| **Context**  | PM session momentum |
-| **Best For** | USD pairs, indices  |
+<Callout type="warning" title="Corrected: EST vs summer time">
+  The original labelled the New York times "EST" but gave BD times that only match **US summer time (EDT)**. From early
+  November to mid-March, add one hour to every BD time above.
+</Callout>
 
 ---
 
-## How to Trade the Silver Bullet
+## The Rules
 
-### Step-by-Step Process
-
-1. **Determine Daily Bias** — You MUST have directional conviction first
-2. **Wait for the Silver Bullet window** to open
-3. **Look for displacement** — Strong candle creating an FVG during the window
-4. **Mark the FVG** created during displacement
-5. **Enter** — Limit order at the FVG (CE for precision)
-6. **Stop Loss** — Beyond the swing point that created the displacement
-7. **Target** — Next liquidity pool in the direction of bias
-
-### Rules
-
-- The FVG MUST form within the Silver Bullet time window
-- Displacement must be in the direction of your Daily Bias
-- Only take ONE Silver Bullet per session (the first valid one)
-- If no FVG forms during the window → no trade (stand aside)
+1. **Bias first.** Know the [daily bias](/en/ict/daily-bias) before the window opens.
+2. **Displacement inside the window**, in the bias direction, that leaves an FVG. The FVG must form in the window.
+3. **Entry:** a limit order at the FVG, often at its CE (50%).
+4. **Stop:** beyond the swing point the displacement started from.
+5. **Target:** the next liquidity in the bias direction.
+6. **One per window:** the first valid FVG. If none forms, no trade.
 
 ---
 
-## Real Examples
+## Worked Example — NY AM Silver Bullet, EUR/USD (5m, US summer)
 
-### Example 1: NY AM Silver Bullet — EUR/USD Buy
+![NY AM Silver Bullet — EUR/USD 5m: 8:15 PM BD displacement, FVG 1.0882–1.0890, buy at the CE 1.0886](/images/ict/silver-bullet/eurusd-ny-am-silver-bullet-dark.png)
 
-- **Daily Bias:** Bullish (previous day bullish PO3 candle)
-- **8:15 PM BD:** Strong bullish displacement candle on 5M
-- **FVG Created:** 1.0882 - 1.0890 (within the 8:00-9:00 PM window)
-- **Entry:** Buy limit at 1.0886 (CE)
-- **Stop:** 1.0875 (below displacement swing low)
-- **Target:** 1.0930 (BSL)
-- **R:R:** 1:4
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/silver-bullet-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Example 2: London Silver Bullet — Gold Sell
+<Callout type="info" title="About this example">
+  The chart uses **synthetic candles** built around the levels in this lesson. It shows how the method works and is not
+  a record of a real trade. R:R is the planned risk-to-reward.
+</Callout>
 
-- **Daily Bias:** Bearish (price in premium, SSL draw at 2,020)
-- **1:20 PM BD:** Bearish displacement on 5M during London window
-- **FVG Created:** 2,044 - 2,038
-- **Entry:** Sell limit at 2,041 (CE)
-- **Stop:** 2,048
-- **Target:** 2,020
-- **R:R:** 1:3
+1. **Bias:** bullish (yesterday was a bullish PO3 candle).
+2. **Window:** 8:00 – 9:00 PM BD.
+3. **Displacement:** at **8:15 PM BD** a 13-pip bullish candle leaves an FVG at **1.0882 – 1.0890**.
+4. **Entry:** a buy limit at the CE **1.0886** fills at 8:40 PM BD.
 
----
+| Level   | Price       | Note                         |
+| ------- | ----------- | ---------------------------- |
+| Entry   | 1.0886      | CE of the FVG                |
+| Stop    | 1.0875      | Below the 1.0876 swing low   |
+| Target  | 1.0930      | Buy-side liquidity           |
+| **R:R** | **1 : 4.0** | Risk 11 pips, reward 44 pips |
 
-## Why Silver Bullet Works
+### London Silver Bullet — Gold sell (no chart)
 
-1. **Algorithmic timing** — The IPDA creates moves at predictable times
-2. **Volume confluence** — These windows align with institutional order flow
-3. **Reduced noise** — Narrow time window = fewer false signals
-4. **Mechanical approach** — Clear rules reduce emotional decisions
+Bias bearish (premium, sell-side draw at 2,020). At **1:20 PM BD** (US summer) a bearish 5m displacement leaves an FVG at 2,038 – 2,044. Sell limit at the CE **2,041**, stop **2,048**, target **2,020**: risk $7, reward $21, **R:R 1 : 3** (planned).
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Silver Bullet Errors">
+| Mistake                      | Fix                                                             |
+| ---------------------------- | --------------------------------------------------------------- |
+| No daily bias                | Without it, it's random FVG trading                             |
+| FVG formed before the window | A 9:30 AM NY FVG isn't a NY AM Silver Bullet                    |
+| Taking several per window    | The first valid one only                                        |
+| Forcing a trade              | No FVG in the window → no trade                                 |
+| Weak "displacement"          | It must be a strong candle, clearly bigger than the ones before |
+| Summer times in winter       | Add one hour from early November to mid-March                   |
 
-**❌ No daily bias** — Silver Bullet without bias = random FVG trading
+---
 
-**❌ Trading FVGs outside the window** — Timing is the edge. FVGs at 9:30 AM EST are NOT Silver Bullet
+## Practice
 
-**❌ Taking multiple Silver Bullets** — One per session maximum
-
-**❌ Forcing trades** — If no FVG forms in the window, accept No Trade
-
-**❌ Ignoring displacement quality** — The FVG must form from strong displacement, not a slow drift
-
-</Callout>
+1. For 20 days, screenshot the NY AM window and mark the first FVG in the bias direction, if any.
+2. Record whether the CE was reached and whether the target or stop came first.
+3. Repeat for the London window. Log results in your [trading journal](/en/tools/journal-template).
 
 ---
 
 ## Summary
 
-| Window        | BD Time         | Best Pairs     | Typical R:R |
-| ------------- | --------------- | -------------- | ----------- |
-| **London SB** | 1:00 - 2:00 PM  | EUR, GBP, Gold | 1:3-5       |
-| **NY AM SB**  | 8:00 - 9:00 PM  | All majors     | 1:3-5       |
-| **NY PM SB**  | 12:00 - 1:00 AM | USD, indices   | 1:2-4       |
+| Window        | BD (summer) | BD (winter) | Rule                            |
+| ------------- | ----------- | ----------- | ------------------------------- |
+| **London SB** | 1 – 2 PM    | 2 – 3 PM    | First FVG in the bias direction |
+| **NY AM SB**  | 8 – 9 PM    | 9 – 10 PM   | First FVG in the bias direction |
+| **NY PM SB**  | 12 – 1 AM   | 1 – 2 AM    | First FVG in the bias direction |
+
+The original listed "typical R:R" ranges per window without data; they're left out. Plan R:R from the actual stop and target.
 
 ---
 
 ## Related Topics
 
-- [FVG](/en/ict/fvg) — The FVG is the Silver Bullet entry
-- [Daily Bias](/en/ict/daily-bias) — Required before Silver Bullet
-- [ICT Kill Zones](/en/ict/ict-kill-zones) — Silver Bullet windows within Kill Zones
-- [AMD](/en/ict/amd) — Understanding the displacement context
+- [FVG](/en/ict/fvg) — the entry
+- [Daily Bias](/en/ict/daily-bias) — required first
+- [ICT Kill Zones](/en/ict/ict-kill-zones) — the larger windows
+- [New York Open](/en/ict/new-york-open) — what happens before the NY AM window
+- [AMD](/en/ict/amd) — the displacement context
