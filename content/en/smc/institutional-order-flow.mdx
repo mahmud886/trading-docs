@@ -1,81 +1,133 @@
 ---
 title: "Institutional Order Flow in SMC — Complete Guide"
-description: "Understand how banks and funds execute. Learn time and price delivery, weekly/daily bias, and identifying institutional footprints."
+description: "Read institutional order flow the SMC way: why large orders need liquidity and time, how bullish or bearish order flow shows up as zones that hold and breaks that follow, how to set weekly and daily bias from it, and when it flips, with a chart and an animated walkthrough."
 level: advanced
 order: 18
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## Understanding Institutional Order Flow
+## What Is Institutional Order Flow?
 
-Institutional Order Flow is the study of **HOW large players (banks, hedge funds, central banks) execute orders** and how their activity creates predictable patterns in price delivery.
+In SMC, **institutional order flow** means **the direction large participants are currently pushing**, read from price itself. You can't see their orders, but you can see their effect:
 
----
+- Their **zones hold**: pullbacks stop at their order blocks and FVGs.
+- Their **breaks follow through**: each pullback is followed by a new BOS in the same direction.
 
-## How Institutions Execute
+When that stops happening, order flow is changing.
 
-| Factor    | Retail             | Institutional                 |
-| --------- | ------------------ | ----------------------------- |
-| Size      | Small (0.01-1 lot) | Massive (100-10,000+ lots)    |
-| Fill      | Instant            | Requires liquidity over time  |
-| Impact    | None               | Moves markets                 |
-| Strategy  | Chase price        | Engineer liquidity, then fill |
-| Timeframe | Minutes            | Days to weeks                 |
-
----
-
-## Time and Price Delivery
-
-```
-Institutions deliver price in a predictable manner:
-
-1. WEEKLY candle shows overall intention
-   - Bullish weekly = price targets highs
-   - Bearish weekly = price targets lows
-
-2. DAILY candle refines the delivery
-   - Which days does price push?
-   - Which days does it retrace?
-   - Tuesday/Wednesday = highest probability moves
-
-3. SESSION timing determines entry
-   - London initiates, NY continues
-   - Kill Zones = institutional activity
-```
+<Callout type="info" title="Corrected: execution claims">
+  The original listed institutional size as "100–10,000+ lots" and said they "engineer liquidity, then fill". Order
+  sizes vary hugely, and engineering is intent nobody can see. What's useful and observable is below: zones that hold,
+  breaks that follow through, and the liquidity they aim for.
+</Callout>
 
 ---
 
-## Identifying Institutional Footprints
+## Why Large Orders Leave Footprints
 
-- **Displacement:** Large body candles = institutional commitment
-- **Fair Value Gaps:** Created by institutional urgency
-- **Order Blocks:** Last opposing candle before institutional move
-- **Liquidity Sweeps:** Institutional order filling method
-- **Time alignment:** Moves during Kill Zones
+| Constraint                  | Footprint on the chart                                    |
+| --------------------------- | --------------------------------------------------------- |
+| They can't fill all at once | Ranges and pullbacks while positions build                |
+| They need the other side    | Moves into liquidity (old highs/lows) before turning      |
+| They commit decisively      | **Displacement**: large candles, FVGs                     |
+| They defend their levels    | **Order blocks** that hold on the retest                  |
+| They act in liquid hours    | Big moves cluster in the [kill zones](/en/smc/kill-zones) |
 
 ---
 
-## Weekly Bias Determination
+## Reading Order Flow
 
-```
-1. Where did last week close relative to its range?
-   - Upper 25% = bullish continuation likely
-   - Lower 25% = bearish continuation likely
-   - Middle 50% = look for other cues
+![Order flow: two bullish OBs hold and lead to BOS, the third fails and order flow flips bearish](/images/smc/institutional-order-flow/order-flow-obs-dark.png)
 
-2. Where is draw on liquidity?
-   - Unswept weekly highs/lows = targets
-   - Previous week H/L = immediate targets
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/order-flow-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-3. Is there HTF imbalance to fill?
-   - Monthly/weekly FVGs = directional bias
-```
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built to show the concept. They are not real prices.
+</Callout>
+
+| Step | What happens                         | Order flow        |
+| ---- | ------------------------------------ | ----------------- |
+| OB 1 | Pullback holds at the OB, then a BOS | **Bullish**       |
+| OB 2 | Pullback holds again, another BOS    | **Bullish**       |
+| OB 3 | A candle closes **through** the OB   | **Flips bearish** |
+
+While bullish, you only look for buys at bullish zones. After the flip, bullish zones are more likely to break and become [breakers](/en/smc/breaker-blocks); you look for sells instead.
+
+---
+
+## Top-Down Bias
+
+| Timeframe   | Question                                                                                                 |
+| ----------- | -------------------------------------------------------------------------------------------------------- |
+| **Weekly**  | Is weekly order flow bullish or bearish? Where's the draw (last week's high/low, unswept weekly levels)? |
+| **Daily**   | Are daily zones holding in the same direction?                                                           |
+| **Session** | Is the London or NY move in that direction, with displacement?                                           |
+
+### A simple weekly read
+
+| Last week's close…          | Tendency                         |
+| --------------------------- | -------------------------------- |
+| In the top 25% of its range | Continuation up is more likely   |
+| In the bottom 25%           | Continuation down is more likely |
+| In the middle 50%           | No read; use other clues         |
+
+The original said Tuesday and Wednesday are the "highest probability" days. That's a common tendency, not a measured rule; see [Weekly Profiles](/en/ict/weekly-profiles).
+
+---
+
+## Footprints Checklist
+
+| Footprint            | What to check                                   |
+| -------------------- | ----------------------------------------------- |
+| **Displacement**     | Large-body candles in the direction of the move |
+| **FVGs**             | Gaps left by that displacement                  |
+| **Order blocks**     | Do they hold on the retest?                     |
+| **Liquidity sweeps** | Was a high or low taken before the move?        |
+| **Timing**           | Did it happen in a kill zone?                   |
+
+---
+
+## Common Mistakes
+
+| Mistake                               | Fix                                              |
+| ------------------------------------- | ------------------------------------------------ |
+| Calling order flow from one candle    | Read it from zones holding and BOS following     |
+| Ignoring a failed zone                | One clean failure is the first warning of a flip |
+| Trading against the weekly order flow | Lower-timeframe setups against it are lower odds |
+| Claiming to know institutions' intent | Trade what the chart shows                       |
+
+---
+
+## Practice
+
+1. On a 4H chart, mark each pullback's order block for one month.
+2. For each, note: held (and BOS followed) or failed.
+3. Mark where order flow flipped and what came next. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element        | Key point                                                |
+| -------------- | -------------------------------------------------------- |
+| **Order flow** | The direction whose zones hold and breaks follow through |
+| **Bullish**    | Bullish OBs hold, BOS up follows                         |
+| **Flip**       | A zone in that direction fails                           |
+| **Bias**       | Weekly → daily → session, aligned                        |
 
 ---
 
 ## Related Topics
 
-- [Kill Zones](/en/smc/kill-zones) — When institutions are active
-- [Manipulation](/en/smc/manipulation) — How they engineer fills
-- [Premium & Discount](/en/smc/premium-discount) — Where they buy/sell
-- [SMT Divergence](/en/smc/smt-divergence) — Institutional clues
+- [Kill Zones](/en/smc/kill-zones) — when large orders are active
+- [Manipulation](/en/smc/manipulation) — moves into liquidity
+- [Premium & Discount](/en/smc/premium-discount) — where zones sit
+- [SMT Divergence](/en/smc/smt-divergence) — a cross-market clue
