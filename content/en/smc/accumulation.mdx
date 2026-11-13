@@ -1,103 +1,142 @@
 ---
 title: "SMC Accumulation — Complete Guide"
-description: "Master the Accumulation phase. Learn how smart money builds positions at discount before markup begins."
+description: "Master accumulation in SMC and Wyckoff terms: the selling climax, automatic rally and secondary test that build the range, the spring as a sell-side sweep, the test, the sign of strength and last point of support, what volume does through it, and how to trade it, with a chart and an animated walkthrough."
 level: intermediate
 order: 11
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## What is Accumulation?
+## What Is Accumulation?
 
-Accumulation is the **first phase** of the institutional cycle where smart money builds large long positions at discount prices. Market appears ranging/bearish, but institutions are absorbing all sell orders.
+**Accumulation** is a **range at the end of a decline** where buying gradually absorbs selling. Price goes sideways, often looks weak, and then breaks up into a new uptrend (**markup**).
 
-<Callout type="info" title="Smart Money Playbook">
-  Institutions can't buy at market — their size would spike price. They accumulate gradually during ranges, using
-  liquidity sweeps to fill at optimal prices.
+| Phase            | What happens                            |
+| ---------------- | --------------------------------------- |
+| **Accumulation** | Range at a low; buying absorbs selling  |
+| **Markup**       | Price trends up                         |
+| **Distribution** | Range at a high; selling absorbs buying |
+| **Markdown**     | Price trends down                       |
+
+SMC's ideas here come from **Richard Wyckoff**. SMC calls the key moment a liquidity sweep; Wyckoff calls it a **spring**. See [Wyckoff Relation](/en/smc/wyckoff-relation).
+
+---
+
+## The Accumulation Schematic
+
+![Wyckoff accumulation: PS, selling climax on climactic volume, AR, ST, a spring below 1.0800 on low volume, test, SOS on rising volume, LPS, markup](/images/smc/accumulation/wyckoff-accumulation-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/accumulation-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this example">
+  The candles and volume are **synthetic**, built to show the schematic. They are not real prices or a real trade. R:R
+  is the planned risk-to-reward.
 </Callout>
 
----
-
-## The Institutional Cycle
-
-```
-1. ACCUMULATION → Smart money buys at discount
-2. MARKUP → Price rises (institutional delivery)
-3. DISTRIBUTION → Smart money sells at premium
-4. MARKDOWN → Price falls (new cycle begins)
-```
-
----
-
-## Characteristics of Accumulation
-
-| Feature                  | Description                                |
-| ------------------------ | ------------------------------------------ |
-| **Price behavior**       | Sideways range, choppy, no clear direction |
-| **Location**             | At significant support / after markdown    |
-| **Duration**             | Days to weeks (higher TF = longer)         |
-| **Volume**               | Increasing on pushes down (absorption)     |
-| **Structure**            | Range-bound, false breakdowns common       |
-| **Retail perception**    | "Going lower" — bearish sentiment          |
-| **Institutional action** | Buying into selling pressure               |
+| Event      | What it is                                                                                  | On the chart             |
+| ---------- | ------------------------------------------------------------------------------------------- | ------------------------ |
+| **PS**     | Preliminary support: the first sign buyers are stepping in                                  | 1.0855                   |
+| **SC**     | Selling climax: the panic low, on the **biggest volume**                                    | **1.0800**, range bottom |
+| **AR**     | Automatic rally: the bounce that sets the range top                                         | **1.0880**               |
+| **ST**     | Secondary test: a retest of the low on **less** volume                                      | 1.0812                   |
+| **Spring** | A dip **below** the range low that **closes back inside**, on low volume: a sell-side sweep | **1.0792**               |
+| **Test**   | A quieter retest after the spring that holds                                                | 1.0814                   |
+| **SOS**    | Sign of strength: a break above the range on **rising** volume                              | close above 1.0880       |
+| **LPS**    | Last point of support: a pullback that holds near the old top                               | 1.0872                   |
 
 ---
 
-## How Institutions Accumulate
+## What Volume Does
 
-```
-1. Price drops to discount zone (below equilibrium)
-2. Range forms at key demand area
-3. Liquidity sweeps below range lows (stop hunts)
-4. Institutions fill long orders on the sweep
-5. Price breaks above range (markup begins)
+| Stage            | Volume                                        |
+| ---------------- | --------------------------------------------- |
+| Selling climax   | **Highest**: panic selling meets heavy buying |
+| Tests and spring | **Lower** each time: sellers are running out  |
+| Sign of strength | **Rising** on the up-moves                    |
 
-Key sign: Price sweeps lows but DOESN'T continue down
-        → Institutions are absorbing sell orders
-```
-
----
-
-## Identifying Accumulation
-
-- **Spring/Sweep:** Price breaks below support briefly, reverses strongly
-- **Decreasing sell pressure:** Each push down gets weaker
-- **Bullish OBs forming:** Strong bullish reactions after each sweep
-- **LTF shifting bullish:** CHOCH appearing on M15/H1
-- **Volume increasing on bounces:** Buyers entering with conviction
+<Callout type="warning" title="Corrected: volume">
+  The original said volume is "increasing on pushes down (absorption)". In Wyckoff's model it's the opposite after the
+  climax: volume **falls** on each push down (that's what shows sellers are exhausted) and **rises** on rallies. For
+  spot forex, use tick volume or the futures contract's volume.
+</Callout>
 
 ---
 
 ## Trading Accumulation
 
-```
-1. Identify range at discount/support (potential accumulation)
-2. Wait for liquidity sweep below range lows
-3. Look for bullish CHOCH on LTF (M15/H1) after sweep
-4. Enter long at Order Block formed by sweep reaction
-5. Stop: Below the sweep low
-6. Target: Range top first, then markup targets (next HTF level)
+1. Find a **range after a decline**, at a higher-timeframe support or [discount](/en/smc/premium-discount) zone.
+2. **Don't buy inside the range blindly.** Wait for the spring: a sweep of the range low that closes back inside.
+3. Look for a **bullish CHOCH** on a lower timeframe after the spring.
+4. Enter on the **test** or at the OB/FVG from the reversal. Or wait for the SOS and buy the **LPS**.
+5. **Stop** below the spring low.
+6. **Target** the range top first, then the next higher-timeframe level.
 
-Key: DON'T buy blindly in range. Wait for SWEEP + STRUCTURAL SHIFT.
-```
+| Level   | Price       | Note                          |
+| ------- | ----------- | ----------------------------- |
+| Entry   | 1.0818      | On the test after the spring  |
+| Stop    | 1.0788      | Below the 1.0792 spring       |
+| Target  | 1.0960      | Next higher-timeframe level   |
+| **R:R** | **1 : 4.7** | Risk 30 pips, reward 142 pips |
+
+Buying the **LPS** (around 1.0875) instead gives more confirmation but a worse price.
 
 ---
 
-## Accumulation vs. Random Range
+## Accumulation vs a Plain Range
 
-| Factor       | Accumulation (Trade)        | Random Range (Avoid)   |
-| ------------ | --------------------------- | ---------------------- |
-| Location     | At discount / support       | Middle of nowhere      |
-| Sweeps       | Multiple failed breakdowns  | Clean range bounces    |
-| Context      | Follows markdown phase      | No prior trend         |
-| LTF behavior | Shifting bullish internally | No directional shift   |
-| Result       | Explosive bullish breakout  | Could break either way |
+| Factor          | Accumulation                          | Plain range                       |
+| --------------- | ------------------------------------- | --------------------------------- |
+| Location        | After a decline, at support/discount  | Anywhere                          |
+| Low end         | A spring: sweep and close back inside | Clean bounces or a real breakdown |
+| Volume          | Climax, then drying up on dips        | No pattern                        |
+| Lower timeframe | Shifts bullish inside the range       | No shift                          |
+| Outcome         | More likely to break up               | Either way                        |
+
+Not every range that looks like accumulation is one. If price closes below the range and **stays** there, it was a pause in the downtrend (re-distribution).
+
+---
+
+## Common Mistakes
+
+| Mistake                                    | Fix                                              |
+| ------------------------------------------ | ------------------------------------------------ |
+| Buying the middle of the range             | Buy the spring/test or the LPS                   |
+| Calling every dip below the range a spring | It must close back inside, ideally on low volume |
+| Stop just under the range low              | Below the spring low                             |
+| Ignoring a breakdown that holds            | That's not accumulation                          |
+
+---
+
+## Practice
+
+1. Find five ranges after declines on daily charts.
+2. Label SC, AR, ST, spring (if any), SOS and LPS.
+3. Note which broke up and which broke down. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element    | Key point                                      |
+| ---------- | ---------------------------------------------- |
+| **Range**  | Built by SC (low) and AR (high)                |
+| **Spring** | Sell-side sweep that closes back inside        |
+| **Volume** | Climax, then drying up, then rising on the SOS |
+| **Entry**  | Test after the spring, or the LPS              |
+| **Stop**   | Below the spring                               |
 
 ---
 
 ## Related Topics
 
-- [Distribution](/en/smc/distribution) — Opposite phase (selling at premium)
-- [Reaccumulation](/en/smc/reaccumulation) — Mid-trend accumulation
-- [Liquidity Pools](/en/smc/liquidity-pools) — Sweeps during accumulation
-- [Wyckoff Relation](/en/smc/wyckoff-relation) — Wyckoff accumulation model
-- [Premium & Discount](/en/smc/premium-discount) — Buying at discount zones
+- [Distribution](/en/smc/distribution) — the opposite phase
+- [Reaccumulation](/en/smc/reaccumulation) — a range inside an uptrend
+- [Liquidity Pools](/en/smc/liquidity-pools) — the sweep
+- [Wyckoff Relation](/en/smc/wyckoff-relation) — Wyckoff terms mapped to SMC
