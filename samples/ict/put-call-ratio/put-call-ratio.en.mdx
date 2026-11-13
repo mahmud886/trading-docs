@@ -1,0 +1,113 @@
+---
+title: "Put/Call Ratio as Sentiment Indicator"
+description: "Use the put/call ratio as a contrarian sentiment gauge: how it's calculated, equity vs index vs total ratios, what fear and complacency extremes look like, why extremes can persist, and how to combine it with price confirmation. With a chart and an animated walkthrough."
+level: intermediate
+order: 33
+lastUpdated: "2026-11-13"
+---
+
+## What Is the Put/Call Ratio?
+
+The **put/call ratio (PCR)** divides put activity by call activity:
+
+**PCR = put volume ÷ call volume** (or the same with open interest).
+
+- A **high** ratio means traders are buying a lot of puts: **fear** or hedging.
+- A **low** ratio means calls dominate: **optimism** or complacency.
+
+Used as a **contrarian** gauge, extremes suggest the crowd is leaning too far one way.
+
+<Callout type="info" title="This page was rewritten">
+  The original page repeated the Options Flow lesson word for word. This version explains the put/call ratio itself.
+</Callout>
+
+---
+
+## Which Ratio?
+
+| Ratio                    | What it includes                       | Notes                                          |
+| ------------------------ | -------------------------------------- | ---------------------------------------------- |
+| **Equity PCR**           | Single-stock options                   | Driven more by retail; the usual sentiment gauge |
+| **Index PCR**            | Index options (SPX, etc.)              | Dominated by institutional hedging; often above 1 all the time |
+| **Total PCR**            | Both                                   | A blend                                        |
+
+Because index puts are used for portfolio hedging, a high index ratio is normal and says less about sentiment. Most traders watch the **equity** ratio, often as a 5- or 10-day average to cut noise.
+
+---
+
+## Reading the Extremes
+
+![Put/call ratio: a synthetic index with fear and complacency extremes marked](/images/ict/put-call-ratio/put-call-ratio-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/pcr-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Both lines are **synthetic**. The thresholds (1.00 and 0.45) are illustrative. Real "extreme" levels differ by ratio,
+  by market and over time; measure them as percentiles of your own history.
+</Callout>
+
+What the chart shows:
+
+1. In each decline the ratio climbed above 1.00 (**fear**) and **stayed there for days** while price kept falling.
+2. The lows came as the ratio **fell back** below the fear line, not when it first crossed it.
+3. Complacency readings during rallies came early, too: price kept rising for a while after the first one.
+
+<Callout type="warning" title="Corrected: 'reliable contrarian indicator'">
+  The original Options Flow page called put/call extremes "reliable contrarian indicators". They aren't reliable on
+  their own: in strong trends, extremes persist. Use them as a warning that the crowd is stretched, and wait for price
+  to confirm the turn.
+</Callout>
+
+---
+
+## Using It With Price
+
+| Ratio reading                       | Price confirmation to wait for                         |
+| ----------------------------------- | ------------------------------------------------------ |
+| Fear extreme, then falling back     | A sell-side [liquidity sweep](/en/ict/liquidity-sweep) and a bullish [MSS](/en/ict/mss) |
+| Complacency extreme, then rising    | A buy-side sweep and a bearish MSS                     |
+| Neutral                             | Ignore the ratio                                       |
+
+---
+
+## Where to Get It
+
+Cboe publishes daily equity, index and total put/call ratios for US options; many charting platforms show them too. There's no equivalent public ratio for spot FX. For FX, the closest sentiment measures are **25-delta risk reversals** and broker positioning data.
+
+---
+
+## Common Mistakes
+
+| Mistake                                | Fix                                                     |
+| -------------------------------------- | ------------------------------------------------------- |
+| Trading the first extreme reading      | Wait for the ratio to turn and price to confirm         |
+| Using the index ratio for sentiment    | Use the equity ratio; index PCR is mostly hedging       |
+| Using fixed thresholds forever         | Use percentiles of recent history                       |
+| Reading one day                        | Smooth with a 5–10 day average                          |
+
+---
+
+## Practice
+
+1. Download a year of the Cboe equity put/call ratio and the S&P 500 closes.
+2. Mark the top and bottom 5% of 10-day-average readings.
+3. Record what the index did over the following 10 days each time. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Reading     | Meaning        | Use                                   |
+| ----------- | -------------- | ------------------------------------- |
+| **High**    | Fear, hedging  | Possible low once it turns, with price confirmation |
+| **Low**     | Complacency    | Possible high once it turns           |
+| **Neutral** | Nothing        | Ignore                                |
+
+---
+
+## Related Topics
+
+- [Options Flow](/en/ict/options-flow-signals) — what drives the numbers
+- [Gamma Exposure](/en/ict/gamma-exposure) — dealer positioning
+- [Liquidity Sweep](/en/ict/liquidity-sweep) — price confirmation
+- [MSS](/en/ict/mss) — confirming the turn
