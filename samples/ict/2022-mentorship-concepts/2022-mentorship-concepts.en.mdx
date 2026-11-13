@@ -1,0 +1,116 @@
+---
+title: "ICT 2022 Mentorship Concepts"
+description: "A practical guide to the ICT 2022 Mentorship: the core entry model (bias, kill zone, liquidity sweep, market structure shift with displacement, FVG entry), the supporting ideas, what to be careful about, and a worked EUR/USD example with a chart and an animated walkthrough."
+level: advanced
+order: 22
+lastUpdated: "2026-11-13"
+---
+
+## What Was the 2022 Mentorship?
+
+In 2022 ICT published a free mentorship series on YouTube. Its focus was a **single, repeatable entry model** built from ideas covered elsewhere on this site: daily bias, kill zones, liquidity sweeps, market structure shifts with displacement, and fair value gaps.
+
+It's popular because it's compact: one model, practised over and over, instead of dozens of tools.
+
+<Callout type="info" title="What this page does and doesn't claim">
+  The original described the 2022 series as "the definitive version" that "corrects misinterpretations" and listed a
+  table of changes from earlier teachings, plus a named "Institutional Order Entry Drill (IOED)". Those claims weren't
+  sourced and are left out. This page sticks to the model itself, which you can test on any chart.
+</Callout>
+
+---
+
+## The 2022 Entry Model
+
+| Step | What                                    | Lesson                                      |
+| ---- | --------------------------------------- | ------------------------------------------- |
+| ①    | Higher-timeframe bias: weekly → daily → 4H | [Daily Bias](/en/ict/daily-bias)          |
+| ②    | Pick a session: London or NY AM kill zone | [Kill Zones](/en/ict/ict-kill-zones)      |
+| ③    | Wait for the **sweep** against the bias (the Judas swing) | [Judas Swing](/en/ict/judas-swing) |
+| ④    | **MSS with displacement** on 5m–15m     | [MSS](/en/ict/mss)                          |
+| ⑤    | Mark the **FVG** the displacement left (ideally in OTE) | [FVG](/en/ict/fvg), [OTE](/en/ict/ote) |
+| ⑥    | **Enter** with a limit at the CE        |                                             |
+| ⑦    | **Stop** beyond the sweep               |                                             |
+| ⑧    | **Target** the opposite liquidity       | [Liquidity](/en/ict/liquidity)              |
+
+---
+
+## Worked Example — London, EUR/USD (5m, US summer)
+
+![The 2022 model — EUR/USD 5m: Asian low swept at 12:20 PM BD, MSS at 12:35, FVG CE 1.0855 at the top of OTE](/images/ict/2022-mentorship-concepts/eurusd-2022-model-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/model-2022-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this example">
+  The chart uses **synthetic candles** built around the levels in this lesson. It shows how the model works and is not
+  a record of a real trade. R:R is the planned risk-to-reward.
+</Callout>
+
+| Step       | Reading                                                          |
+| ---------- | ---------------------------------------------------------------- |
+| ① Bias     | Weekly in discount; yesterday a bullish PO3 candle; 4H higher lows |
+| ② Session  | London kill zone from **12 PM BD**                               |
+| ③ Sweep    | **12:20 PM BD**: the Asian low 1.0848 is taken to 1.0842         |
+| ④ MSS      | **12:35 PM BD**: a 15-pip displacement closes above 1.0855       |
+| ⑤ FVG      | 1.0851 – 1.0859, CE **1.0855**; the leg's OTE is 1.0849 – 1.0855 |
+| ⑥ Entry    | Buy **1.0855**                                                   |
+| ⑦ Stop     | **1.0840**, below the sweep                                      |
+| ⑧ Target   | **1.0930**                                                       |
+| **R:R**    | **1 : 5.0** — risk 15 pips, reward 75                            |
+
+---
+
+## Supporting Ideas From the Series
+
+| Idea                         | In short                                                   |
+| ---------------------------- | ---------------------------------------------------------- |
+| **Liquidity → imbalance → liquidity** | Price runs liquidity, leaves an imbalance, then runs the other side |
+| **PO3 on every timeframe**   | The same open–manipulation–close shape on daily, 4H, 1H candles. See [Power of 3](/en/ict/power-of-3). |
+| **IPDA ranges**              | The 20/40/60-day highs and lows as targets. See [Monthly Profiles](/en/ict/monthly-profiles). |
+| **Macros**                   | Short windows inside the kill zones. See [Time and Price](/en/ict/time-and-price-theory). |
+
+<Callout type="warning" title="Corrected: macro times">
+  The original listed macros in "EST", including a 1:50 – 2:10 PM PM macro. The commonly cited list and its BD times for
+  both seasons are in [Time and Price Theory](/en/ict/time-and-price-theory).
+</Callout>
+
+---
+
+## Common Mistakes
+
+| Mistake                           | Fix                                                        |
+| --------------------------------- | ---------------------------------------------------------- |
+| Skipping step ①                   | Without a bias, a sweep in either direction looks like a setup |
+| Treating any gap as the FVG       | It must come from the displacement that made the MSS       |
+| Entering before the MSS           | The sweep alone isn't a signal                             |
+| Treating the series as gospel     | Test it on your own pair and sessions                      |
+| Not practising                    | Replay 50 sessions and mark every step before trading live |
+
+---
+
+## Practice
+
+1. Replay 50 London or NY sessions and mark steps ①–⑧ wherever the model appears.
+2. Record how often the CE was reached and which came first, target or stop.
+3. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element    | Rule                                    |
+| ---------- | --------------------------------------- |
+| **Bias**   | Higher timeframe first                  |
+| **Time**   | London or NY AM kill zone               |
+| **Trigger** | Sweep against the bias, then MSS with displacement |
+| **Entry**  | CE of the FVG, ideally in OTE           |
+| **Stop / target** | Beyond the sweep / opposite liquidity |
+
+---
+
+## Related Topics
+
+- [Time and Price Theory](/en/ict/time-and-price-theory) — macros and IPDA ranges
+- [AMD](/en/ict/amd) — the cycle behind the model
+- [Silver Bullet](/en/ict/silver-bullet) — a time-boxed version of the same entry
+- [Algorithmic Delivery Concepts](/en/ict/algorithmic-delivery-concepts) — the theory behind it

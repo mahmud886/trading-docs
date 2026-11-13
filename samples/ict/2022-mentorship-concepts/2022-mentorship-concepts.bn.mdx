@@ -1,0 +1,116 @@
+---
+title: "ICT 2022 Mentorship Concepts"
+description: "ICT 2022 Mentorship এর ব্যবহারিক গাইড: মূল এন্ট্রি মডেল (Bias, Kill Zone, Liquidity Sweep, Displacement সহ Market Structure Shift, FVG এন্ট্রি), সহায়ক ধারণা, কী নিয়ে সতর্ক থাকবেন, এবং চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ একটি EUR/USD উদাহরণ।"
+level: advanced
+order: 22
+lastUpdated: "2026-11-13"
+---
+
+## 2022 Mentorship কী ছিল?
+
+২০২২ সালে ICT YouTube এ একটি ফ্রি মেন্টরশিপ সিরিজ প্রকাশ করেন। এর মূল ফোকাস ছিল **একটি, বারবার ব্যবহারযোগ্য এন্ট্রি মডেল**, যা এই সাইটের অন্য জায়গায় আলোচিত ধারণা দিয়ে তৈরি: Daily Bias, Kill Zone, Liquidity Sweep, Displacement সহ Market Structure Shift, আর Fair Value Gap।
+
+এটা জনপ্রিয় কারণ এটা সংক্ষিপ্ত: ডজনখানেক টুলের বদলে একটি মডেল, বারবার চর্চা করা।
+
+<Callout type="info" title="এই পেজ কী দাবি করে আর কী করে না">
+  মূল লেসনে ২০২২ সিরিজকে "চূড়ান্ত সংস্করণ" বলা হয়েছিল যা "ভুল ব্যাখ্যা সংশোধন করে", আগের শিক্ষার থেকে পরিবর্তনের একটি
+  টেবিল ছিল, আর "Institutional Order Entry Drill (IOED)" নামে কিছু ছিল। এই দাবিগুলোর কোনো সূত্র ছিল না, তাই বাদ দেওয়া হয়েছে।
+  এই পেজ শুধু মডেলটা নিয়ে, যা যেকোনো চার্টে পরীক্ষা করা যায়।
+</Callout>
+
+---
+
+## 2022 এন্ট্রি মডেল
+
+| ধাপ | কী                                              | লেসন                                        |
+| --- | ----------------------------------------------- | ------------------------------------------- |
+| ①   | Higher Timeframe Bias: Weekly → Daily → 4H       | [Daily Bias](/bn/ict/daily-bias)            |
+| ②   | সেশন বাছুন: London বা NY AM Kill Zone             | [Kill Zones](/bn/ict/ict-kill-zones)        |
+| ③   | Bias এর বিপরীতে **Sweep** এর অপেক্ষা (Judas Swing) | [Judas Swing](/bn/ict/judas-swing)          |
+| ④   | 5m–15m এ **Displacement সহ MSS**                  | [MSS](/bn/ict/mss)                          |
+| ⑤   | Displacement এর রেখে যাওয়া **FVG** মার্ক করুন (আদর্শভাবে OTE তে) | [FVG](/bn/ict/fvg), [OTE](/bn/ict/ote) |
+| ⑥   | CE তে লিমিট দিয়ে **এন্ট্রি**                      |                                             |
+| ⑦   | Sweep এর বাইরে **Stop**                           |                                             |
+| ⑧   | বিপরীত Liquidity তে **টার্গেট**                    | [Liquidity](/bn/ict/liquidity)              |
+
+---
+
+## সম্পূর্ণ উদাহরণ — London, EUR/USD (5m, US গ্রীষ্মকাল)
+
+![2022 মডেল — EUR/USD 5m: দুপুর ১২:২০ BD তে Asian Low Sweep, ১২:৩৫ এ MSS, OTE এর উপরের প্রান্তে FVG CE 1.0855](/images/ict/2022-mentorship-concepts/eurusd-2022-model-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/model-2022-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  চার্টে এই লেসনের লেভেলের চারপাশে তৈরি **সিন্থেটিক ক্যান্ডেল** ব্যবহার করা হয়েছে। এটি মডেলটি দেখানোর জন্য, আসল ট্রেডের
+  রেকর্ড নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড।
+</Callout>
+
+| ধাপ         | পাঠ                                                                |
+| ----------- | ----------------------------------------------------------------- |
+| ① Bias      | Weekly Discount এ; গতকাল Bullish PO3 ক্যান্ডেল; 4H এ Higher Low      |
+| ② সেশন      | **দুপুর ১২টা BD** থেকে London Kill Zone                             |
+| ③ Sweep     | **দুপুর ১২:২০ BD**: Asian Low 1.0848 থেকে 1.0842 পর্যন্ত নেওয়া হয়     |
+| ④ MSS       | **দুপুর ১২:৩৫ BD**: ১৫ পিপের Displacement 1.0855 এর উপরে ক্লোজ করে    |
+| ⑤ FVG       | 1.0851 – 1.0859, CE **1.0855**; Leg এর OTE 1.0849 – 1.0855           |
+| ⑥ এন্ট্রি    | **1.0855** এ Buy                                                   |
+| ⑦ Stop      | **1.0840**, Sweep এর নিচে                                          |
+| ⑧ টার্গেট    | **1.0930**                                                         |
+| **R:R**     | **১ : ৫.০** — রিস্ক ১৫ পিপ, রিওয়ার্ড ৭৫                              |
+
+---
+
+## সিরিজের সহায়ক ধারণা
+
+| ধারণা                              | সংক্ষেপে                                                   |
+| ---------------------------------- | --------------------------------------------------------- |
+| **Liquidity → Imbalance → Liquidity** | Price Liquidity নেয়, একটি Imbalance রেখে যায়, তারপর অন্য দিকের Liquidity নেয় |
+| **প্রতিটি Timeframe এ PO3**         | Daily, 4H, 1H ক্যান্ডেলে একই Open–Manipulation–Close আকৃতি। দেখুন [Power of 3](/bn/ict/power-of-3)। |
+| **IPDA রেঞ্জ**                     | টার্গেট হিসেবে ২০/৪০/৬০ দিনের High আর Low। দেখুন [Monthly Profiles](/bn/ict/monthly-profiles)। |
+| **Macro**                          | Kill Zone এর ভেতরের ছোট উইন্ডো। দেখুন [Time and Price](/bn/ict/time-and-price-theory)। |
+
+<Callout type="warning" title="সংশোধিত: Macro এর সময়">
+  মূল লেসনে Macro গুলো "EST" এ দেওয়া ছিল, দুপুর ১:৫০ – ২:১০ এর একটি PM Macro সহ। প্রচলিত তালিকা আর দুই ঋতুর BD সময়
+  [Time and Price Theory](/bn/ict/time-and-price-theory) তে আছে।
+</Callout>
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                  | সমাধান                                                       |
+| ------------------------------------ | ------------------------------------------------------------ |
+| ধাপ ① বাদ দেওয়া                       | Bias ছাড়া যেকোনো দিকের Sweep কেই সেটআপ মনে হয়               |
+| যেকোনো Gap কে FVG ধরা                 | এটা অবশ্যই MSS তৈরি করা Displacement থেকে আসতে হবে            |
+| MSS এর আগে এন্ট্রি                    | শুধু Sweep সিগন্যাল নয়                                       |
+| সিরিজকে চূড়ান্ত সত্য ভাবা             | নিজের পেয়ার আর সেশনে পরীক্ষা করুন                            |
+| চর্চা না করা                          | লাইভ ট্রেডের আগে ৫০টি সেশন রিপ্লে করে প্রতিটি ধাপ মার্ক করুন   |
+
+---
+
+## অনুশীলন
+
+1. ৫০টি London বা NY সেশন রিপ্লে করুন আর যেখানে মডেল দেখা যায় সেখানে ধাপ ①–⑧ মার্ক করুন।
+2. কতবার CE পৌঁছেছে আর আগে টার্গেট না Stop এসেছে, লিখুন।
+3. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| উপাদান            | নিয়ম                                         |
+| ----------------- | -------------------------------------------- |
+| **Bias**          | আগে Higher Timeframe                          |
+| **সময়**           | London বা NY AM Kill Zone                     |
+| **ট্রিগার**        | Bias এর বিপরীতে Sweep, তারপর Displacement সহ MSS |
+| **এন্ট্রি**        | FVG এর CE, আদর্শভাবে OTE তে                   |
+| **Stop / টার্গেট** | Sweep এর বাইরে / বিপরীত Liquidity              |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Time and Price Theory](/bn/ict/time-and-price-theory) — Macro আর IPDA রেঞ্জ
+- [AMD](/bn/ict/amd) — মডেলের পেছনের চক্র
+- [Silver Bullet](/bn/ict/silver-bullet) — একই এন্ট্রির সময়-নির্দিষ্ট সংস্করণ
+- [Algorithmic Delivery Concepts](/bn/ict/algorithmic-delivery-concepts) — এর পেছনের তত্ত্ব
