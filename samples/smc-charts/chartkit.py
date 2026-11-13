@@ -104,9 +104,9 @@ def at(hhmm: str, day: int = 0) -> datetime:
     return datetime(2000, 1, 3 + day, h, m)
 
 
-def load_candles(name: str) -> list[Candle]:
-    """Read data/<name>.csv. Columns: day (optional), time_bd, open, high, low, close."""
-    with (DATA_DIR / f"{name}.csv").open(newline="") as f:
+def load_candles(name: str, data_dir: Path = DATA_DIR) -> list[Candle]:
+    """Read <data_dir>/<name>.csv. Columns: day (optional), time_bd, open, high, low, close."""
+    with (data_dir / f"{name}.csv").open(newline="") as f:
         rows = list(csv.DictReader(line for line in f if not line.startswith("#")))
     candles = [
         Candle(at(r["time_bd"], int(r.get("day") or 0)), r["time_bd"],
@@ -397,11 +397,11 @@ HTML_TEMPLATE = """<!doctype html>
 """
 
 
-def save(name: str, build, title: str) -> list[Path]:
+def save(name: str, build, title: str, out_dir: Path = OUT_DIR) -> list[Path]:
     """Render PNGs for both themes plus one HTML preview that follows the viewer's theme."""
-    OUT_DIR.mkdir(exist_ok=True)
+    out_dir.mkdir(exist_ok=True)
     figs = {t.name: build(t) for t in THEMES}
-    paths = [OUT_DIR / f"{name}-{t}.png" for t in figs]
+    paths = [out_dir / f"{name}-{t}.png" for t in figs]
     pio.write_images(list(figs.values()), paths, scale=2, width=WIDTH, height=HEIGHT)
     html = HTML_TEMPLATE.format(
         title=title, name=name, plotly_js=plotly.offline.get_plotlyjs_version(),
@@ -409,5 +409,73 @@ def save(name: str, build, title: str) -> list[Path]:
         dark_bg=DARK.surface, dark_ink=DARK.ink, dark_axis=DARK.axis,
         light_fig=figs["light"].to_json(), dark_fig=figs["dark"].to_json(),
     )
-    (OUT_DIR / f"{name}.html").write_text(html)
+    (out_dir / f"{name}.html").write_text(html)
     return paths
+
+
+# --- Animation -----------------------------------------------------------------------
+
+
+def smooth(x: float) -> float:
+    x = min(max(x, 0.0), 1.0)
+    return x * x * (3 - 2 * x)
+
+
+class Timeline:
+    """Builds the per-frame (candles, {group: alpha}, caption key) list for an explainer video."""
+
+    def __init__(self, groups):
+        self.n, self.shown, self.frames = 0.0, {g: 0.0 for g in groups}, []
+
+    def _frame(self, cap):
+        self.frames.append((round(self.n, 3), tuple(sorted((g, round(a, 3)) for g, a in self.shown.items())), cap))
+
+    def hold(self, cap, frames):
+        for _ in range(frames):
+            self._frame(cap)
+        return self
+
+    def fade(self, group, cap, frames=12):
+        for i in range(1, frames + 1):
+            self.shown[group] = smooth(i / frames)
+            self._frame(cap)
+        return self
+
+    def candles_to(self, target, per, cap, fade=None, fade_frames=12):
+        """Grow candles up to index `target`, `per` frames per candle, optionally fading a group in."""
+        start, count = self.n, int(round((target - self.n) * per))
+        for i in range(1, count + 1):
+            self.n = start + (target - start) * i / count
+            if fade and i <= fade_frames:
+                self.shown[fade] = smooth(i / fade_frames)
+            self._frame(cap)
+        return self
+
+
+def render_video(name: str, build, timeline: Timeline, captions, out_dir: Path = OUT_DIR, fps: int = 30,
+                 themes=THEMES, **build_kw) -> list[Path]:
+    """Render each unique frame once with `build(theme, Reveal(...), **build_kw)` and encode an H.264 MP4."""
+    import os
+    import subprocess
+    import tempfile
+
+    out = []
+    frames = timeline.frames
+    unique = {k: i for i, k in enumerate(dict.fromkeys(frames))}
+    for t in themes:
+        caps = captions(t)
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            figs = [build(t, Reveal(candles=k[0], groups=dict(k[1]), caption=caps[k[2]]), **build_kw) for k in unique]
+            pio.write_images(figs, [tmp / f"u{i:04d}.png" for i in unique.values()], scale=1920 / WIDTH, width=WIDTH,
+                             height=HEIGHT)
+            for i, k in enumerate(frames):
+                os.link(tmp / f"u{unique[k]:04d}.png", tmp / f"f{i:04d}.png")
+            out_dir.mkdir(exist_ok=True)
+            path = out_dir / f"{name}-{t.name}.mp4"
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(fps), "-i", str(tmp / "f%04d.png"),
+                            "-vf", "scale=1920:1080:flags=lanczos,format=yuv420p", "-c:v", "libx264", "-preset",
+                            "slow", "-crf", "20", "-movflags", "+faststart", str(path)], check=True)
+        print(f"{path.name}: {len(frames)} frames ({len(frames) / fps:.1f}s), {len(unique)} rendered")
+        out.append(path)
+    return out
