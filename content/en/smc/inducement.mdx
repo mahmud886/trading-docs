@@ -1,194 +1,139 @@
 ---
 title: "Inducement — Complete Guide"
-description: "Master the Inducement concept in Smart Money trading. Learn how institutions create traps, engineer false breakouts, and how to avoid getting caught in engineered liquidity grabs."
+description: "Master inducement in Smart Money Concepts: the obvious minor swing that gets taken before price reaches the real zone. How to spot it, where it forms, how to use it as confirmation instead of becoming its victim, and two worked examples, with a chart and an animated walkthrough."
 level: intermediate
 order: 11
-lastUpdated: "2026-05-11"
+lastUpdated: "2026-11-13"
 ---
 
-## What is Inducement?
+## What Is Inducement?
 
-Inducement is a **deliberate price move engineered by institutions to lure retail traders into taking positions** at the wrong time and in the wrong direction. It's essentially a "trap" that creates the liquidity institutions need.
+**Inducement (IDM)** is an **obvious minor swing** that sits **between price and the real zone**. It looks like a reason to trade: a "break lower" or a "breakout". Price takes it, triggers the stops and breakout orders behind it, and only then reaches the real [order block](/en/smc/order-blocks) or [FVG](/en/smc/fair-value-gap) and turns.
 
-In the context of market structure, inducement refers to **minor internal highs or lows** within a larger move that tempt traders to enter, only for price to reverse and stop them out.
+In short: **the first level price hits on a pullback is often not the one it turns from.**
 
-<Callout type="info" title="The Inducement Trap">
-  Institutions need counter-party liquidity to fill their large orders. They CREATE this liquidity by enticing retail
-  traders to enter. The stop losses from these trapped traders become the fuel for the institutional move.
+<Callout type="info" title="Corrected: 'engineered by institutions'">
+  The original described inducement as deliberately engineered to trap retail traders, with "the algorithm" exploiting
+  them. Nobody can see that intent. What you can see is that obvious minor swings often get taken before price reaches a
+  stronger zone. Trade that observation, not a story about who did it.
 </Callout>
 
 ---
 
-## How Inducement Works
+## Bullish Inducement, Step by Step
 
-### The Inducement Cycle:
+![Bullish inducement: an OB at 1.0850–1.0856, a minor low at 1.0870 above it, the minor low is taken, price reaches the OB and turns](/images/smc/inducement/bullish-inducement-dark.png)
 
-1. **Create the Bait** — Price creates a minor swing point that looks like a BOS or breakout opportunity
-2. **Retail Enters** — Traders see the "breakout" and enter with stops beyond the swing
-3. **The Trap** — Price reverses, hitting all those stop losses
-4. **Institutional Entry** — The triggered stops create the liquidity for institutional orders
-5. **True Move** — Price now moves in the institutional direction
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/inducement-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-```
-    Uptrend with Inducement:
+<Callout type="info" title="About this example">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices or a real trade. R:R
+  is the planned risk-to-reward.
+</Callout>
 
-    HH ────────────╮
-                   │
-    HL ────╮       │
-           │       │
-    IDM ───┤  ← Minor low = INDUCEMENT (trap)
-           │       │      Retail says: "lower low! Sell!"
-    HL ────╯       │      Retail places stops above
-                   │
-    True OB ───────╯  ← Institutions use those stops to buy
-```
+1. **Real zone:** a bullish OB at **1.0850 – 1.0856** started the rally to 1.0940.
+2. **Inducement:** on the pullback, a minor low forms at **1.0870**, above the OB. Longs put stops under it; breakdown sellers wait below it.
+3. **IDM taken:** price breaks 1.0870. It looks bearish. Those stops and sell orders are filled.
+4. **Entry:** price reaches the **real OB** and holds. Buy **1.0855**.
+5. **Confirmation:** a CHOCH above the 1.0893 internal high.
 
----
+| Level   | Price       | Note                         |
+| ------- | ----------- | ---------------------------- |
+| Entry   | 1.0855      | Inside the real OB           |
+| Stop    | 1.0842      | Below the OB                 |
+| Target  | 1.0950      | Above the 1.0940 high        |
+| **R:R** | **1 : 7.3** | Risk 13 pips, reward 95 pips |
 
-## Identifying Inducement on Charts
-
-### What to Look For:
-
-1. **Minor swing points** between major structural levels
-2. Points that "look like" BOS/CHOCH on lower timeframes but aren't on higher TF
-3. Price briefly taking out an internal high/low before the real move
-4. Usually occurs **between the true OB and the main structure**
-
-### Where Inducement Occurs:
-
-| Location              | What Happens                                                                                |
-| --------------------- | ------------------------------------------------------------------------------------------- |
-| Before a bullish OB   | Price drops slightly below internal lows, triggers sell stops, then reverses up into the OB |
-| Before a bearish OB   | Price pops above internal highs, triggers buy stops, then reverses down into the OB         |
-| At support/resistance | Price breaks S/R just enough to trap breakout traders, then reverses                        |
-| At trendlines         | Price breaks the trendline, traders enter breakdowns, then price reverses                   |
+The original example gave no stop, only a result ("+95 pips"). The stop here is the natural one, under the OB.
 
 ---
 
-## Types of Inducement
+## Where Inducement Forms
 
-### 1. Internal Liquidity Grab
-
-The most common form. Price takes out a minor internal swing point within the current price leg:
-
-- In a bullish move: minor dip below a previous minor low
-- In a bearish move: minor spike above a previous minor high
-
-### 2. Trendline Break Inducement
-
-Price breaks below a trendline that many retail traders are using, triggering their sells, then reverses.
-
-### 3. False Breakout Inducement
-
-Price breaks above/below a range or pattern (triangle, flag, etc.) in the wrong direction first, trapping breakout traders, then moves in the true direction.
-
-### 4. News-Driven Inducement
-
-Around major news events, price often spikes in one direction first (inducement) before reversing in the true direction.
+| Location                | What happens                                                     |
+| ----------------------- | ---------------------------------------------------------------- |
+| Above a bullish OB      | A minor low is broken; price dips into the OB and reverses up    |
+| Below a bearish OB      | A minor high is broken; price pops into the OB and reverses down |
+| At support / resistance | A small break traps breakout traders, then reverses              |
+| At trendlines           | A trendline break triggers entries, then reverses                |
+| Around news             | A first spike one way before the real move                       |
 
 ---
 
-## Trading Around Inducement
+## Using It Instead of Falling for It
 
-### Rule 1: Don't Be the Victim
-
-- Don't enter at minor swing points that are "too obvious"
-- Wait for inducement to complete before entering
-- If a setup looks too easy, it's probably a trap
-
-### Rule 2: Use Inducement as Confirmation
-
-When you see inducement occur (price takes a minor swing then reverses), it CONFIRMS:
-
-- The true direction is opposite to the inducement move
-- An Order Block or FVG beyond the inducement is the real entry
-- Institutions have collected their liquidity
-
-### Rule 3: Wait for the Sweep + Structure Shift
-
-The proper sequence:
-
-1. Identify where inducement is likely (minor swing points)
-2. Wait for price to take the inducement (sweep the minor level)
-3. Wait for MSS/CHOCH to confirm the reversal
-4. Enter at the OB/FVG created after the inducement sweep
+| Rule                                     | Why                                                          |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| **Mark the IDM before price gets there** | The first obvious internal swing between price and your zone |
+| **Don't enter at the IDM**               | That's where the trap is                                     |
+| **Wait for the IDM to be taken**         | Then the real zone is in play                                |
+| **Enter at the real zone, with a shift** | OB/FVG beyond the IDM, plus a lower-timeframe CHOCH          |
+| **If the IDM isn't taken**               | Price may not reach your zone; no trade                      |
 
 ---
 
-## Real Trading Examples
+## Inducement vs a Real Break
 
-### Example 1: EUR/USD Bullish Inducement
+| Question                    | Inducement                       | Real break                           |
+| --------------------------- | -------------------------------- | ------------------------------------ |
+| Higher-timeframe structure? | Still intact                     | Broken                               |
+| What's just beyond?         | A stronger zone (OB/FVG)         | Open space to the next pool          |
+| After the break?            | Price reaches the zone and turns | Price keeps going, with displacement |
 
-1. Price in 4H uptrend, pulling back toward a bullish OB at 1.0850
-2. Before reaching the OB, price creates a minor low at 1.0870
-3. Price **drops below 1.0870** (takes sell-side inducement)
-4. Retail traders sell the "break lower"
-5. Price reaches the true OB at 1.0850 and reverses aggressively up
-6. The sell stops from step 4 = institutional buy liquidity
-7. Entry: 1.0855 (at the OB after inducement sweep)
-8. **Result: Price rallies to 1.0950, +95 pips**
+---
 
-### Example 2: Gold Bearish Inducement
+## Worked Examples (no chart)
 
-1. Gold in 1H downtrend, rallying toward bearish OB at $2,420
-2. Minor high forms at $2,410 during the rally
-3. Price **pushes above $2,410** briefly (takes buy-side inducement)
-4. Breakout traders go long above $2,410
-5. Price reaches the true bearish OB at $2,420 and reverses down
-6. The buy stops from breakout traders = institutional sell liquidity
-7. Entry: $2,418 (at the OB after inducement) | Target: $2,370
-8. **Result: +48 points short**
+| Example                 | Real zone         | IDM                     | Entry  | Stop   | Target | Planned R:R            |
+| ----------------------- | ----------------- | ----------------------- | ------ | ------ | ------ | ---------------------- |
+| **EUR/USD 4H, bullish** | Bullish OB 1.0850 | Minor low 1.0870, taken | 1.0855 | 1.0842 | 1.0950 | **1 : 7.3**            |
+| **Gold 1H, bearish**    | Bearish OB 2,420  | Minor high 2,410, taken | 2,418  | 2,426  | 2,370  | **1 : 6.0** ($8 / $48) |
+
+The gold stop (2,426, above the OB) is added here; the original gave none.
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Avoid These Errors">
-
-**❌ Falling for inducement** — If a breakout looks obvious and everyone can see it, it's probably inducement.
-
-**❌ Entering before inducement completes** — Don't jump into the OB before the internal liquidity is taken. Wait.
-
-**❌ Not marking internal swing points** — You must identify where inducement WILL occur before it happens.
-
-**❌ Confusing real BOS with inducement** — On higher TF, check if the "break" is really a structural break or just internal manipulation. HTF context is key.
-
-</Callout>
+| Mistake                                      | Fix                                                |
+| -------------------------------------------- | -------------------------------------------------- |
+| Buying the first minor low on a pullback     | That's often the IDM                               |
+| Entering at the zone before the IDM is taken | Wait for it                                        |
+| Calling every break inducement               | Check the higher timeframe: real breaks happen too |
+| Not marking internal swings                  | You can't spot the IDM if you didn't mark it       |
 
 ---
 
-## Inducement and Smart Money Psychology
+## Practice
 
-Understanding WHY inducement exists helps you avoid it:
-
-1. **Large orders need liquidity** — Institutions can't enter without counter-parties
-2. **Retail is predictable** — Traders enter breakouts, set stops at obvious levels
-3. **The algorithm exploits this** — Price is engineered to trigger these predictable behaviors
-4. **The solution** — Think like an institution, not like retail
-
-<Callout type="tip" title="Pro Tip">
-  When you see a "perfect" breakout setup, ask yourself: "Where are all the stops? Who benefits from taking them?" If
-  the answer is "institutions," the breakout is likely inducement.
-</Callout>
+1. On 10 pullbacks into order blocks, mark the first minor swing before each OB.
+2. Note how often that swing was taken before price reacted at the OB.
+3. Log it in your [trading journal](/en/tools/journal-template).
 
 ---
 
 ## Summary
 
-| Concept          | Key Points                                     |
-| ---------------- | ---------------------------------------------- |
-| **Definition**   | Engineered price moves to trap retail traders  |
-| **Purpose**      | Creates liquidity for institutional orders     |
-| **Location**     | Minor internal swing points, trendlines, S/R   |
-| **How to Avoid** | Wait for the sweep, don't chase obvious setups |
-| **How to Use**   | Confirmation that the true move is coming next |
-| **Best Entry**   | After inducement + at the true OB/FVG          |
+| Element          | Key point                                               |
+| ---------------- | ------------------------------------------------------- |
+| **IDM**          | The obvious minor swing between price and the real zone |
+| **What happens** | It's taken first, then price reaches the zone           |
+| **Entry**        | At the real zone, after the IDM is taken                |
+| **Stop**         | Beyond the real zone                                    |
 
 ---
 
 ## Related Topics
 
-- [Liquidity Pools](/en/smc/liquidity-pools) — The liquidity that inducement creates
-- [Manipulation](/en/smc/manipulation) — The broader concept
-- [Order Blocks](/en/smc/order-blocks) — Where true entries lie beyond inducement
-- [Equal Highs & Lows](/en/smc/equal-highs-lows) — Common inducement targets
+- [Liquidity Pools](/en/smc/liquidity-pools) — what inducement takes
+- [Manipulation](/en/smc/manipulation) — the broader idea
+- [Order Blocks](/en/smc/order-blocks) — the real zone
+- [Equal Highs & Lows](/en/smc/equal-highs-lows) — common inducement levels
