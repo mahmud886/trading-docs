@@ -1,105 +1,127 @@
 ---
-title: "Smart Money Concepts পরিচিতি"
-description: "Smart Money Concepts (SMC) সম্পর্কে সম্পূর্ণ পরিচিতি — ইনস্টিটিউশনাল ট্রেডিংয়ের ভিত্তি, মার্কেট স্ট্রাকচার, এবং স্মার্ট মানি কীভাবে কাজ করে।"
+title: "Smart Money Concepts এর পরিচিতি"
+description: "নতুনদের জন্য Smart Money Concepts (SMC) এর পরিচিতি: Market Structure, BOS আর CHOCH, Liquidity আর Sweep, Premium আর Discount, Order Block আর FVG — সব একটি চার্টে অ্যানিমেটেড ওয়াকথ্রুসহ, আর SMC আর ICT এর সম্পর্ক ও ৭ সপ্তাহের শেখার পথ।"
 level: beginner
 order: 1
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-11-13"
 ---
 
-## Smart Money কী?
+## Smart Money Concepts কী?
 
-**Smart Money** বলতে ইনস্টিটিউশনাল ট্রেডার — ব্যাংক, হেজ ফান্ড, পেনশন ফান্ড এবং মার্কেট মেকার — যাদের মার্কেট মুভ করার মতো মূলধন ও তথ্য আছে। তারা দৈনিক ট্রেডিং ভলিউমের ৯০% এর বেশি প্রতিনিধিত্ব করে। SMC হলো এই ইনস্টিটিউশনগুলো কীভাবে ট্রেড করে তা বোঝার ফ্রেমওয়ার্ক।
+**Smart Money Concepts (SMC)** হলো বড় অর্ডারগুলো যে ছাপ রেখে যায় তা দিয়ে Price পড়ার একটি পদ্ধতি: Stop কোথায় জমে (**Liquidity**), ট্রেন্ড কীভাবে তৈরি হয় আর ভাঙে (**Market Structure**), আর শক্তিশালী Move কোন জোন থেকে শুরু হয় (**Order Block** আর **Fair Value Gap**)।
 
-<Callout type="info" title="মূল ধারণা">
-  "রিটেইল ট্রেডাররা হারায় কারণ তারা ইনস্টিটিউশনের বিরুদ্ধে ট্রেড করে। SMC শেখায় ইনস্টিটিউশনাল ফুটপ্রিন্ট চিহ্নিত করতে
-  এবং স্মার্ট মানির সাথে ট্রেড করতে।"
+"Smart Money" মানে বড় অংশগ্রহণকারী, যেমন ব্যাংক, ফান্ড আর Dealer, যাদের অর্ডার Price নাড়ানোর মতো বড়। SMC তাদের অর্ডার দেখতে পায় এমন দাবি করে না। সাধারণ Price চার্টে সেই অর্ডারগুলোর রেখে যাওয়া চিহ্ন পড়ে।
+
+<Callout type="info" title="সংশোধিত: সূত্রহীন সংখ্যা">
+  মূল লেসনে বলা ছিল প্রতিষ্ঠানগুলো "দৈনিক Volume এর ৯০% এর বেশি" আর তারা "Dark Pool" আর রিটেইল দেখতে পায় না এমন Order
+  Flow থেকে ট্রেড করে। এই সংখ্যাগুলোর কোনো সূত্র ছিল না, আর মার্কেটভেদে অনেক আলাদা। কাজের কথাটা এগুলো ছাড়াই টেকে: বড়
+  অর্ডারের Liquidity দরকার, আর চার্ট দেখায় সেই Liquidity কোথায়।
 </Callout>
 
 ---
 
-## SMC ফ্রেমওয়ার্ক
+## একটি চার্টে SMC
 
-### মূল কনসেপ্ট
+![একটি চার্টে SMC: Higher High আর Low, BOS, Liquidity Sweep, CHOCH, Order Block আর FVG, Premium/Discount](/images/smc/introduction/smc-overview-dark.png)
 
-1. **মার্কেট স্ট্রাকচার** — ট্রেন্ড নির্ধারণ (HH, HL, LH, LL)
-2. **Order Block (OB)** — ইনস্টিটিউশনাল এন্ট্রি জোন
-3. **Fair Value Gap (FVG)** — প্রাইস ইমব্যালান্স
-4. **লিকুইডিটি** — স্টপ কোথায় আছে (BSL/SSL)
-5. **BOS** — ট্রেন্ড কন্টিনিউয়েশন সিগন্যাল
-6. **CHOCH** — প্রথম রিভার্সাল সিগন্যাল
-7. **প্রিমিয়াম ও ডিসকাউন্ট** — সেলিং ও বাইং জোন
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/smc-overview-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
----
-
-## ইনস্টিটিউশনাল সাইকেল
-
-1. **Accumulation ফেজ** — ব্যাংক রেঞ্জে পজিশন তৈরি করে
-2. **Manipulation ফেজ** — রিটেইলকে ফাঁসাতে ভুয়া ব্রেকআউট
-3. **Expansion ফেজ** — সত্যিকার দিকে মুভ শুরু
-4. **Distribution ফেজ** — প্রিমিয়াম দামে পজিশন বিক্রি
-
----
-
-## SMC শুরু করার পথ
-
-### ফেজ ১: মার্কেট স্ট্রাকচার (সপ্তাহ ১-২)
-
-- সুইং হাই ও সুইং লো শিখুন
-- বুলিশ (HH/HL) ও বেয়ারিশ (LH/LL) স্ট্রাকচার চিহ্নিত করুন
-- BOS ও CHOCH মার্ক করার অভ্যাস করুন
-
-### ফেজ ২: সাপ্লাই ও ডিমান্ড (সপ্তাহ ৩-৪)
-
-- Order Block চিহ্নিত করুন
-- FVG মার্ক করুন
-- প্রিমিয়াম বনাম ডিসকাউন্ট জোন বুঝুন
-
-### ফেজ ৩: লিকুইডিটি (সপ্তাহ ৫-৬)
-
-- BSL ও SSL মার্ক করুন
-- লিকুইডিটি সুইপ বুঝুন
-- স্টপ হান্ট শিখুন
-
-### ফেজ ৪: লাইভ ট্রেডিং (সপ্তাহ ৭+)
-
-- সব কনসেপ্ট একত্রিত করুন
-- একটি পেয়ার, একটি সেশনে ট্রেড করুন
-- প্রতিটি সেটআপ জার্নাল করুন
-
----
-
-## বাস্তব উদাহরণ: EUR/USD
-
-1. **ডেইলি:** বুলিশ স্ট্রাকচার (HH, HL)
-2. **4H:** প্রাইস ডিসকাউন্ট জোনে, বুলিশ OB এর কাছে
-3. **1H:** ইকুয়াল লো এর নিচে লিকুইডিটি সুইপ
-4. **15M:** বুলিশ CHOCH → BOS কনফার্ম
-5. **এন্ট্রি:** 4H OB এর মধ্যে 15M বুলিশ OB তে বাই
-6. **SL:** সুইপের নিচে | **TP:** পরবর্তী BSL (1:4 R:R)
-7. **সময় (BD):** লন্ডন Kill Zone (দুপুর ১২-৩)
-
----
-
-## সাধারণ ভুল
-
-<Callout type="warning" title="SMC নতুনদের ভুল">
-
-**❌ প্রতিটি OB ট্রেড করা** — সব OB ভ্যালিড নয়। প্রেক্ষাপট দরকার
-
-**❌ HTF উপেক্ষা করা** — ডেইলি দিক সবকিছু। ডেইলি ট্রেন্ডের বিরুদ্ধে যাবেন না
-
-**❌ ধৈর্য না রাখা** — সম্পূর্ণ সেটআপ অপেক্ষা করুন: সুইপ → CHOCH → OB/FVG এন্ট্রি
-
-**❌ BOS ও CHOCH গুলিয়ে ফেলা** — BOS = কন্টিনিউয়েশন; CHOCH = রিভার্সাল
-
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  চার্টে ধারণাগুলো দেখানোর জন্য তৈরি **সিন্থেটিক ক্যান্ডেল** ব্যবহার করা হয়েছে। এটা আসল প্রাইস বা আসল ট্রেডের রেকর্ড
+  নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড।
 </Callout>
+
+| #   | ধারণা                 | চার্টে কী দেখায়                                        | লেসন                                                                |
+| --- | --------------------- | ------------------------------------------------------- | ------------------------------------------------------------------- |
+| ①   | **Market Structure**  | Higher High আর Higher Low: Uptrend                      | [Market Structure Shift](/bn/smc/market-structure-shift)            |
+| ②   | **BOS**               | শেষ High এর উপরে প্রতিটি Close ট্রেন্ড নিশ্চিত করে      | [BOS](/bn/smc/bos)                                                  |
+| ③   | **Liquidity Sweep**   | 1.0930, 1.0925 এর উপরের Stop নেয়, তারপর নিচে ক্লোজ করে | [Liquidity Pools](/bn/smc/liquidity-pools)                          |
+| ④   | **CHOCH**             | শেষ Higher Low (1.0900) এর নিচে প্রথম Close             | [CHOCH](/bn/smc/choch)                                              |
+| ⑤   | **Premium/Discount**  | Lower High নতুন রেঞ্জের ৫০% এর উপরে তৈরি হয়            | [Premium & Discount](/bn/smc/premium-discount)                      |
+| ⑥   | **Order Block + FVG** | শেষ Up-Close ক্যান্ডেল আর পতনের রেখে যাওয়া Gap         | [Order Blocks](/bn/smc/order-blocks), [FVG](/bn/smc/fair-value-gap) |
+| ⑦   | **এন্ট্রি**           | 1.0905 এ রিট্রেসে Sell, Stop 1.0932, টার্গেট 1.0850     |                                                                     |
+
+| লেভেল   | প্রাইস      | নোট                            |
+| ------- | ----------- | ------------------------------ |
+| এন্ট্রি | 1.0905      | Lower High, FVG এর ভেতরে       |
+| Stop    | 1.0932      | 1.0930 Sweep এর উপরে           |
+| টার্গেট | 1.0850      | Low গুলোর নিচে                 |
+| **R:R** | **১ : ২.০** | রিস্ক ২৭ পিপ, রিওয়ার্ড ৫৫ পিপ |
+
+---
+
+## এর পেছনের চক্র
+
+| ধাপ              | কী হয়                                   |
+| ---------------- | ---------------------------------------- |
+| **Accumulation** | Position তৈরির সময় Price রেঞ্জে থাকে    |
+| **Manipulation** | একটি মিথ্যা Move এক দিকের Liquidity নেয় |
+| **Expansion**    | Displacement সহ আসল Move                 |
+| **Distribution** | উল্টো প্রান্তের কাছে আবার রেঞ্জ          |
+
+এটা Wyckoff এর কাজ থেকে এসেছে; দেখুন [Accumulation](/bn/smc/accumulation), [Manipulation](/bn/smc/manipulation) আর [Wyckoff Relation](/bn/smc/wyckoff-relation)।
+
+---
+
+## SMC আর ICT
+
+| বিষয়     | SMC                                            | ICT                                |
+| --------- | ---------------------------------------------- | ---------------------------------- |
+| **উৎস**   | অনেক শিক্ষক শেখান, মূলত ICT এর ধারণার ওপর তৈরি | Michael Huddleston এর নিজের শিক্ষা |
+| **ফোকাস** | Structure, Liquidity, জোন                      | একই, সাথে সময়ের ওপর জোর           |
+| **নাম**   | BOS, CHOCH, OB, FVG                            | MSS, PD Array, OTE, Kill Zone, PO3 |
+
+ধারণাগুলো অনেকটাই মেলে। এই সাইটের [ICT অংশে](/bn/ict/introduction) সময়, সেশন আর নামযুক্ত ICT মডেলগুলো আছে।
+
+---
+
+## ৭ সপ্তাহের শেখার পথ
+
+| সপ্তাহ | ফোকাস      | লেসন                                                                                                                         |
+| ------ | ---------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| ১–২    | Structure  | [BOS](/bn/smc/bos), [CHOCH](/bn/smc/choch), [Market Structure Shift](/bn/smc/market-structure-shift)                         |
+| ৩–৪    | জোন        | [Order Blocks](/bn/smc/order-blocks), [FVG](/bn/smc/fair-value-gap), [Premium & Discount](/bn/smc/premium-discount)          |
+| ৫–৬    | Liquidity  | [Liquidity Pools](/bn/smc/liquidity-pools), [Equal Highs & Lows](/bn/smc/equal-highs-lows), [Inducement](/bn/smc/inducement) |
+| ৭+     | সব মিলিয়ে | [Entry Confirmation](/bn/smc/entry-confirmation), [Risk Models](/bn/smc/risk-models); একটি পেয়ার, একটি সেশন, একটি জার্নাল   |
+
+---
+
+## নতুনদের সাধারণ ভুল
+
+| ভুল                          | সমাধান                                                                   |
+| ---------------------------- | ------------------------------------------------------------------------ |
+| প্রতিটি Order Block এ ট্রেড  | শুধু কনটেক্সট আছে এমন জোন: Structure, Premium/Discount, Liquidity নেওয়া |
+| Higher Timeframe উপেক্ষা     | তার দিকে ট্রেড করুন                                                      |
+| সেটআপ শেষ হওয়ার আগে এন্ট্রি | Sweep → CHOCH → রিট্রেস এর অপেক্ষা করুন                                  |
+| সবকিছু মার্ক করা             | আপনার Timeframe এ গুরুত্বপূর্ণ লেভেলগুলোই রাখুন                          |
+| BOS আর CHOCH গুলিয়ে ফেলা    | BOS ট্রেন্ড চালিয়ে যায়; CHOCH হলো শেষ হওয়ার প্রথম লক্ষণ               |
+
+---
+
+## সারাংশ
+
+| ধারণা                | উদ্দেশ্য                               |
+| -------------------- | -------------------------------------- |
+| **Market Structure** | দিক                                    |
+| **BOS / CHOCH**      | Continuation / রিভার্সালের প্রথম লক্ষণ |
+| **Liquidity**        | Stop কোথায় আর Price কোথায় যায়       |
+| **Premium/Discount** | কোথায় Sell আর কোথায় Buy              |
+| **OB / FVG**         | কোথায় এন্ট্রি                         |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [মার্কেট স্ট্রাকচার শিফট](/bn/smc/market-structure-shift) — ট্রেন্ড পরিবর্তন
-- [Order Blocks](/bn/smc/order-blocks) — ইনস্টিটিউশনাল এন্ট্রি জোন
-- [Fair Value Gap](/bn/smc/fair-value-gap) — প্রাইস ইমব্যালান্স
-- [লিকুইডিটি পুল](/bn/smc/liquidity-pools) — স্টপ হান্ট
+- [Market Structure Shift](/bn/smc/market-structure-shift) — ট্রেন্ড পরিবর্তন
+- [Order Blocks](/bn/smc/order-blocks) — এন্ট্রি জোন
+- [Fair Value Gap](/bn/smc/fair-value-gap) — Imbalance
+- [Liquidity Pools](/bn/smc/liquidity-pools) — Stop কোথায় থাকে
 - [BOS](/bn/smc/bos) — Break of Structure
