@@ -1,207 +1,133 @@
 ---
 title: "Introduction to ICT Methodology"
-description: "Complete introduction to ICT (Inner Circle Trader) methodology by Michael J. Huddleston. Learn the foundation of institutional price delivery, algorithmic market theory, and how smart money operates."
+description: "A beginner's introduction to ICT (Inner Circle Trader): the five core ideas (liquidity, time, market structure, premium/discount and PD arrays, Power of 3), all of them on one chart, the session times in Bangladesh for summer and winter, and a 12-week learning path through this site."
 level: beginner
 order: 1
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-11-13"
 ---
 
-## What is ICT Methodology?
+## What Is ICT?
 
-ICT (Inner Circle Trader) methodology is a trading framework developed by **Michael J. Huddleston** that reveals how the interbank market-making algorithm delivers price. Unlike retail trading approaches that rely on lagging indicators, ICT focuses on understanding the **institutional logic** behind every market move.
+**ICT** (Inner Circle Trader) is a trading approach taught by **Michael J. Huddleston**. It reads price through **liquidity** (where stop orders sit), **time** (when big moves usually start) and the **footprints** strong moves leave behind, rather than through indicators.
 
-<Callout type="info" title="Core Philosophy">
-  "The market is not random. It is an algorithm designed to seek liquidity and deliver price between premium and
-  discount arrays." — ICT
+Smart Money Concepts (**SMC**) grew out of ICT's ideas, taught by other educators with simpler names and rules. This site covers both; the ICT section uses ICT's terms.
+
+<Callout type="info" title="How to read ICT">
+  ICT describes markets as an "algorithm" delivering price between liquidity pools. You don't have to accept that
+  description to use the tools. Treat every concept here as something to test on your own charts.
 </Callout>
 
 ---
 
-## The History of ICT
+## ICT in One Chart
 
-Michael Huddleston began sharing his methodology on YouTube in 2010. Over the years, he released:
+![ICT in one chart: liquidity, kill zone time, sweep, MSS, PD arrays, premium/discount, target](/images/ict/introduction/ict-overview-dark.png)
 
-- **2016-2017 Mentorship** — First structured paid mentorship covering PD arrays, Kill Zones, OTE
-- **2020 Pandemic Content** — Free YouTube teachings during COVID-19
-- **2022 Mentorship** — Most comprehensive revision with algorithmic Price Delivery theory
-- **2023-2024 Updates** — Unicorn Model, Venom Model, refined execution concepts
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/ict-overview-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-ICT's framework differs from SMC (Smart Money Concepts) — which is a simplified interpretation of ICT ideas by other educators. ICT methodology is more nuanced and time-centric.
+<Callout type="info" title="About this chart">
+  It uses **synthetic candles** (the same session as the [Judas Swing](/en/ict/judas-swing) lesson) to put every core
+  idea on one picture. It is not a record of real prices.
+</Callout>
 
----
+| #   | Idea                 | In one line                                                  | Lesson                                     |
+| --- | -------------------- | ------------------------------------------------------------ | ------------------------------------------ |
+| ①   | **Liquidity**        | Stops rest above highs (buy-side) and below lows (sell-side) | [Liquidity](/en/ict/liquidity)             |
+| ②   | **Time**             | Big moves usually start in a kill zone                       | [Kill Zones](/en/ict/ict-kill-zones)       |
+| ③   | **Sweep**            | A false move takes one side's stops first                    | [Liquidity Sweep](/en/ict/liquidity-sweep) |
+| ④   | **Market structure** | An MSS with displacement confirms the turn                   | [MSS](/en/ict/mss)                         |
+| ⑤   | **PD arrays**        | Order blocks and FVGs are where you enter                    | [PD Arrays](/en/ict/pd-arrays)             |
+| ⑥   | **Premium/discount** | Buy below the range's 50%, sell above it                     | [Dealing Range](/en/ict/dealing-range)     |
+| ⑦   | **Target**           | The liquidity on the other side                              | [Liquidity](/en/ict/liquidity)             |
 
-## The 5 Pillars of ICT
-
-### Pillar 1: Algorithmic Price Delivery
-
-The market is controlled by an algorithm (IPDA — Interbank Price Delivery Algorithm). This algorithm:
-
-- Seeks liquidity above highs and below lows
-- Delivers price to imbalances (FVGs)
-- Operates on predictable time schedules
-- Rebalances inefficiencies in price
-
-### Pillar 2: Time-Based Trading
-
-ICT is unique in emphasizing TIME over price. Key time concepts:
-
-- **Kill Zones** — Specific hours with highest probability setups
-- **Session Opens** — Midnight, London, New York create setups
-- **ICT Macro Times** — :50-:10 of specific hours show displacement
-- **Seasonal Tendencies** — Monthly and quarterly bias patterns
-
-### Pillar 3: Liquidity Theory
-
-Everything in markets revolves around liquidity:
-
-- **Buy-Side Liquidity (BSL)** — Stop losses above swing highs
-- **Sell-Side Liquidity (SSL)** — Stop losses below swing lows
-- **Engineered Liquidity** — Equal highs/lows create obvious targets
-- The algorithm ALWAYS seeks the next liquidity pool
-
-### Pillar 4: Premium & Discount Framework
-
-Price operates in two zones relative to equilibrium:
-
-- **Premium (above 50%)** — Ideal for selling
-- **Discount (below 50%)** — Ideal for buying
-- **Equilibrium (50%)** — CE of FVG, midpoint of ranges
-- PD Arrays in premium = sell setups; PD Arrays in discount = buy setups
-
-### Pillar 5: Power of 3 (AMD Cycle)
-
-Every move occurs in three phases:
-
-1. **Accumulation** — Smart money builds position in a range
-2. **Manipulation** — False move (Judas Swing) traps retail
-3. **Distribution** — True directional move after manipulation
+The whole sequence, from range to false move to real move, is the **Power of 3**. See [Power of 3](/en/ict/power-of-3) and [AMD](/en/ict/amd).
 
 ---
 
-## How ICT Differs from Retail Trading
+## How ICT Differs From Indicator Trading
 
-| Aspect         | Retail Approach            | ICT Approach                           |
-| -------------- | -------------------------- | -------------------------------------- |
-| **Indicators** | RSI, MACD, Moving Averages | None — pure price action + time        |
-| **Entries**    | Breakouts, crossovers      | OB/FVG retracements after manipulation |
-| **Stop Loss**  | Below recent swing         | Beyond manipulation extreme            |
-| **Targets**    | Fixed pips or R:R          | Opposing liquidity pool                |
-| **Timing**     | Any time                   | Only during Kill Zones                 |
-| **Bias**       | Based on indicators        | HTF structure + PO3 candle analysis    |
-
----
-
-## Key ICT Concepts Overview
-
-### PD Arrays (Premium/Discount Arrays)
-
-Institutional footprints on the chart:
-
-- **Order Blocks (OB)** — Last opposing candle before displacement
-- **Fair Value Gaps (FVG)** — 3-candle imbalance
-- **Breaker Blocks** — Failed OBs that become support/resistance
-- **Mitigation Blocks** — Partially filled OBs
-- **Liquidity Voids** — Large single-candle inefficiencies
-
-### Time Concepts
-
-- **Kill Zones** — London (2:00-5:00 AM EST), NY (7:00-10:00 AM EST)
-- **Silver Bullet** — 10:00-11:00 AM, 2:00-3:00 PM, 3:00-4:00 AM EST windows
-- **ICT Macros** — :50 to :10 of specific hours
-- **Power of 3 Candle** — Daily/4H candle structure (open → low → high → close)
-
-### Market Structure
-
-- **Market Structure Shift (MSS)** — Confirmed trend change
-- **Change of Character (CHOCH)** — First sign of reversal
-- **Displacement** — Strong momentum confirming direction
-- **Break of Structure (BOS)** — Continuation signal
+| Aspect      | Indicator-based approach   | ICT approach                                         |
+| ----------- | -------------------------- | ---------------------------------------------------- |
+| **Signals** | RSI, MACD, moving averages | Price, liquidity and time                            |
+| **Entries** | Breakouts, crossovers      | Retracements into OBs/FVGs after a sweep             |
+| **Stop**    | Below a recent swing       | Beyond the sweep (manipulation) extreme              |
+| **Target**  | Fixed pips or R multiple   | The opposite liquidity pool                          |
+| **Timing**  | Any time                   | Kill zones                                           |
+| **Bias**    | Indicator direction        | Higher-timeframe structure and the draw on liquidity |
 
 ---
 
-## Getting Started with ICT — The Learning Path
+## Session Times in Bangladesh
 
-### Phase 1: Foundation (Weeks 1-4)
+ICT quotes New York time. Bangladesh is **10 hours ahead in US summer** (mid-March to early November) and **11 hours ahead in US winter**.
 
-1. Learn market structure (swing highs/lows, BOS, CHOCH)
-2. Understand liquidity (BSL, SSL, equal highs/lows)
-3. Master PO3 candle identification on Daily chart
-4. Study Kill Zone timing (convert to your timezone)
+| Window               | New York time   | BD — US summer   | BD — US winter   |
+| -------------------- | --------------- | ---------------- | ---------------- |
+| Asian range (ICT)    | 8 PM – 12 AM    | 6 AM – 10 AM     | 7 AM – 11 AM     |
+| **London kill zone** | 2 AM – 5 AM     | **12 PM – 3 PM** | **1 PM – 4 PM**  |
+| **NY AM kill zone**  | 7 AM – 10 AM    | **5 PM – 8 PM**  | **6 PM – 9 PM**  |
+| NY AM Silver Bullet  | 10 AM – 11 AM   | 8 PM – 9 PM      | 9 PM – 10 PM     |
+| NY lunch (avoid)     | 12 PM – 1:30 PM | 10 PM – 11:30 PM | 11 PM – 12:30 AM |
+| NY PM                | 1:30 PM – 4 PM  | 11:30 PM – 2 AM  | 12:30 AM – 3 AM  |
 
-### Phase 2: Core Concepts (Weeks 5-8)
-
-1. Identify FVGs and Order Blocks
-2. Practice PD Array identification in premium/discount
-3. Learn daily bias using HTF PO3 analysis
-4. Paper trade London and NY Kill Zones only
-
-### Phase 3: Execution (Weeks 9-12)
-
-1. Build a specific model (Silver Bullet, 2022 Model, etc.)
-2. Trade one setup per day maximum
-3. Journal every setup (win or loss) with screenshots
-4. Refine entry timing using 1M/5M confirmation
-
-### Phase 4: Mastery (Months 4+)
-
-1. Combine multiple timeframe confluence
-2. Add session-specific models
-3. Understand seasonal tendencies
-4. Develop your personal trading plan
+<Callout type="warning" title="Corrected: EST labels">
+  The original labelled these times "EST" but its BD times only match US **summer** time (EDT). Use the winter column
+  from early November to mid-March. Full detail: [Kill Zones](/en/ict/ict-kill-zones) and [Time and
+  Price](/en/ict/time-and-price-theory).
+</Callout>
 
 ---
 
-## Bangladesh Time Reference
+## A 12-Week Learning Path
 
-| ICT Session      | EST Time        | Bangladesh Time  |
-| ---------------- | --------------- | ---------------- |
-| Asian Range      | 8 PM – 12 AM    | 6 AM – 10 AM     |
-| London Kill Zone | 2 AM – 5 AM     | 12 PM – 3 PM     |
-| NY AM Kill Zone  | 7 AM – 10 AM    | 5 PM – 8 PM      |
-| NY Lunch (avoid) | 12 PM – 1:30 PM | 10 PM – 11:30 PM |
-| NY PM            | 1:30 PM – 4 PM  | 11:30 PM – 2 AM  |
-| Silver Bullet AM | 10 AM – 11 AM   | 8 PM – 9 PM      |
+| Weeks    | Focus                   | Lessons                                                                                                            |
+| -------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **1–2**  | Structure and liquidity | [Liquidity](/en/ict/liquidity), [Liquidity Sweep](/en/ict/liquidity-sweep), [MSS](/en/ict/mss)                     |
+| **3–4**  | Entry zones             | [FVG](/en/ict/fvg), [Order Blocks](/en/smc/order-blocks), [PD Arrays](/en/ict/pd-arrays), [OTE](/en/ict/ote)       |
+| **5–6**  | Context                 | [Dealing Range](/en/ict/dealing-range), [Daily Bias](/en/ict/daily-bias), [Power of 3](/en/ict/power-of-3)         |
+| **7–8**  | Time                    | [Kill Zones](/en/ict/ict-kill-zones), [London Open](/en/ict/london-open), [New York Open](/en/ict/new-york-open)   |
+| **9–12** | One model, tested       | [Silver Bullet](/en/ict/silver-bullet) or the [2022 model](/en/ict/2022-mentorship-concepts); backtest 50 sessions |
+
+After that: [Advanced Models](/en/ict/advanced-ict-models), [Weekly](/en/ict/weekly-profiles) and [Monthly Profiles](/en/ict/monthly-profiles).
 
 ---
 
 ## Common Beginner Mistakes
 
-<Callout type="warning" title="Avoid These ICT Errors">
-
-**❌ Trying to learn everything at once** — ICT has 50+ concepts. Pick ONE model and master it first.
-
-**❌ Trading all sessions** — Stick to ONE Kill Zone until consistently profitable.
-
-**❌ Ignoring Daily Bias** — Every trade needs HTF directional conviction.
-
-**❌ No patience** — The best ICT setups come 1-2x per day. Wait for proper timing.
-
-**❌ Confusing ICT with SMC** — SMC simplifies ICT. Learn the original source material.
-
-**❌ Backtesting without time** — You must backtest in replay mode to see time-based setups develop.
-
-</Callout>
+| Mistake                        | Fix                                             |
+| ------------------------------ | ----------------------------------------------- |
+| Learning every concept at once | Follow the path; one model first                |
+| Trading every session          | One kill zone until your results are consistent |
+| No daily bias                  | Every trade needs a higher-timeframe direction  |
+| Over-trading                   | Many days have no clean setup                   |
+| Backtesting on static charts   | Use bar replay so you see setups form in time   |
+| Treating ICT claims as facts   | Test them; keep what works on your pair         |
 
 ---
 
 ## Summary
 
-| Aspect           | Details                                  |
-| ---------------- | ---------------------------------------- |
-| **Creator**      | Michael J. Huddleston (ICT)              |
-| **Core Idea**    | Market is an algorithm seeking liquidity |
-| **Time Focus**   | Kill Zones, Session Opens, Macros        |
-| **Entry Method** | OB/FVG after PO3 manipulation            |
-| **Risk**         | 1-2% per trade, 1:3+ R:R minimum         |
-| **Best Markets** | EUR/USD, GBP/USD, Gold, NAS100, ES       |
-| **Timeframes**   | HTF bias (D/4H) + LTF entry (15M/5M/1M)  |
+| Aspect         | Detail                                                  |
+| -------------- | ------------------------------------------------------- |
+| **Teacher**    | Michael J. Huddleston (ICT)                             |
+| **Core idea**  | Price moves from one pool of liquidity to the next      |
+| **Tools**      | Liquidity, time, structure, PD arrays, premium/discount |
+| **From BD**    | London 12 – 3 PM, NY AM 5 – 8 PM (summer; +1 h winter)  |
+| **First goal** | One model, one session, tested                          |
 
 ---
 
 ## Related Topics
 
-- [Power of 3](/en/ict/power-of-3) — The foundational ICT cycle
-- [ICT Kill Zones](/en/ict/ict-kill-zones) — Time-based trading windows
-- [Fair Value Gap](/en/ict/fvg) — Key PD Array for entries
-- [Market Structure Shift](/en/ict/mss) — Confirmation of direction change
-- [Daily Bias](/en/ict/daily-bias) — How to determine daily direction
+- [Liquidity](/en/ict/liquidity) — where to start
+- [ICT Kill Zones](/en/ict/ict-kill-zones) — the times
+- [Power of 3](/en/ict/power-of-3) — the daily cycle
+- [Advanced ICT Models](/en/ict/advanced-ict-models) — where it leads
