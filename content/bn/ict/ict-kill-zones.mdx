@@ -1,156 +1,197 @@
 ---
-title: "ICT Kill Zones"
-description: "ICT Kill Zones Master করুন — যে নির্দিষ্ট Time Window এ Institutional Setup তৈরি হয়। London, New York AM, NY Lunch এবং NY PM Kill Zone বাংলাদেশ সময়সহ শিখুন।"
+title: "ICT Kill Zones — সম্পূর্ণ গাইড"
+description: "বাংলাদেশ থেকে ICT Kill Zone ট্রেড করুন: London, New York AM, NY Lunch আর NY PM উইন্ডো, US গ্রীষ্ম ও শীতকালের সঠিক BD সময়সহ, প্রতিটিতে সাধারণত কী ঘটে, Asian Range, Macro Time, ধাপে ধাপে London Kill Zone সেটআপ, এবং চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ একটি সম্পূর্ণ উদাহরণ।"
 level: beginner
 order: 3
-lastUpdated: "2026-06-09"
+lastUpdated: "2026-11-13"
 ---
 
-## ICT Kill Zones কী?
+## সময় কেন গুরুত্বপূর্ণ
 
-Kill Zones হলো Trading Day এর **নির্দিষ্ট Time Window** যখন সর্বোচ্চ Probability Institutional Setup তৈরি হয়। ICT শেখায় যে TIME নির্ধারণ করে WHEN Price Move করবে — Kill Zones এই Time-Based Approach এর Framework।
+আগের লেসনগুলো বলে **কী** খুঁজবেন: Liquidity, Sweep, MSS, FVG। Kill Zone বলে **কখন**। বড় সেশনগুলো খোলার সময়, যখন Volume আসে, তখন একই প্যাটার্ন বেশি কাজের; শান্ত সময়ে কম।
 
-<Callout type="info" title="Time > Price">
-  "আপনার কাছে ভুল Time Window এ Perfect Setup থাকতে পারে এবং এটি Fail করবে। Kill Zones আপনাকে বলে কখন Algorithm সবচেয়ে
-  Active।" — ICT
+<Callout type="info" title="সংজ্ঞা">
+  **Kill Zone** হলো New York সময়ে নির্ধারিত কিছু টাইম উইন্ডো, যেখানে ICT দিনের সবচেয়ে গুরুত্বপূর্ণ Move শুরু হওয়ার
+  আশা করেন: London (New York সময় রাত ২–ভোর ৫টা), New York AM (সকাল ৭–১০টা), আর New York PM (দুপুর ১:৩০–বিকেল ৪টা)।
+  মাঝের New York Lunch সময়টা সাধারণত এড়িয়ে চলা হয়।
 </Callout>
 
 ---
 
-## চারটি Kill Zone
+## বাংলাদেশ সময়ে উইন্ডোগুলো
 
-### 1. London Kill Zone
+![২৪ ঘণ্টার বাংলাদেশ সময়ে Kill Zone, US গ্রীষ্ম ও শীতকালে](/images/ict/ict-kill-zones/kill-zone-clock-dark.png)
 
-| বিবরণ         | তথ্য                              |
-| ------------- | --------------------------------- |
-| **EST Time**  | 2:00 AM - 5:00 AM                 |
-| **BD Time**   | দুপুর 12:00 - 3:00                |
-| **Character** | Manipulation Phase — Judas Swing  |
-| **সেরা**      | Reversal Setup, Asian Range Sweep |
-| **Pairs**     | EUR/USD, GBP/USD, EUR/GBP, Gold   |
+উইন্ডোগুলো **New York সময়ে** নির্ধারিত। New York বছরে দুবার ঘড়ি বদলায়, বাংলাদেশ বদলায় না, তাই BD সময় এক ঘণ্টা সরে যায়।
 
-London Kill Zone এ AMD এর **Manipulation** Phase ঘটে। Judas Swing সাধারণত এখানে তৈরি হয়, Asian Range এর এক দিক Sweep করে Daily High বা Low তৈরি করে।
+| উইন্ডো           | New York সময়           | BD — US গ্রীষ্ম (EDT, মার্চের মাঝ → নভেম্বরের শুরু) | BD — US শীত (EST, নভেম্বরের শুরু → মার্চের মাঝ) |
+| ---------------- | ----------------------- | --------------------------------------------------- | ----------------------------------------------- |
+| Asian Range      | রাত ৮ – রাত ২           | সকাল ৬:০০ – দুপুর ১২:০০                             | সকাল ৭:০০ – দুপুর ১:০০                          |
+| **London KZ**    | রাত ২:০০ – ভোর ৫:০০     | **দুপুর ১২:০০ – ৩:০০**                              | **দুপুর ১:০০ – বিকেল ৪:০০**                     |
+| **NY AM KZ**     | সকাল ৭:০০ – ১০:০০       | **বিকেল ৫:০০ – রাত ৮:০০**                           | **সন্ধ্যা ৬:০০ – রাত ৯:০০**                     |
+| NY Lunch (এড়ান) | দুপুর ১২:০০ – ১:৩০      | রাত ১০:০০ – ১১:৩০                                   | রাত ১১:০০ – ১২:৩০                               |
+| **NY PM KZ**     | দুপুর ১:৩০ – বিকেল ৪:০০ | **রাত ১১:৩০ – ২:০০**                                | **রাত ১২:৩০ – ৩:০০**                            |
 
-### 2. New York AM Kill Zone
-
-| বিবরণ         | তথ্য                               |
-| ------------- | ---------------------------------- |
-| **EST Time**  | 7:00 AM - 10:00 AM                 |
-| **BD Time**   | বিকাল 5:00 - 8:00                  |
-| **Character** | Distribution Phase — True Move     |
-| **সেরা**      | London Reversal এর পর Continuation |
-| **Pairs**     | সব Major Pair, Gold, Indices       |
-
-NY AM এ **Distribution** Move ত্বরান্বিত হয়। London Manipulation তৈরি করলে, NY AM Expansion Deliver করে।
-
-### 3. NY Lunch Kill Zone (এড়িয়ে চলুন)
-
-| বিবরণ         | তথ্য                                  |
-| ------------- | ------------------------------------- |
-| **EST Time**  | 12:00 PM - 1:30 PM                    |
-| **BD Time**   | রাত 10:00 - 11:30                     |
-| **Character** | কম Probability — Choppy               |
-| **সেরা**      | কিছুই না — দূরে থাকুন                 |
-| **সতর্কতা**   | False Signal, কম Volume, Erratic Move |
-
-### 4. NY PM Kill Zone
-
-| বিবরণ         | তথ্য                               |
-| ------------- | ---------------------------------- |
-| **EST Time**  | 1:30 PM - 4:00 PM                  |
-| **BD Time**   | রাত 11:30 - 2:00 AM                |
-| **Character** | Continuation বা Reversal           |
-| **সেরা**      | Trend Continuation, Position Close |
-| **Pairs**     | USD Pairs, Indices                 |
+<Callout type="warning" title="সংশোধিত: EST বনাম EDT">
+  মূল লেসনে New York সময়কে "EST" লেখা ছিল, কিন্তু পাশে যে BD সময় দেওয়া ছিল তা মাত্র ১০ ঘণ্টা পরের। এটা **US
+  গ্রীষ্মকালের** (EDT) পার্থক্য। US **শীতকালে** (EST) লেসনের প্রতিটি BD সময় **এক ঘণ্টা পরে**। এই সাইটের অন্য লেসনগুলো
+  গ্রীষ্মকালের সময় ব্যবহার করে। নভেম্বরের শুরু থেকে মার্চের মাঝামাঝি পর্যন্ত এক ঘণ্টা যোগ করুন।
+</Callout>
 
 ---
 
-## Kill Zone Trading Strategy
+## প্রতিটি উইন্ডোতে সাধারণত কী ঘটে
 
-### London Kill Zone Setup
+| উইন্ডো      | সাধারণ আচরণ                                                            | সাধারণ সেটআপ                                |
+| ----------- | ---------------------------------------------------------------------- | ------------------------------------------- |
+| Asian Range | শান্ত, সরু রেঞ্জ; দুই দিকে Liquidity জমায়                             | High আর Low মার্ক করুন; মাঝখানে ট্রেড নয়   |
+| **London**  | প্রায়ই Asian Range এর এক দিক Sweep করে, তারপর দিনের দিক ঠিক করে       | Asian Range Sweep → MSS → OB/FVG এন্ট্রি    |
+| **NY AM**   | London এর Move চালিয়ে যায়, বা London Liquidity তে পৌঁছালে উল্টে দেয় | London এর FVG/OB তে পুলব্যাক; PDH/PDL Sweep |
+| NY Lunch    | পাতলা, এলোমেলো, মিথ্যা Move এর প্রবণতা                                 | সাধারণত কিছু না                             |
+| **NY PM**   | দেরিতে Continuation, বা NY AM এর Move এর রিভার্সাল                     | ছোট সেটআপ; খোলা ট্রেড ম্যানেজ করা           |
 
-1. **Asian Range Mark করুন** — BD সময় সকাল 6 - দুপুর 12 এর High ও Low
-2. **Sweep এর জন্য অপেক্ষা** — Price Asian High বা Low নিয়ে নেয়
-3. **MSS Confirm করুন** — Sweep এর পর 5M/15M Structure Shift
-4. **Entry** — Displacement এ OB/FVG তে
-5. **Target** — বিপরীত Liquidity (Asian Low Sweep হলে → BSL Target)
-
-### NY AM Kill Zone Setup
-
-1. **London Result দেখুন** — London কি Daily High/Low তৈরি করেছে?
-2. **Continuation খুঁজুন** — London Reverse করলে, NY AM সেই Direction Continue করে
-3. **Pullback এ Entry** — London Displacement এর FVG/OB ব্যবহার করুন
-4. **Target** — Major Liquidity Pool (PDH/PDL, PWH/PWL)
+মূল লেসন এই উইন্ডোগুলোকে AMD এর ধাপের সাথে জুড়েছে: London হলো Manipulation, NY হলো Distribution। দিনটা পড়ার এটা একটা কাজের উপায়, নিয়ম নয়। দেখুন [Power of 3 / AMD](/bn/ict/power-of-3)।
 
 ---
 
-## বাস্তব উদাহরণ
+## Asian Range
 
-### উদাহরণ ১: London KZ — EUR/USD
+London Kill Zone এর রেফারেন্স হলো Asian Range:
 
-- **Asian Range:** 1.0870 - 1.0885 (সকাল 6 - দুপুর 12 BD)
-- **দুপুর 12:15 BD:** Price Asian Low 1.0867 Sweep করে
-- **দুপুর 12:30 BD:** 5M Bullish MSS তৈরি হয়
-- **Entry:** 1.0872 তে Buy (Bullish OB)
-- **SL:** 1.0864 | **TP:** 1.0910
-- **R:R:** 1:4.75
-
-### উদাহরণ ২: NY AM KZ — Gold
-
-- **London তৈরি করেছে** Daily HOD 2,048 (Manipulation Up, তারপর Reverse)
-- **বিকাল 5:30 BD:** Price 15M FVG তে Pull Back করে
-- **Entry:** 2,040 তে Sell (Bearish FVG CE)
-- **SL:** 2,049 | **TP:** 2,010
-- **R:R:** 1:3.3
+1. সকাল ৬টা থেকে দুপুর ১২টা BD (গ্রীষ্ম) পর্যন্ত **High আর Low** মার্ক করুন।
+2. আশা করুন London এক দিকের বাইরে যাবে। Stop গুলো সেখানেই।
+3. Sweep **এর পর ভিতরে ফিরে Close আর MSS** হলে তবেই সেটআপ। পরিষ্কারভাবে ভেঙে টিকে থাকলে সেটা Trend এর দিন; Fade করবেন না।
 
 ---
 
-## ICT Macro Times
+## Macro Time
 
-Kill Zone এর মধ্যে, নির্দিষ্ট **Macro Window** আছে যেখানে Displacement ঘটে:
+ICT সেশনগুলোর ভেতরে ছোট **Macro** এর কথাও বলেন, প্রতিটি প্রায় ২০ মিনিট, যেখানে প্রায়ই Displacement শুরু হয়। মূল লেসনে এগুলো আছে (BD সময়, US গ্রীষ্ম):
 
-| Macro Window  | EST Time            | BD সময়                 | Character          |
-| ------------- | ------------------- | ----------------------- | ------------------ |
-| London Macro  | 1:33 AM - 4:00 AM   | সকাল 11:33 - দুপুর 2:00 | Setup Formation    |
-| NY AM Macro 1 | 9:50 AM - 10:10 AM  | রাত 7:50 - 8:10         | Major Displacement |
-| NY AM Macro 2 | 10:50 AM - 11:10 AM | রাত 8:50 - 9:10         | Secondary Move     |
-| NY PM Macro   | 1:50 PM - 2:10 PM   | রাত 11:50 - 12:10 AM    | PM Session শুরু    |
+| Macro   | New York            | BD (গ্রীষ্ম)            |
+| ------- | ------------------- | ----------------------- |
+| London  | রাত ১:৩৩ – ভোর ৪:০০ | সকাল ১১:৩৩ – দুপুর ২:০০ |
+| NY AM 1 | সকাল ৯:৫০ – ১০:১০   | রাত ৭:৫০ – ৮:১০         |
+| NY AM 2 | সকাল ১০:৫০ – ১১:১০  | রাত ৮:৫০ – ৯:১০         |
+| NY PM   | দুপুর ১:৫০ – ২:১০   | রাত ১১:৫০ – ১২:১০       |
+
+Macro কে বাড়তি নিখুঁততা হিসেবে দেখুন, বাধ্যতামূলক শর্ত নয়। আগে সেটআপ থাকতে হবে।
+
+---
+
+## ধাপে ধাপে London Kill Zone সেটআপ
+
+1. **দুপুর ১২টার আগে:** Asian High আর Low, PDH/PDL মার্ক করুন, আর [Draw on Liquidity](/bn/ict/liquidity) ঠিক করুন।
+2. **দুপুর ১২–৩টা BD:** London Draw এর বিপরীত দিক Sweep করা পর্যন্ত অপেক্ষা করুন।
+3. **নিশ্চিত করুন:** ভিতরে ফিরে Close, তারপর 5m বা 15m এ Displacement সহ [MSS](/bn/ict/mss)।
+4. **এন্ট্রি:** Move যে [Order Block](/bn/smc/order-blocks) বা [FVG](/bn/ict/fvg) রেখে গেছে, সেখানে রিট্রেসে।
+5. **Stop** Sweep Extreme এর বাইরে; **টার্গেট** বিপরীত Liquidity।
+
+---
+
+## সম্পূর্ণ উদাহরণ — London Kill Zone, EUR/USD (15m)
+
+![London Kill Zone — EUR/USD 15m: Asian Range, Asian Low এর Sweep, MSS, Order Block এন্ট্রি](/images/ict/ict-kill-zones/eurusd-london-kz-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/kill-zones-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  চার্টে এই লেসনের লেভেলের চারপাশে তৈরি **সিন্থেটিক ক্যান্ডেল** ব্যবহার করা হয়েছে (US গ্রীষ্মকাল)। এটি পদ্ধতিটি দেখানোর
+  জন্য, আসল ট্রেডের রেকর্ড নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড, ফলাফল নয়।
+</Callout>
+
+1. **Asian Range:** সকাল ৬টা থেকে দুপুর ১২টা BD পর্যন্ত **1.0870 – 1.0885**।
+2. **Sweep:** **দুপুর ১২:১৫ BD** তে, London Kill Zone এ, Price Asian Low নিয়ে **1.0867** পর্যন্ত যায়।
+3. **MSS:** **দুপুর ১২:৩০ BD** তে ১৭ পিপের Displacement 1.0879 Lower High এর উপরে ক্লোজ করে।
+4. **এন্ট্রি:** Sweep ক্যান্ডেলটিই Move এর আগের শেষ Down-Close ক্যান্ডেল, তাই এটাই Bullish Order Block। দুপুর ১:৩০ BD তে Price এতে ফেরে। **1.0872** এ Buy।
+
+| লেভেল     | প্রাইস       | যুক্তি                   |
+| --------- | ------------ | ------------------------ |
+| এন্ট্রি   | 1.0872       | Bullish OB               |
+| Stop      | 1.0864       | 1.0867 Sweep Low এর নিচে |
+| টার্গেট   | 1.0910       | Buy-Side Liquidity       |
+| রিস্ক     | ৮ পিপ        | 1.0872 − 1.0864          |
+| রিওয়ার্ড | ৩৮ পিপ       | 1.0910 − 1.0872          |
+| **R:R**   | **১ : ৪.৭৫** | ৩৮ ÷ ৮                   |
+
+### দ্বিতীয় উদাহরণ (চার্ট ছাড়া) — NY AM, Gold
+
+London দিনের High **2,048** তৈরি করে উল্টে যায়। **বিকেল ৫:৩০ BD** তে, NY AM Kill Zone এ, Price একটি 15m Bearish FVG তে পুলব্যাক করে। **2,040** এ Sell (FVG এর CE), Stop **2,049**, টার্গেট **2,010**: রিস্ক $9, রিওয়ার্ড $30, **R:R ১ : ৩.৩**।
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="Kill Zone এ ভুল">
-
-**❌ Kill Zone এর বাইরে Trade করা** — Random Entry = Random Result
-
-**❌ NY Lunch এ Trade করা** — এটি কম Probability Trap Zone
-
-**❌ নিজের Timezone এ Convert না করা** — আপনার Local Kill Zone Time জানুন
-
-**❌ সব Kill Zone এ Trade করা** — আরো যোগ করার আগে একটি Kill Zone Master করুন
-
-**❌ Macro উপেক্ষা করা** — নির্দিষ্ট :50-:10 Window এ Displacement ঘটে
-
-</Callout>
+| ভুল                               | সমাধান                                                          |
+| --------------------------------- | --------------------------------------------------------------- |
+| শীতকালে গ্রীষ্মের BD সময় ব্যবহার | নভেম্বরের শুরু থেকে মার্চের মাঝ পর্যন্ত এক ঘণ্টা যোগ করুন       |
+| Asian Range এর মাঝখানে ট্রেড      | London এক দিক নেওয়া পর্যন্ত অপেক্ষা করুন                       |
+| NY Lunch এ ট্রেড                  | সরে থাকুন, বা শুধু খোলা ট্রেড ম্যানেজ করুন                      |
+| প্রতিটি Kill Zone এ ট্রেড         | আগে একটিতে দক্ষ হন; বাংলাদেশের কর্মদিবসের সাথে London ভালো মেলে |
+| ভালো সময়, কিন্তু সেটআপ নেই       | সময় সেটআপ ফিল্টার করে; সেটআপ তৈরি করে না                       |
 
 ---
 
-## সারসংক্ষেপ
+## রিস্ক ম্যানেজমেন্ট
 
-| Kill Zone    | BD সময়             | সেরা                   | Priority |
-| ------------ | ------------------- | ---------------------- | -------- |
-| **London**   | দুপুর 12:00 - 3:00  | Reversal/Manipulation  | ★★★★★    |
-| **NY AM**    | বিকাল 5:00 - 8:00   | Distribution/Expansion | ★★★★★    |
-| **NY Lunch** | রাত 10:00 - 11:30   | এড়িয়ে চলুন           | ✗        |
-| **NY PM**    | রাত 11:30 - 2:00 AM | Continuation           | ★★★☆☆    |
+| বিষয়                  | নির্দেশিকা                                                                                                 |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **প্রতি ট্রেডে রিস্ক** | অ্যাকাউন্টের ১–২%; শেখার সময় আরও কম                                                                       |
+| **প্রতি সেশনে ট্রেড**  | এক-দুটি; একই Kill Zone এ লসের পর থামুন                                                                     |
+| **Kill Zone এর বাইরে** | নতুন এন্ট্রি নয়; চলমান ট্রেড ম্যানেজ করুন                                                                 |
+| **নিউজ**               | [ইকোনমিক ক্যালেন্ডার](/bn/tools/economic-calendar) দেখুন; NY ডেটা প্রায়ই সন্ধ্যা ৬:৩০ BD তে (গ্রীষ্ম) আসে |
+
+---
+
+## অনুশীলন
+
+1. দুই সপ্তাহ প্রতিদিন সকালে Asian High/Low লিখুন, আর London কোন দিক নিল।
+2. NY AM Kill Zone এ London এর Move চলল নাকি উল্টাল, লিখে রাখুন।
+3. উইন্ডো অনুযায়ী সেটআপ ট্র্যাক করুন। কোন Kill Zone আপনাকে সবচেয়ে পরিষ্কার সেটআপ দেয়?
+4. ফলাফল আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## প্রশ্ন ও উত্তর
+
+### নভেম্বর আর মার্চে সময় বদলায় কেন?
+
+উইন্ডোগুলো New York এর ঘড়ি মেনে চলে। US ঘড়ি বদলালে প্রতিটি উইন্ডোর BD সময় এক ঘণ্টা সরে যায়।
+
+### Kill Zone কি Gold আর Index এ কাজ করে?
+
+হ্যাঁ। এগুলো London আর New York সেশনের সাথে বাঁধা, যা বড় FX পেয়ারের মতো Gold আর US Index কেও চালায়।
+
+### Kill Zone এর বাইরে ট্রেড করা যায়?
+
+যায়, কিন্তু বাইরের Move সাধারণত ছোট আর কম নির্ভরযোগ্য। এই লেসনগুলোর বেশিরভাগ ICT মডেল একটি Kill Zone ধরে নেয়।
+
+---
+
+## সারাংশ
+
+| বিষয়           | মূল কথা                                                                       |
+| --------------- | ----------------------------------------------------------------------------- |
+| **Kill Zone**   | London রাত ২–ভোর ৫, NY AM সকাল ৭–১০, NY PM দুপুর ১:৩০–বিকেল ৪ (New York সময়) |
+| **BD, গ্রীষ্ম** | London দুপুর ১২–৩, NY AM বিকেল ৫–রাত ৮, NY PM রাত ১১:৩০–২                     |
+| **BD, শীত**     | প্রতিটি উইন্ডো এক ঘণ্টা পরে                                                   |
+| **এড়ান**       | NY Lunch                                                                      |
+| **London মডেল** | Asian Range → Sweep → MSS → OB/FVG এন্ট্রি                                    |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [AMD](/bn/ict/amd) — কীভাবে Session AMD Cycle তৈরি করে
-- [London Open](/bn/ict/london-open) — বিস্তারিত London Session Analysis
-- [New York Open](/bn/ict/new-york-open) — NY Session Strategy
-- [Judas Swing](/bn/ict/judas-swing) — London Manipulation Move
-- [Silver Bullet](/bn/ict/silver-bullet) — Time-Specific Execution Model
+- [Liquidity Sweep](/bn/ict/liquidity-sweep) — যে সেটআপের সময় ঠিক করে Kill Zone
+- [London Open](/bn/ict/london-open) ও [New York Open](/bn/ict/new-york-open) — প্রতিটি সেশন বিস্তারিত
+- [Judas Swing](/bn/ict/judas-swing) — ওপেনের মিথ্যা Move
+- [Power of 3](/bn/ict/power-of-3) — সেশন জুড়ে একটি দিন কীভাবে এগোয়
+- [Silver Bullet](/bn/ict/silver-bullet) — Kill Zone এর ভেতরে এক ঘণ্টার মডেল
