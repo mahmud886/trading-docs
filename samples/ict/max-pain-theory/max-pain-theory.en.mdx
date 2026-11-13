@@ -1,0 +1,123 @@
+---
+title: "Max Pain Theory — Options Expiry Price Magnet"
+description: "Learn max pain: the settlement price at which expiring options pay their holders the least. How it's calculated step by step, why price sometimes drifts toward it, why it often doesn't, and how to use it alongside chart levels, with a chart and an animated walkthrough."
+level: advanced
+order: 31
+lastUpdated: "2026-11-13"
+---
+
+## What Is Max Pain?
+
+**Max pain** is the price at which, if the underlying settled there at expiry, **all the open options together would be worth the least** to the people holding them. In other words, the strike where option buyers lose the most and option sellers keep the most premium.
+
+The **theory** is that price tends to drift toward max pain into expiry. The calculation is exact; the theory is not.
+
+<Callout type="info" title="This page was rewritten">
+  The original page repeated the Options Flow lesson word for word and never explained max pain. This version covers
+  the calculation, the reasoning and its limits.
+</Callout>
+
+---
+
+## How It's Calculated
+
+For each possible settlement price **S** (usually each strike):
+
+1. **Calls:** for every call strike K below S, add open interest × (S − K) × contract multiplier.
+2. **Puts:** for every put strike K above S, add open interest × (K − S) × multiplier.
+3. **Total** = calls + puts.
+
+The strike with the **lowest total** is max pain.
+
+![Max pain curve: call and put payouts at each settlement price, total minimum at 450](/images/ict/max-pain-theory/max-pain-curve-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/max-pain-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this example">
+  The open interest is **made up** to show the calculation (100 shares per contract). It is not real market data.
+</Callout>
+
+| Settlement | Calls pay | Puts pay | **Total**  |
+| ---------- | --------- | -------- | ---------- |
+| 445        | $0.78M    | $12.72M  | $13.50M    |
+| 447.5      | $2.00M    | $7.30M   | $9.30M     |
+| **450**    | $4.28M    | $3.77M   | **$8.05M** |
+| 452.5      | $8.05M    | $1.70M   | $9.75M     |
+| 455        | $13.78M   | $0.62M   | $14.40M    |
+
+Max pain here is **450**: put open interest is heavy below, call open interest heavy above, and 450 sits between them.
+
+---
+
+## Why Price Might Drift Toward It
+
+The usual explanation is **dealer hedging**, not anyone "steering" price:
+
+- If dealers are net **long** options around those strikes (clients sold them), they are **long gamma**: they sell rallies and buy dips, which can hold price near heavy strikes. See [Options Flow](/en/ict/options-flow-signals).
+- As expiry nears, gamma at the nearest strikes grows, so that effect is strongest in the last day or two.
+
+When dealers are **short** gamma instead, their hedging pushes price away from those strikes, and max pain has little pull.
+
+<Callout type="warning" title="Limits">
+  Max pain assumes every open contract is held by a buyer against a seller in the simplest way. In practice many
+  positions are spreads and hedges, open interest changes daily, and big news overrides everything. Studies of the
+  effect show it is weak and mostly limited to heavily traded single stocks and index ETFs in the final days.
+</Callout>
+
+---
+
+## How to Use It
+
+| Situation                                              | Use                                                   |
+| ------------------------------------------------------ | ----------------------------------------------------- |
+| Expiry is 1–3 days away, price is near max pain        | Expect ranging; avoid chasing breakouts               |
+| Max pain lines up with a chart level (OB, FVG, old high/low) | Give that level a little more weight              |
+| Price is far from max pain early in the week           | Ignore it; other forces dominate                      |
+| Big news before expiry                                 | Ignore it                                             |
+
+The original said max pain "aligns with ICT equilibrium = strong magnet". That happens sometimes, not as a rule.
+
+---
+
+## Where to Find It
+
+Max pain is published for US stocks and ETFs by many options-data sites, usually by expiry date. For FX and most futures there is no public full open-interest picture, so max pain isn't available in the same way. Crypto option venues publish open interest that some sites turn into max pain.
+
+---
+
+## Common Mistakes
+
+| Mistake                                  | Fix                                                     |
+| ---------------------------------------- | ------------------------------------------------------- |
+| Treating max pain as a price target      | It's a weak tendency in the last days only              |
+| Using a stale number                     | Open interest changes daily; recheck before expiry      |
+| Ignoring which expiry                    | Weekly and monthly expiries give different numbers      |
+| Using it for FX                          | The data isn't there                                    |
+
+---
+
+## Practice
+
+1. For 8 weekly SPY expiries, note max pain on Wednesday and the Friday close.
+2. Measure the distance each time and see whether it was closer on Friday than on Wednesday.
+3. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element         | Key point                                              |
+| --------------- | ------------------------------------------------------ |
+| **Definition**  | Settlement price where options pay holders least       |
+| **Calculation** | Sum call and put payouts at each strike; take the minimum |
+| **Mechanism**   | Long-gamma dealer hedging near expiry                  |
+| **Strength**    | Weak; strongest in the final day or two                |
+
+---
+
+## Related Topics
+
+- [Options Flow](/en/ict/options-flow-signals) — dealer hedging basics
+- [Gamma Exposure](/en/ict/gamma-exposure) — whether dealers are long or short gamma
+- [Options Expiry Pinning](/en/ict/options-expiry-pinning) — the pinning effect
+- [Put/Call Ratio](/en/ict/put-call-ratio) — sentiment from the same data
