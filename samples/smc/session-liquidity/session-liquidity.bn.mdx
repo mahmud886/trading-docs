@@ -1,0 +1,119 @@
+---
+title: "SMC তে Session Liquidity — সম্পূর্ণ গাইড"
+description: "সেশনের High আর Low কে Liquidity টার্গেট হিসেবে ব্যবহার করুন: Asian Range, London আর New York এর High ও Low, আগের দিন ও সপ্তাহের High ও Low, কীভাবে এক সেশন প্রায়ই আগেরটির Liquidity নেয়, আর দিনের Draw হিসেবে PDH বা PDL কীভাবে ব্যবহার করবেন — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
+level: intermediate
+order: 20
+lastUpdated: "2026-11-13"
+---
+
+## Session Liquidity কী?
+
+প্রতিটি সেশন একটি **High আর একটি Low** রেখে যায়। তাদের ঠিক ওপারে Stop আর Breakout Order জমে, তাই সেগুলো Liquidity হয়ে যায়: High এর উপরে Buy-Side, Low এর নিচে Sell-Side।
+
+পরের সেশন প্রায়ই সেই লেভেলের একটি বা দুটোই নেয়। দিনটাকে একটা **চেইন** হিসেবে পড়লে, যেখানে প্রতিটি সেশন আগেরটিকে টার্গেট করে, বোঝা যায় Price এরপর কোথায় যেতে পারে।
+
+<Callout type="info" title="স্পষ্ট করা: 'খোঁজে'">
+  মূল লেসনে বলা হয়েছিল প্রতিটি সেশন "আগের সেশনের রেখে যাওয়া Liquidity নিতে চায়"। এটা প্রবণতা, নিয়ম নয়: কিছু সেশন আগের
+  রেঞ্জের ভিতরেই থাকে। লেভেলগুলোকে টার্গেট আর রেফারেন্স হিসেবে ব্যবহার করুন, আর দিক নিশ্চিত করুক Structure।
+</Callout>
+
+---
+
+## লেভেলগুলো
+
+| লেভেল                    | সংক্ষেপ | ভূমিকা                            |
+| ----------------------- | ------ | -------------------------------- |
+| আগের দিনের High          | PDH    | দিনের Buy-Side টার্গেট             |
+| আগের দিনের Low           | PDL    | দিনের Sell-Side টার্গেট            |
+| আগের সপ্তাহের High        | PWH    | বড় Buy-Side টার্গেট               |
+| আগের সপ্তাহের Low         | PWL    | বড় Sell-Side টার্গেট              |
+| Asian সেশনের High        | ASH    | প্রায়ই London এর প্রথম টার্গেট      |
+| Asian সেশনের Low         | ASL    | প্রায়ই London এর প্রথম টার্গেট      |
+| London High / Low       | —      | New York এর টার্গেট                |
+
+---
+
+## Bullish দিনে চেইন
+
+![বাংলাদেশ সময়ে EUR/USD 1H: London আগে Asian Low পরে Asian High নেয়, NY 1.0980 এ London OB তে Buy করে, London High নিয়ে 1.1050 এর PDH এর দিকে যায়](/images/smc/session-liquidity/session-liquidity-chain-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/smc/session-liquidity-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
+</Callout>
+
+1. **Bias:** Bullish। Draw on Liquidity হলো **1.1050 এর PDH**।
+2. **Asian সেশন (সকাল ৬টা – দুপুর ১২টা BD):** **1.0992 থেকে 1.1012** এর রেঞ্জ।
+3. **London (দুপুর ১২টা – বিকেল ৪টা BD):** Price প্রথমে **Asian Low** নিয়ে 1.0968 পর্যন্ত যায়, একটি Bullish OB (1.0978 – 1.0985) রেখে। তারপর **Asian High** ভেদ করে Displace করে আর **1.1030** এ London High তৈরি করে।
+4. **New York (বিকেল ৫টা BD থেকে):** Price London OB তে ফেরে। **1.0980** এ Buy।
+5. এরপর NY **London High** নেয় আর PDH এর দিকে যায়।
+
+| লেভেল    | প্রাইস  | নোট                                  |
+| ------- | ------ | ----------------------------------- |
+| এন্ট্রি  | 1.0980 | London OB, দিনের Discount এ           |
+| Stop    | 1.0962 | 1.0968 London Low এর নিচে             |
+| টার্গেট  | 1.1050 | PDH                                 |
+| **R:R** | **১ : ৩.৯** | রিস্ক ১৮ পিপ, রিওয়ার্ড ৭০ পিপ     |
+
+<Callout type="info" title="সম্পূর্ণ করা: উদাহরণ">
+  মূল উদাহরণে (PDH 1.1050, এন্ট্রি 1.0980) কোনো Stop ছিল না। এখানে Stop রাখা হয়েছে Asian Range Sweep করার সময় London যে Low
+  তৈরি করেছে তার নিচে, কারণ সেটা ভাঙলে Bullish ধারণা ভুল প্রমাণ হয়।
+</Callout>
+
+---
+
+## ধাপে ধাপে ট্রেড
+
+1. **দিনের আগে:** PDH, PDL, PWH আর PWL মার্ক করুন। Higher Timeframe থেকে Bias ঠিক করুন।
+2. **Draw বাছুন:** Bullish হলে PDH (বা PWH), Bearish হলে PDL (বা PWL)।
+3. **Asian সেশনের পর:** ASH আর ASL মার্ক করুন।
+4. **London:** আপনার Bias এর *বিপরীতে* Asian লেভেলের Sweep, তারপর CHOCH এর জন্য দেখুন।
+5. London এ বা NY রিটেস্টে OB বা FVG তে **এন্ট্রি** নিন, Long এর জন্য Discount এ বা Short এর জন্য Premium এ।
+6. Draw কে **টার্গেট** করুন। পথে London High বা Low কে আংশিক টার্গেট হিসেবে ব্যবহার করুন।
+
+### দ্বিতীয় উদাহরণ (চার্ট ছাড়া) — একটি Bearish দিন
+
+Bias Bearish; GBP/USD এ PDL **1.2650**। Asian Range **1.2700 – 1.2720**। London প্রথমে Asian High নিয়ে **1.2728** পর্যন্ত যায়, তারপর নিচে ভাঙে আর **1.2688** এ London Low তৈরি করে। NY তে Price London এর Bearish FVG তে রিট্রেস করে। **1.2712** এ Sell, Stop **1.2732** London High এর উপরে, টার্গেট PDL **1.2650**: রিস্ক ২০ পিপ, রিওয়ার্ড ৬২ পিপ, **R:R ১ : ৩.১** (পরিকল্পিত)।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                         | সমাধান                                                 |
+| ------------------------------------------- | ----------------------------------------------------- |
+| প্রতিটি সেশন High/Low কে টার্গেট ধরা          | যেটার দিকে Bias নির্দেশ করে সেটা বাছুন                   |
+| Asian Range এর প্রথম Sweep কে Breakout ভেবে ট্রেড | এটা প্রায়ই মিথ্যা Move; CHOCH এর অপেক্ষা করুন     |
+| সাপ্তাহিক লেভেল উপেক্ষা                       | কাছের PWH/PWL দিনের Move থামিয়ে দিতে পারে              |
+| পরিকল্পনায় Stop নেই                          | যে Sweep Low/High ট্রেডটা তৈরি করেছে তার নিচে/উপরে      |
+| US শীতকালের সময় ভুলে যাওয়া                    | নভেম্বরের শুরু থেকে মার্চের মাঝ পর্যন্ত BD সময়ে এক ঘণ্টা যোগ করুন |
+
+---
+
+## অনুশীলন
+
+1. ২০ দিন PDH, PDL, ASH, ASL আর London High ও Low মার্ক করুন।
+2. প্রতিটি সেশন কোনগুলো কোন ক্রমে নিয়েছে লিখুন।
+3. দিনের আসল Move এর আগে London কতবার Asian Range এর এক দিক নিয়েছে গুনুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| সেশন        | সাধারণ টার্গেট              |
+| ----------- | ------------------------- |
+| London      | Asian High বা Low          |
+| New York    | London High বা Low         |
+| দিন          | PDH বা PDL                 |
+| সপ্তাহ        | PWH বা PWL                 |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Kill Zones](/bn/smc/kill-zones) — BD সময়ে কোন সেশন কখন সক্রিয়
+- [Internal & External Liquidity](/bn/smc/internal-external-liquidity) — রেঞ্জ আর Swing Liquidity
+- [Manipulation](/bn/smc/manipulation) — সেশনের Sweep
+- [Liquidity Pools](/bn/smc/liquidity-pools) — Stop কোথায় থাকে

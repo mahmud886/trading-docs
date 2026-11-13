@@ -1,0 +1,120 @@
+---
+title: "Session Liquidity in SMC — Complete Guide"
+description: "Use session highs and lows as liquidity targets: the Asian range, London and New York highs and lows, the previous day's and week's high and low, how one session often takes the last one's liquidity, and how to use the PDH or PDL as the day's draw, with a chart and an animated walkthrough."
+level: intermediate
+order: 20
+lastUpdated: "2026-11-13"
+---
+
+## What Is Session Liquidity?
+
+Every session leaves a **high and a low**. Stops and breakout orders collect just beyond them, so they become liquidity: buy-side above the high, sell-side below the low.
+
+The next session often runs one or both of those levels. Reading the day as a **chain**, where each session targets the one before, tells you where price is likely to go next.
+
+<Callout type="info" title="Clarified: 'seeks'">
+  The original said each session "seeks to take the liquidity left by the previous one". It's a tendency, not a rule:
+  some sessions stay inside the previous range. Use the levels as targets and reference points, and let structure
+  confirm the direction.
+</Callout>
+
+---
+
+## The Levels
+
+| Level                  | Short | Role                                  |
+| ---------------------- | ----- | ------------------------------------- |
+| Previous day's high    | PDH   | Buy-side target for the day           |
+| Previous day's low     | PDL   | Sell-side target for the day          |
+| Previous week's high   | PWH   | Bigger buy-side target                |
+| Previous week's low    | PWL   | Bigger sell-side target               |
+| Asian session high     | ASH   | Often London's first target           |
+| Asian session low      | ASL   | Often London's first target           |
+| London high / low      | —     | New York's targets                    |
+
+---
+
+## The Chain on a Bullish Day
+
+![EUR/USD 1H in Bangladesh time: London takes the Asian low then the Asian high, NY buys the London OB at 1.0980, takes the London high and draws toward the PDH at 1.1050](/images/smc/session-liquidity/session-liquidity-chain-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/smc/session-liquidity-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
+
+1. **Bias:** bullish. The draw on liquidity is the **PDH at 1.1050**.
+2. **Asian session (6 AM – 12 PM BD):** a range from **1.0992 to 1.1012**.
+3. **London (12 – 4 PM BD):** price first takes the **Asian low** to 1.0968, leaving a bullish OB (1.0978 – 1.0985). Then it displaces through the **Asian high** and makes the London high at **1.1030**.
+4. **New York (from 5 PM BD):** price returns to the London OB. Buy **1.0980**.
+5. NY then takes the **London high** and moves toward the PDH.
+
+| Level   | Price  | Note                                   |
+| ------- | ------ | -------------------------------------- |
+| Entry   | 1.0980 | London OB, in the day's discount       |
+| Stop    | 1.0962 | Below the 1.0968 London low            |
+| Target  | 1.1050 | PDH                                    |
+| **R:R** | **1 : 3.9** | Risk 18 pips, reward 70 pips      |
+
+<Callout type="info" title="Completed: the example">
+  The original example (PDH 1.1050, entry 1.0980) gave no stop. The stop here sits below the low that London made when
+  it swept the Asian range, since a break of it would mean the bullish read is wrong.
+</Callout>
+
+---
+
+## Trading It, Step by Step
+
+1. **Before the day:** mark the PDH, PDL, PWH and PWL. Decide the bias from the higher timeframe.
+2. **Pick the draw:** PDH (or PWH) if bullish, PDL (or PWL) if bearish.
+3. **After the Asian session:** mark the ASH and ASL.
+4. **London:** watch for a sweep of the Asian level *against* your bias, then a CHOCH.
+5. **Enter** at the OB or FVG, in discount for longs or premium for shorts, in London or on the NY retest.
+6. **Target** the draw. Use the London high or low as a partial target on the way.
+
+### Second example (no chart) — a bearish day
+
+Bias bearish; the PDL is **1.2650** on GBP/USD. The Asian range is **1.2700 – 1.2720**. London first takes the Asian high to **1.2728**, then breaks down and makes the London low at **1.2688**. In NY, price retraces into London's bearish FVG. Sell **1.2712**, stop **1.2732** above the London high, target the PDL **1.2650**: risk 20 pips, reward 62 pips, **R:R 1 : 3.1** (planned).
+
+---
+
+## Common Mistakes
+
+| Mistake                                     | Fix                                                   |
+| ------------------------------------------- | ----------------------------------------------------- |
+| Treating every session high/low as a target | Pick the one your bias points to                      |
+| Trading the first sweep of the Asian range as a breakout | It's often the false move; wait for the CHOCH |
+| Ignoring the weekly levels                  | A nearby PWH/PWL can stop the day's move              |
+| No stop in the plan                         | Below/above the sweep low/high that set up the trade  |
+| Forgetting US winter time                   | Add one hour to the BD times from early November to mid-March |
+
+---
+
+## Practice
+
+1. For 20 days, mark the PDH, PDL, ASH, ASL and the London high and low.
+2. Note which ones each session took, in order.
+3. Count how often London took one side of the Asian range before the day's real move.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Session     | Typical target            |
+| ----------- | ------------------------- |
+| London      | Asian high or low         |
+| New York    | London high or low        |
+| The day     | PDH or PDL                |
+| The week    | PWH or PWL                |
+
+---
+
+## Related Topics
+
+- [Kill Zones](/en/smc/kill-zones) — when each session is active, in BD time
+- [Internal & External Liquidity](/en/smc/internal-external-liquidity) — range and swing liquidity
+- [Manipulation](/en/smc/manipulation) — the session sweep
+- [Liquidity Pools](/en/smc/liquidity-pools) — where the stops sit
