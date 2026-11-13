@@ -1,0 +1,123 @@
+---
+title: "Breaker Blocks"
+description: "Learn breaker blocks: order blocks that fail after a liquidity sweep and flip to the opposite side. How bullish and bearish breakers form, the rules that make one valid, how a breaker differs from a mitigation block, and how to trade the retest, with a chart and an animated walkthrough."
+level: intermediate
+order: 7
+lastUpdated: "2026-11-13"
+---
+
+## What Is a Breaker Block?
+
+A **breaker block** is an [order block](/en/smc/order-blocks) that **failed**: price closed straight through it. The zone doesn't disappear. Traders who entered there are now trapped, and when price comes back to it, the zone often acts **from the other side**.
+
+| Original OB         | It fails when…                        | It becomes…            | Trade on the retest |
+| ------------------- | ------------------------------------- | ---------------------- | ------------------- |
+| **Bullish OB** (last down-close candle before a rally) | Price closes **below** it | **Bearish breaker** | Sell |
+| **Bearish OB** (last up-close candle before a drop) | Price closes **above** it | **Bullish breaker** | Buy |
+
+---
+
+## A Bearish Breaker, Step by Step
+
+![Bearish breaker: a bullish OB, a sweep of 1.0925, a close below the OB, then a retest from below and a sell at 1.0903](/images/smc/breaker-blocks/bearish-breaker-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/smc/breaker-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this example">
+  The candles are **synthetic**, built to show the concept. They are not real prices or a real trade. R:R is the
+  planned risk-to-reward.
+</Callout>
+
+1. **Bullish OB:** the last down-close candle before the rally, **1.0900 – 1.0906**.
+2. **Sweep:** the rally runs above the 1.0925 high to 1.0930, taking buy-side liquidity, then turns.
+3. **Failure:** a candle closes at 1.0898, **below the whole OB**. Buyers who used it are now underwater.
+4. **Breaker:** the zone is now a **bearish breaker**.
+5. **Retest:** price climbs back to 1.0905, into the breaker, and fails again. Sell **1.0903**.
+
+| Level   | Price  | Note                              |
+| ------- | ------ | --------------------------------- |
+| Entry   | 1.0903 | Inside the breaker                |
+| Stop    | 1.0914 | Above the OB candle's high        |
+| Target  | 1.0850 | Sell-side liquidity below         |
+| **R:R** | **1 : 4.8** | Risk 11 pips, reward 53 pips |
+
+A wider, safer stop above the 1.0930 sweep would give risk 29 and **1 : 1.8**. Which stop you use is a trade-off between hit rate and R:R.
+
+---
+
+## Rules for a Valid Breaker
+
+| Rule          | Requirement                                                    |
+| ------------- | -------------------------------------------------------------- |
+| **Origin**    | It was a real order block: the move from it broke structure    |
+| **Sweep**     | The move from it took liquidity (a higher high or lower low) before failing |
+| **Failure**   | A candle **closes** beyond the whole zone, ideally with displacement |
+| **Retest**    | Price returns to the zone from the other side                  |
+| **Context**   | The new direction agrees with the higher timeframe, or with a CHOCH |
+
+<Callout type="info" title="Added: the sweep rule">
+  The original rules didn't mention liquidity. The sweep is what separates a breaker from a
+  [mitigation block](/en/smc/mitigation-blocks): if the move from the OB **failed to make** a new high or low before
+  breaking, it's a mitigation block instead.
+</Callout>
+
+---
+
+## Breaker vs Order Block vs Mitigation Block
+
+| Feature          | Order block           | Breaker block                   | Mitigation block               |
+| ---------------- | --------------------- | ------------------------------- | ------------------------------ |
+| **Status**       | Unbroken              | Broken after a sweep            | Broken without a new extreme   |
+| **Trade**        | Original direction    | Opposite direction              | Opposite direction             |
+| **Trapped side** | —                     | Traders who bought/sold the OB  | Same                           |
+
+---
+
+## Trading the Breaker
+
+1. Find an OB whose move **swept liquidity** and then **failed** with a close through the zone.
+2. Mark the zone (the OB candle's body and wick on the near side).
+3. Wait for the retest. Look for rejection or a lower-timeframe CHOCH in the zone.
+4. **Stop** beyond the zone (tight) or beyond the sweep (wide).
+5. **Target** the next liquidity in the new direction.
+
+The [Unicorn model](/en/ict/unicorn-model) adds one more condition: a fair value gap overlapping the breaker. In this example the drop's FVG (1.0905 – 1.0909) touches the breaker at 1.0905.
+
+---
+
+## Common Mistakes
+
+| Mistake                                 | Fix                                                    |
+| --------------------------------------- | ------------------------------------------------------ |
+| Calling any broken zone a breaker       | It must have been a real OB, with a sweep              |
+| Wick through the OB counted as failure  | Only a close beyond the zone                           |
+| Entering on the break                   | Wait for the retest                                    |
+| Trading against the higher timeframe    | Breakers work best in the HTF direction                |
+
+---
+
+## Practice
+
+1. Find 10 failed order blocks on 1H charts.
+2. Sort them: swept liquidity first (breaker) or not (mitigation).
+3. Record how each retest reacted. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element      | Rule                                            |
+| ------------ | ----------------------------------------------- |
+| **Breaker**  | An OB that failed after its move swept liquidity |
+| **Flip**     | Bullish OB → bearish breaker, and vice versa     |
+| **Entry**    | On the retest from the other side               |
+| **Stop**     | Beyond the zone or beyond the sweep             |
+
+---
+
+## Related Topics
+
+- [Order Blocks](/en/smc/order-blocks) — what becomes a breaker
+- [Mitigation Blocks](/en/smc/mitigation-blocks) — the no-sweep version
+- [CHOCH](/en/smc/choch) — the break that creates breakers
+- [Unicorn Model](/en/ict/unicorn-model) — breaker plus FVG
