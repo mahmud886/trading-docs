@@ -1,312 +1,296 @@
 ---
 title: "Order Blocks — Complete Guide"
-description: "Master institutional Order Blocks in Smart Money Concepts. Learn to identify bullish and bearish OBs, institutional entry zones, validation rules, and advanced trading strategies with real examples."
+description: "Learn to identify, validate and trade institutional Order Blocks in Smart Money Concepts: bullish and bearish OBs, a validation checklist, three entry models, invalidation rules and worked chart examples."
 level: intermediate
 order: 5
-lastUpdated: "2026-05-11"
+lastUpdated: "2026-10-23"
 ---
 
-## What is an Order Block?
+## What Is an Order Block?
 
-An Order Block (OB) is the **last opposing candle** before a significant price move (displacement). It represents the zone where **institutional traders placed their orders**, creating a supply or demand area that price is likely to revisit.
+An **Order Block (OB)** is the **last opposing candle before a displacement**: a strong, impulsive move that breaks market structure.
 
-In traditional trading, these are similar to supply and demand zones — but Order Blocks are more precise because they identify the **exact candle** where institutional activity occurred.
+- A **bullish OB** is the last **bearish** candle before a bullish displacement.
+- A **bearish OB** is the last **bullish** candle before a bearish displacement.
 
-<Callout type="info" title="Why Order Blocks Work">
-  When banks and institutions need to fill large positions, they can't do it all at once without moving the market
-  against themselves. They place initial orders (creating the OB), move price away, then return to the OB zone to fill
-  the remainder of their position.
+SMC traders read this candle as the footprint of large orders. Price often comes back to it before continuing in the direction of the displacement, which makes the zone a potential entry area.
+
+<Callout type="info" title="Why the zone can matter">
+  Large participants cannot fill a full position at one price without moving the market against themselves. The idea
+  behind an OB is that part of the position is filled before the displacement, and price later returns to the same area
+  where the rest can be filled. Treat this as a working model that explains the pattern, not as a guarantee that price
+  will react.
 </Callout>
+
+### Key terms
+
+| Term                   | Meaning                                                                       |
+| ---------------------- | ----------------------------------------------------------------------------- |
+| **Displacement**       | A strong, one-sided move, usually one or more large-bodied candles            |
+| **Structure break**    | A close beyond a swing point: **BOS** (with the trend) or **CHOCH** (against) |
+| **Mean threshold**     | The 50% level of the OB candle's body                                         |
+| **Mitigated OB**       | An OB that price has already returned to                                      |
+| **Premium / Discount** | Above / below the 50% level (equilibrium) of the current dealing range        |
+
+---
 
 ## Bullish Order Block
 
-A **Bullish Order Block** is the last **bearish (red/down) candle** before a strong bullish move:
+![Bullish Order Block — EUR/USD 15m retest entry after displacement](/images/smc/order-blocks/bullish-order-block-eurusd-dark.png)
 
-```
-                    ↑ Strong bullish move
-                    │
-                    │
-    ░░░░░░░░░░░░░  │  ← This red candle = Bullish OB
-                    │
-         Previous candles
-```
+**How to identify it**
 
-**How to identify:**
+1. Find a strong **bullish displacement** that closes above a recent swing high (a CHOCH or BOS).
+2. Go back to the **last bearish candle** before that displacement.
+3. Mark its range. Use **high to low** for the standard OB, or **open to close** (the body) for a refined OB.
+4. Confirm that the zone sits in **discount**, below the 50% level of the new swing.
 
-1. Find a strong **upward displacement** (large bullish candle or series of bullish candles)
-2. Look at the **last bearish candle** before that displacement
-3. Mark the **entire range** of that candle (open to close, or high to low for refined OB)
-4. This zone is your Bullish Order Block
+**How to trade it**
 
-**Trading the Bullish OB:**
-
-- Wait for price to **retrace back** to the OB zone
-- Look for bullish confirmation (engulfing candle, pin bar, or LTF BOS)
-- Enter long with stop loss below the OB
-- Target the next swing high or liquidity level
-
-### Real Example — EUR/USD Bullish OB
-
-> During London session at 1:30 PM BD, EUR/USD has been dropping. A final red candle forms at 1.0855-1.0862 (the OB). Then a massive green candle explodes to 1.0910, breaking structure. Two hours later, price pulls back to 1.0860 (inside the OB). A bullish engulfing forms on the 5min chart. Entry: 1.0861, Stop: 1.0850, Target: 1.0920. Result: 1:5.4 R:R.
+- Wait for price to **retrace into the zone**. Do not chase the displacement.
+- Look for a bullish reaction: a lower-timeframe (LTF) BOS, an engulfing candle or a rejection wick.
+- Place the stop loss **below the OB low**, not inside the zone.
+- Target the next **buy-side liquidity**, such as a prior swing high or equal highs.
 
 ---
 
 ## Bearish Order Block
 
-A **Bearish Order Block** is the last **bullish (green/up) candle** before a strong bearish move:
+![Bearish Order Block — NAS100 15m premium retest](/images/smc/order-blocks/bearish-order-block-nas100-dark.png)
 
-**How to identify:**
+**How to identify it**
 
-1. Find a strong **downward displacement**
-2. Look at the **last bullish candle** before that displacement
-3. Mark the entire range of that candle
-4. This is your Bearish Order Block
+1. Find a strong **bearish displacement** that closes below a recent swing low.
+2. Go back to the **last bullish candle** before that displacement.
+3. Mark its range, high to low or body only.
+4. Confirm that the zone sits in **premium**, above the 50% level of the new swing.
 
-**Trading the Bearish OB:**
+**How to trade it**
 
-- Wait for price to **retrace up** to the OB zone
-- Look for bearish confirmation
-- Enter short with stop loss above the OB
-- Target the next swing low or liquidity level
+- Wait for price to **retrace up** into the zone.
+- Look for a bearish reaction.
+- Place the stop loss **above the OB high**.
+- Target the next **sell-side liquidity**, such as a prior swing low or equal lows.
 
 ---
 
-## Order Block Validation Rules
+## Validation Checklist
 
-Not all Order Blocks are valid. Use these filters:
+Score every OB before you trade it. The more boxes it ticks, the stronger the zone.
 
-### ✅ Valid Order Block:
+| #   | Check                                                                                     | Why it matters                               |
+| --- | ----------------------------------------------------------------------------------------- | -------------------------------------------- |
+| 1   | **Displacement** after the candle; body at least **2× the average candle**                | No displacement means no proof of intent     |
+| 2   | Displacement **closes** beyond structure (**BOS or CHOCH**); a wick is not enough         | Confirms a real shift in order flow          |
+| 3   | Zone is in **discount** (bullish) or **premium** (bearish)                                | You buy low and sell high within the range   |
+| 4   | **Fresh**: price has not returned to it yet                                               | Orders at a mitigated OB may already be used |
+| 5   | Aligned with the **higher-timeframe bias**                                                | Counter-trend OBs fail more often            |
+| 6   | Formed during the **London or New York** session                                          | More participation than the Asian session    |
+| 7   | Bonus: an **FVG** formed by the displacement, or a **liquidity sweep** just before the OB | Extra confluence                             |
 
-- Created before a **Break of Structure (BOS)** or **CHOCH**
-- Has a **Fair Value Gap (FVG)** associated with it
-- Is in the **premium zone** (for bearish OB) or **discount zone** (for bullish OB)
-- Has **not been previously tested** (fresh OB)
-- Formed during **London or NY Kill Zone**
-
-### ❌ Invalid Order Block:
-
-- No displacement after the candle
-- Already been tested/mitigated
-- Against the higher timeframe trend
-- Formed during low-volume Asian session
-- Too far from current price (stale)
-
-<Callout type="warning" title="The #1 OB Mistake">
-  Many beginners mark every swing point as an Order Block. A TRUE Order Block must have **displacement** (a strong
-  impulsive move) immediately after it. No displacement = no institutional interest = not a real OB.
+<Callout type="warning" title="The #1 OB mistake">
+  Do not mark every swing as an Order Block. Without displacement and a structure break, the candle is just a candle.
 </Callout>
 
 ---
 
 ## Types of Order Blocks
 
-### 1. Standard Order Block
-
-The basic last-opposing-candle before displacement. Most common type.
-
-### 2. Breaker Block
-
-An Order Block that has been **violated** (price passed through it). It then "flips" from support to resistance or vice versa. See [Breaker Blocks](/en/smc/breaker-blocks).
-
-### 3. Mitigation Block
-
-When price returns to an OB that was previously broken, it becomes a Mitigation Block. See [Mitigation Blocks](/en/smc/mitigation-blocks).
-
-### 4. Refined Order Block
-
-Instead of using the full candle range, you use only the **candle body** (open to close) for a more precise entry zone with tighter stop losses.
-
-### 5. Propulsion Block
-
-An OB that occurs at a key structural level (like a previous BOS level), giving it extra confluence.
+| Type                 | Description                                                                           | See also                                       |
+| -------------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| **Standard OB**      | Last opposing candle before displacement, full range                                  | —                                              |
+| **Refined OB**       | Same candle, body only. Tighter zone and stop, but more fills are missed              | —                                              |
+| **Breaker Block**    | An OB that failed: price closed through it, and it now acts in the opposite direction | [Breaker Blocks](/en/smc/breaker-blocks)       |
+| **Mitigation Block** | A failed swing (no new extreme) that later becomes a reaction zone                    | [Mitigation Blocks](/en/smc/mitigation-blocks) |
+| **Propulsion Block** | An OB that forms inside an earlier OB or at a key level, adding confluence            | —                                              |
 
 ---
 
-## Order Block Entry Models
+## Three Entry Models
 
-### Model 1: Aggressive — Limit Order at OB
+### Model 1 — Aggressive: limit order at the OB
 
-1. Identify a valid OB after BOS/CHOCH
-2. Place a limit order at the **50% level** of the OB (midpoint of the candle body)
-3. Stop loss below the OB low (bullish) or above OB high (bearish)
-4. Target: Next liquidity level (minimum 1:3 R:R)
+1. After a valid OB forms, place a **limit order at the mean threshold** (50% of the body) or at the proximal edge.
+2. Stop loss beyond the OB's distal edge.
+3. Target the next liquidity level.
 
-**Risk:** Might not get filled; OB might not hold
-**Reward:** Best possible entry price
+**Trade-off:** you get the best price and need no screen time. But there is no confirmation, so you take every failure.
 
-### Model 2: Conservative — Confirmation at OB
+### Model 2 — Conservative: confirmation inside the OB
 
-1. Wait for price to enter the OB zone
-2. Drop to a lower timeframe (5min or 1min)
-3. Wait for a **BOS on the lower timeframe** in your trade direction
-4. Enter after the LTF BOS with stop below the OB
-5. Target: HTF swing high/low
+1. Wait for price to **enter** the zone.
+2. Drop to a lower timeframe (5m or 1m).
+3. Enter after a **LTF BOS** or a clear reversal candle in your direction.
+4. Keep the stop beyond the OB.
 
-**Risk:** Slightly worse entry price
-**Reward:** Higher confirmation, better win rate
+**Trade-off:** fewer failed trades. The entry is worse, some moves leave without you, and the R:R is lower.
 
-### Model 3: OB + FVG Confluence
+### Model 3 — Confluence: OB + FVG
 
-1. Find an OB that has an overlapping FVG
-2. The zone where both overlap is your **premium entry zone**
-3. Use limit order at the 50% of the FVG within the OB
-4. This is the highest-probability OB entry
+1. Find an OB whose displacement left a **Fair Value Gap**.
+2. Use the overlap, or the FVG's 50% level, as the entry area.
+3. Stop beyond the OB.
+
+**Trade-off:** fewer setups, but each one has more reasons to hold.
 
 ---
 
-## Multi-Timeframe OB Analysis
+## Invalidation — When the OB Is Wrong
 
-### High Timeframe OBs (Daily, 4H)
+Decide this **before** you enter:
 
-- Define **major supply and demand zones**
-- Price reacts with 50-200+ pip moves
-- Can hold for days or weeks
-- Use for directional bias
+- **Bullish OB:** a candle **closes below the OB low** on your execution timeframe.
+- **Bearish OB:** a candle **closes above the OB high**.
+- Price reaches the zone but **no confirmation forms** (Model 2). No trade is a valid outcome.
+- The higher-timeframe bias flips before price returns.
 
-### Low Timeframe OBs (15min, 5min, 1min)
-
-- Used for **precision entries** within HTF zones
-- Tighter stops, better R:R
-- Must align with HTF direction
-- Best for intraday execution
-
-### Process
-
-1. **Daily**: Mark the last valid OB in your trade direction
-2. **4H**: Find OBs within the Daily OB zone
-3. **15min/5min**: Look for refined OBs for entry
-4. Enter on LTF OB reaction during Kill Zone
+A failed OB often becomes a **Breaker Block** in the opposite direction, so the failure itself is useful information.
 
 ---
 
-## OB with Other SMC Concepts
+## Multi-Timeframe Process
 
-### OB + Liquidity Sweep
+| Timeframe  | Job                                                |
+| ---------- | -------------------------------------------------- |
+| Daily / 4H | Bias and the major OBs that define where you trade |
+| 1H / 15m   | The OB that sits inside the higher-timeframe zone  |
+| 5m / 1m    | Confirmation and a precise entry inside the 15m OB |
 
-The most powerful setup:
+Work **top-down**. Only trade a lower-timeframe OB that sits inside a higher-timeframe zone pointing the same way.
 
-1. Price sweeps a key high/low (liquidity grab)
-2. This creates an OB at the extreme
-3. Price returns to this OB for re-entry
-4. The liquidity sweep adds massive confirmation
+---
 
-### OB + FVG
+## Worked Examples
 
-When an OB overlaps with an FVG, you get **double confluence**. These zones have the highest probability.
+<Callout type="info" title="About these examples">
+  The charts use **synthetic candles** built around the levels below. They show how the method works and are not records
+  of real trades. R:R values are the planned risk-to-reward, not results.
+</Callout>
 
-### OB + Premium/Discount
+### Example 1 — EUR/USD, bullish OB (15m, London)
 
-- Trade bullish OBs in **discount** (below equilibrium)
-- Trade bearish OBs in **premium** (above equilibrium)
+**Observations**
+
+- The sell-off makes a last lower high at **1.0896**.
+- The last bearish candle before the rally spans **1.0855 – 1.0862**. This is the OB.
+- The displacement candle has a **45-pip body** against a 5.6-pip average. It closes above 1.0896, which is a CHOCH, and the move peaks at 1.0910.
+- Two hours later price returns to **1.0860**, inside the OB, and a 5m bullish engulfing forms.
+
+**Trade plan**
+
+| Level  | Price   | Note                                  |
+| ------ | ------- | ------------------------------------- |
+| Entry  | 1.0861  | After the 5m confirmation             |
+| Stop   | 1.0850  | 5 pips below the OB                   |
+| Target | 1.0920  | Prior swing high (buy-side liquidity) |
+| R:R    | 1 : 5.4 | Risk 11 pips, reward 59 pips          |
+
+**Invalidation:** a 15m close below 1.0850.
+
+### Example 2 — NAS100, bearish OB (15m, New York)
+
+**Observations**
+
+- After the New York open, price rallies into a last bullish candle at **18,380 – 18,420**. This is the OB, and it sits in premium.
+- A 90-point bearish displacement follows. The next candle closes below the 18,288 higher low, which is a CHOCH, and prints 18,250.
+- Price retraces to **18,400** and a 15m bearish engulfing forms.
+
+**Trade plan**
+
+| Level  | Price   | Note                                                 |
+| ------ | ------- | ---------------------------------------------------- |
+| Entry  | 18,395  | Sell limit after the engulfing, filled on the retest |
+| Stop   | 18,430  | 10 points above the OB                               |
+| Target | 18,280  | Placed just ahead of the 18,250 low                  |
+| R:R    | 1 : 3.3 | Risk 35 points, reward 115 points                    |
+
+**Invalidation:** a 15m close above 18,430.
+
+### Example 3 — Gold (XAU/USD), bullish OB
+
+**Setup:** gold drops to $2,315 in London. The last bearish candle at **$2,318 – $2,322** is followed by a displacement to $2,350 that breaks structure. Price later returns to $2,320, the middle of the OB, and a bullish pin bar forms on the 5m chart.
+
+| Level  | Price   | Note                |
+| ------ | ------- | ------------------- |
+| Entry  | $2,320  | OB mean threshold   |
+| Stop   | $2,312  | Below the OB        |
+| Target | $2,355  | Next liquidity      |
+| R:R    | 1 : 4.4 | Risk $8, reward $35 |
 
 ---
 
 ## Common Mistakes
 
-### ❌ Marking OBs Without Displacement
-
-If there's no strong move after the candle, it's NOT an Order Block.
-
-### ❌ Trading Tested OBs
-
-An OB that has already been touched is **mitigated**. Fresh OBs have the highest probability.
-
-### ❌ Ignoring HTF Direction
-
-A bullish OB in a bearish HTF trend is likely to fail.
-
-### ❌ Stop Loss Inside the OB
-
-Your stop must be **beyond the entire OB zone**. Stops inside get hunted.
-
-### ❌ Not Refining the OB
-
-Using the full wick-to-wick range gives loose entries. Refine to the **candle body** for better R:R.
+| Mistake                               | Fix                                                             |
+| ------------------------------------- | --------------------------------------------------------------- |
+| Marking OBs without displacement      | Require a body ≥ 2× average and a structure close               |
+| Trading an OB that was already tested | Trade the first return only                                     |
+| Ignoring the higher-timeframe bias    | Only take OBs in the direction of the HTF trend                 |
+| Stop loss inside the zone             | Stop beyond the full OB, plus a small buffer                    |
+| Chasing the displacement              | Wait for the retrace; a missed trade costs nothing              |
+| Judging a setup by its R:R alone      | Wide targets are reached less often; check the conditions first |
 
 ---
 
 ## Risk Management
 
-| Component            | Guideline                        |
-| -------------------- | -------------------------------- |
-| **Risk per trade**   | 1-2% of account                  |
-| **Stop loss**        | 5-15 pips beyond the OB boundary |
-| **Take profit 1**    | Next structural level (1:2 R:R)  |
-| **Take profit 2**    | Next liquidity target (1:3+ R:R) |
-| **Max daily trades** | 2-3 quality OB setups            |
+| Component            | Guideline                                        |
+| -------------------- | ------------------------------------------------ |
+| **Risk per trade**   | 1–2% of the account (start lower while learning) |
+| **Position size**    | Account risk ÷ stop distance                     |
+| **Stop loss**        | 5–15 pips (or equivalent) beyond the OB boundary |
+| **Take profit 1**    | Next structural level (around 1 : 2)             |
+| **Take profit 2**    | Next liquidity pool (1 : 3 or more)              |
+| **Max daily trades** | 2–3 quality OB setups                            |
+
+<Callout type="tip" title="Size from the stop, not from the target">
+  For example, with a $1,000 account, 1% risk ($10) and an 11-pip stop, the position should lose $10 if the stop is hit.
+  Use the [Position Size Calculator](/en/tools/position-calculator).
+</Callout>
 
 ---
 
-## Real Trading Examples
+## Practice
 
-### Example 1: Gold (XAU/USD) — Bullish OB
-
-> **Setup:** Gold drops to $2,315 during London, creating a bearish candle (OB) at $2,318-$2,322 before exploding to $2,350 with a BOS.
-> **Entry:** Price returns to $2,320 (middle of OB) at 7:30 PM BD. Bullish pin bar on 5min.
-> **Trade:** Long $2,320, stop $2,312, target $2,355.
-> **Result:** Gold hits $2,358. Risk: $8, Reward: $35 = **1:4.4 R:R**.
-
-### Example 2: NAS100 — Bearish OB
-
-> **Setup:** NAS100 rallies during NY open, creating a bullish candle (OB) at 18,380-18,420 before crashing to 18,250.
-> **Entry:** Price retraces to 18,400 (OB zone). Bearish engulfing on 15min.
-> **Trade:** Short 18,395, stop 18,430, target 18,280.
-> **Result:** NAS100 drops to 18,260. Risk: 35 pts, Reward: 115 pts = **1:3.3 R:R**.
-
----
-
-## Pro Tips
-
-<Callout type="tip" title="Pro Tip 1: The Displacement Rule">
-  Only mark an OB if the displacement candle after it has a body **at least 2x the average candle size**. Weak
-  displacement = weak OB.
-</Callout>
-
-<Callout type="tip" title="Pro Tip 2: Fresh OBs Only">
-  The first test of an OB has the highest probability (60-70%). After the first touch, the OB is considered mitigated
-  and should not be traded again.
-</Callout>
-
-<Callout type="tip" title="Pro Tip 3: Refine for Better R:R">
-  Instead of using the full wick range, refine to just the candle body. This gives you a tighter entry zone and better
-  risk-to-reward ratio.
-</Callout>
+1. Open a 15m chart and mark the last **five** displacements. For each one, find the OB and score it with the checklist.
+2. For each OB, write down the invalidation level **before** looking at what price did next.
+3. Log the result of each first return in your [trading journal](/en/tools/journal-template). After 50 or more examples you will have your own statistics, which are worth more than any number in a guide.
 
 ---
 
 ## FAQ
 
-### What's the difference between an Order Block and a supply/demand zone?
+### What is the difference between an Order Block and a supply/demand zone?
 
-Order Blocks are more **precise** — they identify a single candle rather than a wide zone. They also require displacement as validation, making them more selective.
+An OB is a specific candle that must be followed by displacement and a structure break. A supply/demand zone is usually a wider base area. Every valid OB lies inside a supply or demand zone, but not every zone contains a valid OB.
 
-### How long does an OB remain valid?
+### Should I use the full candle or only the body?
 
-An OB is most powerful within **1-5 days** of formation. After that, if price hasn't returned, the institutional interest may have shifted.
+Use the full range when you want more fills and a safer stop. Use the body (refined OB) when you want a tighter stop and a better R:R, and can accept missing some trades.
 
-### Can I use OBs on any instrument?
+### How long does an OB stay valid?
 
-Yes — OBs work on forex, indices, crypto, gold, and stocks. Any market with institutional participation will form valid OBs.
+Until price mitigates it or closes through it. Lower-timeframe OBs tend to matter for hours to a few days. Higher-timeframe OBs can matter for weeks.
 
 ---
 
 ## Summary
 
-| Concept        | Key Point                                         |
-| -------------- | ------------------------------------------------- |
-| **Bullish OB** | Last bearish candle before bullish displacement   |
-| **Bearish OB** | Last bullish candle before bearish displacement   |
-| **Validation** | Must have displacement + BOS/CHOCH after it       |
-| **Best entry** | 50% of OB body with LTF confirmation              |
-| **Stop loss**  | Beyond the OB boundary                            |
-| **Best with**  | FVG confluence, liquidity sweep, Kill Zone timing |
+| Concept        | Key point                                                              |
+| -------------- | ---------------------------------------------------------------------- |
+| **Bullish OB** | Last bearish candle before bullish displacement                        |
+| **Bearish OB** | Last bullish candle before bearish displacement                        |
+| **Valid when** | Displacement + structure close + correct premium/discount zone + fresh |
+| **Entry**      | Limit at the mean threshold, or LTF confirmation inside the zone       |
+| **Stop**       | Beyond the whole OB                                                    |
+| **Invalid**    | Candle close through the OB                                            |
 
 ---
 
 ## Related Topics
 
-- [Fair Value Gap (FVG)](/en/smc/fair-value-gap) — Often overlaps with Order Blocks
-- [Break of Structure (BOS)](/en/smc/bos) — Validates Order Blocks
-- [Breaker Blocks](/en/smc/breaker-blocks) — Violated Order Blocks
-- [Liquidity Pools](/en/smc/liquidity-pools) — Sweeps that create OB entries
-- [Premium & Discount](/en/smc/premium-discount) — Optimal OB trading zones
+- [Fair Value Gap (FVG)](/en/smc/fair-value-gap) — often created by the same displacement
+- [Break of Structure (BOS)](/en/smc/bos) and [CHOCH](/en/smc/choch) — validate an OB
+- [Breaker Blocks](/en/smc/breaker-blocks) — what a failed OB becomes
+- [Liquidity Pools](/en/smc/liquidity-pools) — where OB trades target
+- [Premium & Discount](/en/smc/premium-discount) — where valid OBs sit

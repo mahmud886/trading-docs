@@ -1,199 +1,350 @@
 ---
-title: "ICT Liquidity Concepts"
-description: "Understand how liquidity drives every market move. Learn Buy-Side Liquidity (BSL), Sell-Side Liquidity (SSL), liquidity pools, engineered liquidity, and how institutions use liquidity for entries and exits."
+title: "ICT Liquidity — Complete Guide"
+description: "Understand how liquidity drives price in ICT: buy-side and sell-side liquidity, where stops cluster, external vs internal range liquidity, the draw on liquidity, the liquidity cycle, sweep vs run, and a full worked trade with charts and an animated example."
 level: beginner
 order: 2
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-11-13"
 ---
 
-## What is Liquidity in ICT?
+## Why Liquidity Comes First
 
-In ICT methodology, **liquidity** refers to resting orders in the market — primarily **stop losses** and **pending orders** that sit above swing highs and below swing lows. The market-making algorithm's PRIMARY objective is to deliver price to these liquidity pools.
+Almost every other ICT concept describes something that happens **around liquidity**:
 
-<Callout type="info" title="ICT Core Truth">
-  "Price is always seeking liquidity. Every move, every manipulation, every displacement — it's all about liquidity." —
-  ICT
+- Fair Value Gaps form when price leaves liquidity behind.
+- Order Blocks mark where price left from to reach liquidity.
+- Market Structure Shifts confirm that a pool of liquidity has been taken.
+- Kill zones are the times when it usually gets taken.
+
+Once you understand liquidity, the rest of the method starts to fit together. That is why this lesson comes before all the others.
+
+<Callout type="info" title="The one-sentence version">
+  Liquidity is where orders are resting. Price tends to travel from one pool of resting orders to the next, because that
+  is where large positions can be filled.
 </Callout>
 
 ---
 
-## Types of Liquidity
+## What Is Liquidity?
 
-### Buy-Side Liquidity (BSL)
+In ICT, **liquidity** means **resting orders at predictable prices**. These are orders already sitting in the market, waiting to be triggered:
 
-Resting orders **above** swing highs:
+- **Stop losses.** A short seller's stop is a **buy** order above a high. A buyer's stop is a **sell** order below a low.
+- **Pending entries.** Breakout traders place buy stops above highs and sell stops below lows.
 
-- Stop losses from short sellers
-- Buy stop orders from breakout traders
-- Forms above equal highs, relative highs, and old highs
-- When swept, provides sell-side counterparty for institutions entering shorts
+### Why price is drawn to it
 
-### Sell-Side Liquidity (SSL)
+A large trader cannot buy or sell a big position at one price unless someone takes the other side of the trade.
 
-Resting orders **below** swing lows:
+- To **sell** 500 lots, they need 500 lots of **buy** orders.
+- Buy stops resting above a swing high are exactly that. When price trades into them, they become market buy orders, and a large seller can fill against them.
+- The same works in reverse below lows for a large buyer.
 
-- Stop losses from long traders
-- Sell stop orders from breakdown traders
-- Forms below equal lows, relative lows, and old lows
-- When swept, provides buy-side counterparty for institutions entering longs
+This is the logic behind ICT's idea that price "seeks" liquidity. Treat it as a working model that explains _where_ moves tend to go, not as proof that every move is planned.
 
----
+### Buy-side and sell-side liquidity
 
-## Liquidity Pools
+|                              | **Buy-side liquidity (BSL)**                                | **Sell-side liquidity (SSL)**                              |
+| ---------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------- |
+| **Where**                    | **Above** highs                                             | **Below** lows                                             |
+| **What rests there**         | Shorts' stop losses + breakout buy stops                    | Longs' stop losses + breakdown sell stops                  |
+| **Triggered, they become**   | Market **buy** orders                                       | Market **sell** orders                                     |
+| **Who can use them**         | Large **sellers** (to enter shorts or take profit on longs) | Large **buyers** (to enter longs or take profit on shorts) |
+| **Taking it often precedes** | A move **down**, if the sweep fails to hold                 | A move **up**, if the sweep fails to hold                  |
 
-### Types of Liquidity Pools
-
-**1. Relative Equal Highs/Lows**
-
-- Multiple swing points at similar price levels
-- Creates obvious "support/resistance" that retail traders use for stops
-- Most targeted by the algorithm
-
-**2. Session Highs/Lows**
-
-- Asian session high/low
-- London session high/low
-- Previous day high/low (PDH/PDL)
-- Previous week high/low (PWH/PWL)
-
-**3. Old Highs/Lows**
-
-- Swing highs/lows from days or weeks ago
-- Larger liquidity pools = bigger institutional interest
-- Weekly/Monthly highs and lows are major targets
-
-**4. Trendline Liquidity**
-
-- Stop losses placed along trendlines
-- When trendline "breaks," it's sweeping this liquidity
-- Classic retail trap setup
+<Callout type="tip" title="Memory hook">
+  The side is named after the **orders**, not the direction of the trade you take. BSL is a pool of *buy* orders, so it
+  is a place to look for *sells*. SSL is a pool of *sell* orders, so it is a place to look for *buys*.
+</Callout>
 
 ---
 
-## How Institutions Use Liquidity
+## Key Terms
 
-### The Liquidity Cycle
-
-1. **Identify** — Algorithm locates the nearest liquidity pool
-2. **Engineer** — Price consolidates to build more resting orders
-3. **Sweep** — Quick move to trigger stops and pending orders
-4. **Absorb** — Institution fills their position against these triggered orders
-5. **Displace** — True directional move begins
-
-### Real Example: EUR/USD
-
-- Price forms 3 equal lows at 1.0850 (SSL builds up)
-- Retail traders place buy stops above and sell stops below
-- Price dips to 1.0845 — sweeps SSL
-- Institutions absorb sell orders to build long positions
-- Price displaces upward to 1.0950 targeting BSL
+| Term                        | Meaning                                                                                            |
+| --------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Liquidity pool**          | A cluster of resting orders at one level                                                           |
+| **EQH / EQL**               | Relative equal highs / lows: two or more swing points at almost the same price                     |
+| **PDH / PDL, PWH / PWL**    | Previous day's and previous week's high / low                                                      |
+| **Sweep (raid)**            | Price trades beyond a pool, triggers it, then closes back inside                                   |
+| **Run**                     | Price closes beyond a pool and keeps going                                                         |
+| **Draw on liquidity (DOL)** | The pool price is most likely to reach next                                                        |
+| **ERL / IRL**               | External range liquidity (range highs and lows) / internal range liquidity (FVGs inside the range) |
+| **Inducement**              | A small, obvious pool that lures early entries before the real level                               |
 
 ---
 
-## Liquidity Sweep vs. Liquidity Grab
+## Where Liquidity Rests
 
-| Aspect           | Liquidity Sweep                 | Liquidity Grab                 |
-| ---------------- | ------------------------------- | ------------------------------ |
-| **Speed**        | Quick wick, fast rejection      | May hold briefly beyond level  |
-| **Candle**       | Long wick, small body           | Can be full body then reversal |
-| **Timeframe**    | Visible on LTF                  | Visible on all timeframes      |
-| **Confirmation** | Immediate displacement opposite | MSS/CHOCH after the grab       |
-| **Reliability**  | Very high when aligned with HTF | High but needs confirmation    |
+![Liquidity map — equal highs above (BSL), equal lows below (SSL), Asian range in between](/images/ict/liquidity/liquidity-map-eurusd-dark.png)
 
----
+Stops gather wherever a lot of traders see the same "obvious" level. The more visible the level, the more orders collect behind it.
 
-## Engineered Liquidity
+| Level                                    | Why orders cluster there                                         | Typical use                                  |
+| ---------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------- |
+| **Relative equal highs / lows**          | Looks like strong support/resistance, so stops stack just beyond | Intraday and swing targets                   |
+| **Swing highs / lows**                   | The natural place for a stop on any trade against the swing      | All timeframes                               |
+| **Session highs / lows** (Asian, London) | Range traders and breakout traders both use them                 | Intraday: London and NY take the Asian range |
+| **PDH / PDL**                            | The most-watched daily reference levels                          | Day-trade targets                            |
+| **PWH / PWL, monthly highs / lows**      | Larger, older pools with more orders                             | Swing targets                                |
+| **Trendline touches**                    | Each touch invites a stop just beyond the line                   | Classic retail trap                          |
 
-Sometimes the market **creates** liquidity before sweeping it:
+### Clean vs jagged equal highs
 
-### How It's Engineered
+- **Clean** equal highs or lows (wicks within a pip or two, touched two or three times) look obvious. That makes them attractive liquidity.
+- **Jagged** levels (wicks spread over a wide area) are less obvious, so fewer stops sit at one price.
 
-1. Price creates a tight range (consolidation)
-2. Retail traders place stops above and below the range
-3. Equal highs/lows form, attracting more orders
-4. The algorithm waits until sufficient liquidity builds
-5. Then sweeps one side → reverses to sweep the other side
-
-### The "Judas Swing" Connection
-
-- London open often sweeps Asian range liquidity first (Judas Swing)
-- This is engineered manipulation to collect liquidity
-- After sweeping, the TRUE direction of the day begins
+In the chart above, the highs at 1.0950 and 1.0949 are relative equal highs. The three lows at 1.0850, 1.0851 and 1.0850 are relative equal lows.
 
 ---
 
-## Trading with Liquidity
+## External vs Internal Range Liquidity
 
-### Step-by-Step Process
+Think of any dealing range as having two kinds of liquidity:
 
-1. **Mark PDH/PDL, PWH/PWL** on your chart
-2. **Identify equal highs/lows** — these are the targets
-3. **Determine daily bias** — which liquidity pool will be targeted?
-4. **Wait for sweep** — price takes out the liquidity
-5. **Confirm reversal** — MSS on LTF after the sweep
-6. **Enter** — At OB/FVG after the sweep with stop beyond the extreme
+- **External range liquidity (ERL):** the range's **highs and lows**, where the BSL and SSL sit.
+- **Internal range liquidity (IRL):** **Fair Value Gaps** and other imbalances inside the range.
 
-### Example: Gold Liquidity Sweep Trade
+Price tends to alternate between the two:
 
-- **PDH:** 2,050 (BSL resting above)
-- **Daily Bias:** Bearish (price in premium)
-- **Action:** Price sweeps 2,052 (takes BSL)
-- **Confirmation:** 5M MSS bearish after sweep
-- **Entry:** Sell at 2,048 (bearish OB)
-- **Stop:** 2,053 (above sweep)
-- **Target:** SSL at 2,020
-- **R:R:** 1:5.6
-- **BD Time:** 7:45 PM (NY AM Kill Zone)
+1. After taking **external** liquidity (a sweep of a high or low), price often comes back to **internal** liquidity (an FVG) to rebalance.
+2. From internal liquidity, it reaches for the next **external** pool.
+
+This gives you a practical rule for targets. After entering on an FVG (IRL), the natural target is the opposite range extreme (ERL). See [Internal & External Liquidity](/en/smc/internal-external-liquidity) for more detail.
 
 ---
 
-## Liquidity on Multiple Timeframes
+## The Draw on Liquidity — Which Pool Is Next?
 
-| Timeframe   | Liquidity Type                       | Significance                   |
-| ----------- | ------------------------------------ | ------------------------------ |
-| **Monthly** | Yearly highs/lows                    | Massive institutional interest |
-| **Weekly**  | Monthly highs/lows, quarterly levels | Swing trade targets            |
-| **Daily**   | PWH/PWL, PDH/PDL                     | Day trade targets              |
-| **4H**      | Session highs/lows                   | Intraday targets               |
-| **15M**     | Micro swing points                   | Scalp targets                  |
+Every chart has liquidity on both sides. The skill is judging **which side price is drawn to first**. Before each session, ask these questions:
+
+| Question                                          | Points toward                                                                 |
+| ------------------------------------------------- | ----------------------------------------------------------------------------- |
+| What is the **higher-timeframe bias**?            | Bullish → BSL above is the draw. Bearish → SSL below.                         |
+| Is price in **premium or discount** of the range? | In premium, the next move is more likely down to SSL. In discount, up to BSL. |
+| Which pool is **older and untouched**?            | Older, cleaner pools hold more orders.                                        |
+| Was one side **just swept**?                      | After one side is taken, the opposite side often becomes the draw.            |
+| What **session** is next?                         | The Asian session builds ranges; London and New York usually take them.       |
+
+If the answers disagree, the draw is unclear, and that is a reason to wait rather than trade. See [Daily Bias](/en/ict/daily-bias).
+
+---
+
+## The Liquidity Cycle: Build → Sweep → Shift → Deliver
+
+![The liquidity cycle — EUR/USD 1H: equal highs and lows build, London sweeps the lows, displacement shifts structure, price delivers to BSL](/images/ict/liquidity/liquidity-cycle-eurusd-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/liquidity-cycle-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+The same four stages repeat on every timeframe:
+
+| Stage         | What happens                                                              | In the EUR/USD example                                                  |
+| ------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **① Build**   | Price leaves obvious highs and lows; stops collect beyond them            | Equal highs at 1.0950 / 1.0949; three equal lows near 1.0850            |
+| **② Sweep**   | Price trades through one pool and closes back inside                      | London open wicks to 1.0845, closes at 1.0852                           |
+| **③ Shift**   | A displacement breaks structure the other way (MSS), often leaving an FVG | A 38-pip candle closes above the 1.0874 lower high; FVG 1.0862 – 1.0884 |
+| **④ Deliver** | Price travels to the opposite pool (the draw on liquidity)                | Price runs the buy stops above 1.0950                                   |
+
+The original lesson describes the same idea in five steps: Identify → Engineer → Sweep → Absorb → Displace. "Build" covers _identify_ and _engineer_. "Shift" is the visible sign of _absorb_ and _displace_.
+
+<Callout type="warning" title="The sweep alone is not the signal">
+  Stage ② only tells you that liquidity was taken. Stage ③, a displacement and structure shift, is what tells you that
+  the sweep probably failed and that the opposite pool is now the draw. Many losing trades come from entering at stage
+  ②.
+</Callout>
+
+---
+
+## Sweep or Run? Read the Close, Not the Wick
+
+![Sweep vs run — the same equal highs, two outcomes](/images/ict/liquidity/sweep-vs-run-dark.png)
+
+When price trades beyond a pool, there are two very different outcomes:
+
+| Clue               | **Sweep (raid) → reversal**                            | **Run (breakout) → continuation**                           |
+| ------------------ | ------------------------------------------------------ | ----------------------------------------------------------- |
+| Candle close       | **Back inside** the level (a wick beyond)              | **Beyond** the level, often more than once                  |
+| Next candles       | Displacement **away** from the level                   | Hold beyond; a retest of the level holds                    |
+| Structure          | MSS in the opposite direction                          | Structure continues in the breakout direction               |
+| What the stops did | Gave large traders a fill to reverse against           | Became fuel for the move                                    |
+| What to do         | Wait for the MSS, then look for an entry the other way | Don't fade it; look for continuation entries or stand aside |
+
+The original lesson also mentions a **liquidity grab**, where price holds beyond the level for a few candles before reversing. Treat it as a slower sweep. It still needs the close back inside and an MSS before it means anything.
+
+<Callout type="tip" title="No magic distance">
+  There is no fixed number of pips that defines a sweep. How far price goes beyond the level depends on volatility.
+  Judge it by the **close back inside** and the **displacement that follows**, not by the size of the wick.
+</Callout>
+
+---
+
+## Engineered Liquidity and Inducement
+
+Sometimes the market seems to **create** liquidity before taking it:
+
+1. Price ranges tightly. Traders place stops above and below the range.
+2. Each extra touch of the range edges adds more stops.
+3. One side is swept. Very often this happens at a session open, which is the [Judas Swing](/en/ict/judas-swing).
+4. The real move then goes toward the opposite pool.
+
+**Inducement** is a smaller version of the same thing. It is a minor, obvious pool just in front of the real level, which tempts traders to enter too early. When price takes the inducement and keeps going, that is often a sign the real level is still ahead. See [Inducement](/en/smc/inducement).
+
+---
+
+## Trading Model: Liquidity Sweep + MSS
+
+### Step by step
+
+1. **Before the session, mark the pools:** PDH/PDL, PWH/PWL, Asian high/low, and any clean equal highs or lows.
+2. **Decide the draw on liquidity** using the questions above. That tells you which sweep you want to trade.
+3. **Wait for price to sweep the opposite pool,** ideally inside a [kill zone](/en/ict/ict-kill-zones).
+4. **Confirm the failure:** a close back inside, then an **MSS** on a lower timeframe (5m or 15m) with displacement.
+5. **Enter on the retracement** into the OB or FVG left by the displacement.
+6. **Place the stop beyond the sweep extreme,** not at the original level.
+7. **Target the draw on liquidity.** The first target can be internal liquidity, and the main target the opposite external pool.
+
+### Pre-trade checklist
+
+| ✓   | Condition                                                     |
+| --- | ------------------------------------------------------------- |
+| ☐   | Higher-timeframe bias points toward the target pool           |
+| ☐   | A clearly marked pool was swept, with a **close back inside** |
+| ☐   | **MSS with displacement** on the execution timeframe          |
+| ☐   | An OB or FVG to enter from                                    |
+| ☐   | Stop beyond the sweep extreme; target at the next pool        |
+| ☐   | R:R is acceptable after accounting for the stop buffer        |
+
+---
+
+## Worked Example — Gold Buy-Side Sweep (5m, NY AM)
+
+![Gold PDH sweep — sell after the raid of buy-side liquidity](/images/ict/liquidity/gold-pdh-sweep-dark.png)
+
+<Callout type="info" title="About this example">
+  The chart uses **synthetic candles** built around the levels in this lesson. It shows how the model works and is not a
+  record of a real trade. The R:R is the planned risk-to-reward, not a result.
+</Callout>
+
+**Context:** the daily bias is bearish and price is trading in premium. The previous day's high at **2,050** has buy stops above it. An earlier session low at **2,020** holds sell-side liquidity below.
+
+**Observations**
+
+1. **Sweep:** in the NY AM kill zone, price runs above the PDH to **2,052**. The candle closes back below 2,050.
+2. **Shift:** the next candle is a 5-point bearish displacement, against a 1.7-point average. It closes below the **2,045.5** higher low, which is a **5m MSS**.
+3. **Retest:** the last up-candle before the displacement (2,047.5 – 2,052) is a bearish Order Block. At **7:45 PM BD**, price retraces into it.
+
+**Trade plan**
+
+| Level     | Price       | Rationale                                   |
+| --------- | ----------- | ------------------------------------------- |
+| Entry     | 2,048       | Retest of the bearish OB                    |
+| Stop loss | 2,053       | Above the sweep high (2,052), plus a buffer |
+| Target    | 2,020       | Sell-side liquidity, the draw               |
+| Risk      | 5 pts       | 2,053 − 2,048                               |
+| Reward    | 28 pts      | 2,048 − 2,020                               |
+| **R:R**   | **1 : 5.6** | 28 ÷ 5                                      |
+
+**Invalidation:** a 5m close above 2,052. That would mean the sweep has turned into a run.
+
+**What could go differently**
+
+- Price may stall at internal liquidity before 2,020. Some traders take partial profit there.
+- If the 7:45 PM retest never comes, there is no trade. Chasing the displacement would put the stop much further away.
+
+---
+
+## Liquidity Across Timeframes
+
+| Timeframe    | Typical pools                        | Use                              |
+| ------------ | ------------------------------------ | -------------------------------- |
+| **Monthly**  | Yearly and quarterly highs/lows      | Long-term draw on liquidity      |
+| **Weekly**   | Monthly highs/lows, PWH/PWL          | Swing targets                    |
+| **Daily**    | PDH/PDL, recent swing points         | Daily bias and day-trade targets |
+| **4H / 1H**  | Session highs/lows, equal highs/lows | Intraday structure               |
+| **15m / 5m** | Micro swing points, inducement       | Execution and stop placement     |
+
+Work **top-down**. A 5m sweep is only worth trading if it moves price toward a higher-timeframe pool.
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Liquidity Trading Errors">
+| Mistake                                           | Why it hurts                                  | Fix                                                 |
+| ------------------------------------------------- | --------------------------------------------- | --------------------------------------------------- |
+| Fading every wick beyond a level                  | Many "sweeps" turn into runs                  | Require a close back inside **and** an MSS          |
+| Entering during the sweep                         | No confirmation; the stop is easily hit       | Wait for the displacement, then the retracement     |
+| Ignoring the draw on liquidity                    | You trade toward the wrong pool               | Answer the draw questions before the session        |
+| Stop exactly at the swept level                   | That level is now liquidity again             | Stop beyond the sweep extreme, plus a buffer        |
+| Placing your own stop at obvious equal highs/lows | Your stop _is_ the liquidity                  | Use structure-based stops beyond the manipulation   |
+| Not marking session levels                        | You miss the pools London and NY usually take | Mark the Asian range, PDH/PDL and PWH/PWL every day |
 
-**❌ Fading every sweep** — Not every liquidity sweep leads to reversal. Need HTF alignment.
+---
 
-**❌ Ignoring the draw** — Always ask "what is the draw on liquidity?" before trading.
+## Risk Management
 
-**❌ Placing stops at obvious levels** — Your stops ARE the liquidity. Place beyond manipulation zone.
+| Component          | Guideline                                                                  |
+| ------------------ | -------------------------------------------------------------------------- |
+| **Risk per trade** | 1–2% of the account; less while learning                                   |
+| **Stop loss**      | Beyond the sweep extreme, not the original level                           |
+| **Position size**  | Account risk ÷ stop distance ([calculator](/en/tools/position-calculator)) |
+| **First target**   | Internal liquidity (nearest FVG or swing), optional partial                |
+| **Final target**   | The opposite external pool (the draw on liquidity)                         |
+| **No trade when**  | The draw is unclear, or there is no MSS after the sweep                    |
 
-**❌ Trading before the sweep** — Wait for liquidity to be taken before entering.
+---
 
-**❌ Not marking session levels** — PDH/PDL, Asian high/low are critical reference points.
+## Practice
 
-</Callout>
+1. On a 1H chart, mark every **relative equal high and low** from the last two weeks. Note which ones price later took.
+2. For each pool that was taken, label it **sweep** (close back inside) or **run** (close beyond and hold). Count how often each happened on your pair.
+3. Before tomorrow's London session, write down your **draw on liquidity** and the reasons for it, then compare with what price did.
+4. Log every sweep + MSS setup you see, taken or not, in your [trading journal](/en/tools/journal-template). Your own statistics matter more than any number in a guide.
+
+---
+
+## FAQ
+
+### Is liquidity "manipulation"?
+
+ICT often describes sweeps as manipulation. You do not need to believe anyone is targeting your stop. Stops cluster at obvious levels, and large orders need that liquidity to fill. Either explanation leads to the same practical rules.
+
+### How far beyond a level does a sweep go?
+
+There is no fixed distance. It depends on the instrument and the current volatility. Use the close back inside and the following displacement to judge it, not a pip count.
+
+### Should I trade every sweep?
+
+No. Trade only sweeps that point toward the higher-timeframe draw on liquidity, are followed by an MSS, and happen at an active time of day.
 
 ---
 
 ## Summary
 
-| Aspect        | Details                                          |
-| ------------- | ------------------------------------------------ |
-| **BSL**       | Buy stops above highs — target for bearish moves |
-| **SSL**       | Sell stops below lows — target for bullish moves |
-| **Key Pools** | Equal H/L, PDH/PDL, PWH/PWL, session levels      |
-| **Algorithm** | Always seeks the nearest liquidity pool          |
-| **Entry**     | After sweep + MSS confirmation                   |
-| **Stop**      | Beyond the sweep extreme                         |
+| Concept               | Key point                                                    |
+| --------------------- | ------------------------------------------------------------ |
+| **Liquidity**         | Resting orders (stops and pending entries) at obvious prices |
+| **BSL / SSL**         | Buy orders above highs / sell orders below lows              |
+| **Best pools**        | Clean equal highs and lows, session levels, PDH/PDL, PWH/PWL |
+| **Draw on liquidity** | The pool price is most likely to reach next                  |
+| **Cycle**             | Build → Sweep → Shift → Deliver                              |
+| **Sweep vs run**      | Close back inside + MSS = sweep; close beyond and hold = run |
+| **Stop**              | Beyond the sweep extreme                                     |
+| **Target**            | The opposite pool                                            |
 
 ---
 
 ## Related Topics
 
-- [Liquidity Sweep](/en/ict/liquidity-sweep) — Execution after sweeps
-- [AMD / Power of 3](/en/ict/amd) — Accumulation-Manipulation-Distribution
-- [Judas Swing](/en/ict/judas-swing) — The manipulation move
-- [ICT Kill Zones](/en/ict/ict-kill-zones) — When sweeps are most likely
-- [Daily Bias](/en/ict/daily-bias) — Predicting which liquidity gets targeted
+- [Liquidity Sweep](/en/ict/liquidity-sweep) — execution details after a sweep
+- [Market Structure Shift](/en/ict/mss) — the confirmation that follows the sweep
+- [Fair Value Gap](/en/ict/fvg) — internal liquidity and entry zones
+- [Daily Bias](/en/ict/daily-bias) — choosing the draw on liquidity
+- [Judas Swing](/en/ict/judas-swing) and [AMD](/en/ict/amd) — the session-open sweep
+- [ICT Kill Zones](/en/ict/ict-kill-zones) — when pools are usually taken

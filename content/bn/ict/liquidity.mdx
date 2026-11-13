@@ -1,197 +1,349 @@
 ---
-title: "ICT Liquidity Concepts"
-description: "Liquidity কীভাবে Market এর প্রতিটি Move চালায় বুঝুন। Buy-Side Liquidity (BSL), Sell-Side Liquidity (SSL), Liquidity Pool, Engineered Liquidity এবং Institution কীভাবে Entry ও Exit এর জন্য Liquidity ব্যবহার করে শিখুন।"
+title: "ICT Liquidity — সম্পূর্ণ গাইড"
+description: "ICT তে Liquidity কীভাবে Price চালায় বুঝুন: Buy-Side ও Sell-Side Liquidity, Stop কোথায় জমে, External বনাম Internal Range Liquidity, Draw on Liquidity, Liquidity Cycle, Sweep বনাম Run, এবং চার্ট ও অ্যানিমেটেড উদাহরণসহ একটি সম্পূর্ণ ট্রেড।"
 level: beginner
 order: 2
-lastUpdated: "2026-06-09"
+lastUpdated: "2026-11-13"
 ---
 
-## ICT তে Liquidity কী?
+## কেন Liquidity সবার আগে
 
-ICT Methodology তে **Liquidity** হলো Market এ থাকা Resting Order — প্রধানত **Stop Loss** এবং **Pending Order** যা Swing High এর উপরে ও Swing Low এর নিচে থাকে। Market-Making Algorithm এর প্রধান কাজ হলো এই Liquidity Pool এ Price পৌঁছে দেওয়া।
+ICT এর প্রায় প্রতিটি কনসেপ্ট আসলে **Liquidity এর আশেপাশে** ঘটে:
 
-<Callout type="info" title="ICT মূল সত্য">
-  "Price সবসময় Liquidity খুঁজছে। প্রতিটি Move, প্রতিটি Manipulation, প্রতিটি Displacement — সবকিছু Liquidity এর জন্য।"
-  — ICT
+- **Fair Value Gap** তৈরি হয় যখন Price Liquidity ছেড়ে দ্রুত সরে যায়।
+- **Order Block** দেখায় Price কোথা থেকে Liquidity এর দিকে রওনা দিয়েছিল।
+- **Market Structure Shift** নিশ্চিত করে যে একটি Liquidity Pool নেওয়া হয়েছে।
+- **Kill Zone** হলো সেই সময় যখন সাধারণত Liquidity নেওয়া হয়।
+
+Liquidity বুঝলে বাকি পদ্ধতিটা একসাথে মিলে যেতে শুরু করে। এজন্যই এই লেসন সবার আগে।
+
+<Callout type="info" title="এক লাইনে">
+  Liquidity হলো যেখানে Order অপেক্ষা করছে। Price সাধারণত এক Pool থেকে পরের Pool এ যায়, কারণ সেখানেই বড় পজিশন পূরণ করা
+  যায়।
 </Callout>
 
 ---
 
-## Liquidity এর প্রকারভেদ
+## Liquidity কী?
 
-### Buy-Side Liquidity (BSL)
+ICT তে **Liquidity** মানে **অনুমানযোগ্য দামে অপেক্ষমাণ Order**। এগুলো Market এ আগে থেকেই বসে আছে, ট্রিগার হওয়ার অপেক্ষায়:
 
-Swing High এর **উপরে** থাকা Resting Order:
+- **Stop Loss:** Short Seller এর Stop হলো High এর উপরে একটি **Buy** Order। Buyer এর Stop হলো Low এর নিচে একটি **Sell** Order।
+- **Pending Entry:** Breakout Trader রা High এর উপরে Buy Stop আর Low এর নিচে Sell Stop রাখে।
 
-- Short Seller দের Stop Loss
-- Breakout Trader দের Buy Stop Order
-- Equal Highs, Relative Highs এবং Old Highs এর উপরে তৈরি হয়
-- Sweep হলে Institution কে Short Entry এর Sell-Side Counterparty দেয়
+### Price কেন এর দিকে যায়
 
-### Sell-Side Liquidity (SSL)
+বড় Trader একবারে এক দামে বড় পজিশন কিনতে বা বেচতে পারে না, যদি না কেউ বিপরীত দিকটা নেয়।
 
-Swing Low এর **নিচে** থাকা Resting Order:
+- **৫০০ লট Sell** করতে তাদের দরকার ৫০০ লট **Buy** Order।
+- Swing High এর উপরে বসে থাকা Buy Stop ঠিক সেটাই। Price সেখানে পৌঁছালে এগুলো Market Buy Order হয়ে যায়, আর বড় Seller তাদের বিপরীতে Fill পায়।
+- Low এর নিচে বড় Buyer এর জন্য ঠিক উল্টোটা ঘটে।
 
-- Long Trader দের Stop Loss
-- Breakdown Trader দের Sell Stop Order
-- Equal Lows, Relative Lows এবং Old Lows এর নিচে তৈরি হয়
-- Sweep হলে Institution কে Long Entry এর Buy-Side Counterparty দেয়
+ICT এর "Price Liquidity খোঁজে" ধারণার পেছনে এটাই যুক্তি। এটিকে একটি কাজের মডেল হিসেবে দেখুন, যা বলে Move সাধারণত _কোথায়_ যায়। প্রতিটি Move পরিকল্পিত, এমন প্রমাণ হিসেবে নয়।
 
----
+### Buy-Side ও Sell-Side Liquidity
 
-## Liquidity Pool এর ধরন
+|                            | **Buy-Side Liquidity (BSL)**                           | **Sell-Side Liquidity (SSL)**                         |
+| -------------------------- | ------------------------------------------------------ | ----------------------------------------------------- |
+| **কোথায়**                 | High এর **উপরে**                                       | Low এর **নিচে**                                       |
+| **কী থাকে**                | Short দের Stop Loss + Breakout Buy Stop                | Long দের Stop Loss + Breakdown Sell Stop              |
+| **ট্রিগার হলে হয়**        | Market **Buy** Order                                   | Market **Sell** Order                                 |
+| **কার কাজে লাগে**          | বড় **Seller** দের (Short নিতে বা Long এর প্রফিট নিতে) | বড় **Buyer** দের (Long নিতে বা Short এর প্রফিট নিতে) |
+| **নেওয়ার পর প্রায়ই আসে** | **নিচের** দিকে Move, যদি Sweep টিকতে না পারে           | **উপরের** দিকে Move, যদি Sweep টিকতে না পারে          |
 
-### ১. Relative Equal Highs/Lows
-
-- একই Price এ একাধিক Swing Point
-- Retail Trader রা এখানে Stop রাখে ("Support/Resistance" হিসেবে ব্যবহার করে)
-- Algorithm এর সবচেয়ে বেশি Target করা
-
-### ২. Session Highs/Lows
-
-- Asian Session High/Low
-- London Session High/Low
-- PDH/PDL (Previous Day High/Low)
-- PWH/PWL (Previous Week High/Low)
-
-### ৩. Old Highs/Lows
-
-- কয়েক দিন/সপ্তাহ আগের Swing High/Low
-- বড় Liquidity Pool = বড় Institutional Interest
-- Weekly/Monthly High ও Low Major Target
-
-### ৪. Trendline Liquidity
-
-- Trendline বরাবর রাখা Stop Loss
-- যখন Trendline "ভাঙে", এটি আসলে এই Liquidity Sweep করছে
-- Classic Retail Trap Setup
+<Callout type="tip" title="মনে রাখার কৌশল">
+  নাম হয় **Order** অনুযায়ী, আপনার ট্রেডের দিক অনুযায়ী নয়। BSL হলো *Buy* Order এর Pool, তাই সেখানে *Sell* এর সুযোগ
+  খুঁজুন। SSL হলো *Sell* Order এর Pool, তাই সেখানে *Buy* এর সুযোগ খুঁজুন।
+</Callout>
 
 ---
 
-## Institution কীভাবে Liquidity ব্যবহার করে
+## মূল পরিভাষা
 
-### Liquidity Cycle
-
-1. **Identify** — Algorithm নিকটতম Liquidity Pool খোঁজে বের করে
-2. **Engineer** — Price Consolidate করে আরও Resting Order তৈরি করে
-3. **Sweep** — দ্রুত Move এ Stop ও Pending Order Trigger করে
-4. **Absorb** — Institution এই Trigger হওয়া Order এর বিপরীতে Position পূরণ করে
-5. **Displace** — সত্যিকার Directional Move শুরু হয়
-
-### বাস্তব উদাহরণ: EUR/USD
-
-- Price 1.0850 তে ৩টি Equal Lows তৈরি করে (SSL জমে)
-- Retail Trader রা উপরে Buy Stop ও নিচে Sell Stop রাখে
-- Price 1.0845 এ নামে — SSL Sweep করে
-- Institution Sell Order Absorb করে Long Position তৈরি করে
-- Price Displace করে 1.0950 পর্যন্ত BSL Target করে
+| পরিভাষা                     | অর্থ                                                                                          |
+| --------------------------- | --------------------------------------------------------------------------------------------- |
+| **Liquidity Pool**          | এক লেভেলে জমে থাকা Order এর গুচ্ছ                                                             |
+| **EQH / EQL**               | Relative Equal High / Low: প্রায় একই দামে দুই বা তার বেশি Swing পয়েন্ট                      |
+| **PDH / PDL, PWH / PWL**    | আগের দিনের ও আগের সপ্তাহের High / Low                                                         |
+| **Sweep (Raid)**            | Price একটি Pool এর বাইরে গিয়ে সেটি ট্রিগার করে, তারপর ভিতরে ফিরে ক্লোজ করে                   |
+| **Run**                     | Price একটি Pool এর বাইরে ক্লোজ করে এবং এগিয়ে যেতে থাকে                                       |
+| **Draw on Liquidity (DOL)** | যে Pool এ Price এর পরবর্তীতে পৌঁছানোর সম্ভাবনা সবচেয়ে বেশি                                   |
+| **ERL / IRL**               | External Range Liquidity (রেঞ্জের High ও Low) / Internal Range Liquidity (রেঞ্জের ভিতরের FVG) |
+| **Inducement**              | ছোট, স্পষ্ট একটি Pool, যা আসল লেভেলের আগে তাড়াহুড়ো করা Entry টেনে আনে                       |
 
 ---
 
-## Liquidity Sweep vs Liquidity Grab
+## Liquidity কোথায় থাকে
 
-| বিষয়             | Liquidity Sweep                    | Liquidity Grab                          |
-| ----------------- | ---------------------------------- | --------------------------------------- |
-| **গতি**           | দ্রুত Wick, দ্রুত Rejection        | সংক্ষিপ্তভাবে Level এর বাইরে থাকতে পারে |
-| **Candle**        | লম্বা Wick, ছোট Body               | পূর্ণ Body হতে পারে তারপর Reversal      |
-| **Timeframe**     | LTF তে দৃশ্যমান                    | সব Timeframe এ দৃশ্যমান                 |
-| **Confirmation**  | বিপরীত দিকে তাৎক্ষণিক Displacement | Grab এর পর MSS/CHOCH                    |
-| **নির্ভরযোগ্যতা** | HTF Alignment এ খুব বেশি           | উচ্চ কিন্তু Confirmation প্রয়োজন       |
+![Liquidity Map — উপরে Equal High (BSL), নিচে Equal Low (SSL), মাঝে Asian Range](/images/ict/liquidity/liquidity-map-eurusd-dark.png)
 
----
+অনেক Trader যে লেভেলকে "স্পষ্ট" দেখে, সেখানেই Stop জমে। লেভেল যত বেশি দৃশ্যমান, তার পেছনে তত বেশি Order।
 
-## Engineered Liquidity
+| লেভেল                                  | কেন Order জমে                                            | সাধারণ ব্যবহার                                  |
+| -------------------------------------- | -------------------------------------------------------- | ----------------------------------------------- |
+| **Relative Equal High / Low**          | শক্ত Support/Resistance মনে হয়, তাই ঠিক বাইরে Stop জমে  | ইন্ট্রাডে ও সুইং টার্গেট                        |
+| **Swing High / Low**                   | Swing এর বিপরীতে যেকোনো ট্রেডের স্বাভাবিক Stop এর জায়গা | সব টাইমফ্রেম                                    |
+| **Session High / Low** (Asian, London) | Range Trader ও Breakout Trader দুজনেই এগুলো ব্যবহার করে  | ইন্ট্রাডে: London ও NY সাধারণত Asian Range নেয় |
+| **PDH / PDL**                          | সবচেয়ে বেশি দেখা দৈনিক রেফারেন্স লেভেল                  | ডে-ট্রেড টার্গেট                                |
+| **PWH / PWL, মাসিক High / Low**        | বড়, পুরনো Pool, যেখানে আরও বেশি Order                   | সুইং টার্গেট                                    |
+| **Trendline Touch**                    | প্রতিটি টাচ লাইনের ঠিক বাইরে একটি Stop ডেকে আনে          | ক্লাসিক Retail ফাঁদ                             |
 
-কখনো কখনো Market Sweep এর আগে Liquidity **তৈরি** করে:
+### পরিষ্কার বনাম এলোমেলো Equal High
 
-### কীভাবে Engineer হয়
+- **পরিষ্কার** Equal High বা Low (Wick এক-দুই পিপের মধ্যে, দুই-তিনবার টাচ) স্পষ্ট দেখায়। তাই এগুলো আকর্ষণীয় Liquidity।
+- **এলোমেলো** লেভেল (Wick অনেকটা জায়গা জুড়ে ছড়ানো) কম স্পষ্ট, তাই এক দামে কম Stop থাকে।
 
-1. Price একটি Tight Range তৈরি করে (Consolidation)
-2. Retail Trader রা Range এর উপরে ও নিচে Stop রাখে
-3. Equal Highs/Lows তৈরি হয়, আরও Order আকর্ষণ করে
-4. Algorithm পর্যাপ্ত Liquidity জমা না হওয়া পর্যন্ত অপেক্ষা করে
-5. তারপর এক দিক Sweep করে → Reverse করে অন্য দিক Sweep করে
-
-### "Judas Swing" সংযোগ
-
-- London Open প্রায়ই প্রথমে Asian Range Liquidity Sweep করে (Judas Swing)
-- এটি Liquidity সংগ্রহের জন্য Engineered Manipulation
-- Sweep এর পর, দিনের সত্যিকার Direction শুরু হয়
+উপরের চার্টে 1.0950 ও 1.0949 এর High দুটি Relative Equal High। 1.0850, 1.0851 ও 1.0850 এর তিনটি Low হলো Relative Equal Low।
 
 ---
 
-## Liquidity দিয়ে Trading
+## External বনাম Internal Range Liquidity
 
-### ধাপে ধাপে প্রক্রিয়া
+যেকোনো Dealing Range এ দুই ধরনের Liquidity থাকে:
 
-1. **PDH/PDL, PWH/PWL** Chart এ চিহ্নিত করুন
-2. **Equal Highs/Lows চিহ্নিত করুন** — এগুলো Target
-3. **Daily Bias নির্ধারণ করুন** — কোন Liquidity Pool Target হবে?
-4. **Sweep এর জন্য অপেক্ষা করুন** — Price Liquidity নিয়ে নেয়
-5. **Reversal Confirm করুন** — Sweep এর পর LTF তে MSS
-6. **Entry** — Sweep এর পর OB/FVG তে, Stop Extreme এর বাইরে
+- **External Range Liquidity (ERL):** রেঞ্জের **High ও Low**, যেখানে BSL ও SSL থাকে।
+- **Internal Range Liquidity (IRL):** রেঞ্জের ভিতরের **Fair Value Gap** ও অন্যান্য Imbalance।
 
-### উদাহরণ: Gold Liquidity Sweep Trade
+Price সাধারণত এই দুইয়ের মধ্যে আসা-যাওয়া করে:
 
-- **PDH:** 2,050 (এর উপরে BSL Resting)
-- **Daily Bias:** Bearish (Price Premium এ)
-- **Action:** Price 2,052 Sweep করে (BSL নেয়)
-- **Confirmation:** 5M Bearish MSS Sweep এর পর
-- **Entry:** 2,048 তে Sell (Bearish OB)
-- **Stop:** 2,053 (Sweep এর উপরে)
-- **Target:** SSL 2,020
-- **R:R:** 1:5.6
-- **BD সময়:** রাত ৭:৪৫ (NY AM Kill Zone)
+1. **External** Liquidity নেওয়ার পর (একটি High বা Low এর Sweep), Price প্রায়ই **Internal** Liquidity তে (একটি FVG তে) ফিরে আসে Rebalance এর জন্য।
+2. Internal Liquidity থেকে এটি পরবর্তী **External** Pool এর দিকে যায়।
+
+এটি টার্গেটের জন্য একটি ব্যবহারিক নিয়ম দেয়। FVG (IRL) থেকে এন্ট্রি নেওয়ার পর স্বাভাবিক টার্গেট হলো রেঞ্জের বিপরীত প্রান্ত (ERL)। আরও বিস্তারিত দেখুন [Internal ও External Liquidity](/bn/smc/internal-external-liquidity) লেসনে।
 
 ---
 
-## Multiple Timeframe এ Liquidity
+## Draw on Liquidity — পরের Pool কোনটি?
 
-| Timeframe   | Liquidity এর ধরন                    | গুরুত্ব                      |
-| ----------- | ----------------------------------- | ---------------------------- |
-| **Monthly** | Yearly Highs/Lows                   | বিশাল Institutional Interest |
-| **Weekly**  | Monthly Highs/Lows, Quarterly Level | Swing Trade Target           |
-| **Daily**   | PWH/PWL, PDH/PDL                    | Day Trade Target             |
-| **4H**      | Session Highs/Lows                  | Intraday Target              |
-| **15M**     | Micro Swing Points                  | Scalp Target                 |
+প্রতিটি চার্টে দুই দিকেই Liquidity থাকে। দক্ষতা হলো বোঝা, **Price আগে কোন দিকে টানা হবে**। প্রতিটি সেশনের আগে এই প্রশ্নগুলো করুন:
+
+| প্রশ্ন                                     | কোন দিকে ইঙ্গিত করে                                                                                  |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| **Higher Timeframe Bias** কী?              | Bullish → উপরের BSL হলো Draw। Bearish → নিচের SSL।                                                   |
+| Price রেঞ্জের **Premium নাকি Discount** এ? | Premium এ থাকলে পরের Move নিচে SSL এর দিকে যাওয়ার সম্ভাবনা বেশি। Discount এ থাকলে উপরে BSL এর দিকে। |
+| কোন Pool **পুরনো ও অস্পৃষ্ট**?             | পুরনো, পরিষ্কার Pool এ বেশি Order থাকে                                                               |
+| এক দিক কি **এইমাত্র Sweep** হয়েছে?        | এক দিক নেওয়ার পর বিপরীত দিক প্রায়ই Draw হয়ে যায়                                                  |
+| পরের **সেশন** কোনটি?                       | Asian সেশন রেঞ্জ তৈরি করে; London ও New York সাধারণত সেগুলো নেয়                                     |
+
+উত্তরগুলো একে অপরের সাথে না মিললে Draw অস্পষ্ট। সেটা ট্রেড না করে অপেক্ষা করার কারণ। দেখুন [Daily Bias](/bn/ict/daily-bias)।
+
+---
+
+## Liquidity Cycle: Build → Sweep → Shift → Deliver
+
+![Liquidity Cycle — EUR/USD 1H: Equal High ও Low তৈরি, London এ Low এর Sweep, Displacement এ Structure Shift, Price BSL এ পৌঁছায়](/images/ict/liquidity/liquidity-cycle-eurusd-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/liquidity-cycle-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+একই চারটি ধাপ প্রতিটি টাইমফ্রেমে ঘুরে ঘুরে আসে:
+
+| ধাপ           | কী ঘটে                                                              | EUR/USD উদাহরণে                                                         |
+| ------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **① Build**   | Price স্পষ্ট High ও Low রেখে যায়; তাদের বাইরে Stop জমে             | 1.0950 / 1.0949 এ Equal High; 1.0850 এর কাছে তিনটি Equal Low            |
+| **② Sweep**   | Price একটি Pool ভেদ করে, তারপর ভিতরে ফিরে ক্লোজ করে                 | London ওপেনে Wick 1.0845 পর্যন্ত, ক্লোজ 1.0852 এ                        |
+| **③ Shift**   | একটি Displacement উল্টো দিকে Structure ভাঙে (MSS), প্রায়ই FVG রেখে | ৩৮ পিপের ক্যান্ডেল 1.0874 Lower High এর উপরে ক্লোজ; FVG 1.0862 – 1.0884 |
+| **④ Deliver** | Price বিপরীত Pool এ যায় (Draw on Liquidity)                        | Price 1.0950 এর উপরের Buy Stop নিয়ে নেয়                               |
+
+মূল লেসনে একই ধারণা পাঁচ ধাপে বলা আছে: Identify → Engineer → Sweep → Absorb → Displace। "Build" এর মধ্যে আছে _Identify_ ও _Engineer_। "Shift" হলো _Absorb_ ও _Displace_ এর দৃশ্যমান চিহ্ন।
+
+<Callout type="warning" title="শুধু Sweep সিগন্যাল নয়">
+  ধাপ ② শুধু বলে Liquidity নেওয়া হয়েছে। ধাপ ③, অর্থাৎ Displacement আর Structure Shift, বলে যে Sweep সম্ভবত ব্যর্থ
+  হয়েছে এবং বিপরীত Pool এখন Draw। অনেক লসের ট্রেড আসে ধাপ ② তেই এন্ট্রি নেওয়া থেকে।
+</Callout>
+
+---
+
+## Sweep নাকি Run? Wick নয়, Close দেখুন
+
+![Sweep বনাম Run — একই Equal High, দুই রকম ফলাফল](/images/ict/liquidity/sweep-vs-run-dark.png)
+
+Price একটি Pool এর বাইরে গেলে দুটি সম্পূর্ণ ভিন্ন ফলাফল হতে পারে:
+
+| সূত্র             | **Sweep (Raid) → রিভার্সাল**                         | **Run (Breakout) → চলতে থাকা**                          |
+| ----------------- | ---------------------------------------------------- | ------------------------------------------------------- |
+| ক্যান্ডেলের Close | লেভেলের **ভিতরে ফিরে** (বাইরে শুধু Wick)             | লেভেলের **বাইরে**, প্রায়ই একাধিকবার                    |
+| পরের ক্যান্ডেল    | লেভেল থেকে **দূরে** Displacement                     | বাইরে টিকে থাকে; লেভেলের রিটেস্ট হোল্ড করে              |
+| Structure         | উল্টো দিকে MSS                                       | Breakout এর দিকে Structure চলতে থাকে                    |
+| Stop গুলো কী করল  | বড় Trader কে উল্টো দিকে যাওয়ার Fill দিল            | Move এর জ্বালানি হলো                                    |
+| কী করবেন          | MSS এর অপেক্ষা করুন, তারপর উল্টো দিকে এন্ট্রি খুঁজুন | Fade করবেন না; Continuation এন্ট্রি খুঁজুন বা সরে থাকুন |
+
+মূল লেসনে **Liquidity Grab** এর কথাও আছে, যেখানে Price রিভার্স করার আগে কয়েকটি ক্যান্ডেল লেভেলের বাইরে থাকে। এটিকে একটি ধীর Sweep হিসেবে দেখুন। এর অর্থ পেতে হলেও ভিতরে ফিরে Close আর MSS লাগবে।
+
+<Callout type="tip" title="কোনো জাদুকরী দূরত্ব নেই">
+  Sweep কত পিপ বাইরে যাবে তার কোনো নির্দিষ্ট সংখ্যা নেই। কতদূর যায় তা নির্ভর করে Volatility এর উপর। Wick এর আকার দিয়ে
+  নয়, **ভিতরে ফিরে Close** আর **পরের Displacement** দিয়ে বিচার করুন।
+</Callout>
+
+---
+
+## Engineered Liquidity ও Inducement
+
+কখনো কখনো মনে হয় Market নেওয়ার আগে Liquidity **তৈরি** করে:
+
+1. Price একটি সরু রেঞ্জে চলে। Trader রা রেঞ্জের উপরে ও নিচে Stop রাখে।
+2. রেঞ্জের প্রান্তে প্রতিটি অতিরিক্ত টাচ আরও Stop যোগ করে।
+3. এক দিক Sweep হয়। প্রায়ই এটা ঘটে সেশন ওপেনে, যাকে বলে [Judas Swing](/bn/ict/judas-swing)।
+4. এরপর আসল Move বিপরীত Pool এর দিকে যায়।
+
+**Inducement** একই জিনিসের ছোট সংস্করণ। এটি আসল লেভেলের ঠিক সামনে একটি ছোট, স্পষ্ট Pool, যা Trader দের আগেভাগে এন্ট্রিতে প্রলুব্ধ করে। Price Inducement নিয়ে এগিয়ে গেলে, প্রায়ই সেটা বোঝায় আসল লেভেল এখনো সামনে। দেখুন [Inducement](/bn/smc/inducement)।
+
+---
+
+## ট্রেডিং মডেল: Liquidity Sweep + MSS
+
+### ধাপে ধাপে
+
+1. **সেশনের আগে Pool গুলো মার্ক করুন:** PDH/PDL, PWH/PWL, Asian High/Low, এবং যেকোনো পরিষ্কার Equal High বা Low।
+2. উপরের প্রশ্নগুলো দিয়ে **Draw on Liquidity ঠিক করুন।** এতে বুঝবেন কোন Sweep ট্রেড করতে চান।
+3. **Price বিপরীত Pool Sweep করা পর্যন্ত অপেক্ষা করুন,** আদর্শভাবে একটি [Kill Zone](/bn/ict/ict-kill-zones) এর ভিতরে।
+4. **ব্যর্থতা নিশ্চিত করুন:** ভিতরে ফিরে Close, তারপর লোয়ার টাইমফ্রেমে (5m বা 15m) Displacement সহ **MSS**।
+5. Displacement যে OB বা FVG রেখে গেছে, **সেখানে রিট্রেসমেন্টে এন্ট্রি নিন।**
+6. **Stop রাখুন Sweep এর এক্সট্রিমের বাইরে,** মূল লেভেলে নয়।
+7. **Draw on Liquidity টার্গেট করুন।** প্রথম টার্গেট হতে পারে Internal Liquidity, আর মূল টার্গেট বিপরীত External Pool।
+
+### ট্রেডের আগে চেকলিস্ট
+
+| ✓   | শর্ত                                                                 |
+| --- | -------------------------------------------------------------------- |
+| ☐   | Higher Timeframe Bias টার্গেট Pool এর দিকে                           |
+| ☐   | একটি স্পষ্টভাবে মার্ক করা Pool Sweep হয়েছে, **ভিতরে ফিরে Close** সহ |
+| ☐   | এক্সিকিউশন টাইমফ্রেমে **Displacement সহ MSS**                        |
+| ☐   | এন্ট্রির জন্য একটি OB বা FVG                                         |
+| ☐   | Stop Sweep এক্সট্রিমের বাইরে; টার্গেট পরবর্তী Pool                   |
+| ☐   | Stop Buffer ধরে হিসাব করার পরও R:R গ্রহণযোগ্য                        |
+
+---
+
+## সম্পূর্ণ উদাহরণ — Gold Buy-Side Sweep (5m, NY AM)
+
+![Gold PDH Sweep — Buy-Side Liquidity Raid এর পর Sell](/images/ict/liquidity/gold-pdh-sweep-dark.png)
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  চার্টে এই লেসনের লেভেলের চারপাশে তৈরি **সিন্থেটিক ক্যান্ডেল** ব্যবহার করা হয়েছে। এটি মডেলটি কীভাবে কাজ করে তা দেখায়,
+  আসল ট্রেডের রেকর্ড নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড, ফলাফল নয়।
+</Callout>
+
+**প্রেক্ষাপট:** Daily Bias Bearish, আর Price Premium এ। আগের দিনের High **2,050** এর উপরে Buy Stop আছে। আগের একটি সেশনের Low **2,020** এর নিচে Sell-Side Liquidity আছে।
+
+**পর্যবেক্ষণ**
+
+1. **Sweep:** NY AM Kill Zone এ Price PDH এর উপরে **2,052** পর্যন্ত যায়। ক্যান্ডেল আবার 2,050 এর নিচে ক্লোজ করে।
+2. **Shift:** পরের ক্যান্ডেল ৫ পয়েন্টের Bearish Displacement, যেখানে গড় ১.৭ পয়েন্ট। এটি **2,045.5** Higher Low এর নিচে ক্লোজ করে, অর্থাৎ **5m MSS**।
+3. **রিটেস্ট:** Displacement এর আগের শেষ Up-ক্যান্ডেল (2,047.5 – 2,052) একটি Bearish Order Block। **সন্ধ্যা ৭:৪৫ BD** তে Price এতে ফিরে আসে।
+
+**ট্রেড প্ল্যান**
+
+| লেভেল     | প্রাইস      | যুক্তি                                 |
+| --------- | ----------- | -------------------------------------- |
+| এন্ট্রি   | 2,048       | Bearish OB এর রিটেস্ট                  |
+| Stop Loss | 2,053       | Sweep High (2,052) এর উপরে, সাথে বাফার |
+| টার্গেট   | 2,020       | Sell-Side Liquidity, অর্থাৎ Draw       |
+| রিস্ক     | ৫ পয়েন্ট   | 2,053 − 2,048                          |
+| রিওয়ার্ড | ২৮ পয়েন্ট  | 2,048 − 2,020                          |
+| **R:R**   | **১ : ৫.৬** | ২৮ ÷ ৫                                 |
+
+**Invalidation:** 5m ক্যান্ডেল 2,052 এর উপরে ক্লোজ করলে। তার মানে Sweep টি Run এ পরিণত হয়েছে।
+
+**যা অন্যরকম হতে পারত**
+
+- Price 2,020 এর আগে Internal Liquidity তে থেমে যেতে পারে। কিছু Trader সেখানে আংশিক প্রফিট নেয়।
+- সন্ধ্যা ৭:৪৫ এর রিটেস্ট না এলে কোনো ট্রেড নেই। Displacement এর পেছনে দৌড়ালে Stop অনেক দূরে রাখতে হতো।
+
+---
+
+## বিভিন্ন টাইমফ্রেমে Liquidity
+
+| টাইমফ্রেম    | সাধারণ Pool                       | ব্যবহার                        |
+| ------------ | --------------------------------- | ------------------------------ |
+| **Monthly**  | বার্ষিক ও ত্রৈমাসিক High/Low      | দীর্ঘমেয়াদি Draw on Liquidity |
+| **Weekly**   | মাসিক High/Low, PWH/PWL           | সুইং টার্গেট                   |
+| **Daily**    | PDH/PDL, সাম্প্রতিক Swing পয়েন্ট | Daily Bias ও ডে-ট্রেড টার্গেট  |
+| **4H / 1H**  | Session High/Low, Equal High/Low  | ইন্ট্রাডে Structure            |
+| **15m / 5m** | ছোট Swing পয়েন্ট, Inducement     | এক্সিকিউশন ও Stop বসানো        |
+
+**উপর থেকে নিচে** কাজ করুন। একটি 5m Sweep তখনই ট্রেড করার মতো, যখন সেটা Price কে একটি Higher Timeframe Pool এর দিকে নিয়ে যায়।
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="Liquidity Trading এ ভুল">
-
-**❌ প্রতিটি Sweep এ Trade করা** — প্রতিটি Liquidity Sweep Reversal দেয় না। HTF Alignment দরকার।
-
-**❌ "Draw on Liquidity" উপেক্ষা করা** — Trade এর আগে সবসময় জিজ্ঞেস করুন "Liquidity তে Draw কোন দিকে?"
-
-**❌ স্পষ্ট Level এ Stop রাখা** — আপনার Stop-ই Liquidity। Manipulation Zone এর বাইরে রাখুন।
-
-**❌ Sweep এর আগে Trade করা** — Liquidity নেওয়ার জন্য অপেক্ষা করুন Entry এর আগে।
-
-**❌ Session Level চিহ্নিত না করা** — PDH/PDL, Asian High/Low গুরুত্বপূর্ণ Reference Point।
-
-</Callout>
+| ভুল                                      | কেন ক্ষতি করে                                  | সমাধান                                            |
+| ---------------------------------------- | ---------------------------------------------- | ------------------------------------------------- |
+| লেভেলের বাইরের প্রতিটি Wick Fade করা     | অনেক "Sweep" আসলে Run হয়ে যায়                | ভিতরে ফিরে Close **এবং** MSS দুটোই লাগবে          |
+| Sweep চলাকালীন এন্ট্রি                   | কোনো কনফার্মেশন নেই; Stop সহজে হিট হয়         | Displacement, তারপর রিট্রেসমেন্টের অপেক্ষা করুন   |
+| Draw on Liquidity উপেক্ষা করা            | ভুল Pool এর দিকে ট্রেড করেন                    | সেশনের আগে Draw এর প্রশ্নগুলোর উত্তর দিন          |
+| Sweep হওয়া লেভেলেই ঠিক Stop রাখা        | সেই লেভেল আবার Liquidity হয়ে গেছে             | Sweep এক্সট্রিমের বাইরে, সাথে বাফার               |
+| নিজের Stop স্পষ্ট Equal High/Low তে রাখা | আপনার Stop-ই তখন Liquidity                     | Manipulation এর বাইরে Structure ভিত্তিক Stop দিন  |
+| Session লেভেল মার্ক না করা               | London ও NY সাধারণত যে Pool নেয় সেটা মিস করেন | প্রতিদিন Asian Range, PDH/PDL, PWH/PWL মার্ক করুন |
 
 ---
 
-## সারসংক্ষেপ
+## রিস্ক ম্যানেজমেন্ট
 
-| বিষয়         | বিবরণ                                          |
-| ------------- | ---------------------------------------------- |
-| **BSL**       | High এর উপরে Buy Stop — Bearish Move এর Target |
-| **SSL**       | Low এর নিচে Sell Stop — Bullish Move এর Target |
-| **মূল Pool**  | Equal H/L, PDH/PDL, PWH/PWL, Session Level     |
-| **Algorithm** | সবসময় নিকটতম Liquidity Pool খোঁজে             |
-| **Entry**     | Sweep + MSS Confirmation এর পর                 |
-| **Stop**      | Sweep Extreme এর বাইরে                         |
+| বিষয়                  | নির্দেশিকা                                                                       |
+| ---------------------- | -------------------------------------------------------------------------------- |
+| **প্রতি ট্রেডে রিস্ক** | অ্যাকাউন্টের ১–২%; শেখার সময় আরও কম                                             |
+| **Stop Loss**          | Sweep এক্সট্রিমের বাইরে, মূল লেভেলে নয়                                          |
+| **পজিশন সাইজ**         | অ্যাকাউন্ট রিস্ক ÷ Stop এর দূরত্ব ([ক্যালকুলেটর](/bn/tools/position-calculator)) |
+| **প্রথম টার্গেট**      | Internal Liquidity (নিকটতম FVG বা Swing), ঐচ্ছিক আংশিক প্রফিট                    |
+| **শেষ টার্গেট**        | বিপরীত External Pool (Draw on Liquidity)                                         |
+| **ট্রেড নয় যখন**      | Draw অস্পষ্ট, অথবা Sweep এর পর কোনো MSS নেই                                      |
+
+---
+
+## অনুশীলন
+
+1. একটি 1H চার্টে গত দুই সপ্তাহের প্রতিটি **Relative Equal High ও Low** মার্ক করুন। কোনগুলো পরে Price নিয়েছে লিখে রাখুন।
+2. নেওয়া প্রতিটি Pool কে **Sweep** (ভিতরে ফিরে Close) বা **Run** (বাইরে Close করে টিকে থাকা) হিসেবে লেবেল করুন। আপনার পেয়ারে কোনটি কতবার হলো গুনুন।
+3. আগামীকালের London সেশনের আগে আপনার **Draw on Liquidity** আর তার কারণ লিখে রাখুন, তারপর Price কী করল তার সাথে মিলিয়ে দেখুন।
+4. যত Sweep + MSS সেটআপ দেখবেন, ট্রেড নিন বা না নিন, সব আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন। কোনো গাইডের সংখ্যার চেয়ে আপনার নিজের পরিসংখ্যান বেশি গুরুত্বপূর্ণ।
+
+---
+
+## প্রশ্ন ও উত্তর
+
+### Liquidity কি "Manipulation"?
+
+ICT প্রায়ই Sweep কে Manipulation বলে। কেউ আপনার Stop কে টার্গেট করছে, এটা বিশ্বাস করার দরকার নেই। Stop স্পষ্ট লেভেলে জমে, আর বড় Order পূরণ হতে সেই Liquidity লাগে। যেকোনো ব্যাখ্যাতেই ব্যবহারিক নিয়ম একই থাকে।
+
+### একটি Sweep লেভেলের কত বাইরে যায়?
+
+কোনো নির্দিষ্ট দূরত্ব নেই। এটা নির্ভর করে ইনস্ট্রুমেন্ট আর বর্তমান Volatility এর উপর। পিপ গুনে নয়, ভিতরে ফিরে Close আর পরের Displacement দিয়ে বিচার করুন।
+
+### প্রতিটি Sweep কি ট্রেড করব?
+
+না। শুধু সেই Sweep ট্রেড করুন যা Higher Timeframe এর Draw on Liquidity এর দিকে নির্দেশ করে, যার পরে MSS আসে, এবং যা দিনের সক্রিয় সময়ে ঘটে।
+
+---
+
+## সারাংশ
+
+| কনসেপ্ট               | মূল বিষয়                                                       |
+| --------------------- | --------------------------------------------------------------- |
+| **Liquidity**         | স্পষ্ট দামে অপেক্ষমাণ Order (Stop ও Pending Entry)              |
+| **BSL / SSL**         | High এর উপরে Buy Order / Low এর নিচে Sell Order                 |
+| **সেরা Pool**         | পরিষ্কার Equal High ও Low, Session লেভেল, PDH/PDL, PWH/PWL      |
+| **Draw on Liquidity** | যে Pool এ Price এর পরবর্তীতে পৌঁছানোর সম্ভাবনা সবচেয়ে বেশি     |
+| **Cycle**             | Build → Sweep → Shift → Deliver                                 |
+| **Sweep বনাম Run**    | ভিতরে ফিরে Close + MSS = Sweep; বাইরে Close করে টিকে থাকা = Run |
+| **Stop**              | Sweep এক্সট্রিমের বাইরে                                         |
+| **টার্গেট**           | বিপরীত Pool                                                     |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Liquidity Sweep](/bn/ict/liquidity-sweep) — Sweep এর পর Execution
-- [AMD / Power of 3](/bn/ict/amd) — Accumulation-Manipulation-Distribution
-- [Judas Swing](/bn/ict/judas-swing) — Manipulation Move
-- [ICT Kill Zones](/bn/ict/ict-kill-zones) — কখন Sweep সবচেয়ে বেশি হয়
-- [Daily Bias](/bn/ict/daily-bias) — কোন Liquidity Target হবে ভবিষ্যদ্বাণী
+- [Liquidity Sweep](/bn/ict/liquidity-sweep) — Sweep এর পর এক্সিকিউশনের বিস্তারিত
+- [Market Structure Shift](/bn/ict/mss) — Sweep এর পরের কনফার্মেশন
+- [Fair Value Gap](/bn/ict/fvg) — Internal Liquidity ও এন্ট্রি জোন
+- [Daily Bias](/bn/ict/daily-bias) — Draw on Liquidity বেছে নেওয়া
+- [Judas Swing](/bn/ict/judas-swing) ও [AMD](/bn/ict/amd) — সেশন ওপেনের Sweep
+- [ICT Kill Zones](/bn/ict/ict-kill-zones) — Pool সাধারণত কখন নেওয়া হয়

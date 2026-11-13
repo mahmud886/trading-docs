@@ -105,10 +105,44 @@ export function createMdxComponents(): MDXComponents {
     ),
     td: (props) => <td className="border-b border-border/50 px-4 py-3 text-muted-foreground" {...props} />,
     tr: (props) => <tr className="transition-colors hover:bg-muted/30" {...props} />,
-    img: (props) => (
+    img: (props) => {
+      const src = typeof props.src === "string" ? props.src : undefined;
+      // Charts ship as "-dark" / "-light" pairs; render both and let the theme pick one.
+      if (src?.includes("-dark.")) {
+        return (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="theme-dark-only mt-6 rounded-xl border border-border" alt="" loading="lazy" {...props} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="theme-light-only mt-6 rounded-xl border border-border"
+              alt=""
+              loading="lazy"
+              {...props}
+              src={src.replace("-dark.", "-light.")}
+            />
+          </>
+        );
+      }
       // eslint-disable-next-line @next/next/no-img-element
-      <img className="mt-6 rounded-xl border border-border" alt="" loading="lazy" {...props} />
-    ),
+      return <img className="mt-6 rounded-xl border border-border" alt="" loading="lazy" {...props} />;
+    },
+    video: (props) => {
+      const src = typeof props.src === "string" ? props.src : undefined;
+      if (src?.includes("-dark.")) {
+        return (
+          <>
+            <video {...props} className={`theme-dark-only ${props.className ?? ""}`} />
+            <video
+              {...props}
+              className={`theme-light-only ${props.className ?? ""}`}
+              src={src.replace("-dark.", "-light.")}
+            />
+          </>
+        );
+      }
+      return <video {...props} />;
+    },
     Callout,
     ICTGlossaryCards,
     SessionTimeline,

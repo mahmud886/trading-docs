@@ -353,3 +353,14 @@ html {
   font-size: 0.65rem;
   padding: 0.25rem 0.5rem;
 }
+
+/* Light/dark chart pairs in MDX lessons (see components/docs/mdx-components.tsx) */
+.theme-dark-only {
+  display: none;
+}
+.dark .theme-dark-only {
+  display: block;
+}
+.dark .theme-light-only {
+  display: none;
+}

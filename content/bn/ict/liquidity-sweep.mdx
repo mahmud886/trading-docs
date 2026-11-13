@@ -1,141 +1,286 @@
 ---
-title: "ICT Liquidity Sweep"
-description: "ICT Liquidity Sweep Master করুন — যে মুহূর্তে Price Stop Loss নিয়ে নেয় Institutional Entry এর জ্বালানি হিসেবে। Sweep Identification, Confirmation এবং High-R:R Entry Model শিখুন।"
+title: "ICT Liquidity Sweep — সম্পূর্ণ গাইড"
+description: "ধাপে ধাপে ICT Liquidity Sweep ট্রেড করুন: একটি Raid এর গঠন, Sweep এর প্রকারভেদ, Confirmation ও Invalidation, তিনটি এন্ট্রি মডেল, Stop ও টার্গেট বসানো, Kill Zone টাইমিং, এবং চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ দুটি সম্পূর্ণ উদাহরণ।"
 level: intermediate
 order: 9
-lastUpdated: "2026-06-09"
+lastUpdated: "2026-11-13"
 ---
 
-## Liquidity Sweep কী?
+## "কোথায়" থেকে "কীভাবে"
 
-Liquidity Sweep ঘটে যখন Price **সংক্ষিপ্তভাবে একটি Key Level এর বাইরে Trade** করে (Swing High/Low, Equal H/L, Session Level) Resting Stop-Loss Order ও Pending Order Trigger করার জন্য, তারপর দ্রুত Reverse করে। এটি AMD এর "Manipulation" Phase — Counterparty Liquidity এর জন্য Institutional Fishing Expedition।
+[Liquidity](/bn/ict/liquidity) লেসন ব্যাখ্যা করে অপেক্ষমাণ Order **কোথায়** থাকে এবং কেন Price সেদিকে টানা হয়। এই লেসনের বিষয় **এক্সিকিউশন**: Sweep ঘটার সময় সেটা কীভাবে চিনবেন, কীভাবে নিশ্চিত করবেন, এবং এন্ট্রি, Stop আর প্রফিট কোথায় রাখবেন।
 
-<Callout type="info" title="Sweep-ই Setup">
-  "Sweep-ই Setup। একবার Liquidity নেওয়া হলে, Smart Money তাদের Order Fill করেছে এবং True Move শুরু হয়।" — ICT
+<Callout type="info" title="সংজ্ঞা">
+  **Liquidity Sweep** ঘটে যখন Price একটি মার্ক করা Liquidity Pool এর বাইরে যায়, সেখানকার Stop ও Pending Order ট্রিগার
+  করে, তারপর **বাইরে টিকে থাকতে ব্যর্থ হয়**। Price ভিতরে ফিরে ক্লোজ করে এবং উল্টো দিকে Displacement করে। ICT এর AMD
+  মডেলে Sweep হলো *Manipulation* ধাপ।
+</Callout>
+
+### মূল পরিভাষা
+
+| পরিভাষা              | অর্থ                                                                    |
+| -------------------- | ----------------------------------------------------------------------- |
+| **Raid**             | লেভেলের বাইরে যে ধাক্কা অপেক্ষমাণ Order ট্রিগার করে                     |
+| **ভিতরে ফিরে Close** | ক্যান্ডেল (আপনার বেছে নেওয়া টাইমফ্রেমে) লেভেলের আগের দিকেই ক্লোজ করে   |
+| **Displacement**     | লেভেল থেকে দূরে শক্তিশালী, বড় বডির Move                                |
+| **MSS**              | Market Structure Shift: Displacement শেষ বিপরীত Swing ভেদ করে ক্লোজ করে |
+| **CE**               | Consequent Encroachment: একটি FVG এর ৫০% লেভেল                          |
+| **Sweep Extreme**    | Raid এর সময় Price যতদূর গেছে; Stop থাকে এর বাইরে                       |
+
+---
+
+## একটি Sweep এর গঠন
+
+![Sweep এর গঠন — EUR/USD 5m: PDH এর উপরে Raid, MSS সহ ভিতরে ফিরে Close, FVG রিটেস্টে এন্ট্রি](/images/ict/liquidity-sweep/eurusd-pdh-sweep-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/sweep-anatomy-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+ট্রেড করার মতো প্রতিটি Sweep এর একই চারটি অংশ:
+
+| অংশ                    | কী দেখবেন                                                                    | এর মানে                                     |
+| ---------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- |
+| **① Raid**             | Price একটি মার্ক করা লেভেল (PDH, Equal Low, Session High …) ভেদ করে          | অপেক্ষমাণ Stop ও Breakout Order ট্রিগার হয় |
+| **② ভিতরে ফিরে Close** | ক্যান্ডেল লেভেলের আগের দিকেই ক্লোজ করে                                       | Breakout এর পরে কোনো ধারাবাহিকতা আসেনি      |
+| **③ Shift**            | একটি Displacement শেষ বিপরীত Swing ভেদ করে ক্লোজ করে (MSS), প্রায়ই FVG রেখে | Order Flow ঘুরে গেছে                        |
+| **④ এন্ট্রি**          | Shift যে FVG বা OB রেখে গেছে, Price সেখানে রিট্রেস করে                       | Raid এর বাইরে Stop সহ নির্দিষ্ট এন্ট্রি     |
+
+<Callout type="warning" title="সেশনের আগেই টাইমফ্রেম ঠিক করুন">
+  EUR/USD চার্টে রিভার্সালের আগে দুটি ৫ মিনিটের ক্যান্ডেল PDH এর উপরে ক্লোজ করে। ১৫ মিনিটের চার্টে একই Move একটি মাত্র
+  ক্যান্ডেল, যার Wick PDH এর উপরে। "ভিতরে ফিরে Close" কোন টাইমফ্রেমে বিচার করবেন, তা সেশন শুরুর **আগেই** ঠিক করুন এবং
+  সেটাতেই থাকুন। পরে টাইমফ্রেম বদলালে প্রতিটি Run কেই Sweep মনে হবে।
 </Callout>
 
 ---
 
-## Liquidity Sweep এর প্রকারভেদ
+## Sweep এর প্রকারভেদ
 
-### 1. Session Level Sweep
+| প্রকার                   | সেশনের আগে কোন লেভেল মার্ক করবেন    | সাধারণ সময়                                     |
+| ------------------------ | ----------------------------------- | ----------------------------------------------- |
+| **Session Sweep**        | Asian High/Low; London High/Low     | London ওপেন Asia নেয়; NY নেয় London           |
+| **Daily / Weekly Sweep** | PDH/PDL, PWH/PWL                    | NY AM, বা সপ্তাহের শুরুতে                       |
+| **Equal High / Low**     | প্রায় একই দামে দুই বা তার বেশি টাচ | যেকোনো Kill Zone                                |
+| **Swing Sweep**          | সাম্প্রতিক স্পষ্ট Swing High বা Low | যেকোনো সময়; একা সবচেয়ে দুর্বল                 |
+| **Trendline Sweep**      | তিন বা তার বেশি টাচের একটি লাইন     | প্রায়ই সেই "Breakout" যা Trader দের ফাঁদে ফেলে |
 
-- London এ Asian High/Low Sweep
-- NY তে London High/Low Sweep
-- PDH/PDL (Previous Day High/Low) Sweep
-
-### 2. Swing Point Sweep
-
-- Price একটি সাম্প্রতিক Swing High বা Swing Low নিয়ে নেয়
-- দ্রুত Wick বাইরে, তারপর Reversal
-- বিপরীত দিকে Displacement অনুসরণ করতে হবে
-
-### 3. Equal High/Low Sweep
-
-- একই Level এ একাধিক Touch "Magnet" তৈরি করে
-- Sweep স্পষ্ট — সাধারণত 5-15 Pips বাইরে Trade করে
-- Sweep এর পর Reversal এর খুব বেশি Probability
-
-### 4. Trendline Sweep
-
-- Trendline বরাবর রাখা Stop Loss
-- "Breakout" Stop নিয়ে নেয়, তারপর Reverse করে
-- Classic Retail Trap
+লেভেল যত স্পষ্ট, তার পেছনে তত বেশি Order, আর Sweep তত অর্থবহ। এলোমেলো ছোট একটি Swing পরিষ্কার Equal Low বা আগের দিনের High এর চেয়ে দুর্বল।
 
 ---
 
-## Sweep Confirmation
+## Sweep নাকি Run?
 
-Sweep একা Trade করার জন্য যথেষ্ট নয়। Confirmation দরকার:
+![Sweep বনাম Run — একই Equal High, দুই রকম ফলাফল](/images/ict/liquidity/sweep-vs-run-dark.png)
 
-### Confirmation Checklist
-
-1. ✅ Price Liquidity Level এর বাইরে Trade করে
-2. ✅ Rejection Candle তৈরি হয় (লম্বা Wick, ছোট Body)
-3. ✅ LTF (5M/15M) এ MSS — বিপরীত দিকে Displacement
-4. ✅ Displacement এর সময় FVG এবং/অথবা OB তৈরি হয়
-5. ✅ Kill Zone Timing Align করে
-
-### কী Sweep Invalidate করে
-
-- Price Level এর বাইরে শক্তভাবে Close করে (শুধু Wick নয়)
-- MSS অনুসরণ করে না — Price Sweep Direction এ Continue করে
-- একাধিক Candle বাইরে Close = Genuine Breakout, Sweep নয়
+একটি Raid তখনই Sweep, যখন Price লেভেলের বাইরে টিকে থাকতে ব্যর্থ হয়। ক্যান্ডেল বাইরে ক্লোজ করলে এবং রিটেস্ট হোল্ড করলে সেটা **Run** (Breakout), আর তখন Fade করা মানে Market এর বিপরীতে ট্রেড করা। পুরো তুলনা আছে [Liquidity](/bn/ict/liquidity) লেসনে।
 
 ---
 
-## বাস্তব Trading উদাহরণ
+## Confirmation চেকলিস্ট
 
-### উদাহরণ ১: PDH Sweep — EUR/USD Sell
+প্রতিটি লাইনে টিক পড়লে তবেই Sweep ট্রেড করুন:
 
-- **PDH:** 1.0920
-- **Setup:** NY AM Open, Price 1.0928 পর্যন্ত Spike করে (PDH Sweep)
-- **Confirmation:** 5M Bearish MSS 1.0918 এ, FVG 1.0915-1.0920 এ
-- **Entry:** 1.0918 তে Sell (FVG CE)
-- **Stop:** 1.0930 (Sweep এর উপরে)
-- **Target:** PDL 1.0870
-- **R:R:** 1:4
-- **BD সময়:** বিকাল 5:45
+| ✓   | শর্ত                                                                   |
+| --- | ---------------------------------------------------------------------- |
+| ☐   | লেভেলটি সেশনের **আগেই মার্ক করা** ছিল (পরে খুঁজে বের করা নয়)          |
+| ☐   | Price এর **বাইরে** গেছে (শুধু টাচ Sweep নয়)                           |
+| ☐   | আপনার বেছে নেওয়া টাইমফ্রেমে একটি ক্যান্ডেল **ভিতরে ফিরে Close** করেছে |
+| ☐   | এরপর একটি **Displacement** এসেছে, যার বডি গড়ের চেয়ে স্পষ্টভাবে বড়   |
+| ☐   | Displacement একটি **MSS** তৈরি করেছে (শেষ বিপরীত Swing ভেদ করে Close)  |
+| ☐   | এটি এন্ট্রির জন্য একটি **FVG বা OB** রেখে গেছে                         |
+| ☐   | Sweep টি **Higher Timeframe এর Draw on Liquidity** এর দিকে নির্দেশ করে |
+| ☐   | এটি একটি **Kill Zone** এ ঘটেছে                                         |
 
-### উদাহরণ ২: Equal Lows Sweep — Gold Buy
+### কী একটি Sweep কে বাতিল করে
 
-- **Equal Lows:** 2,025 এ তিনটি Touch
-- **Setup:** London KZ, Price 2,022 এ নামে (Equal Lows Sweep)
-- **Confirmation:** 15M Bullish MSS, 2,027 এ Bullish OB
-- **Entry:** 2,027 তে Buy
-- **Stop:** 2,020
-- **Target:** BSL 2,060
-- **R:R:** 1:4.7
-- **BD সময়:** দুপুর 1:30
+- Price লেভেলের **বাইরে Close** করে টিকে থাকে, আর রিটেস্টও হোল্ড করে। সেটা Run।
+- কোনো MSS আসে না। Price পাশে সরে বা Raid এর দিকেই চলতে থাকে।
+- এন্ট্রির পর কোনো ক্যান্ডেল **Sweep Extreme এর বাইরে Close** করে। Raid টি Breakout এ পরিণত হয়েছে, আর Stop আগে থেকেই সেখানে থাকার কথা।
 
 ---
 
-## Sweep Trading Model
+## তিনটি এন্ট্রি মডেল
 
-### 4-Step Process
+| মডেল                          | এন্ট্রি                                                       | সুবিধা                       | অসুবিধা                                      |
+| ----------------------------- | ------------------------------------------------------------- | ---------------------------- | -------------------------------------------- |
+| **A. FVG CE** (উদাহরণ ১)      | Displacement এর রেখে যাওয়া FVG এর ৫০% লেভেলে লিমিট           | ছোট Stop, ভালো R:R           | কিছু Move ততদূর রিট্রেস করে না               |
+| **B. Order Block** (উদাহরণ ২) | OB এর Proximal Edge এ লিমিট (প্রায়ই Sweep ক্যান্ডেলটি নিজেই) | স্পষ্ট লেভেল, Stop ঠিক বাইরে | Volatile পেয়ারে OB চওড়া হতে পারে           |
+| **C. আক্রমণাত্মক**            | Displacement (MSS) ক্যান্ডেলের Close এ                        | Move খুব কমই মিস হয়         | বড় Stop, কম R:R, রিট্রেসমেন্টের ফিল্টার নেই |
 
-1. **Anticipate** — Session এর আগে সব Liquidity Level Mark করুন
-2. **Wait** — Price Liquidity তে আসতে দিন (Chase করবেন না)
-3. **Confirm** — Sweep এর পর MSS + Displacement
-4. **Execute** — OB/FVG তে Entry, Stop Sweep Extreme এর বাইরে
+মডেল A আর B রিট্রেসমেন্টের অপেক্ষা করে, তাই কিছু ট্রেড মিস হবে। নির্দিষ্ট, ছোট রিস্কের এটাই দাম।
+
+---
+
+## Stop ও টার্গেট বসানো
+
+**Stop:** **Sweep Extreme এর বাইরে** রাখুন, সাথে ছোট একটি বাফার। মূল লেভেলে রাখবেন না।
+
+- লেভেলটি একবার Raid হয়ে গেছে। আসল Move শুরুর আগে আবার টেস্ট হতে পারে।
+- বাফার Spread আর স্বাভাবিক নয়েজ সামলায়। উদাহরণে EUR/USD তে এটি ২ পিপ (Raid 1.0928 → Stop 1.0930) এবং গোল্ডে ২ পয়েন্ট (Sweep 2,022 → Stop 2,020)।
+
+**টার্গেট:** **বিপরীত Pool** এ, অর্থাৎ Draw on Liquidity।
+
+- **প্রথম টার্গেট (ঐচ্ছিক আংশিক প্রফিট):** Internal Liquidity, যেমন নিকটতম FVG বা Swing।
+- **শেষ টার্গেট:** বিপরীত External Pool, যেমন PDL/PDH বা Equal Low/High।
+
+আসল এন্ট্রি আর Stop থেকে R:R হিসাব করুন। R:R খারাপ হলে ট্রেড বাদ দিন; ভালো দেখাতে Stop সরাবেন না।
+
+---
+
+## টাইমিং: Kill Zone (বাংলাদেশ সময়)
+
+| Kill Zone       | BD সময়               | সাধারণ Sweep                                |
+| --------------- | --------------------- | ------------------------------------------- |
+| **London**      | দুপুর ১২:০০ – ৩:০০    | Asian High বা Low; রাতে তৈরি Equal High/Low |
+| **New York AM** | বিকেল ৫:০০ – রাত ৮:০০ | London High বা Low, PDH/PDL                 |
+| **NY Lunch**    | রাত ১০:০০ – ১১:৩০     | সাধারণত এড়িয়ে চলুন: পাতলা, এলোমেলো        |
+| **NY PM**       | রাত ১১:৩০ – ২:০০      | দিনের শেষে NY AM রেঞ্জের Sweep              |
+
+এগুলো [ICT Kill Zones](/bn/ict/ict-kill-zones) লেসন অনুযায়ী। Kill Zone এর বাইরেও Sweep হয়, কিন্তু তখন Volume কম থাকে আর পড়া কঠিন।
+
+---
+
+## সম্পূর্ণ উদাহরণ ১ — EUR/USD PDH Sweep, Sell (5m, NY AM)
+
+<Callout type="info" title="এই উদাহরণগুলো সম্পর্কে">
+  দুটি চার্টেই এই লেসনের লেভেলের চারপাশে তৈরি **সিন্থেটিক ক্যান্ডেল** ব্যবহার করা হয়েছে। এগুলো পদ্ধতিটি দেখানোর জন্য,
+  আসল ট্রেডের রেকর্ড নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড, ফলাফল নয়।
+</Callout>
+
+**সেশনের আগে:** PDH **1.0920** এর উপরে Buy Stop আছে (BSL)। PDL **1.0870** এর নিচে Sell Stop আছে (SSL), আর এটিই Draw।
+
+**পর্যবেক্ষণ** (উপরের চার্ট)
+
+1. **Raid:** NY AM Kill Zone এ Price PDH এ উঠে **1.0928** পর্যন্ত Spike করে।
+2. **ভিতরে ফিরে Close + MSS:** ১২ পিপের Bearish Displacement, যেখানে গড় ৪ পিপ, PDH এর নিচে এবং **1.0918** Higher Low এর নিচে ক্লোজ করে। এটাই 5m MSS।
+3. **FVG:** Displacement একটি Bearish FVG রেখে যায় **1.0915 – 1.0920** এ, যার CE 1.09175।
+4. **এন্ট্রি:** **বিকেল ৫:৪৫ BD** তে Price CE তে রিট্রেস করে। **1.0918** এ Sell।
+
+| লেভেল     | প্রাইস      | যুক্তি                           |
+| --------- | ----------- | -------------------------------- |
+| এন্ট্রি   | 1.0918      | FVG CE (মডেল A)                  |
+| Stop      | 1.0930      | 1.0928 Raid High এর উপরে + ২ পিপ |
+| টার্গেট   | 1.0870      | PDL, Sell-Side Liquidity         |
+| রিস্ক     | ১২ পিপ      | 1.0930 − 1.0918                  |
+| রিওয়ার্ড | ৪৮ পিপ      | 1.0918 − 1.0870                  |
+| **R:R**   | **১ : ৪.০** | ৪৮ ÷ ১২                          |
+
+**Invalidation:** 5m ক্যান্ডেল 1.0928 এর উপরে ক্লোজ করলে।
+
+---
+
+## সম্পূর্ণ উদাহরণ ২ — Gold Equal-Lows Sweep, Buy (15m, London)
+
+![Equal Lows Sweep — Gold 15m: 2,022 পর্যন্ত Sweep, MSS, OB রিটেস্ট, 2,027 এ Buy](/images/ict/liquidity-sweep/gold-eql-sweep-dark.png)
+
+**সেশনের আগে:** **2,025** এর কাছে তিনটি Relative Equal Low এর নিচে Sell Stop আছে (SSL)। **2,060** এর আগের High এর উপরে Buy Stop আছে (BSL), আর এটিই Draw।
+
+**পর্যবেক্ষণ**
+
+1. **Raid:** London Kill Zone এ দুপুর ১২:১৫ এর ক্যান্ডেল **2,022** পর্যন্ত নামে, Equal Low গুলো Sweep করে, তারপর 2,025 এর উপরে ফিরে ক্লোজ করে।
+2. **Shift:** পরের ক্যান্ডেল ৭ পয়েন্টের Bullish Displacement, যেখানে গড় ২.২ পয়েন্ট। এটি **2,031** Lower High এর উপরে ক্লোজ করে, অর্থাৎ 15m MSS।
+3. **OB:** Sweep ক্যান্ডেলটি নিজেই (2,022 – 2,027.5) Displacement এর আগের শেষ Bearish ক্যান্ডেল। এটি একটি Bullish Order Block।
+4. **এন্ট্রি:** **দুপুর ১:৩০ BD** তে Price OB তে রিট্রেস করে। **2,027** এ Buy।
+
+| লেভেল     | প্রাইস      | যুক্তি                              |
+| --------- | ----------- | ----------------------------------- |
+| এন্ট্রি   | 2,027       | OB এর Proximal Edge (মডেল B)        |
+| Stop      | 2,020       | 2,022 Sweep Low এর নিচে + ২ পয়েন্ট |
+| টার্গেট   | 2,060       | আগের High এর BSL                    |
+| রিস্ক     | ৭ পয়েন্ট   | 2,027 − 2,020                       |
+| রিওয়ার্ড | ৩৩ পয়েন্ট  | 2,060 − 2,027                       |
+| **R:R**   | **১ : ৪.৭** | ৩৩ ÷ ৭                              |
+
+**Invalidation:** 15m ক্যান্ডেল 2,022 এর নিচে ক্লোজ করলে।
+
+---
+
+## ধাপে ধাপে প্রক্রিয়া
+
+1. **প্রস্তুতি।** PDH/PDL, PWH/PWL, Asian Range আর যেকোনো পরিষ্কার Equal High/Low মার্ক করুন। Draw on Liquidity লিখে রাখুন।
+2. **অপেক্ষা।** Kill Zone এর ভিতরে Price কে মার্ক করা লেভেলে আসতে দিন। পেছনে দৌড়াবেন না।
+3. **Close দেখুন।** বেছে নেওয়া টাইমফ্রেমে ক্যান্ডেল কি ভিতরে ফিরে ক্লোজ করেছে? না করলে সরে থাকুন।
+4. **নিশ্চিত করুন।** MSS সহ একটি Displacement লাগবে।
+5. **পরিকল্পনা।** FVG/OB, এন্ট্রি, Sweep Extreme এর বাইরে Stop আর বিপরীত Pool এ টার্গেট মার্ক করুন। R:R হিসাব করুন।
+6. **এক্সিকিউট ও ম্যানেজ।** লিমিট অর্ডার দিন। Price রিট্রেস না করলে কোনো ট্রেড নেই।
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="Sweep এ ভুল">
-
-**❌ প্রতিটি Level Touch এ Fade করা** — শুধু Touch নয়, SWEEP (Level এর বাইরে Trade) এর জন্য অপেক্ষা করুন
-
-**❌ Sweep এর সময় Entry** — Sweep এর পর MSS Confirmation এর জন্য অপেক্ষা করুন
-
-**❌ HTF Alignment ছাড়া** — HTF Bias এর বিরুদ্ধে Sweep = Continuation, Reversal নয়
-
-**❌ খুব Tight Stop** — Level নিজে তে নয়, Sweep Extreme এর বাইরে Stop রাখুন
-
-**❌ Session Context উপেক্ষা করা** — Kill Zone এ Sweep অনেক বেশি Reliable
-
-</Callout>
+| ভুল                                              | সমাধান                                                               |
+| ------------------------------------------------ | -------------------------------------------------------------------- |
+| লেভেলের প্রতিটি টাচ Fade করা                     | টাচ Sweep নয়। Price কে বাইরে যেতে হবে এবং ভিতরে ফিরে Close করতে হবে |
+| Raid চলাকালীন এন্ট্রি                            | ভিতরে ফিরে Close **এবং** MSS এর অপেক্ষা করুন                         |
+| যে টাইমফ্রেম "ঠিক দেখায়" সেটাতে Close বিচার করা | Confirmation টাইমফ্রেম আগেই ঠিক করুন                                 |
+| Sweep হওয়া লেভেলেই Stop                         | Sweep Extreme এর বাইরে, সাথে বাফার                                   |
+| HTF Bias এর বিরুদ্ধে Sweep ট্রেড করা             | এগুলো প্রায়ই Run হয়ে যায়                                          |
+| Kill Zone এর বাইরে ট্রেড                         | London ও NY AM বেছে নিন; NY Lunch এড়িয়ে চলুন                       |
+| R:R ভালো দেখাতে Stop সরানো                       | সঠিক Stop এ R:R খারাপ হলে ট্রেড বাদ দিন                              |
 
 ---
 
-## সারসংক্ষেপ
+## রিস্ক ম্যানেজমেন্ট
 
-| বিষয়            | বিবরণ                                            |
-| ---------------- | ------------------------------------------------ |
-| **সংজ্ঞা**       | Price Key Level এর বাইরে Trade করে তারপর Reverse |
-| **উদ্দেশ্য**     | Stop Trigger = Institutional Order Fill          |
-| **Confirmation** | MSS + Displacement + FVG Creation                |
-| **Entry**        | Sweep Confirmation এর পর OB/FVG তে               |
-| **Stop**         | Sweep Extreme এর বাইরে                           |
-| **সেরা Level**   | PDH/PDL, Equal H/L, Session Level                |
+| বিষয়                  | নির্দেশিকা                                                                       |
+| ---------------------- | -------------------------------------------------------------------------------- |
+| **প্রতি ট্রেডে রিস্ক** | অ্যাকাউন্টের ১–২%; শেখার সময় আরও কম                                             |
+| **পজিশন সাইজ**         | অ্যাকাউন্ট রিস্ক ÷ Stop এর দূরত্ব ([ক্যালকুলেটর](/bn/tools/position-calculator)) |
+| **Stop**               | Sweep Extreme এর বাইরে + বাফার                                                   |
+| **আংশিক (ঐচ্ছিক)**     | Internal Liquidity তে                                                            |
+| **সর্বোচ্চ চেষ্টা**    | প্রতি সেশনে প্রতি লেভেলে একবার। ব্যর্থ হলে লেভেলটি সম্ভবত Run হয়ে গেছে          |
+
+---
+
+## অনুশীলন
+
+1. গত ২০ ট্রেডিং দিনের PDH/PDL আর Asian Range মার্ক করুন। প্রতিটির জন্য লিখুন London বা NY সেটা Sweep করেছে নাকি Run।
+2. প্রতিটি Sweep এর জন্য দেখুন, বেছে নেওয়া টাইমফ্রেমের পরের কয়েকটি ক্যান্ডেলে MSS এসেছে কিনা।
+3. পাঁচটি Sweep ক্যান্ডেল ধরে ধরে রিপ্লে করুন। পরের ক্যান্ডেল দেখার **আগে** এন্ট্রি, Stop আর টার্গেট লিখে রাখুন।
+4. ফলাফল আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন। ৩০টি বা তার বেশি উদাহরণের পর বুঝবেন আপনার পেয়ার কেমন আচরণ করে।
+
+---
+
+## প্রশ্ন ও উত্তর
+
+### Price লেভেলের বাইরে কতক্ষণ থাকলেও সেটা Sweep বলে ধরা যায়?
+
+কোনো নির্দিষ্ট সংখ্যক ক্যান্ডেল নেই। আগে থেকে বেছে নেওয়া Confirmation টাইমফ্রেম ব্যবহার করুন। _সেই_ টাইমফ্রেমের ক্যান্ডেল লেভেলের বাইরে ক্লোজ করলে এবং রিটেস্ট হোল্ড করলে, সেটাকে Run ধরুন।
+
+### Sweep আর Turtle Soup কি একই?
+
+খুব কাছাকাছি। Turtle Soup হলো সাম্প্রতিক High বা Low এর ব্যর্থ Breakout ট্রেড করার একটি নির্দিষ্ট পদ্ধতি। এটি পরের লেসনে আছে: [Turtle Soup](/bn/ict/turtle-soup)।
+
+### Sweep ক্যান্ডেল ভিতরে ফিরে ক্লোজ করলেই কি এন্ট্রি নিতে পারি?
+
+পারেন, কিন্তু তখন আপনি MSS নিশ্চিত হওয়ার আগেই ট্রেড করছেন, যে Order Flow ঘুরেছে কিনা। লসের ট্রেড বেশি হবে। এভাবে নিলে Stop Sweep Extreme এর বাইরে রাখুন আর সাইজ ছোট করুন।
+
+---
+
+## সারাংশ
+
+| বিষয়            | মূল কথা                                                                 |
+| ---------------- | ----------------------------------------------------------------------- |
+| **সংজ্ঞা**       | Price মার্ক করা Pool এর বাইরে যায়, টিকতে পারে না, ভিতরে ফিরে Close করে |
+| **গঠন**          | Raid → ভিতরে ফিরে Close → Shift (MSS) → এন্ট্রি                         |
+| **Confirmation** | ভিতরে ফিরে Close + Displacement + MSS, Kill Zone এ, HTF Draw এর দিকে    |
+| **এন্ট্রি**      | FVG CE, OB এর Proximal Edge, অথবা (আক্রমণাত্মক) MSS ক্যান্ডেলের Close   |
+| **Stop**         | Sweep Extreme এর বাইরে + বাফার                                          |
+| **টার্গেট**      | বিপরীত Pool (Draw on Liquidity)                                         |
+| **বাতিল**        | Sweep Extreme এর বাইরে Close, অথবা কোনো MSS নেই                         |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Liquidity](/bn/ict/liquidity) — Liquidity Pool বোঝা
-- [MSS](/bn/ict/mss) — Sweep এর পর Confirmation
-- [AMD](/bn/ict/amd) — Sweep হলো Manipulation Phase
-- [Judas Swing](/bn/ict/judas-swing) — Session-Opening Sweep
-- [ICT Kill Zones](/bn/ict/ict-kill-zones) — কখন Sweep সবচেয়ে Reliable
+- [Liquidity](/bn/ict/liquidity) — Pool কোথায় এবং Draw কীভাবে বেছে নেবেন
+- [Market Structure Shift](/bn/ict/mss) — Sweep এর পরের কনফার্মেশন
+- [Turtle Soup](/bn/ict/turtle-soup) — ব্যর্থ Breakout এর এন্ট্রি মডেল
+- [Judas Swing](/bn/ict/judas-swing) ও [AMD](/bn/ict/amd) — সেশন ওপেনের Sweep
+- [ICT Kill Zones](/bn/ict/ict-kill-zones) — Sweep সবচেয়ে বেশি কখন হয়

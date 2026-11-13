@@ -1,102 +1,230 @@
 ---
-title: "ICT Turtle Soup"
-description: "Master ICT Turtle Soup — the strategy of fading false breakouts beyond key levels. Named after the famous Turtle Traders, this reversal setup targets liquidity sweeps for high-R:R entries."
+title: "ICT Turtle Soup — Complete Guide"
+description: "Trade the failed breakout with Turtle Soup: where the name comes from, the bearish and bullish mechanics, how it differs from the sweep + MSS model, identification rules, two entry variants, stops, invalidation, and two worked examples with charts and an animated walkthrough."
 level: advanced
 order: 15
-lastUpdated: "2026-05-12"
+lastUpdated: "2026-11-13"
 ---
 
-## What is Turtle Soup?
+## What Is Turtle Soup?
 
-Turtle Soup is a **reversal strategy** that fades false breakouts beyond significant highs and lows. Named ironically after the Turtle Trading system (which traded breakouts), ICT's Turtle Soup does the OPPOSITE — it enters against the breakout after a liquidity sweep.
+**Turtle Soup** is a reversal setup that **fades a false breakout** of a significant high or low.
 
-<Callout type="info" title="The Name">
-  The Turtle Traders became famous for buying breakouts. ICT named this strategy "Turtle Soup" because it's designed to
-  fade and profit from the very breakouts that trap Turtle-style traders.
+1. Price breaks beyond the level.
+2. Breakout traders enter, and stops beyond the level are triggered.
+3. Price quickly comes back inside.
+4. You trade against the breakout. The stop goes just beyond the failed move.
+
+<Callout type="info" title="Where the name comes from">
+  The pattern and its name come from Linda Bradford Raschke and Laurence Connors, in their book *Street Smarts* (1995).
+  The famous "Turtle" traders bought breakouts to new 20-day highs. Turtle Soup was designed to profit when those
+  breakouts failed. ICT adapted the idea to his liquidity framework. In ICT terms, Turtle Soup is a way to trade a
+  **liquidity sweep** of an obvious high or low.
 </Callout>
 
+### Who gets trapped
+
+| Side              | Bearish Turtle Soup (false breakout above a high)       | Bullish Turtle Soup (false breakdown below a low)         |
+| ----------------- | ------------------------------------------------------- | --------------------------------------------------------- |
+| **Triggered**     | Shorts' stop losses (buy stops) and breakout buy orders | Longs' stop losses (sell stops) and breakdown sell orders |
+| **Trapped**       | Breakout buyers who bought above the high               | Breakdown sellers who sold below the low                  |
+| **When it fails** | Their exits (sell orders) add fuel to the move down     | Their exits (buy orders) add fuel to the move up          |
+| **Your trade**    | **Short**, stop above the failed-breakout high          | **Long**, stop below the failed-breakdown low             |
+
 ---
 
-## How Turtle Soup Works
+## Turtle Soup vs the Sweep + MSS Model
 
-### The Setup
+Both setups start with the same event: price trades beyond a pool of liquidity and fails. The difference is **how early you enter**.
 
-1. Price approaches a **significant high or low** (PDH/PDL, equal H/L, old swing point)
-2. Price **breaks beyond** the level — triggering breakout traders' entries and stop orders
-3. Price quickly **reverses back** below/above the level
-4. This reversal = your entry signal
-5. The breakout was FALSE — it was a liquidity sweep
+|                  | **Turtle Soup (close back inside)**                               | **Sweep + MSS** ([Liquidity Sweep](/en/ict/liquidity-sweep)) |
+| ---------------- | ----------------------------------------------------------------- | ------------------------------------------------------------ |
+| **Trigger**      | A candle closes back inside the level                             | Displacement with an MSS, then a retrace into the FVG or OB  |
+| **Entry**        | At that close (or as price reclaims the level)                    | At the FVG CE or OB edge on the retrace                      |
+| **Speed**        | Early: you catch moves that never retrace                         | Later: you miss moves that don't retrace                     |
+| **Confirmation** | Less: no MSS yet                                                  | More: order flow has visibly turned                          |
+| **Stop**         | Beyond the failed-breakout extreme                                | Beyond the sweep extreme                                     |
+| **Best when**    | The level is major (PWH/PWL, PDH/PDL) and the reversal is violent | Any marked pool, especially lower-timeframe ones             |
 
-### Bullish Turtle Soup (Fading a false breakdown)
-
-- Price breaks below a key low (sweeps SSL)
-- Then reverses back above the low
-- Enter LONG with stop below the sweep extreme
-
-### Bearish Turtle Soup (Fading a false breakout)
-
-- Price breaks above a key high (sweeps BSL)
-- Then reverses back below the high
-- Enter SHORT with stop above the sweep extreme
+The two examples below show both. Example 1 is a classic Turtle Soup entry at the close back inside. Example 2 waits for the reclaim and an MSS, so it sits between the two models.
 
 ---
 
 ## Identification Rules
 
-1. **Significant level** — Must be a notable high/low (not random swings)
-2. **Clean sweep** — Price should trade at least a few pips beyond the level
-3. **Quick reversal** — Ideally within 1-3 candles on entry TF
-4. **Displacement** — Reversal should be aggressive (not gradual drift)
-5. **Kill Zone timing** — Turtle Soup during Kill Zones = highest probability
-6. **HTF alignment** — The false breakout should be against the HTF bias
+| #   | Rule                                                                               | Why                                                             |
+| --- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| 1   | **Significant level:** PWH/PWL, PDH/PDL, clean equal highs/lows, a major old swing | Obvious levels attract the most breakout orders and stops       |
+| 2   | **Clear trade beyond:** price clearly breaks the level, not just a touch           | No breakout means no trapped traders                            |
+| 3   | **Quick failure:** back inside within **1–3 candles** of your entry timeframe      | A slow drift back is a different thing (and often a run)        |
+| 4   | **Aggressive return:** the candle that comes back inside is large (displacement)   | Shows that the breakout orders were absorbed                    |
+| 5   | **Kill-zone timing:** London (12–3 PM BD) or NY AM (5–8 PM BD)                     | Most false breakouts at major levels happen when volume arrives |
+| 6   | **HTF alignment:** the breakout goes _against_ the higher-timeframe bias           | A breakout _with_ the HTF bias is more likely to be real        |
+
+In the original Raschke–Connors version, the level is a **new 20-day low (or high)**, and the previous 20-day extreme must have been set at least a few days earlier. That ensures the level is mature and widely watched. ICT's version uses the liquidity levels above instead, but the idea is the same.
+
+<Callout type="warning" title="Turtle Soup is not 'fade every breakout'">
+  Most breakouts of minor levels are not tradable failures. Rules 1, 3 and 6 together are what separate a Turtle Soup
+  from simply standing in front of a trend.
+</Callout>
 
 ---
 
-## Real Examples
+## Example 1 — Bearish Turtle Soup, EUR/USD (15m, NY AM)
 
-### Example 1: Bearish Turtle Soup — EUR/USD
+![Bearish Turtle Soup — EUR/USD 15m: breakout above PWH 1.0950 to 1.0958 fails on the next candle; sell 1.0945](/images/ict/turtle-soup/eurusd-bearish-turtle-soup-dark.png)
 
-- **Key Level:** Previous Week High at 1.0950
-- **Setup:** During NY AM (6:30 PM BD), price spikes to 1.0958
-- **Breakout traders** enter long, stops are triggered
-- **Reversal:** Strong bearish candle closes back below 1.0945
-- **Entry:** Sell at 1.0945
-- **Stop:** 1.0960 (above the sweep)
-- **Target:** 1.0880 (SSL below)
-- **R:R:** 1:4.3
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/turtle-soup-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Example 2: Bullish Turtle Soup — Gold
+<Callout type="info" title="About these examples">
+  Both charts use **synthetic candles** built around the levels in this lesson. They show how the method works and are
+  not records of real trades. R:R values are the planned risk-to-reward, not results.
+</Callout>
 
-- **Key Level:** Equal lows at 2,020 (three touches)
-- **Setup:** London KZ (1:00 PM BD), price drops to 2,015
-- **Breakdown traders** sell, stops hit
-- **Reversal:** Bullish displacement, MSS on 5M
-- **Entry:** Buy at 2,022
-- **Stop:** 2,013
-- **Target:** 2,055
-- **R:R:** 1:3.7
+**Before the session:** the previous week high is **1.0950**. Breakout buy orders and shorts' stops rest above it. A London low at **1.0880** holds sell-side liquidity below it, which is the target.
+
+**Observations**
+
+1. **The breakout:** at **6:30 PM BD**, in the NY AM kill zone, price runs to **1.0958**. The candle even **closes above** the PWH, so breakout traders are now long.
+2. **The trap:** the very next candle is an 8-pip bearish displacement, against a 3.8-pip average. It **closes back below** the PWH at **1.0945**. The breakout has failed within one candle.
+3. **Entry:** Turtle Soup sells at that close.
+
+| Level   | Price       | Rationale                                      |
+| ------- | ----------- | ---------------------------------------------- |
+| Entry   | 1.0945      | Close back inside (classic Turtle Soup)        |
+| Stop    | 1.0960      | Above the 1.0958 failed-breakout high + 2 pips |
+| Target  | 1.0880      | SSL below                                      |
+| Risk    | 15 pips     | 1.0960 − 1.0945                                |
+| Reward  | 65 pips     | 1.0945 − 1.0880                                |
+| **R:R** | **1 : 4.3** | 65 ÷ 15                                        |
+
+**Invalidation:** a 15m close above 1.0958. The breakout would be back on, and the trapped traders wouldn't be trapped any more.
+
+**Note:** if you had waited for a retrace into an FVG, as in the sweep + MSS model, there might have been no entry, because price fell away from the level. That is the trade-off Turtle Soup accepts: an earlier entry with less confirmation.
+
+---
+
+## Example 2 — Bullish Turtle Soup, Gold (5m, London)
+
+![Bullish Turtle Soup — Gold 5m: breakdown below equal lows 2,020 to 2,015 is reclaimed; MSS; buy 2,022](/images/ict/turtle-soup/gold-bullish-turtle-soup-dark.png)
+
+**Before the session:** three relative equal lows near **2,020** hold longs' stops and breakdown sell orders below them. A prior high at **2,055** holds buy-side liquidity, which is the target.
+
+**Observations**
+
+1. **The breakdown:** at **1:00 PM BD**, in the London kill zone, price drops to **2,015** and closes below the equal lows. Breakdown sellers are now short.
+2. **Reclaim + MSS:** the next candle closes back above 2,020. Then a 4-point bullish displacement, against a 1.5-point average, closes above the **2,023.8** lower high. That is the 5m MSS.
+3. **Entry:** at **1:15 PM BD** price dips back, and the buy at **2,022** fills.
+
+| Level   | Price       | Rationale                                       |
+| ------- | ----------- | ----------------------------------------------- |
+| Entry   | 2,022       | After the reclaim and MSS, on the dip           |
+| Stop    | 2,013       | Below the 2,015 failed-breakdown low + 2 points |
+| Target  | 2,055       | BSL at the prior high                           |
+| Risk    | 9 pts       | 2,022 − 2,013                                   |
+| Reward  | 33 pts      | 2,055 − 2,022                                   |
+| **R:R** | **1 : 3.7** | 33 ÷ 9                                          |
+
+**Invalidation:** a 5m close back below 2,015.
+
+---
+
+## Two Entry Variants
+
+| Variant                              | Entry                                            | Use it when                                             |
+| ------------------------------------ | ------------------------------------------------ | ------------------------------------------------------- |
+| **A. Close back inside** (Example 1) | At the close of the candle that returns inside   | Major level, violent one-candle failure, clear HTF bias |
+| **B. Reclaim + MSS** (Example 2)     | After the MSS, on the first dip toward the level | Less obvious level, or the return is slower             |
+
+With either variant, the stop goes **beyond the extreme of the failed breakout**, plus a small buffer. In both examples the buffer is 2 pips or 2 points. Never place the stop at the level itself, because the level can be tested again.
+
+---
+
+## When Not to Trade Turtle Soup
+
+- The breakout goes **with** the higher-timeframe trend, and the HTF draw on liquidity is still ahead.
+- Several candles **close beyond** the level and a retest holds. That is a [run, not a sweep](/en/ict/liquidity).
+- The level is minor or was found after the fact.
+- A high-impact news release is due, or price is mid-release.
+- Outside the kill zones, especially during the NY lunch period (10:00–11:30 PM BD).
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Turtle Soup Errors">
+| Mistake                                               | Fix                                                                       |
+| ----------------------------------------------------- | ------------------------------------------------------------------------- |
+| Fading every breakout                                 | Only significant levels, against the HTF bias, in a kill zone             |
+| Entering before the close back inside                 | Wait for the candle to close; a wick still inside the move proves nothing |
+| Stop at the broken level                              | Stop beyond the failed-breakout extreme, plus a buffer                    |
+| Giving the trade a "second chance" after invalidation | One attempt per level; a close beyond the extreme ends it                 |
+| Holding the trade through a slow, grinding return     | Rule 3: if it isn't back inside within 1–3 candles, skip it               |
 
-**❌ Fading every breakout** — Only fade when HTF bias opposes the breakout direction
+---
 
-**❌ Entering before reversal confirms** — Wait for displacement back inside the range
+## Risk Management
 
-**❌ Tiny stops** — Stop must be beyond the sweep extreme to survive
+| Component              | Guideline                                                                  |
+| ---------------------- | -------------------------------------------------------------------------- |
+| **Risk per trade**     | 1–2% of the account; less while learning                                   |
+| **Position size**      | Account risk ÷ stop distance ([calculator](/en/tools/position-calculator)) |
+| **Stop**               | Beyond the failed-breakout extreme + buffer                                |
+| **Partial (optional)** | At the first internal liquidity (nearest FVG or swing)                     |
+| **Variant A sizing**   | Consider a smaller size than for confirmed (MSS) entries                   |
 
-**❌ Ignoring time** — Turtle Soup outside Kill Zones is low probability
+---
 
-</Callout>
+## Practice
+
+1. Mark PWH/PWL and PDH/PDL on a 15m chart for the last four weeks. Find every breakout of those levels.
+2. Label each breakout **failed within 1–3 candles** or **held**. Note the session and the HTF bias for each.
+3. For the failures, write down the variant A and variant B entries, the stop and the opposite pool, then calculate R:R.
+4. Compare the two variants in your [trading journal](/en/tools/journal-template). Which one suits your pair and your schedule?
+
+---
+
+## FAQ
+
+### Is a Judas Swing a Turtle Soup?
+
+Often, yes. A [Judas Swing](/en/ict/judas-swing) is a false move at the session open that runs a nearby high or low before the real move. When that false move breaks a significant level and fails quickly, it is a Turtle Soup.
+
+### How far beyond the level must price go?
+
+There is no fixed distance; it depends on volatility. What matters is a clear break that triggers orders, followed by a quick close back inside.
+
+### Should I always wait for an MSS?
+
+Not for variant A. That is the point of the classic Turtle Soup. But without an MSS you are trading on less confirmation, so keep the size down and be strict about rules 1, 3 and 6.
+
+---
+
+## Summary
+
+| Aspect           | Key point                                                                                 |
+| ---------------- | ----------------------------------------------------------------------------------------- |
+| **Idea**         | Fade a false breakout of a significant high or low                                        |
+| **Origin**       | Raschke & Connors, _Street Smarts_ (1995); adapted by ICT                                 |
+| **Trapped side** | Breakout traders, whose exits fuel the reversal                                           |
+| **Key rules**    | Significant level, quick failure (1–3 candles), displacement, kill zone, against HTF bias |
+| **Entry**        | A: close back inside · B: reclaim + MSS                                                   |
+| **Stop**         | Beyond the failed-breakout extreme + buffer                                               |
+| **Target**       | The opposite pool of liquidity                                                            |
 
 ---
 
 ## Related Topics
 
-- [Liquidity Sweep](/en/ict/liquidity-sweep) — The sweep is the entry trigger
-- [Judas Swing](/en/ict/judas-swing) — Session-opening Turtle Soup patterns
-- [AMD](/en/ict/amd) — Turtle Soup captures the manipulation phase
-- [MSS](/en/ict/mss) — Confirmation after the false breakout
+- [Liquidity](/en/ict/liquidity) — where the breakout orders and stops rest
+- [Liquidity Sweep](/en/ict/liquidity-sweep) — the confirmed (sweep + MSS) entry model
+- [Market Structure Shift](/en/ict/mss) — confirmation for variant B
+- [Judas Swing](/en/ict/judas-swing) and [AMD](/en/ict/amd) — session-open false moves
+- [ICT Kill Zones](/en/ict/ict-kill-zones) — when false breakouts at major levels usually happen
