@@ -1,0 +1,122 @@
+---
+title: "Options Flow as Directional Signal"
+description: "How options flow can inform spot and futures trading: who is on each side of an options trade, how dealer delta-hedging pushes or pins price depending on gamma, what unusual activity and open-interest strikes can tell you, the limits of the data (especially for FX), and how to combine it with ICT levels. With a chart and an animated walkthrough."
+level: advanced
+order: 30
+lastUpdated: "2026-11-13"
+---
+
+## Why Options Flow Matters
+
+The options market is where many large traders take positions on direction and volatility. Two things make it useful to a spot or futures trader:
+
+1. **Positioning:** large, unusual trades can show where some participants expect price to go.
+2. **Hedging flows:** the dealers on the other side hedge with the underlying, and that hedging can push price or hold it near big strikes.
+
+<Callout type="info" title="Information, not a signal on its own">
+  The original said a single large options trade "tells you more than a week of price action" and that unusual activity
+  "often leads spot by 1–3 days". Neither has a source. Many big trades are hedges or spreads, not directional bets.
+  Treat flow as context for levels you've already found on the chart.
+</Callout>
+
+---
+
+## Who Is on Each Side
+
+| Participant                         | Typical role                                    |
+| ----------------------------------- | ----------------------------------------------- |
+| **Funds, speculators, hedgers**     | Buy or sell options to bet on, or protect against, a move |
+| **Dealers / market makers**         | Take the other side, then **delta-hedge** with the underlying |
+| **The hedging**                     | Is what shows up on your chart                  |
+
+---
+
+## How Dealer Hedging Moves Price
+
+![Dealer hedging: short gamma extends moves, long gamma pins price near the strike](/images/ict/options-flow-signals/dealer-hedging-gamma-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/dealer-hedging-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+| Who bought the options? | Dealer is…        | As price rises, dealer…   | Effect on price             |
+| ----------------------- | ----------------- | ------------------------- | --------------------------- |
+| **Clients bought**      | **Short gamma**   | Buys more to stay hedged  | **Adds to moves** (both ways) |
+| **Clients sold**        | **Long gamma**    | Sells into the rally      | **Fades moves**; price can **pin** near big strikes |
+
+<Callout type="warning" title="Corrected: the hedging example">
+  The original's example had a fund buying 10,000 calls at 1.1000, the dealer buying spot to hedge, and that buying
+  "pushing price toward 1.1000", then "pinning" near expiry. That mixes up the two cases. A dealer who **sold** calls is
+  **short gamma**: as price rises they must buy more, which can push price **through** the strike, not pin it. Pinning
+  comes from dealers who are **long gamma**, usually because clients sold options at that strike.
+</Callout>
+
+---
+
+## What to Look At
+
+| Data                         | What it can tell you                                  | Caveat                                    |
+| ---------------------------- | ----------------------------------------------------- | ----------------------------------------- |
+| **Open interest by strike**  | Strikes where hedging flows may concentrate           | OI doesn't say who is long or short       |
+| **Unusual volume**           | A trade much larger than usual for that contract      | Could be a hedge, a spread or closing     |
+| **Gamma exposure (GEX)**     | Whether dealers are likely long or short gamma overall | Estimates rest on assumptions; see [Gamma Exposure](/en/ict/gamma-exposure) |
+| **Max pain**                 | The strike where option holders lose most at expiry  | Weak on its own; see [Max Pain](/en/ict/max-pain-theory) |
+| **Put/call ratio**           | Sentiment extremes                                    | Noisy; see [Put/Call Ratio](/en/ict/put-call-ratio) |
+| **Expiry dates**             | When pinning or unwinding is most likely             | See [Expiry Pinning](/en/ict/options-expiry-pinning) |
+
+<Callout type="info" title="Data availability">
+  Options flow is most useful for US equities and indices (SPX, SPY, QQQ, single stocks), where volume and open interest
+  are public. FX options trade mostly over the counter: you'll see summaries such as 25-delta risk reversals and reported
+  large expiries, not full flow. Crypto options (mainly on Deribit) are public but thinner.
+</Callout>
+
+---
+
+## Combining Flow With ICT
+
+| Situation                                                 | How to use it                                         |
+| --------------------------------------------------------- | ----------------------------------------------------- |
+| A big open-interest strike sits on an ICT level (OB, FVG, old high) | The level gets more weight                   |
+| Dealers estimated long gamma, price near a big strike      | Expect ranges and sweeps that fail; favour fades     |
+| Dealers estimated short gamma                              | Expect moves to extend; favour continuation after the MSS |
+| Monthly expiry week                                        | Expect pinning into expiry and a release after it    |
+
+The original claimed max pain "aligns with ICT equilibrium" and GEX levels "often align with order blocks". Sometimes they do; check each case rather than assuming it.
+
+---
+
+## Common Mistakes
+
+| Mistake                                 | Fix                                                    |
+| --------------------------------------- | ------------------------------------------------------ |
+| Reading every big call buy as bullish   | It could be a hedge, a spread or someone closing       |
+| Assuming dealers always pin price       | Only long-gamma dealers dampen moves                   |
+| Using equity flow ideas on FX blindly   | FX data is partial and over the counter                |
+| Trading flow without a chart level      | Flow adds context; the chart gives the entry           |
+
+---
+
+## Practice
+
+1. Pick SPY or QQQ. Each Monday, note the three strikes with the largest open interest for Friday's expiry.
+2. On Friday, record how close the close was to those strikes.
+3. Note whether that week had high or low estimated GEX. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea                 | Key point                                               |
+| -------------------- | ------------------------------------------------------- |
+| **Flow**             | Shows positioning, but many trades aren't directional   |
+| **Short gamma**      | Dealer hedging adds to moves                             |
+| **Long gamma**       | Dealer hedging fades moves; pinning near strikes        |
+| **Best use**         | Extra weight for levels you already found on the chart  |
+
+---
+
+## Related Topics
+
+- [Gamma Exposure](/en/ict/gamma-exposure) — measuring dealer gamma
+- [Max Pain Theory](/en/ict/max-pain-theory) — the expiry magnet idea
+- [Put/Call Ratio](/en/ict/put-call-ratio) — sentiment
+- [Options Expiry Pinning](/en/ict/options-expiry-pinning) — what happens into expiry
+- [Liquidity](/en/ict/liquidity) — the ICT side

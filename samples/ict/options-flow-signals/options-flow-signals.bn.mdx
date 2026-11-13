@@ -1,0 +1,122 @@
+---
+title: "Options Flow as Directional Signal"
+description: "Options Flow কীভাবে Spot আর Futures ট্রেডিংয়ে কাজে আসে: একটি Options ট্রেডের দুই পাশে কে থাকে, Gamma অনুযায়ী Dealer এর Delta-Hedging কীভাবে Price ঠেলে বা আটকে রাখে, অস্বাভাবিক Activity আর Open Interest Strike কী বলতে পারে, ডেটার সীমা (বিশেষত FX), আর ICT লেভেলের সাথে কীভাবে মেলাবেন — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
+level: advanced
+order: 30
+lastUpdated: "2026-11-13"
+---
+
+## Options Flow কেন গুরুত্বপূর্ণ
+
+Options মার্কেটে অনেক বড় ট্রেডার দিক আর Volatility নিয়ে Position নেয়। Spot বা Futures ট্রেডারের জন্য দুটো জিনিস একে কাজের করে:
+
+1. **Positioning:** বড়, অস্বাভাবিক ট্রেড দেখাতে পারে কিছু অংশগ্রহণকারী Price কোথায় যাবে বলে আশা করছে।
+2. **Hedging Flow:** অন্য পাশের Dealer রা Underlying দিয়ে Hedge করে, আর সেই Hedging Price ঠেলে দিতে পারে বা বড় Strike এর কাছে ধরে রাখতে পারে।
+
+<Callout type="info" title="তথ্য, একা সিগন্যাল নয়">
+  মূল লেসনে বলা ছিল একটি বড় Options ট্রেড "এক সপ্তাহের Price Action এর চেয়ে বেশি বলে" আর অস্বাভাবিক Activity "প্রায়ই
+  Spot এর ১–৩ দিন আগে চলে"। কোনোটারই সূত্র নেই। অনেক বড় ট্রেড আসলে Hedge বা Spread, দিকনির্দেশক বাজি নয়। চার্টে আগেই
+  খুঁজে পাওয়া লেভেলের কনটেক্সট হিসেবে Flow দেখুন।
+</Callout>
+
+---
+
+## কে কোন পাশে
+
+| অংশগ্রহণকারী                       | সাধারণ ভূমিকা                                      |
+| --------------------------------- | ------------------------------------------------- |
+| **ফান্ড, স্পেকুলেটর, হেজার**        | Move এর ওপর বাজি বা সুরক্ষার জন্য Options কেনে বা বেচে |
+| **Dealer / Market Maker**         | অন্য পাশ নেয়, তারপর Underlying দিয়ে **Delta-Hedge** করে |
+| **Hedging**                       | যা আপনার চার্টে দেখা যায়                            |
+
+---
+
+## Dealer Hedging কীভাবে Price নাড়ায়
+
+![Dealer Hedging: Short Gamma Move বাড়ায়, Long Gamma Price কে Strike এর কাছে আটকে রাখে](/images/ict/options-flow-signals/dealer-hedging-gamma-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/dealer-hedging-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+| Options কে কিনেছে?       | Dealer…           | Price উঠলে Dealer…        | Price এর ওপর প্রভাব             |
+| ----------------------- | ----------------- | ------------------------- | ------------------------------ |
+| **ক্লায়েন্ট কিনেছে**      | **Short Gamma**   | Hedged থাকতে আরও কেনে      | **Move বাড়ায়** (দুই দিকেই)       |
+| **ক্লায়েন্ট বেচেছে**      | **Long Gamma**    | র‍্যালিতে বেচে              | **Move কমায়**; বড় Strike এর কাছে **Pin** হতে পারে |
+
+<Callout type="warning" title="সংশোধিত: Hedging এর উদাহরণ">
+  মূল লেসনের উদাহরণে একটি ফান্ড 1.1000 Strike এ ১০,০০০ Call কেনে, Dealer Hedge করতে Spot কেনে, আর সেই কেনা "Price কে 1.1000
+  এর দিকে ঠেলে দেয়", তারপর Expiry র কাছে "Pin" করে। এখানে দুটো অবস্থা গুলিয়ে ফেলা হয়েছে। যে Dealer Call **বেচেছে** সে **Short
+  Gamma**: Price উঠলে তাকে আরও কিনতে হয়, যা Price কে Strike এর **ওপারে** ঠেলে দিতে পারে, Pin নয়। Pinning আসে **Long Gamma**
+  Dealer থেকে, সাধারণত যখন ক্লায়েন্টরা সেই Strike এ Options বেচেছে।
+</Callout>
+
+---
+
+## কী দেখবেন
+
+| ডেটা                        | কী বলতে পারে                                       | সতর্কতা                                    |
+| --------------------------- | ------------------------------------------------- | ------------------------------------------ |
+| **Strike অনুযায়ী Open Interest** | কোন Strike এ Hedging Flow জমতে পারে          | OI বলে না কে Long আর কে Short               |
+| **অস্বাভাবিক Volume**        | সেই কন্ট্র্যাক্টের তুলনায় অনেক বড় ট্রেড            | Hedge, Spread বা Close করাও হতে পারে        |
+| **Gamma Exposure (GEX)**    | Dealer রা মোটের ওপর Long না Short Gamma            | অনুমান নির্ভর; দেখুন [Gamma Exposure](/bn/ict/gamma-exposure) |
+| **Max Pain**                | যে Strike এ Expiry তে Option হোল্ডাররা সবচেয়ে বেশি হারায় | একা দুর্বল; দেখুন [Max Pain](/bn/ict/max-pain-theory) |
+| **Put/Call Ratio**          | সেন্টিমেন্টের চরম অবস্থা                            | নয়েজি; দেখুন [Put/Call Ratio](/bn/ict/put-call-ratio) |
+| **Expiry তারিখ**            | কখন Pinning বা Unwinding এর সম্ভাবনা বেশি           | দেখুন [Expiry Pinning](/bn/ict/options-expiry-pinning) |
+
+<Callout type="info" title="ডেটা পাওয়া">
+  Options Flow সবচেয়ে কাজের US Equity আর Index এ (SPX, SPY, QQQ, একক স্টক), যেখানে Volume আর Open Interest প্রকাশ্য। FX
+  Options মূলত Over-the-Counter লেনদেন হয়: পুরো Flow নয়, দেখবেন 25-Delta Risk Reversal আর রিপোর্ট করা বড় Expiry র মতো সারাংশ।
+  Crypto Options (মূলত Deribit এ) প্রকাশ্য কিন্তু পাতলা।
+</Callout>
+
+---
+
+## ICT এর সাথে Flow মেলানো
+
+| অবস্থা                                                       | কীভাবে ব্যবহার                                        |
+| ----------------------------------------------------------- | --------------------------------------------------- |
+| বড় Open Interest Strike একটি ICT লেভেলে (OB, FVG, পুরনো High)  | লেভেলটার গুরুত্ব বাড়ে                                  |
+| Dealer রা আনুমানিক Long Gamma, Price বড় Strike এর কাছে         | রেঞ্জ আর ব্যর্থ Sweep আশা করুন; Fade এ জোর দিন          |
+| Dealer রা আনুমানিক Short Gamma                                 | Move বাড়বে আশা করুন; MSS এর পরে Continuation এ জোর দিন |
+| মাসিক Expiry সপ্তাহ                                           | Expiry পর্যন্ত Pinning আর তারপর মুক্তি আশা করুন          |
+
+মূল লেসনে দাবি ছিল Max Pain "ICT Equilibrium এর সাথে মেলে" আর GEX লেভেল "প্রায়ই Order Block এর সাথে মেলে"। কখনো মেলে; ধরে না নিয়ে প্রতিবার যাচাই করুন।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                         | সমাধান                                                  |
+| ------------------------------------------- | ------------------------------------------------------- |
+| প্রতিটি বড় Call কেনাকে Bullish ধরা           | এটা Hedge, Spread বা কারও Close করাও হতে পারে             |
+| ভাবা যে Dealer সবসময় Price Pin করে           | শুধু Long Gamma Dealer Move কমায়                         |
+| Equity Flow এর ধারণা অন্ধভাবে FX এ ব্যবহার     | FX ডেটা আংশিক আর Over-the-Counter                       |
+| চার্ট লেভেল ছাড়া Flow ট্রেড                   | Flow কনটেক্সট দেয়; এন্ট্রি দেয় চার্ট                     |
+
+---
+
+## অনুশীলন
+
+1. SPY বা QQQ নিন। প্রতি সোমবার শুক্রবারের Expiry র সবচেয়ে বড় Open Interest এর তিনটি Strike লিখুন।
+2. শুক্রবার Close সেই Strike গুলোর কত কাছে হলো লিখুন।
+3. সেই সপ্তাহে আনুমানিক GEX বেশি না কম ছিল লিখুন। আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা               | মূল কথা                                                |
+| ------------------ | ----------------------------------------------------- |
+| **Flow**           | Positioning দেখায়, তবে অনেক ট্রেড দিকনির্দেশক নয়        |
+| **Short Gamma**    | Dealer Hedging Move বাড়ায়                              |
+| **Long Gamma**     | Dealer Hedging Move কমায়; Strike এর কাছে Pinning        |
+| **সেরা ব্যবহার**    | চার্টে আগেই পাওয়া লেভেলের বাড়তি গুরুত্ব                  |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Gamma Exposure](/bn/ict/gamma-exposure) — Dealer Gamma মাপা
+- [Max Pain Theory](/bn/ict/max-pain-theory) — Expiry চুম্বকের ধারণা
+- [Put/Call Ratio](/bn/ict/put-call-ratio) — সেন্টিমেন্ট
+- [Options Expiry Pinning](/bn/ict/options-expiry-pinning) — Expiry র দিকে কী হয়
+- [Liquidity](/bn/ict/liquidity) — ICT এর দিক
