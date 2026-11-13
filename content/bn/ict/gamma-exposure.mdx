@@ -1,69 +1,126 @@
 ---
-title: "গামা এক্সপোজার (GEX) — ইনস্টিটিউশনাল সাপোর্ট ও রেজিস্ট্যান্স"
-description: "গামা এক্সপোজার অ্যানালাইসিস মাস্টার করুন। ডিলার হেজিং কিভাবে সাপোর্ট/রেজিস্ট্যান্স লেভেল তৈরি করে এবং গামা পজিটিভ থেকে নেগেটিভ রিজিমে কিভাবে ফ্লিপ করে শিখুন।"
+title: "Gamma Exposure (GEX) — Institutional Support & Resistance"
+description: "Gamma Exposure (GEX) শিখুন: Open Interest থেকে কীভাবে অনুমান করা হয়, Positive আর Negative Gamma রেজিম Volatility র জন্য কী বোঝায়, Gamma Flip কী, কেন সংখ্যাগুলো অনুমান, আর চার্ট লেভেলের সাথে GEX লেভেল কীভাবে ব্যবহার করবেন — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: expert
 order: 32
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## Gamma Exposure
+## Gamma Exposure কী?
 
-Master Gamma Exposure analysis. Learn how dealer hedging creates support/resistance levels, and how gamma flips from positive to negative regime.
+**Gamma** মাপে Price নড়লে একটি Option এর Delta কত দ্রুত বদলায়। যে Dealer রা Delta Hedge করে, Gamma বড় হলে তাদের Underlying বেশি ট্রেড করতে হয়।
 
-<Callout type="info" title="Options as Institutional Intelligence">
-  The options market is where institutions EXPRESS their views on future price direction. A single $10M options trade
-  tells you more about institutional expectations than a week of price action. Options flow is institutional intent made
-  visible.
+**Gamma Exposure (GEX)** অনুমান করে সব Strike মিলিয়ে Dealer দের মোট Gamma, প্রতি ১% Move এ ডলারে। এর চিহ্ন বলে তাদের Hedging Price কে কীভাবে প্রভাবিত করতে পারে:
+
+| রেজিম            | Dealer রা…  | তাদের Hedging…            | সাধারণ মার্কেট                  |
+| ---------------- | ----------- | ------------------------- | ------------------------------- |
+| **Positive GEX** | Long Gamma  | র‍্যালিতে বেচে, ডিপে কেনে | শান্ত, রেঞ্জে                   |
+| **Negative GEX** | Short Gamma | র‍্যালিতে কেনে, ডিপে বেচে | দ্রুত, ট্রেন্ডিং, বেশি Volatile |
+
+<Callout type="info" title="এই পেজ নতুন করে লেখা">
+  মূল পেজটা Options Flow লেসন হুবহু কপি করেছিল। এই সংস্করণ GEX নিজেই ব্যাখ্যা করে।
 </Callout>
 
 ---
 
-## Why Options Flow Matters for Spot/Futures Traders
+## GEX কীভাবে অনুমান করা হয়
 
-- Large options trades reveal institutional EXPECTATIONS
-- Dealer hedging of options creates real support/resistance
-- Options expiry dates create predictable price behavior
-- Unusual options activity often LEADS spot price moves by 1-3 days
-- Put/Call extremes are reliable contrarian indicators
+প্রতিটি Strike এর জন্য: **Gamma × Open Interest × 100 × Spot² × 1%**। প্রকাশ্য GEX মডেলগুলো সাধারণত ধরে নেয় Dealer রা **Call এ Long আর Put এ Short** (ক্লায়েন্টরা Call বেচে আর Put কেনে), তাই Call এর Gamma Positive আর Put এর Gamma Negative ধরা হয়। সব Strike যোগ করলে মোট GEX।
 
----
+![GEX প্রোফাইল: Spot 4,500 এ Strike অনুযায়ী Gamma আর Spot অনুযায়ী মোট GEX, প্রায় 4,439 এ Flip এ শূন্য অতিক্রম](/images/ict/gamma-exposure/gex-profile-dark.png)
 
-## Key Concepts
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/gex-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Options Market Structure
-
-- **Buyers** (hedge funds, speculators): Pay premium for directional bets
-- **Sellers/Dealers** (market makers): Collect premium, hedge with spot/futures
-- **Dealer hedging** is what creates the price impact on your charts
-
-### How Dealer Hedging Works
-
-1. Fund buys 10,000 call options at strike 1.1000
-2. Dealer sells those calls and must hedge
-3. Dealer buys spot/futures to be delta-neutral
-4. This buying PUSHES price toward 1.1000
-5. Near expiry, gamma increases → hedging intensifies → pinning
-
----
-
-## Practical Application
-
-### For Daily Trading
-
-- Check max pain level for current week/month expiry
-- Note strikes with highest open interest = magnetic levels
-- Watch for unusual options activity (10x+ normal volume)
-- Use GEX flip level as key support/resistance
-
-### Integration with ICT/SMC
-
-- Max pain level aligns with ICT equilibrium = strong magnet
-- GEX support/resistance often aligns with Order Blocks
-- Options expiry week = higher manipulation probability
-- Monthly OpEx Friday = major liquidity event
-
-<Callout type="warning" title="Availability Note">
-  Options flow data is primarily available for equities and indices (SPX, QQQ, individual stocks). For forex, the
-  relevant data comes from FX options markets (25-delta risk reversals, option barriers). Crypto options (Deribit) are
-  growing but less liquid.
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  Open Interest **বানানো**, 4,500 এর একটি Index এ, ১৮% Volatility আর Expiry তে ১০ দিন বাকি ধরে Black-Scholes Gamma
+  দিয়ে। এটা পদ্ধতি দেখায়, আসল Positioning নয়।
 </Callout>
+
+**চার্ট পড়া:**
+
+1. **উপরে:** 4,500 এ সবচেয়ে বড় Positive Gamma 4,500 – 4,525 এর Call এ; বড় Negative Gamma 4,425 এর Put এ।
+2. **নিচে:** Spot প্রতিটি প্রাইসে থাকলে মোট GEX কত হতো তা আবার হিসাব। লাইন প্রায় **4,439** এ শূন্য পার হয়: এটাই **Gamma Flip**।
+3. **Spot 4,500, Flip এর উপরে**, তাই রেজিম Positive: Dealer Hedging Move কমাবে আশা করুন।
+4. Price ~4,439 এর নিচে ভাঙলে রেজিম Negative হবে আর Move দ্রুত হতে পারে।
+
+---
+
+## মূল লেভেল
+
+| লেভেল                      | এটা কী                                              | ট্রেডাররা কীভাবে ব্যবহার করে       |
+| -------------------------- | --------------------------------------------------- | ---------------------------------- |
+| **Gamma Flip**             | যেখানে আনুমানিক মোট GEX চিহ্ন বদলায়                | রেজিম লাইন: উপরে শান্ত, নিচে দ্রুত |
+| **সবচেয়ে বড় Call Gamma** | সবচেয়ে বেশি Positive Gamma এর Strike ("Call Wall") | Positive GEX এ প্রায়ই Resistance  |
+| **সবচেয়ে বড় Put Gamma**  | সবচেয়ে বেশি Negative Gamma এর Strike ("Put Wall")  | প্রায়ই Support, যতক্ষণ না ভাঙে    |
+
+<Callout type="warning" title="কেন GEX সংখ্যা অনুমান">
+  Open Interest বলে না কে Long আর কে Short। "Dealer রা Call এ Long, Put এ Short" অনুমানটা একক স্টকে আর বড় স্ট্রাকচার্ড
+  ট্রেডের আশেপাশে প্রায়ই ভুল। একই দিনের জন্য ভিন্ন প্রোভাইডার ভিন্ন Flip দেখায়। GEX লেভেলকে জোন হিসেবে দেখুন, আর সম্ভব
+  হলে একাধিক সূত্র মিলিয়ে দেখুন।
+</Callout>
+
+---
+
+## চার্ট লেভেলের সাথে GEX
+
+| GEX রেজিম        | যে চার্ট সেটআপ বেশি মানায়                                                                  |
+| ---------------- | ------------------------------------------------------------------------------------------- |
+| **Positive**     | রেঞ্জের প্রান্তে Sweep Fade করা, যেমন Call বা Put Wall এ [Turtle Soup](/bn/ict/turtle-soup) |
+| **Negative**     | Displacement সহ [MSS](/bn/ict/mss) এর পরে Continuation; চওড়া Stop                          |
+| **Flip এর কাছে** | ছোট সাইজ; রেজিম দ্রুত বদলাতে পারে                                                           |
+
+মূল লেসনে বলা ছিল GEX লেভেল "প্রায়ই Order Block এর সাথে মেলে"। কখনো মেলে। GEX Wall আর ICT লেভেল এক জায়গায় হলে লেভেলটার গুরুত্ব বেশি; না হলে চার্টকে বিশ্বাস করুন।
+
+---
+
+## কোথায় প্রযোজ্য
+
+GEX সবচেয়ে অর্থবহ **US Index প্রোডাক্টে** (SPX, SPY, QQQ, NDX) আর বড় একক স্টকে, যেখানে Options Volume বিশাল আর ডেটা প্রকাশ্য। Spot FX এ এটা একই রূপে নেই।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                           | সমাধান                                      |
+| ----------------------------- | ------------------------------------------- |
+| Flip কে নির্দিষ্ট প্রাইস ভাবা | এটা মডেলের অনুমান; জোন হিসেবে দেখুন         |
+| চিহ্নের নিয়ম উপেক্ষা         | আপনার প্রোভাইডার কী ধরে নেয় জানুন          |
+| পুরনো ডেটা                    | GEX প্রতিদিন আর প্রতিটি Expiry র পরে বদলায় |
+| FX পেয়ারে প্রয়োগ            | সেখানে ডেটা নেই                             |
+
+---
+
+## অনুশীলন
+
+1. দুই সপ্তাহ ধরে প্রতিদিন সকালে প্রকাশিত SPX Gamma Flip লিখুন।
+2. দিনটা এর উপরে না নিচে ট্রেড হয়েছে, আর দিনের রেঞ্জ কত, লিখুন।
+3. Positive আর Negative GEX এ গড় রেঞ্জ তুলনা করুন। আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা        | মূল কথা                                                |
+| ------------ | ------------------------------------------------------ |
+| **GEX**      | আনুমানিক Dealer Gamma, প্রতি ১% Move এ ডলার            |
+| **Positive** | Dealer রা Move কমায়; রেঞ্জ                            |
+| **Negative** | Dealer রা Move এর পেছনে দৌড়ায়; ট্রেন্ড আর Volatility |
+| **Flip**     | যেখানে রেজিম বদলায়                                    |
+| **সতর্কতা**  | কে কী ধরে আছে তার অনুমানের ওপর তৈরি                    |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Options Flow](/bn/ict/options-flow-signals) — Dealer Hedging এর মূল কথা
+- [Max Pain Theory](/bn/ict/max-pain-theory) — আরেকটি Open Interest লেভেল
+- [Options Expiry Pinning](/bn/ict/options-expiry-pinning) — Expiry র দিকে Gamma
+- [Turtle Soup](/bn/ict/turtle-soup) — রেঞ্জের প্রান্ত Fade করা

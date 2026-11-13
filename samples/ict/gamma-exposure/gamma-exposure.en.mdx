@@ -1,0 +1,118 @@
+---
+title: "Gamma Exposure (GEX) — Institutional Support & Resistance"
+description: "Learn gamma exposure (GEX): how it's estimated from open interest, what positive and negative gamma regimes mean for volatility, what the gamma flip is, why the numbers are assumptions, and how to use GEX levels with chart levels. With a worked chart and an animated walkthrough."
+level: expert
+order: 32
+lastUpdated: "2026-11-13"
+---
+
+## What Is Gamma Exposure?
+
+**Gamma** measures how fast an option's delta changes as price moves. Dealers who hedge their delta have to trade the underlying more when gamma is large.
+
+**Gamma exposure (GEX)** estimates the total gamma that dealers carry across all strikes, in dollars per 1% move. Its sign tells you how their hedging is likely to affect price:
+
+| Regime            | Dealers are…     | Their hedging…                         | Typical market         |
+| ----------------- | ---------------- | -------------------------------------- | ---------------------- |
+| **Positive GEX**  | Long gamma       | Sells rallies, buys dips               | Calmer, range-bound    |
+| **Negative GEX**  | Short gamma      | Buys rallies, sells dips               | Faster, trending, more volatile |
+
+<Callout type="info" title="This page was rewritten">
+  The original page repeated the Options Flow lesson word for word. This version explains GEX itself.
+</Callout>
+
+---
+
+## How GEX Is Estimated
+
+For each strike: **gamma × open interest × 100 × spot² × 1%**. Public GEX models usually assume dealers are **long calls and short puts** (clients sell calls and buy puts), so call gamma counts as positive and put gamma as negative. Summing every strike gives total GEX.
+
+![GEX profile: gamma by strike at spot 4,500 and total GEX by spot, crossing zero at the flip near 4,439](/images/ict/gamma-exposure/gex-profile-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/gex-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this example">
+  The open interest is **made up**, on an index at 4,500, with Black-Scholes gamma at 18% volatility and 10 days to
+  expiry. It shows the method, not real positioning.
+</Callout>
+
+**Reading the chart:**
+
+1. **Top:** at 4,500, the biggest positive gamma sits at the 4,500 – 4,525 calls; big negative gamma sits at the 4,425 puts.
+2. **Bottom:** recompute total GEX as if spot were at each price. The line crosses zero at about **4,439**: the **gamma flip**.
+3. **Spot 4,500 is above the flip**, so the regime is positive: expect dealer hedging to dampen moves.
+4. If price broke below ~4,439, the regime would turn negative and moves could speed up.
+
+---
+
+## Key Levels
+
+| Level                     | What it is                                           | How traders use it                    |
+| ------------------------- | ---------------------------------------------------- | ------------------------------------- |
+| **Gamma flip**            | Where estimated total GEX changes sign               | Regime line: calm above, faster below |
+| **Largest call gamma**    | Strike with the most positive gamma ("call wall")    | Often acts as resistance in positive GEX |
+| **Largest put gamma**     | Strike with the most negative gamma ("put wall")     | Often acts as support, until it breaks |
+
+<Callout type="warning" title="Why GEX numbers are estimates">
+  Open interest doesn't say who is long and who is short. The "dealers long calls, short puts" assumption is often
+  wrong for single stocks and around big structured trades. Different providers show different flips for the same
+  day. Treat GEX levels as zones, and compare more than one source if you can.
+</Callout>
+
+---
+
+## Using GEX With Chart Levels
+
+| GEX regime          | Chart setup that fits better                                  |
+| ------------------- | ------------------------------------------------------------- |
+| **Positive**        | Fading sweeps at range edges, e.g. [Turtle Soup](/en/ict/turtle-soup) at a call or put wall |
+| **Negative**        | Continuation after an [MSS](/en/ict/mss) with displacement; wider stops |
+| **Near the flip**   | Smaller size; the regime can change quickly                   |
+
+The original said GEX levels "often align with order blocks". Sometimes they do. When a GEX wall and an ICT level coincide, the level deserves more weight; when they don't, trust the chart.
+
+---
+
+## Where It Applies
+
+GEX is most meaningful for **US index products** (SPX, SPY, QQQ, NDX) and large single stocks, where options volume is huge and data is public. It doesn't exist in the same form for spot FX.
+
+---
+
+## Common Mistakes
+
+| Mistake                                  | Fix                                                    |
+| ---------------------------------------- | ------------------------------------------------------ |
+| Treating the flip as an exact price      | It's a model estimate; use a zone                      |
+| Ignoring the sign convention             | Know what your provider assumes                        |
+| Using stale data                         | GEX changes daily and after each expiry                |
+| Applying it to FX pairs                  | The data isn't there                                   |
+
+---
+
+## Practice
+
+1. For two weeks, note the published SPX gamma flip each morning.
+2. Mark whether the day traded above or below it, and the day's range.
+3. Compare average ranges in positive vs negative GEX. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea              | Key point                                         |
+| ----------------- | ------------------------------------------------- |
+| **GEX**           | Estimated dealer gamma, $ per 1% move             |
+| **Positive**      | Dealers dampen moves; ranges                      |
+| **Negative**      | Dealers chase moves; trends and volatility        |
+| **Flip**          | Where the regime changes                          |
+| **Caveat**        | Built on assumptions about who holds what         |
+
+---
+
+## Related Topics
+
+- [Options Flow](/en/ict/options-flow-signals) — dealer hedging basics
+- [Max Pain Theory](/en/ict/max-pain-theory) — another open-interest level
+- [Options Expiry Pinning](/en/ict/options-expiry-pinning) — gamma into expiry
+- [Turtle Soup](/en/ict/turtle-soup) — fading range edges
