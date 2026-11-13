@@ -1,0 +1,270 @@
+---
+title: "ICT Dealing Range — Complete Guide"
+description: "Use the ICT dealing range to decide where to buy, where to sell and where to take profit: finding the right swings, premium, discount and equilibrium, the 25/50/75 levels and OTE zones, nested ranges across timeframes, when to redraw the range, and two worked trades plus a nested example with charts and an animated walkthrough."
+level: intermediate
+order: 12
+lastUpdated: "2026-11-13"
+---
+
+## The Map Behind Every Setup
+
+The earlier lessons kept repeating one filter: *buy in discount, sell in premium*. The **dealing range** is what defines those words. Without it, "discount" means nothing.
+
+<Callout type="info" title="Definition">
+  A **dealing range** is the price range between the most recent **significant swing high** and **significant swing
+  low**. Its midpoint, the **equilibrium**, splits it in two: the upper half is **premium** and the lower half is
+  **discount**. The range's extremes are where the external liquidity (BSL and SSL) sits.
+</Callout>
+
+---
+
+## Key Terms
+
+| Term                  | Meaning                                                                    |
+| --------------------- | -------------------------------------------------------------------------- |
+| **Dealing range (DR)** | The range between a significant swing high and swing low                  |
+| **Equilibrium (EQ)**  | The 50% level: (high + low) ÷ 2                                            |
+| **Premium**           | Above equilibrium: price is "expensive" within the range                   |
+| **Discount**          | Below equilibrium: price is "cheap" within the range                       |
+| **OTE**               | Optimal Trade Entry: a 62–79% retracement (see [OTE](/en/ict/ote))         |
+| **External / internal liquidity** | Liquidity at the range extremes / inside the range (FVGs, minor swings) |
+
+---
+
+## Finding the Right Range
+
+![The dealing range — EUR/USD daily candles inside the weekly range: premium, discount, equilibrium, 25/75 % and the OTE bands](/images/ict/dealing-range/eurusd-dealing-range-map-dark.png)
+
+1. Find the most recent **significant swing high** and **significant swing low** on the timeframe you're analysing.
+2. Mark the **equilibrium** halfway between them.
+3. Optionally, add the **25%** and **75%** levels and the OTE bands.
+4. **Redraw** the range when a candle **body closes** beyond either extreme. A wick beyond it doesn't count.
+
+### What makes a swing "significant"
+
+- Liquidity rests beyond it: equal highs or lows, an obvious swing.
+- Price left it with **displacement**.
+- It's clearly visible on the timeframe you're using, not just a minor wiggle.
+- It formed in an active session or kill zone.
+
+### The levels inside the range
+
+| Level         | Meaning                                                            |
+| ------------- | ------------------------------------------------------------------ |
+| **100%**      | Range high: buy-side liquidity                                     |
+| **62–79%**    | OTE zone for **sells** (price has retraced deep into premium)       |
+| **75%**       | Upper premium                                                      |
+| **50%**       | Equilibrium: no edge either way                                    |
+| **25%**       | Lower discount                                                     |
+| **21–38%**    | OTE zone for **buys** (the mirror image of the sell zone)           |
+| **0%**        | Range low: sell-side liquidity                                     |
+
+**Example calculation (Example 1's weekly range):** high 1.0950, low 1.0750 → equilibrium = (1.0950 + 1.0750) ÷ 2 = **1.0850**. Price at 1.0780 is (1.0780 − 1.0750) ÷ 200 pips = **35%** of the range, so it is in discount.
+
+---
+
+## Why Premium and Discount Matter
+
+- **Better average price.** Buying below the range's midpoint and selling above it means your entry is on the "cheap" side for your trade.
+- **Natural targets.** A buy in discount has two obvious targets: **equilibrium** (the first point where the edge disappears) and the **range high** (external liquidity).
+- **A built-in filter.** If you're about to buy in premium, you're paying above the midpoint. That's not forbidden, but it needs a stronger reason.
+
+The original lesson attaches these ideas to specific banks and fund types. There is no public evidence for that. Treat premium and discount as a pricing framework, not as a description of who is trading.
+
+---
+
+## Using the Range in a Trade
+
+| Price is in… | Look for                                            | Targets                                              |
+| ------------ | --------------------------------------------------- | ---------------------------------------------------- |
+| **Discount** | Buys: an SSL sweep, then an MSS and an FVG/OB entry | TP1 equilibrium, TP2 range high (BSL)                |
+| **Premium**  | Sells: a BSL sweep, then an MSS and an FVG/OB entry | TP1 equilibrium, TP2 range low (SSL)                 |
+| **At equilibrium** | Nothing yet; wait for price to commit to one half | —                                               |
+
+---
+
+## Example 1 — Buying in Discount, EUR/USD (15m, London)
+
+![Buying in discount — EUR/USD 15m: sweep of 1.0770 lows, MSS, FVG entry, targets at equilibrium and the range high](/images/ict/dealing-range/eurusd-discount-buy-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/dealing-range-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About these examples">
+  The charts use **synthetic candles** built around the levels in this lesson. They show how the method works and are
+  not records of real trades. R:R values are the planned risk-to-reward, not results.
+</Callout>
+
+**Context:** the weekly range is **1.0750 – 1.0950**, with equilibrium at **1.0850**. Price is at 1.0780, which is in discount, so the daily bias is bullish.
+
+**Observations**
+
+1. **Sweep:** in early London (12:15 PM BD), price takes the sell stops below the 1.0770 lows, wicking to **1.0765**, and closes back above.
+2. **MSS:** a 20-pip displacement closes above the 1.0784 lower high and leaves an FVG at **1.0785 – 1.0795**.
+3. **Entry:** at **1:30 PM BD** price touches the CE for the first time. Buy at **1.0790**.
+
+| Level     | Price  | Rationale                                  |
+| --------- | ------ | ------------------------------------------ |
+| Entry     | 1.0790 | FVG CE, in discount                        |
+| Stop      | 1.0760 | Below the 1.0765 sweep low                 |
+| TP1       | 1.0850 | Equilibrium · +60 pips · **1 : 2.0**       |
+| TP2       | 1.0950 | Range high (BSL) · +160 pips · **1 : 5.3** |
+| Risk      | 30 pips | 1.0790 − 1.0760                           |
+
+**Invalidation:** a 15m close below 1.0765.
+
+---
+
+## Example 2 — Selling in Premium, Gold (5m, NY AM)
+
+![Selling in premium — Gold 5m: sweep of 2,070 highs, MSS, FVG entry, targets at equilibrium and the range low](/images/ict/dealing-range/gold-premium-sell-dark.png)
+
+**Context:** the daily range is **2,000 – 2,080**, with equilibrium at **2,040**. Price is at 2,065, which is in premium, so the bias is bearish.
+
+**Observations**
+
+1. **Sweep:** in the NY AM session, price takes the buy stops above the 2,070 highs, wicking to **2,072**, and closes back below.
+2. **MSS:** a 7-point bearish displacement closes below the 2,064.5 higher low and leaves an FVG at **2,062 – 2,068**.
+3. **Entry:** at **6:30 PM BD** price touches the CE for the first time. Sell at **2,065**.
+
+| Level     | Price  | Rationale                                   |
+| --------- | ------ | ------------------------------------------- |
+| Entry     | 2,065  | FVG CE, in premium                          |
+| Stop      | 2,075  | Above the 2,072 sweep high                  |
+| TP1       | 2,040  | Equilibrium · +$25 · **1 : 2.5**            |
+| TP2       | 2,000  | Range low (SSL) · +$65 · **1 : 6.5**        |
+| Risk      | $10    | 2,075 − 2,065                               |
+
+**Invalidation:** a 5m close above 2,072.
+
+**Units:** the original lesson writes these as 100, 250 and 650 "pips" (10 pips per dollar). In dollars they are $10, $25 and $65. The ratios are the same.
+
+---
+
+## Nested Dealing Ranges
+
+![Nested dealing ranges — NAS100: price is in discount of both the weekly and the daily range](/images/ict/dealing-range/nas100-nested-ranges-dark.png)
+
+Ranges sit inside ranges. A typical stack:
+
+| Level          | Timeframe        | Job                                              |
+| -------------- | ---------------- | ------------------------------------------------ |
+| **Macro**      | Monthly / Weekly | The big picture: which half is price in?         |
+| **Internal**   | Daily / 4H       | The daily bias inside the macro range            |
+| **Micro**      | 1H / 15m         | Execution: where the sweep, MSS and FVG happen   |
+
+**Alignment:** when the macro and internal ranges both put price in discount (or both in premium), the bias is clearer. When they disagree, for example weekly in discount but daily in premium, wait for them to line up or trade smaller.
+
+### Example 3 — NAS100 alignment
+
+| Range   | Low – High        | Equilibrium | Price 17,780 sits at | Zone        |
+| ------- | ----------------- | ----------- | -------------------- | ----------- |
+| Weekly  | 17,500 – 18,200   | 17,850      | 40%                  | Discount ✓ |
+| Daily   | 17,750 – 18,000   | 17,875      | 12%                  | Discount ✓ |
+
+Both agree, so look for a 15m MSS and FVG in the 17,780 – 17,800 area before buying.
+
+**Targets, in the order price reaches them:** **T1 = weekly equilibrium 17,850**, then **T2 = daily equilibrium 17,875**.
+
+<Callout type="warning" title="Corrected target order">
+  The original lesson lists the targets as "daily equilibrium (17,875), then weekly equilibrium (17,850+)". Rising from
+  17,780, price reaches 17,850 first, so the order is reversed here.
+</Callout>
+
+---
+
+## The Range Lifecycle
+
+1. **Formation:** a clear swing high and swing low form, and liquidity builds beyond both.
+2. **Internal activity:** price moves between premium and discount, often taking **internal** liquidity (minor swings, FVGs) first. Most trading happens here.
+3. **Expansion:** price breaks out to **external** liquidity at one extreme. A **body close** beyond it ends the old range. Draw a new one from the breakout extreme.
+
+<Callout type="tip" title="When premium and discount mislead">
+  In a strong trend, price can stay in the premium of an old range for a long time while it keeps making new highs. If
+  the range keeps breaking in one direction, you are probably using a range that is too old or on too low a timeframe.
+  Redraw it on the timeframe that matches the trend.
+</Callout>
+
+---
+
+## Timing
+
+| Session (BD time)       | Typical role                                        |
+| ----------------------- | --------------------------------------------------- |
+| Asian, 6:00 AM – 12:00 PM | Builds the intraday range                         |
+| London, 12:00 – 3:00 PM | Often takes one side of the Asian range, then reverses |
+| NY AM, 5:00 – 8:00 PM   | Continues or reverses the London move               |
+
+---
+
+## Common Mistakes
+
+| Mistake                                          | Fix                                                     |
+| ------------------------------------------------ | ------------------------------------------------------- |
+| Drawing the range from minor swings              | Use swings with liquidity beyond them and displacement away from them |
+| Buying in premium or selling in discount         | Wait for price to reach the right half, or demand a much stronger reason |
+| Trading at equilibrium                           | Wait for price to commit to one side                    |
+| Ignoring the higher-timeframe range              | Check that the macro and internal ranges agree           |
+| Not redrawing after a break                      | A body close beyond an extreme means a new range         |
+| Listing targets out of order                     | Sort targets by distance from the entry                  |
+
+---
+
+## Risk Management
+
+| Component            | Guideline                                                        |
+| -------------------- | ---------------------------------------------------------------- |
+| **Risk per trade**   | 1–2% of the account; less while learning                         |
+| **Position size**    | Account risk ÷ stop distance ([calculator](/en/tools/position-calculator)) |
+| **TP1**              | Equilibrium; consider a partial close and a break-even stop       |
+| **TP2**              | The opposite range extreme                                        |
+| **Range conflict**   | Smaller size, or no trade                                         |
+
+---
+
+## Practice
+
+1. Draw the weekly and daily dealing ranges on EUR/USD and gold every Monday. Note each equilibrium.
+2. Every day, write down where price sits in each range as a percentage, and whether they agree.
+3. For every setup you see, check: is the entry in the right half? Are TP1 at equilibrium and TP2 at the extreme? What is the R:R to each?
+4. Count how often price reached equilibrium vs the far extreme. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## FAQ
+
+### Which swing high and low should I use?
+
+The most recent ones that have liquidity beyond them and that price left with displacement, on the timeframe you're analysing. If two traders would draw it differently, it's probably not significant enough.
+
+### Do I need Fibonacci?
+
+No. The equilibrium is enough to define premium and discount. The 25/75% levels and OTE bands just add precision for entries.
+
+### What if price is right at equilibrium?
+
+Do nothing. Let it move into one half and show its hand first.
+
+---
+
+## Summary
+
+| Aspect           | Key point                                                       |
+| ---------------- | --------------------------------------------------------------- |
+| **Definition**   | Range between the significant swing high and low                |
+| **Equilibrium**  | (High + low) ÷ 2, the line between premium and discount         |
+| **Rule**         | Buys in discount, sells in premium, nothing at equilibrium      |
+| **Targets**      | TP1 equilibrium, TP2 the opposite extreme                       |
+| **Nested**       | Check that weekly, daily and execution ranges agree             |
+| **Redraw**       | When a body closes beyond an extreme                            |
+
+---
+
+## Related Topics
+
+- [Liquidity](/en/ict/liquidity) — the BSL and SSL at the range extremes
+- [Market Structure Shift](/en/ict/mss) — the confirmation inside the right half
+- [Fair Value Gap](/en/ict/fvg) — the entry zone after the MSS
+- [OTE](/en/ict/ote) — the 62–79% retracement zone
+- [PD Arrays](/en/ict/pd-arrays) — which arrays to use in premium and in discount
+- [Daily Bias](/en/ict/daily-bias) and [Power of 3](/en/ict/power-of-3) — the range through a trading day
+- [Premium & Discount (SMC)](/en/smc/premium-discount) — the SMC lesson on the same idea
