@@ -1,67 +1,159 @@
 ---
 title: "SMC Risk Models — Complete Guide"
-description: "Master risk management in SMC. Learn structural stop placement, invalidation-based stops, position sizing, and risk per setup grade."
+description: "Manage risk the SMC way: put the stop where the setup is invalidated, then size the position from it. Stop placement for OB, FVG, sweep, CHOCH and breaker entries, the position-size formula with worked examples, risk by setup grade, and daily and weekly limits, with a chart and an animated walkthrough."
 level: intermediate
 order: 16
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## SMC Risk Management
+## The Two Steps
 
-In SMC, risk management uses **structural invalidation** rather than arbitrary pip distances. Your stop goes where your thesis is WRONG — beyond the structural level that would invalidate the setup.
+SMC risk management comes down to two steps, in this order:
 
----
+1. **Put the stop where the setup is wrong:** beyond the structure that would invalidate the idea, not a fixed number of pips.
+2. **Size the position from that stop**, so that if it's hit you lose a fixed percentage of the account.
 
-## Stop Placement in SMC
-
-| Setup Type    | Stop Location                  | Why                            |
-| ------------- | ------------------------------ | ------------------------------ |
-| OB entry      | Beyond the OB (body, not wick) | OB violated = thesis wrong     |
-| FVG entry     | Beyond the FVG range           | FVG broken = imbalance filled  |
-| Sweep entry   | Beyond the sweep wick          | New low/high = not a sweep     |
-| CHOCH entry   | Beyond CHOCH swing point       | Structure not actually shifted |
-| Breaker entry | Beyond the Breaker zone        | Breaker failed                 |
+A wider stop means a smaller position; a tighter stop, a larger one. The money at risk stays the same.
 
 ---
 
-## Position Sizing Formula
+## Structural Stop vs Tight Stop
+
+![EUR/USD 15m long at a bullish OB: structural stop 1.0845 (25 pips, 0.40 lots) holds, tight stop 1.0862 (8 pips, 1.25 lots) is taken by a wick](/images/smc/risk-models/structural-stop-sizing-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/risk-models-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
+
+Both stops risk **1% of a $10,000 account = $100**:
+
+| Stop       | Price  | Distance | Size          | What happened                    |
+| ---------- | ------ | -------- | ------------- | -------------------------------- |
+| Structural | 1.0845 | 25 pips  | **0.40 lots** | Held; plan 1 : 2.0 to 1.0920     |
+| Tight      | 1.0862 | 8 pips   | 1.25 lots     | Taken by a wick to 1.0855: −$100 |
+
+The tight stop looks better on paper (1 : 6.3 to the same target), but it sat **inside the order block**, where a normal retest can reach. The structural stop sat beyond the OB's full range, where price going would actually prove the setup wrong.
+
+---
+
+## Where the Stop Goes
+
+| Entry type      | Stop                                                 | Why                                         |
+| --------------- | ---------------------------------------------------- | ------------------------------------------- |
+| Order block     | Beyond the OB's **full range** (wick), plus a buffer | Trading through the whole OB invalidates it |
+| FVG             | Beyond the FVG, or beyond the candle that created it | A full close through the gap invalidates it |
+| Liquidity sweep | Beyond the sweep's wick                              | A new extreme means it wasn't a sweep       |
+| CHOCH entry     | Beyond the swing that made the CHOCH                 | Taking it means structure didn't shift      |
+| Breaker block   | Beyond the breaker zone                              | The breaker failed                          |
+
+<Callout type="info" title="Clarified: body or wick">
+  The original said to put an OB stop "beyond the OB (body, not wick)". Using the body gives a tighter stop, but the
+  wick is part of the zone, and retests often reach it, as in the chart. This lesson uses the full range plus a small
+  buffer for spread. If you use the body, accept that more stops will be hit.
+</Callout>
+
+---
+
+## Position Sizing
 
 ```
-Lot Size = (Account × Risk%) ÷ (Stop pips × Pip value)
-
-Example:
-- Account: $10,000
-- Risk: 1% = $100
-- Stop: 25 pips (OB width + buffer)
-- Pip value: $10/lot
-- Size: $100 ÷ (25 × $10) = 0.40 lots
+Position size (lots) = (Account × Risk %) ÷ (Stop distance in pips × Pip value per lot)
 ```
 
+**EUR/USD** (pip value about $10 per standard lot): account $10,000, risk 1% = $100, stop 25 pips:
+
+$100 ÷ (25 × $10) = **0.40 lots**
+
+**Gold** (a $1 move is about $100 per standard lot of 100 oz): account $5,000, risk 1% = $50, stop $6:
+
+$50 ÷ (6 × $100) = **0.083 lots**, rounded **down** to 0.08.
+
+Always round down. Pip values for pairs that don't end in USD change with the exchange rate; check them in your platform.
+
 ---
 
-## Risk Per Setup Grade
+## Risk by Setup Grade
 
-| Grade | Criteria Met                                | Risk              |
-| ----- | ------------------------------------------- | ----------------- |
-| A+    | 5/5 confluences, Kill Zone, CHOCH confirmed | 1-2%              |
-| B     | 3-4 confluences, good but not perfect       | 0.5-1%            |
-| C     | 2-3 confluences, uncertain                  | 0.25-0.5% or SKIP |
+Using the grading from [Entry Confirmation](/en/smc/entry-confirmation):
+
+| Grade | Score | Risk per trade               |
+| ----- | ----- | ---------------------------- |
+| A+    | 5 / 5 | 1% (up to 2% if experienced) |
+| B     | 3–4   | 0.5%                         |
+| C     | 0–2   | Skip                         |
+
+<Callout type="info" title="Clarified: grade ranges">
+  The original's ranges overlapped (B was "3–4 confluences", C was "2–3"). They're separated here so each score has one
+  grade.
+</Callout>
 
 ---
 
-## Rules
+## Account Rules
 
-1. **Max 1-2% per trade** — non-negotiable
-2. **Max 3% daily loss** — stop for the day
-3. **Max 5% weekly loss** — reduce size next week
-4. **Correlated pairs** count as ONE risk unit
-5. **Wider stop = smaller size** (never remove stop)
-6. **Break-even after 1R** gained
+| Rule              | Guideline                                                                     |
+| ----------------- | ----------------------------------------------------------------------------- |
+| Risk per trade    | 0.5–1% for most traders; never more than 2%                                   |
+| Daily loss limit  | Stop for the day at −3%                                                       |
+| Weekly loss limit | At −5%, cut position size in half the next week                               |
+| Correlated trades | EUR/USD and GBP/USD longs together count as one risk                          |
+| Moving the stop   | Only toward profit, never away                                                |
+| Break-even        | Optional after +1R; it removes risk but also gets stopped by normal pullbacks |
+
+These are common guidelines, not fixed rules. Pick your numbers in advance and write them down.
+
+### Second example (no chart) — short at a sweep
+
+GBP/USD sweeps equal highs at **1.2750** to **1.2758**, then forms a 15m CHOCH. Sell **1.2744**, stop **1.2762** (beyond the sweep wick plus a 4-pip buffer), target **1.2690**: risk 18 pips, reward 54 pips, **R:R 1 : 3.0** (planned). Account $8,000, risk 0.5% (B grade) = $40: $40 ÷ (18 × $10) = **0.22 lots**.
+
+---
+
+## Common Mistakes
+
+| Mistake                             | Fix                                           |
+| ----------------------------------- | --------------------------------------------- |
+| Choosing the lot size first         | Stop first, then size                         |
+| Tightening the stop to improve R:R  | Put it at invalidation; reduce size instead   |
+| Stop inside the zone you're trading | Beyond the zone's full range                  |
+| Same lot size on every trade        | The stop distance changes; the risk shouldn't |
+| Ignoring correlation                | Two correlated trades are one bigger risk     |
+| Rounding the size up                | Always round down                             |
+
+---
+
+## Practice
+
+1. Take your last 20 trades and note where the stop was relative to the zone.
+2. Recalculate each one's position size with the formula.
+3. Count how many stops sat inside the zone, and how many of those were hit before the trade worked.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Step       | Rule                                            |
+| ---------- | ----------------------------------------------- |
+| **Stop**   | Beyond the structure that invalidates the setup |
+| **Size**   | (Account × risk %) ÷ (stop pips × pip value)    |
+| **Grade**  | A+ 1%, B 0.5%, C skip                           |
+| **Limits** | −3% daily, −5% weekly                           |
 
 ---
 
 ## Related Topics
 
-- [Entry Confirmation](/en/smc/entry-confirmation) — Quality grading
+- [Entry Confirmation](/en/smc/entry-confirmation) — grading the setup
 - [Order Blocks](/en/smc/order-blocks) — OB-based stops
-- [Advanced Execution](/en/smc/advanced-execution-models) — Entry models affect risk
+- [Advanced Execution Models](/en/smc/advanced-execution-models) — how the entry model changes the stop
