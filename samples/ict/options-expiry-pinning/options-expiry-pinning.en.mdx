@@ -1,0 +1,124 @@
+---
+title: "Options Expiry Pinning Effect"
+description: "Understand options expiry pinning: why price can stick to a strike with heavy open interest into expiration, when it happens and when it doesn't, the expiry calendar in Bangladesh time, and how to trade around weekly and monthly expiries. With a chart and an animated walkthrough."
+level: advanced
+order: 34
+lastUpdated: "2026-11-13"
+---
+
+## What Is Pinning?
+
+**Pinning** is when the price of a stock, ETF or index **settles very close to a strike with heavy open interest** at expiry. During the final day the ranges shrink and price keeps returning to that strike. After expiry, those options no longer exist, and price is free to move.
+
+<Callout type="info" title="This page was rewritten">
+  The original page repeated the Options Flow lesson word for word. This version explains pinning itself.
+</Callout>
+
+---
+
+## What It Looks Like
+
+![Expiry pinning: price returns to the 450 strike on Thursday, pins at 450.10 on Friday, and moves away on Monday](/images/ict/options-expiry-pinning/expiry-pinning-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/pinning-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this example">
+  The candles and open interest are **synthetic**. They show the pattern, not a real expiry.
+</Callout>
+
+1. **Before expiry:** the biggest open interest is at **450** (calls 52k, puts 47k), with more at 445 and 455.
+2. **Thursday:** price crosses 450 several times and keeps coming back.
+3. **Friday (expiry):** hourly ranges shrink, and price closes at **450.10**.
+4. **Monday:** with those options expired, price breaks away and runs to 455.
+
+---
+
+## Why It Happens
+
+Pinning comes from **dealer hedging when dealers are long gamma** at that strike, usually because clients **sold** options there (covered calls, put-writing, short straddles):
+
+- Price rises above the strike → dealer delta grows → they **sell** to rebalance.
+- Price falls below it → they **buy**.
+- Gamma at the at-the-money strike is largest on the last day, so the effect is strongest then.
+
+If dealers are **short** gamma at that strike, their hedging pushes price **away** from it instead. That's why pinning doesn't happen at every big strike. See [Options Flow](/en/ict/options-flow-signals) and [Gamma Exposure](/en/ict/gamma-exposure).
+
+---
+
+## When It's Most Likely
+
+| Condition                                       | Pinning more likely?        |
+| ----------------------------------------------- | --------------------------- |
+| Heavy open interest at one strike near spot     | Yes                         |
+| Estimated GEX positive                          | Yes                         |
+| Quiet news calendar on expiry day               | Yes                         |
+| Big US data or an earnings release that day     | No                          |
+| Dealers short gamma (negative GEX)              | No: expect moves away from strikes |
+
+---
+
+## The Expiry Calendar (Bangladesh Time)
+
+| Expiry                       | When                                  | Stops trading (BD, US summer / winter) |
+| ---------------------------- | ------------------------------------- | -------------------------------------- |
+| **Daily (0DTE) SPX/SPY/QQQ** | Every trading day                     | 2:00 AM / 3:00 AM BD (next day)        |
+| **Weekly**                   | Fridays                               | 2:00 AM / 3:00 AM BD Saturday          |
+| **Monthly (OpEx)**           | Third Friday of the month             | 2:00 AM / 3:00 AM BD Saturday          |
+| **Quarterly**                | Third Friday of Mar, Jun, Sep, Dec    | Same; often the largest open interest  |
+
+The US close is 4 PM New York: 2 AM BD in US summer, 3 AM BD in US winter.
+
+---
+
+## Trading Around Expiry
+
+| Phase                       | What to expect                     | Approach                                    |
+| --------------------------- | ---------------------------------- | ------------------------------------------- |
+| **Days before**             | Price may drift toward big strikes | Note the biggest strikes and GEX            |
+| **Expiry day**              | Narrow ranges near the strike      | Avoid breakout trades; fade small moves at range edges |
+| **After expiry**            | The "pin" is released              | Watch for a break; trade it with an [MSS](/en/ict/mss) |
+
+<Callout type="warning" title="Corrected: 'predictable price behavior'">
+  The original Options Flow page said expiry dates "create predictable price behavior". Pinning is a tendency on some
+  expiries, mostly in heavily traded US equity products. Many expiries show no pin at all, especially with news on the
+  day. There's no comparable public effect for spot FX.
+</Callout>
+
+---
+
+## Common Mistakes
+
+| Mistake                                 | Fix                                                    |
+| --------------------------------------- | ------------------------------------------------------ |
+| Expecting every big strike to pin       | Only long-gamma strikes tend to                        |
+| Ignoring news on expiry day             | Data or earnings override pinning                      |
+| Using last week's open interest         | Check the current expiry's numbers                     |
+| Holding a breakout into the close       | Pin risk: take profit before the last hour             |
+
+---
+
+## Practice
+
+1. For 8 Friday expiries on SPY, note the strike with the biggest open interest on Thursday.
+2. Record Friday's close and its distance from that strike.
+3. Note Monday's range compared with Friday's. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element         | Key point                                              |
+| --------------- | ------------------------------------------------------ |
+| **Pinning**     | Price settles near a heavy strike at expiry            |
+| **Cause**       | Long-gamma dealer hedging                              |
+| **When**        | Final day, quiet news, positive GEX                    |
+| **After**       | The pin is released; moves resume                      |
+
+---
+
+## Related Topics
+
+- [Max Pain Theory](/en/ict/max-pain-theory) — a related expiry level
+- [Gamma Exposure](/en/ict/gamma-exposure) — long vs short gamma
+- [Options Flow](/en/ict/options-flow-signals) — dealer hedging basics
+- [Put/Call Ratio](/en/ict/put-call-ratio) — sentiment from the same market

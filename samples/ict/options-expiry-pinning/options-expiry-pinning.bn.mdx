@@ -1,0 +1,124 @@
+---
+title: "Options Expiry Pinning Effect"
+description: "Options Expiry Pinning বুঝুন: কেন Expiry র দিকে Price ভারী Open Interest এর একটি Strike এ আটকে থাকতে পারে, কখন হয় আর কখন হয় না, বাংলাদেশ সময়ে Expiry ক্যালেন্ডার, আর সাপ্তাহিক ও মাসিক Expiry র আশেপাশে কীভাবে ট্রেড করবেন — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
+level: advanced
+order: 34
+lastUpdated: "2026-11-13"
+---
+
+## Pinning কী?
+
+**Pinning** হলো যখন একটি স্টক, ETF বা Index এর Price Expiry তে **ভারী Open Interest এর একটি Strike এর খুব কাছে সেটেল হয়**। শেষ দিনে রেঞ্জ ছোট হয় আর Price বারবার সেই Strike এ ফেরে। Expiry র পরে সেই Options আর থাকে না, আর Price নড়তে মুক্ত হয়।
+
+<Callout type="info" title="এই পেজ নতুন করে লেখা">
+  মূল পেজটা Options Flow লেসন হুবহু কপি করেছিল। এই সংস্করণ Pinning নিজেই ব্যাখ্যা করে।
+</Callout>
+
+---
+
+## দেখতে কেমন
+
+![Expiry Pinning: বৃহস্পতিবার Price 450 Strike এ ফেরে, শুক্রবার 450.10 এ Pin হয়, সোমবার দূরে সরে যায়](/images/ict/options-expiry-pinning/expiry-pinning-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/pinning-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  ক্যান্ডেল আর Open Interest **সিন্থেটিক**। এগুলো প্যাটার্নটা দেখায়, আসল কোনো Expiry নয়।
+</Callout>
+
+1. **Expiry র আগে:** সবচেয়ে বড় Open Interest **450** এ (Call ৫২ হাজার, Put ৪৭ হাজার), আরও আছে 445 আর 455 এ।
+2. **বৃহস্পতিবার:** Price কয়েকবার 450 পার হয় আর বারবার ফিরে আসে।
+3. **শুক্রবার (Expiry):** ঘণ্টার রেঞ্জ ছোট হয়, আর Price **450.10** এ ক্লোজ করে।
+4. **সোমবার:** সেই Options মেয়াদোত্তীর্ণ, Price ভেঙে বেরিয়ে 455 পর্যন্ত যায়।
+
+---
+
+## কেন হয়
+
+Pinning আসে সেই Strike এ **Dealer রা Long Gamma** থাকলে তাদের Hedging থেকে, সাধারণত যখন ক্লায়েন্টরা সেখানে Options **বেচেছে** (Covered Call, Put-Writing, Short Straddle):
+
+- Price Strike এর উপরে উঠলে → Dealer এর Delta বাড়ে → রিব্যালেন্স করতে তারা **বেচে**।
+- Price নিচে নামলে → তারা **কেনে**।
+- At-the-money Strike এ Gamma শেষ দিনে সবচেয়ে বেশি, তাই তখনই প্রভাব সবচেয়ে শক্তিশালী।
+
+সেই Strike এ Dealer রা **Short** Gamma হলে তাদের Hedging উল্টো Price কে সেখান থেকে **দূরে** ঠেলে। এজন্যই প্রতিটি বড় Strike এ Pinning হয় না। দেখুন [Options Flow](/bn/ict/options-flow-signals) আর [Gamma Exposure](/bn/ict/gamma-exposure)।
+
+---
+
+## কখন বেশি সম্ভাবনা
+
+| অবস্থা                                           | Pinning এর সম্ভাবনা বেশি?        |
+| ----------------------------------------------- | ------------------------------ |
+| Spot এর কাছে একটি Strike এ ভারী Open Interest      | হ্যাঁ                           |
+| আনুমানিক GEX Positive                            | হ্যাঁ                           |
+| Expiry র দিন শান্ত নিউজ ক্যালেন্ডার                 | হ্যাঁ                           |
+| সেদিন বড় US ডেটা বা আর্নিংস                       | না                             |
+| Dealer রা Short Gamma (Negative GEX)              | না: Strike থেকে দূরে Move আশা করুন |
+
+---
+
+## Expiry ক্যালেন্ডার (বাংলাদেশ সময়)
+
+| Expiry                       | কখন                                  | ট্রেডিং বন্ধ (BD, US গ্রীষ্ম / শীত)       |
+| ---------------------------- | ------------------------------------ | -------------------------------------- |
+| **দৈনিক (0DTE) SPX/SPY/QQQ** | প্রতি ট্রেডিং দিন                      | রাত ২টা / ৩টা BD (পরের দিন)             |
+| **সাপ্তাহিক**                 | শুক্রবার                               | শনিবার রাত ২টা / ৩টা BD                 |
+| **মাসিক (OpEx)**              | মাসের তৃতীয় শুক্রবার                    | শনিবার রাত ২টা / ৩টা BD                 |
+| **ত্রৈমাসিক**                 | মার্চ, জুন, সেপ্টেম্বর, ডিসেম্বরের তৃতীয় শুক্রবার | একই; প্রায়ই সবচেয়ে বড় Open Interest |
+
+US ক্লোজ New York এর বিকেল ৪টা: US গ্রীষ্মে রাত ২টা BD, US শীতে রাত ৩টা BD।
+
+---
+
+## Expiry র আশেপাশে ট্রেডিং
+
+| ধাপ                     | কী আশা করবেন                         | পদ্ধতি                                         |
+| ---------------------- | ----------------------------------- | --------------------------------------------- |
+| **কয়েক দিন আগে**        | Price বড় Strike এর দিকে সরতে পারে     | সবচেয়ে বড় Strike আর GEX লিখে রাখুন            |
+| **Expiry র দিন**        | Strike এর কাছে সরু রেঞ্জ               | Breakout ট্রেড এড়ান; রেঞ্জের প্রান্তে ছোট Move Fade করুন |
+| **Expiry র পরে**        | "Pin" ছেড়ে দেয়                       | ভাঙনের দিকে নজর; [MSS](/bn/ict/mss) সহ ট্রেড করুন |
+
+<Callout type="warning" title="সংশোধিত: 'পূর্বানুমানযোগ্য Price আচরণ'">
+  মূল Options Flow পেজে বলা ছিল Expiry র তারিখ "পূর্বানুমানযোগ্য Price আচরণ তৈরি করে"। Pinning কিছু Expiry তে একটা প্রবণতা,
+  মূলত বেশি লেনদেন হওয়া US Equity প্রোডাক্টে। অনেক Expiry তে কোনো Pin-ই হয় না, বিশেষত সেদিন নিউজ থাকলে। Spot FX এ এর তুলনীয়
+  কোনো প্রকাশ্য প্রভাব নেই।
+</Callout>
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                      | সমাধান                                                  |
+| ---------------------------------------- | ------------------------------------------------------ |
+| প্রতিটি বড় Strike এ Pin আশা করা           | শুধু Long-Gamma Strike এ সাধারণত হয়                     |
+| Expiry র দিনের নিউজ উপেক্ষা                | ডেটা বা আর্নিংস Pinning উল্টে দেয়                        |
+| গত সপ্তাহের Open Interest ব্যবহার          | বর্তমান Expiry র সংখ্যা দেখুন                             |
+| ক্লোজ পর্যন্ত Breakout ধরে রাখা             | Pin এর ঝুঁকি: শেষ ঘণ্টার আগে প্রফিট নিন                   |
+
+---
+
+## অনুশীলন
+
+1. SPY এর ৮টি শুক্রবারের Expiry তে বৃহস্পতিবার সবচেয়ে বড় Open Interest এর Strike লিখুন।
+2. শুক্রবারের Close আর সেই Strike থেকে তার দূরত্ব লিখুন।
+3. শুক্রবারের তুলনায় সোমবারের রেঞ্জ লিখুন। আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| উপাদান        | মূল কথা                                              |
+| ------------- | --------------------------------------------------- |
+| **Pinning**   | Expiry তে ভারী Strike এর কাছে Price সেটেল হয়          |
+| **কারণ**      | Long-Gamma Dealer Hedging                            |
+| **কখন**       | শেষ দিন, শান্ত নিউজ, Positive GEX                     |
+| **পরে**       | Pin ছেড়ে দেয়; Move আবার শুরু হয়                      |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Max Pain Theory](/bn/ict/max-pain-theory) — Expiry র সম্পর্কিত লেভেল
+- [Gamma Exposure](/bn/ict/gamma-exposure) — Long বনাম Short Gamma
+- [Options Flow](/bn/ict/options-flow-signals) — Dealer Hedging এর মূল কথা
+- [Put/Call Ratio](/bn/ict/put-call-ratio) — একই মার্কেট থেকে সেন্টিমেন্ট
