@@ -1,68 +1,125 @@
 ---
 title: "SMT Divergence — Complete Guide"
-description: "Master SMT (Smart Money Technique) Divergence — using correlated pair behavior to confirm institutional direction."
+description: "Learn SMT divergence: when two normally correlated markets disagree at a high or low. Bullish and bearish SMT, which pairs to compare (including inverse pairs like EUR/USD and DXY), how to trade it as confluence with a sweep and a CHOCH, and its limits, with a chart and an animated walkthrough."
 level: advanced
 order: 19
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
-## What is SMT Divergence?
+## What Is SMT Divergence?
 
-SMT (Smart Money Technique) Divergence occurs when **correlated pairs show divergent price structure** — one makes a new high/low while the other doesn't. This reveals which direction smart money is actually positioned.
+**SMT divergence** happens when two markets that usually move together **disagree at a swing point**: one makes a new high or low, the other doesn't.
 
----
+| Type            | What you see                                                                 | Suggests                                               |
+| --------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------ |
+| **Bullish SMT** | One pair makes a **lower low**; the correlated pair makes a **higher low**   | The sell-off isn't confirmed; a turn up is more likely |
+| **Bearish SMT** | One pair makes a **higher high**; the correlated pair makes a **lower high** | The rally isn't confirmed; a turn down is more likely  |
 
-## How SMT Works
+"SMT" is usually expanded as "smart money technique". The idea is simple: if the move were broad, both markets would confirm it.
 
-```
-Correlated pairs should move together.
-When they diverge, one is showing the TRUE direction.
-
-Example (EUR/USD vs GBP/USD):
-- Both typically move in same direction
-- EUR/USD makes new low → GBP/USD does NOT make new low
-- This divergence = smart money NOT bearish
-- Expect bullish reversal
-
-Example (DXY vs EUR/USD):
-- DXY and EUR/USD are inversely correlated
-- DXY makes new high → EUR/USD does NOT make new low
-- Divergence = DXY strength is false
-- Expect EUR/USD bullish move
-```
+<Callout type="info" title="Corrected: what it proves">
+  The original said a divergence shows "smart money is not bearish". It doesn't show anyone's intent. It shows the move
+  isn't confirmed across related markets, which makes a reversal **more likely**, not certain.
+</Callout>
 
 ---
 
-## Common SMT Pairs
+## A Bullish SMT, Step by Step
 
-| Pair 1   | Pair 2      | Correlation |
-| -------- | ----------- | ----------- |
-| EUR/USD  | GBP/USD     | Positive    |
-| EUR/USD  | DXY         | Inverse     |
-| Gold     | DXY         | Inverse     |
-| ES (S&P) | NQ (Nasdaq) | Positive    |
-| US30     | US100       | Positive    |
+![Bullish SMT: EUR/USD makes a lower low at 1.0842, GBP/USD makes a higher low at 1.2662, then both rally](/images/smc/smt-divergence/smt-divergence-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/smt-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built to show the concept. They are not real prices.
+</Callout>
+
+1. Both pairs fall to a first low: EUR/USD **1.0850**, GBP/USD **1.2650**.
+2. Both bounce, then fall again.
+3. EUR/USD breaks its low to **1.0842**: sell-side liquidity is taken.
+4. GBP/USD stops at **1.2662**, a **higher low**.
+5. That disagreement is a **bullish SMT**. Both pairs then rally.
 
 ---
 
-## Trading SMT Divergence
+## Which Markets to Compare
 
-```
-1. Monitor correlated pairs on same timeframe
-2. Look for structural divergence (new H/L on one, not other)
-3. The pair that FAILS to make new extreme = true direction
-4. Enter in the direction of the non-confirming pair
-5. Use standard SMC entry (OB, FVG, CHOCH)
-6. Target: Opposite liquidity
+| Market 1     | Market 2    | Correlation | Divergence to look for                                                                   |
+| ------------ | ----------- | ----------- | ---------------------------------------------------------------------------------------- |
+| EUR/USD      | GBP/USD     | Positive    | One makes a new extreme, the other doesn't                                               |
+| EUR/USD      | DXY         | **Inverse** | DXY makes a new **high** while EUR/USD does **not** make a new low (bullish for EUR/USD) |
+| Gold         | DXY         | Inverse     | Same logic as EUR/USD vs DXY                                                             |
+| ES (S&P 500) | NQ (Nasdaq) | Positive    | One index makes a new extreme, the other doesn't                                         |
+| US30         | US100       | Positive    | Same                                                                                     |
 
-SMT adds CONFLUENCE — don't trade it alone.
-Use it as additional confirmation for your SMC setup.
-```
+Correlations change over time. Check that the two markets have been moving together recently before reading a divergence.
+
+---
+
+## Trading It
+
+1. Watch both markets on the **same timeframe**, at a **key level** (a session high/low, a previous day's high/low, an HTF zone).
+2. Spot the divergence: a new extreme on one, not on the other.
+3. Wait for a **CHOCH** in the expected direction.
+4. Enter at the OB or FVG the reversal leaves.
+5. **Stop** beyond the sweep extreme on the market you trade. **Target** the opposite liquidity.
+
+**Which pair to trade?** Two common choices: the one that **swept** (it took liquidity and often reverses hardest), or the **stronger** one that didn't make the new extreme. Pick one rule and keep it in your journal.
+
+---
+
+## Limits
+
+| Limit                        | What it means                                               |
+| ---------------------------- | ----------------------------------------------------------- |
+| Divergences happen often     | Most are noise; only those at key levels matter             |
+| Correlation breaks down      | Pair-specific news (e.g. UK data for GBP) can cause the gap |
+| Timeframe matters            | A 1m divergence means little against a 4H trend             |
+| It's a filter, not a trigger | Combine it with a sweep and a CHOCH                         |
+
+---
+
+## Common Mistakes
+
+| Mistake                        | Fix                                           |
+| ------------------------------ | --------------------------------------------- |
+| Trading SMT on its own         | It's confluence, not an entry signal          |
+| Comparing different timeframes | Same timeframe, same swing                    |
+| Ignoring news on one pair      | Divergence from news isn't SMT                |
+| Forgetting inverse correlation | With DXY, compare its high with EUR/USD's low |
+
+---
+
+## Practice
+
+1. Put EUR/USD and GBP/USD side by side on 15m for 20 sessions.
+2. At each London or NY session high or low, note whether both made new extremes.
+3. When they didn't, record what happened next. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Element     | Key point                                          |
+| ----------- | -------------------------------------------------- |
+| **SMT**     | Correlated markets disagree at a swing point       |
+| **Bullish** | Lower low on one, higher low on the other          |
+| **Bearish** | Higher high on one, lower high on the other        |
+| **Use**     | Confluence with a sweep and a CHOCH at a key level |
 
 ---
 
 ## Related Topics
 
-- [Institutional Order Flow](/en/smc/institutional-order-flow) — Understanding institutional bias
-- [Manipulation](/en/smc/manipulation) — False moves create SMT
-- [Liquidity Pools](/en/smc/liquidity-pools) — Divergent liquidity targeting
+- [Liquidity Pools](/en/smc/liquidity-pools) — the sweep on one pair
+- [CHOCH](/en/smc/choch) — the confirmation
+- [Manipulation](/en/smc/manipulation) — false moves at session opens
+- [Institutional Order Flow](/en/smc/institutional-order-flow) — bias
