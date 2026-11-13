@@ -1,286 +1,149 @@
 ---
 title: "Premium & Discount Zones — Complete Guide"
-description: "Master the Premium and Discount concept in Smart Money trading. Learn to identify institutional pricing zones, calculate equilibrium, and enter trades at optimal price levels."
+description: "Master premium and discount: split a range at its 50% equilibrium, buy in discount and sell in premium, use OTE inside them, grade order blocks and FVGs by location, and align timeframes, with a chart, an animated walkthrough and worked examples."
 level: intermediate
 order: 7
-lastUpdated: "2026-05-11"
+lastUpdated: "2026-11-13"
 ---
 
-## What is Premium & Discount?
+## What Are Premium and Discount?
 
-The Premium & Discount concept divides any price range into zones based on the **50% equilibrium level (EQ)**. The idea is simple but powerful:
+Take a meaningful range, from a swing low to a swing high, and split it at **50%**, the **equilibrium (EQ)**:
 
-- **Premium Zone** (above 50%) = Price is expensive → Look to SELL
-- **Discount Zone** (below 50%) = Price is cheap → Look to BUY
-- **Equilibrium** (50% level) = Fair value — no edge
+| Zone            | Where     | Use                    |
+| --------------- | --------- | ---------------------- |
+| **Premium**     | Above 50% | Look to **sell**       |
+| **Equilibrium** | 50%       | No edge on price alone |
+| **Discount**    | Below 50% | Look to **buy**        |
 
-<Callout type="info" title="Institutional Pricing Logic">
-  Banks and institutions always seek the best possible price. They buy in discount zones and sell in premium zones. By
-  identifying these zones, you trade alongside institutional order flow.
+**EQ = (swing high + swing low) ÷ 2.** For 1.0800 – 1.1000, EQ is **1.0900**: premium 1.0900 – 1.1000, discount 1.0800 – 1.0900.
+
+The idea is simple: in an uptrend, buy pullbacks while they're cheap relative to the leg; in a downtrend, sell rallies while they're expensive. You get a better price and more room to the target.
+
+---
+
+## Same Setup, Different Location
+
+![Premium and discount: a bullish OB in premium fails, a bullish OB in discount at the top of OTE holds](/images/smc/premium-discount/premium-discount-obs-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/premium-discount-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this example">
+  The candles are **synthetic**, built to show the concept. They are not real prices or a real trade. R:R is the planned
+  risk-to-reward.
 </Callout>
 
-```
-    100% ─── Swing High ───────────── PREMIUM ZONE
-     90% ─── Deep Premium              (Sell here)
-     80% ───
-     70% ─── Shallow Premium
-     ─────────────────────────────────────────────
-     50% ─── EQUILIBRIUM (Fair Value)
-     ─────────────────────────────────────────────
-     30% ─── Shallow Discount
-     20% ───
-     10% ─── Deep Discount            DISCOUNT ZONE
-      0% ─── Swing Low ──────────────  (Buy here)
-```
+1. The leg runs from **1.0800** to **1.1000**. EQ is **1.0900**; OTE (62 – 79%) is **1.0842 – 1.0876**.
+2. It left two bullish order blocks: one at **1.0946 – 1.0955**, in **premium**, and one at **1.0866 – 1.0876**, in **discount**.
+3. On the pullback, the premium OB gives a weak bounce, then price **closes straight through it**.
+4. The discount OB, at the top of OTE, **holds**. Buy **1.0874**.
+
+| Level   | Price       | Note                          |
+| ------- | ----------- | ----------------------------- |
+| Entry   | 1.0874      | Bullish OB in discount        |
+| Stop    | 1.0858      | Below the OB                  |
+| Target  | 1.1010      | Above the 1.1000 high         |
+| **R:R** | **1 : 8.5** | Risk 16 pips, reward 136 pips |
+
+The point isn't that premium OBs always fail. It's that a pullback **usually** goes at least to equilibrium before the trend resumes, so a bullish zone above 50% is more likely to be run through.
 
 ---
 
-## Why Premium & Discount Matters
+## Grading Zones by Location
 
-1. **Optimal Entries** — Enter at the best possible price within a move
-2. **Higher R:R** — Buying in discount gives more room to the upside
-3. **Institutional Alignment** — Trade where big players are active
-4. **Filter Bad Trades** — Avoid buying in premium or selling in discount
-5. **Confluence** — Adds context to OBs, FVGs, and other POIs
+| Zone                           | With a bullish bias     | With a bearish bias  |
+| ------------------------------ | ----------------------- | -------------------- |
+| OB / FVG in **discount**       | Buy setup               | Skip (selling cheap) |
+| OB / FVG in **premium**        | Skip (buying expensive) | Sell setup           |
+| OB / FVG in **discount + OTE** | Best buy location       | —                    |
+| OB / FVG in **premium + OTE**  | —                       | Best sell location   |
 
----
-
-## How to Calculate Premium & Discount
-
-### Step-by-Step:
-
-1. Identify the **relevant range** (swing high to swing low)
-2. Calculate the 50% level: (High + Low) ÷ 2 = Equilibrium
-3. Everything above EQ = Premium
-4. Everything below EQ = Discount
-
-### Example Calculation:
-
-- Swing High: 1.1000
-- Swing Low: 1.0800
-- Range: 200 pips
-- **Equilibrium: 1.0900** (50%)
-- Premium: 1.0900 - 1.1000
-- Discount: 1.0800 - 1.0900
-
-### Fibonacci Overlay:
-
-Many traders use Fibonacci retracement to visualize:
-
-- 0% = Swing Low (start of discount)
-- 50% = Equilibrium
-- 100% = Swing High (start of premium)
-- **OTE (Optimal Trade Entry):** 61.8% - 78.6% fib level
-
----
-
-## Using Premium & Discount in Trading
-
-### Bullish Bias (Looking to Buy):
-
-When your bias is bullish, ONLY look for entries in the **discount zone**:
-
-- Wait for price to retrace into discount
-- Find an Order Block or FVG in discount
-- Enter long with stop below the range low
-- Target: Premium zone or BSL above
-
-### Bearish Bias (Looking to Sell):
-
-When your bias is bearish, ONLY look for entries in the **premium zone**:
-
-- Wait for price to rally into premium
-- Find an Order Block or FVG in premium
-- Enter short with stop above the range high
-- Target: Discount zone or SSL below
-
-<Callout type="warning" title="Critical Rule">
-  **Never buy in premium. Never sell in discount.** This single rule eliminates most bad trades. If an Order Block is in
-  premium and you're bullish, skip it — wait for a discount OB.
+<Callout type="warning" title="Corrected: 'never' and the star ratings">
+  The original said "never buy in premium, never sell in discount" and rated OBs with stars. Strong trends often retrace
+  only to the premium side of the leg; a rigid rule will keep you out of those. And the stars had no data behind them.
+  Use location as a **filter**, not an absolute rule.
 </Callout>
 
 ---
 
-## Premium & Discount with Order Blocks
+## Which Range?
 
-Not all Order Blocks are equal. Their location in premium/discount determines quality:
+| Choice                    | Range to use                                               |
+| ------------------------- | ---------------------------------------------------------- |
+| Trading with the 4H trend | The last 4H impulse leg (the one that broke structure)     |
+| Swing trading             | The daily or weekly [dealing range](/en/ict/dealing-range) |
+| After a CHOCH/MSS         | The new leg, from the sweep extreme to the break           |
 
-| OB Location            | Bias    | Quality           |
-| ---------------------- | ------- | ----------------- |
-| Bullish OB in Discount | Bullish | ⭐⭐⭐⭐⭐ (Best) |
-| Bullish OB in Premium  | Bullish | ⭐⭐ (Risky)      |
-| Bearish OB in Premium  | Bearish | ⭐⭐⭐⭐⭐ (Best) |
-| Bearish OB in Discount | Bearish | ⭐⭐ (Risky)      |
-
-### The Rule:
-
-- Bullish setups → ONLY take OBs in discount
-- Bearish setups → ONLY take OBs in premium
+Redraw the range when a new high or low (and BOS) forms.
 
 ---
 
-## Premium & Discount with FVG
+## Multi-Timeframe Alignment
 
-Same logic applies to Fair Value Gaps:
+| Timeframe | Check                              |
+| --------- | ---------------------------------- |
+| Weekly    | In discount (for buys)?            |
+| Daily     | Pulling back into its discount?    |
+| 4H        | Bullish OB/FVG in the 4H discount? |
+| 15m       | Entry confirmation at the zone     |
 
-- A bullish FVG in discount = High probability fill and continuation up
-- A bullish FVG in premium = May fill but less likely to hold
-- A bearish FVG in premium = High probability fill and continuation down
-- A bearish FVG in discount = May fill but less likely to hold
-
----
-
-## Multi-Timeframe Premium & Discount
-
-### The Nested Approach:
-
-Each timeframe has its own premium/discount zones:
-
-1. **Weekly Range** → Determine if price is in weekly P or D
-2. **Daily Range** → Within that, find daily P or D
-3. **4H Range** → Refine further
-4. **Entry TF** → Find exact entry
-
-**The best trades:** Higher TF discount + Lower TF discount + OB = Maximum confluence
-
-### Example:
-
-- Weekly: Price in DISCOUNT (bullish weekly bias)
-- Daily: Price pulling back into daily DISCOUNT
-- 4H: Bullish OB sitting in the 4H discount
-- 15M: Entry confirmation at the OB
-- **= A+ long setup with multi-TF discount alignment**
+When all agree, the trade has location on its side on every timeframe.
 
 ---
 
-## Real Trading Examples
+## Worked Examples (no chart)
 
-### Example 1: EUR/USD Discount Buy
+| Example             | Range           | Setup                                              | Entry  | Stop   | Target | Planned R:R                 |
+| ------------------- | --------------- | -------------------------------------------------- | ------ | ------ | ------ | --------------------------- |
+| **EUR/USD 4H, buy** | 1.0800 – 1.1000 | Price at the 20% level; bullish OB 1.0835 – 1.0850 | 1.0845 | 1.0795 | 1.0980 | **1 : 2.7** (50 / 135 pips) |
+| **Gold 4H, sell**   | 2,350 – 2,450   | Price at the 85% level; bearish OB 2,430 – 2,440   | 2,435  | 2,455  | 2,370  | **1 : 3.25** ($20 / $65)    |
 
-**Context:** EUR/USD 4H range from 1.0800 (low) to 1.1000 (high)
-
-1. EQ = 1.0900 | Discount = Below 1.0900
-2. Price drops to 1.0840 (deep discount - 20% level)
-3. Bullish OB identified at 1.0835-1.0850
-4. Entry: 1.0845 (OB in discount)
-5. Stop: 1.0795 (below swing low)
-6. Target: 1.0980 (premium zone)
-7. **Result: +135 pips, 2.7R trade**
-
-### Example 2: Gold Premium Sell
-
-**Context:** Gold 4H range from $2,350 (low) to $2,450 (high)
-
-1. EQ = $2,400 | Premium = Above $2,400
-2. Price rallies to $2,435 (deep premium - 85% level)
-3. Bearish OB from the previous high at $2,430-$2,440
-4. Entry: $2,435 (OB in premium)
-5. Stop: $2,455 (above swing high)
-6. Target: $2,370 (discount zone)
-7. **Result: +65 points, 3.25R trade**
-
-### Example 3: NAS100 Multi-TF P&D
-
-**Context:** Daily discount + 4H discount alignment
-
-1. Daily range: 17,800-18,600 | Daily EQ: 18,200
-2. Price at 18,050 = Daily DISCOUNT ✓
-3. 4H range: 17,950-18,150 | 4H EQ: 18,050
-4. Price at 17,980 = 4H DISCOUNT ✓ (double discount)
-5. 4H Bullish OB at 17,960-17,980
-6. Entry: 17,975 | Stop: 17,940 | Target: 18,400
-7. **Result: +425 points, 12.1R trade**
-
----
-
-## OTE (Optimal Trade Entry)
-
-OTE is the **sweet spot** within the premium/discount framework — specifically the **61.8% to 78.6% retracement** level of a move:
-
-```
-    100% ─── Swing High
-     78.6% ─── ╮
-               │  OTE ZONE (Optimal Trade Entry)
-     61.8% ─── ╯
-     50%  ─── Equilibrium
-      0%  ─── Swing Low
-```
-
-### Why OTE Works:
-
-- Deep enough to be in premium/discount
-- Not so deep that it risks breaking structure
-- Institutional positions cluster here
-- Best risk-to-reward ratio zone
+The original showed these as results; they're shown here as plans.
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Avoid These P&D Errors">
-
-### ❌ Buying in Premium
-
-The #1 mistake — seeing a bullish signal in premium and taking it. You're buying expensive and have limited upside.
-
-### ❌ Using the Wrong Range
-
-The range you select determines everything. Using too small a range (5M) for a 4H trade gives wrong P&D levels.
-
-### ❌ Ignoring Multi-TF Context
-
-Price can be in 15M discount but 4H premium. The higher TF always wins — if 4H says premium, don't buy.
-
-### ❌ Trading at Equilibrium
-
-The 50% level has no edge. Price can go either way from EQ. Only trade at clear premium (70%+) or discount (30%-).
-
-### ❌ Not Updating Ranges
-
-As new highs/lows form, your range changes. Always use the MOST RECENT relevant range.
-
-</Callout>
+| Mistake                            | Fix                                                   |
+| ---------------------------------- | ----------------------------------------------------- |
+| Using a random range               | Use the leg that broke structure                      |
+| Buying any discount level          | Location filters; you still need a zone and a trigger |
+| Treating "never in premium" as law | Strong trends retrace shallowly                       |
+| Forgetting to update the range     | Redraw after each new BOS                             |
 
 ---
 
-## FAQ
+## Practice
 
-### Which range should I use?
-
-Use the range relevant to your trade timeframe. For 4H trades, use the 4H swing range. For daily trades, use the daily range. The range that created the current structure is your reference.
-
-### Can I sell in discount or buy in premium?
-
-Technically yes, but only with very strong confluence (HTF alignment, liquidity sweep, displacement). As a rule, avoid it — the probabilities are against you.
-
-### How does P&D work with trend?
-
-In an uptrend, each pullback into discount is a buying opportunity. In a downtrend, each rally into premium is a selling opportunity. P&D helps you time entries with the trend.
-
-### What if an Order Block spans both zones?
-
-Use only the portion in the correct zone. If a bullish OB starts in discount and extends into premium, only the discount portion is valid for entries.
+1. On 4H charts, draw the last impulse leg and its 50% for 10 pullbacks.
+2. Record where each pullback turned: premium, EQ, discount, or OTE.
+3. Compare how OBs in premium vs discount held. Log it in your [trading journal](/en/tools/journal-template).
 
 ---
 
 ## Summary
 
-| Concept        | Key Points                               |
-| -------------- | ---------------------------------------- |
-| **Premium**    | Above 50% EQ — expensive — look to sell  |
-| **Discount**   | Below 50% EQ — cheap — look to buy       |
-| **EQ**         | 50% level — fair value — no edge         |
-| **OTE**        | 61.8%-78.6% — optimal entry zone         |
-| **Rule**       | Never buy premium, never sell discount   |
-| **Best Setup** | Multi-TF P&D alignment + OB/FVG          |
-| **Range**      | Use the most recent relevant swing range |
+| Element       | Rule                         |
+| ------------- | ---------------------------- |
+| **EQ**        | (High + low) ÷ 2             |
+| **Buy**       | In discount, ideally in OTE  |
+| **Sell**      | In premium, ideally in OTE   |
+| **Range**     | The leg that broke structure |
+| **Rule type** | A filter, not a law          |
 
 ---
 
 ## Related Topics
 
-- [Order Blocks](/en/smc/order-blocks) — Entry zones within P&D
-- [Fair Value Gap](/en/smc/fair-value-gap) — Gaps within P&D context
-- [OTE (Optimal Trade Entry)](/en/ict/ote) — Fibonacci precision
-- [Liquidity Pools](/en/smc/liquidity-pools) — Targets from P&D zones
-- [Kill Zones](/en/smc/kill-zones) — When P&D setups activate
+- [Order Blocks](/en/smc/order-blocks) — the zones to grade
+- [Fair Value Gap](/en/smc/fair-value-gap) — the other zone type
+- [ICT Dealing Range](/en/ict/dealing-range) — ranges on higher timeframes
+- [ICT OTE](/en/ict/ote) — the 62 – 79% band
