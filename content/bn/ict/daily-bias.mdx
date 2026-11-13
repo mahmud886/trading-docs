@@ -1,132 +1,159 @@
 ---
 title: "ICT Daily Bias"
-description: "ICT Methodology ব্যবহার করে Daily Directional Bias কীভাবে নির্ধারণ করবেন শিখুন। PO3 Candle Reading, HTF Analysis এবং Session-Based Bias Determination Master করুন।"
+description: "ICT পদ্ধতিতে Daily Bias ঠিক করুন: Higher Timeframe Structure আর Premium/Discount, গতকালের ক্যান্ডেল, Draw on Liquidity আর সপ্তাহের দিন — সব মিলিয়ে একটি প্রি-সেশন চেকলিস্ট, কখন Bias বাতিল হয়, আর চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ একটি EUR/USD উদাহরণ।"
 level: intermediate
 order: 5
-lastUpdated: "2026-06-09"
+lastUpdated: "2026-11-13"
 ---
 
 ## Daily Bias কী?
 
-Daily Bias হলো আজ Price সবচেয়ে সম্ভাব্য **কোন Direction এ Move** করবে তা নির্ধারণ করা। ICT Methodology তে, প্রতিটি Trade Bias প্রতিষ্ঠা দিয়ে শুরু হয় — এটি ছাড়া, আপনি Gamble করছেন। Bias আপনাকে বলে শুধু Buy খুঁজতে অথবা শুধু Sell খুঁজতে।
+**Daily Bias** হলো সেশন খোলার আগে একটি প্রশ্নের উত্তর: _আজ Price এর Buy-Side Liquidity পর্যন্ত ওঠার সম্ভাবনা বেশি, নাকি Sell-Side Liquidity পর্যন্ত নামার?_
 
-<Callout type="info" title="Rule #1">
-  "কখনো Clear Daily Bias ছাড়া Trade নেবেন না। Bias নির্ধারণ করতে না পারলে, বসে থাকুন।" — ICT
+এটা দিনের ভবিষ্যদ্বাণী নয়। এটা ঠিক করে আপনি কী খুঁজবেন: Bullish Bias থাকলে শুধু Buy সেটআপ নেবেন, আর একটি Bearish [Judas Swing](/bn/ict/judas-swing) হয়ে যায় আপনার এন্ট্রি, Sell করার কারণ নয়।
+
+<Callout type="info" title="Bias নেই, ট্রেড নেই">
+  মূল লেসনে এটি সূত্র ছাড়া ICT এর উক্তি হিসেবে দেওয়া ছিল। ধারণাটা নিজেই টেকে: নিচের চেকগুলো একে অপরের সাথে না মিললে
+  কোনো Bias নেই, আর সেরা ট্রেড হলো কোনো ট্রেড না।
 </Callout>
 
 ---
 
-## Daily Bias কীভাবে নির্ধারণ করবেন
+## চারটি ইনপুট
 
-### Method 1: Previous Day PO3 Candle
+### ১. Higher Timeframe Structure আর Premium/Discount
 
-আগের Daily Candle এর Power of 3 Structure পড়ুন:
+Daily বা Weekly [Dealing Range](/bn/ict/dealing-range) আর তার ৫০% লেভেল মার্ক করুন।
 
-**Bullish Bias যদি গতকাল:**
+| Price কোথায়…                   | Structure             | ঝোঁক     |
+| ------------------------------- | --------------------- | -------- |
+| **Discount** এ (< ৫০%)          | Higher Low তৈরি হচ্ছে | Bullish  |
+| **Premium** এ (> ৫০%)           | Lower High তৈরি হচ্ছে | Bearish  |
+| যেকোনো দিকে, পরিষ্কার Swing নেই | রেঞ্জিং               | Bias নেই |
 
-- Open হয়ে, প্রথমে DOWN যায় (লম্বা Lower Wick), তারপর HIGH এর কাছে Close
-- এটি দেখায় Manipulation Down → Distribution Up
-- আজকের Bias = BULLISH (Continuation আশা)
+### ২. গতকালের ক্যান্ডেল
 
-**Bearish Bias যদি গতকাল:**
+| গতকাল                                | পাঠ                        |
+| ------------------------------------ | -------------------------- |
+| আগে নেমেছে, তারপর High এর কাছে Close | Bullish PO3 → Bullish ঝোঁক |
+| আগে উঠেছে, তারপর Low এর কাছে Close   | Bearish PO3 → Bearish ঝোঁক |
+| ছোট Body, দুই দিকে Wick              | অনিশ্চয়তা → দুর্বল ইনপুট  |
 
-- Open হয়ে, প্রথমে UP যায় (লম্বা Upper Wick), তারপর LOW এর কাছে Close
-- এটি দেখায় Manipulation Up → Distribution Down
-- আজকের Bias = BEARISH (Continuation আশা)
+এটা একটা ইনপুট, রায় নয়। দেখুন [Power of 3](/bn/ict/power-of-3)।
 
-### Method 2: HTF Structure
+### ৩. Draw on Liquidity
 
-- **Daily Discount এ** (Range এর 50% এর নিচে) + HL তৈরি করছে → Bullish Bias
-- **Daily Premium এ** (Range এর 50% এর উপরে) + LH তৈরি করছে → Bearish Bias
-- সামগ্রিক Context এর জন্য Weekly/Monthly ব্যবহার করুন
+জিজ্ঞেস করুন _সবচেয়ে কাছের স্পষ্ট, না-ছোঁয়া Liquidity কোথায়?_ আগের দিন বা সপ্তাহের High বা Low, Equal High বা Low, অথবা Higher Timeframe এর না-ভরা [FVG](/bn/ict/fvg)। সবচেয়ে কাছের Draw উপরে হলে Bullish ঝোঁক; নিচে হলে Bearish। দেখুন [Liquidity](/bn/ict/liquidity)।
 
-### Method 3: Draw on Liquidity
+### ৪. সপ্তাহের দিন
 
-জিজ্ঞেস করুন: "নিকটতম Untouched Liquidity Pool কী?"
+| দিন             | প্রবণতা                                      |
+| --------------- | -------------------------------------------- |
+| **সোমবার**      | প্রায়ই রেঞ্জ তৈরি                           |
+| **মঙ্গলবার**    | প্রায়ই সপ্তাহের High বা Low তৈরি করে        |
+| **বুধবার**      | প্রায়ই Expansion, বা সপ্তাহের রিভার্সাল     |
+| **বৃহস্পতিবার** | Continuation, বা US নিউজের আশেপাশে রিভার্সাল |
+| **শুক্রবার**    | প্রফিট-টেকিং; NY সকালের পর শান্ত             |
 
-- নিকটতম BSL Target হলে → Bullish Bias
-- নিকটতম SSL Target হলে → Bearish Bias
-- HTF FVG ও OB-ও "Draw" হিসেবে কাজ করে
-
-### Method 4: Day of Week Context
-
-| দিন           | প্রবণতা                                   |
-| ------------- | ----------------------------------------- |
-| **Monday**    | Range-Building, Accumulation              |
-| **Tuesday**   | Judas Day — প্রায়ই Manipulation/Reversal |
-| **Wednesday** | সর্বোচ্চ Probability Expansion            |
-| **Thursday**  | Continuation বা Reversal Setup            |
-| **Friday**    | Profit-Taking, কম Probability             |
+এগুলো শুধু প্রবণতা। দেখুন [Weekly Profiles](/bn/ict/weekly-profiles)।
 
 ---
 
-## Daily Bias Checklist
+## সম্পূর্ণ উদাহরণ — Bullish Bias, EUR/USD
 
-প্রতিদিন Trade এর আগে, এই ৫টি প্রশ্নের উত্তর দিন:
+![Daily Bias — EUR/USD Daily: Dealing Range, Discount এ Higher Low, Bullish PO3 ক্যান্ডেল, গত সপ্তাহের High এ Draw](/images/ict/daily-bias/eurusd-daily-bias-dark.png)
 
-1. ✅ **Weekly Bias কী?** (Premium না Discount?)
-2. ✅ **গতকালের Candle কী বলে?** (PO3 Reading)
-3. ✅ **Draw on Liquidity কোথায়?** (BSL না SSL Target?)
-4. ✅ **HTF FVG/OB Target আছে?** (Magnetic Level)
-5. ✅ **কোন দিন?** (Tuesday/Wednesday = সেরা দিন)
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/daily-bias-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  চার্টে এই লেসনের লেভেলের চারপাশে তৈরি **সিন্থেটিক ক্যান্ডেল** ব্যবহার করা হয়েছে। এটি যুক্তিটা দেখায়, আসল প্রাইসের
+  রেকর্ড নয়। মূল লেসনের "ফলাফল: Price 1.0940 এ পৌঁছায়" বাদ দেওয়া হয়েছে: Bias হলো পরিকল্পনা, ফলাফল নয়।
+</Callout>
+
+| প্রশ্ন      | উত্তর                                                                       |
+| ----------- | --------------------------------------------------------------------------- |
+| ① Structure | রেঞ্জ 1.0800 – 1.1000; 1.0845 এ Higher Low, 1.0900 মাঝখানের নিচে (Discount) |
+| ② গতকাল     | 1.0870 এ Open, 1.0845 পর্যন্ত নেমে 1.0895 এ Close — Bullish PO3             |
+| ③ Draw      | গত সপ্তাহের High **1.0950**, না-ছোঁয়া                                      |
+| ④ দিন       | বুধবার                                                                      |
+| **Bias**    | **Bullish** — শুধু Buy, 1.0950 এর দিকে                                      |
+
+দিনের পরিকল্পনা: London বা NY Asian Low এর নিচে নামা পর্যন্ত অপেক্ষা, তারপর MSS এর পরে Buy, যেমন [London Open](/bn/ict/london-open) এ।
+
+### একটি Bearish উদাহরণ (চার্ট ছাড়া)
+
+Gold: Weekly Premium এ, একটি Lower High তৈরি হচ্ছে। গতকাল 2,040 এ Open, 2,055 পর্যন্ত স্পাইক, 2,028 এ Close (Bearish PO3)। Draw হলো 2,000 এ Sell-Side, আগের Swing Low এর নিচে একটি রাউন্ড নম্বর। Bias: Bearish, শুধু Sell। পরিকল্পনা: London High এর NY Sweep এ Sell।
 
 ---
 
-## বাস্তব উদাহরণ
+## প্রি-সেশন চেকলিস্ট
 
-### উদাহরণ ১: EUR/USD এ Bullish Bias Day
+1. Weekly আর Daily Dealing Range এ Price কোথায়: Premium নাকি Discount?
+2. গতকালের ক্যান্ডেল কী করেছে?
+3. সবচেয়ে কাছের না-ছোঁয়া Liquidity কোথায়?
+4. আজ কি বড় নিউজ আছে? (দেখুন [ইকোনমিক ক্যালেন্ডার](/bn/tools/economic-calendar)।)
+5. অন্তত তিনটি উত্তর কি একই দিকে? না হলে Bias নেই।
 
-- **Weekly:** Discount এ, HL তৈরি করছে
-- **আগের Daily:** 1.0870 এ Open, 1.0845 এ Dip, 1.0895 এ Close (Bullish PO3)
-- **Draw:** 1.0950 এ BSL (Previous Week High Untouched)
-- **Day:** Wednesday (Expansion Day)
-- **Bias:** ✅ BULLISH — আজ শুধু Buy খুঁজুন
-- **Result:** London Asian Low Sweep করে → Buy Setup → Price 1.0940 এ পৌঁছে
+---
 
-### উদাহরণ ২: Gold এ Bearish Bias Day
+## কখন Bias বাদ দেবেন
 
-- **Weekly:** Premium এ, LH তৈরি হচ্ছে
-- **আগের Daily:** 2,040 এ Open, 2,055 এ Spike, 2,028 এ Close (Bearish PO3)
-- **Draw:** 2,000 এ SSL (Round Number + Previous Swing Low)
-- **Day:** Thursday
-- **Bias:** ✅ BEARISH — আজ শুধু Sell খুঁজুন
-- **Result:** NY AM London High Sweep করে → Sell → 2,008 পর্যন্ত Drop
+মূল লেসনে বলা ছিল "চরম Invalidation না হলে এতে থাকুন", কিন্তু সেটা কী তা বলা ছিল না। নির্দিষ্ট নিয়ম ব্যবহার করুন:
+
+| Bias    | বাতিল হয় যখন…                                                                                          |
+| ------- | ------------------------------------------------------------------------------------------------------- |
+| Bullish | Price Manipulation Low এর নিচে একটি 1H ক্যান্ডেল ক্লোজ করে, বা উল্টো দিকের Liquidity আগে নেওয়া হয়     |
+| Bearish | Price Manipulation High এর উপরে একটি 1H ক্যান্ডেল ক্লোজ করে, বা Sell-Side বাদ দিয়ে Buy-Side নেওয়া হয় |
+
+বাতিল হলে সেদিন ওই দিকে ট্রেড বন্ধ করুন। উল্টে গিয়ে পেছনে দৌড়াবেন না।
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="Bias এ ভুল">
-
-**❌ দিনের মাঝে Bias পরিবর্তন** — একবার সেট করলে, Extreme Invalidation না হলে বদলাবেন না
-
-**❌ Bias নেই = তবুও Trading** — Bias নির্ধারণ করতে না পারলে, Trade করবেন না
-
-**❌ LTF HTF কে Override করে** — Daily Bias এর বিরুদ্ধে 5M Setup = Losing Trade
-
-**❌ Day of Week উপেক্ষা করা** — Monday ও Friday তে Tuesday-Thursday এর চেয়ে ভিন্ন Character
-
-**❌ Move হওয়ার পর Chase করা** — Bias Session এর আগে সেট করুন, Price Move করার পর নয়
-
-</Callout>
+| ভুল                             | সমাধান                                  |
+| ------------------------------- | --------------------------------------- |
+| Move এর পরে Bias ঠিক করা        | London খোলার আগে ঠিক করুন               |
+| Bias ছাড়া ট্রেড                | মিল নেই → ট্রেড নেই                     |
+| Bias এর বিপরীতে 5m সেটআপ নেওয়া | Lower Timeframe সেটআপ শুধু Bias এর দিকে |
+| সপ্তাহের দিনকে নিয়ম ভাবা       | এটা সবচেয়ে দুর্বল ইনপুট                |
+| বাতিল হওয়া Bias ধরে রাখা       | উপরের Invalidation নিয়ম ব্যবহার করুন   |
 
 ---
 
-## সারসংক্ষেপ
+## অনুশীলন
 
-| Method            | Tool                     | Reliability |
-| ----------------- | ------------------------ | ----------- |
-| PO3 Candle        | আগের Daily Candle পড়ুন  | ★★★★★       |
-| HTF Structure     | Premium/Discount + Trend | ★★★★★       |
-| Draw on Liquidity | নিকটতম Liquidity Target  | ★★★★☆       |
-| Day of Week       | Weekly Tendencies        | ★★★☆☆       |
+1. ২০ দিন ধরে London খোলার আগে আপনার Bias আর কারণ লিখুন।
+2. প্রতিদিন শেষে লিখুন Draw পৌঁছেছে কিনা, আর না পৌঁছালে কোন ইনপুট ভুল ছিল।
+3. ২০ দিন পর দেখুন আপনার পেয়ারে কোন ইনপুট সবচেয়ে কাজের। আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ইনপুট              | প্রশ্ন                                              | গুরুত্ব      |
+| ------------------ | --------------------------------------------------- | ------------ |
+| HTF Structure + PD | Higher Low সহ Discount, নাকি Lower High সহ Premium? | সবচেয়ে বেশি |
+| Draw on Liquidity  | সবচেয়ে কাছের না-ছোঁয়া Liquidity কোথায়?           | বেশি         |
+| গতকালের ক্যান্ডেল  | Bullish নাকি Bearish PO3?                           | মাঝারি       |
+| সপ্তাহের দিন       | এই দিনে সাধারণত কী হয়?                             | সবচেয়ে কম   |
+
+মূল লেসনের স্টার রেটিং এর পেছনে কোনো ডেটা ছিল না। উপরের গুরুত্ব অগ্রাধিকারের ক্রম, মাপা নির্ভরযোগ্যতা নয়।
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Power of 3](/bn/ict/power-of-3) — PO3 Candle Reading
-- [AMD](/bn/ict/amd) — Session-Based Directional Cycle
-- [Liquidity](/bn/ict/liquidity) — Draw on Liquidity বোঝা
-- [ICT Kill Zones](/bn/ict/ict-kill-zones) — কখন আপনার Bias Execute করবেন
-- [Weekly Profiles](/bn/ict/weekly-profiles) — Weekly Directional Tendencies
+- [Power of 3](/bn/ict/power-of-3) — গতকালের ক্যান্ডেল পড়া
+- [Dealing Range](/bn/ict/dealing-range) — Premium আর Discount
+- [Liquidity](/bn/ict/liquidity) — Draw on Liquidity
+- [London Open](/bn/ict/london-open) — Bias অনুযায়ী এক্সিকিউশন
+- [Weekly Profiles](/bn/ict/weekly-profiles) — সাপ্তাহিক প্রবণতা
