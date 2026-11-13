@@ -1,0 +1,235 @@
+---
+title: "ICT Optimal Trade Entry (OTE) — Complete Guide"
+description: "Use ICT's Optimal Trade Entry to time an entry after a market structure shift: choosing the right leg, drawing the Fibonacci, the 62 / 70.5 / 79 % levels, why OTE needs a PD array inside it, what to do when price is too shallow or too deep, stops and targets, and two worked examples with charts and an animated walkthrough."
+level: intermediate
+order: 7
+lastUpdated: "2026-11-13"
+---
+
+## Where OTE Fits
+
+The previous lessons give you the **direction** (the [dealing range](/en/ict/dealing-range) and the [MSS](/en/ict/mss)) and the **zones** ([FVG](/en/ict/fvg), [order blocks](/en/smc/order-blocks)). **OTE** answers the last question: *how deep into the pullback should I be waiting?*
+
+<Callout type="info" title="Definition">
+  The **Optimal Trade Entry (OTE)** is the zone between the **62 %** and **79 %** retracement of an expansion leg.
+  After a displacement shifts structure, price often pulls back into this zone before continuing. **70.5 %**, the
+  middle of the zone, is ICT's preferred level.
+</Callout>
+
+OTE is the dealing-range idea applied to a single leg. Buying a bullish leg at 62–79 % means buying deep in that leg's **discount**. Selling a bearish leg at 62–79 % means selling deep in its **premium**.
+
+---
+
+## Key Levels
+
+| Level      | Meaning                                                                  |
+| ---------- | ------------------------------------------------------------------------ |
+| **0 %**    | The end of the leg (the swing high for a bullish leg)                    |
+| **50 %**   | Equilibrium of the leg; **not** OTE                                      |
+| **62 %**   | Top of the OTE zone (some charts show 61.8 %; the difference is tiny)     |
+| **70.5 %** | The "sweet spot": the middle of the zone                                 |
+| **79 %**   | Bottom of the OTE zone                                                   |
+| **100 %**  | The start of the leg; a close beyond it breaks the structure              |
+
+---
+
+## Drawing It
+
+### Choosing the right leg
+
+1. The leg must contain the **displacement that caused the MSS**. Without that, there is no shift to join.
+2. **Start** at the swing that the move came from: for a bullish OTE, the low that was swept or that started the move.
+3. **End** at the extreme of the move **before** the pullback starts.
+4. If price makes a new extreme before retracing, move the end point and redraw.
+
+### Direction of the Fibonacci
+
+| Setup        | Draw from        | To                 | OTE zone is…                  |
+| ------------ | ---------------- | ------------------ | ----------------------------- |
+| **Bullish**  | Swing **low**    | Swing **high**     | Below the high, deep in the leg |
+| **Bearish**  | Swing **high**   | Swing **low**      | Above the low, deep in the leg  |
+
+**Formula** (works for both): level = leg end − (leg end − leg start) × %
+
+Example 1: leg 1.0820 → 1.0880. 62 % = 1.0880 − 0.0060 × 0.62 = **1.0843**; 79 % = **1.0833**; 70.5 % = **1.0838**.
+
+---
+
+## Too Shallow, OTE, Too Deep
+
+![How deep is the retracement — too shallow, OTE, too deep](/images/ict/ote/ote-depth-dark.png)
+
+| Retracement              | What to do                                                            |
+| ------------------------ | --------------------------------------------------------------------- |
+| **Shallower than 62 %**  | No OTE entry. Don't chase. A 50 % entry is not OTE                    |
+| **62–79 %**              | The zone: look for a PD array and a reaction                          |
+| **Beyond 79 %, inside 100 %** | Weaker; the zone has been passed. Some traders still use a PD array here; most wait |
+| **Close beyond 100 %**   | Invalid: the leg's start is broken, so the structure that justified the trade is gone |
+
+<Callout type="warning" title="One consistent invalidation rule">
+  The original lesson says both that blowing through 79 % invalidates the setup and that the setup is invalid at
+  100 %. This guide separates them. Beyond 79 % the zone has been **missed**; a **close beyond 100 %** makes the setup
+  **invalid**.
+</Callout>
+
+---
+
+## OTE Needs a PD Array
+
+The zone is about 17 % of the leg, which is often wide. Treat OTE as **where** to look, and a PD array inside it as **the exact level**.
+
+| Confluence             | Entry                                                    |
+| ---------------------- | -------------------------------------------------------- |
+| **OTE + FVG**          | The FVG's CE, if it sits in the zone (Example 2)          |
+| **OTE + Order Block**  | The OB's proximal edge or mean threshold (Example 1)      |
+| **OTE + Breaker**      | The breaker's edge, if it sits in the zone                |
+
+If no array sits inside 62–79 %, entering on the Fibonacci level alone is a weaker trade.
+
+---
+
+## Rules
+
+1. **Displacement first:** the leg must be a real impulse (body ≥ 2× average) with an **MSS**.
+2. **HTF alignment:** the leg points the same way as the Daily/4H bias.
+3. **First pullback:** the first return into the zone is the cleanest.
+4. **Timing:** a kill zone (London 12–3 PM BD, NY AM 5–8 PM BD) adds participation.
+5. **Stop beyond 100 %:** below the leg's low for buys, above its high for sells.
+
+---
+
+## Example 1 — Bullish OTE, EUR/USD (15m, NY AM)
+
+![Bullish OTE — EUR/USD 15m: leg 1.0820 → 1.0880, retrace to 1.0836 into the OTE and a bullish OB](/images/ict/ote/eurusd-bullish-ote-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/ict/ote-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About these examples">
+  The charts use **synthetic candles** built around the levels in this lesson. They show how the method works and are
+  not records of real trades. R:R values are the planned risk-to-reward, not results.
+</Callout>
+
+**Observations**
+
+1. **Expansion:** from the **1.0820** low, a 19-pip displacement (against a 5-pip average) closes above the 1.0842 lower high, which is the MSS. The leg tops at **1.0880**.
+2. **The zone:** OTE is **1.0843 – 1.0833**, with the 70.5 % level at **1.0838**.
+3. **Confluence:** the last bearish candle before the displacement forms a **bullish OB at 1.0831 – 1.0839**, which overlaps the zone.
+4. **Entry:** at **6:15 PM BD** the first pullback reaches **1.0836**, inside both, and the candle closes back up. Buy at 1.0836.
+
+| Level     | Price  | Rationale                           |
+| --------- | ------ | ----------------------------------- |
+| Entry     | 1.0836 | OTE + bullish OB                     |
+| Stop      | 1.0818 | 2 pips below the 1.0820 leg start   |
+| Target    | 1.0920 | Buy-side liquidity                  |
+| Risk      | 18 pips | 1.0836 − 1.0818                    |
+| Reward    | 84 pips | 1.0920 − 1.0836                    |
+| **R:R**   | **1 : 4.7** | 84 ÷ 18                        |
+
+**Invalidation:** a 15m close below 1.0820.
+
+---
+
+## Example 2 — Bearish OTE, Gold (5m)
+
+![Bearish OTE — Gold 5m: leg 2,048 → 2,020, retrace into the OTE where a bearish FVG's CE sits on 70.5 %](/images/ict/ote/gold-bearish-ote-dark.png)
+
+**Observations**
+
+1. **Expansion:** from the **2,048** high, an 8.5-point displacement closes below the 2,043 higher low (MSS) and leaves a **bearish FVG at 2,038 – 2,042**. The leg bottoms at **2,020**.
+2. **The zone:** OTE is **2,037 – 2,042**, with 70.5 % at **2,040**.
+3. **Confluence:** the FVG sits almost exactly on the zone, and its CE (2,040) is on the 70.5 % level.
+4. **Entry:** the first pullback reaches 2,040. Sell.
+
+| Level     | Price  | Rationale                           |
+| --------- | ------ | ----------------------------------- |
+| Entry     | 2,040  | OTE 70.5 % + FVG CE                  |
+| Stop      | 2,049  | $1 above the 2,048 leg start         |
+| Target    | 2,005  | Sell-side liquidity                 |
+| Risk      | $9     | 2,049 − 2,040                       |
+| Reward    | $35    | 2,040 − 2,005                       |
+| **R:R**   | **1 : 3.9** | 35 ÷ 9                         |
+
+**Invalidation:** a 5m close above 2,048. The original lesson gives no session or time for this example, so the chart's times are placeholders.
+
+---
+
+## Stops and Targets
+
+- **Stop:** beyond the 100 % level plus a small buffer. A stop at 79 % is tighter, but it is inside the leg, so a normal deep pullback can hit it.
+- **TP1 (optional):** the leg's 0 % (the swing high or low that ended the expansion).
+- **Final target:** the next external liquidity in the trade's direction.
+- **Extensions:** some traders also use the −27 % and −62 % Fibonacci extensions as targets. Treat them as optional, and only where liquidity sits nearby.
+
+---
+
+## Common Mistakes
+
+| Mistake                                          | Fix                                                       |
+| ------------------------------------------------ | --------------------------------------------------------- |
+| Drawing OTE on a leg without displacement        | Only legs that caused an MSS                              |
+| Entering at 50 %                                 | 50 % is equilibrium, not OTE; wait for 62–79 %            |
+| Using the Fibonacci level alone                  | Look for an OB or FVG inside the zone                     |
+| Drawing the wrong leg                            | From the move's origin to its extreme before the pullback |
+| Stop at 79 %                                     | Beyond 100 %, plus a buffer                               |
+| Chasing a shallow pullback                       | Missed is fine; wait for the next setup                   |
+
+---
+
+## Risk Management
+
+| Component            | Guideline                                                        |
+| -------------------- | ---------------------------------------------------------------- |
+| **Risk per trade**   | 1–2% of the account; less while learning                         |
+| **Position size**    | Account risk ÷ stop distance ([calculator](/en/tools/position-calculator)) |
+| **Stop**             | Beyond the leg's start (100 %)                                   |
+| **Partial (optional)** | At the leg's 0 %                                               |
+
+---
+
+## Practice
+
+1. On a 15m chart, find ten displacement legs that caused an MSS. Draw the Fibonacci on each.
+2. For each, record how deep the first pullback went: shallow, 62–79 %, beyond 79 %, or beyond 100 %.
+3. For the ones that reached the zone, check whether an OB or FVG was inside it, and how price reacted.
+4. Log the depth, the confluence and the outcome in your [trading journal](/en/tools/journal-template).
+
+---
+
+## FAQ
+
+### 62 % or 61.8 %?
+
+ICT uses 62 %. Many charting tools show 61.8 %. The difference is a fraction of a pip on intraday charts, so use whichever your platform has.
+
+### What if price only reaches 60 %?
+
+Then it didn't reach the zone. Some traders accept a PD array just above 62 %, but by the strict rule there is no OTE entry.
+
+### Can I use OTE without an MSS?
+
+You can draw it on any leg, but without a shift in structure you have no confirmed direction. The method assumes the MSS came first.
+
+---
+
+## Summary
+
+| Aspect           | Key point                                                       |
+| ---------------- | --------------------------------------------------------------- |
+| **Zone**         | 62–79 % retracement of the expansion leg                        |
+| **Sweet spot**   | 70.5 %                                                          |
+| **Leg**          | The displacement that caused the MSS, origin to extreme         |
+| **Exact entry**  | An OB or FVG inside the zone                                    |
+| **Too shallow**  | No entry; 50 % is not OTE                                       |
+| **Invalid**      | A close beyond 100 %                                            |
+| **Stop**         | Beyond 100 %, plus a buffer                                     |
+
+---
+
+## Related Topics
+
+- [Market Structure Shift](/en/ict/mss) — the leg OTE is drawn on
+- [Dealing Range](/en/ict/dealing-range) — premium and discount on a larger scale
+- [Fair Value Gap](/en/ict/fvg) — a common PD array inside the zone
+- [Order Blocks](/en/smc/order-blocks) — the other common PD array
+- [PD Arrays](/en/ict/pd-arrays) — the full list of arrays
+- [Power of 3](/en/ict/power-of-3) — where expansion legs come from in a trading day
