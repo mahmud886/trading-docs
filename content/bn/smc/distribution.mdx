@@ -1,67 +1,134 @@
 ---
 title: "SMC Distribution — সম্পূর্ণ গাইড"
-description: "Distribution Phase আয়ত্ত করুন — Markdown-এর আগে Smart Money কীভাবে Premium-এ Position Exit করে।"
+description: "SMC আর Wyckoff এর ভাষায় Distribution আয়ত্ত করুন: রেঞ্জ তৈরি করা Buying Climax, Automatic Reaction আর Secondary Test, Buy-Side Sweep হিসেবে UTAD, Sign of Weakness আর Last Point of Supply, Volume কী করে, আর Short কীভাবে ট্রেড করবেন — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 12
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-13"
 ---
 
 ## Distribution কী?
 
-Distribution হলো **তৃতীয় Phase** যেখানে Smart Money Premium Price-এ Position ছাড়ে। Market Bullish দেখায় — Retail কিনছে — কিন্তু Institution তাদের Buying Pressure-এ গোপনে বিক্রি করছে।
+**Distribution** হলো **র‍্যালির শেষে একটি রেঞ্জ**, যেখানে বিক্রি ধীরে ধীরে কেনা শোষণ করে। Price High এর কাছে পাশাপাশি চলে, প্রায়ই শক্তিশালী দেখায়, তারপর নিচে ভেঙে **Markdown** শুরু করে। এটা [Accumulation](/bn/smc/accumulation) এর উল্টো ছবি।
 
-<Callout type="info" title="Smart Money Exit">
-  Institution সব একবারে বিক্রি করতে পারে না — Market Crash করবে। Retail "Uptrend" কিনতে থাকাকালীন Premium-এ ধীরে ধীরে
-  Distribute করে।
+<Callout type="info" title="সংশোধিত: কে কী করছে">
+  মূল লেসনে বলা ছিল প্রতিষ্ঠান "বেচে দিচ্ছে" যখন "রিটেইল ট্রেডাররা কিনছে"। কোন পক্ষে কে আছে দেখা যায় না। যা দেখা যায়
+  তা হলো প্যাটার্ন: এগোতে না পারা র‍্যালি, রেঞ্জের উপরে মিথ্যা ভাঙন, আর বাড়তি Volume এ রেঞ্জের নিচে ভাঙন।
 </Callout>
 
 ---
 
-## বৈশিষ্ট্য
+## Distribution এর কাঠামো
 
-| বৈশিষ্ট্য             | বর্ণনা                           |
-| --------------------- | -------------------------------- |
-| **Price আচরণ**        | High-তে Sideways, Choppy         |
-| **অবস্থান**           | Resistance-এ / Markup-এর পর      |
-| **Structure**         | উপরে False Breakout সাধারণ       |
-| **Volume**            | উপরে Push-এ বাড়ে (Supply ঢুকছে) |
-| **Retail ধারণা**      | "Bullish Breakout আসছে!"         |
-| **Institutional কাজ** | Buying Pressure-এ বিক্রি         |
+![Wyckoff Distribution: PSY, চরম Volume এ Buying Climax, AR, ST, 1.0960 এর উপরে UTAD যা ভিতরে ক্লোজ করে, Test, বাড়তি Volume এ SOW, LPSY, Markdown](/images/smc/distribution/wyckoff-distribution-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/distribution-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই উদাহরণ সম্পর্কে">
+  ক্যান্ডেল আর Volume **সিন্থেটিক** (Accumulation উদাহরণের উল্টো)। এগুলো আসল প্রাইস বা আসল ট্রেড নয়। R:R হলো পরিকল্পিত
+  রিস্ক-রিওয়ার্ড।
+</Callout>
+
+| ঘটনা     | এটা কী                                                                                        | চার্টে                  |
+| -------- | --------------------------------------------------------------------------------------------- | ----------------------- |
+| **PSY**  | Preliminary Supply: Seller দের প্রথম আগমনের লক্ষণ                                             | 1.0905                  |
+| **BC**   | Buying Climax: উচ্ছ্বাসের High, **সবচেয়ে বেশি Volume** এ                                     | **1.0960**, রেঞ্জের উপর |
+| **AR**   | Automatic Reaction: যে পতন রেঞ্জের নিচ ঠিক করে                                                | **1.0880**              |
+| **ST**   | Secondary Test: **কম** Volume এ High এর রিটেস্ট                                               | 1.0948                  |
+| **UTAD** | Upthrust After Distribution: রেঞ্জের **উপরে** গিয়ে **ভিতরে ফিরে ক্লোজ**: একটি Buy-Side Sweep | **1.0968**              |
+| **Test** | দুর্বল রিটেস্ট যা ব্যর্থ হয়                                                                  | 1.0946                  |
+| **SOW**  | Sign of Weakness: **বাড়তি** Volume এ রেঞ্জের নিচে ভাঙন                                       | 1.0880 এর নিচে Close    |
+| **LPSY** | Last Point of Supply: পুরনো নিচের কাছে ব্যর্থ বাউন্স                                          | 1.0888                  |
 
 ---
 
-## Institution কীভাবে Distribute করে
+## Volume কী করে
 
-```
-1. Price Premium Zone-এ আসে (Markup-এর পর)
-2. Key Supply Area-তে Range তৈরি
-3. Range High-এর উপরে Liquidity Sweep (Buyer Trap)
-4. Institution Sweep-এ SHORT Order Fill করে
-5. Price Range-এর নিচে Break (Markdown শুরু)
+| ধাপ              | Volume                              |
+| ---------------- | ----------------------------------- |
+| Buying Climax    | **সর্বোচ্চ**                        |
+| পরের র‍্যালি     | **দুর্বল**: Buyer রা ফুরিয়ে যাচ্ছে |
+| Sign of Weakness | নিচের Move এ **বাড়তি**             |
 
-মূল লক্ষণ: Price High Sweep করে কিন্তু উপরে CONTINUE করে না
-        → Institution Retail Buying-এ বিক্রি করছে
-```
+<Callout type="warning" title="সংশোধিত: Volume">
+  মূল লেসনে বলা ছিল "উপরে ওঠার সময় Volume বাড়ে (Supply ঢুকছে)"। Wyckoff এর মডেলে Climax এর পরে **র‍্যালি** আসে কমতে
+  থাকা Volume এ আর **ভাঙন** আসে বাড়তি Volume এ।
+</Callout>
 
 ---
 
-## Distribution Trade করা
+## Distribution ট্রেড করা
 
-```
-Short Entry Strategy:
-1. Premium/Resistance-এ Range চিহ্নিত (সম্ভাব্য Distribution)
-2. Range High-এর উপরে Liquidity Sweep অপেক্ষা
-3. Sweep-এর পর LTF-এ Bearish CHOCH
-4. Sweep Reaction OB-তে Short Enter
-5. Stop: Sweep High-এর উপরে
-6. Target: প্রথমে Range Bottom, তারপর Markdown Target
-```
+1. **র‍্যালির পরে একটি রেঞ্জ** খুঁজুন, Higher Timeframe Resistance এ বা [Premium](/bn/smc/premium-discount) এ।
+2. **UTAD** এর অপেক্ষা করুন: রেঞ্জের High এর উপরে Sweep যা ভিতরে ফিরে ক্লোজ করে।
+3. Lower Timeframe এ **Bearish CHOCH** খুঁজুন।
+4. **Test** এ বা রিভার্সালের OB/FVG তে Sell করুন, অথবা SOW এর অপেক্ষা করে **LPSY** তে Sell করুন।
+5. **Stop** UTAD High এর উপরে।
+6. **টার্গেট** আগে রেঞ্জের নিচ, তারপর পরের Higher Timeframe লেভেল।
+
+| লেভেল   | প্রাইস      | নোট                             |
+| ------- | ----------- | ------------------------------- |
+| এন্ট্রি | 1.0942      | UTAD এর পরের ব্যর্থ Test এ      |
+| Stop    | 1.0972      | 1.0968 UTAD এর উপরে             |
+| টার্গেট | 1.0800      | পরের Higher Timeframe লেভেল     |
+| **R:R** | **১ : ৪.৭** | রিস্ক ৩০ পিপ, রিওয়ার্ড ১৪২ পিপ |
+
+---
+
+## Distribution বনাম Accumulation
+
+| বিষয়       | Distribution                  | Accumulation             |
+| ----------- | ----------------------------- | ------------------------ |
+| অবস্থান     | র‍্যালির পরে, Premium         | পতনের পরে, Discount      |
+| মিথ্যা ভাঙন | High এর উপরে UTAD             | Low এর নিচে Spring       |
+| Volume      | High এ Climax, র‍্যালি দুর্বল | Low এ Climax, ডিপ দুর্বল |
+| ভাঙে        | নিচে (Markdown)               | উপরে (Markup)            |
+
+High এর কাছের একটি রেঞ্জ **উপরে** ভেঙে টিকে থাকলে সেটা ছিল **Re-accumulation**, Distribution নয়। দেখুন [Reaccumulation](/bn/smc/reaccumulation)।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                     | সমাধান                         |
+| --------------------------------------- | ------------------------------ |
+| রেঞ্জের মাঝখানে Short                   | UTAD/Test বা LPSY তে Sell করুন |
+| রেঞ্জের উপরের প্রতিটি ধাক্কাকে UTAD বলা | এটা ভিতরে ফিরে ক্লোজ করতে হবে  |
+| রেঞ্জের High এর ঠিক উপরে Stop           | UTAD High এর উপরে              |
+| টিকে থাকা Breakout উপেক্ষা              | সেটা Distribution নয়          |
+
+---
+
+## অনুশীলন
+
+1. Daily চার্টে র‍্যালির পরের পাঁচটি রেঞ্জ খুঁজুন।
+2. BC, AR, ST, UTAD (যদি থাকে), SOW আর LPSY লেবেল করুন।
+3. কোনগুলো নিচে আর কোনগুলো উপরে ভেঙেছে লিখুন। আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| উপাদান      | মূল কথা                              |
+| ----------- | ------------------------------------ |
+| **রেঞ্জ**   | BC (উপর) আর AR (নিচ) দিয়ে তৈরি      |
+| **UTAD**    | ভিতরে ফিরে ক্লোজ করা Buy-Side Sweep  |
+| **Volume**  | Climax, দুর্বল র‍্যালি, SOW এ বাড়তি |
+| **এন্ট্রি** | UTAD এর পরের Test, বা LPSY           |
+| **Stop**    | UTAD এর উপরে                         |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Accumulation](/bn/smc/accumulation) — বিপরীত Phase
-- [Premium ও Discount](/bn/smc/premium-discount) — Premium-এ বিক্রি
-- [Manipulation](/bn/smc/manipulation) — Distribution Sweep
-- [Wyckoff Relation](/bn/smc/wyckoff-relation) — Wyckoff Distribution
+- [Accumulation](/bn/smc/accumulation) — উল্টো ধাপ
+- [Premium & Discount](/bn/smc/premium-discount) — Premium এ বেচা
+- [Manipulation](/bn/smc/manipulation) — মিথ্যা Move হিসেবে UTAD
+- [Wyckoff Relation](/bn/smc/wyckoff-relation) — SMC তে Wyckoff এর শব্দ
