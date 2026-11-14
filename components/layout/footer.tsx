@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { type Locale, getDictionary } from "@/lib/i18n";
+import { CATEGORIES, getCategoryLabel } from "@/lib/constants";
 import { LogoMark } from "@/components/brand/logo-mark";
 
 export async function Footer({ lang }: { lang: Locale }) {
@@ -16,7 +17,9 @@ export async function Footer({ lang }: { lang: Locale }) {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href={`/${lang}`} className="flex items-center gap-2.5 text-lg font-bold text-foreground">
               <LogoMark className="h-7 w-7 rounded-lg xl:h-7 xl:w-7" />
-              Trading<span className="neon-text">Docs</span>
+              <span>
+                Trading<span className="neon-text">Docs</span>
+              </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">{dict.footer.description}</p>
           </div>
@@ -26,13 +29,11 @@ export async function Footer({ lang }: { lang: Locale }) {
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-accent-green/80">
               {dict.footer.resources}
             </h4>
-            <ul className="space-y-3">
-              {[
-                { href: `/${lang}/price-action`, label: dict.nav.priceAction },
-                { href: `/${lang}/smc`, label: dict.nav.smc },
-                { href: `/${lang}/ict`, label: dict.nav.ict },
-                { href: `/${lang}/glossary`, label: dict.nav.glossary },
-              ].map((link) => (
+            <ul className="space-y-2.5">
+              {CATEGORIES.map((cat) => ({
+                href: `/${lang}/${cat}`,
+                label: getCategoryLabel(cat, lang),
+              })).map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -50,9 +51,10 @@ export async function Footer({ lang }: { lang: Locale }) {
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-accent-green/80">
               {dict.footer.learning}
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {[
                 { href: `/${lang}/academy`, label: dict.nav.academy },
+                { href: `/${lang}/glossary`, label: dict.nav.glossary },
                 { href: `/${lang}/blog`, label: dict.nav.blog },
                 { href: `/${lang}/charts`, label: dict.nav.charts },
                 { href: `/${lang}/tools`, label: dict.nav.tools },
@@ -75,7 +77,7 @@ export async function Footer({ lang }: { lang: Locale }) {
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-accent-green/80">
               {dict.footer.legal}
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {[
                 { href: `/${lang}/privacy-policy`, label: lang === "bn" ? "গোপনীয়তা নীতি" : "Privacy Policy" },
                 { href: `/${lang}/terms`, label: lang === "bn" ? "ব্যবহারের শর্তাবলী" : "Terms of Service" },
@@ -94,7 +96,13 @@ export async function Footer({ lang }: { lang: Locale }) {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border/50 pt-8">
+        <p className="mt-10 max-w-3xl text-xs leading-relaxed text-muted-foreground/80">
+          {lang === "bn"
+            ? "শুধুমাত্র শিক্ষামূলক কনটেন্ট, আর্থিক পরামর্শ নয়। সব চার্ট ও উদাহরণ শেখানোর জন্য সিন্থেটিক ডেটায় তৈরি। ট্রেডিংয়ে ঝুঁকি আছে।"
+            : "Educational content only, not financial advice. Charts and examples use synthetic data made for teaching. Trading involves risk."}
+        </p>
+
+        <div className="mt-6 border-t border-border/50 pt-6">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} TradingDocs. {dict.footer.rights}

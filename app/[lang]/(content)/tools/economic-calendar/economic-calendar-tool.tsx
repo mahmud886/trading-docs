@@ -199,7 +199,7 @@ export function EconomicCalendar() {
 
         {/* Trading Tips */}
         <div className="mt-8 bg-amber-500/10 border border-amber-500/20 rounded-xl p-6">
-          <h3 className="font-semibold text-amber-200 mb-3">💡 Trading Around Economic Events</h3>
+          <h3 className="font-semibold text-amber-200 mb-3">Trading Around Economic Events</h3>
           <div className="space-y-2 text-sm text-foreground">
             <p>
               <span className="font-semibold">High Impact Events:</span> Major volatility expected, wider spreads may

@@ -27,8 +27,8 @@ export function CorrelationMatrixPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-blue/20 bg-accent-blue/5 p-4 text-sm text-muted-foreground">
-        🏦 Institutional traders never have two highly correlated positions in the same direction. A EUR/USD long +
-        GBP/USD long = double risk on USD weakness. Use this matrix to avoid hidden concentration risk.
+        Institutional traders never have two highly correlated positions in the same direction. A EUR/USD long + GBP/USD
+        long = double risk on USD weakness. Use this matrix to avoid hidden concentration risk.
       </div>
 
       {/* Timeframe Selector */}
@@ -101,7 +101,7 @@ export function CorrelationMatrixPage() {
 
       {/* Tips */}
       <div className="mt-8 rounded-xl border border-border bg-card p-6">
-        <h3 className="font-semibold text-foreground">💡 Institutional Correlation Rules</h3>
+        <h3 className="font-semibold text-foreground">Institutional Correlation Rules</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li>• Never hold two positions with correlation {">"}0.80 in the same direction</li>
           <li>• Use negative correlations for hedging (e.g., EUR/USD long + USD/CHF long)</li>

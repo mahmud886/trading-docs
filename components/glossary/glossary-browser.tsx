@@ -75,8 +75,25 @@ export function GlossaryBrowser({ lang, terms }: { lang: string; terms: Glossary
         {lang === "bn" ? `${filtered.length}টি ফলাফল দেখাচ্ছে` : `Showing ${filtered.length} results`}
       </p>
 
+      {grouped.length > 1 && (
+        <nav
+          aria-label="Jump to letter"
+          className="sticky top-14 z-20 -mx-2 mb-6 flex flex-wrap gap-1 rounded-xl border border-border bg-background/85 px-2 py-2 backdrop-blur-md xl:top-16"
+        >
+          {grouped.map(([letter]) => (
+            <a
+              key={letter}
+              href={`#letter-${letter}`}
+              className="flex h-8 w-8 items-center justify-center rounded-lg text-sm font-semibold text-muted-foreground transition-colors hover:bg-accent-green/10 hover:text-accent-green"
+            >
+              {letter}
+            </a>
+          ))}
+        </nav>
+      )}
+
       {grouped.map(([letter, items]) => (
-        <div key={letter} className="mb-8">
+        <div key={letter} id={`letter-${letter}`} className="mb-8 scroll-mt-36">
           <div className="flex items-center gap-3 mb-3">
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-green/10 text-accent-green font-bold text-lg">
               {letter}

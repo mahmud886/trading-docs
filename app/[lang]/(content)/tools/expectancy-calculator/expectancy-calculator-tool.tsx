@@ -38,8 +38,8 @@ export function ExpectancyCalculatorPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-green/20 bg-accent-green/5 p-4 text-sm text-muted-foreground">
-        🏦 If your expectancy is positive, you have a mathematical edge. The ONLY thing that matters long-term is:
-        positive expectancy + sufficient sample size + proper position sizing. Everything else is noise.
+        If your expectancy is positive, you have a mathematical edge. The ONLY thing that matters long-term is: positive
+        expectancy + sufficient sample size + proper position sizing. Everything else is noise.
       </div>
 
       {/* Inputs */}
@@ -123,7 +123,7 @@ export function ExpectancyCalculatorPage() {
         className={`mt-8 rounded-xl border p-6 ${expectancy >= 0 ? "border-green-500/30 bg-green-500/5" : "border-red-500/30 bg-red-500/5"}`}
       >
         <h3 className="font-semibold text-foreground">
-          {expectancy >= 0 ? "✅ Positive Expectancy — You Have an Edge" : "❌ Negative Expectancy — No Edge"}
+          {expectancy >= 0 ? "Positive Expectancy — You Have an Edge" : "❌ Negative Expectancy — No Edge"}
         </h3>
         <p className="mt-2 text-sm text-muted-foreground">
           {expectancy >= 0

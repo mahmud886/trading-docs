@@ -56,7 +56,7 @@ export function MarginCalculatorPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-red/20 bg-accent-red/5 p-4 text-sm text-muted-foreground">
-        🏦 Institutional risk management rule: Never use more than 30-50% of available margin. Below 100% margin level =
+        Institutional risk management rule: Never use more than 30-50% of available margin. Below 100% margin level =
         margin call territory. Prop firms margin call at 80-90% equity-to-balance ratio.
       </div>
 
@@ -160,7 +160,7 @@ export function MarginCalculatorPage() {
       {/* Warning */}
       {marginLevel < 150 && marginLevel !== Infinity && (
         <div className="mt-6 rounded-xl border border-red-500/30 bg-red-500/5 p-4 text-sm text-red-400">
-          ⚠️ Warning: Margin level below 150%. You are approaching margin call territory. Reduce positions or add funds.
+          Warning: Margin level below 150%. You are approaching margin call territory. Reduce positions or add funds.
         </div>
       )}
     </div>

@@ -24,7 +24,7 @@ const dashboardDict = {
     noCompleted: "No completed lessons yet. Start learning!",
     noBookmarks: "No bookmarks yet. Save lessons for later!",
     institutionalTip:
-      "💡 Pro Tip: Institutional traders review their progress weekly. Track your win rate and R:R ratios alongside lesson completion.",
+      "Pro Tip: Institutional traders review their progress weekly. Track your win rate and R:R ratios alongside lesson completion.",
   },
   bn: {
     title: "আপনার ড্যাশবোর্ড",
@@ -39,7 +39,7 @@ const dashboardDict = {
     noCompleted: "এখনো কোনো পাঠ সম্পন্ন হয়নি। শেখা শুরু করুন!",
     noBookmarks: "এখনো কোনো বুকমার্ক নেই। পরে পড়ার জন্য পাঠ সেভ করুন!",
     institutionalTip:
-      "💡 প্রো টিপ: ইনস্টিটিউশনাল ট্রেডাররা সাপ্তাহিক অগ্রগতি পর্যালোচনা করে। পাঠ সম্পন্নের পাশাপাশি আপনার উইন রেট ও R:R রেশিও ট্র্যাক করুন।",
+      "প্রো টিপ: ইনস্টিটিউশনাল ট্রেডাররা সাপ্তাহিক অগ্রগতি পর্যালোচনা করে। পাঠ সম্পন্নের পাশাপাশি আপনার উইন রেট ও R:R রেশিও ট্র্যাক করুন।",
   },
 };
 

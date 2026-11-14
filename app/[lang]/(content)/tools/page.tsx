@@ -314,8 +314,8 @@ export default async function ToolsPage({ params }: { params: Promise<{ lang: st
       {/* Institutional Note */}
       <div className="mt-6 rounded-xl border border-accent-orange/20 bg-accent-orange/5 p-4 text-sm text-muted-foreground">
         {locale === "bn"
-          ? "🏦 এই টুলগুলো ইনস্টিটিউশনাল ট্রেডার এবং প্রপ ফার্ম ট্রেডারদের প্রতিদিনের রিস্ক ম্যানেজমেন্ট ওয়ার্কফ্লো অনুসরণ করে ডিজাইন করা হয়েছে।"
-          : "🏦 These tools are designed following the daily risk management workflows of institutional traders and prop firm desks."}
+          ? "এই টুলগুলো ইনস্টিটিউশনাল ট্রেডার এবং প্রপ ফার্ম ট্রেডারদের প্রতিদিনের রিস্ক ম্যানেজমেন্ট ওয়ার্কফ্লো অনুসরণ করে ডিজাইন করা হয়েছে।"
+          : "These tools are designed following the daily risk management workflows of institutional traders and prop firm desks."}
       </div>
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

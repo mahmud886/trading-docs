@@ -32,8 +32,8 @@ export function CurrencyStrengthPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-green/20 bg-accent-green/5 p-4 text-sm text-muted-foreground">
-        🏦 Institutional strategy: Buy the STRONGEST currency against the WEAKEST. This gives you the highest
-        probability directional trade with momentum on your side.
+        Institutional strategy: Buy the STRONGEST currency against the WEAKEST. This gives you the highest probability
+        directional trade with momentum on your side.
       </div>
 
       {/* Timeframe */}
@@ -70,7 +70,7 @@ export function CurrencyStrengthPage() {
               </span>
             </div>
             <span className="w-16 text-xs text-muted-foreground">
-              {index === 0 ? "🔥 Strongest" : index === sorted.length - 1 ? "❄️ Weakest" : ""}
+              {index === 0 ? "Strongest" : index === sorted.length - 1 ? "❄️ Weakest" : ""}
             </span>
           </div>
         ))}
@@ -79,7 +79,7 @@ export function CurrencyStrengthPage() {
       {/* Best Pair Suggestion */}
       {sorted.length >= 2 && (
         <div className="mt-8 rounded-xl border border-accent-green/30 bg-accent-green/5 p-6">
-          <h3 className="font-semibold text-foreground">🎯 Suggested Trade</h3>
+          <h3 className="font-semibold text-foreground">Suggested Trade</h3>
           <p className="mt-2 text-sm text-muted-foreground">
             <span className="font-bold text-green-400">
               BUY {sorted[0][0]}/{sorted[sorted.length - 1][0]}
@@ -95,7 +95,7 @@ export function CurrencyStrengthPage() {
 
       {/* Tips */}
       <div className="mt-8 rounded-xl border border-border bg-card p-6">
-        <h3 className="font-semibold text-foreground">💡 How Institutions Use Currency Strength</h3>
+        <h3 className="font-semibold text-foreground">How Institutions Use Currency Strength</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li>• Pair the strongest vs weakest for highest probability momentum trades</li>
           <li>• Avoid trading pairs where both currencies have similar strength (choppy)</li>

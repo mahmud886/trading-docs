@@ -137,7 +137,7 @@ export function MTFAnalyzer() {
 
         {/* Confluence Analysis */}
         <div className="mt-8 bg-blue-900/20 border border-blue-500/20 rounded-xl p-6">
-          <h2 className="text-lg font-semibold text-blue-300 mb-4">🎯 Confluence Analysis</h2>
+          <h2 className="text-lg font-semibold text-blue-300 mb-4">Confluence Analysis</h2>
 
           <div className="space-y-3">
             <div className="bg-muted rounded-lg p-3">
@@ -168,7 +168,7 @@ export function MTFAnalyzer() {
 
         {/* MTF Strategy Tips */}
         <div className="mt-8 bg-amber-500/10 border border-amber-500/20 rounded-xl p-6">
-          <h3 className="font-semibold text-amber-200 mb-3">💡 Multi-Timeframe Strategy Tips</h3>
+          <h3 className="font-semibold text-amber-200 mb-3">Multi-Timeframe Strategy Tips</h3>
           <div className="space-y-2 text-sm text-foreground">
             <p>
               ✓ <span className="font-semibold">Use higher TF for bias:</span> Daily/4H shows overall direction

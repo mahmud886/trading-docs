@@ -49,8 +49,8 @@ export function SwapCalculatorPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-purple/20 bg-accent-purple/5 p-4 text-sm text-muted-foreground">
-        🏦 Carry traders earn positive swaps by buying high-interest currencies vs low-interest currencies.
-        Institutional FX desks factor swap costs into every position. Wednesday night = 3x swap (weekends counted).
+        Carry traders earn positive swaps by buying high-interest currencies vs low-interest currencies. Institutional
+        FX desks factor swap costs into every position. Wednesday night = 3x swap (weekends counted).
       </div>
 
       {/* Inputs */}
@@ -157,7 +157,7 @@ export function SwapCalculatorPage() {
                   {rates.short} pips
                 </td>
                 <td className="p-3 text-right text-xs text-muted-foreground">
-                  {rates.long > rates.short ? "📈 Long" : "📉 Short"}
+                  {rates.long > rates.short ? "Long" : "Short"}
                 </td>
               </tr>
             ))}

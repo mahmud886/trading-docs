@@ -127,6 +127,7 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
       <div className="flex gap-10 px-8 py-10">
         <article className="min-w-0 max-w-3xl flex-1">
           <Breadcrumbs
+            lang={lang}
             items={[
               { label: getCategoryLabel(category, lang), href: `/${lang}/${category}` },
               ...slug.slice(0, -1).map((s, i) => ({

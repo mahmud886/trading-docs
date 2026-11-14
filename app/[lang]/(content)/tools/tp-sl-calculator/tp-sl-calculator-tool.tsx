@@ -162,7 +162,7 @@ export function TPSLCalculator() {
 
         {/* Educational Info */}
         <div className="mt-8 bg-amber-500/10 border border-amber-500/20 rounded-xl p-6">
-          <h3 className="font-semibold text-amber-200 mb-2">💡 TP/SL Tips</h3>
+          <h3 className="font-semibold text-amber-200 mb-2">TP/SL Tips</h3>
           <ul className="text-sm text-foreground space-y-1 list-disc list-inside">
             <li>Always set TP/SL BEFORE entering the trade</li>
             <li>Never move your stop loss against the risk direction</li>

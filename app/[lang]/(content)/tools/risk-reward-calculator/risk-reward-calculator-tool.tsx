@@ -107,7 +107,7 @@ export function RiskRewardCalculator() {
               <p className="text-muted-foreground text-sm">Risk-Reward Ratio</p>
               <p className="text-3xl font-bold text-blue-400 mt-1">1 : {metrics.riskRewardRatio.toFixed(2)}</p>
               <p className="text-xs text-muted-foreground mt-2">
-                {metrics.riskRewardRatio < 1 ? "⚠️ Poor ratio" : "✓ Good ratio"}
+                {metrics.riskRewardRatio < 1 ? "Poor ratio" : "✓ Good ratio"}
               </p>
             </div>
 
@@ -173,7 +173,7 @@ export function RiskRewardCalculator() {
 
         {/* Educational Info */}
         <div className="mt-8 bg-amber-500/10 border border-amber-500/20 rounded-xl p-6">
-          <h3 className="font-semibold text-amber-200 mb-2">💡 Risk-Reward Tips</h3>
+          <h3 className="font-semibold text-amber-200 mb-2">Risk-Reward Tips</h3>
           <ul className="text-sm text-foreground space-y-1 list-disc list-inside">
             <li>Minimum 1:1 ratio, but aim for 1:2 or better for consistency</li>
             <li>Higher R:R ratios require lower win rates to be profitable</li>

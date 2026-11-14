@@ -49,7 +49,7 @@ export function CompoundingCalculatorPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-purple/20 bg-accent-purple/5 p-4 text-sm text-muted-foreground">
-        🏦 Consistent 3-5% monthly returns with compounding creates exponential growth. A $10K account at 5% monthly =
+        Consistent 3-5% monthly returns with compounding creates exponential growth. A $10K account at 5% monthly =
         $17,958 in 12 months without withdrawals. Patience + consistency = wealth.
       </div>
 

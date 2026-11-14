@@ -58,7 +58,7 @@ export function EquitySimulatorPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-purple/20 bg-accent-purple/5 p-4 text-sm text-muted-foreground">
-        🏦 Institutions run 10,000+ Monte Carlo simulations before deploying capital. This shows the RANGE of possible
+        Institutions run 10,000+ Monte Carlo simulations before deploying capital. This shows the RANGE of possible
         equity paths — not just the average. Prepare for the worst case, trade for the median.
       </div>
 

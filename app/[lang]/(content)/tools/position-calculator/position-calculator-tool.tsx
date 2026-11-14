@@ -127,7 +127,7 @@ export function PositionCalculator() {
 
           <div className="mt-4 p-3 bg-card/50 border border-accent-blue/20 rounded-lg">
             <p className="text-xs text-foreground">
-              📝 {t.summary} <span className="text-accent-green font-semibold">${riskAmount.toFixed(2)}</span>{" "}
+              {t.summary} <span className="text-accent-green font-semibold">${riskAmount.toFixed(2)}</span>{" "}
               {t.onThisTrade}{" "}
               <span className="text-accent-orange font-semibold">
                 {stopLossDistance} {t.pipStop}

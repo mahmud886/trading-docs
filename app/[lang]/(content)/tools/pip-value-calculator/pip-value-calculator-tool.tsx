@@ -140,7 +140,7 @@ export function PipValueCalculator() {
 
         {/* Educational Info */}
         <div className="mt-8 bg-amber-500/10 border border-amber-500/20 rounded-xl p-6">
-          <h3 className="font-semibold text-amber-200 mb-2">💡 Understanding Pips</h3>
+          <h3 className="font-semibold text-amber-200 mb-2">Understanding Pips</h3>
           <ul className="text-sm text-foreground space-y-1 list-disc list-inside">
             <li>A pip is the smallest price unit (usually 0.0001 for majors, 0.01 for JPY pairs)</li>
             <li>Point = 1/10 of a pip (also called &quot;pipette&quot; in some brokers)</li>

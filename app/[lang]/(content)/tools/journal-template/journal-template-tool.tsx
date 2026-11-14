@@ -166,7 +166,7 @@ export function JournalTemplate() {
 
         {/* Journal Tips */}
         <div className="mt-8 bg-amber-500/10 border border-amber-500/20 rounded-xl p-6">
-          <h3 className="font-semibold text-amber-200 mb-3">💡 Trading Journal Best Practices</h3>
+          <h3 className="font-semibold text-amber-200 mb-3">Trading Journal Best Practices</h3>
           <div className="space-y-2 text-sm text-foreground">
             <p>
               ✓ <span className="font-semibold">Record EVERY trade</span> - Even small ones count for your analysis

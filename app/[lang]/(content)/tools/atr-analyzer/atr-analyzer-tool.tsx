@@ -185,7 +185,7 @@ export function ATRAnalyzer() {
 
         {/* Educational Info */}
         <div className="mt-8 bg-amber-500/10 border border-amber-500/20 rounded-xl p-6">
-          <h3 className="font-semibold text-amber-200 mb-2">💡 ATR Trading Tips</h3>
+          <h3 className="font-semibold text-amber-200 mb-2">ATR Trading Tips</h3>
           <ul className="text-sm text-foreground space-y-1 list-disc list-inside">
             <li>ATR measures volatility, not price direction</li>
             <li>Use ATR to set appropriate stop loss levels</li>

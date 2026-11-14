@@ -69,7 +69,7 @@ export function DrawdownCalculatorPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-orange/20 bg-accent-orange/5 p-4 text-sm text-muted-foreground">
-        🏦 Prop firms typically allow 5-10% max drawdown. This tool helps you determine if your strategy parameters can
+        Prop firms typically allow 5-10% max drawdown. This tool helps you determine if your strategy parameters can
         stay within those limits. Run 1000+ simulations for reliable results.
       </div>
 

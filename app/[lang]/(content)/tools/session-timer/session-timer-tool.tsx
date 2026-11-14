@@ -575,15 +575,15 @@ export function SessionTimer() {
         </div>
         <p className="text-xs text-muted-foreground mt-3 text-center">
           {lang === "bn"
-            ? "💡 লন্ডন-নিউ ইয়র্ক ওভারল্যাপ (সন্ধ্যা ৭:০০ - রাত ১১:০০ বিডি সময়) সবচেয়ে বেশি ভোলাটাইল"
-            : "💡 London-NY overlap (7:00 PM - 11:00 PM BD time) offers the highest volatility for BD traders"}
+            ? "লন্ডন-নিউ ইয়র্ক ওভারল্যাপ (সন্ধ্যা ৭:০০ - রাত ১১:০০ বিডি সময়) সবচেয়ে বেশি ভোলাটাইল"
+            : "London-NY overlap (7:00 PM - 11:00 PM BD time) offers the highest volatility for BD traders"}
         </p>
       </div>
 
       {/* Pro Tips */}
       <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 backdrop-blur-sm p-6">
         <h3 className="font-bold text-amber-200 mb-3 flex items-center gap-2">
-          💡 {lang === "bn" ? "সেশন ট্রেডিং প্রো টিপস" : "Session Trading Pro Tips"}
+          {lang === "bn" ? "সেশন ট্রেডিং প্রো টিপস" : "Session Trading Pro Tips"}
         </h3>
         <div className="grid sm:grid-cols-2 gap-3">
           {[

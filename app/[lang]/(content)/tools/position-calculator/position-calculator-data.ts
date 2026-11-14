@@ -21,7 +21,7 @@ export const dict = {
     onThisTrade: "on this trade. With a",
     pipStop: "pip stop loss, you should trade",
     lots: "lots",
-    tipsTitle: "💡 Institutional Position Sizing Rules",
+    tipsTitle: "Institutional Position Sizing Rules",
     tips: [
       "Banks risk 0.5-2% per position — never more than 5% total portfolio risk",
       "Prop firms typically allow 1-2% per trade with 5% daily max drawdown",
@@ -52,7 +52,7 @@ export const dict = {
     onThisTrade: "এই ট্রেডে।",
     pipStop: "পিপ স্টপ লসে, আপনার ট্রেড করা উচিত",
     lots: "লট",
-    tipsTitle: "💡 ইনস্টিটিউশনাল পজিশন সাইজিং নিয়ম",
+    tipsTitle: "ইনস্টিটিউশনাল পজিশন সাইজিং নিয়ম",
     tips: [
       "ব্যাংকরা প্রতি পজিশনে ০.৫-২% রিস্ক নেয় — মোট পোর্টফোলিও রিস্ক কখনো ৫%-এর বেশি নয়",
       "প্রপ ফার্মগুলো সাধারণত প্রতি ট্রেডে ১-২% অনুমতি দেয় এবং দৈনিক সর্বোচ্চ ৫% ড্রডাউন",

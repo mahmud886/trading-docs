@@ -34,7 +34,7 @@ export function CotViewerPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-blue/20 bg-accent-blue/5 p-4 text-sm text-muted-foreground">
-        🏦 COT data shows ACTUAL institutional positions reported to the CFTC every Tuesday, released Friday. Asset
+        COT data shows ACTUAL institutional positions reported to the CFTC every Tuesday, released Friday. Asset
         Managers = directional signal. Leveraged Funds = speculative signal. Dealers = hedging (often contrarian to
         price).
       </div>
@@ -133,7 +133,7 @@ export function CotViewerPage() {
 
       {/* How to Read */}
       <div className="mt-8 rounded-xl border border-border bg-card p-6">
-        <h3 className="font-semibold text-foreground">💡 How to Read COT Data</h3>
+        <h3 className="font-semibold text-foreground">How to Read COT Data</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li>
             • <span className="text-foreground font-medium">Asset Managers</span> = Real money (pension funds,

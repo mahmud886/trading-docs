@@ -98,7 +98,7 @@ export function RegimeDetectorPage() {
       </p>
 
       <div className="mt-6 rounded-xl border border-accent-orange/20 bg-accent-orange/5 p-4 text-sm text-muted-foreground">
-        🏦 Institutional quant funds adapt their strategy based on market regime. A trend-following system that works
+        Institutional quant funds adapt their strategy based on market regime. A trend-following system that works
         beautifully in trending markets will BLEED in ranges. Regime detection = strategy selection.
       </div>
 
@@ -172,7 +172,7 @@ export function RegimeDetectorPage() {
         <h3 className="font-semibold text-foreground">📋 Strategy Recommendation</h3>
         <div className="mt-4 space-y-4 text-sm">
           <div>
-            <span className="font-medium text-green-400">✅ Optimal Strategy:</span>
+            <span className="font-medium text-green-400">Optimal Strategy:</span>
             <p className="mt-1 text-muted-foreground">{currentStrategy.strategy}</p>
           </div>
           <div>
@@ -188,7 +188,7 @@ export function RegimeDetectorPage() {
 
       {/* Reference Table */}
       <div className="mt-8 rounded-xl border border-border bg-card p-6">
-        <h3 className="font-semibold text-foreground">📊 Regime Classification Rules</h3>
+        <h3 className="font-semibold text-foreground">Regime Classification Rules</h3>
         <table className="mt-4 w-full text-sm">
           <thead>
             <tr className="border-b border-border text-muted-foreground">
