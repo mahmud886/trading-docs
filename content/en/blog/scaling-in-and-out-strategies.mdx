@@ -1,287 +1,121 @@
 ---
-title: "Scaling In & Out Strategies — Professional Position Building for Maximum R:R"
-description: "Master professional scaling techniques to improve risk management, reduce drawdown, and capture larger moves. Includes pyramid strategies, partial profit models, and institutional position building methods."
+title: "Scaling In and Out of Trades — What Partials and Pyramiding Do"
+description: "Scaling out takes profit in parts, scaling in adds to a winning position. This guide shows with one price path that no scaling style wins on every path, how to scale in without raising total risk, why adding to a loser (averaging down) is a different and riskier act, and a worked half-at-1R example."
 date: "2026-05-13"
 author: "Trading Docs"
 category: "Academy"
-tags: ["scaling", "position-sizing", "risk-management", "execution", "professional", "pyramid"]
-readingTime: 18
+tags: ["scaling", "position-sizing", "risk-management", "execution", "pyramid"]
+readingTime: 8
 featured: true
 ---
 
-## Why Scale In and Out?
+**Scaling out** means closing part of a position at set levels; **scaling in** (pyramiding) means adding to a position that is already working. Both change the shape of your results: they trade upside for protection (scaling out) or add exposure to a winner (scaling in). Neither is free.
 
-Scaling lets you participate in a move while managing risk and improving average entry price. Instead of one large position, break entries into smaller pieces to adapt to market uncertainty. This is how **institutional traders and hedge funds** build positions — never all at once.
-
-<Callout type="tip" title="Professional Standard">
-  George Soros famously said: "It's not whether you're right or wrong, but how much money you make when you're right."
-  Scaling maximizes gains on winners while minimizing losses on losers.
+<Callout type="warning" title="Corrected and toned down">
+  The original described scaling as a way to guarantee profit and called a break-even stop "risk-free". A stop at
+  break-even can still lose to slippage or a gap, and a partial locks in only what was closed. Scaling changes the
+  **distribution** of outcomes; it does not remove risk.
 </Callout>
 
-### Scaling Benefits
+---
 
-| Benefit                  | How It Helps                               |
-| ------------------------ | ------------------------------------------ |
-| **Reduced Initial Risk** | Smaller first entry = Less capital at risk |
-| **Better Average Price** | Add at confirmation = Improved average     |
-| **Psychological Ease**   | Smaller size = Less emotional pressure     |
-| **Locked Profits**       | Partial exits = Guaranteed gains           |
-| **Runner Potential**     | Keep portion for extended moves            |
-| **Drawdown Control**     | Only full size when market confirms        |
+## Scaling Out: One Path, Three Results
+
+Long **1.0850**, stop **1.0830** (1R = 20 pips), targets at 1R **1.0870**, 2R **1.0890**, 3R **1.0910**. Price climbs to about 1.8R, pulls back to 1.0849, then runs to 3R.
+
+| Style                         | What happens                                             | Result    |
+| ----------------------------- | -------------------------------------------------------- | --------- |
+| **A · Hold to 3R**            | Rides the pullback and reaches the target                | **+3R**   |
+| **B · Break-even stop at 1R** | Stop moved to 1.0850; the pullback hits it               | **0R**    |
+| **C · Partials 50 / 30 / 20** | 50% closed at 1R (+0.5R), then the rest stopped at entry | **+0.5R** |
+
+On a path that instead reverses from 1.8R to the original stop, the order flips: A loses 1R, B scratches at 0R, C keeps +0.5R. **No style wins on every path**: holding keeps the upside and the full risk, partials smooth the result and cap the upside. See [Trade Management](/en/price-action/trade-management).
+
+### The Chart
+
+![One synthetic EUR/USD path managed three ways: holding to 3R gives +3R, a break-even stop gives 0R, and partials give +0.5R](/images/price-action/trade-management/trade-management-three-ways-dark.webp)
+
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/trade-management-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  Synthetic candles; the three results are simulated on this one path, not a track record (From the lesson: [Trade
+  Management](/en/price-action/trade-management).)
+</Callout>
 
 ---
 
-## Scaling In: Building Positions Like Institutions
+## Scaling In Without Raising Total Risk
 
-### Method 1: Confirmation-Based Scaling (Recommended)
+| Step | Rule                                                                                      |
+| ---- | ----------------------------------------------------------------------------------------- |
+| 1    | Add only to a position that is **already profitable**                                     |
+| 2    | Add a **smaller** size than the original                                                  |
+| 3    | Move the stop for the whole position so that total risk does not exceed the original risk |
+| 4    | Stop adding when price stalls or structure weakens                                        |
 
-```
-Entry Structure:
-- 1st Entry (50%): At initial POI (OB/FVG) with LTF confirmation
-- 2nd Entry (30%): After BOS confirms direction
-- 3rd Entry (20%): At next OB/FVG in direction (with trailing stop on earlier entries)
-
-Example:
-Account: $10,000, Total Risk: 1% ($100)
-- 1st Entry: 0.50% risk at 4H OB → $50 risk
-  - If wrong: Only -$50 (0.5%)
-- Price confirms with 15M BOS
-- 2nd Entry: 0.30% risk at new 15M OB → $30 risk
-  - Move 1st entry stop to breakeven
-- Price makes new BOS
-- 3rd Entry: 0.20% risk at pullback → $20 risk
-  - Trail both previous stops
-
-Maximum Risk at any time: $50 (initial)
-But Position Size has GROWN with trend
-If right: 3× the profit potential vs single entry
-```
-
-### Method 2: Time-Based Scaling
-
-```
-When to add:
-- Entry 1: Kill Zone open (London/NY)
-- Entry 2: After 30-60 minutes IF direction confirmed
-- Entry 3: At next session (if trend intact)
-
-Rules:
-- Never add to LOSING positions
-- Only add after CONFIRMATION (BOS, new structure)
-- Always move previous stops to breakeven/profit before adding
-```
-
-### Method 3: Price-Level Scaling (For Swing Trades)
-
-```
-Swing Trade Example (EUR/USD Long):
-- Level 1 Entry: 1.0800 (Major OB) → 40% of total position
-- Level 2 Entry: 1.0820 (After BOS) → 35% of total position
-- Level 3 Entry: 1.0840 (Breakout Confirmed) → 25% of total position
-
-Stops Trail:
-- After Level 2: Level 1 stop moves to breakeven
-- After Level 3: Level 1 moves to profit, Level 2 to breakeven
-- Maximum open risk: Never exceeds 1%
-```
-
-### Scaling In Rules (Non-Negotiable)
-
-```
-✅ DO:
-- Only add to WINNING positions
-- Move previous stops to breakeven BEFORE adding
-- Calculate total exposure before each add
-- Use smaller size on each subsequent add
-- Require new confirmation for each add
-
-❌ DON'T:
-- Never add to losing positions (averaging down = death)
-- Never let total risk exceed 1.5% at any point
-- Never add without new structural confirmation
-- Never add more than 3 times to one trade
-- Never add in the same direction as a losing trade
-```
+Example: 1.0 lot at **1.0850**, stop **1.0830**. At **1.0880** add 0.5 lot and move the stop for both to **1.0860**. If stopped: the first lot gains 10 pips, the added half loses 20 pips × 0.5 = 10 pip-lots: net about **zero**. Total risk after the add is no more than before.
 
 ---
 
-## Scaling Out: Locking Profits Like a Professional
+## Scaling In Is Not Averaging Down
 
-### Method 1: The 40/30/30 Model (Most Popular)
+| Act                    | What it does                              | Risk                              |
+| ---------------------- | ----------------------------------------- | --------------------------------- |
+| Adding to a **winner** | Raises exposure while the idea is working | A pullback hits a larger position |
+| Adding to a **loser**  | Raises exposure while the idea is failing | A small loss becomes a large one  |
 
-```
-Full Position Entered at OB/FVG:
-
-TP1 (1:2 R:R): Take 40% profit
-- Lock in guaranteed return
-- Move stop to breakeven on remaining 60%
-- Worst case now: Breakeven (not a loss!)
-
-TP2 (1:3 R:R): Take 30% profit
-- Trail stop to TP1 level on remaining 30%
-- Already a winning trade regardless
-
-Runner (30%): Trail with structure
-- Move stop below each new HL (bullish) or above each new LH (bearish)
-- Target: Next major liquidity pool or 1:5+ R:R
-- Let the market tell you when it's done
-```
-
-### Method 2: The 50/50 Simple Model
-
-```
-Entry: Full size at POI
-TP1 (1:2 R:R): Take 50%, move stop to breakeven
-Runner (50%): Trail to major target (1:4-1:5+)
-
-Pros: Simple, effective, psychological comfort
-Cons: May leave money on table at TP1
-Best for: Beginners and intermediate traders
-```
-
-### Method 3: The 33/33/34 Equal Model
-
-```
-TP1 (1:1.5 R:R): Take 33%
-TP2 (1:3 R:R): Take 33%
-TP3 (1:5+ R:R): Take 34% (runner)
-
-Pros: Maximizes potential on big moves
-Cons: Lower guaranteed profit
-Best for: Trending markets with clear targets
-```
-
-### Scaling Out Decision Framework
-
-```
-When to Take Profits:
-- Price reaches key liquidity level (PDH/PDL)
-- Volume exhaustion signals (decreasing volume on push)
-- Session ending (London close, NY close)
-- Opposite CHOCH on entry timeframe
-- Pre-news (high impact within 30 min)
-
-When to Let It Run:
-- Trend clearly intact (BOS continuing)
-- No key levels nearby
-- Volume supporting direction
-- Session has time remaining
-- HTF aligns strongly
-```
+Adding to a loser breaks the plan you made when you chose the stop. Treat it as a new trade that needs its own setup and its own stop.
 
 ---
 
-## Real-World Scaling Examples
+## Example (no chart)
 
-### Example 1: EUR/USD Scaling In (Long)
-
-```
-Context: 4H Bullish, Liquidity Sweep Completed
-Risk Budget: 1% ($100 on $10,000)
-
-Entry 1: Long at 1.0805 (4H OB + FVG)
-- Size: 0.06 lots
-- Stop: 1.0785 (20 pips = $48 risk)
-- Status: Watching for confirmation
-
-15M BOS occurs at 1.0825:
-Entry 2: Long at 1.0820 (15M OB after BOS)
-- Size: 0.04 lots
-- Stop: 1.0808 (12 pips = $32 risk)
-- Move Entry 1 stop to 1.0805 (breakeven)
-- New max risk: $32 (Entry 2 only)
-
-Price continues, 15M BOS at 1.0850:
-Entry 3: Long at 1.0845 (pullback)
-- Size: 0.02 lots
-- Stop: 1.0830 (15 pips = $20 risk)
-- Move Entry 1 stop to 1.0820 (+15 pips locked)
-- Move Entry 2 stop to 1.0820 (breakeven)
-
-Total Position: 0.12 lots
-Maximum risk: $20 (only Entry 3)
-Locked profit: $9 minimum (Entry 1 in profit)
-Target: 1.0900 = +$114 total (+95 on E1, +32 on E2, +11 on E3)
-```
-
-### Example 2: Gold Scaling Out (Short)
-
-```
-Entry: Short $2,440 at Bearish OB (Full 0.10 lots, $7 stop = 1%)
-
-Price drops to $2,425 (1:2 R:R):
-- Take 40%: Close 0.04 lots at $2,425 = +$60 profit
-- Move stop to $2,440 (breakeven on remaining 0.06)
-
-Price drops to $2,415 (1:3 R:R):
-- Take 30%: Close 0.03 lots at $2,415 = +$75 profit
-- Trail stop to $2,430 on final 0.03 lots
-
-Price drops to $2,395 (1:6+ R:R):
-- Final 30%: Close at $2,395 = +$135 profit
-- OR continue trailing if structure supports
-
-Total Profit: $60 + $75 + $135 = $270 (3.9R blended)
-Even if runner gets stopped at $2,430: Still $60 + $75 + $30 = $165 (2.4R)
-```
-
----
-
-## When NOT to Scale
-
-### Use Full Single Entry When:
-
-```
-1. High-Confidence A+ Setup (All confluence aligned)
-2. Tight Stop Available (Small risk relative to target)
-3. News Catalyst Incoming (Need full exposure for spike)
-4. HTF Trend Very Strong (BOS continuation)
-5. R:R Already Excellent (1:4+ with single entry)
-```
-
-### Use Scaling When:
-
-```
-1. Moderate Confidence (Not sure market will reach target)
-2. Wide Stop Required (Needs to be far from entry)
-3. Uncertain Session (Pre-news, low liquidity)
-4. Counter-Trend Element (Reversal trade)
-5. Large Target Distance (Swing trade, multiple days)
-```
+Long EUR/USD **1.0850**, stop **1.0830** (20 pips). Plan: close half at **1.0870** (+1R) and move the stop to **1.0850**; the rest targets **1.0910** (3R). If both parts hit: 0.5 × 1R + 0.5 × 3R = **+2R**. If the second half returns to break-even: 0.5 × 1R = **+0.5R**. If price never reaches 1.0870: **−1R**. The plan's reward-to-risk on the whole position, if everything works, is about **1 : 2.0**.
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Avoid These">
-
-**1. Averaging down** — Adding to losers is the #1 account killer with scaling. NEVER add to a losing trade.
-
-**2. Not moving stops** — Before adding new entries, ALWAYS move previous stops to breakeven or profit.
-
-**3. Over-sizing** — Total risk across all entries should never exceed 1.5%.
-
-**4. Taking profits too early** — Many traders close 100% at TP1 and miss the big move. Keep a runner.
-
-**5. Not having a plan** — Decide your scaling levels BEFORE the trade, not during.
-
-**6. Adding without confirmation** — Each new entry needs fresh structural evidence (BOS/CHOCH).
-
-</Callout>
+| Mistake                                  | Fix                                          |
+| ---------------------------------------- | -------------------------------------------- |
+| Believing a break-even stop is risk-free | It can still lose to slippage or a gap       |
+| Adding to a losing trade                 | Treat it as a new trade with its own stop    |
+| Adding the same size at higher prices    | Add less each time and keep total risk fixed |
+| Choosing the style after seeing the path | Fix the rules before entering                |
 
 ---
 
-## Key Takeaways
+## Practice
 
-| Concept            | Rule                                 |
-| ------------------ | ------------------------------------ |
-| **Scale In**       | Only to winners, after confirmation  |
-| **Scale Out**      | 40/30/30 or 50/50 model              |
-| **Max Adds**       | 3 entries maximum per trade          |
-| **Stop Rule**      | Move to BE before adding             |
-| **Total Risk**     | Never exceed 1.5% across all entries |
-| **Runner**         | Always keep 25-30% for big move      |
-| **Averaging Down** | NEVER — absolute rule                |
-| **Planning**       | Decide levels BEFORE the trade       |
+1. Replay five past winners with and without a 1R partial and note the R of each.
+2. Do the same on five past losers.
+3. Decide the single scaling rule you will use and write it down.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
-See position sizing lessons: [Position Sizing](/en/academy/position-sizing) and [Risk Management](/en/academy/risk-management).
+---
+
+## Summary
+
+| Idea           | Detail                                                                      |
+| -------------- | --------------------------------------------------------------------------- |
+| Scaling out    | Takes profit in parts: smooths results, caps the upside                     |
+| Scaling in     | Adds to a winner with a smaller size and a stop that keeps total risk fixed |
+| Averaging down | Adding to a loser: different and riskier                                    |
+| Evidence       | No style wins on every path                                                 |
+
+---
+
+## Related Topics
+
+- [Trade Management](/en/price-action/trade-management)
+- [Exit Models](/en/price-action/exit-models)
+- [Risk Management Essentials](/en/blog/risk-management-essentials)
+- [Position Sizing 101](/en/blog/position-sizing-101)
