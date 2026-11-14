@@ -1,67 +1,116 @@
 ---
 title: "Volume Spread Analysis (VSA) — Complete Guide"
-description: "Master Volume Spread Analysis — the modern evolution of Wyckoff's principles. Learn to read effort (volume) vs result (spread) to identify institutional activity."
+description: "Read one bar against its neighbours using volume, spread and close position: stopping volume, tests, no demand, no supply, climactic action, what each says about supply and demand, how to measure the signals, a worked chart and an animated walkthrough, with notes on limits in forex tick volume."
 level: advanced
 order: 6
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Volume Spread Analysis (VSA)
+## What Is VSA?
 
-Master Volume Spread Analysis — the modern evolution of Wyckoff's principles. Learn to read effort (volume) vs result (spread) to identify institutional activity.
+**Volume spread analysis** reads three things on every bar together:
 
-<Callout type="info" title="The Foundation of Smart Money">
-  Richard Wyckoff developed his method in the 1930s by studying how JP Morgan, Jesse Livermore, and other "composite
-  operators" manipulated markets. Modern SMC and ICT concepts are DIRECTLY derived from Wyckoff principles.
-  Understanding Wyckoff is understanding the ROOT of institutional trading.
+| Element    | What it is                               | How to measure it                             |
+| ---------- | ---------------------------------------- | --------------------------------------------- |
+| **Volume** | The effort — how much traded             | Compare with the recent average               |
+| **Spread** | The result — the bar's high-to-low range | Compare with the recent average spread        |
+| **Close**  | Who finished the bar in control          | Close position in the bar (0 = low, 1 = high) |
+
+The method grew from Wyckoff's [effort versus result](/en/wyckoff/effort-vs-result) idea and was popularised by Tom Williams. Its premise: _when effort (volume) and result (spread) disagree, one side is being overwhelmed._
+
+<Callout type="warning" title="Toned down">
+  The original lessons in this series assumed volume shows "smart money". Volume tells you how much traded, not by whom.
+  In spot forex, "volume" is **tick volume** (the number of price updates), a weaker proxy than the exchange volume VSA
+  was built for. Use VSA mainly on stocks, futures and indices, and treat forex signals with more caution.
 </Callout>
 
 ---
 
-## Wyckoff's Three Laws
+## Four Signals on One Chart
 
-### 1. Law of Supply and Demand
+![Synthetic daily chart: a decline with rising volume, stopping volume with 2.1× average volume and a wide spread closing in the upper half, a quiet test, a no-demand up bar with a narrow spread and low volume in the rally, and a no-supply down bar in the pullback](/images/wyckoff/volume-spread-analysis/vsa-signals-dark.webp)
 
-- Price rises when demand > supply
-- Price falls when supply > demand
-- Balance = range (accumulation or distribution)
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/wyckoff/vsa-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### 2. Law of Cause and Effect
+<Callout type="info" title="About this chart">
+  The candles and volume are **synthetic**. The averages are measured over the first 20 bars (volume 1,692; spread 1.9).
+</Callout>
 
-- Every move (effect) requires preparation (cause)
-- The size of the cause determines the size of the effect
-- Accumulation range → Markup. Distribution range → Markdown.
-
-### 3. Law of Effort vs Result
-
-- Volume (effort) should confirm price movement (result)
-- Divergence between effort and result = institutional manipulation
-- High volume + no movement = absorption (smart money at work)
+| Signal              | Measured on the chart                                                      | What it suggests                                                         |
+| ------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **Stopping volume** | Volume 2.1× average, wide spread, close in the upper 68% after a decline   | Selling is being absorbed — the decline may be ending                    |
+| **Test**            | Volume 0.4× average, narrow spread, a higher low                           | Little supply left near the climax low                                   |
+| **No demand**       | Up bar, narrow spread, volume 0.4× average and below the two bars before   | The rally lacks buying interest; a pause or pullback is more likely      |
+| **No supply**       | Down bar, narrow spread, volume 0.4× average and below the two bars before | The pullback lacks selling interest; an upward resumption is more likely |
 
 ---
 
-## Practical Application
+## How to Read a Bar
 
-### Identifying Institutional Phase
+1. **Trend and location:** where is the bar — after a decline, at a high, at a range edge? The same bar means different things in different places.
+2. **Volume vs average:** high (≥ ~1.5×), average, or low (≤ ~0.6×)?
+3. **Spread vs average:** wide, average or narrow?
+4. **Close position:** near the high, mid or near the low?
+5. **Compare with the neighbours:** volume against the two previous bars; spread against the last few.
 
-1. Is the market in accumulation, markup, distribution, or markdown?
-2. Where are we within the current phase?
-3. What event comes next in the sequence?
+| Pattern                                    | Reading (in context)                                      |
+| ------------------------------------------ | --------------------------------------------------------- |
+| High volume, wide spread, closes near high | Strong buying (after a decline: possible stopping action) |
+| High volume, wide spread, closes near low  | Strong selling (after a rally: possible climax)           |
+| High volume, narrow spread                 | Effort without result: the other side is absorbing        |
+| Low volume, narrow spread                  | Lack of interest: a test or a pause                       |
+| Up bar, narrow spread, low volume          | No demand                                                 |
+| Down bar, narrow spread, low volume        | No supply                                                 |
 
-### Entry Strategy
+### Example (no chart) — a stopping-volume long
 
-- Buy during accumulation (at Spring or LPS)
-- Sell during distribution (at UTAD or LPSY)
-- Confirm with volume analysis (VSA principles)
-- Align with higher timeframe phase
+After a six-bar decline from 105 to 96, a bar with 2.1× average volume and a 4.4-point spread closes at **95.0**, 68% up from its low of **92.0**. Two bars later a quiet test holds at **95.3** on 0.4× average volume. Plan: buy a close above the test bar's high at **96.4**, stop **91.8** (below the climax low), target **103.0**: risk 4.6, reward 6.6, **1 : 1.4** planned — modest, so many traders scale in or wait for a no-supply pullback to improve the entry. If price closes below **92.0** on heavy volume, the signal has failed.
 
-### Risk Management
+---
 
-- Stop loss below Spring (for longs) or above UTAD (for shorts)
-- Position size based on phase confidence
-- Scale in during confirmation events (SOS, SOW)
+## Common Mistakes
 
-<Callout type="warning" title="Pattern Recognition Warning">
-  Wyckoff schematics are IDEALIZED templates. Real markets rarely follow them perfectly. Look for the PRINCIPLE behind
-  each event, not the exact visual pattern. Phase identification is more important than event labeling.
-</Callout>
+| Mistake                                         | Fix                                                            |
+| ----------------------------------------------- | -------------------------------------------------------------- |
+| Reading a bar out of context                    | Note the trend and location first                              |
+| Trusting forex tick volume like exchange volume | Use VSA mainly where volume is real; be cautious in spot forex |
+| Treating one signal as a trade                  | Need confirmation (a follow-through bar, a break)              |
+| Comparing volume across very different sessions | Compare against the same-session average                       |
+| No stop                                         | Place it beyond the climax/test extreme                        |
+
+---
+
+## Practice
+
+1. On three daily charts of a liquid stock or index, mark the highest-volume bar of each decline and rally.
+2. Measure volume and spread against the 20-bar averages and note the close position.
+3. Find one test (low volume, narrow spread) near each climax and note what price did next.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea         | Detail                                               |
+| ------------ | ---------------------------------------------------- |
+| Three inputs | Volume (effort), spread (result), close (control)    |
+| Key signals  | Stopping volume, test, no demand, no supply          |
+| Method       | Location, volume, spread, close, then the neighbours |
+| Limit        | Weaker with forex tick volume; always use a stop     |
+
+---
+
+## Related Topics
+
+- [Effort vs Result](/en/wyckoff/effort-vs-result)
+- [Accumulation Schematic](/en/wyckoff/accumulation-schematic)
+- [Volume](/en/price-action/volume) — volume in price action
+- [Introduction to Wyckoff](/en/wyckoff/introduction)

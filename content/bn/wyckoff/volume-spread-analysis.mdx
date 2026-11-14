@@ -1,67 +1,116 @@
 ---
-title: "ভলিউম স্প্রেড অ্যানালাইসিস (VSA) — সম্পূর্ণ গাইড"
-description: "ভলিউম স্প্রেড অ্যানালাইসিস মাস্টার করুন — ওয়াইকফ প্রিন্সিপলের আধুনিক বিবর্তন। এফোর্ট (ভলিউম) vs রেজাল্ট (স্প্রেড) পড়ে ইনস্টিটিউশনাল অ্যাক্টিভিটি চিনুন।"
+title: "Volume Spread Analysis (VSA) — সম্পূর্ণ গাইড"
+description: "Volume, Spread আর Close অবস্থান দিয়ে প্রতিবেশীদের সাথে তুলনা করে একটি বার পড়া: Stopping Volume, Test, No Demand, No Supply, Climactic Action, প্রতিটি Supply ও Demand সম্পর্কে কী বলে, সংকেত কীভাবে মাপবেন, একটি চার্ট ও অ্যানিমেটেড ওয়াকথ্রু — ফরেক্স Tick Volume এর সীমাবদ্ধতার নোটসহ।"
 level: advanced
 order: 6
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Volume Spread Analysis (VSA)
+## VSA কী?
 
-Master Volume Spread Analysis — the modern evolution of Wyckoff's principles. Learn to read effort (volume) vs result (spread) to identify institutional activity.
+**Volume Spread Analysis** প্রতিটি বারে তিনটি জিনিস একসাথে পড়ে:
 
-<Callout type="info" title="The Foundation of Smart Money">
-  Richard Wyckoff developed his method in the 1930s by studying how JP Morgan, Jesse Livermore, and other "composite
-  operators" manipulated markets. Modern SMC and ICT concepts are DIRECTLY derived from Wyckoff principles.
-  Understanding Wyckoff is understanding the ROOT of institutional trading.
+| উপাদান     | এটা কী                             | কীভাবে মাপবেন                             |
+| ---------- | ---------------------------------- | ----------------------------------------- |
+| **Volume** | Effort — কতটা লেনদেন হয়েছে        | সাম্প্রতিক গড়ের সাথে তুলনা               |
+| **Spread** | Result — বারের High থেকে Low রেঞ্জ | সাম্প্রতিক গড় Spread এর সাথে তুলনা       |
+| **Close**  | বারটি কে নিয়ন্ত্রণে শেষ করেছে     | বারে Close এর অবস্থান (0 = Low, 1 = High) |
+
+পদ্ধতিটি Wyckoff এর [Effort বনাম Result](/bn/wyckoff/effort-vs-result) ধারণা থেকে বেড়েছে আর Tom Williams এটাকে জনপ্রিয় করেন। এর ভিত্তি: _Effort (Volume) আর Result (Spread) না মিললে এক পক্ষ চাপা পড়ছে।_
+
+<Callout type="warning" title="সুর নরম করা হয়েছে">
+  এই সিরিজের মূল লেসন ধরে নিয়েছিল Volume "Smart Money" দেখায়। Volume বলে কতটা লেনদেন হয়েছে, কার দ্বারা নয়। Spot
+  ফরেক্সে "Volume" হলো **Tick Volume** (প্রাইস আপডেটের সংখ্যা), যা VSA যে এক্সচেঞ্জ Volume এর জন্য তৈরি তার চেয়ে দুর্বল
+  প্রক্সি। VSA প্রধানত স্টক, ফিউচার আর ইনডেক্সে ব্যবহার করুন, আর ফরেক্সের সংকেত বেশি সতর্কতায় দেখুন।
 </Callout>
 
 ---
 
-## Wyckoff's Three Laws
+## এক চার্টে চারটি সংকেত
 
-### 1. Law of Supply and Demand
+![সিন্থেটিক Daily চার্ট: বাড়তি Volume সহ পতন, গড়ের ২.১× Volume আর চওড়া Spread সহ উপরের অর্ধেকে Close হওয়া Stopping Volume, একটি শান্ত Test, র‍্যালিতে সরু Spread আর কম Volume এর একটি No-Demand Up বার, আর পুলব্যাকে একটি No-Supply Down বার](/images/wyckoff/volume-spread-analysis/vsa-signals-dark.webp)
 
-- Price rises when demand > supply
-- Price falls when supply > demand
-- Balance = range (accumulation or distribution)
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/wyckoff/vsa-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### 2. Law of Cause and Effect
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেল আর Volume **সিন্থেটিক**। গড় প্রথম ২০ বারে মাপা (Volume 1,692; Spread 1.9)।
+</Callout>
 
-- Every move (effect) requires preparation (cause)
-- The size of the cause determines the size of the effect
-- Accumulation range → Markup. Distribution range → Markdown.
-
-### 3. Law of Effort vs Result
-
-- Volume (effort) should confirm price movement (result)
-- Divergence between effort and result = institutional manipulation
-- High volume + no movement = absorption (smart money at work)
+| সংকেত               | চার্টে মাপা                                                    | এটা কী ইঙ্গিত দেয়                                      |
+| ------------------- | -------------------------------------------------------------- | ------------------------------------------------------- |
+| **Stopping Volume** | গড়ের ২.১× Volume, চওড়া Spread, পতনের পর উপরের ৬৮% এ Close    | Sell শোষিত হচ্ছে — পতন শেষ হতে পারে                     |
+| **Test**            | গড়ের ০.৪× Volume, সরু Spread, উঁচু Low                        | Climax Low এর কাছে Supply কম বাকি                       |
+| **No Demand**       | Up বার, সরু Spread, গড়ের ০.৪× Volume আর আগের দুই বারের নিচে   | র‍্যালিতে কেনার আগ্রহ নেই; বিরতি বা পুলব্যাক বেশি সম্ভব |
+| **No Supply**       | Down বার, সরু Spread, গড়ের ০.৪× Volume আর আগের দুই বারের নিচে | পুলব্যাকে বেচার আগ্রহ নেই; আবার উপরে যাওয়া বেশি সম্ভব  |
 
 ---
 
-## Practical Application
+## একটি বার কীভাবে পড়বেন
 
-### Identifying Institutional Phase
+1. **ট্রেন্ড আর অবস্থান:** বারটি কোথায় — পতনের পর, High এ, রেঞ্জের প্রান্তে? একই বার ভিন্ন জায়গায় ভিন্ন অর্থ বহন করে।
+2. **গড়ের তুলনায় Volume:** বেশি (≥ ~১.৫×), গড়, নাকি কম (≤ ~০.৬×)?
+3. **গড়ের তুলনায় Spread:** চওড়া, গড়, নাকি সরু?
+4. **Close অবস্থান:** High এর কাছে, মাঝে, নাকি Low এর কাছে?
+5. **প্রতিবেশীদের সাথে তুলনা:** আগের দুই বারের সাথে Volume; শেষ কয়েকটির সাথে Spread।
 
-1. Is the market in accumulation, markup, distribution, or markdown?
-2. Where are we within the current phase?
-3. What event comes next in the sequence?
+| প্যাটার্ন                                     | পাঠ (কনটেক্সটে)                                     |
+| --------------------------------------------- | --------------------------------------------------- |
+| বেশি Volume, চওড়া Spread, High এর কাছে Close | শক্তিশালী কেনা (পতনের পর: সম্ভাব্য Stopping Action) |
+| বেশি Volume, চওড়া Spread, Low এর কাছে Close  | শক্তিশালী বেচা (র‍্যালির পর: সম্ভাব্য Climax)       |
+| বেশি Volume, সরু Spread                       | ফলাফল ছাড়া Effort: অন্য পক্ষ শোষণ করছে             |
+| কম Volume, সরু Spread                         | আগ্রহের অভাব: একটি Test বা বিরতি                    |
+| Up বার, সরু Spread, কম Volume                 | No Demand                                           |
+| Down বার, সরু Spread, কম Volume               | No Supply                                           |
 
-### Entry Strategy
+### উদাহরণ (চার্ট ছাড়া) — Stopping-Volume Long
 
-- Buy during accumulation (at Spring or LPS)
-- Sell during distribution (at UTAD or LPSY)
-- Confirm with volume analysis (VSA principles)
-- Align with higher timeframe phase
+105 থেকে 96 এ ছয় বারের পতনের পর গড়ের ২.১× Volume আর ৪.৪ পয়েন্ট Spread এর একটি বার **95.0** এ Close করে, এর **92.0** Low থেকে ৬৮% উপরে। দুই বার পরে গড়ের ০.৪× Volume এ একটি শান্ত Test **95.3** এ টিকে থাকে। পরিকল্পনা: Test বারের High **96.4** এর উপরে Close এ Buy, Stop **91.8** (Climax Low এর নিচে), টার্গেট **103.0**: রিস্ক ৪.৬, রিওয়ার্ড ৬.৬, পরিকল্পিত **১ : ১.৪** — মাঝারি, তাই অনেক ট্রেডার ধাপে ধাপে ঢোকেন বা এন্ট্রি ভালো করতে No-Supply পুলব্যাকের অপেক্ষা করেন। ভারী Volume এ **92.0** এর নিচে Close হলে সংকেত ব্যর্থ।
 
-### Risk Management
+---
 
-- Stop loss below Spring (for longs) or above UTAD (for shorts)
-- Position size based on phase confidence
-- Scale in during confirmation events (SOS, SOW)
+## সাধারণ ভুল
 
-<Callout type="warning" title="Pattern Recognition Warning">
-  Wyckoff schematics are IDEALIZED templates. Real markets rarely follow them perfectly. Look for the PRINCIPLE behind
-  each event, not the exact visual pattern. Phase identification is more important than event labeling.
-</Callout>
+| ভুল                                                   | সমাধান                                                              |
+| ----------------------------------------------------- | ------------------------------------------------------------------- |
+| কনটেক্সট ছাড়া বার পড়া                               | আগে ট্রেন্ড আর অবস্থান লিখুন                                        |
+| ফরেক্স Tick Volume কে এক্সচেঞ্জ Volume এর মতো বিশ্বাস | যেখানে Volume আসল সেখানে VSA ব্যবহার করুন; Spot ফরেক্সে সতর্ক থাকুন |
+| একটি সংকেতকে ট্রেড ধরা                                | নিশ্চিতকরণ লাগে (Follow-through বার, ভাঙন)                          |
+| ভিন্ন সেশনের Volume তুলনা                             | একই সেশনের গড়ের সাথে তুলনা করুন                                    |
+| Stop নেই                                              | Climax/Test এর প্রান্তের ওপারে রাখুন                                |
+
+---
+
+## অনুশীলন
+
+1. একটি তরল স্টক বা ইনডেক্সের তিনটি Daily চার্টে প্রতিটি পতন ও র‍্যালির সর্বোচ্চ-Volume বার চিহ্নিত করুন।
+2. ২০-বারের গড়ের সাথে Volume আর Spread মাপুন আর Close অবস্থান লিখুন।
+3. প্রতিটি Climax এর কাছে একটি Test (কম Volume, সরু Spread) খুঁজুন আর পরে প্রাইস কী করেছে লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা     | বিস্তারিত                                             |
+| --------- | ----------------------------------------------------- |
+| তিন ইনপুট | Volume (Effort), Spread (Result), Close (নিয়ন্ত্রণ)  |
+| মূল সংকেত | Stopping Volume, Test, No Demand, No Supply           |
+| পদ্ধতি    | অবস্থান, Volume, Spread, Close, তারপর প্রতিবেশী       |
+| সীমা      | ফরেক্স Tick Volume এ দুর্বল; সবসময় Stop ব্যবহার করুন |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Effort vs Result](/bn/wyckoff/effort-vs-result)
+- [Accumulation Schematic](/bn/wyckoff/accumulation-schematic)
+- [Volume](/bn/price-action/volume) — প্রাইস অ্যাকশনে Volume
+- [Wyckoff এর ভূমিকা](/bn/wyckoff/introduction)
