@@ -1,0 +1,135 @@
+---
+title: "Risk-On / Risk-Off Framework"
+description: "How markets tend to move together when investors' appetite for risk rises or falls: which assets are usually grouped as risk-on or risk-off, how currencies fit in (AUD and NZD vs JPY and CHF), how to read the mood from stocks and volatility, and where the framework fails — with a synthetic risk-off episode chart and an animated walkthrough."
+level: intermediate
+order: 5
+lastUpdated: "2026-11-14"
+---
+
+## What Is Risk-On / Risk-Off?
+
+**Risk-on** describes periods when investors are willing to hold riskier assets; **risk-off** describes periods when they cut risk and move toward assets seen as safer. Many markets respond to the same shift, so grouping moves this way gives context for a single chart.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original called this an "institutional risk regime framework" and told readers how to position "your portfolio".
+  It is a way of describing **what markets have been doing together**, not an official model, and not a forecast. The
+  assets below are *usually* grouped this way; they don't always behave that way.
+</Callout>
+
+---
+
+## Who Usually Goes Where
+
+| Group               | Often grouped as risk-on                               | Often grouped as risk-off                        |
+| ------------------- | ------------------------------------------------------ | ------------------------------------------------ |
+| Stocks              | Equity indices, especially cyclical and growth stocks  | —                                                |
+| Currencies          | AUD, NZD (and sometimes CAD) and emerging-market currencies | JPY, CHF (and often USD)                     |
+| Bonds               | Lower-rated or longer-risk credit                       | Government bonds from major economies            |
+| Commodities         | Industrial metals, oil                                  | Gold                                             |
+| Volatility          | Low                                                     | High (a VIX-style index rises)                   |
+
+Why the yen and franc: both countries are net creditors and the yen has long been a **funding currency** for carry trades, which are often unwound in risk-off periods, pushing it up. The dollar's role varies: it often rises in risk-off, but not always.
+
+---
+
+## A Risk-Off Episode
+
+![Synthetic daily data: stocks rise to about 105 then fall roughly 16% to 88 in a risk-off episode over days 70–99 while a VIX-like index spikes from about 13 to 34; average daily returns in the episode are −0.57% for stocks, −0.18% for AUD/USD, −0.20% for USD/JPY and −0.13% for USD/CHF, against roughly zero to +0.07% outside it](/images/intermarket/risk-on-risk-off/risk-on-risk-off-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/intermarket/rr-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The data is **synthetic**: a 30-day risk-off episode built into 140 days. Real episodes vary in length, speed and
+  which assets respond.
+</Callout>
+
+| Asset                | Average daily return, risk-on days | In the risk-off episode | Reading                              |
+| -------------------- | ---------------------------------- | ----------------------- | ------------------------------------ |
+| Stocks (SPX)         | +0.06%                             | −0.57%                  | The anchor of the regime             |
+| AUD/USD              | 0.00%                              | −0.18%                  | A risk currency weakens              |
+| USD/JPY              | +0.07%                             | −0.20%                  | Falling pair = **yen strengthens**   |
+| USD/CHF              | +0.01%                             | −0.13%                  | Falling pair = **franc strengthens** |
+| Volatility index     | about 10–16                        | peaks near 34           | Fear measure spikes                  |
+
+Note the direction rule: USD/JPY and USD/CHF **fall** when the yen and franc strengthen against the dollar.
+
+---
+
+## Reading the Mood
+
+| Evidence                                 | Leans risk-off                           | Leans risk-on                         |
+| ---------------------------------------- | ---------------------------------------- | ------------------------------------- |
+| Stock index                              | Falling, large down days                 | Rising, low volatility                |
+| Volatility index                         | Rising sharply                           | Low and stable                        |
+| AUD/JPY (a popular gauge)                | Falling                                  | Rising                                |
+| Government bond prices                   | Rising (yields falling)                  | Falling (yields rising)               |
+| Gold                                     | Often rising                             | Mixed                                 |
+
+AUD/JPY combines a risk currency with a safe-haven one, so it works as a quick gauge. No single reading settles the regime.
+
+---
+
+## Using It in Trading
+
+| Situation                                      | Idea to test                                                          |
+| ---------------------------------------------- | --------------------------------------------------------------------- |
+| Stocks and volatility signal risk-off          | Favour shorts in AUD/JPY or AUD/USD; avoid longs in risk currencies   |
+| Mood turns risk-on                             | The reverse, and risk currencies often recover                        |
+| Signals disagree                               | Smaller size or no trade                                              |
+| Event days                                     | Regimes can flip within hours                                         |
+
+### Example (no chart) — a short on a risk currency
+
+Stocks have fallen for a week and the volatility index has jumped. AUD/USD rallies to **0.6700** into resistance. Plan: sell **0.6700**, stop **0.6730**, target **0.6620**: risk 30 pips, reward 80, **1 : 2.7** planned. If stocks reverse up and the volatility index falls back, the risk-off reason weakens; exit or tighten.
+
+---
+
+## Where It Fails
+
+| Failure                                         | What it looks like                                          |
+| ----------------------------------------------- | ----------------------------------------------------------- |
+| Yen or franc do not strengthen                  | Rates or domestic news dominate                             |
+| Stocks and bonds fall together                  | Inflation or rate shocks (bonds are not a safe haven then)  |
+| The dollar rallies and risk currencies still rise | Local drivers override the global mood                    |
+| Fast reversals                                  | A regime read in the morning can be wrong by the afternoon  |
+
+---
+
+## Common Mistakes
+
+| Mistake                                         | Fix                                                        |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| Assuming JPY and CHF always strengthen in a sell-off | Check; it is a tendency                                |
+| Mixing up pair direction                        | USD/JPY falls when the yen strengthens                     |
+| Trading the regime without a stop               | Regimes change; use a stop                                 |
+| Using one gauge                                 | Combine stocks, volatility and one or two currency gauges  |
+| Ignoring event risk                             | Check the calendar                                         |
+
+---
+
+## Practice
+
+1. Chart a stock index, a volatility index and AUD/JPY for the last three months. Mark the weeks that were clearly risk-off.
+2. In those weeks, did USD/JPY and AUD/USD fall as expected?
+3. Find one risk-off week where a "safe haven" did not strengthen. What else was happening?
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                                    |
+| ---------------- | ------------------------------------------------------------------------- |
+| Regimes          | Risk-on and risk-off describe shared moves across markets                 |
+| Typical groups   | Stocks, AUD, NZD vs JPY, CHF, government bonds, gold                      |
+| Mood gauges      | Stocks, volatility, AUD/JPY                                               |
+| Limits           | Tendencies, not rules; they can flip quickly                              |
+
+---
+
+## Related Topics
+
+- [SPX and VIX Regimes](/en/intermarket/spx-vix-regime)
+- [Currency Strength](/en/intermarket/currency-strength)
+- [Gold, the Dollar and Bonds](/en/intermarket/gold-dollar-bonds)
+- [Introduction to Intermarket Analysis](/en/intermarket/introduction)
