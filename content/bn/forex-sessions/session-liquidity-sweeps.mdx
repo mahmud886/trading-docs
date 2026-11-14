@@ -1,71 +1,131 @@
 ---
-title: "Session Liquidity Sweep — সম্পূর্ণ গাইড"
-description: "Session কীভাবে পূর্ববর্তী Session-এর Liquidity Sweep করে আয়ত্ত করুন। Asian থেকে London থেকে New York পর্যন্ত Sweep Chain শিখুন।"
+title: "Session Liquidity Sweeps — সম্পূর্ণ গাইড (BD সময়)"
+description: "এক সেশনের High আর Low কীভাবে পরের সেশনের টার্গেট হয়: বাংলাদেশ সময়ে Asia → London → New York Sweep চেইন, Sweep আর Breakout এর পার্থক্য, আগের দিনের লেভেল, আর EUR/USD এর একটি পুরো দিনের উদাহরণ — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 11
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
 ## Session Liquidity Sweep কী?
 
-Session Liquidity Sweep ঘটে যখন একটি **নতুন Session পূর্ববর্তী Session-এর রেখে যাওয়া Liquidity Target করে নেয়**। এটি Institutional Trading-এ Intraday Price Movement চালিত করার মৌলিক Mechanism।
+একটি সেশন শেষ হলে এর **High আর Low** চার্টে থেকে যায়, আর তার ঠিক ওপারে Stop অর্ডার জমে থাকে। পরের সেশন প্রায়ই সেই লেভেলে যায় — আর কখনো সোজা উল্টে ফিরে আসে। লেভেল নেওয়ার পর সেই উল্টো ফেরাটাই **Sweep**।
+
+এটা দিন পড়ার একটি উপায়, আইন নয়: প্রাইস লেভেলের ওপারে Close করে চলতেও পারে। সেটা **Breakout**, আর পার্থক্যটাই ঠিক করে পরে আপনি কী করবেন।
+
+<Callout type="warning" title="সরানো হয়েছে">
+  মূল লেসনে "দৈনিক Bias এর সাথে মিললে ~৭০% সাফল্যের হার" আর সেশনের "প্রথম Sweep সবচেয়ে সম্ভাবনাময়" বলা ছিল। কোনোটার
+  পেছনেই ডেটা পাইনি। কোনো সংখ্যা বিশ্বাস করার আগে নিজের জার্নালে Sweep পরীক্ষা করুন।
+</Callout>
 
 ---
 
-## Sweep Chain
+## Sweep চেইন (BD সময়, Summer)
 
-```
-Session Flow (BD সময়):
-Asian (৫AM-১PM) → Range তৈরি (উপরে/নিচে Liquidity)
-London (১PM-১০PM) → Asian H বা L Sweep করে, তারপর Trend
-NY (৬PM-৩AM) → Continue করে বা London H/L Sweep করে
+| সেশন     | BD সময়                 | যে লেভেল রেখে যায়    | পরের সেশন কী করতে পারে            |
+| -------- | ----------------------- | --------------------- | --------------------------------- |
+| Asia     | সকাল ৬:০০ – দুপুর ১:০০  | Asian High আর Low     | London এক দিক টেস্ট করে           |
+| London   | দুপুর ১:০০ – রাত ১০:০০  | London High আর Low    | New York এক দিক টেস্ট করে         |
+| New York | সন্ধ্যা ৬:০০ – রাত ৩:০০ | NY High আর Low        | পরের দিনের Asia / London          |
+| আগের দিন | —                       | আগের দিনের High / Low | সবচেয়ে শক্তিশালী রেফারেন্স লেভেল |
 
-প্রতিটি Session-এর H/L পরবর্তী Session-এর TARGET হয়।
-```
-
----
-
-## Session Sweep-এর ধরন
-
-| Sweep ধরন               | কী ঘটে                              | সময় (BD)           |
-| ----------------------- | ----------------------------------- | ------------------- |
-| London Asian Low Sweep  | Bearish Trap → Bullish Move         | ১:০০ - ২:০০ PM      |
-| London Asian High Sweep | Bullish Trap → Bearish Move         | ১:০০ - ২:০০ PM      |
-| NY London Low Sweep     | NY Long-এর জন্য London Low নেওয়া   | ৬:০০ - ৮:০০ PM      |
-| NY London High Sweep    | NY Short-এর জন্য London High নেওয়া | ৬:০০ - ৮:০০ PM      |
-| PDH Sweep পরের দিন      | Previous Day High = BSL Target      | পরবর্তী London Open |
-| PDL Sweep পরের দিন      | Previous Day Low = SSL Target       | পরবর্তী London Open |
+Winter এ London আর New York এর সময়ে এক ঘণ্টা যোগ করুন।
 
 ---
 
-## Session Sweep Trade করা
+## এক দিনে একটি চেইন
 
-```
-1. পূর্ববর্তী Session H/L স্পষ্টভাবে Mark
-2. নতুন Session এই Level Approach করার অপেক্ষা
-3. যদি Price Sweep করে (বাইরে যায় তারপর Reverse):
-   - এটি Entry Signal
-   - Reversal Confirmation-এ Enter (CHOCH/Engulfing)
-4. Stop: Sweep Wick-এর বাইরে
-5. Target: বিপরীত Session Extreme
+![EUR/USD 30m, সকাল ৬:০০ BD থেকে: Asia 1.0852–1.0872 রেঞ্জ তৈরি করে; দুপুর ১:০০ এ London Asian Low 1.0843 পর্যন্ত Sweep করে ভেতরে Close করে, তারপর 1.0899 পর্যন্ত র‍্যালি করে; সন্ধ্যা ৬:৩০ এ New York London এর High 1.0908 পর্যন্ত Sweep করে নিচে Close করে; CHOCH এর পর Retest এ 1.0887 এ Sell, Stop 1.0911, টার্গেট 1.0845](/images/forex-sessions/session-liquidity-sweeps/sweep-chain-dark.webp)
 
-Daily Bias-এর সাথে Aligned হলে Success Rate: ~৭০%
-```
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/forex-sessions/sweep-chain-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
+</Callout>
+
+| ধাপ | সময় (BD)                 | কী হয়                                                                                  |
+| --- | ------------------------- | --------------------------------------------------------------------------------------- |
+| ০   | সকাল ৬:০০ – দুপুর ১:০০    | Asia: **1.0852 – 1.0872**, ২০ পিপ                                                       |
+| ①   | দুপুর ১:০০                | London Low **1.0843** পর্যন্ত Sweep করে; পরের ক্যান্ডেল ভেতরে Close করে                 |
+| —   | দুপুর ১:৩০ – সন্ধ্যা ৬:০০ | London **1.0899** পর্যন্ত র‍্যালি করে — নতুন High, আর পরের টার্গেট                      |
+| ②   | সন্ধ্যা ৬:৩০              | US ডেটা: New York London এর High **1.0908** পর্যন্ত Sweep করে নিচে Close করে            |
+| ③   | সন্ধ্যা ৭:৩০ – ৮:০০       | London এর শেষ পুলব্যাক Low **1.0884** এর নিচে Close (CHOCH); Retest এ **1.0887** এ Sell |
+
+Sweep এর উপরে Stop **1.0911**, টার্গেট **1.0845** (Asian Low এর ঠিক নিচে): রিস্ক **২৪ পিপ**, রিওয়ার্ড **৪২ পিপ**, পরিকল্পিত **১ : ১.৭৫**।
+
+প্রথম Sweep (London, Long) এর পরিকল্পনা হতে পারত, যেমন: ভেতরে Close এর পর **1.0858** এ Buy, Stop **1.0840**, টার্গেট **1.0895**: রিস্ক ১৮, রিওয়ার্ড ৩৭, **১ : ২.১**।
+
+---
+
+## Sweep নাকি Breakout?
+
+| সূত্র           | Sweep                           | Breakout                    |
+| --------------- | ------------------------------- | --------------------------- |
+| ক্যান্ডেল Close | পুরোনো রেঞ্জের ভেতরে ফিরে       | লেভেলের ওপারে, আর টিকে থাকে |
+| Retest          | লেভেলের ওপারে টিকতে ব্যর্থ      | অন্য দিক থেকে টিকে থাকে     |
+| Structure       | উল্টো দিকে CHOCH                | ট্রেন্ড চলতে থাকে           |
+| কনটেক্সট        | Bias এর বিরুদ্ধে, বা বড় লেভেলে | Bias এর সাথে                |
+
+ছোঁয়ার পরের ক্যান্ডেল ভেতরে ফিরে Close না করলে সেটা এখনো Sweep নয়।
 
 ---
 
 ## নিয়ম
 
-1. Session-এর প্রথম Sweep সর্বোচ্চ Probability
-2. সব Session H/L সম্ভাব্য Target হিসেবে Mark করুন
-3. Higher Timeframe Bias-এর সাথে Sweep Align করুন
-4. Daily Trend-এর বিরুদ্ধে Sweep Trade করবেন না
-5. PDH/PDL Sweep Intraday Session Sweep-এর চেয়ে শক্তিশালী
+1. পরের সেশন খোলার আগে প্রতিটি সেশনের High আর Low চিহ্নিত করুন।
+2. ছোঁয়া নয়, **ভেতরে ফিরে Close** আর CHOCH ট্রেড করুন।
+3. আগে Higher Timeframe Bias এর **বিরুদ্ধে** যাওয়া Sweep বেছে নিন, Bias কে দ্বিতীয় টার্গেট রাখুন।
+4. Stop Sweep এর প্রান্তের ওপারে; টার্গেট: পুরোনো রেঞ্জের অন্য দিক, তারপর পুরোনো লেভেল।
+5. আগের দিনের High/Low সবচেয়ে বেশি দেখা হয়; এর Sweep Asian লেভেলের Sweep এর চেয়ে বেশি গুরুত্বপূর্ণ, কিন্তু টিকবেই এমন নিশ্চয়তা নেই।
+
+### উদাহরণ (চার্ট ছাড়া) — আগের দিনের High এর Gold Sweep
+
+Gold এর আগের দিনের High **2,438**। দুপুর ১:৪০ BD তে London **2,441** পর্যন্ত যায় আর একটি 15m ক্যান্ডেল **2,435** এ Close করে। শেষ Higher Low **2,433** এর নিচে Close নিশ্চিত করে। Retest এ **2,434** এ Sell, Stop **2,443**, টার্গেট **2,410**: রিস্ক $9, রিওয়ার্ড $24, পরিকল্পিত **১ : ২.৭**।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                               | সমাধান                                                 |
+| ------------------------------------------------- | ------------------------------------------------------ |
+| লেভেলের প্রতিটি ছোঁয়ার উল্টো ট্রেড               | ভেতরে ফিরে Close এর অপেক্ষা                            |
+| Sweep এর ভেতরে Stop                               | প্রান্তের ওপারে                                        |
+| New York যে London কে Sweep করতে পারে ভুলে যাওয়া | সন্ধ্যা ৬:০০ BD এর আগে London এর High/Low চিহ্নিত করুন |
+| Winter এ Summer এর সময় ব্যবহার                   | London আর New York এ এক ঘণ্টা যোগ করুন                 |
+
+---
+
+## অনুশীলন
+
+1. ১৫ দিন ধরে Asia আর London এর High ও Low (BD সময়) চিহ্নিত করুন।
+2. প্রতিটির জন্য লিখুন পরের সেশন Sweep করেছে, Break করেছে, নাকি উপেক্ষা করেছে।
+3. Sweep এর ক্ষেত্রে ভেতরে Close, CHOCH আর Retest এন্ট্রি কোথায় হতো লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| বিষয়         | বিস্তারিত                           |
+| ------------- | ----------------------------------- |
+| চেইন          | Asia → London → New York → পরের দিন |
+| Sweep         | একটি ছোঁয়া, তারপর ভেতরে ফিরে Close |
+| নিশ্চিতকরণ    | CHOCH; Retest বা FVG এন্ট্রি        |
+| নিশ্চয়তা নেই | লেভেলের ওপারে Close হলো Breakout    |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Asian Range](/bn/forex-sessions/asian-range) — সবচেয়ে বেশি Swept Range
-- [London Open Manipulation](/bn/forex-sessions/london-open-manipulation) — London Sweep
-- [Kill Zones](/bn/forex-sessions/kill-zones) — কখন Sweep ঘটে
+- [Asian Range](/bn/forex-sessions/asian-range) — সবচেয়ে বেশি দেখা রেঞ্জ
+- [London Open Manipulation](/bn/forex-sessions/london-open-manipulation) — London এর Sweep
+- [Session Liquidity (SMC)](/bn/smc/session-liquidity) — SMC এর বিস্তারিত
+- [Kill Zones](/bn/forex-sessions/kill-zones) — কখন Sweep প্রায়ই হয়

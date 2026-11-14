@@ -1,72 +1,131 @@
 ---
-title: "Session Liquidity Sweeps — Complete Guide"
-description: "Master how sessions sweep previous session liquidity. Learn the chain of sweeps from Asian to London to New York."
+title: "Session Liquidity Sweeps — Complete Guide (BD Time)"
+description: "How one session's high and low become the next session's target: the Asia → London → New York sweep chain in Bangladesh time, how to tell a sweep from a breakout, previous-day levels, and a worked EUR/USD day with a chart and an animated walkthrough."
 level: intermediate
 order: 11
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## What are Session Liquidity Sweeps?
+## What Are Session Liquidity Sweeps?
 
-Session Liquidity Sweeps occur when a **new session targets and takes the liquidity** left by the previous session. This is the fundamental mechanism driving intraday price movement in institutional trading.
+When a session ends, its **high and low** are left on the chart with stop orders resting just beyond them. The next session often trades to those levels — and sometimes reverses straight back. That reversal after taking the level is a **sweep**.
 
----
+It's a way to read a day, not a law: price can also close beyond a level and keep going. That's a **breakout**, and the difference is what you do next.
 
-## The Sweep Chain
-
-```
-Session Flow (BD Time):
-Asian (5AM-1PM) → Creates range (liquidity above/below)
-London (1PM-10PM) → Sweeps Asian H or L, then trends
-NY (6PM-3AM) → Continues or sweeps London H/L
-
-Each session's H/L becomes the NEXT session's target.
-```
+<Callout type="warning" title="Removed">
+  The original quoted a "~70% success rate when aligned with daily bias" and said the first sweep of a session is
+  "highest probability". We found no data behind either. Test sweeps on your own journal before trusting a number.
+</Callout>
 
 ---
 
-## Types of Session Sweeps
+## The Sweep Chain (BD time, summer)
 
-| Sweep Type               | What Happens                    | Time (BD)        |
-| ------------------------ | ------------------------------- | ---------------- |
-| London sweeps Asian Low  | Bearish trap → bullish move     | 1:00 - 2:00 PM   |
-| London sweeps Asian High | Bullish trap → bearish move     | 1:00 - 2:00 PM   |
-| NY sweeps London Low     | London low taken for NY longs   | 6:00 - 8:00 PM   |
-| NY sweeps London High    | London high taken for NY shorts | 6:00 - 8:00 PM   |
-| Next day sweeps PDH      | Previous day high = BSL target  | Next London open |
-| Next day sweeps PDL      | Previous day low = SSL target   | Next London open |
+| Session   | BD time            | Level it leaves           | What the next session may do |
+| --------- | ------------------ | ------------------------- | ---------------------------- |
+| Asia      | 6:00 AM – 1:00 PM  | Asian high and low        | London tests one side        |
+| London    | 1:00 PM – 10:00 PM | London high and low       | New York tests one side      |
+| New York  | 6:00 PM – 3:00 AM  | NY high and low           | Next day's Asia / London     |
+| Prior day | —                  | Previous day's high / low | Strongest reference levels   |
+
+Add one hour to London and New York times in winter.
 
 ---
 
-## Trading Session Sweeps
+## A Chain in One Day
 
-```
-1. Mark previous session H/L clearly
-2. Wait for new session to approach these levels
-3. If price sweeps (goes beyond then reverses):
-   - That's the entry signal
-   - Enter on reversal confirmation (CHOCH/engulfing)
-4. Stop: Beyond the sweep wick
-5. Target: Opposite session extreme
+![EUR/USD 30m from 6:00 AM BD: Asia builds the range 1.0852–1.0872; at 1:00 PM London sweeps the Asian low to 1.0843 and closes back inside, then rallies to 1.0899; at 6:30 PM New York sweeps London's high to 1.0908 and closes back below; after a CHOCH, the retest is sold at 1.0887 with stop 1.0911 and target 1.0845](/images/forex-sessions/session-liquidity-sweeps/sweep-chain-dark.webp)
 
-Success rate: ~70% when aligned with daily bias
-```
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/forex-sessions/sweep-chain-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
+
+| Step | Time (BD)         | What happens                                                                               |
+| ---- | ----------------- | ------------------------------------------------------------------------------------------ |
+| 0    | 6:00 AM – 1:00 PM | Asia: **1.0852 – 1.0872**, 20 pips                                                         |
+| ①    | 1:00 PM           | London sweeps the low to **1.0843**; the next candle closes back inside                    |
+| —    | 1:30 – 6:00 PM    | London rallies to **1.0899** — a new high, and the next target                             |
+| ②    | 6:30 PM           | US data: New York sweeps London's high to **1.0908**, closes back below                    |
+| ③    | 7:30 – 8:00 PM    | A close below London's last pullback low **1.0884** (CHOCH); sell the retest at **1.0887** |
+
+Stop **1.0911** above the sweep, target **1.0845** (just below the Asian low): risk **24 pips**, reward **42 pips**, **1 : 1.75** planned.
+
+The first sweep (London, long) would have planned, for example: buy **1.0858** after the close back inside, stop **1.0840**, target **1.0895**: risk 18, reward 37, **1 : 2.1**.
+
+---
+
+## Sweep or Breakout?
+
+| Clue         | Sweep                                 | Breakout                       |
+| ------------ | ------------------------------------- | ------------------------------ |
+| Candle close | Back inside the old range             | Beyond the level, and it holds |
+| Retest       | Fails to hold beyond the level        | Holds from the other side      |
+| Structure    | CHOCH back the other way              | Trend continues                |
+| Context      | Against the bias, or into a big level | With the bias                  |
+
+If the next candle after the touch doesn't close back inside, it's not a sweep yet.
 
 ---
 
 ## Rules
 
-1. The FIRST sweep of a session is highest probability
-2. Mark ALL session H/L as potential targets
-3. Align sweeps with higher timeframe bias
-4. Don't trade sweeps against the daily trend
-5. PDH/PDL sweeps are stronger than intraday session sweeps
+1. Mark every session's high and low before the next session opens.
+2. Trade the **close back inside** and a CHOCH — not the touch.
+3. Prefer sweeps that go **against** the higher-timeframe bias first, with the bias second target.
+4. Stops go beyond the sweep's extreme; targets: the other side of the old range, then older levels.
+5. Previous-day high/low are the most watched; a sweep of them matters more than a sweep of an Asian level, but they are not guaranteed to hold.
+
+### Example (no chart) — a gold sweep of the previous day's high
+
+Gold's previous-day high is **2,438**. At 1:40 PM BD London pushes to **2,441** and a 15m candle closes at **2,435**. A close below the last higher low **2,433** confirms. Sell the retest at **2,434**, stop **2,443**, target **2,410**: risk $9, reward $24, **1 : 2.7** planned.
+
+---
+
+## Common Mistakes
+
+| Mistake                              | Fix                                      |
+| ------------------------------------ | ---------------------------------------- |
+| Fading every touch of a level        | Wait for the close back inside           |
+| Stop inside the sweep                | Beyond the extreme                       |
+| Forgetting New York can sweep London | Mark London's high/low before 6:00 PM BD |
+| Using summer times in winter         | Add one hour to London and New York      |
+
+---
+
+## Practice
+
+1. For 15 days, mark Asia's and London's highs and lows (BD time).
+2. For each, note whether the next session swept, broke, or ignored it.
+3. For sweeps, note the close back inside, the CHOCH and where the retest entry would have been.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Point          | Detail                                 |
+| -------------- | -------------------------------------- |
+| The chain      | Asia → London → New York → next day    |
+| Sweep          | A touch, then a close back inside      |
+| Confirmation   | CHOCH; retest or FVG entry             |
+| Not guaranteed | A close beyond the level is a breakout |
 
 ---
 
 ## Related Topics
 
-- [Asian Range](/en/forex-sessions/asian-range) — Most commonly swept range
+- [Asian Range](/en/forex-sessions/asian-range) — the most commonly watched range
 - [London Open Manipulation](/en/forex-sessions/london-open-manipulation) — London sweeps
-- [Session Liquidity (SMC)](/en/smc/session-liquidity) — Detailed SMC context
-- [Kill Zones](/en/forex-sessions/kill-zones) — When sweeps happen
+- [Session Liquidity (SMC)](/en/smc/session-liquidity) — the SMC detail
+- [Kill Zones](/en/forex-sessions/kill-zones) — when sweeps often happen
