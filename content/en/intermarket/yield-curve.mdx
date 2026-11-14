@@ -1,60 +1,139 @@
 ---
-title: "Yield Curve Dynamics — 2s10s Spread & Real Yields"
-description: "Understand yield curve analysis used by macro funds. Learn 2-year vs 10-year spread dynamics, real yields, and how bond markets predict currency and equity movements."
+title: "Yield Curve Dynamics — The 2s10s Spread and Real Yields"
+description: "How to read the yield curve as context for currencies and stocks: the 2-year and 10-year yields, the 10y−2y slope, what an inverted curve describes (and what it doesn't), real yields as nominal minus breakeven inflation, and how rate differentials relate to currency pairs — with a synthetic three-panel chart and an animated walkthrough."
 level: intermediate
 order: 3
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Yield Curve Dynamics
+## What Is the Yield Curve?
 
-Understand yield curve analysis used by macro funds. Learn 2-year vs 10-year spread dynamics, real yields, and how bond markets predict currency and equity movements.
+The **yield curve** plots the yield of government bonds against their maturity. Traders usually watch a few points on it:
 
-<Callout type="info" title="Institutional Perspective">
-  No hedge fund or institutional desk trades a single instrument in isolation. Understanding intermarket correlations is
-  what separates professional macro traders from retail speculators.
+| Point              | What it mostly reflects                                                                 |
+| ------------------ | --------------------------------------------------------------------------------------- |
+| **2-year**         | Expected path of the central bank's policy rate over the next couple of years           |
+| **10-year**        | Longer-run growth, inflation and the extra yield investors ask for holding longer bonds |
+| **Spread (2s10s)** | 10-year yield minus 2-year yield — the curve's slope                                    |
+
+A **normal** curve slopes up (10-year above 2-year). An **inverted** curve has the 2-year above the 10-year, which means the market prices policy rates coming **down** from today's level.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original described yield-curve analysis as what "macro funds" use and said bond markets "predict" currency and
+  equity moves. The curve describes how the market **prices rates**. An inversion has often come before US recessions,
+  but with long and varying lead times, and it has not been a trading signal on its own. We don't claim it predicts
+  anything.
 </Callout>
 
 ---
 
-## Key Concepts
+## Slope and Real Yields in One Chart
 
-This topic covers the essential frameworks that institutional traders use for cross-market analysis and correlation-based trading decisions.
+![Synthetic daily data: the 2-year yield rises from 3.6% to 5.4% while the 10-year stays near 5%, the 10y minus 2y spread falls from +0.99 to −0.56 points over an inversion lasting 89 days, then the 2-year falls back to 4.0% and the spread returns to +0.98; the 10-year real yield rises from 2.0% to 3.1%](/images/intermarket/yield-curve/yield-curve-dynamics-dark.webp)
 
----
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/intermarket/yc-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-## Why This Matters
-
-Understanding intermarket relationships gives you:
-
-- **Early warning signals** before moves happen in your primary market
-- **Confirmation** of your directional bias from correlated assets
-- **Risk management** through correlation-aware position sizing
-- **Edge** that most retail traders completely ignore
-
----
-
-## Practical Application
-
-### For Forex Traders
-
-- Check DXY direction before trading any USD pair
-- Monitor yield differentials for carry trade opportunities
-- Watch VIX for risk sentiment shifts
-
-### For Index Traders
-
-- Bond yields lead equity moves by 1-3 days
-- VIX term structure predicts volatility expansion
-- Sector rotation signals come from intermarket flows
-
-### For Commodity Traders
-
-- Real yields drive gold inversely
-- USD strength pressures all commodities
-- Chinese data leads base metals
-
-<Callout type="warning" title="Correlation ≠ Causation">
-  Correlations change over time and can break during crisis periods. Always use correlations as ONE input in your
-  analysis, never as the sole decision factor. Regularly update your correlation matrices.
+<Callout type="info" title="About this chart">
+  The yields are **synthetic**, built to show a flattening, an inversion and a re-steepening. They aren't real Treasury
+  data.
 </Callout>
+
+| Stage                         | In the chart                                  | Reading                                            |
+| ----------------------------- | --------------------------------------------- | -------------------------------------------------- |
+| Start                         | 2-year 3.6%, 10-year 4.6%, spread +0.99       | A normal, upward-sloping curve                     |
+| Flattening                    | 2-year rises faster than the 10-year          | Market prices higher policy rates                  |
+| **Inversion**                 | Days 76 – 164 (89 days); deepest −0.56 points | 2-year above 10-year                               |
+| Steepening from the front end | 2-year falls to 4.0%; spread back to +0.98    | Market prices policy rate cuts ("bull steepening") |
+| **Real yield**                | 10-year real yield 2.0% → 3.1%                | Higher compensation after inflation                |
+
+---
+
+## Real Yields
+
+A **real yield** is a yield after inflation. For the 10-year it can be approximated as the **nominal yield minus the 10-year breakeven inflation rate** (this is close to the 10-year inflation-linked, TIPS, yield).
+
+In the chart the 10-year nominal yield is flat (4.6% to 5.0%) but breakeven inflation falls from 2.6% to about 1.95%, so the real yield **rises** by about a point. Real yields matter because:
+
+| Relationship               | Common tendency (not a rule)                                                                                             |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Real yields and gold       | Often move inversely (gold pays no yield); the link has weakened at times, for example when central banks bought heavily |
+| Real yields and the dollar | Higher US real yields often support the dollar                                                                           |
+| Real yields and equities   | Rising real yields can pressure high-valuation growth stocks                                                             |
+
+---
+
+## Yields and Currencies
+
+The usual link is through **rate differentials**: if US 2-year yields rise relative to German 2-year yields, EUR/USD often weakens, and the reverse. The 2-year is used because it tracks expected policy rates.
+
+| Situation                             | Idea to test                                            |
+| ------------------------------------- | ------------------------------------------------------- |
+| US 2-year yield rises, rest unchanged | Supportive for USD pairs                                |
+| Differential widens in favour of USD  | EUR/USD, GBP/USD may be pressured; USD/JPY may rise     |
+| Curve inverts or steepens quickly     | Markets are repricing the rate path — expect volatility |
+
+### Example (no chart) — differentials as context
+
+The US–German 2-year spread has widened for three weeks and EUR/USD has been falling. EUR/USD rallies to **1.0880**. Plan: sell **1.0880**, stop **1.0905**, target **1.0830**: risk 25 pips, reward 50, **1 : 2.0** planned. If the spread starts narrowing and EUR/USD closes above **1.0905**, the rate-differential reason has weakened and the plan is off.
+
+---
+
+## Limits
+
+| Limit                                     | Detail                                                          |
+| ----------------------------------------- | --------------------------------------------------------------- |
+| Slow signal                               | Curve moves play out over months; it is poor for timing entries |
+| Term premium and supply                   | The 10-year isn't only about policy rates                       |
+| Different central banks, different timing | Differentials matter relative to each other                     |
+| Data events                               | A single release can move the front end sharply                 |
+| Correlations change                       | See [the introduction](/en/intermarket/introduction)            |
+
+---
+
+## Common Mistakes
+
+| Mistake                                      | Fix                                        |
+| -------------------------------------------- | ------------------------------------------ |
+| Treating an inversion as a sell signal       | It describes pricing; timing is unreliable |
+| Mixing up the 2s10s and other curve measures | State which spread you use                 |
+| Using nominal yields when real yields matter | Check the breakeven/TIPS yield             |
+| Ignoring the other country's yield           | Currency pairs react to differentials      |
+| Reading the curve on one day's move          | Look at the trend over weeks               |
+
+---
+
+## Practice
+
+1. Chart the 2-year and 10-year yields for the last year. Mark any period where they crossed.
+2. Compute the 2s10s spread and note when it changed direction.
+3. Compare the US–German 2-year spread with EUR/USD. Do they move together over your window?
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea       | Detail                                                |
+| ---------- | ----------------------------------------------------- |
+| Curve      | Yields across maturities; 2s10s is the slope          |
+| Inversion  | 2-year above 10-year: policy rates priced lower later |
+| Real yield | Nominal minus breakeven inflation                     |
+| FX link    | Rate differentials, mainly the 2-year                 |
+| Use        | Context for currencies, gold and stocks, not a timer  |
+
+---
+
+## Related Topics
+
+- [Introduction to Intermarket Analysis](/en/intermarket/introduction)
+- [Gold, the Dollar and Bonds](/en/intermarket/gold-dollar-bonds)
+- [DXY and Major Pairs](/en/intermarket/dxy-correlation)
+- [Risk-On / Risk-Off](/en/intermarket/risk-on-risk-off)
