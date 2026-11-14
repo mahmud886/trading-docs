@@ -32,3 +32,13 @@ Every lesson has a dark/light chart pair, an MP4 explainer, a synthetic-data cal
 ## Deploy
 
 Vercel deploys were turned off because storage was full. Turn them back on only after checking usage against the figures above. Pushing to `main` triggers a deploy once it is on.
+
+## Code layout
+
+- `lib/data/glossary/`: glossary terms and categories (EN/BN split). `components/glossary/` renders them; the page is a server component that passes one language.
+- `app/[lang]/(content)/tools/<tool>/`: `page.tsx` (thin server page), `<tool>-tool.tsx` (client UI), `<tool>-data.ts` (static data/helpers where the tool has any).
+- `lib/tools/`: pure calculation functions (position size, risk/reward, margin) with no React.
+- `components/home/`: one component per home page section.
+- `hooks/`: `useNow` (ticking clock, SSR-safe), `useMounted`.
+- `scripts/`: only active scripts; old content generators are in `scripts/legacy/` (ignored by lint/prettier).
+- `npm run build` no longer rewrites files; run `npm run format` yourself.
