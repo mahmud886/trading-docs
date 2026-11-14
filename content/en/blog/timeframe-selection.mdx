@@ -1,240 +1,124 @@
 ---
-title: "Timeframe Selection: Which Chart Should You Trade?"
-description: "Master multi-timeframe analysis. Learn which timeframe to trade, how to combine them, and why trading multiple timeframes increases your edge."
+title: "Choosing a Timeframe — Match It to Your Time, Costs and Temperament"
+description: "How to pick the timeframe you trade: your available time, how the spread compares with your stop (a 1-pip spread costs 0.2R on a 5-pip stop but 0.05R on a 20-pip stop), the noise at lower timeframes, a pairing for higher-timeframe context, and a simple trial method."
 date: "2026-05-07"
 author: "Trading Docs"
 category: "Technical Analysis"
 tags: ["timeframe", "analysis", "strategy", "multi-timeframe"]
-readingTime: 8
+readingTime: 7
 featured: false
 ---
 
-## The Timeframe Dilemma
+There is no best timeframe, only the one that fits **your schedule, your costs and your temperament**. Lower timeframes offer more trades but more noise and a larger share of each trade lost to costs; higher timeframes offer fewer, slower trades and need wider stops.
 
-You open your charting software and see 20+ timeframe options:
-
-1 minute, 5 minute, 15 minute, 30 minute, 1 hour, 4 hour, daily, weekly, monthly...
-
-**Which one should you trade?**
-
-Here's the truth: **There is no "best" timeframe.** But there IS a best timeframe **for you** and your **trading style**.
-
-Choose wrong, and you'll either:
-
-- Scalp on the daily (too slow, you'll get bored and make mistakes)
-- Swing trade on the 1-minute (too much noise, you'll go broke)
+<Callout type="warning" title="Corrected and toned down">
+  The original ranked timeframes by profitability and gave win rates for each. No such ranking is established: results
+  depend on the trader, the pair and the period. This version shows the arithmetic that actually differs between
+  timeframes (cost as a share of risk) and a way to test your own choice.
+</Callout>
 
 ---
 
-## The Three Timeframe Categories
+## Four Trading Styles
 
-### Scalping Timeframes (1M, 5M, 15M)
+| Style           | Typical chart  | Holding time                        | Typical stop (EUR/USD) | Attention needed           |
+| --------------- | -------------- | ----------------------------------- | ---------------------- | -------------------------- |
+| **Scalping**    | 1m – 5m        | Minutes                             | 3 – 8 pips             | Constant, during sessions  |
+| **Day trading** | 5m – 1H        | Hours, closed by the end of the day | 10 – 30 pips           | Several hours a day        |
+| **Swing**       | 4H – daily     | Days to weeks                       | 40 – 100 pips          | Checks once or twice a day |
+| **Position**    | Daily – weekly | Weeks to months                     | 100+ pips              | Occasional                 |
 
-**What they are:** Very short-term, fast-moving, hundreds of trades per day
+These are common ranges, not rules. See [Intraday](/en/price-action/intraday), [Scalping](/en/price-action/scalping) and [Swing Trading](/en/price-action/swing-trading).
 
-**Pros:**
+### The Chart
 
-- Quick trades (5 minutes to 1 hour)
-- Potential for many pips per day
-- See results immediately
+![A synthetic intraday EUR/USD chart with session blocks and a fair value gap entry](/images/price-action/intraday/intraday-fvg-sessions-dark.webp)
 
-**Cons:**
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/intraday-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-- High spreads/commissions eat your profits
-- Extreme stress and attention required
-- Slippage is brutal during news
-- Psychological burnout common
-
-**Best for:** Full-time traders with nerves of steel
-
-**Reality:** 95% of scalpers lose money. Spreads kill the edge.
-
----
-
-### Swing Timeframes (1H, 4H)
-
-**What they are:** Medium-term, hold trades 1 day to 1 week
-
-**Pros:**
-
-- Balanced: enough time for setups to work
-- Fewer trades = less stress
-- Less noise (clearer signals)
-- Good R:R possible
-
-**Cons:**
-
-- Overnight risk (gaps)
-- Need to watch during London/NY sessions
-- Can be boring for action junkies
-
-**Best for:** Part-time traders, professionals, consistency-focused traders
-
-**Reality:** Most consistently profitable traders use 1H or 4H
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Intraday Price Action](/en/price-action/intraday).)
+</Callout>
 
 ---
 
-### Position/Trend Timeframes (Daily, Weekly, Monthly)
+## Costs Decide More Than You Think
 
-**What they are:** Long-term, hold trades 1 week to months
+A spread of 1 pip costs the same in pips on every timeframe, but a very different share of your **risk**:
 
-**Pros:**
+| Stop distance | Cost of a 1-pip spread in R |
+| ------------- | --------------------------- |
+| 5 pips        | 0.20R                       |
+| 10 pips       | 0.10R                       |
+| 20 pips       | 0.05R                       |
+| 50 pips       | 0.02R                       |
 
-- Large moves = large profits per trade
-- Less stress (few trades per week)
-- Can trade part-time or even check charts once daily
-- Spreads don't matter much on large moves
-
-**Cons:**
-
-- Large drawdowns (trades can go against you for weeks)
-- Need discipline not to panic-exit
-- Fewer trades = need high win rate
-- Requires fundamental analysis knowledge
-
-**Best for:** Long-term investors, patient traders, full-time jobs
-
-**Reality:** Trend traders often make the biggest absolute $ amounts
+With a 5-pip stop, a system needs an edge larger than 0.2R per trade just to break even on spread alone; with a 50-pip stop the same spread is a rounding error. Slippage adds to this at fast moments. See [Expectancy Formula](/en/quantitative/expectancy-formula) for how costs reduce expectancy.
 
 ---
 
-## How to Choose YOUR Trading Timeframe
+## Choosing and Testing
 
-### Question 1: How Much Time Can You Dedicate?
+| Step | What to do                                                                      |
+| ---- | ------------------------------------------------------------------------------- |
+| 1    | List the hours per day you can **actually** watch the chart                     |
+| 2    | Pick the style whose holding time fits those hours                              |
+| 3    | Add one higher timeframe for direction (about 4 to 6 times the entry timeframe) |
+| 4    | Trade it on a demo or at small size for 50 trades and log R, costs and stress   |
+| 5    | Change only one thing at a time (timeframe, pair or rules)                      |
 
-```
-Full-time, watching charts all day  →  1M-15M (scalping)
-Part-time, check charts 2-3×/day   →  1H-4H (swing trading)
-Check charts once per day           →  Daily (position trading)
-Check charts 2-3× per week          →  Weekly (long-term)
-```
-
-### Question 2: What's Your Personality?
-
-```
-I need excitement & action         →  Shorter timeframes (faster trades)
-I prefer calm & deliberate trades  →  Longer timeframes (fewer decisions)
-I have trouble with patience       →  AVOID daily charts
-I have trouble with stress         →  AVOID 1M charts
-```
-
-### Question 3: What's Your Account Size?
-
-```
-Account Size    | Realistic Timeframe
-$500-$1K        | 1H-4H (smaller timeframes = smaller % moves = easier on account)
-$1K-$5K         | 4H-Daily (more forgiving)
-$5K+            | Daily-Weekly (can afford large moves)
-```
+The [Multi-Timeframe Analysis](/en/blog/multi-timeframe-analysis-complete) post shows how to combine three charts.
 
 ---
 
-## Multi-Timeframe Analysis (The Professional Approach)
+## Example (no chart)
 
-**Instead of choosing ONE timeframe, professionals use THREE:**
-
-### The Pyramid Strategy
-
-```
-DAILY (Trend Direction)
-     ↓
-   4H (Entry Setup)
-     ↓
-   1H (Confirmation)
-```
-
-**How it works:**
-
-1. **Daily Chart** — Is the trend up or down? This is your DIRECTION.
-   - If daily is uptrend: Look for BUYS only
-   - If daily is downtrend: Look for SELLS only
-   - If daily is ranging: Skip it or trade the range
-
-2. **4H Chart** — Where exactly should you enter? Find the PULLBACK.
-   - Wait for price to pullback in the daily trend
-   - On the 4H, wait for support/resistance bounce
-
-3. **1H Chart** — Is it time to enter RIGHT NOW? Final CONFIRMATION.
-   - On the 1H, look for the exact candle signal
-   - Pin bar at 4H support? Enter on 1H confirmation
-
-**Example: Trading EUR/USD**
-
-```
-Step 1: Daily shows CLEAR UPTREND (HH and HL)
-        → Decision: Look for BUYS only
-
-Step 2: 4H shows pullback to previous support level (1.0850)
-        → Price approaching entry zone
-
-Step 3: 1H shows BULLISH PIN BAR at 1.0850
-        → ENTER: Market buy above pin bar close
-        → Stop: Below pin bar low
-        → Target: Daily resistance at 1.0950
-```
-
-This is **professional-grade trading** and it works across all markets.
+You can watch the chart for two hours a day, so you choose 15-minute entries with a 4-hour direction chart. EUR/USD: 4-hour structure bullish; on the 15-minute chart price pulls back and rejects a demand zone. Plan: buy **1.0850**, stop **1.0830** (20 pips), target **1.0890** (40 pips): **1 : 2.0** planned. A 1-pip spread costs 0.05R on that stop; on a 5-pip scalping stop it would cost 0.20R.
 
 ---
 
-## Common Mistakes with Timeframes
+## Common Mistakes
 
-### ❌ Mistake #1: Trading Against the Trend
-
-You're bullish on 1H, but Daily is in downtrend
-→ Result: You go long, market goes down, you lose
-
-**Fix:** Always check the daily trend first. Only trade IN the trend direction.
-
-### ❌ Mistake #2: Mixing Timeframe Signals
-
-4H says buy, 1H says sell, you're confused
-→ Result: You miss the trade or enter poorly
-
-**Fix:** Use the pyramid. Daily = direction, 4H = entry, 1H = confirmation
-
-### ❌ Mistake #3: Too Many Timeframes
-
-You watch 5-minute, 15-minute, hourly, 4-hourly, daily...
-→ Result: Analysis paralysis, conflicting signals, indecision
-
-**Fix:** Use exactly 3 timeframes. Not more, not less.
-
-### ❌ Mistake #4: Trading the Wrong Timeframe for Your Lifestyle
-
-You trade 1M charts but have a day job
-→ Result: You miss critical moments, get stopped out during breaks
-
-**Fix:** Match your timeframe to your schedule
+| Mistake                               | Fix                                             |
+| ------------------------------------- | ----------------------------------------------- |
+| Choosing the timeframe for excitement | Choose it for your schedule and costs           |
+| Scalping with a wide spread           | Compute the spread as a share of the stop first |
+| Changing timeframes after each loss   | Fix it for at least 50 trades                   |
+| Ignoring the higher timeframe         | Add a direction chart                           |
 
 ---
 
-## Quick Timeframe Selection Guide
+## Practice
 
-| Your Situation            | Recommended Timeframe | Why                                |
-| ------------------------- | --------------------- | ---------------------------------- |
-| **Full-time trader**      | 4H-Daily              | Good balance of time & quality     |
-| **Part-time trader**      | 4H                    | Check 2-3 times daily, good setups |
-| **Day job + evenings**    | Daily-Weekly          | Check once after work              |
-| **Very active/impatient** | 1H                    | Faster results, still professional |
-| **Beginner**              | 4H                    | Not too fast, not too slow         |
-| **High stress**           | Daily+                | Fewer decisions, less stress       |
-| **Want big wins**         | Daily+                | Larger moves per trade             |
+1. Write down the hours per day you can really trade.
+2. Compute the cost in R of your usual spread at your usual stop.
+3. Trade one timeframe for 50 demo trades and log the results.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
 ---
 
-## The Honest Truth About Timeframe Selection
+## Summary
 
-**Your edge exists on multiple timeframes.**
+| Idea    | Detail                                                             |
+| ------- | ------------------------------------------------------------------ |
+| Fit     | Choose by schedule, costs and temperament                          |
+| Costs   | A 1-pip spread is 0.20R on a 5-pip stop and 0.05R on a 20-pip stop |
+| Context | Add a direction chart 4 to 6 times higher                          |
+| Test    | Trade it for 50 trades and log the results                         |
 
-What matters isn't the timeframe — it's:
+---
 
-- ✅ Consistency (same setup, same rules)
-- ✅ Discipline (follow your plan)
-- ✅ Matching your lifestyle (don't fight your schedule)
+## Related Topics
 
-**Pick ONE primary timeframe and master it.** Once consistent there, you can expand.
-
-Don't jump between timeframes looking for "the perfect one." The perfect one is the one you'll stick with.
-
-Happy trading! 📊
+- [Intraday Price Action](/en/price-action/intraday)
+- [Swing Trading](/en/price-action/swing-trading)
+- [Multi-Timeframe Analysis](/en/blog/multi-timeframe-analysis-complete)
+- [Expectancy Formula](/en/quantitative/expectancy-formula)
