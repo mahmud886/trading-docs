@@ -1,0 +1,109 @@
+---
+title: "Trading Discipline — Rules, Routines and Limits That Hold Under Pressure"
+description: "A practical guide to discipline in trading: write rules before the session, automate what you can (fixed size, stops, limits), use a daily routine and drawdown-based size reduction, and review honestly, with a worked example of a 1% risk day and a drawdown rule."
+date: "2026-05-19"
+author: "Trading Docs"
+category: "Academy"
+tags: ["psychology", "discipline", "emotions", "mindset", "routine"]
+readingTime: 10
+featured: true
+---
+
+Discipline is not willpower in the moment; it is **decisions made earlier, when you were calm**, and then followed. The more of the plan you fix in advance, the fewer choices you must make while price is moving.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original said psychology is "80% of trading" and promised results from specific habits. No such split is established and habits help people differently. This version focuses on rules you can write and check.
+</Callout>
+
+---
+
+## Make Decisions Before the Session
+
+| Decide in advance              | Example rule                                                  |
+| ------------------------------ | ------------------------------------------------------------- |
+| Which setups you trade         | Two named setups, written with entry, stop and target         |
+| When you trade                 | London open to 7:00 PM BD; no trading around major releases   |
+| How much you risk              | 1% per trade, size from the stop                              |
+| When you stop                  | Daily loss limit 2%, trade cap 3                              |
+| What you do after a streak     | See the drawdown rule below                                   |
+
+### The Chart
+
+![A synthetic equity curve with and without a size-reduction filter during drawdown](/images/quantitative/equity-curve-management/equity-curve-filter-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/ec-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Illustration from the equity-curve lesson (synthetic trades) (From the lesson: [Equity Curve Management](/en/quantitative/equity-curve-management).)
+</Callout>
+
+---
+
+## Reduce Choices
+
+| Instead of…                         | Do this                                                       |
+| ----------------------------------- | ------------------------------------------------------------- |
+| Deciding the stop in the moment     | Place the stop and target orders together with the entry      |
+| Judging size by feel                | Use a position-size calculator (see [Position Sizing](/en/blog/risk-management-position-sizing-masterclass)) |
+| Watching every tick                 | Set alerts at your planned levels and step away               |
+| Remembering the rules               | Keep a written [checklist](/en/blog/trade-execution-checklist) open |
+
+---
+
+## A Drawdown Rule
+
+Discipline needs a plan for when things go badly. One option: **cut risk after a drawdown**, and restore it after recovery.
+
+| Drawdown from equity peak | Risk per trade |
+| ------------------------- | -------------- |
+| 0 – 5%                    | 1.0%           |
+| 5 – 8%                    | 0.5%           |
+| over 8%                   | Pause and review the plan |
+
+Smaller size while losing slows the damage, but it also slows recovery, and in simulation it helps in some sequences and hurts in others (see [Equity Curve Management](/en/quantitative/equity-curve-management)). Decide it in advance and test it, rather than improvising in a bad week.
+
+---
+
+## Example (no chart)
+
+Account 10,000. Rule: 1% risk, daily loss limit 2%, drawdown above 5% halves risk. Monday: buy EUR/USD **1.0850**, stop **1.0830**, target **1.0890** (**1 : 2.0**), 0.5 lot: −1R (−100). Second setup: also −1R. Day at −2%: stop, as written. By Friday the account is at 9,450, a 5.5% drawdown from 10,000, so next week's risk is 0.5% = 47 per trade; for a 20-pip stop the size is 47 ÷ (20 × 10) = **0.24 lot**. None of these were decisions made in the heat of the moment.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Rules written only in your head | Write them down |
+| Changing rules during a losing week | Change them only at the review |
+| No limit on losses per day | Set it before the session |
+| Perfectionism about discipline | Aim to follow the plan most of the time and measure it |
+
+---
+
+## Practice
+
+1. Write your rules on one page with numbers.
+2. Set a daily loss limit and a trade cap in your platform notes.
+3. Track plan adherence for 20 trades.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Discipline | Decisions made in advance, then followed |
+| Reduce choices | Orders, calculators, alerts, checklist |
+| Drawdown rule | Cut size in drawdown, decided beforehand |
+| Review | Measure adherence, change rules only at review |
+
+---
+
+## Related Topics
+
+- [Equity Curve Management](/en/quantitative/equity-curve-management)
+- [Trade Execution Checklist](/en/blog/trade-execution-checklist)
+- [Trading Psychology: Emotions](/en/blog/trading-psychology-emotions)
+- [Avoiding Overtrading](/en/blog/avoiding-overtrading)
