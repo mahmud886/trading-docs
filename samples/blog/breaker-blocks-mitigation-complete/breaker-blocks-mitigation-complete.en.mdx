@@ -1,0 +1,111 @@
+---
+title: "Breaker Blocks and Mitigation Blocks — A Practical SMC Guide"
+description: "How a failed order block becomes a breaker (after a liquidity sweep and a structure break) or a mitigation block (without the sweep), how to validate each, a step-by-step entry with a structural stop, and the common ways these setups fail."
+date: "2026-05-19"
+author: "Trading Docs"
+category: "SMC"
+tags: ["breaker-blocks", "mitigation", "smc", "order-blocks", "advanced-setup"]
+readingTime: 8
+featured: true
+---
+
+An **order block** is the last opposite candle before a strong move. When price comes back and the block **fails** (price closes through it), it can flip polarity. Smart Money Concepts names two versions: the **breaker block** and the **mitigation block**. They are descriptions of structure, not guarantees.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original treated breakers as "powerful opportunities" and implied reliable outcomes. They are zones where price **may** react; many fail. Claims about who is behind the move ("smart money") are interpretations, so this version sticks to what can be seen on the chart.
+</Callout>
+
+---
+
+## Breaker vs Mitigation Block
+
+| Feature                    | **Breaker block**                                                                 | **Mitigation block**                                                  |
+| -------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Starts as                  | An order block that fails                                                         | An order block that fails                                             |
+| Liquidity sweep first?     | **Yes**: price takes out a prior swing high or low, then reverses                 | **No**: price makes a lower high (or higher low) and then breaks      |
+| Structure break            | Breaks the swing that created the sweep                                           | Breaks the last swing low (bearish case) or high (bullish case)       |
+| Typical reading            | A stronger reversal signal because stops were taken                               | A weaker, continuation-flavoured signal                               |
+
+**Bearish breaker (example)**: price makes a high that sweeps a prior high, drops and breaks the last swing low; the last up-candle before the original rally (the old bullish order block) now sits above price as a zone to **sell** when price returns to it. A bullish breaker is the mirror image. See [Breaker Blocks](/en/smc/breaker-blocks) and [Mitigation Blocks](/en/smc/mitigation-blocks) for worked charts.
+
+### The Chart
+
+![A synthetic bearish breaker block: a bullish order block fails after a liquidity sweep and structure break, and price later returns to the zone](/images/smc/breaker-blocks/bearish-breaker-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/smc/breaker-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching; real breakers are rarely this clean (From the lesson: [Breaker Blocks](/en/smc/breaker-blocks).)
+</Callout>
+
+---
+
+## Validating the Setup
+
+| Check                                      | What you want                                                        |
+| ------------------------------------------ | -------------------------------------------------------------------- |
+| An order block existed before                | A clear last opposite candle before a displacement                   |
+| It failed with displacement                  | A strong close through the block, ideally leaving a fair value gap   |
+| Structure broke                              | A close beyond the relevant swing, not just a wick                   |
+| Higher-timeframe alignment                   | The breaker points the same way as the larger trend, or at a key level |
+| Space to the target                          | At least 2R of room before the next opposing level                   |
+
+Without displacement and a structure break, a flipped block is just a line on the chart.
+
+---
+
+## Entry, Stop and Management
+
+1. Mark the breaker zone (the body, or the full candle on higher timeframes).
+2. Wait for price to **return** to it. Do not chase the break.
+3. On a lower timeframe look for confirmation (a reaction candle, a small structure shift).
+4. Place the stop **beyond the zone and the swing** that defines the setup.
+5. Target the nearest opposing liquidity or level, and take partial profit there.
+
+If price closes through the breaker instead of reacting, the idea is wrong and the stop does its job.
+
+---
+
+## Example (no chart)
+
+EUR/USD, bullish breaker on the 1-hour chart: price sweeps a prior low at **1.0816**, rallies and closes above the last lower high, and the old bearish order block between **1.0838** and **1.0846** becomes support. Plan: buy a return to **1.0842**, stop **1.0826** (below the sweep low and zone), target **1.0890** (the next swing high): risk 16 pips, reward 48, **1 : 3.0** planned. If price closes below **1.0826**, the setup is cancelled.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Treating every flipped block as a breaker | Require a sweep, displacement and a structure break |
+| Entering at the break instead of the return | Wait for the retest and a reaction |
+| Stop inside the zone | Place it beyond the swing that defines the idea |
+| Ignoring higher-timeframe direction | Check the bigger trend and key levels first |
+
+---
+
+## Practice
+
+1. Find five order blocks that failed on your chart and mark whether a sweep came first.
+2. For each, note whether price reacted on the return, and by how many R.
+3. Compare breakers (with a sweep) against mitigation blocks (without).
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Breaker | Failed order block after a liquidity sweep and structure break |
+| Mitigation block | Failed order block without the sweep |
+| Entry | On the return to the zone with confirmation; stop beyond the swing |
+| Caution | Zones where price may react, not guarantees |
+
+---
+
+## Related Topics
+
+- [Breaker Blocks](/en/smc/breaker-blocks)
+- [Mitigation Blocks](/en/smc/mitigation-blocks)
+- [Order Blocks](/en/smc/order-blocks)
+- [Understanding Order Blocks](/en/blog/understanding-order-blocks)
