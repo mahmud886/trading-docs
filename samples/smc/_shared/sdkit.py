@@ -28,3 +28,26 @@ def demand_zone(base):
 def supply_zone(base):
     """Proximal = lowest body of the base, distal = highest wick."""
     return min(min(c.o, c.c) for c in base), max(c.h for c in base)
+
+
+def from_closes(closes, start, *, up=(0.0003, 0.0001), down=(0.0001, 0.0003), override=None, dp=4):
+    """Rows (o, h, l, c) from a close path: open = previous close; wicks (upper, lower) depend on the candle's
+    direction, so a candle that closes at a turn makes the swing. override: {i: dict(h=..., l=...)}."""
+    rows, prev = [], start
+    for i, c in enumerate(closes):
+        wu, wl = up if c > prev else down
+        h, lo = max(prev, c) + wu, min(prev, c) - wl
+        o = {"h": h, "l": lo, **(override or {}).get(i, {})}
+        rows.append(tuple(round(v, dp) for v in (prev, o["h"], o["l"], c)))
+        prev = c
+    return rows
+
+
+def write_rows(path, rows, title, dp=4):
+    import csv as _csv
+    with path.open("w", newline="\n") as f:
+        f.write(f"# {title} (not real prices)\n")
+        w = _csv.writer(f, lineterminator="\n")
+        w.writerow(["i", "open", "high", "low", "close"])
+        for k, r in enumerate(rows):
+            w.writerow([k, *(f"{v:.{dp}f}" for v in r)])
