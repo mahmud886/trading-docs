@@ -1,0 +1,114 @@
+---
+title: "Avoiding Overtrading — A Practical Guide to Protecting Your Account"
+description: "Overtrading means taking trades outside your plan. This guide shows why extra low-quality trades cost more than they earn, the usual causes (FOMO, boredom, revenge), and a set of simple limits: a trade cap, a daily loss limit, a three-strike rule and a checklist gate."
+date: "2026-05-13"
+author: "Trading Docs"
+category: "Academy"
+tags: ["psychology", "discipline", "overtrading", "risk-management", "trading-habits"]
+readingTime: 9
+featured: true
+---
+
+**Overtrading** is trading more than your plan calls for: extra trades, oversized trades, or trades taken for emotional reasons rather than because a setup appeared. It is one of the most common ways accounts lose money even when the underlying strategy works.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original called overtrading "the #1 account killer" and quoted fixed percentages for what institutions do. We found no source for either. What is solid is the arithmetic: every trade pays a cost, and trades with no edge only pay it.
+</Callout>
+
+---
+
+## Why Extra Trades Cost More Than They Earn
+
+Suppose your plan produces about 10 trades a week with an expectancy of **+0.35R** each before costs, and each trade costs **0.10R** (spread and slippage). The week's net result is 10 × (0.35 − 0.10) = **+2.5R**.
+
+Now add 10 more trades a week taken out of boredom or FOMO. Assume (this is an assumption, not a measurement) they have **no edge**, so their gross expectancy is 0R:
+
+| Trades per week          | Gross expectancy | Cost per trade | Net per week          |
+| ------------------------ | ---------------- | -------------- | --------------------- |
+| 10 planned trades        | +0.35R           | 0.10R          | +2.5R                 |
+| + 10 impulsive trades    | 0R               | 0.10R          | −1.0R                 |
+| **Total (20 trades)**    |                  |                | **+1.5R (40% less)**  |
+
+More trades did not mean more profit. The chart below comes from the [Equity Curve Management](/en/quantitative/equity-curve-management) lesson: a simple rule that skips trades while the system is struggling lowered the maximum drawdown in 92% of 1,000 simulated sequences.
+
+### The Chart
+
+![A 300-trade synthetic equity curve with a filter that skips trades while the system is struggling: +19R with a 16R drawdown against +12R and 24R when always trading](/images/quantitative/equity-curve-management/equity-curve-filter-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/ec-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Illustration from another lesson (synthetic trades): skipping trades while a system struggles mostly trims drawdowns (From the lesson: [Equity Curve Management](/en/quantitative/equity-curve-management).)
+</Callout>
+
+---
+
+## The Usual Causes
+
+| Cause                  | What it looks like                                              | Counter                                        |
+| ---------------------- | --------------------------------------------------------------- | ---------------------------------------------- |
+| **FOMO**               | Chasing a move you missed                                       | Write down the next valid setup instead        |
+| **Boredom**            | Clicking because nothing is happening                           | Schedule non-trading time; close the platform  |
+| **Revenge trading**    | Doubling down after a loss                                      | A hard stop after a set number of losses       |
+| **Overconfidence**     | Raising size after a few wins                                   | Keep risk per trade fixed                      |
+| **No clear rules**     | Not knowing what counts as a setup                              | A written checklist (see below)                |
+
+---
+
+## Limits That Work
+
+| Limit                    | Example rule                                                                  | Why it helps                                   |
+| ------------------------ | ----------------------------------------------------------------------------- | ---------------------------------------------- |
+| **Window**               | Trade only your planned window, for example the London open (1:00 PM BD in summer, 2:00 PM in winter) | Fewer, better-chosen hours        |
+| **Trade cap**            | At most 3 trades a day                                                        | Stops volume creeping up                       |
+| **Daily loss limit**     | Stop for the day at −2R                                                       | Caps the damage of a bad day                   |
+| **Three-strike rule**    | Three losses in a row: close the platform for the day                         | Interrupts revenge trading                     |
+| **Checklist gate**       | No entry unless every checklist item is ticked                                | Replaces impulse with rules                    |
+
+These numbers are examples. Choose limits you can follow, write them down before the session, and review them monthly.
+
+---
+
+## Example (no chart)
+
+A plan trade: buy EUR/USD at **1.0850**, stop **1.0830**, target **1.0880**: risk 20 pips, reward 30, **1 : 1.5** planned. The daily limits are 3 trades and −2R. After two stopped trades (−2R) you are done for the day, even if a third setup appears: the cost of one more loss is bigger than the value of one more chance, because your judgement is usually worse after losses.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Setting limits and breaking them | Make the limit mechanical: close the platform, log out |
+| Counting only winners as 'good' trades | Judge a trade by whether it followed the plan |
+| Making up lost R in the same session | Stop at the daily limit; review tomorrow |
+| Ignoring costs on small trades | Costs are paid on every trade, win or lose |
+
+---
+
+## Practice
+
+1. Count your trades per week for a month and mark which ones were in the plan.
+2. Add up the net R of plan trades and of off-plan trades separately.
+3. Write one trade cap and one loss limit you will follow next week.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Overtrading | Trades beyond the plan: extra, oversized or emotional |
+| Arithmetic | No-edge trades only pay costs, so they reduce net result |
+| Limits | Window, trade cap, daily loss limit, three strikes, checklist |
+| Review | Compare plan and off-plan trades in your journal |
+
+---
+
+## Related Topics
+
+- [Equity Curve Management](/en/quantitative/equity-curve-management)
+- [Session Psychology](/en/forex-sessions/session-psychology)
+- [Trading Psychology: Emotions](/en/blog/trading-psychology-emotions)
+- [Trade Execution Checklist](/en/blog/trade-execution-checklist)
