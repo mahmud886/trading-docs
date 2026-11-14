@@ -1,67 +1,121 @@
 ---
-title: "Cause and Effect — Point & Figure Charts"
-description: "Master Wyckoff's Cause and Effect principle using Point & Figure charts. Learn to measure the 'cause' (accumulation/distribution range) to project the 'effect' (price target)."
+title: "Cause and Effect — Complete Guide"
+description: "Wyckoff's second law in practice: why the size of a range is related to the size of the move that follows, how to measure a range's width and height, the measured-move and point-and-figure count as first objectives, why many ranges fail, and how to plan with a stop, with a two-range chart and an animated walkthrough."
 level: expert
 order: 8
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Cause and Effect
+## The Second Law
 
-Master Wyckoff's Cause and Effect principle using Point & Figure charts. Learn to measure the 'cause' (accumulation/distribution range) to project the 'effect' (price target).
+Wyckoff's law of **cause and effect** says that a move (the **effect**) is related to the preparation before it (the **cause**). In practice the cause is a **range**: the longer and wider it is, the more positions were built or sold there, and the more fuel the next trend may have.
 
-<Callout type="info" title="The Foundation of Smart Money">
-  Richard Wyckoff developed his method in the 1930s by studying how JP Morgan, Jesse Livermore, and other "composite
-  operators" manipulated markets. Modern SMC and ICT concepts are DIRECTLY derived from Wyckoff principles.
-  Understanding Wyckoff is understanding the ROOT of institutional trading.
+This is a **rule of thumb**, not an equation. A large range can produce a small move, and many ranges end in failure rather than a measured move.
+
+<Callout type="warning" title="Toned down">
+  The original said "the size of the cause determines the size of the effect" and "accumulation range → markup".
+  "Determines" is too strong: a range is a rough guide to **how far a move could go**, not a guarantee of how far it
+  will. Every objective below is a *first target*, to be planned with a stop.
 </Callout>
 
 ---
 
-## Wyckoff's Three Laws
+## Two Ranges, Two Moves
 
-### 1. Law of Supply and Demand
+![Two synthetic daily examples: a short, narrow range (2.7 points high, 10 bars) followed by a breakout that reaches its 1× measured move at 54.6 and rises 3.8 above the range high; and a long, wide range (5.8 high, 28 bars) followed by a breakout that passes its 1× measured move at 49.7 and rises 12.4 above the range high](/images/wyckoff/cause-effect/cause-effect-ranges-dark.webp)
 
-- Price rises when demand > supply
-- Price falls when supply > demand
-- Balance = range (accumulation or distribution)
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/wyckoff/cause-effect-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### 2. Law of Cause and Effect
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built to illustrate the idea: two separate examples, not one market. In real data the
+  link between range size and follow-through is looser than here.
+</Callout>
 
-- Every move (effect) requires preparation (cause)
-- The size of the cause determines the size of the effect
-- Accumulation range → Markup. Distribution range → Markdown.
-
-### 3. Law of Effort vs Result
-
-- Volume (effort) should confirm price movement (result)
-- Divergence between effort and result = institutional manipulation
-- High volume + no movement = absorption (smart money at work)
+| Measure                          | Short, narrow range         | Long, wide range     |
+| -------------------------------- | --------------------------- | -------------------- |
+| Range height (high − low)        | 2.7                         | 5.8                  |
+| Range width (bars)               | 10                          | 28                   |
+| Cause (height × width)           | ≈ 27                        | ≈ 162                |
+| 1× measured move (high + height) | 54.6                        | 49.7                 |
+| Move above the range high        | +3.8 (reached 1×, not 1.5×) | +12.4 (well past 1×) |
 
 ---
 
-## Practical Application
+## Measuring the Cause
 
-### Identifying Institutional Phase
+1. **Define the range** by its clear high and low (not a single outlier wick).
+2. **Height:** high − low.
+3. **Width:** count the bars (or days) between the first test of the edges and the breakout.
+4. **Measured move:** _objective = range high + range height_ (for a breakout up); _range low − range height_ (down). This is a minimum objective; extended objectives use 1.5× or 2× as stretch targets.
 
-1. Is the market in accumulation, markup, distribution, or markdown?
-2. Where are we within the current phase?
-3. What event comes next in the sequence?
+### The point-and-figure count (simplified)
 
-### Entry Strategy
+Wyckoff traders often use a point-and-figure chart because it counts **columns** in the range rather than time:
 
-- Buy during accumulation (at Spring or LPS)
-- Sell during distribution (at UTAD or LPSY)
-- Confirm with volume analysis (VSA principles)
-- Align with higher timeframe phase
+> objective = count line ± (number of columns in the range × box size × reversal amount)
 
-### Risk Management
+For a chart with **box size 0.5** and a **3-box reversal**, a range of **8 columns** gives 8 × 0.5 × 3 = **12 points**. Added to a count line at the range's middle (here 50.5), the objective would be about **62.5**. The method is a **heuristic** — treat it as a rough target, not a forecast.
 
-- Stop loss below Spring (for longs) or above UTAD (for shorts)
-- Position size based on phase confidence
-- Scale in during confirmation events (SOS, SOW)
+### Example (no chart) — a planned breakout
 
-<Callout type="warning" title="Pattern Recognition Warning">
-  Wyckoff schematics are IDEALIZED templates. Real markets rarely follow them perfectly. Look for the PRINCIPLE behind
-  each event, not the exact visual pattern. Phase identification is more important than event labeling.
-</Callout>
+A stock ranges between **38.1 and 43.9** (height 5.8) for 28 days after a decline. A close above **43.9** on rising volume, and a pullback that holds near **44.0**: buy **44.2**, stop **42.6** (below the pullback low), first objective **49.7** (1× measured move, 43.9 + 5.8), stretch **52.6** (1.5×): risk 1.6, reward to 1× **5.5**, **1 : 3.4** planned. If price closes back below **43.0** on heavy volume, the breakout has failed.
+
+---
+
+## When the Idea Fails
+
+| Situation                              | What it means                                     |
+| -------------------------------------- | ------------------------------------------------- |
+| A long range breaks the _other_ way    | The range was distribution, not accumulation      |
+| A wide range with no volume clues      | Just a range; no reason to expect a measured move |
+| A breakout reaches 0.5× then fails     | Many don't reach the full objective; scale out    |
+| A range inside a strong opposing trend | Often a pause, with the trend resuming            |
+
+---
+
+## Common Mistakes
+
+| Mistake                                   | Fix                                                                                                                                          |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Treating the objective as a promise       | It's a first target; use a stop and scale out                                                                                                |
+| Measuring from an outlier wick            | Use the clear boundaries of the range                                                                                                        |
+| Using the same multiple for every market  | Test your own market and time frame                                                                                                          |
+| Ignoring volume and phase                 | The range must show the evidence of [accumulation](/en/wyckoff/accumulation-schematic) or [distribution](/en/wyckoff/distribution-schematic) |
+| Entering before the breakout is confirmed | Wait for the close and the pullback                                                                                                          |
+
+---
+
+## Practice
+
+1. On five daily charts, measure the height and width of a range that was followed by a breakout.
+2. Compute the 1× measured move and note whether, and when, it was reached.
+3. Compare the follow-through with the range's width and height.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea      | Detail                                                                     |
+| --------- | -------------------------------------------------------------------------- |
+| Law       | A move is related to the preparation (the range) before it                 |
+| Cause     | Range height × width                                                       |
+| Objective | Range high/low ± height (1×); extended 1.5–2×; or a point-and-figure count |
+| Caution   | A rule of thumb; ranges fail; always plan with a stop                      |
+
+---
+
+## Related Topics
+
+- [Introduction to Wyckoff](/en/wyckoff/introduction)
+- [Accumulation Schematic](/en/wyckoff/accumulation-schematic)
+- [Distribution Schematic](/en/wyckoff/distribution-schematic)
+- [Phases and Events](/en/wyckoff/phases-events)
