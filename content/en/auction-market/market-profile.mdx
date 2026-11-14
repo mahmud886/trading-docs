@@ -1,84 +1,117 @@
 ---
 title: "Market Profile — TPO Charts Complete Guide"
-description: "Master Market Profile (Time Price Opportunity) charts. Learn to read TPO distributions, identify balance/imbalance, and understand institutional price acceptance."
+description: "How to read a Market Profile (TPO) chart: one letter per 30-minute period at every price it touched, the point of control, the 70% value area, tails and common shapes, why TPO needs only price and time (so it works on spot forex), and how to use profile levels as references — with a worked chart and an animated walkthrough."
 level: intermediate
 order: 2
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Market Profile
+## What Is Market Profile?
 
-Master Market Profile (Time Price Opportunity) charts. Learn to read TPO distributions, identify balance/imbalance, and understand institutional price acceptance.
+**Market Profile** organises a trading day by **time at price**. The day is cut into periods (usually 30 minutes, labelled A, B, C …). Each period prints its letter at **every price it traded**. Letters pile up where price spent time, and the result is a distribution lying on its side.
 
-<Callout type="info" title="The Auction Process">
-  Markets exist for ONE purpose: to facilitate trade. Price moves UP to find sellers, DOWN to find buyers. When it finds
-  enough of both at a price = fair value (balance). When it can't find enough = price moves until it does (imbalance).
-  This is the entire basis of Auction Market Theory.
+Each letter is a **TPO** (time-price opportunity). Unlike [volume profile](/en/order-flow/volume-profile), a TPO profile needs **no volume data**, only prices and time. That makes it usable on spot forex, where real volume isn't available.
+
+<Callout type="warning" title="Toned down">
+  The original said Market Profile reveals "institutional price acceptance". A TPO chart shows how long price spent at
+  each level, not who traded there. "Acceptance" here just means price lingered.
 </Callout>
 
 ---
 
-## Core AMT Principles
+## Reading a Profile
 
-### Price Discovery
+![A synthetic EUR/USD Market Profile: thirteen half-hour periods A to M; the point of control is 1.0860 with 11 letters; the 70% value area spans 1.0856 to 1.0862; single-letter tails sit at 1.0870 and 1.0850](/images/auction-market/market-profile/tpo-profile-dark.webp)
 
-- Markets constantly "auction" to find prices where both buyers and sellers agree
-- Price moves in one direction until it finds opposing interest
-- The auction process creates predictable patterns
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/auction-market/tpo-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Balance (Rotation)
-
-- When buyers and sellers are evenly matched
-- Price rotates within a range
-- Volume builds at "fair value" (POC)
-- Strategy: Mean reversion, fade extremes
-
-### Imbalance (Trend)
-
-- When one side dominates
-- Price moves directionally to find the opposing side
-- Low volume at intermediate levels (single prints)
-- Strategy: Follow the imbalance, buy pullbacks in trend
-
----
-
-## Practical Framework
-
-### Step 1: Identify Market State
-
-- **Balanced**: Price rotating, building volume in a range
-- **Imbalanced**: Price moving directionally with conviction
-- **Transitioning**: One state shifting to the other
-
-### Step 2: Apply Correct Strategy
-
-- Balance → Fade extremes, target POC
-- Imbalance → Trade with direction, enter on pullbacks
-- Transition → Look for breakout/breakdown confirmation
-
-### Step 3: Use AMT Reference Levels
-
-- Previous session POC, VAH, VAL
-- Initial Balance high/low
-- Single print zones
-- Excess tails (completed auctions)
-
----
-
-## AMT + ICT/SMC Integration
-
-| AMT Concept     | ICT/SMC Equivalent |
-| --------------- | ------------------ |
-| Value Area High | Premium zone       |
-| Value Area Low  | Discount zone      |
-| POC             | Equilibrium        |
-| Single Prints   | FVG / Imbalance    |
-| Excess          | Liquidity sweep    |
-| Poor High/Low   | Resting liquidity  |
-| IB Breakout     | Session expansion  |
-
-<Callout type="warning" title="Complementary Frameworks">
-  AMT tells you WHERE the market is in its auction process. ICT/SMC tells you WHO is driving it and WHEN they'll act.
-  Combining both creates a complete institutional framework — understanding both the mechanism (AMT) and the operator
-  (Smart Money).
+<Callout type="info" title="About this chart">
+  The session is **synthetic**: thirteen half-hour periods with ranges chosen for teaching. Real sessions are messier,
+  and the day's start and end are a choice for 24-hour markets such as forex.
 </Callout>
+
+| Feature                  | Definition                                           | In the chart                            |
+| ------------------------ | ---------------------------------------------------- | --------------------------------------- |
+| **POC** point of control | The price row with the most letters                  | 1.0860, 11 of 13 periods                |
+| **Value area (VA)**      | Rows around the POC holding about 70% of all letters | 1.0856 – 1.0862 (35 of 49 letters, 71%) |
+| **VAH / VAL**            | Top and bottom of the value area                     | 1.0862 / 1.0856                         |
+| **Tails**                | Thin rows at the extremes (one or two letters)       | 1.0870 and 1.0850: one letter each      |
+| **Range**                | The day's high and low                               | 1.0850 – 1.0870 (20 pips)               |
+
+The value area is built outward from the POC, adding the neighbouring row with more letters, until about 70% is covered.
+
+---
+
+## Common Shapes
+
+| Shape                            | Often describes              | Common reading                                              |
+| -------------------------------- | ---------------------------- | ----------------------------------------------------------- |
+| **Round / bell (like this one)** | A balanced day               | Price rotated around the POC; edges are tested and rejected |
+| **Elongated, thin**              | A one-way day                | Little time at each price; price moved quickly              |
+| **Two bulges**                   | A move to a new area mid-day | Two areas of acceptance with a thin zone between            |
+
+Shapes describe what happened. They are a prompt to think about what might happen next, not a forecast.
+
+---
+
+## Using the Levels
+
+| Level                | Typical use                                                                     | Caution                                    |
+| -------------------- | ------------------------------------------------------------------------------- | ------------------------------------------ |
+| **Previous-day POC** | A fair-price reference; magnets only in hindsight                               | Price can trend away from it all day       |
+| **Previous VAH/VAL** | Edges to watch next day: a hold may rotate back inside, a close outside may not | Test with price action; they are not walls |
+| **Tails**            | Prices that were rejected quickly                                               | A tail can be retested and broken          |
+
+### Example (no chart) — a test of the value-area low
+
+The next day opens inside the prior value area and pulls back to **1.0856**. Plan: buy a hold at **1.0857**, stop **1.0854** (below the VAL), target **1.0862** (the VAH): risk 3 pips, reward 5, **1 : 1.7** planned. If price closes below **1.0854** and stays there, the value area has been rejected and the plan is off.
+
+---
+
+## Common Mistakes
+
+| Mistake                                       | Fix                                                                  |
+| --------------------------------------------- | -------------------------------------------------------------------- |
+| Reading TPO counts as volume                  | TPO counts time at price, not contracts                              |
+| Changing the day's start and end between days | Fix one session definition for forex (for example Tokyo to New York) |
+| Treating the POC or VA edges as walls         | They are references; plan for failure                                |
+| Ignoring the shape                            | Compare it with the previous day's shape                             |
+| Mixing 30-minute and 60-minute periods        | Keep one period length so profiles stay comparable                   |
+
+---
+
+## Practice
+
+1. Build a TPO profile for yesterday in your platform (or by hand with 30-minute ranges). Mark the POC, VA and tails.
+2. Count the letters: does the value area hold about 70%?
+3. Next day, note how price behaved at yesterday's VAH, VAL and POC.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea     | Detail                                                      |
+| -------- | ----------------------------------------------------------- |
+| TPO      | One letter per period per price touched: time at price      |
+| POC / VA | The busiest row / the rows holding about 70% of the letters |
+| Tails    | Thin extremes where price spent little time                 |
+| Data     | Price and time only, so it works on spot forex              |
+| Use      | References and context, not walls                           |
+
+---
+
+## Related Topics
+
+- [Introduction to Auction Market Theory](/en/auction-market/introduction)
+- [Value Area](/en/auction-market/value-area)
+- [Initial Balance](/en/auction-market/initial-balance)
+- [Volume Profile](/en/order-flow/volume-profile)

@@ -1,0 +1,109 @@
+---
+title: "Market Profile — TPO Charts Complete Guide"
+description: "How to read a Market Profile (TPO) chart: one letter per 30-minute period at every price it touched, the point of control, the 70% value area, tails and common shapes, why TPO needs only price and time (so it works on spot forex), and how to use profile levels as references — with a worked chart and an animated walkthrough."
+level: intermediate
+order: 2
+lastUpdated: "2026-11-14"
+---
+
+## What Is Market Profile?
+
+**Market Profile** organises a trading day by **time at price**. The day is cut into periods (usually 30 minutes, labelled A, B, C …). Each period prints its letter at **every price it traded**. Letters pile up where price spent time, and the result is a distribution lying on its side.
+
+Each letter is a **TPO** (time-price opportunity). Unlike [volume profile](/en/order-flow/volume-profile), a TPO profile needs **no volume data**, only prices and time. That makes it usable on spot forex, where real volume isn't available.
+
+<Callout type="warning" title="Toned down">
+  The original said Market Profile reveals "institutional price acceptance". A TPO chart shows how long price spent at
+  each level, not who traded there. "Acceptance" here just means price lingered.
+</Callout>
+
+---
+
+## Reading a Profile
+
+![A synthetic EUR/USD Market Profile: thirteen half-hour periods A to M; the point of control is 1.0860 with 11 letters; the 70% value area spans 1.0856 to 1.0862; single-letter tails sit at 1.0870 and 1.0850](/images/auction-market/market-profile/tpo-profile-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/auction-market/tpo-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The session is **synthetic**: thirteen half-hour periods with ranges chosen for teaching. Real sessions are messier,
+  and the day's start and end are a choice for 24-hour markets such as forex.
+</Callout>
+
+| Feature                  | Definition                                                    | In the chart                          |
+| ------------------------ | ------------------------------------------------------------- | ------------------------------------- |
+| **POC** point of control | The price row with the most letters                           | 1.0860, 11 of 13 periods              |
+| **Value area (VA)**      | Rows around the POC holding about 70% of all letters          | 1.0856 – 1.0862 (35 of 49 letters, 71%) |
+| **VAH / VAL**            | Top and bottom of the value area                              | 1.0862 / 1.0856                       |
+| **Tails**                | Thin rows at the extremes (one or two letters)                | 1.0870 and 1.0850: one letter each    |
+| **Range**                | The day's high and low                                        | 1.0850 – 1.0870 (20 pips)             |
+
+The value area is built outward from the POC, adding the neighbouring row with more letters, until about 70% is covered.
+
+---
+
+## Common Shapes
+
+| Shape                        | Often describes                              | Common reading                                            |
+| ---------------------------- | -------------------------------------------- | --------------------------------------------------------- |
+| **Round / bell (like this one)** | A balanced day                           | Price rotated around the POC; edges are tested and rejected |
+| **Elongated, thin**          | A one-way day                                | Little time at each price; price moved quickly            |
+| **Two bulges**               | A move to a new area mid-day                 | Two areas of acceptance with a thin zone between          |
+
+Shapes describe what happened. They are a prompt to think about what might happen next, not a forecast.
+
+---
+
+## Using the Levels
+
+| Level                | Typical use                                                                    | Caution                                    |
+| -------------------- | ------------------------------------------------------------------------------ | ------------------------------------------ |
+| **Previous-day POC** | A fair-price reference; magnets only in hindsight                              | Price can trend away from it all day       |
+| **Previous VAH/VAL** | Edges to watch next day: a hold may rotate back inside, a close outside may not | Test with price action; they are not walls |
+| **Tails**            | Prices that were rejected quickly                                              | A tail can be retested and broken          |
+
+### Example (no chart) — a test of the value-area low
+
+The next day opens inside the prior value area and pulls back to **1.0856**. Plan: buy a hold at **1.0857**, stop **1.0854** (below the VAL), target **1.0862** (the VAH): risk 3 pips, reward 5, **1 : 1.7** planned. If price closes below **1.0854** and stays there, the value area has been rejected and the plan is off.
+
+---
+
+## Common Mistakes
+
+| Mistake                                           | Fix                                                          |
+| ------------------------------------------------- | ------------------------------------------------------------ |
+| Reading TPO counts as volume                      | TPO counts time at price, not contracts                      |
+| Changing the day's start and end between days     | Fix one session definition for forex (for example Tokyo to New York) |
+| Treating the POC or VA edges as walls             | They are references; plan for failure                        |
+| Ignoring the shape                                | Compare it with the previous day's shape                     |
+| Mixing 30-minute and 60-minute periods            | Keep one period length so profiles stay comparable           |
+
+---
+
+## Practice
+
+1. Build a TPO profile for yesterday in your platform (or by hand with 30-minute ranges). Mark the POC, VA and tails.
+2. Count the letters: does the value area hold about 70%?
+3. Next day, note how price behaved at yesterday's VAH, VAL and POC.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea        | Detail                                                                   |
+| ----------- | ------------------------------------------------------------------------ |
+| TPO         | One letter per period per price touched: time at price                   |
+| POC / VA    | The busiest row / the rows holding about 70% of the letters              |
+| Tails       | Thin extremes where price spent little time                              |
+| Data        | Price and time only, so it works on spot forex                           |
+| Use         | References and context, not walls                                        |
+
+---
+
+## Related Topics
+
+- [Introduction to Auction Market Theory](/en/auction-market/introduction)
+- [Value Area](/en/auction-market/value-area)
+- [Initial Balance](/en/auction-market/initial-balance)
+- [Volume Profile](/en/order-flow/volume-profile)
