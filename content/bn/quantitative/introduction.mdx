@@ -1,62 +1,125 @@
 ---
-title: "কোয়ান্টিটেটিভ ট্রেডিং পরিচিতি"
-description: "ট্রেডিংয়ে কোয়ান্টিটেটিভ অ্যাপ্রোচ বুঝুন। সিস্টেম্যাটিক ট্রেডাররা কিভাবে গণিত, পরিসংখ্যান ও সম্ভাব্যতা ব্যবহার করে ধারাবাহিক এজ তৈরি করে শিখুন।"
+title: "Introduction to Quantitative Trading"
+description: "Quantitative (সিস্টেম্যাটিক) ট্রেডিং মানে কী: ট্রেডিং ধারণাকে স্পষ্ট নিয়মে রূপ দেওয়া, তার Expectancy মাপা, আর অনেক ট্রেড জুড়ে বিচার করা — ১০, ৫০, ১০০, ৫০০ ট্রেডের পর একটি ছোট ধনাত্মক Edge কতটা সম্ভাবনায় লাভ দেখায় তার সঠিক হিসাব, ৩০টি Equity পথের সিমুলেশন ও অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: beginner
 order: 1
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Introduction to Quantitative Trading
+## Quantitative Trading কী?
 
-Understand quantitative approaches to trading. Learn how systematic traders use mathematics, statistics, and probability to build consistent edges in the markets.
+**Quantitative (সিস্টেম্যাটিক) ট্রেডিং** মানে পরীক্ষাযোগ্য **স্পষ্ট নিয়ম** থেকে ট্রেড করা: ঠিক কখন এন্ট্রি, Stop ও টার্গেট কোথায়, আর কতটা ঝুঁকি। নিয়ম লিখে রাখা হয় বলে তা অতীত ডেটায় মাপা যায়, আর ফল শেষ কয়েকটি ট্রেডে নয়, অনেক ট্রেড জুড়ে বিচার করা যায়।
 
-<Callout type="info" title="Quantitative Edge">
-  The difference between gambling and trading is QUANTIFICATION. If you cannot express your edge as a number, you don't
-  have an edge — you have a hope. Quantitative methods turn intuition into measurable, repeatable processes.
+<Callout type="warning" title="সংশোধিত ও নরম করা হয়েছে">
+  মূল লেসনে বলা হয়েছিল "আপনার Edge সংখ্যায় প্রকাশ করতে না পারলে আপনার Edge নেই" এবং "ন্যূনতম ১০০+ ট্রেড", "১ SD এর
+  বেশি হলে সাইজ কমান" এর মতো স্থির নিয়ম ছিল। নিয়মভিত্তিক পদ্ধতি কাজের, কিন্তু একটি সংখ্যা Edge এর নিশ্চয়তা নয়, আর কত
+  বড় নমুনা লাগবে তা Edge কত বড় ও ফল কত এলোমেলো তার ওপর নির্ভর করে। পরের লেসনগুলোর থ্রেশহোল্ডকে পরীক্ষার শুরুর বিন্দু
+  ধরুন, মান নয়।
 </Callout>
 
 ---
 
-## Core Principles
+## বিল্ডিং ব্লক
 
-Quantitative trading is built on these foundations:
-
-- **Everything is probability** — no certainty, only statistical edges
-- **Large sample sizes** — individual trades are meaningless, systems matter
-- **Mathematical expectancy** — positive expected value over time
-- **Risk of ruin** — survival first, profits second
-- **Process over outcome** — judge decisions, not results
+| ব্লক                  | যে প্রশ্নের উত্তর দেয়               | লেসন                                                                                                             |
+| --------------------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| **Expectancy**        | গড় ট্রেড ঝুঁকির এককে কত আয় করে?    | [Expectancy Formula](/bn/quantitative/expectancy-formula)                                                        |
+| **পজিশন সাইজিং**      | প্রতিটি ট্রেড কতটা ঝুঁকি নেবে?       | [Kelly Criterion](/bn/quantitative/kelly-criterion)                                                              |
+| **স্ট্র্যাটেজির ধরন** | Mean Reversion নাকি Momentum?        | [Mean Reversion](/bn/quantitative/mean-reversion), [Momentum Factors](/bn/quantitative/momentum-factors)         |
+| **পরীক্ষা**           | যে ডেটায় বানানো হয়নি তাতে কি টেকে? | [Backtesting](/bn/quantitative/backtesting-methodology), [Walk-Forward](/bn/quantitative/walk-forward)           |
+| **পথের ঝুঁকি**        | টানা লোকসান কত খারাপ হতে পারে?       | [Monte Carlo](/bn/quantitative/monte-carlo), [Equity Curve Management](/bn/quantitative/equity-curve-management) |
 
 ---
 
-## Practical Framework
+## কেন ছোট Edge এর বড় নমুনা লাগে
 
-### Step 1: Define Your Edge
+একটি স্ট্র্যাটেজি নিন যা **৪৫%** সময় **+১.৫R** জেতে আর **৫৫%** সময় **−১R** হারে। প্রতি ট্রেডে এর Expectancy
 
-- What is your win rate?
-- What is your average win vs average loss?
-- What is your expectancy per trade?
+> ০.৪৫ × ১.৫ − ০.৫৫ × ১ = **+০.১২৫R**
 
-### Step 2: Size Appropriately
+এটি আসল, ধনাত্মক Edge, কিন্তু প্রতিটি ট্রেডের এলোমেলোভাবের তুলনায় ছোট।
 
-- Use Kelly Criterion or fixed fractional sizing
-- Never risk more than your edge justifies
-- Account for correlation between positions
+![৪৫% জয় +১.৫R ও ৫৫% হার −১R এর একটি স্ট্র্যাটেজির ২০০ ট্রেডে ৩০টি Equity পথের সিমুলেশন, প্রত্যাশিত পথ প্রতি ট্রেডে ০.১২৫R ওঠে; নিচে ধনাত্মক মোট ফলের সঠিক সম্ভাবনা: ১০ ট্রেডে ৫০%, ২০ এ ৫৯%, ৫০ এ ৭১%, ১০০ এ ৮২%, ২০০ এ ৯১% ও ৫০০ এ ৯৯%](/images/quantitative/introduction/quant-law-of-large-numbers-dark.webp)
 
-### Step 3: Validate Statistically
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/quantitative/qi-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-- Minimum 100+ trade sample for significance
-- Out-of-sample testing required
-- Walk-forward validation for robustness
-
-### Step 4: Monitor & Adapt
-
-- Track equity curve vs expected behavior
-- Reduce size during drawdowns beyond 1 SD
-- Pause if strategy degrades beyond 2 SD
-
-<Callout type="warning" title="Overfitting Warning">
-  The #1 killer of quantitative strategies is overfitting — finding patterns in historical noise that don't persist
-  forward. Always use out-of-sample data and walk-forward testing. If a strategy looks "too good" in backtest, it
-  probably IS too good to be true.
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  পথগুলো স্থির সম্ভাবনার স্বাধীন ট্রেডের **সিমুলেশন**। বারগুলো বাইনোমিয়াল বণ্টন থেকে **সঠিক** সম্ভাবনা (৫,০০০-পথের
+  সিমুলেশন কয়েক পয়েন্টের মধ্যে মেলে)। আসল ট্রেডিংয়ে খরচ ও বদলানো পরিস্থিতি যোগ হয়।
 </Callout>
+
+| ট্রেড | মোট ফল ধনাত্মক হওয়ার সম্ভাবনা |
+| ----- | ------------------------------ |
+| ১০    | ৫০%                            |
+| ২০    | ৫৯%                            |
+| ৫০    | ৭১%                            |
+| ১০০   | ৮২%                            |
+| ২০০   | ৯১%                            |
+| ৫০০   | ৯৯%                            |
+
+১০ ট্রেডের পর আসল Edge সহ স্ট্র্যাটেজিও **এগিয়ে থাকার মতোই পিছিয়ে থাকার সম্ভাবনা** রাখে; ১০০ ট্রেডের পরও প্রায় ১৮% সময় পিছিয়ে থাকে। ৩০টি সিমুলেটেড পথের ৬টি সেরে ওঠার আগে শূন্যের ৫R এর বেশি নিচে সময় কাটায়। তাই কয়েকটি ট্রেডে সিস্টেম বিচার করা দুই দিকেই অনির্ভরযোগ্য: ভালো সিস্টেম খারাপ দেখাতে পারে, অকেজো সিস্টেম ভালো দেখাতে পারে।
+
+---
+
+## একটি সিস্টেম্যাটিক ওয়ার্কফ্লো
+
+| ধাপ | কী করবেন                                                                     |
+| --- | ---------------------------------------------------------------------------- |
+| ১   | ধারণাকে নিয়মে লিখুন: এন্ট্রি, Stop, টার্গেট, সাইজ                           |
+| ২   | খরচসহ ঐতিহাসিক ডেটায় Expectancy মাপুন                                       |
+| ৩   | যে ডেটায় নিয়ম বানানো হয়নি তাতে পরীক্ষা করুন                               |
+| ৪   | খারাপ রান কত খারাপ হতে পারে অনুমান করুন (Monte Carlo)                        |
+| ৫   | ছোট সাইজে ট্রেড করুন, প্রতিটি ট্রেড লিখুন, প্রত্যাশিত আচরণের সাথে তুলনা করুন |
+
+### উদাহরণ (চার্ট ছাড়া) — একটি নিয়মসেট
+
+নিয়ম: ভাঙা লেভেলের Retest এ Buy, নিচে **২০ পিপ** Stop, উপরে **৩০ পিপ** টার্গেট: পরিকল্পিত **১ : ১.৫**। এন্ট্রি **1.0850**, Stop **1.0830**, টার্গেট **1.0880**। ৪৫% জয়ের হারে Expectancy +০.১২৫R; ৩৮% জয়ের হারে হবে ০.৩৮ × ১.৫ − ০.৬২ × ১ = −০.০৫R। শুধু পরিকল্পিত অনুপাত সিদ্ধান্ত দেয় না: জয়ের হারও দেয়, আর তা অনুমান করতে নমুনা লাগে।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                            | সমাধান                                                    |
+| ------------------------------ | --------------------------------------------------------- |
+| ১০–২০ ট্রেডে সিস্টেম বিচার     | বড় নমুনা ব্যবহার করুন আর অনিশ্চয়তা জানান                |
+| প্রতি লোকসানের পর নিয়ম বদলানো | শুধু পরিকল্পিত রিভিউতে বদলান                              |
+| খরচ উপেক্ষা                    | স্প্রেড, কমিশন ও স্লিপেজ ধরুন                             |
+| ধনাত্মক সংখ্যাকে Edge ধরা      | যে ডেটায় ফিট করা হয়নি তাতে পরীক্ষা করুন                 |
+| প্রতি ট্রেডে বেশি ঝুঁকি        | [Kelly Criterion](/bn/quantitative/kelly-criterion) দেখুন |
+
+---
+
+## অনুশীলন
+
+1. একটি স্ট্র্যাটেজি এক-দুই বাক্যে স্পষ্ট নিয়মে লিখুন। অন্য কেউ কি সেগুলো প্রয়োগ করে একই ট্রেডে পৌঁছাবে?
+2. আপনার শেষ ৩০ ট্রেড থেকে Expectancy হিসাব করুন। এটি কতটা অনিশ্চিত?
+3. ৪৫% / +১.৫R উদাহরণে ৩৫%, ৪০% ও ৪৫% জয়ের হারে Expectancy হিসাব করুন। কোথায় শূন্য পার হয়?
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা        | বিস্তারিত                                                  |
+| ------------ | ---------------------------------------------------------- |
+| Quantitative | স্পষ্ট, পরীক্ষাযোগ্য নিয়ম থেকে ট্রেডিং                    |
+| Expectancy   | জয়ের হার × গড় জয় − হারের হার × গড় হার, ঝুঁকির এককে     |
+| নমুনার আকার  | ছোট Edge নির্ভরযোগ্যভাবে দেখাতে অনেক ট্রেড লাগে            |
+| ব্লক         | Expectancy, সাইজিং, স্ট্র্যাটেজির ধরন, পরীক্ষা, পথের ঝুঁকি |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Expectancy Formula](/bn/quantitative/expectancy-formula)
+- [Kelly Criterion](/bn/quantitative/kelly-criterion)
+- [Backtesting Methodology](/bn/quantitative/backtesting-methodology)
+- [Monte Carlo Simulations](/bn/quantitative/monte-carlo)
