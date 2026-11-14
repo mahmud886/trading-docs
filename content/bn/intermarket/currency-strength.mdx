@@ -1,60 +1,134 @@
 ---
-title: "কারেন্সি স্ট্রেংথ মিটার মেথডলজি"
-description: "সবচেয়ে শক্তিশালী ও দুর্বল কারেন্সি চিনতে কারেন্সি স্ট্রেংথ মিটার তৈরি ও ব্যবহার করুন। ফরেক্সে সর্বোচ্চ এজের জন্য ইনস্টিটিউশনাল পেয়ারিং মেথডলজি শিখুন।"
+title: "Currency Strength Meter — Methodology"
+description: "Currency Strength Meter কীভাবে বানাবেন ও পড়বেন: প্রতিটি কারেন্সি যে পেয়ারগুলোতে আছে তাদের পরিবর্তনের গড় (Base হলে ধনাত্মক, Quote হলে ঋণাত্মক), কারেন্সি র‍্যাঙ্ক করা, সবচেয়ে শক্তিশালীকে সবচেয়ে দুর্বলের সাথে জোড়া বাঁধা, আর কেন মিটার শুধু যা ঘটেছে তা বর্ণনা করে ও কোন পেয়ার ধরেছেন তার ওপর নির্ভর করে — একটি সিন্থেটিক নয়-পেয়ার উদাহরণ ও অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 8
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Currency Strength Meter Methodology
+## Currency Strength Meter কী?
 
-Build and use a currency strength meter to identify the strongest and weakest currencies. Learn institutional pairing methodology for maximum edge in forex trading.
+প্রতিটি ফরেক্স দাম **দুটি** কারেন্সির তুলনা, তাই একটি পেয়ার বাড়লে কোন কারেন্সি নড়েছে তা বোঝা যায় না। **Currency Strength Meter** তাদের আলাদা করে: প্রতিটি কারেন্সির পরিবর্তন **একাধিক** পেয়ার জুড়ে মাপে, তারপর কারেন্সিগুলোকে সবচেয়ে শক্তিশালী থেকে সবচেয়ে দুর্বল পর্যন্ত র‍্যাঙ্ক করে।
 
-<Callout type="info" title="Institutional Perspective">
-  No hedge fund or institutional desk trades a single instrument in isolation. Understanding intermarket correlations is
-  what separates professional macro traders from retail speculators.
+<Callout type="warning" title="সংশোধিত ও নরম করা হয়েছে">
+  মূল লেসনে একে "সর্বোচ্চ Edge এর জন্য প্রাতিষ্ঠানিক পেয়ারিং পদ্ধতি" বলা হয়েছিল। Strength Meter হলো **সাম্প্রতিক দামের
+  পরিবর্তনের সারাংশ**। এটি যা ঘটেছে তা র‍্যাঙ্ক করে; পরে কী হবে তা বলে না, প্রাতিষ্ঠানিক কৌশলও নয়, আর নিজে থেকে Edge-ও
+  নয়।
 </Callout>
 
 ---
 
-## Key Concepts
+## কীভাবে বানাবেন
 
-This topic covers the essential frameworks that institutional traders use for cross-market analysis and correlation-based trading decisions.
+| ধাপ | কী করবেন                                                                                                                            |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| ১   | কারেন্সি বাছুন (যেমন USD, EUR, GBP, JPY, AUD, CAD, CHF) আর তাদের যুক্ত করা পেয়ার                                                   |
+| ২   | একটি উইন্ডো বাছুন (যেমন ২০ বা ৬০ দিন) আর তাতে প্রতিটি পেয়ারের শতাংশ পরিবর্তন মাপুন                                                 |
+| ৩   | প্রতিটি কারেন্সির জন্য পেয়ারের পরিবর্তনগুলো নিন — **Base হলে ধনাত্মক** (EUR/USD তে EUR) এবং **Quote হলে ঋণাত্মক** (EUR/USD তে USD) |
+| ৪   | গড় করুন: এটাই উইন্ডোতে কারেন্সির Strength                                                                                          |
+| ৫   | র‍্যাঙ্ক করুন। উপর ও নিচের ব্যবধানই আপনি দেখেন                                                                                      |
 
----
-
-## Why This Matters
-
-Understanding intermarket relationships gives you:
-
-- **Early warning signals** before moves happen in your primary market
-- **Confirmation** of your directional bias from correlated assets
-- **Risk management** through correlation-aware position sizing
-- **Edge** that most retail traders completely ignore
+উদাহরণ: EUR/USD ১% বাড়লে ওই পেয়ার থেকে EUR পায় +১ আর USD পায় −১; USD/JPY ২% বাড়লে USD পায় +২ আর JPY পায় −২। কারেন্সির Strength হলো এমন সব অবদানের গড়।
 
 ---
 
-## Practical Application
+## নয়-পেয়ার উদাহরণ
 
-### For Forex Traders
+![৫৯ দিনের নয়টি পেয়ারের সিন্থেটিক দৈনিক ডেটা: AUD প্রথম +৭.৭%, তারপর CAD +৫.০%, EUR +৪.৮%, GBP +৩.৯% ও CHF +৩.৩%, নিচে USD −৫.০% ও JPY −৫.৩%; সবচেয়ে শক্তিশালী ও দুর্বলের পেয়ার AUD/JPY চলেছে +৭.৯%](/images/intermarket/currency-strength/currency-strength-dark.webp)
 
-- Check DXY direction before trading any USD pair
-- Monitor yield differentials for carry trade opportunities
-- Watch VIX for risk sentiment shifts
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/intermarket/cs-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### For Index Traders
-
-- Bond yields lead equity moves by 1-3 days
-- VIX term structure predicts volatility expansion
-- Sector rotation signals come from intermarket flows
-
-### For Commodity Traders
-
-- Real yields drive gold inversely
-- USD strength pressures all commodities
-- Chinese data leads base metals
-
-<Callout type="warning" title="Correlation ≠ Causation">
-  Correlations change over time and can break during crisis periods. Always use correlations as ONE input in your
-  analysis, never as the sole decision factor. Regularly update your correlation matrices.
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  দামগুলো **সিন্থেটিক**: কারেন্সির মূল প্রবণতা থেকে তৈরি নয়টি পেয়ার, তাই র‍্যাঙ্কিংয়ের কারণ জানা। আসল র‍্যাঙ্কিং
+  দ্রুত বদলায়।
 </Callout>
+
+| র‍্যাঙ্ক | কারেন্সি | Strength (৫৯ দিন) |
+| -------- | -------- | ----------------- |
+| ১        | AUD      | +৭.৭%             |
+| ২        | CAD      | +৫.০%             |
+| ৩        | EUR      | +৪.৮%             |
+| ৪        | GBP      | +৩.৯%             |
+| ৫        | CHF      | +৩.৩%             |
+| ৬        | USD      | −৫.০%             |
+| ৭        | JPY      | −৫.৩%             |
+
+সবচেয়ে শক্তিশালী (AUD) বনাম সবচেয়ে দুর্বল (JPY) হলো **AUD/JPY**, যা সময়কালে +৭.৯% চলেছে, উপলব্ধ সবচেয়ে চওড়া ব্যবধান। খেয়াল করুন Strength গুলোর যোগফল শূন্য নয়: কিছু কারেন্সি অন্যদের চেয়ে বেশি পেয়ারে আছে।
+
+---
+
+## ব্যবহার
+
+| ধারণা                | কীভাবে                                                               |
+| -------------------- | -------------------------------------------------------------------- |
+| **পেয়ার শর্টলিস্ট** | আগে শক্তিশালী বনাম দুর্বলের পেয়ারগুলো দেখুন                         |
+| **ট্রেন্ডের দিক**    | দুর্বলের বিপরীতে শক্তিশালী কিনুন; চওড়া ব্যবধানের বিরুদ্ধে লড়বেন না |
+| **ডুপ্লিকেট এড়ান**  | USD একই পাশে থাকা কয়েকটি পেয়ার আসলে একই বাজি                       |
+| **টাইমফ্রেম**        | ছোট ও লম্বা উইন্ডো তুলনা করুন; মতভেদ মানে মুভ বদলাচ্ছে               |
+
+মিটার বলে কোথায় তাকাবেন, কখন ঢুকবেন তা নয়। এন্ট্রি ও Stop এর জন্য নিজের সেটআপ ব্যবহার করুন।
+
+### উদাহরণ (চার্ট ছাড়া) — সবচেয়ে শক্তিশালী বনাম সবচেয়ে দুর্বল
+
+AUD প্রথমে আর JPY শেষে, এবং AUD/JPY পুলব্যাকের পর **105.40** এর কাছে। পরিকল্পনা: **105.40** এ Buy, Stop **104.60**, টার্গেট **107.00**: রিস্ক ৮০ পিপ, রিওয়ার্ড ১৬০, পরিকল্পিত **১ : ২.০**। Strength ব্যবধান অর্ধেকে নামলে এবং AUD/JPY **104.60** এর নিচে Close করলে ভিত্তি দুর্বল, পরিকল্পনা বাতিল।
+
+---
+
+## সীমা
+
+| সীমা                        | বিস্তারিত                                                                                |
+| --------------------------- | ---------------------------------------------------------------------------------------- |
+| পেয়ার Basket এর ওপর নির্ভর | যে কারেন্সি মাত্র একটি পেয়ারে আছে সেটি মূলত ওই পেয়ারের মুভ (এখানে CAD শুধু USD/CAD তে) |
+| পিছিয়ে থাকা                | এটি অতীত পরিবর্তন র‍্যাঙ্ক করে; শক্তিশালী কারেন্সি উল্টাতে পারে                          |
+| অসমান পেয়ার সংখ্যা         | Weight ভিন্ন; নরমালাইজ করুন বা প্রতি কারেন্সিতে সমান পেয়ার ব্যবহার করুন                 |
+| ইভেন্টের দিন                | একটি ডেটা রিলিজ র‍্যাঙ্কিং ওলটপালট করতে পারে                                             |
+| ট্রিগার নয়                 | স্ট্রাকচার ও রিস্ক সীমার সাথে মেলান                                                      |
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                       | সমাধান                                                               |
+| ----------------------------------------- | -------------------------------------------------------------------- |
+| সেটআপ ছাড়া সবচেয়ে শক্তিশালী পেয়ার কেনা | মিটার দিয়ে শর্টলিস্ট করুন, তারপর নিজের এন্ট্রির অপেক্ষা করুন        |
+| Quote কারেন্সির সাইন ভুল করা              | Quote কারেন্সি উল্টো সাইন পায়                                       |
+| খুব কম পেয়ার ব্যবহার                     | প্রতিটি কারেন্সি কয়েকটি পেয়ারে থাকে এমন যথেষ্ট পেয়ার ব্যবহার করুন |
+| তিনটি USD পেয়ারকে তিনটি আলাদা ধারণা ভাবা | এগুলো ঝুঁকি ভাগ করে: একসাথে সাইজ করুন                                |
+| উইন্ডো উপেক্ষা                            | উইন্ডো ঠিক করে রাখুন; দুটি তুলনা করুন                                |
+
+---
+
+## অনুশীলন
+
+1. সাত বা বেশি পেয়ারের শেষ ২০ দিনের দৈনিক Close নিন। উপরের পদ্ধতিতে প্রতিটি কারেন্সির Strength হিসাব করুন।
+2. কারেন্সি র‍্যাঙ্ক করে সবচেয়ে শক্তিশালী বনাম দুর্বলের পেয়ার বাছুন। পরের ৫ দিনে সেটি কী করেছে?
+3. তিনটি ভিন্ন উইন্ডোতে আবার করুন। র‍্যাঙ্কিং বদলায় কি?
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা    | বিস্তারিত                                                   |
+| -------- | ----------------------------------------------------------- |
+| মিটার    | প্রতি কারেন্সির পেয়ার জুড়ে গড় পরিবর্তন (Base +, Quote −) |
+| র‍্যাঙ্ক | সবচেয়ে শক্তিশালী ও দুর্বল পেয়ারের শর্টলিস্ট দেয়          |
+| সীমা     | অতীতমুখী, পেয়ার ও উইন্ডোর ওপর নির্ভর                       |
+| ব্যবহার  | কোথায় তাকাবেন বাছার উপায় — ট্রিগার নয়                    |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [DXY and Major Pairs](/bn/intermarket/dxy-correlation)
+- [Risk-On / Risk-Off](/bn/intermarket/risk-on-risk-off)
+- [Cross-Asset Momentum](/bn/intermarket/cross-asset-momentum)
+- [Introduction to Intermarket Analysis](/bn/intermarket/introduction)

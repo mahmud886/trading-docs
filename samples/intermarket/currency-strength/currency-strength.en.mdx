@@ -1,0 +1,126 @@
+---
+title: "Currency Strength Meter — Methodology"
+description: "How to build and read a currency strength meter: averaging each currency's change across the pairs it appears in (positive as base, negative as quote), ranking the currencies, pairing the strongest with the weakest, and why a meter only describes what has already happened and depends on which pairs you include — with a synthetic nine-pair example and an animated walkthrough."
+level: intermediate
+order: 8
+lastUpdated: "2026-11-14"
+---
+
+## What Is a Currency Strength Meter?
+
+Every forex price compares **two** currencies, so a pair rising doesn't tell you which currency moved. A **currency strength meter** separates them: it measures each currency's change across **several** pairs, then ranks the currencies from strongest to weakest.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original called this "institutional pairing methodology for maximum edge". A strength meter is a **summary of
+  recent price changes**. It ranks what has already happened; it does not predict what comes next, and it isn't an
+  institutional technique or an edge by itself.
+</Callout>
+
+---
+
+## How to Build One
+
+| Step | What to do                                                                                              |
+| ---- | ------------------------------------------------------------------------------------------------------- |
+| 1    | Choose the currencies (for example USD, EUR, GBP, JPY, AUD, CAD, CHF) and the pairs that link them     |
+| 2    | Choose a window (for example 20 or 60 days) and measure each pair's percent change over it             |
+| 3    | For each currency, take the pair changes **with a plus sign when it is the base** (EUR in EUR/USD) and **a minus sign when it is the quote** (USD in EUR/USD) |
+| 4    | Average them: that is the currency's strength over the window                                           |
+| 5    | Rank. The gap between the top and bottom is the spread you look at                                      |
+
+Example: if EUR/USD rises 1%, EUR gets +1 and USD gets −1 from that pair; if USD/JPY rises 2%, USD gets +2 and JPY gets −2. A currency's strength is the average of all such contributions.
+
+---
+
+## A Nine-Pair Example
+
+![Synthetic daily data for nine pairs over 59 days: AUD ranks first at +7.7%, then CAD +5.0%, EUR +4.8%, GBP +3.9% and CHF +3.3%, with USD at −5.0% and JPY at −5.3% at the bottom; the pair of the strongest and weakest, AUD/JPY, moved +7.9%](/images/intermarket/currency-strength/currency-strength-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/intermarket/cs-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The prices are **synthetic**: nine pairs generated from underlying currency drifts, so the ranking has a known cause.
+  Real rankings change quickly.
+</Callout>
+
+| Rank | Currency | Strength (59 days) |
+| ---- | -------- | ------------------ |
+| 1    | AUD      | +7.7%              |
+| 2    | CAD      | +5.0%              |
+| 3    | EUR      | +4.8%              |
+| 4    | GBP      | +3.9%              |
+| 5    | CHF      | +3.3%              |
+| 6    | USD      | −5.0%              |
+| 7    | JPY      | −5.3%              |
+
+The strongest (AUD) against the weakest (JPY) is **AUD/JPY**, which moved +7.9% in the period, the widest spread available. Note that the strengths don't sum to zero: some currencies appear in more pairs than others.
+
+---
+
+## Using It
+
+| Idea                                     | How                                                                           |
+| ---------------------------------------- | ----------------------------------------------------------------------------- |
+| **Shortlist pairs**                      | Look at pairs of strong against weak first                                    |
+| **Direction of the trend**               | Buy the strong against the weak; avoid fighting a wide spread                 |
+| **Avoid duplicates**                     | Several pairs with USD on the same side are the same bet                      |
+| **Time frames**                          | Compare a short window with a long one; disagreement means the move is changing |
+
+The meter tells you where to look, not when to enter. Use your own setup for entries and stops.
+
+### Example (no chart) — strongest against weakest
+
+AUD ranks first and JPY last, and AUD/JPY trades near **105.40** after a pullback. Plan: buy **105.40**, stop **104.60**, target **107.00**: risk 80 pips, reward 160, **1 : 2.0** planned. If the strength spread narrows to half its value and AUD/JPY closes below **104.60**, the premise has weakened and the plan is off.
+
+---
+
+## Limits
+
+| Limit                                       | Detail                                                                    |
+| ------------------------------------------- | ------------------------------------------------------------------------- |
+| Depends on the pair basket                  | A currency in only one pair is mostly that pair's move (CAD here appears only in USD/CAD) |
+| Lagging                                     | It ranks past changes; strong currencies can reverse                      |
+| Unequal pair counts                         | Weights differ; normalise or use the same number of pairs per currency   |
+| Event days                                  | One data release can reorder the ranking                                  |
+| Not a trigger                               | Pair it with structure and risk limits                                    |
+
+---
+
+## Common Mistakes
+
+| Mistake                                         | Fix                                                        |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| Buying the strongest pair with no setup         | Use the meter to shortlist, then wait for your entry       |
+| Getting the sign wrong for quote currencies     | Quote currency gets the opposite sign                      |
+| Using too few pairs                             | Use enough pairs that each currency appears in several     |
+| Trading three USD pairs as three separate ideas | They share risk: size them together                        |
+| Ignoring the window                             | State and keep the window; compare two                     |
+
+---
+
+## Practice
+
+1. Take the last 20 days of daily closes for seven or more pairs. Compute each currency's strength by the method above.
+2. Rank the currencies and pick the pair of strongest against weakest. What did it do over the next 5 days?
+3. Repeat on three different windows. Does the ranking change?
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                                    |
+| ---------------- | ------------------------------------------------------------------------- |
+| Meter            | Average change per currency across its pairs (base +, quote −)            |
+| Rank             | Strongest and weakest give a shortlist of pairs                           |
+| Limits           | Backward-looking, depends on pairs and window                             |
+| Use              | A way to choose where to look — not a trigger                             |
+
+---
+
+## Related Topics
+
+- [DXY and Major Pairs](/en/intermarket/dxy-correlation)
+- [Risk-On / Risk-Off](/en/intermarket/risk-on-risk-off)
+- [Cross-Asset Momentum](/en/intermarket/cross-asset-momentum)
+- [Introduction to Intermarket Analysis](/en/intermarket/introduction)
