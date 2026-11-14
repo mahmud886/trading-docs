@@ -1,142 +1,153 @@
 ---
-title: "Price Action-এ Volume Analysis — সম্পূর্ণ গাইড"
-description: "Price Action Trading-এ Volume Analysis আয়ত্ত করুন। Volume কীভাবে Breakout Confirm করে, Institutional Activity প্রকাশ করে, Pattern Validate করে ও Trade Confidence বাড়ায় শিখুন।"
+title: "প্রাইস অ্যাকশনে ভলিউম — সম্পূর্ণ গাইড"
+description: "প্রাইস অ্যাকশনের সাথে Volume ব্যবহার করুন: মূল নিয়ম (Volume প্রাইস নিশ্চিত করে), Breakout নিশ্চিতকরণ, ট্রেন্ডের স্বাস্থ্য, Key Level আর Sweep এ Volume, Accumulation আর Distribution এর সূত্র, Volume Divergence, আর Forex এ Tick Volume এর সীমাবদ্ধতা — ব্যর্থ আর নিশ্চিত Breakout তুলনার চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 19
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Price Action-এ Volume কেন গুরুত্বপূর্ণ
+## Volume কেন গুরুত্বপূর্ণ
 
-Volume প্রতিনিধিত্ব করে একটি Period-এ **কতগুলো Contract/Share Trade হয়েছে**। এটি আপনাকে বলে Price Move-এর পেছনে Conviction কতটা। High Volume-সহ Breakout সম্ভবত সত্যিকার; Low Volume-সহ Breakout সম্ভবত ব্যর্থ হবে।
+প্রাইস দেখায় **কী** হয়েছে। Volume দেখায় এর পেছনে **কতটা অংশগ্রহণ** ছিল। বেশি Volume এর Move এর পেছনে অনেক ট্রেডার ছিল; কম Volume এ একই Move হয়তো টিকবে না।
 
-<Callout type="info" title="Volume = Conviction">
-  Price দেখায় কী ঘটেছে। Volume দেখায় অংশগ্রহণকারীরা কতটা COMMITTED ছিল। High Volume = Strong Hand (Institution) জড়িত।
-  Low Volume = Weak Hand (Retail) Price সরাচ্ছে।
+---
+
+## মূল নিয়ম
+
+| প্রাইস Move     | Volume | পাঠ                                   |
+| --------------- | ------ | ------------------------------------- |
+| Breakout        | বেশি   | আসল অংশগ্রহণ; টেকার সম্ভাবনা বেশি     |
+| Breakout        | কম     | কম আগ্রহ; ব্যর্থ হওয়ার সম্ভাবনা বেশি |
+| ট্রেন্ড Impulse | বাড়ছে | স্বাস্থ্যকর ট্রেন্ড                   |
+| ট্রেন্ড Impulse | কমছে   | ট্রেন্ডের জ্বালানি কমছে               |
+| পুলব্যাক        | কম     | স্বাস্থ্যকর বিরতি                     |
+| পুলব্যাক        | বেশি   | সম্ভাব্য Reversal                     |
+
+---
+
+## কোন Breakout এ জ্বালানি আছে
+
+![Tick Volume সহ EUR/USD 1H: 1.0940 এর প্রথম ভাঙন ৯০০ তে (গড় ১,২৮০ এর নিচে) ব্যর্থ; দ্বিতীয় ভাঙন ৩,২০০ তে (গড়ের ২.৫ গুণ) টেকে; শান্ত Retest এ 1.0947 এ Buy, Stop 1.0928, টার্গেট 1.0985](/images/price-action/volume/volume-breakout-confirmation-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/volume-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেল আর Tick Volume **সিন্থেটিক**, ধারণাটা দেখাতে তৈরি। এগুলো আসল প্রাইস বা Volume নয়। R:R হলো পরিকল্পিত
+  রিস্ক-রিওয়ার্ড, ফলাফল নয়।
 </Callout>
 
----
+| ঘটনা       | 1.0940 এর উপরে Close? | Tick Volume                 | ফল                          |
+| ---------- | --------------------- | --------------------------- | --------------------------- |
+| **ভাঙন ১** | হ্যাঁ                 | **৯০০** (গড় ১,২৮০ এর নিচে) | পরের ক্যান্ডেলেই ভিতরে ফেরে |
+| **ভাঙন ২** | হ্যাঁ                 | **৩,২০০** (গড়ের ২.৫ গুণ)   | টেকে                        |
+| **Retest** | উপরে টেকে             | **১,০৫০** (শান্ত)           | এন্ট্রি                     |
 
-## Volume নীতিমালা
+| লেভেল   | প্রাইস      | নোট                              |
+| ------- | ----------- | -------------------------------- |
+| এন্ট্রি | 1.0947      | ভাঙন ২ এর পর শান্ত Retest        |
+| Stop    | 1.0928      | রেঞ্জের ভিতরে                    |
+| টার্গেট | 1.0985      | রেঞ্জের উচ্চতা প্রক্ষেপ (প্রায়) |
+| **R:R** | **১ : ২.০** | রিস্ক ১৯ পিপ, রিওয়ার্ড ৩৮ পিপ   |
 
-### মূল নিয়ম:
-
-| নীতি                              | অর্থ                                             |
-| --------------------------------- | ------------------------------------------------ |
-| **Volume Direction Confirm করে**  | শক্তিশালী Move-এ Volume বাড়া উচিত               |
-| **Volume Price-এর আগে আসে**       | Move-এর আগে প্রায়ই Volume বাড়ে                 |
-| **Volume Breakout Validate করে**  | সত্যিকার Breakout-এ High Volume থাকে             |
-| **Volume Divergence সতর্ক করে**   | Price নতুন High + Volume কমছে = দুর্বলতা         |
-| **Low Volume = Consolidation**    | Market বিশ্রাম নিচ্ছে, পরবর্তী Move-এর প্রস্তুতি |
-| **Climactic Volume = Exhaustion** | চরম Volume Spike Reversal-এর Signal হতে পারে     |
-
----
-
-## Volume ও Price Action Signal
-
-### Breakout Confirmation:
-
-```
-VALID BREAKOUT:
-- Price Key Level ভাঙে ✓
-- Volume Average-এর 2-3× ✓
-- Level-এর বাইরে Full Candle Body ✓
-- পরবর্তী Candle-এ Follow-through ✓
-→ HIGH PROBABILITY CONTINUATION
-
-INVALID BREAKOUT (Fakeout):
-- Price Key Level ভাঙে ✓
-- Volume Average-এর নিচে ✗
-- ভিতরে ফিরে লম্বা Wick ✗
-- Follow-through নেই ✗
-→ সম্ভবত ব্যর্থ — সম্ভাব্য Reversal Trade
-```
-
-### Trend Confirmation:
-
-| দৃশ্য                     | Volume আচরণ              | অর্থ          |
-| ------------------------- | ------------------------ | ------------- |
-| Uptrend + Volume বাড়ছে   | শক্তিশালী Bull Control   | Long-এ থাকুন  |
-| Uptrend + Volume কমছে     | Bull Conviction হারাচ্ছে | সতর্কতা       |
-| Downtrend + Volume বাড়ছে | শক্তিশালী Bear Control   | Short-এ থাকুন |
-| Downtrend + Volume কমছে   | Bear Conviction হারাচ্ছে | সতর্কতা       |
+Breakout এ বেশি Volume আর পুলব্যাকে কম Volume — এই জুটিটাই খুঁজবেন।
 
 ---
 
-## Key Level-এ Volume
+## Key Level এ Volume
 
-### Support/Resistance:
-
-- S/R-এ **High Volume Rejection** = Level শক্তিশালী, Bounce আশা করুন
-- S/R-তে **Low Volume Approach** = Level সম্ভবত ভাঙবে
-- S/R দিয়ে **High Volume Break** = প্রকৃত Breakout
-- S/R-এ **Climactic Volume** = সম্ভাব্য Exhaustion/Reversal
-
-### Liquidity Sweep:
-
-- Sweep Candle-এ **Volume Spike** Institutional Activity Confirm করে
-- Sweep-এর পর **Volume স্বাভাবিক হয়** = Hunt সম্পন্ন
-- High-volume Sweep-এর পর Reversal Trade করুন
+- **Support/Resistance এ:** বেশি Volume এ Rejection দেখায় লেভেলটা রক্ষা করা হচ্ছে; কমে আসা Volume এ ধীরে লেভেলের দিকে যাওয়া প্রায়ই ভাঙনের আগে আসে।
+- **Sweep এ:** লেভেলের ওপারে গিয়ে ভিতরে ফিরে Close করার সময় Volume এর লাফ দেখায় Stop গুলো Trigger হয়ে শোষিত হয়েছে।
 
 ---
 
-## Volume Pattern
+## Accumulation আর Distribution এর সূত্র
 
-### Accumulation (Smart Money কিনছে):
+| পর্ব             | Volume এর সূত্র          | প্রাইসের সূত্র             |
+| ---------------- | ------------------------ | -------------------------- |
+| **Accumulation** | নামার Move এ বেশি Volume | কিন্তু নতুন Low নেই (শোষণ) |
+| **Distribution** | ওঠার Move এ বেশি Volume  | কিন্তু নতুন High নেই       |
 
-```
-1. Price Range/Downtrend-এ
-2. DOWN Move-এ Volume বাড়ে (Bearish মনে হয়)
-3. কিন্তু Price নতুন Low করে না (Absorption)
-4. অবশেষে: Upside-এ Explosive Breakout
-
-ব্যাখ্যা: Institution Selling Pressure-এ কিনছে
-Action: Bullish Breakout-এর জন্য প্রস্তুত
-```
-
-### Distribution (Smart Money বিক্রি করছে):
-
-```
-1. Price Range/Uptrend-এ
-2. UP Move-এ Volume বাড়ে (Bullish মনে হয়)
-3. কিন্তু Price নতুন High করে না (Distribution)
-4. অবশেষে: Downside-এ Explosive Breakdown
-
-ব্যাখ্যা: Institution Buying Pressure-এ বিক্রি করছে
-Action: Bearish Breakdown-এর জন্য প্রস্তুত
-```
+দুটোই প্রায়ই রেঞ্জ থেকে শক্তিশালী Move দিয়ে শেষ হয়। দেখুন [Accumulation](/bn/smc/accumulation) আর [Distribution](/bn/smc/distribution)।
 
 ---
 
 ## Volume Divergence
 
-### Bearish Volume Divergence:
+| Divergence  | প্রাইস      | Volume                      | অর্থ                  |
+| ----------- | ----------- | --------------------------- | --------------------- |
+| **Bearish** | Higher High | প্রতিটি ধাক্কায় Lower High | Rally র অংশগ্রহণ কমছে |
+| **Bullish** | Lower Low   | প্রতিটি নামায় কমছে         | বিক্রি শুকিয়ে আসছে   |
 
-- Price: Higher High করছে
-- Volume: Lower High করছে
-- অর্থ: Trend Conviction হারাচ্ছে → সম্ভাব্য Reversal
-
-### Bullish Volume Divergence:
-
-- Price: Lower Low করছে
-- Volume: Lower Low করছে (Selling শুকিয়ে যাচ্ছে)
-- অর্থ: Selling Exhausted → সম্ভাব্য Reversal Up
+Divergence সতর্কবার্তা, এন্ট্রি নয়। পদক্ষেপ নেওয়ার আগে Structure ভাঙার অপেক্ষা করুন।
 
 ---
 
-## Forex-এ Volume-এর সীমাবদ্ধতা
+## Forex এ Volume
 
-<Callout type="warning" title="Forex Volume নোট">
-  Forex-এ প্রকৃত Volume পাওয়া যায় না (Decentralized Market)। Broker যা দেখায় তা Tick Volume (Price Change-এর সংখ্যা)।
-  পুরোপুরি না হলেও Tick Volume প্রকৃত Volume-এর সাথে ~৯০% Correlate করে এবং Confirmation-এর জন্য এখনো উপকারী।
+<Callout type="warning" title="স্পষ্ট করা: Tick Volume">
+  Spot Forex এর কোনো কেন্দ্রীয় এক্সচেঞ্জ নেই, তাই আসল মার্কেট Volume নেই। Broker রা দেখায় **Tick Volume**: প্রতিটি
+  ক্যান্ডেলে প্রাইস কতবার বদলেছে, সেই Broker এর ফিড থেকে। মূল লেসনে বলা হয়েছিল Tick Volume "আসল Volume এর সাথে ~৯০%
+  মেলে"। গবেষণায় Tick আর Futures Volume প্রায়ই একসাথে চলতে দেখা গেছে, কিন্তু সংখ্যাটা Broker, পেয়ার আর সময় অনুযায়ী
+  বদলায়, তাই Tick Volume কে মোটামুটি গাইড হিসেবে দেখুন।
 </Callout>
+
+| মার্কেট                                      | যে Volume পাওয়া যায় |
+| -------------------------------------------- | --------------------- |
+| Stock, Futures (Currency আর Gold Futures সহ) | আসল এক্সচেঞ্জ Volume  |
+| Crypto (প্রতি এক্সচেঞ্জ)                     | এক্সচেঞ্জ Volume      |
+| Spot Forex                                   | শুধু Tick Volume      |
+
+টিপস: EUR/USD বা Gold এর জন্য Futures কন্ট্র্যাক্টের Volume মিলিয়ে দেখা যায়।
+
+### উদাহরণ (চার্ট ছাড়া) — Gold Breakout
+
+NY ওপেনে (গ্রীষ্মে প্রায় **সন্ধ্যা ৭:৩০ BD**) Gold **2,400** Resistance এর উপরে ভাঙে, Volume তার ২০-ক্যান্ডেলের গড়ের প্রায় ২ গুণ। **2,402** এ Retest আসে কম Volume এ। **2,403** এ Buy, Stop **2,394**, টার্গেট **2,425**: রিস্ক $9, রিওয়ার্ড $22, **R:R ১ : ২.৪** (পরিকল্পিত)।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                 | সমাধান                                                   |
+| ----------------------------------- | -------------------------------------------------------- |
+| প্রাইস ছাড়া Volume পড়া            | Volume একটা প্রাইস সিগন্যাল নিশ্চিত করে বা প্রশ্ন তোলে   |
+| বিভিন্ন Broker এর Tick Volume তুলনা | শুধু এক ফিডের মধ্যে তুলনা করুন                           |
+| প্রতিটি Volume লাফকে সিগন্যাল ভাবা  | নিউজের সময় লাফ স্বাভাবিক                                |
+| সেশনের প্রভাব উপেক্ষা               | Asian সেশনে Volume সাধারণত কম; একই রকম সময়ের তুলনা করুন |
+
+---
+
+## অনুশীলন
+
+1. আপনার 1H চার্টে Volume প্যানেল আর ২০-ক্যান্ডেলের Volume গড় যোগ করুন।
+2. ১০টি Breakout মার্ক করে গড়ের তুলনায় Volume লিখুন।
+3. বেশি আর কম Volume এর কতগুলো Breakout টিকেছে তুলনা করুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা          | মূল কথা                                              |
+| -------------- | ---------------------------------------------------- |
+| **নিয়ম**      | Volume প্রাইস নিশ্চিত করে                            |
+| **Breakout**   | বেশি Volume এ ভালো টেকে; কম Volume এ বেশি ব্যর্থ হয় |
+| **পুলব্যাক**   | কম Volume স্বাস্থ্যকর                                |
+| **Divergence** | নতুন এক্সট্রিমে কমা Volume সতর্কবার্তা               |
+| **Forex**      | শুধু Tick Volume: মোটামুটি গাইড                      |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Breakouts](/bn/price-action/breakouts) — Volume Breakout Confirm করে
-- [Momentum](/bn/price-action/momentum) — Volume + Momentum Alignment
-- [Liquidity](/bn/price-action/liquidity) — Sweep Level-এ Volume
-- [Reversal Concepts](/bn/price-action/reversal-concepts) — Top/Bottom-এ Volume Divergence
-- [Confirmation](/bn/price-action/confirmation) — Confirmation Tool হিসেবে Volume
+- [Breakouts](/bn/price-action/breakouts) — যে Move Volume নিশ্চিত করে
+- [Momentum](/bn/price-action/momentum) — ক্যান্ডেল থেকে শক্তি পড়া
+- [Fakeouts](/bn/price-action/fakeouts) — ব্যর্থ ভাঙন
+- [Accumulation](/bn/smc/accumulation) — রেঞ্জে Volume
