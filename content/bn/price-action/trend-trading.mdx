@@ -1,93 +1,153 @@
 ---
-title: "Price Action দিয়ে Trend Trading — সম্পূর্ণ গাইড"
-description: "Pure Price Action ব্যবহার করে Trend Trading আয়ত্ত করুন। Trend চিহ্নিতকরণ, Trend-following Entry, Trend Ride করা এবং কখন Trend Trade Exit করবেন শিখুন।"
+title: "ট্রেন্ড ট্রেডিং — সম্পূর্ণ গাইড"
+description: "এন্ট্রি থেকে Exit পর্যন্ত ট্রেন্ডের সাথে ট্রেড করুন: Structure দিয়ে ট্রেন্ড চেনা, তিনটি এন্ট্রি পদ্ধতি (Structure এ পুলব্যাক, BOS Continuation, Trendline Bounce), প্রাথমিক Stop, আংশিক প্রফিট, প্রতিটি নতুন Swing এর পেছনে Stop Trail, Exit সিগন্যাল, ট্রেন্ড ট্রেডিংয়ের নিয়ম আর পরিকল্পিত উদাহরণ — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 21
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Trend Trading কী?
+## ট্রেন্ড ট্রেডিং কী?
 
-Trend Trading হলো **Market-এর প্রভাবশালী Direction চিহ্নিত** করে সেই Direction-এ Trade দেওয়ার Strategy। Price Action-এ আমরা Swing Structure (Bullish-এর জন্য HH/HL, Bearish-এর জন্য LH/LL) দিয়ে Trend চিহ্নিত করি এবং Trend-এর মধ্যে Pullback Trade করি।
+**ট্রেন্ড ট্রেডিং** মানে প্রতিষ্ঠিত ট্রেন্ডের দিকে ট্রেড করা আর ট্রেন্ড চলতে থাকা পর্যন্ত থেকে যাওয়া। এন্ট্রি আসে পুলব্যাকে; Exit আসে যখন ট্রেন্ড নতুন High (বা Low) তৈরি বন্ধ করে।
 
-<Callout type="info" title="সবচেয়ে লাভজনক পদ্ধতি">
-  ৭০% এর বেশি লাভজনক Trade আসে Trend-following থেকে। Trend-এর বিরুদ্ধে লড়াই Retail Trader-দের হারার #১ কারণ। Trend শুধু
-  আপনার বন্ধু নয় — এটি আপনার সম্পূর্ণ Edge।
+<Callout type="info" title="সরানো হয়েছে: '৭০% লাভজনক ট্রেড'">
+  মূল লেসনে বলা হয়েছিল "৭০% এর বেশি লাভজনক ট্রেড Trend-Following থেকে আসে" আর ট্রেন্ডের বিরুদ্ধে লড়াই "রিটেইল
+  ট্রেডারদের হারার এক নম্বর কারণ"। কোনো সংখ্যারই উৎস নেই। Trend Following একটি প্রতিষ্ঠিত পদ্ধতি; এর মূল্য নিজের ফলাফলে
+  যাচাই করুন।
 </Callout>
 
 ---
 
-## Structure দিয়ে Trend চিহ্নিতকরণ
+## ট্রেন্ড চেনা
 
-### Bullish Trend:
+| ট্রেন্ড     | Structure                | ট্রেড                       |
+| ----------- | ------------------------ | --------------------------- |
+| **Bullish** | Higher High + Higher Low | Higher Low তে পুলব্যাকে Buy |
+| **Bearish** | Lower High + Lower Low   | Lower High তে Rally তে Sell |
 
-- Higher High (HH) + Higher Low (HL) = UPTREND
-- প্রতিটি High আগেরটির চেয়ে উচ্চ
-- প্রতিটি Low আগেরটির চেয়ে উচ্চ
-
-### Bearish Trend:
-
-- Lower High (LH) + Lower Low (LL) = DOWNTREND
-- প্রতিটি High আগেরটির চেয়ে নিম্ন
-- প্রতিটি Low আগেরটির চেয়ে নিম্ন
+দেখুন [Market Structure](/bn/price-action/market-structure) আর [Trend Analysis](/bn/price-action/trend-analysis)।
 
 ---
 
-## Trend Trading Entry পদ্ধতি
+## এন্ট্রি, Trail, Exit
 
-### পদ্ধতি ১: Structure-এ Pullback
+![EUR/USD 4H Downtrend: 1.0970 এ প্রথম Lower High এ Sell, Stop 1.0985, 2R এ (1.0940) অর্ধেক বন্ধ, প্রতিটি Structure ভাঙনের পর Stop 1.0950 আর তারপর 1.0917 এ Trail; Trail করা Stop 1.0917 এ হিট](/images/price-action/trend-trading/trend-trade-trailing-stop-dark.png)
 
-```
-1. Trend Confirm করুন (HH/HL বা LH/LL)
-2. Pullback-এর জন্য অপেক্ষা (Trend-এর বিরুদ্ধে Correction)
-3. Pullback পৌঁছালে Enter:
-   - পূর্ববর্তী Structure Level (ভাঙা Resistance = নতুন Support)
-   - 50-61.8% Fibonacci Retracement
-   - Impulse-এর Order Block / FVG
-4. Confirmation: Bullish/Bearish Rejection Candle
-5. Stop: Swing Low-এর নিচে (Bull) বা Swing High-এর উপরে (Bear)
-6. Target: নতুন Swing High/Low বা পরবর্তী Liquidity
-```
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/trend-trading-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### পদ্ধতি ২: BOS Continuation
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, পদ্ধতিটি কীভাবে ট্রেড ম্যানেজ করে তা দেখাতে তৈরি। এগুলো আসল প্রাইস নয়, আর দেখানো Exit
+  পদ্ধতির উদাহরণ, ট্রেড রেকর্ড নয়।
+</Callout>
 
-```
-1. Break of Structure-এর জন্য অপেক্ষা (নতুন HH বা LL)
-2. এটি Trend Active আছে Confirm করে
-3. BOS-এর পর Pullback-এ Enter
-4. Target: পরবর্তী Logical Structure Level
-```
+| ধাপ         | পদক্ষেপ                                                   | Stop            |
+| ----------- | --------------------------------------------------------- | --------------- |
+| **এন্ট্রি** | **1.0970** এ প্রথম Lower High এ Sell                      | 1.0985 (১৫ পিপ) |
+| **আংশিক**   | **2R** এ (1.0940) অর্ধেক বন্ধ                             | —               |
+| **Trail ১** | 1.0920 এর নিচে BOS এর পর নতুন LH (1.0945) এর উপরে Stop    | 1.0950          |
+| **Trail ২** | 1.0890 এর নিচে BOS এর পর পরের LH (1.0912) এর উপরে         | 1.0917          |
+| **Exit**    | Rally **1.0917** হিট করে: বাকিটা **+৫৩ পিপে (3.5R)** বন্ধ | —               |
 
----
-
-## Trend কখন শেষ হয়
-
-### Exit Signal:
-
-| Signal                      | অর্থ                                     |
-| --------------------------- | ---------------------------------------- |
-| CHOCH (Change of Character) | Trend-এর বিরুদ্ধে প্রথম Structural Break |
-| Momentum Divergence         | Impulse সঙ্কুচিত, Correction বাড়ছে      |
-| Volume Divergence           | Volume কমে নতুন High                     |
-| নতুন Extreme করতে ব্যর্থ    | Equal High/Low তৈরি                      |
-| Major Trendline Break       | Dynamic Support/Resistance হারানো        |
+Stop শুধু **Structure ভাঙার** পরই সরে, আর শুধু সবশেষ Swing এর ঠিক ওপারে। এতে স্বাভাবিক পুলব্যাকে ট্রেন্ডে থাকা যায়, আর Lower High এর প্যাটার্ন থামলে বের হওয়া যায়।
 
 ---
 
-## Trend Trading নিয়ম
+## তিনটি এন্ট্রি পদ্ধতি
 
-1. **শুধু D1/H4 Trend-এর সাথে Trade** — Beginner হিসেবে কখনো Counter-trend নয়
-2. **Pullback-এর জন্য অপেক্ষা** — Impulse Move Chase করবেন না
-3. **Higher Timeframe = শক্তিশালী Trend** — D1 Trend H1-কে Override করে
-4. **Correction গ্রহণ করুন** — এগুলো ENTRY সুযোগ, Exit নয়
-5. **Winner চলতে দিন** — Trailing Stop ব্যবহার করুন, খুব তাড়াতাড়ি Exit করবেন না
+| পদ্ধতি                      | সেটআপ                                                                             | Stop               | টার্গেট                 |
+| --------------------------- | --------------------------------------------------------------------------------- | ------------------ | ----------------------- |
+| **১. Structure এ পুলব্যাক** | Price শেষ HL/LH, ভূমিকা বদলানো লেভেল বা ৫০–৬১.৮% Zone এ ফেরে; Rejection ক্যান্ডেল | Swing এর ওপারে     | শেষ এক্সট্রিম, বা Trail |
+| **২. BOS Continuation**     | Price শেষ Swing ভাঙে; ভাঙা লেভেলের Retest এ এন্ট্রি                               | Retest এর ওপারে    | পরের Structure লেভেল    |
+| **৩. Trendline Bounce**     | ২+ আগের ছোঁয়াসহ Trendline এ Price ছুঁয়ে প্রত্যাখ্যাত হয়                        | Trendline এর ওপারে | আগের Swing এক্সট্রিম    |
+
+দেখুন [Pullbacks](/bn/price-action/pullbacks) আর [Continuation](/bn/price-action/continuation)।
+
+---
+
+## ট্রেন্ড কখন শেষ হয়
+
+### Exit সিগন্যাল
+
+- **Structure ভাঙে:** শেষ HL (Uptrend) বা LH (Downtrend) এর ওপারে Close — CHOCH।
+- **Momentum কমে:** ছোট Impulse ক্যান্ডেল, গভীর পুলব্যাক ([Momentum](/bn/price-action/momentum))।
+- **বড় Higher Timeframe লেভেলে** পৌঁছায়।
+- **Trail করা Stop** হিট হয়।
+
+### Exit কৌশল
+
+1. নির্দিষ্ট R (1R–2R) এ বা দুর্বলতার প্রথম লক্ষণে Position এর **অংশ** নিন।
+2. প্রতিটি BOS এর পর প্রতিটি নতুন Swing এর পেছনে বাকিটা **Trail** করুন।
+3. Trail করা Stop বা CHOCH, যেটা আগে আসে, তাতে বাকিটা বন্ধ করুন।
+
+---
+
+## উদাহরণ (চার্ট ছাড়া)
+
+### ১. GBP/USD Uptrend, পুলব্যাক এন্ট্রি
+
+Daily Uptrend। 4H এ GBP/USD শেষ Higher Low **1.2650** পর্যন্ত ৫০% পুলব্যাক করে Bullish Engulfing তৈরি করে। **1.2658** এ Buy, Stop **1.2632**, প্রথম টার্গেট শেষ High **1.2740**: রিস্ক ২৬ পিপ, রিওয়ার্ড ৮২ পিপ, **R:R ১ : ৩.২** (পরিকল্পিত)। এরপর প্রতিটি নতুন Higher Low এর নিচে Trail করুন।
+
+### ২. NAS100 BOS Continuation (BD সময়)
+
+NY সেশনে (গ্রীষ্মে প্রায় **সন্ধ্যা ৭:৩০ BD** থেকে) NAS100 **18,400** এর উপরে ভাঙে আর প্রায় **রাত ৮:৪৫ BD** তে Retest করে। **18,410** এ Buy, Stop **18,380**, টার্গেট **18,500**: রিস্ক ৩০ পয়েন্ট, রিওয়ার্ড ৯০ পয়েন্ট, **R:R ১ : ৩.০** (পরিকল্পিত)।
+
+---
+
+## ট্রেন্ড ট্রেডিংয়ের নিয়ম
+
+1. Higher Timeframe ট্রেন্ডের **সাথে** ট্রেড করুন।
+2. বড় Impulse ক্যান্ডেলের পরে নয়, **পুলব্যাকে** এন্ট্রি নিন।
+3. প্রাথমিক Stop ট্রেন্ড নির্ধারণকারী **Swing এর ওপারে** রাখুন।
+4. **আংশিক প্রফিট** নিন, তারপর Structure এর পেছনে **Trail** করুন।
+5. Stop **শুধু BOS এর পর** সরান, কখনও পুলব্যাকের মাঝে নয়।
+6. Structure ভাঙলে **বের হয়ে যান**।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                             | সমাধান                                 |
+| ----------------------------------------------- | -------------------------------------- |
+| তিনটি বড় সবুজ ক্যান্ডেলের পর Buy               | পুলব্যাকের অপেক্ষা করুন                |
+| খুব টাইট Trail                                  | শুধু নিশ্চিত Swing এর ওপারে Trail করুন |
+| খুব আগে পুরো প্রফিট নেওয়া                      | অংশ নিন, বাকিটা Trail করুন             |
+| CHOCH এর পরও ধরে রাখা                           | Structure ভাঙা = বাকিটা Exit           |
+| Daily এর বিরুদ্ধে Lower Timeframe ট্রেন্ড ট্রেড | Higher Timeframe এর সাথে মেলান         |
+
+---
+
+## অনুশীলন
+
+1. 4H চার্টে গত মাসের তিনটি ট্রেন্ড বাছুন।
+2. প্রতিটির প্রথম পুলব্যাক এন্ট্রি আর প্রতিটি BOS এর পর Stop কোথায় Trail হতো মার্ক করুন।
+3. Trail করার ফলাফল নির্দিষ্ট ১ : ২ টার্গেটের সাথে তুলনা করুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধাপ         | নিয়ম                                    |
+| ----------- | ---------------------------------------- |
+| **ট্রেন্ড** | HH/HL বা LH/LL                           |
+| **এন্ট্রি** | পুলব্যাক, BOS Retest বা Trendline Bounce |
+| **Stop**    | নির্ধারণকারী Swing এর ওপারে              |
+| **ম্যানেজ** | 1–2R এ আংশিক; প্রতিটি BOS এর পর Trail    |
+| **Exit**    | Trail করা Stop হিট বা CHOCH              |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Trend Analysis](/bn/price-action/trend-analysis) — Trend চিহ্নিতকরণ
-- [Pullbacks](/bn/price-action/pullbacks) — Retracement-এ Entry
-- [Continuation](/bn/price-action/continuation) — Trend Continuation Pattern
-- [Market Structure](/bn/price-action/market-structure) — Structure-based Trend
-- [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — Timeframe Alignment
+- [Pullbacks](/bn/price-action/pullbacks) — Retracement এ এন্ট্রি
+- [Trend Analysis](/bn/price-action/trend-analysis) — শক্তি আর নিঃশেষ
+- [Trade Management](/bn/price-action/trade-management) — আংশিক আর Trailing
+- [Exit Models](/bn/price-action/exit-models) — কখন বের হবেন

@@ -1,125 +1,153 @@
 ---
-title: "Trend Trading with Price Action — Complete Guide"
-description: "Master trend trading using pure Price Action. Learn trend identification, trend-following entries, riding trends, and when to exit trend trades."
+title: "Trend Trading — Complete Guide"
+description: "Trade with the trend from entry to exit: identify trends with structure, three entry methods (pullback to structure, BOS continuation, trendline bounce), initial stops, taking partial profit, trailing the stop behind each new swing, exit signals, trend-trading rules and planned examples, with a chart and an animated walkthrough."
 level: intermediate
 order: 21
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## What is Trend Trading?
+## What Is Trend Trading?
 
-Trend trading is the strategy of **identifying the dominant market direction** and placing trades that align with it. In Price Action, we identify trends through swing structure (HH/HL for bullish, LH/LL for bearish) and trade pullbacks within the trend.
+**Trend trading** means trading in the direction of the established trend and staying in while the trend continues. Entries come on pullbacks; exits come when the trend stops making new highs (or lows).
 
-<Callout type="info" title="The Most Profitable Approach">
-  Over 70% of profitable trades come from trend-following. Fighting trends is the #1 reason retail traders lose. The
-  trend is not just your friend — it's your entire edge.
+<Callout type="info" title="Removed: '70% of profitable trades'">
+  The original said "over 70% of profitable trades come from trend-following" and that fighting trends is "the #1 reason
+  retail traders lose". Neither figure has a source. Trend following is a well-established approach; check its value in
+  your own results.
 </Callout>
 
 ---
 
-## Identifying Trends with Structure
+## Identifying the Trend
 
-### Bullish Trend:
+| Trend       | Structure                  | Trade                        |
+| ----------- | -------------------------- | ---------------------------- |
+| **Bullish** | Higher highs + higher lows | Buy pullbacks to higher lows |
+| **Bearish** | Lower highs + lower lows   | Sell rallies to lower highs  |
 
-```
-Higher Highs (HH) + Higher Lows (HL) = UPTREND
-   HH3
-  /
-HH2
-/  \  /
-    HL2
-HH1
-/  \  /
-    HL1
-```
-
-### Bearish Trend:
-
-```
-Lower Highs (LH) + Lower Lows (LL) = DOWNTREND
-LH1
-  \  /
-   LL1
-     \  /
-      LH2
-        \  /
-         LL2
-```
+See [Market Structure](/en/price-action/market-structure) and [Trend Analysis](/en/price-action/trend-analysis).
 
 ---
 
-## Trend Trading Entry Methods
+## Enter, Trail, Exit
 
-### Method 1: Pullback to Structure
+![EUR/USD 4H downtrend: sell the first lower high at 1.0970 with a 1.0985 stop, close half at 2R (1.0940), trail the stop to 1.0950 and then 1.0917 after each break of structure; the trailed stop is hit at 1.0917](/images/price-action/trend-trading/trend-trade-trailing-stop-dark.png)
 
-```
-1. Confirm trend (HH/HL or LH/LL)
-2. Wait for pullback (correction against trend)
-3. Enter when pullback reaches:
-   - Previous structure level (broken resistance = new support)
-   - 50-61.8% Fibonacci retracement
-   - Order Block / FVG from the impulse
-4. Confirmation: Bullish/bearish rejection candle
-5. Stop: Below swing low (bull) or above swing high (bear)
-6. Target: New swing high/low or next liquidity
-```
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/trend-trading-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Method 2: BOS Continuation
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built to show how the method manages a trade. They are not real prices, and the exit
+  shown is an illustration of the method, not a trade record.
+</Callout>
 
-```
-1. Wait for Break of Structure (new HH or LL)
-2. This confirms trend is active
-3. Enter on pullback AFTER the BOS
-4. Target: Next logical structure level
-```
+| Step        | Action                                                              | Stop             |
+| ----------- | ------------------------------------------------------------------- | ---------------- |
+| **Entry**   | Sell the first lower high at **1.0970**                             | 1.0985 (15 pips) |
+| **Partial** | Close half at **2R** (1.0940)                                       | —                |
+| **Trail 1** | After the BOS below 1.0920, move the stop above the new LH (1.0945) | 1.0950           |
+| **Trail 2** | After the BOS below 1.0890, move it above the next LH (1.0912)      | 1.0917           |
+| **Exit**    | The rally hits **1.0917**: the rest closes **+53 pips (3.5R)**      | —                |
 
-### Method 3: Trendline Bounce
+The stop moves only after a **break of structure**, and only to just beyond the most recent swing. That keeps you in the trend through normal pullbacks and takes you out when the pattern of lower highs stops.
 
-```
-1. Draw trendline connecting 2+ swing lows (bull) or highs (bear)
-2. Wait for price to return to trendline
-3. Enter on rejection candle at trendline
-4. Stop: Beyond trendline
-5. Target: Previous swing extreme
-```
+---
+
+## Three Entry Methods
+
+| Method                       | Setup                                                                                           | Stop                 | Target                     |
+| ---------------------------- | ----------------------------------------------------------------------------------------------- | -------------------- | -------------------------- |
+| **1. Pullback to structure** | Price returns to the last HL/LH, a flipped level or the 50–61.8% zone; a rejection candle forms | Beyond the swing     | The last extreme, or trail |
+| **2. BOS continuation**      | Price breaks the last swing; enter on the retest of the broken level                            | Beyond the retest    | The next structure level   |
+| **3. Trendline bounce**      | Price touches a trendline with 2+ prior touches and rejects                                     | Beyond the trendline | The previous swing extreme |
+
+See [Pullbacks](/en/price-action/pullbacks) and [Continuation](/en/price-action/continuation).
 
 ---
 
 ## When Trends End
 
-### Exit Signals:
+### Exit signals
 
-| Signal                      | Meaning                                 |
-| --------------------------- | --------------------------------------- |
-| CHOCH (Change of Character) | First structural break against trend    |
-| Momentum divergence         | Impulses shrinking, corrections growing |
-| Volume divergence           | New highs on declining volume           |
-| Failure to make new extreme | Equal high/low forms                    |
-| Break of major trendline    | Dynamic support/resistance lost         |
+- **Structure breaks:** a close beyond the last HL (uptrend) or LH (downtrend) — the CHOCH.
+- **Momentum fades:** smaller impulse candles, deeper pullbacks ([Momentum](/en/price-action/momentum)).
+- **A major higher-timeframe level** is reached.
+- **The trailed stop** is hit.
 
-### Exit Strategy:
+### Exit strategy
 
-- Close 50% at first sign of weakness
-- Trail stop to last swing point
-- Close fully on CHOCH confirmation
+1. Take **part** of the position at a fixed R (1R–2R) or at the first sign of weakness.
+2. **Trail** the rest behind each new swing after every BOS.
+3. Close the remainder at the trailed stop or the CHOCH, whichever comes first.
 
 ---
 
-## Trend Trading Rules
+## Examples (No Chart)
 
-1. **Only trade with the D1/H4 trend** — Never counter-trend as beginner
-2. **Wait for pullbacks** — Never chase impulse moves
-3. **Higher timeframe = stronger trend** — D1 trend overrules H1
-4. **Accept corrections** — They are ENTRY opportunities, not exits
-5. **Let winners run** — Use trailing stops, don't exit too early
-6. **Multiple entries** — Scale in on each valid pullback
+### 1. GBP/USD uptrend, pullback entry
+
+Daily uptrend. On 4H, GBP/USD pulls back 50% to the last higher low at **1.2650** and forms a bullish engulfing. Buy **1.2658**, stop **1.2632**, first target the last high **1.2740**: risk 26 pips, reward 82 pips, **R:R 1 : 3.2** (planned). Trail below each new higher low after that.
+
+### 2. NAS100 BOS continuation (BD time)
+
+In the NY session (from about **7:30 PM BD** in summer), NAS100 breaks above **18,400** and retests it at about **8:45 PM BD**. Buy **18,410**, stop **18,380**, target **18,500**: risk 30 points, reward 90 points, **R:R 1 : 3.0** (planned).
+
+---
+
+## Trend-Trading Rules
+
+1. Trade **with** the higher-timeframe trend.
+2. Enter on **pullbacks**, not after large impulse candles.
+3. Put the initial stop **beyond the swing** that defines the trend.
+4. Take **partial profit**, then **trail** behind structure.
+5. Move the stop **only after a BOS**, never into the middle of a pullback.
+6. **Leave** when structure breaks.
+
+---
+
+## Common Mistakes
+
+| Mistake                                          | Fix                                  |
+| ------------------------------------------------ | ------------------------------------ |
+| Buying after three big green candles             | Wait for the pullback                |
+| Trailing the stop too tight                      | Trail only beyond confirmed swings   |
+| Taking the whole profit too early                | Take part, trail the rest            |
+| Holding after the CHOCH                          | Structure break = exit the remainder |
+| Trading lower-timeframe trends against the daily | Align with the higher timeframe      |
+
+---
+
+## Practice
+
+1. Pick three trends from the past month on the 4H chart.
+2. For each, mark the first pullback entry and where the stop would have trailed after each BOS.
+3. Compare the result of trailing with a fixed 1 : 2 target.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Stage      | Rule                                     |
+| ---------- | ---------------------------------------- |
+| **Trend**  | HH/HL or LH/LL                           |
+| **Entry**  | Pullback, BOS retest or trendline bounce |
+| **Stop**   | Beyond the defining swing                |
+| **Manage** | Partial at 1–2R; trail after each BOS    |
+| **Exit**   | Trailed stop hit or CHOCH                |
 
 ---
 
 ## Related Topics
 
-- [Trend Analysis](/en/price-action/trend-analysis) — Identifying trends
-- [Pullbacks](/en/price-action/pullbacks) — Entry on retracements
-- [Continuation](/en/price-action/continuation) — Trend continuation patterns
-- [Market Structure](/en/price-action/market-structure) — Structure-based trends
-- [Multi-Timeframe Analysis](/en/price-action/multi-timeframe-analysis) — Timeframe alignment
+- [Pullbacks](/en/price-action/pullbacks) — entering on retracements
+- [Trend Analysis](/en/price-action/trend-analysis) — strength and exhaustion
+- [Trade Management](/en/price-action/trade-management) — partials and trailing
+- [Exit Models](/en/price-action/exit-models) — when to get out
