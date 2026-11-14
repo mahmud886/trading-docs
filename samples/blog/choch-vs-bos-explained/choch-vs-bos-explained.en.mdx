@@ -1,0 +1,109 @@
+---
+title: "CHOCH vs BOS — Reading Market Direction"
+description: "A break of structure (BOS) continues the trend; a change of character (CHOCH) is the first break against it. How to tell them apart, what counts as a valid break (close, not wick), the three ways to combine them (reversal, continuation, multi-timeframe), and how they fail."
+date: "2026-05-13"
+author: "Trading Docs"
+category: "SMC"
+tags: ["choch", "bos", "market-structure", "mss", "smc"]
+readingTime: 8
+featured: true
+---
+
+Both terms describe **breaks of swing points**, and the difference is direction relative to the trend. A **BOS** (break of structure) breaks a swing in the direction of the trend: it continues it. A **CHOCH** (change of character) is the first break against the trend: it is an early sign that the trend may be changing, and nothing more.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original quoted "60–65%" and "75–80%" reliabilities for CHOCH and BOS and a "65–75% win rate" for one model. We found no source for any of these, so they are removed. Both signals are descriptions of structure, and each can fail.
+</Callout>
+
+---
+
+## The Difference
+
+| Feature                     | **BOS**                                              | **CHOCH**                                                     |
+| --------------------------- | ---------------------------------------------------- | ------------------------------------------------------------- |
+| Direction vs trend          | With the trend                                       | Against the trend (the first break)                           |
+| Uptrend example             | Close above the last swing high                      | Close below the last higher low                               |
+| Downtrend example           | Close below the last swing low                       | Close above the last lower high                               |
+| What it says                | The trend is continuing                              | The trend may be weakening; a reversal is possible, not certain |
+| Useful for                  | Continuation entries on pullbacks                    | Early warning, and reversal setups with confirmation          |
+
+A **valid break is a close beyond the swing**, not a wick. A wick through a swing high is a liquidity sweep: see [Liquidity Sweeps Explained](/en/blog/liquidity-sweeps-explained).
+
+### The Chart
+
+![A synthetic bearish change of character: an uptrend makes higher lows, then a candle closes below the last higher low](/images/smc/choch/bearish-choch-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/smc/choch-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [CHOCH](/en/smc/choch).)
+</Callout>
+
+---
+
+## Three Ways to Use Them
+
+| Model                         | Sequence                                                       | Idea                                                       |
+| ----------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Reversal**                  | Sweep of a swing → CHOCH → BOS in the new direction            | The sweep takes stops, CHOCH shows the turn, BOS confirms  |
+| **Continuation**              | BOS → pullback to a zone → entry                               | Buy the pullback in an uptrend after a BOS                 |
+| **Multi-timeframe**           | Higher-timeframe BOS direction, lower-timeframe CHOCH/BOS entry | Enter in the direction of the larger trend                 |
+
+The **reversal** model has more steps and therefore more places to be wrong; a CHOCH that is not followed by a BOS in the new direction is often just a deeper pullback. Read [CHOCH](/en/smc/choch), [BOS](/en/smc/bos) and [Market Structure Shift](/en/smc/market-structure-shift) for worked examples.
+
+---
+
+## How They Fail
+
+| Failure                                | What it looks like                                                  |
+| -------------------------------------- | ------------------------------------------------------------------- |
+| CHOCH that reverses back               | Price closes back above the broken swing: it was a deeper pullback  |
+| BOS in a stretched move                | Break followed by an immediate reversal (a buy-side liquidity grab) |
+| Break on low participation             | A close through a swing during a quiet session, with no follow-through |
+| Mixing timeframes                      | A 5-minute CHOCH against a strong 4-hour BOS                        |
+
+---
+
+## Example (no chart)
+
+EUR/USD in an uptrend on the 1-hour chart: the last higher low is **1.0820**. A candle closes at **1.0814**: a bearish CHOCH. Price pulls back to **1.0826** (the retest of the broken low) and a lower-timeframe candle rejects. Plan: sell **1.0826**, stop **1.0846** (above the swing that was broken), target **1.0770** (the next support): risk 20 pips, reward 56, **1 : 2.8** planned. If price closes above **1.0846**, the CHOCH failed and the idea is off.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Treating a wick through a swing as a break | Require a close beyond the swing |
+| Calling the first CHOCH a confirmed reversal | Wait for a BOS in the new direction, or treat it as an alert |
+| Trading a CHOCH against a strong higher-timeframe trend | Check the larger structure first |
+| Entering at the break candle | Plan an entry on the retest with a stop beyond the swing |
+
+---
+
+## Practice
+
+1. Mark ten swing breaks on a chart and label each BOS or CHOCH, close or wick.
+2. For each CHOCH, note whether a BOS in the new direction followed.
+3. Count how many CHOCH signals were simply deeper pullbacks.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| BOS | A close beyond a swing, with the trend: continuation |
+| CHOCH | The first close beyond a swing against the trend: an early warning |
+| Models | Reversal (sweep → CHOCH → BOS), continuation, multi-timeframe |
+| Caution | No reliability numbers are guaranteed; both can fail |
+
+---
+
+## Related Topics
+
+- [CHOCH](/en/smc/choch)
+- [BOS](/en/smc/bos)
+- [Market Structure Shift](/en/smc/market-structure-shift)
+- [Market Structure Shift: CHOCH and BOS](/en/blog/market-structure-shift-choch-bos)

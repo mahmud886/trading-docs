@@ -1,532 +1,118 @@
 ---
-title: "CHOCH বনাম BOS — Market Direction পড়ার Complete Institutional Guide"
-description: "Change of Character (CHOCH) এবং Break of Structure (BOS) এর গভীর বিশ্লেষণ। কখন কোন Signal বিশ্বাস করবেন, Multi-Timeframe Trading এ কীভাবে ব্যবহার করবেন, এবং Institutional Market Structure Reading Master করবেন।"
+title: "CHOCH বনাম BOS — মার্কেটের দিক পড়া"
+description: "Break of Structure (BOS) ট্রেন্ড চালিয়ে যায়; Change of Character (CHOCH) তার বিরুদ্ধে প্রথম ভাঙা। কীভাবে আলাদা করবেন, বৈধ ভাঙা কী (Close, Wick নয়), মেলানোর তিন উপায় (রিভার্সাল, কন্টিনিউয়েশন, মাল্টি-টাইমফ্রেম), আর এগুলো কীভাবে ব্যর্থ হয়।"
 date: "2026-05-13"
 author: "Trading Docs"
 category: "SMC"
-tags: ["choch", "bos", "market-structure", "mss", "smart-money", "institutional"]
-readingTime: 25
+tags: ["choch", "bos", "market-structure", "mss", "smc"]
+readingTime: 8
 featured: true
 ---
 
-## CHOCH বনাম BOS: Institutional Perspective — কেন এটি সবচেয়ে গুরুত্বপূর্ণ Concept
+দুটি শব্দই **Swing পয়েন্ট ভাঙা** বর্ণনা করে, আর পার্থক্য ট্রেন্ডের সাপেক্ষে দিকে। **BOS** (Break of Structure) ট্রেন্ডের দিকে Swing ভাঙে: ট্রেন্ড চালিয়ে যায়। **CHOCH** (Change of Character) ট্রেন্ডের বিরুদ্ধে প্রথম ভাঙা: ট্রেন্ড বদলাতে পারে তার প্রাথমিক ইঙ্গিত, এর বেশি কিছু নয়।
 
-Market Structure Reading হলো **সমস্ত Smart Money Concepts (SMC) এর ভিত্তি**। CHOCH এবং BOS বুঝতে না পারলে, আপনি কখনো জানবেন না Market কোন দিকে যাচ্ছে — এবং সব Order Block, FVG, ও Liquidity Analysis অর্থহীন হয়ে যাবে।
-
-Institutional Traders এবং Hedge Fund Algorithms তাদের Trading Decision এর **প্রথম Filter** হিসেবে Market Structure ব্যবহার করে। Direction Clear না হলে, কোনো Professional Trade নেয় না।
-
-### মৌলিক পার্থক্য
-
-| Feature                | CHOCH (Change of Character)            | BOS (Break of Structure)             |
-| ---------------------- | -------------------------------------- | ------------------------------------ |
-| **কী বোঝায়**          | Trend Shift / Reversal এর Early Signal | Trend Continuation Confirmation      |
-| **When it Occurs**     | First Break Against Current Trend      | Subsequent Breaks WITH Current Trend |
-| **Reliability**        | 60-65% (Needs Confirmation)            | 75-80% (Higher Confidence)           |
-| **Role**               | Alert / Warning Signal                 | Execution / Confirmation Signal      |
-| **Risk**               | Higher (May Fail)                      | Lower (Trend Already Confirmed)      |
-| **Use Case**           | Early Entry (Better R:R)               | Safe Entry (Higher Win Rate)         |
-| **Institutional View** | "Momentum Shifting"                    | "Trend Intact"                       |
-
-<Callout type="tip" title="One-Line Rule">
-  CHOCH দেখলে **সতর্ক হন**; BOS দেখলে **Execution Consider করুন** — যদি অন্যান্য Confluence থাকে।
+<Callout type="warning" title="সংশোধিত ও নরম করা হয়েছে">
+  মূল লেখায় CHOCH ও BOS এর জন্য "৬০–৬৫%" ও "৭৫–৮০%" নির্ভরযোগ্যতা এবং একটি মডেলের জন্য "৬৫–৭৫% জয়ের হার" দেওয়া
+  হয়েছিল। এগুলোর কোনো উৎস আমরা পাইনি, তাই সরানো হয়েছে। দুটি সংকেতই স্ট্রাকচারের বর্ণনা, আর প্রতিটি ব্যর্থ হতে পারে।
 </Callout>
 
 ---
 
-## CHOCH (Change of Character) — Deep Analysis
-
-### CHOCH কী?
-
-**CHOCH** ঘটে যখন Price **প্রথমবারের মতো** Current Trend এর বিপরীতে একটি Key Structure Level Break করে। এটি বলে: "Current Trend Weak হচ্ছে — Direction Change হতে পারে।"
-
-### Bullish CHOCH (Downtrend → Potential Uptrend)
-
-```
-Downtrend Structure:
-    HH
-   /  \
-  /    LH    ← Lower High
- /      \
-LL       LL   ← Lower Lows (Trend Intact)
-          \
-           \___HL? ← Higher Low Forms
-                \
-                 ↑ BREAKS Previous LH = BULLISH CHOCH!
-
-Sequence:
-1. Price making Lower Lows and Lower Highs (Downtrend)
-2. Price makes a Low but DOESN'T make a new Lower Low
-3. Instead makes a Higher Low
-4. Price then BREAKS above the most recent Lower High
-5. This Break = BULLISH CHOCH (First sign downtrend may be over)
-```
-
-### Bearish CHOCH (Uptrend → Potential Downtrend)
-
-```
-Uptrend Structure:
-LL
- \
-  \    HL    ← Higher Low
-   \  /
-    HH       HH   ← Higher Highs (Trend Intact)
-              /
-         LH?/    ← Lower High Forms
-            /
-           ↓ BREAKS Previous HL = BEARISH CHOCH!
-
-Sequence:
-1. Price making Higher Highs and Higher Lows (Uptrend)
-2. Price makes a High but DOESN'T make a new Higher High
-3. Instead makes a Lower High
-4. Price then BREAKS below the most recent Higher Low
-5. This Break = BEARISH CHOCH (First sign uptrend may be over)
-```
-
-### CHOCH Validation Criteria
-
-সব CHOCH সমান নয়। Strong CHOCH এর বৈশিষ্ট্য:
-
-| Factor            | Strong CHOCH            | Weak CHOCH          |
-| ----------------- | ----------------------- | ------------------- |
-| **Displacement**  | Strong Candle, Big Body | Weak, Gradual Break |
-| **Volume**        | Volume Spike on Break   | No Volume Change    |
-| **FVG Created**   | Yes (Imbalance Proof)   | No FVG              |
-| **Speed**         | Quick, Impulsive        | Slow, Grinding      |
-| **Context**       | After Liquidity Sweep   | No Prior Sweep      |
-| **HTF Alignment** | Aligns with HTF Trend   | Against HTF Trend   |
-
-**Rule:** শুধু Strong CHOCH Trade করুন। Weak CHOCH প্রায়ই False Signal দেয়।
-
----
-
-## BOS (Break of Structure) — Deep Analysis
-
-### BOS কী?
-
-**BOS** ঘটে যখন Price **Current Trend Direction এ** একটি Key Structure Level Break করে। এটি বলে: "Trend এখনো Active — Continuation Expected।"
-
-### Bullish BOS (Uptrend Continuation)
-
-```
-Uptrend:
-       New HH ← BOS! (Breaks Previous HH)
-      /
-     /   Previous HH
-    /   /
-   HL  /   ← Price Made Higher Low
-    \ /
-     HL     ← Previous Higher Low
-
-Each time Price Breaks a Previous High = Bullish BOS
-This CONFIRMS the Uptrend is Still Valid
-```
-
-### Bearish BOS (Downtrend Continuation)
-
-```
-Downtrend:
-     LH        ← Lower High
-    / \
-   /   \
-  LH    \    ← Previous Lower High
-  |      \
-  |       LL  ← Previous Lower Low
-  |        \
-  |         New LL ← BOS! (Breaks Previous LL)
-
-Each time Price Breaks a Previous Low = Bearish BOS
-This CONFIRMS the Downtrend is Still Valid
-```
-
-### BOS Quality Assessment
-
-| Factor             | High-Quality BOS           | Low-Quality BOS     |
-| ------------------ | -------------------------- | ------------------- |
-| **Close**          | Body Close Beyond Level    | Only Wick Beyond    |
-| **Displacement**   | Strong Impulsive Candle    | Slow, Weak Break    |
-| **Follow-Through** | Continued Move After Break | Immediate Pullback  |
-| **Volume**         | High Volume                | Low Volume          |
-| **FVG**            | Creates FVG                | No FVG Created      |
-| **Context**        | Aligns with HTF + Session  | Random Time/Context |
-
----
-
-## CHOCH এবং BOS একসাথে ব্যবহার: Complete Framework
-
-### Model 1: CHOCH → BOS Sequence (Trend Reversal Trading)
-
-```
-Step 1: Identify Current Trend (Downtrend - Lower Lows, Lower Highs)
-Step 2: Wait for CHOCH (First Break Above Recent Lower High)
-Step 3: ALERT MODE — Potential Reversal
-Step 4: Wait for Pullback (Price Retraces to OB/FVG After CHOCH)
-Step 5: Wait for BOS (Breaks Above CHOCH High = Confirmation)
-Step 6: Now CONFIRMED — New Uptrend Likely
-
-Entry Options:
-A) Aggressive: Enter at OB/FVG after CHOCH (Better R:R, Less Confirmation)
-B) Conservative: Enter after BOS on Pullback (More Confirmation, Worse R:R)
-C) Hybrid: Small position after CHOCH, Add after BOS
-```
-
-### Model 2: BOS Continuation Trading (Trend Following)
-
-```
-Step 1: Identify Strong Trend (Multiple BOS in Same Direction)
-Step 2: Wait for Pullback to Previous BOS Level or OB
-Step 3: Look for LTF CHOCH in Trend Direction (Mini Reversal Back to Trend)
-Step 4: Enter at LTF OB/FVG
-Step 5: Target Next Liquidity Pool
-
-This is THE SAFEST Model:
-- Trading WITH established trend
-- BOS already confirmed direction
-- High win rate (65-75%)
-- Clear invalidation
-```
-
-### Model 3: Multi-Timeframe CHOCH/BOS Alignment
-
-```
-Scenario: 4H Bullish BOS → 15M Bearish CHOCH → Wait
-
-Why Wait:
-- 4H says Bullish (BOS Confirmed Uptrend)
-- 15M says Bearish (CHOCH Shows Short-Term Weakness)
-- This is NORMAL — LTF Pullback Within HTF Trend
-- Wait for 15M Bullish CHOCH (Back in Line with 4H)
-- THEN Enter Long
-
-The KEY RULE:
-- HTF BOS = Direction (King)
-- LTF CHOCH Against HTF = Just a Pullback (Wait)
-- LTF CHOCH WITH HTF = Entry Signal
-- LTF BOS WITH HTF = Strongest Confirmation
-```
-
----
-
-## Real-World Trading Examples
-
-### Example 1: EUR/USD Bullish CHOCH → BOS → Entry
-
-```
-Context:
-- Daily: Bearish for 2 weeks (Lower Lows, Lower Highs)
-- Weekly: Approaching Major Demand Zone
-- DXY: Showing Weakness (Dollar Exhaustion)
-
-4H Chart Sequence:
-1. Downtrend: LH at 1.0850, LL at 1.0780, LH at 1.0830, LL at 1.0750
-2. Price Makes Low at 1.0740 (Equal Lows Swept)
-3. Strong Rally: Price Breaks Above 1.0830 (Recent LH)
-4. THIS = 4H BULLISH CHOCH ★
-
-Now Alert Mode:
-5. Price Pulls Back to 1.0800 Area (Previous Structure + OB)
-6. 15M Shows Bullish CHOCH at 1.0805
-7. Price Breaks Above 1.0850 (Previous Swing High)
-8. THIS = 4H BULLISH BOS ★★ (Full Confirmation)
-
-Trade:
-- Entry: 1.0810 (15M OB After CHOCH)
-- Stop: 1.0790 (20 Pips - Below OB)
-- TP1: 1.0880 (70 Pips = 3.5R)
-- TP2: 1.0920 (110 Pips = 5.5R)
-- Result: TP2 Hit in 2 Days
-```
-
-### Example 2: Gold Bearish CHOCH → Short Setup
-
-```
-Context:
-- Daily: Strong Uptrend ($2,300 → $2,450)
-- 4H: Beginning to Show Exhaustion
-- DXY: Recovering (Dollar Strength)
-- Macro: Hawkish Fed Comments
-
-4H Chart:
-1. Uptrend: HL at $2,380, HH at $2,420, HL at $2,395, HH at $2,450
-2. Price Makes High at $2,455 (Fails to Hold = Equal Highs Swept)
-3. Sharp Sell: Price Breaks Below $2,395 (Recent HL)
-4. THIS = 4H BEARISH CHOCH ★
-
-Entry Setup:
-5. Price Retraces to $2,415-$2,420 (4H Bearish OB)
-6. 15M Bearish CHOCH Confirmed at $2,418
-7. Entry: $2,417 (Inside OB)
-8. Stop: $2,428 ($11 Above OB)
-9. Target: $2,380 ($37 = 3.4R)
-10. Result: Target Hit as Dollar Rally Continued
-```
-
-### Example 3: BTC/USD Multi-TF Alignment
-
-```
-Weekly: Bullish BOS (Broke $68,000 = All-Time High Territory)
-Daily: Bullish, Making Higher Highs
-4H: Pullback in Progress (Normal Retracement)
-1H: Bearish CHOCH (Price Broke Below Recent 1H HL)
-
-Analysis:
-- Weekly + Daily = Strong Bullish (BOS Confirmed)
-- 4H Pullback = Normal (No BOS Down on 4H Yet)
-- 1H Bearish CHOCH = Just a Pullback, NOT Reversal
-
-Action:
-- Wait for 1H Bullish CHOCH (Signs Pullback Ending)
-- Then 15M Bullish BOS (Confirmation)
-- Enter Long at 15M OB/FVG
-- Target: New Daily High
-
-This is How Pros Read Structure Across Timeframes
-```
-
----
-
-## CHOCH/BOS এবং Liquidity Integration
-
-### Sweep → CHOCH → BOS Model
-
-এটি সবচেয়ে High-Probability Setup:
-
-```
-Complete Sequence:
-1. LIQUIDITY SWEEP (Fuel Collection)
-   - Equal Lows/Previous Low Swept
-   - Retail Stops Triggered
-   - Smart Money Buys Here
-
-2. CHOCH (Direction Change Signal)
-   - After Sweep, Price Breaks LH
-   - "Trend May Be Changing"
-   - Early Entry Opportunity (Aggressive)
-
-3. BOS (Full Confirmation)
-   - Price Continues, Breaks Next High
-   - "New Trend CONFIRMED"
-   - Safe Entry on Pullback (Conservative)
-
-4. CONTINUATION
-   - Trend Continues with Multiple BOS
-   - Each Pullback = Re-Entry Opportunity
-   - Until OPPOSITE CHOCH Appears = Exit Signal
-```
-
-### কখন CHOCH False হয়?
-
-```
-CHOCH Fails When:
-- No Liquidity Sweep Before = No Fuel
-- Against HTF Trend = Low Probability
-- Weak Displacement = No Real Conviction
-- No FVG Created = Questionable Break
-- Range Market = Choppy Structure, Many False CHOCH
-
-CHOCH Succeeds When:
-- After Major Liquidity Sweep = Fuel Available
-- Aligns with HTF Trend = Maximum Probability
-- Strong Displacement = Institutional Conviction
-- FVG Created = Real Imbalance
-- Clear Trending Market = Structure Readable
-```
-
----
-
-## Common Mistakes: Professional Perspective
-
-<Callout type="warning" title="এই ভুলগুলো এড়িয়ে চলুন">
-
-**❌ Mistake 1: CHOCH কে BOS ভাবা**
-
-- CHOCH = Early Warning, BOS = Confirmation
-- CHOCH তে Full Size Entry = Risky
-- Fix: CHOCH তে Alert, BOS তে Execute
-
-**❌ Mistake 2: Higher Timeframe Context Ignore করা**
-
-- 4H Bullish BOS থাকলে, 15M Bearish CHOCH Ignore করুন
-- LTF Against HTF = Just Noise
-- Fix: সবসময় HTF Direction First
-
-**❌ Mistake 3: প্রতিটি Structure Break কে Valid ভাবা**
-
-- Choppy/Range Market এ False Breaks Common
-- Trending Market এই Concepts সবচেয়ে ভালো কাজ করে
-- Fix: Range Market এ CHOCH/BOS Trade করবেন না
-
-**❌ Mistake 4: Displacement ছাড়া CHOCH Accept করা**
-
-- Weak, Gradual Break = NOT Real CHOCH
-- Strong Displacement = Real Institutional Activity
-- Fix: শুধু Strong Body Close + FVG = Valid CHOCH
-
-**❌ Mistake 5: Entry Timing ভুল**
-
-- CHOCH/BOS দেখে তাড়াতাড়ি Chase করা
-- Wait for PULLBACK to OB/FVG after Break
-- Fix: Break দেখুন → Alert Set করুন → Pullback এ Enter করুন
-
-**❌ Mistake 6: একটি Timeframe এ Depend করা**
-
-- শুধু 15M CHOCH দেখে Trade = Risky
-- 4H Context + 15M Entry = Professional
-- Fix: HTF Direction → LTF Entry (Always Multi-TF)
-
+## পার্থক্য
+
+| বৈশিষ্ট্য              | **BOS**                         | **CHOCH**                                             |
+| ---------------------- | ------------------------------- | ----------------------------------------------------- |
+| ট্রেন্ডের সাপেক্ষে দিক | ট্রেন্ডের সাথে                  | ট্রেন্ডের বিরুদ্ধে (প্রথম ভাঙা)                       |
+| আপট্রেন্ডের উদাহরণ     | শেষ Swing High এর উপরে Close    | শেষ Higher Low এর নিচে Close                          |
+| ডাউনট্রেন্ডের উদাহরণ   | শেষ Swing Low এর নিচে Close     | শেষ Lower High এর উপরে Close                          |
+| কী বলে                 | ট্রেন্ড চলছে                    | ট্রেন্ড দুর্বল হতে পারে; রিভার্সাল সম্ভব, নিশ্চিত নয় |
+| কাজে লাগে              | পুলব্যাকে কন্টিনিউয়েশন এন্ট্রি | আগাম সতর্কতা, আর নিশ্চিতকরণসহ রিভার্সাল সেটআপ         |
+
+**বৈধ ভাঙা হলো Swing এর ওপারে Close**, Wick নয়। Swing High এর ভেতর দিয়ে Wick হলো Liquidity Sweep: [Liquidity Sweeps Explained](/bn/blog/liquidity-sweeps-explained) দেখুন।
+
+### চার্ট
+
+![একটি সিন্থেটিক বেয়ারিশ Change of Character: আপট্রেন্ডে Higher Low তৈরি হয়, তারপর একটি ক্যান্ডেল শেষ Higher Low এর নিচে Close করে](/images/smc/choch/bearish-choch-dark.webp)
+
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/choch-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  শেখানোর জন্য সিন্থেটিক ক্যান্ডেল (লেসন থেকে: [CHOCH](/bn/smc/choch).)
 </Callout>
 
 ---
 
-## CHOCH/BOS এবং Session Timing
+## ব্যবহারের তিন উপায়
 
-### London Session CHOCH
+| মডেল                 | ক্রম                                                            | ধারণা                                               |
+| -------------------- | --------------------------------------------------------------- | --------------------------------------------------- |
+| **রিভার্সাল**        | Swing এর Sweep → CHOCH → নতুন দিকে BOS                          | Sweep Stop নেয়, CHOCH মোড় দেখায়, BOS নিশ্চিত করে |
+| **কন্টিনিউয়েশন**    | BOS → জোনে পুলব্যাক → এন্ট্রি                                   | আপট্রেন্ডে BOS এর পর পুলব্যাকে Buy                  |
+| **মাল্টি-টাইমফ্রেম** | হায়ার-টাইমফ্রেম BOS এর দিক, লোয়ার-টাইমফ্রেম CHOCH/BOS এন্ট্রি | বড় ট্রেন্ডের দিকে এন্ট্রি                          |
 
-```
-Asian Session: Range (No Clear Direction)
-London Open: CHOCH Occurs (Direction Established)
-
-This is THE Most Common Pattern:
-- Asia = Accumulation (Smart Money Builds Position Quietly)
-- London = Distribution (Trend Revealed via CHOCH/BOS)
-
-Trading Rule:
-- Mark Asian High/Low
-- Wait for London to Create CHOCH (Break Asian Structure)
-- Trade the NEW Direction Established by London CHOCH
-```
-
-### New York Session BOS
-
-```
-London Session: Establishes Direction (CHOCH)
-NY Session: Confirms Direction (BOS)
-
-Pattern:
-- London CHOCH = "This is Today's Direction"
-- NY BOS = "Confirmed. Trend Continues"
-- Entry: On Pullback After NY BOS
-- Target: End of Day Target / Next Day
-
-This is Why:
-- London = The "Setup" Session
-- NY = The "Confirmation" Session
-- Both Together = Highest Probability Trading
-```
+**রিভার্সাল** মডেলে ধাপ বেশি, তাই ভুল হওয়ার জায়গাও বেশি; নতুন দিকে BOS ছাড়া CHOCH প্রায়ই গভীরতর পুলব্যাক মাত্র। কাজের উদাহরণের জন্য [CHOCH](/bn/smc/choch), [BOS](/bn/smc/bos) ও [Market Structure Shift](/bn/smc/market-structure-shift) পড়ুন।
 
 ---
 
-## Advanced Concepts: Internal vs External Structure
+## কীভাবে ব্যর্থ হয়
 
-### External Structure (HTF — Macro View)
-
-```
-External Structure = Major Swing Points
-- Weekly/Daily Level Breaks
-- Takes Weeks/Months to Form
-- Sets the MACRO Direction
-- BOS Here = Major Trend Confirmation
-- CHOCH Here = Potential Major Reversal
-
-Use: Overall Bias & Direction
-```
-
-### Internal Structure (LTF — Micro View)
-
-```
-Internal Structure = Minor Swing Points
-- 1H/15M Level Breaks
-- Forms Multiple Times Per Day
-- Provides ENTRY Timing
-- BOS Here = Entry Confirmation
-- CHOCH Here = Entry Signal
-
-Use: Precise Entry & Exit Timing
-```
-
-### How They Work Together
-
-```
-External (4H): Bullish BOS ← This is YOUR DIRECTION
-Internal (15M): Bearish CHOCH ← This is JUST A PULLBACK
-
-Wait for:
-Internal (15M): Bullish CHOCH ← PULLBACK ENDING
-Internal (15M): Bullish BOS ← CONFIRMED ENTRY SIGNAL
-
-Enter Long with:
-- Stop Below 15M Structure
-- Target External (4H) Structure High
-- R:R Often 1:4 to 1:8
-
-This Internal/External Distinction = Institutional Edge
-```
+| ব্যর্থতা           | দেখতে কেমন                                                        |
+| ------------------ | ----------------------------------------------------------------- |
+| উল্টে যাওয়া CHOCH | প্রাইস ভাঙা Swing এর উপরে ফিরে Close করে: এটি গভীরতর পুলব্যাক ছিল |
+| টানা মুভে BOS      | ভাঙার পরই রিভার্সাল (Buy-side Liquidity Grab)                     |
+| কম অংশগ্রহণে ভাঙা  | শান্ত সেশনে Swing ভেদ করে Close, Follow-through নেই               |
+| টাইমফ্রেম মেশানো   | শক্তিশালী ৪-ঘণ্টার BOS এর বিরুদ্ধে ৫-মিনিটের CHOCH                |
 
 ---
 
-## CHOCH/BOS Backtesting Framework
+## উদাহরণ (চার্ট ছাড়া)
 
-```
-Rules to Backtest:
-1. Timeframe: 4H for Direction, 15M for Entry
-2. CHOCH Criteria: Strong Displacement + FVG + Body Close
-3. BOS Criteria: Body Close Beyond Previous Swing
-4. Entry: After CHOCH/BOS Pullback to OB/FVG
-5. Stop: Beyond Entry Structure
-6. Target: Next Liquidity Pool / Structure Level
-
-Track:
-- Win Rate of CHOCH-Only Trades
-- Win Rate of BOS-Only Trades
-- Win Rate of CHOCH → BOS Sequence
-- Which Pairs Work Best
-- Which Sessions Work Best
-- Average R:R
-
-Expected Results (Properly Filtered):
-- CHOCH Entries: 55-62% Win Rate, Average 1:3 R:R
-- BOS Entries: 65-72% Win Rate, Average 1:2.5 R:R
-- CHOCH → BOS Confirmed: 68-75% Win Rate, Average 1:2 R:R
-```
+১-ঘণ্টার চার্টে আপট্রেন্ডে EUR/USD: শেষ Higher Low **1.0820**। একটি ক্যান্ডেল **1.0814** এ Close করে: বেয়ারিশ CHOCH। প্রাইস **1.0826** এ পুলব্যাক করে (ভাঙা Low এর রিটেস্ট) আর লোয়ার-টাইমফ্রেমের ক্যান্ডেল প্রত্যাখ্যান করে। পরিকল্পনা: **1.0826** এ Sell, Stop **1.0846** (ভাঙা Swing এর উপরে), টার্গেট **1.0770** (পরের Support): রিস্ক ২০ পিপ, রিওয়ার্ড ৫৬, পরিকল্পিত **১ : ২.৮**। প্রাইস **1.0846** এর উপরে Close করলে CHOCH ব্যর্থ, ধারণা বাতিল।
 
 ---
 
-## Key Takeaways: Professional Summary
+## সাধারণ ভুল
 
-| Concept        | Details                                 |
-| -------------- | --------------------------------------- |
-| **CHOCH**      | Early Warning — Trend May Be Shifting   |
-| **BOS**        | Confirmation — Trend Continuing         |
-| **Best Use**   | CHOCH = Alert, BOS = Execute            |
-| **Multi-TF**   | HTF Direction → LTF Entry Timing        |
-| **Validation** | Displacement + FVG + Body Close = Valid |
-| **Liquidity**  | Sweep Before CHOCH = High Probability   |
-| **Session**    | London CHOCH + NY BOS = Best Pattern    |
-| **Structure**  | External = Direction, Internal = Entry  |
-| **Risk**       | CHOCH = Smaller Size, BOS = Normal Size |
-| **Psychology** | Don't Chase — Wait for Pullback         |
+| ভুল                                                       | সমাধান                                                  |
+| --------------------------------------------------------- | ------------------------------------------------------- |
+| Swing এর ভেতর দিয়ে Wick কে ভাঙা ধরা                      | Swing এর ওপারে Close দাবি করুন                          |
+| প্রথম CHOCH কে নিশ্চিত রিভার্সাল বলা                      | নতুন দিকে BOS এর অপেক্ষা করুন, বা সতর্কতা ধরুন          |
+| শক্তিশালী হায়ার-টাইমফ্রেম ট্রেন্ডের বিরুদ্ধে CHOCH ট্রেড | আগে বড় স্ট্রাকচার দেখুন                                |
+| ভাঙার ক্যান্ডেলে এন্ট্রি                                  | রিটেস্টে এন্ট্রি পরিকল্পনা করুন, Swing এর ওপারে Stop সহ |
 
 ---
 
-## Quick Decision Framework
+## অনুশীলন
 
-```
-Step 1: What is HTF Doing?
-- HTF BOS Up → Only Look for Longs
-- HTF BOS Down → Only Look for Shorts
-- HTF Range → Don't Trade (Or Trade Range)
+1. চার্টে দশটি Swing ভাঙা চিহ্নিত করে প্রতিটিকে BOS বা CHOCH, Close বা Wick লেবেল করুন।
+2. প্রতিটি CHOCH এর জন্য নতুন দিকে BOS এসেছিল কি না লিখুন।
+3. কতগুলো CHOCH শুধু গভীরতর পুলব্যাক ছিল গুনুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
 
-Step 2: What is LTF Showing?
-- LTF CHOCH Against HTF → Wait (Just a Pullback)
-- LTF CHOCH With HTF → Entry Signal!
-- LTF BOS With HTF → Strongest Signal!
+---
 
-Step 3: Entry Execution
-- Wait for Pullback to OB/FVG
-- Enter with Stop Beyond Structure
-- Target Next HTF Liquidity Pool
+## সারাংশ
 
-Simple. Repeatable. Professional.
-```
+| ধারণা   | বিস্তারিত                                                        |
+| ------- | ---------------------------------------------------------------- |
+| BOS     | ট্রেন্ডের সাথে Swing এর ওপারে Close: কন্টিনিউয়েশন               |
+| CHOCH   | ট্রেন্ডের বিরুদ্ধে Swing এর ওপারে প্রথম Close: আগাম সতর্কতা      |
+| মডেল    | রিভার্সাল (Sweep → CHOCH → BOS), কন্টিনিউয়েশন, মাল্টি-টাইমফ্রেম |
+| সতর্কতা | কোনো নির্ভরযোগ্যতার সংখ্যা নিশ্চিত নয়; দুটিই ব্যর্থ হতে পারে    |
 
-সম্পূর্ণ পাঠের জন্য দেখুন: [Market Structure Shift](/bn/smc/market-structure-shift)।
+---
+
+## সম্পর্কিত বিষয়
+
+- [CHOCH](/bn/smc/choch)
+- [BOS](/bn/smc/bos)
+- [Market Structure Shift](/bn/smc/market-structure-shift)
+- [Market Structure Shift: CHOCH and BOS](/bn/blog/market-structure-shift-choch-bos)
