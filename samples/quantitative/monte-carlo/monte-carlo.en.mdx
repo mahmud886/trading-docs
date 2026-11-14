@@ -1,0 +1,122 @@
+---
+title: "Monte Carlo Simulations for Drawdown Expectancy"
+description: "How to use Monte Carlo resampling on a trade list to see how bad a drawdown or a losing run can get for the same edge: the bootstrap procedure, the percentile results for a 100-trade backtest (median +12R, 5th percentile −8R, 95th-percentile drawdown 18R), turning R-drawdown into account drawdown for a given risk per trade, and the limits of resampling — with a worked chart and an animated walkthrough."
+level: advanced
+order: 7
+lastUpdated: "2026-11-14"
+---
+
+## Why Monte Carlo?
+
+A backtest is **one path**: one particular order in which the trades happened. The same trades in a different order, or a different sample from the same edge, would give a different equity curve and a different drawdown. **Monte Carlo** simulation generates many such paths so you can see the **range** of outcomes, not just the one that happened.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original said Monte Carlo shows "ruin risk" and "confidence intervals" for real trading. Resampling only
+  re-orders or re-draws **the trades you already have**. It cannot produce a loss worse than the worst trade in your
+  list, and it assumes the future will look like the sample. Treat the output as a rough guide to path risk, not a
+  measure of true ruin probability.
+</Callout>
+
+---
+
+## The Bootstrap Procedure
+
+| Step | What to do                                                                                    |
+| ---- | --------------------------------------------------------------------------------------------- |
+| 1    | Collect the R-multiple of every trade (result ÷ amount risked)                                |
+| 2    | Draw trades **with replacement** to build a new sequence of the same length                    |
+| 3    | Compute that path's final result and **maximum drawdown** (largest peak-to-trough fall, in R)  |
+| 4    | Repeat thousands of times                                                                     |
+| 5    | Read percentiles: 5th, 50th (median) and 95th                                                  |
+
+Variations: **shuffle without replacement** (keeps the same set of trades and only tests the order), or **block bootstrap** (resample runs of trades to preserve clustering).
+
+---
+
+## A 100-Trade Example
+
+![Forty of 4,000 resampled 100-trade equity paths for a backtest of 45 winners at +1.5R and 55 losers at −1R with a median final result of +12R; below, histograms of the final result (5th percentile −8R, median +12R, 95th +32R, 12% of paths end below zero) and of the maximum drawdown (5th 5R, median 9R, 95th 18R, 12% exceed 15R)](/images/quantitative/monte-carlo/monte-carlo-drawdown-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/mc-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The 100-trade list is **synthetic**: one random sample from a 45%-win-rate, +1.5R / −1R system (45 wins this time, so
+  the sample expectancy is exactly +0.125R). The backtest's own maximum drawdown was 7.5R.
+</Callout>
+
+| Measure                                   | 5th percentile | Median | 95th percentile |
+| ----------------------------------------- | -------------- | ------ | --------------- |
+| Final result after 100 trades             | −8R            | +12R   | +32R            |
+| Maximum drawdown                          | 5R             | 9R     | 18R             |
+
+Other results: **12%** of resampled paths end **below zero** even though the expectancy is positive, and **12%** have a drawdown **above 15R**. The 95th-percentile drawdown (18R) is **more than twice** the 7.5R the backtest happened to show: the backtest was one fairly kind path.
+
+---
+
+## From R to Account Drawdown
+
+A drawdown in R becomes a percentage of the account once you choose the **risk per trade**: roughly 1 − (1 − r)^D, where *r* is the fraction risked and *D* the drawdown in R (it compounds).
+
+| Risk per trade | 9R (median) | 18R (95th percentile) |
+| -------------- | ----------- | --------------------- |
+| 0.5%           | 4.4%        | 8.6%                  |
+| 1%             | 8.6%        | 16.5%                 |
+| 2%             | 16.6%       | 30.5%                 |
+| 3%             | 24.0%       | 42.2%                 |
+
+### Example (no chart) — choosing the risk per trade
+
+You can tolerate a drawdown of **20%** at the 95th percentile. Solve 1 − (1 − r)^18 = 0.20: r = 1 − 0.8^(1/18) ≈ **1.23%**, so risk about **1.2%** per trade. A trade: entry **1.0850**, stop **1.0830**, target **1.0880** (**1 : 1.5** planned); on a 10,000 account that risks 120 and sizes the position at 120 ÷ 20 pips = 6 per pip. If the live drawdown passes the simulated 95th percentile, treat it as a sign the edge or the estimate may have changed.
+
+---
+
+## Limits
+
+| Limit                                         | Detail                                                                |
+| --------------------------------------------- | --------------------------------------------------------------------- |
+| Only the trades you have                      | No loss bigger than the worst in your sample                          |
+| Independence                                  | Plain resampling ignores clustering of losses; use a block bootstrap  |
+| Small samples                                 | 100 trades gives wide, noisy percentiles; more trades narrow them     |
+| The edge may change                           | Resampling assumes the future matches the sample                      |
+| Costs and slippage                            | Use trades after costs                                                |
+
+---
+
+## Common Mistakes
+
+| Mistake                                         | Fix                                                        |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| Reporting only the backtest drawdown            | Report the percentile range from Monte Carlo               |
+| Ignoring that drawdown compounds                | Convert R to % with the risk per trade                     |
+| Using trades before costs                       | Use after-cost R                                           |
+| Treating 95th percentile as the worst case      | The tail can be worse; leave margin                        |
+| Resampling a rule you optimised on the same data | Resample out-of-sample trades                              |
+
+---
+
+## Practice
+
+1. Export your trades as R-multiples. Resample 5,000 paths of 100 trades and record the 5th, 50th and 95th percentile of final R and max drawdown.
+2. Convert the 95th-percentile drawdown to a percentage at your usual risk per trade.
+3. Compare with the worst drawdown you have actually seen. Is it inside the range?
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                                    |
+| ---------------- | ------------------------------------------------------------------------- |
+| Monte Carlo      | Resample your trades to see the range of paths from the same edge         |
+| Example result   | Median +12R, 95th-percentile drawdown 18R vs 7.5R in the backtest         |
+| Account drawdown | 1 − (1 − r)^D for risk r and drawdown D in R                              |
+| Limits           | Only your trades, assumes independence and a stable edge                  |
+
+---
+
+## Related Topics
+
+- [Kelly Criterion](/en/quantitative/kelly-criterion)
+- [Equity Curve Management](/en/quantitative/equity-curve-management)
+- [Backtesting Methodology](/en/quantitative/backtesting-methodology)
+- [Expectancy Formula](/en/quantitative/expectancy-formula)
