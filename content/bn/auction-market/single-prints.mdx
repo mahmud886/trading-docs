@@ -1,84 +1,123 @@
 ---
-title: "সিঙ্গেল প্রিন্ট কনসেপ্ট — প্রাইস রিজেকশন জোন"
-description: "সিঙ্গেল প্রিন্ট অ্যানালাইসিস মাস্টার করুন — যেখানে প্রাইস এত দ্রুত মুভ করেছে যে শুধু একটি TPO প্রিন্ট হয়েছে। সিঙ্গেল প্রিন্ট কেন সাপোর্ট/রেজিস্ট্যান্স হিসেবে কাজ করে শিখুন।"
+title: "Single Prints — Market Profile এ দ্রুত মুভ পড়া"
+description: "Single Print কী (যে দামের সারিতে মাত্র একটি TPO পিরিয়ড ট্রেড করেছে, দ্রুত মুভ যা রেখে যায়), Tail ও Gap থেকে কীভাবে আলাদা করবেন, প্রাইস ফিরলে ট্রেডাররা জোনকে রেফারেন্স হিসেবে কীভাবে ব্যবহার করেন, আর ধারণাটি কোথায় ব্যর্থ হয় — দুই দিনের চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: advanced
 order: 6
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Single Print Concepts
+## Single Print কী?
 
-Master single print analysis — areas where price moved so fast that only one TPO printed. Learn why single prints act as support/resistance and future targets.
+[Market Profile](/bn/auction-market/market-profile) চার্টে **Single Print** হলো **শুধু একটি অক্ষরের** দামের সারি: সেখানে মাত্র একটি পিরিয়ড ট্রেড করেছে। Profile এর মাঝখানে এমন সারির ধারা মানে প্রাইস সেই জোন **দ্রুত পেরিয়ে গেছে** আর অন্য কোনো পিরিয়ড ফিরে আসেনি।
 
-<Callout type="info" title="The Auction Process">
-  Markets exist for ONE purpose: to facilitate trade. Price moves UP to find sellers, DOWN to find buyers. When it finds
-  enough of both at a price = fair value (balance). When it can't find enough = price moves until it does (imbalance).
-  This is the entire basis of Auction Market Theory.
+<Callout type="warning" title="সুর নরম করা হয়েছে">
+  মূল লেসনে বলা হয়েছিল Single Print "Support/Resistance হিসেবে কাজ করে" এবং "ভবিষ্যতের টার্গেট", যেন এটা নিয়ম। এটি
+  একটি **দ্রুত মুভের রেকর্ড**। প্রাইস কিছুতে ফেরে, কিছু ভরাট করে, কিছু উপেক্ষা করে। জোনটিকে নজরে রাখার রেফারেন্স ধরুন,
+  দেয়াল নয়।
 </Callout>
 
 ---
 
-## Core AMT Principles
+## একটি জোন আর ফিরে আসা
 
-### Price Discovery
+![একটি সিন্থেটিক EUR/USD উদাহরণ: দিন ১ হলো TPO Profile — A থেকে E এ 1.0850–1.0858 এর নিচের Balance, F পিরিয়ডের দ্রুত মুভ 1.0860–1.0866 এ চারটি Single Print রেখে গেছে, আর G থেকে M এ উপরের Balance; দিন ২ এর ঘণ্টাভিত্তিক ক্যান্ডেল জোনে ফিরে 1.0861 Low পর্যন্ত পরীক্ষা করে, 1.0859 পর্যন্ত ভরাট না করে 1.0874 এ ওঠে](/images/auction-market/single-prints/single-prints-dark.webp)
 
-- Markets constantly "auction" to find prices where both buyers and sellers agree
-- Price moves in one direction until it finds opposing interest
-- The auction process creates predictable patterns
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/auction-market/sp-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Balance (Rotation)
-
-- When buyers and sellers are evenly matched
-- Price rotates within a range
-- Volume builds at "fair value" (POC)
-- Strategy: Mean reversion, fade extremes
-
-### Imbalance (Trend)
-
-- When one side dominates
-- Price moves directionally to find the opposing side
-- Low volume at intermediate levels (single prints)
-- Strategy: Follow the imbalance, buy pullbacks in trend
-
----
-
-## Practical Framework
-
-### Step 1: Identify Market State
-
-- **Balanced**: Price rotating, building volume in a range
-- **Imbalanced**: Price moving directionally with conviction
-- **Transitioning**: One state shifting to the other
-
-### Step 2: Apply Correct Strategy
-
-- Balance → Fade extremes, target POC
-- Imbalance → Trade with direction, enter on pullbacks
-- Transition → Look for breakout/breakdown confirmation
-
-### Step 3: Use AMT Reference Levels
-
-- Previous session POC, VAH, VAL
-- Initial Balance high/low
-- Single print zones
-- Excess tails (completed auctions)
-
----
-
-## AMT + ICT/SMC Integration
-
-| AMT Concept     | ICT/SMC Equivalent |
-| --------------- | ------------------ |
-| Value Area High | Premium zone       |
-| Value Area Low  | Discount zone      |
-| POC             | Equilibrium        |
-| Single Prints   | FVG / Imbalance    |
-| Excess          | Liquidity sweep    |
-| Poor High/Low   | Resting liquidity  |
-| IB Breakout     | Session expansion  |
-
-<Callout type="warning" title="Complementary Frameworks">
-  AMT tells you WHERE the market is in its auction process. ICT/SMC tells you WHO is driving it and WHEN they'll act.
-  Combining both creates a complete institutional framework — understanding both the mechanism (AMT) and the operator
-  (Smart Money).
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  দুই দিনই **সিন্থেটিক**। Profile এ আধা-ঘণ্টার পিরিয়ড, দিন ২ এ ঘণ্টাভিত্তিক ক্যান্ডেল। আসলে ফিরে এলে জোন পুরো ভরাটও হতে
+  পারে, জোনের ভেতরে আটকেও যেতে পারে, বা কখনো না-ও ফিরতে পারে।
 </Callout>
+
+| বৈশিষ্ট্য            | চার্টে                                          | পাঠ                              |
+| -------------------- | ----------------------------------------------- | -------------------------------- |
+| **নিচের Balance**    | A–E পিরিয়ড, 1.0850 – 1.0858                    | যেখানে প্রথমে ট্রেড গৃহীত হয়েছে |
+| **Single Print**     | 1.0860, 1.0862, 1.0864, 1.0866 — শুধু F পিরিয়ড | দ্রুত মুভ: এই দামগুলোতে কম সময়  |
+| **উপরের Balance**    | G–M পিরিয়ড, 1.0868 – 1.0874 (POC 1.0870)       | দ্বিতীয় গ্রহণযোগ্য এরিয়া       |
+| **দিন ২ এর পরীক্ষা** | Low 1.0861; জোনের নিচের কিনারা 1.0859           | পরীক্ষিত, ভরাট হয়নি             |
+
+---
+
+## Single Print, Tail ও Gap
+
+| শব্দ             | কোথায়                          | অর্থ                                                                                        |
+| ---------------- | ------------------------------- | ------------------------------------------------------------------------------------------- |
+| **Single Print** | Profile এর ভেতরে, দুই বডির মাঝে | দ্রুত মুভ যা পাতলা জোন রেখে গেছে                                                            |
+| **Tail**         | চরমে                            | প্রত্যাখ্যান; দেখুন [Excess and Poor Highs/Lows](/bn/auction-market/excess-poor-highs-lows) |
+| **Gap**          | সেশনের মাঝে                     | প্রাইস লাফিয়েছে; মাঝে কোনো ট্রেডই হয়নি                                                    |
+
+Tail হলো একদম উপর বা নিচে থাকা Single Print জোন। Profile এর ভেতরে Single Print দুটি Balance এরিয়াকে আলাদা করে।
+
+---
+
+## জোন ব্যবহার
+
+| পরিস্থিতি                        | সাধারণ ধারণা                                     | সতর্কতা                           |
+| -------------------------------- | ------------------------------------------------ | --------------------------------- |
+| প্রাইস উপর বা নিচ থেকে জোনে ফেরে | কিনারায় Hold, বা জোন ভরাট হওয়ার দিকে নজর রাখুন | দুটোই ঘটে                         |
+| প্রাইস ঢুকে দ্রুত পেরিয়ে যায়   | প্রথমবারের মতো অন্য পাশে চলতে পারে               | যেভাবে ঢুকেছে সেভাবেই বেরোয়      |
+| প্রাইস জোনের ভেতরে আটকে যায়     | জোনটি নতুন Balance এরিয়ায় পরিণত হতে পারে       | তখন এটি আর "Single Print" জোন নয় |
+
+### উদাহরণ (চার্ট ছাড়া) — জোনে Hold
+
+দিন ২ জোনে পড়ে **1.0862** এর কাছে আটকে যায়, জোনের Low এর উপরে Hold সহ। পরিকল্পনা: **1.0864** এ Buy, Stop **1.0858** (জোনের নিচের কিনারার নিচে), টার্গেট **1.0874** (উপরের Balance এর High): রিস্ক ৬ পিপ, রিওয়ার্ড ১০, পরিকল্পিত **১ : ১.৭**। চার্টে শেষ ক্যান্ডেলে প্রাইস 1.0874 ছোঁয়; পরিকল্পনা তার ওপর নির্ভর করে না। প্রাইস **1.0859** এর নিচে Close করলে জোন ভরাট হয়েছে, ধারণা বাতিল।
+
+---
+
+## কোথায় ব্যর্থ হয়
+
+| ব্যর্থতা                       | দেখতে কেমন                                    |
+| ------------------------------ | --------------------------------------------- |
+| প্রাইস জোন ভরাট করে চলতেই থাকে | দূরের কিনারার ওপারে Close                     |
+| প্রাইস কখনো ফেরে না            | জোন কয়েকদিন অস্পৃষ্ট থাকে                    |
+| নিউজে হওয়া দ্রুত মুভ          | রিলিজে হওয়া পাতলা জোন খেয়ালখুশিমতো হতে পারে |
+| ভুল পিরিয়ড দৈর্ঘ্য            | পিরিয়ড দৈর্ঘ্য বদলালে Single Print বদলে যায় |
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                  | সমাধান                                              |
+| ------------------------------------ | --------------------------------------------------- |
+| প্রতিটি পাতলা জোনকে Support ধরা      | রেফারেন্স ধরুন; প্রাইসের প্রতিক্রিয়ার অপেক্ষা করুন |
+| ৩০ ও ৬০ মিনিটের Profile মেশানো       | একটি পিরিয়ড দৈর্ঘ্য রাখুন                          |
+| দুই-অক্ষরের সারিকে Single Print গোনা | Single মানে ঠিক একটি অক্ষর                          |
+| জোনের ওপারে Stop ছাড়া এন্ট্রি       | জোনের দূরের কিনারার ওপারে Stop রাখুন                |
+| নিউজ ভুলে যাওয়া                     | দ্রুত মুভের কারণ দেখুন                              |
+
+---
+
+## অনুশীলন
+
+1. পাঁচটি TPO দিনে Profile এর ভেতরে তিন বা বেশি Single Print এর প্রতিটি ধারা চিহ্নিত করুন।
+2. পরের তিন দিনে প্রতিটি জোনে প্রাইস ফিরেছে, ভরাট করেছে, ধরে রেখেছে বা উপেক্ষা করেছে লিখুন।
+3. হিসাব লিখে রাখুন। ধারণার ওপর নির্ভর করার আগে এটা রাখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা        | বিস্তারিত                                             |
+| ------------ | ----------------------------------------------------- |
+| Single Print | একটি অক্ষরের দামের সারি: দ্রুত মুভ এটিকে পাতলা রেখেছে |
+| জোন          | দুই Balance এরিয়ার মাঝে Single Print এর ধারা         |
+| ব্যবহার      | ফিরে এলে নজরে রাখার রেফারেন্স, কিনারার ওপারে Stop সহ  |
+| সীমা         | প্রাইস ভরাট করতে, ধরে রাখতে বা উপেক্ষা করতে পারে      |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Market Profile](/bn/auction-market/market-profile)
+- [Excess and Poor Highs/Lows](/bn/auction-market/excess-poor-highs-lows)
+- [Balanced vs Imbalanced Markets](/bn/auction-market/balanced-imbalanced)
+- [Volume Profile](/bn/order-flow/volume-profile)

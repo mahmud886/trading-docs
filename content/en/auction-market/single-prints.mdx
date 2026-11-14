@@ -1,84 +1,123 @@
 ---
-title: "Single Print Concepts — Price Rejection Zones"
-description: "Master single print analysis — areas where price moved so fast that only one TPO printed. Learn why single prints act as support/resistance and future targets."
+title: "Single Prints — Reading Fast Moves on a Market Profile"
+description: "What single prints are (price rows where only one TPO period traded, left by a fast move), how to tell them from tails and gaps, how traders use the zone as a reference when price returns, and where the idea fails — with a worked two-day chart and an animated walkthrough."
 level: advanced
 order: 6
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Single Print Concepts
+## What Are Single Prints?
 
-Master single print analysis — areas where price moved so fast that only one TPO printed. Learn why single prints act as support/resistance and future targets.
+On a [Market Profile](/en/auction-market/market-profile) chart, a **single print** is a price row with **one letter only**: a single period traded there. A run of them in the middle of the profile means price **moved through that zone quickly** and no other period came back.
 
-<Callout type="info" title="The Auction Process">
-  Markets exist for ONE purpose: to facilitate trade. Price moves UP to find sellers, DOWN to find buyers. When it finds
-  enough of both at a price = fair value (balance). When it can't find enough = price moves until it does (imbalance).
-  This is the entire basis of Auction Market Theory.
+<Callout type="warning" title="Toned down">
+  The original said single prints "act as support/resistance" and "future targets" as if by rule. They are a **record of
+  a fast move**. Price returns to some of them, fills some, and ignores others. Treat the zone as a reference you watch,
+  not a wall.
 </Callout>
 
 ---
 
-## Core AMT Principles
+## A Zone and a Return
 
-### Price Discovery
+![A synthetic EUR/USD example: day 1 is a TPO profile with a lower balance A to E at 1.0850–1.0858, a fast move in period F leaving four single prints at 1.0860–1.0866, and an upper balance G to M; day 2 hourly candles fall back into the zone, test it to a low of 1.0861 without filling it to 1.0859, and rise to 1.0874](/images/auction-market/single-prints/single-prints-dark.webp)
 
-- Markets constantly "auction" to find prices where both buyers and sellers agree
-- Price moves in one direction until it finds opposing interest
-- The auction process creates predictable patterns
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/auction-market/sp-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Balance (Rotation)
-
-- When buyers and sellers are evenly matched
-- Price rotates within a range
-- Volume builds at "fair value" (POC)
-- Strategy: Mean reversion, fade extremes
-
-### Imbalance (Trend)
-
-- When one side dominates
-- Price moves directionally to find the opposing side
-- Low volume at intermediate levels (single prints)
-- Strategy: Follow the imbalance, buy pullbacks in trend
-
----
-
-## Practical Framework
-
-### Step 1: Identify Market State
-
-- **Balanced**: Price rotating, building volume in a range
-- **Imbalanced**: Price moving directionally with conviction
-- **Transitioning**: One state shifting to the other
-
-### Step 2: Apply Correct Strategy
-
-- Balance → Fade extremes, target POC
-- Imbalance → Trade with direction, enter on pullbacks
-- Transition → Look for breakout/breakdown confirmation
-
-### Step 3: Use AMT Reference Levels
-
-- Previous session POC, VAH, VAL
-- Initial Balance high/low
-- Single print zones
-- Excess tails (completed auctions)
-
----
-
-## AMT + ICT/SMC Integration
-
-| AMT Concept     | ICT/SMC Equivalent |
-| --------------- | ------------------ |
-| Value Area High | Premium zone       |
-| Value Area Low  | Discount zone      |
-| POC             | Equilibrium        |
-| Single Prints   | FVG / Imbalance    |
-| Excess          | Liquidity sweep    |
-| Poor High/Low   | Resting liquidity  |
-| IB Breakout     | Session expansion  |
-
-<Callout type="warning" title="Complementary Frameworks">
-  AMT tells you WHERE the market is in its auction process. ICT/SMC tells you WHO is driving it and WHEN they'll act.
-  Combining both creates a complete institutional framework — understanding both the mechanism (AMT) and the operator
-  (Smart Money).
+<Callout type="info" title="About this chart">
+  Both days are **synthetic**. The profile uses half-hour periods; day 2 uses hourly candles. A real return can fill the
+  zone entirely, stall in it, or never happen.
 </Callout>
+
+| Feature           | In the chart                                   | Reading                                  |
+| ----------------- | ---------------------------------------------- | ---------------------------------------- |
+| **Lower balance** | Periods A–E, 1.0850 – 1.0858                   | Where trading was accepted first         |
+| **Single prints** | 1.0860, 1.0862, 1.0864, 1.0866 — period F only | A fast move: little time at these prices |
+| **Upper balance** | Periods G–M, 1.0868 – 1.0874 (POC 1.0870)      | A second area of acceptance              |
+| **Day 2 test**    | Low 1.0861; the zone's bottom edge is 1.0859   | Tested, not filled                       |
+
+---
+
+## Single Prints, Tails and Gaps
+
+| Term              | Where                              | Meaning                                                                                  |
+| ----------------- | ---------------------------------- | ---------------------------------------------------------------------------------------- |
+| **Single prints** | Inside the profile, between bodies | A fast move that left a thin zone                                                        |
+| **Tail**          | At an extreme                      | A rejection; see [Excess and Poor Highs/Lows](/en/auction-market/excess-poor-highs-lows) |
+| **Gap**           | Between sessions                   | Price jumped; no trades at all in between                                                |
+
+A tail is a single-print zone at the very top or bottom. Inside the profile, single prints separate two balance areas.
+
+---
+
+## Using the Zone
+
+| Situation                                     | Common ideas                                             | Caution                                    |
+| --------------------------------------------- | -------------------------------------------------------- | ------------------------------------------ |
+| Price returns to the zone from above or below | Watch for a hold at its edge, or for it being filled     | Both happen                                |
+| Price enters and moves through it quickly     | May continue to the other side, as it did the first time | Speed in, speed out                        |
+| Price stalls inside the zone                  | The zone may be turning into a new balance area          | Then it is no longer a "single-print" zone |
+
+### Example (no chart) — a hold at the zone
+
+Day 2 falls into the zone and stalls near **1.0862**, with a hold above the zone's low. Plan: buy **1.0864**, stop **1.0858** (below the zone's bottom edge), target **1.0874** (the upper balance's high): risk 6 pips, reward 10, **1 : 1.7** planned. In the chart price reaches 1.0874 on the last candle; the plan doesn't count on that. If price closes below **1.0859**, the zone has been filled and the idea is off.
+
+---
+
+## Where It Fails
+
+| Failure                              | What it looks like                                  |
+| ------------------------------------ | --------------------------------------------------- |
+| Price fills the zone and keeps going | A close beyond the far edge                         |
+| Price never returns                  | The zone stays untouched for days                   |
+| Fast moves caused by news            | Thin zones from a release can be arbitrary          |
+| Wrong period length                  | Single prints change with the period length you use |
+
+---
+
+## Common Mistakes
+
+| Mistake                                   | Fix                                              |
+| ----------------------------------------- | ------------------------------------------------ |
+| Treating every thin zone as support       | Treat it as a reference; wait for price to react |
+| Mixing 30-minute and 60-minute profiles   | Keep one period length                           |
+| Counting two-letter rows as single prints | Single means exactly one letter                  |
+| Entering with no stop beyond the zone     | Put the stop beyond the zone's far edge          |
+| Forgetting the news                       | Check what caused the fast move                  |
+
+---
+
+## Practice
+
+1. On five TPO days, mark every run of three or more single prints inside the profile.
+2. Over the next three days, note whether price returned, filled, held or ignored each zone.
+3. Write the tally. Keep it before relying on the idea.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea         | Detail                                                        |
+| ------------ | ------------------------------------------------------------- |
+| Single print | A price row with one letter: a fast move left it thin         |
+| Zone         | A run of single prints between two balance areas              |
+| Use          | A reference to watch on a return, with a stop beyond its edge |
+| Limits       | Price may fill, hold or ignore it                             |
+
+---
+
+## Related Topics
+
+- [Market Profile](/en/auction-market/market-profile)
+- [Excess and Poor Highs/Lows](/en/auction-market/excess-poor-highs-lows)
+- [Balanced vs Imbalanced Markets](/en/auction-market/balanced-imbalanced)
+- [Volume Profile](/en/order-flow/volume-profile)
