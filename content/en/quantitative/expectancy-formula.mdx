@@ -1,62 +1,121 @@
 ---
-title: "Expectancy Formula & Edge Calculation"
-description: "Master the expectancy formula — the mathematical foundation of every profitable trading system. Calculate your true edge: (Win% × Avg Win) - (Loss% × Avg Loss)."
+title: "Expectancy Formula and Edge Calculation"
+description: "How to compute a trade's expectancy — win rate × average win − loss rate × average loss — in R units, the break-even win rate for each reward-to-risk ratio, how costs change it, and how uncertain the estimate is on a small sample (with an approximate 95% interval). Includes a chart of expectancy against win rate, a 40-trade worked sample and an animated walkthrough."
 level: intermediate
 order: 2
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Expectancy Formula
+## The Formula
 
-Master the expectancy formula — the mathematical foundation of every profitable trading system. Calculate your true edge: (Win% × Avg Win) - (Loss% × Avg Loss).
+**Expectancy** is the average result of one trade, measured in **R** (multiples of the amount risked):
 
-<Callout type="info" title="Quantitative Edge">
-  The difference between gambling and trading is QUANTIFICATION. If you cannot express your edge as a number, you don't
-  have an edge — you have a hope. Quantitative methods turn intuition into measurable, repeatable processes.
+> **Expectancy = (win rate × average win) − (loss rate × average loss)**
+
+If you always risk 1R and your target is _RR_ times your risk, this simplifies to **W × RR − (1 − W)**, where _W_ is the win rate. Positive means the average trade earns money **before costs**; zero is break-even.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original called expectancy "the mathematical foundation of every profitable trading system" and said a "100+
+  trade" sample is enough. Expectancy is a useful summary, but it is an **estimate**, and a positive estimate from a
+  small sample can easily be luck. This lesson shows how to put a rough error bar on it.
 </Callout>
 
 ---
 
-## Core Principles
+## Break-Even Win Rates
 
-Quantitative trading is built on these foundations:
+The expectancy is zero when **W = 1 / (1 + RR)**.
 
-- **Everything is probability** — no certainty, only statistical edges
-- **Large sample sizes** — individual trades are meaningless, systems matter
-- **Mathematical expectancy** — positive expected value over time
-- **Risk of ruin** — survival first, profits second
-- **Process over outcome** — judge decisions, not results
+| Reward-to-risk | Break-even win rate | Win rate for +0.25R |
+| -------------- | ------------------- | ------------------- |
+| 1 : 1          | 50%                 | 62.5%               |
+| 1 : 1.5        | 40%                 | 50%                 |
+| 1 : 2          | 33.3%               | 41.7%               |
+| 1 : 3          | 25%                 | 31.3%               |
+
+(Win rate for +0.25R: W = (0.25 + 1) / (RR + 1).) A high reward-to-risk ratio lowers the win rate you need, but you still have to hit it.
 
 ---
 
-## Practical Framework
+## A 40-Trade Worked Sample
 
-### Step 1: Define Your Edge
+![Top: expectancy per trade against win rate for reward-to-risk of 1:1, 1:1.5, 1:2 and 1:3, with break-even win rates 50%, 40%, 33.3% and 25%. Bottom: a synthetic 40-trade sample with 42% winners at +2R and an average loss of 0.95R, giving an expectancy of +0.38R with an approximate 95% interval of −0.07R to +0.82R](/images/quantitative/expectancy-formula/expectancy-formula-dark.webp)
 
-- What is your win rate?
-- What is your average win vs average loss?
-- What is your expectancy per trade?
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/quantitative/ex-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Step 2: Size Appropriately
-
-- Use Kelly Criterion or fixed fractional sizing
-- Never risk more than your edge justifies
-- Account for correlation between positions
-
-### Step 3: Validate Statistically
-
-- Minimum 100+ trade sample for significance
-- Out-of-sample testing required
-- Walk-forward validation for robustness
-
-### Step 4: Monitor & Adapt
-
-- Track equity curve vs expected behavior
-- Reduce size during drawdowns beyond 1 SD
-- Pause if strategy degrades beyond 2 SD
-
-<Callout type="warning" title="Overfitting Warning">
-  The #1 killer of quantitative strategies is overfitting — finding patterns in historical noise that don't persist
-  forward. Always use out-of-sample data and walk-forward testing. If a strategy looks "too good" in backtest, it
-  probably IS too good to be true.
+<Callout type="info" title="About this chart">
+  The 40 trades are **synthetic**, drawn at random with about a 42% chance of a +2R win. The interval uses the simple
+  normal approximation (mean ± 1.96 standard errors), which is rough for small samples.
 </Callout>
+
+| Quantity                 | Value in the sample                                 |
+| ------------------------ | --------------------------------------------------- |
+| Trades                   | 40 (17 winners, 20 losers, 3 break-even or partial) |
+| Win rate                 | 17 ÷ 40 = 42.5%                                     |
+| Average win              | +2.00R                                              |
+| Average loss             | −0.95R                                              |
+| **Expectancy**           | 0.425 × 2.00 − 0.50 × 0.95 = **+0.375R** (≈ +0.38R) |
+| Standard deviation of R  | 1.44R                                               |
+| Standard error           | 1.44 ÷ √40 = 0.23R                                  |
+| **Approx. 95% interval** | **−0.07R to +0.82R**                                |
+
+The average is positive, but the interval **includes zero**: with only 40 trades this sample cannot tell a real edge from luck. The uncertainty shrinks with the square root of the sample size: to halve the interval you need about four times as many trades.
+
+---
+
+## Costs
+
+Costs reduce every trade, winners and losers alike. Expressed in R: **cost in R = cost in pips ÷ stop distance in pips**.
+
+### Example (no chart) — a plan with costs
+
+Entry **1.0850**, stop **1.0830** (20 pips), target **1.0890** (40 pips): **1 : 2.0** planned. If you expect to win 40%, the expectancy before costs is 0.4 × 2 − 0.6 = **+0.20R**. A round-trip cost of 1.5 pips is 1.5 ÷ 20 = 0.075R on every trade, so the expectancy after costs is about **+0.125R**. With a 35% win rate it would be 0.35 × 2 − 0.65 = +0.05R before costs and **−0.025R** after: costs turn it negative.
+
+---
+
+## Common Mistakes
+
+| Mistake                                  | Fix                                                    |
+| ---------------------------------------- | ------------------------------------------------------ |
+| Ignoring costs                           | Subtract cost in R from every trade                    |
+| Reporting expectancy with no uncertainty | Give the interval or standard error                    |
+| Mixing different risk sizes              | Convert every result to R first                        |
+| Using win rate alone                     | Win rate means little without the average win and loss |
+| Re-estimating after changing rules       | Treat each rule change as a new sample                 |
+
+---
+
+## Practice
+
+1. Convert your last 30 trades to R (result ÷ amount risked).
+2. Compute win rate, average win, average loss and expectancy; then the standard error and a rough 95% interval.
+3. Subtract your typical cost in R. Is the interval still above zero?
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea        | Detail                                                      |
+| ----------- | ----------------------------------------------------------- |
+| Formula     | Win rate × average win − loss rate × average loss, in R     |
+| Break-even  | W = 1 / (1 + RR)                                            |
+| Costs       | Cost in R = pips of cost ÷ pips of stop                     |
+| Uncertainty | Standard error = SD ÷ √n; small samples give wide intervals |
+
+---
+
+## Related Topics
+
+- [Introduction to Quantitative Trading](/en/quantitative/introduction)
+- [Kelly Criterion](/en/quantitative/kelly-criterion)
+- [Backtesting Methodology](/en/quantitative/backtesting-methodology)
+- [Monte Carlo Simulations](/en/quantitative/monte-carlo)
