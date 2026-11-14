@@ -1,62 +1,114 @@
 ---
-title: "মোমেন্টাম ফ্যাক্টর স্ট্র্যাটেজি"
-description: "কোয়ান্টিটেটিভ ফ্যাক্টর হিসেবে মোমেন্টাম বুঝুন। টাইম-সিরিজ মোমেন্টাম, ক্রস-সেকশনাল মোমেন্টাম এবং CTA ট্রেন্ড-ফলোয়িং শিখুন।"
+title: "Momentum Factor Strategies"
+description: "কোয়ান্টিটেটিভ ফ্যাক্টর হিসেবে Momentum: Time-Series Momentum (অ্যাসেটের নিজের ট্রেন্ড) বনাম Cross-Sectional Momentum (বিজয়ী বনাম পরাজিত), প্রতিটি কীভাবে বানানো হয়, লাভের আগে দীর্ঘ লোকসানের পর্ব দেখানো একটি সিন্থেটিক আট-অ্যাসেট টেস্ট, খরচ ও Drawdown এর ভূমিকা, আর ট্রেন্ড-ফলোয়িং ফান্ড আসলে কী করে — একটি চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: advanced
 order: 5
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Momentum Factor Strategies
+## Momentum কী?
 
-Understand momentum as a quantitative factor. Learn time-series momentum, cross-sectional momentum, and how trend-following CTAs generate returns.
+**Momentum** হলো সাম্প্রতিক ভালো করা অ্যাসেট কিছুদিন ভালো করতে থাকার, আর সাম্প্রতিক পরাজিতরা পিছিয়ে থাকার প্রবণতা। দীর্ঘ শিক্ষাগত নমুনায় স্টক, বন্ড, কমোডিটি ও কারেন্সিতে এটি নথিভুক্ত হয়েছে, আর সিস্টেম্যাটিক বিনিয়োগের সুপরিচিত **ফ্যাক্টর** এর একটি।
 
-<Callout type="info" title="Quantitative Edge">
-  The difference between gambling and trading is QUANTIFICATION. If you cannot express your edge as a number, you don't
-  have an edge — you have a hope. Quantitative methods turn intuition into measurable, repeatable processes.
+<Callout type="warning" title="সংশোধিত ও নরম করা হয়েছে">
+  মূল লেসনে বলা হয়েছিল ট্রেন্ড-ফলোয়িং CTA Momentum থেকে "রিটার্ন তৈরি করে", যেন নির্ভরযোগ্যভাবে। ট্রেন্ড-ফলোয়িং
+  ফান্ডের শক্তিশালী ও দুর্বল দশক, দীর্ঘ Drawdown, আর ফি, খরচ ও মাপার সময়ের ওপর নির্ভরশীল ফল ছিল। Momentum নথিভুক্ত
+  প্রবণতা, নিশ্চিত প্রিমিয়াম নয়; এই লেসনে দীর্ঘ লোকসানের পর্বসহ একটি সিন্থেটিক উদাহরণ দেখানো হয়েছে।
 </Callout>
 
 ---
 
-## Core Principles
+## দুই ধরন
 
-Quantitative trading is built on these foundations:
+| ধরন                            | নিয়ম                                                                  | এক্সপোজার                               |
+| ------------------------------ | ---------------------------------------------------------------------- | --------------------------------------- |
+| **Time-series** (পরম)          | প্রতিটি অ্যাসেট নিজের অতীত রিটার্ন ধনাত্মক হলে Long, ঋণাত্মক হলে Short | মার্কেটে নেট Long বা নেট Short হতে পারে |
+| **Cross-sectional** (আপেক্ষিক) | অতীত রিটার্নে অ্যাসেট র‍্যাঙ্ক; উপরের দলে Long, নিচের দলে Short        | গঠনগতভাবে মোটামুটি মার্কেট-নিরপেক্ষ     |
 
-- **Everything is probability** — no certainty, only statistical edges
-- **Large sample sizes** — individual trades are meaningless, systems matter
-- **Mathematical expectancy** — positive expected value over time
-- **Risk of ruin** — survival first, profits second
-- **Process over outcome** — judge decisions, not results
+Time-series জিজ্ঞাসা করে "এই অ্যাসেট কি ট্রেন্ড করছে?"; Cross-sectional জিজ্ঞাসা করে "কোন অ্যাসেটগুলো অন্যদের চেয়ে ভালো করছে?"। Lookback (এখানে ১২৬ দিন, প্রায় ছয় মাস) আর রিব্যালেন্সিং ব্যবধান (এখানে ২১ দিন) পরীক্ষার প্যারামিটার, প্রকৃতির ধ্রুবক নয়।
 
 ---
 
-## Practical Framework
+## আটটি সিন্থেটিক অ্যাসেটে একটি টেস্ট
 
-### Step 1: Define Your Edge
+![আটটি সিন্থেটিক অ্যাসেটে ৫৭৪ ট্রেডিং দিনে ১২৬-দিনের Lookback ও মাসিক রিব্যালেন্সিংয়ে তিনটি নিয়মের সঞ্চিত ফল: Cross-sectional Momentum শেষে +১৭% (সর্বোচ্চ Drawdown ২৩%), Time-series +১৪% (১০%) আর Equal-weight Buy-and-hold −১০% (২১%); দুটি Momentum নিয়মই প্রায় এক বছর পিছিয়ে থেকে +৩৮% ও +২৩% এ উঠে কিছুটা ফিরিয়ে দেয়](/images/quantitative/momentum-factors/momentum-factors-dark.webp)
 
-- What is your win rate?
-- What is your average win vs average loss?
-- What is your expectancy per trade?
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/quantitative/mf-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Step 2: Size Appropriately
-
-- Use Kelly Criterion or fixed fractional sizing
-- Never risk more than your edge justifies
-- Account for correlation between positions
-
-### Step 3: Validate Statistically
-
-- Minimum 100+ trade sample for significance
-- Out-of-sample testing required
-- Walk-forward validation for robustness
-
-### Step 4: Monitor & Adapt
-
-- Track equity curve vs expected behavior
-- Reduce size during drawdowns beyond 1 SD
-- Pause if strategy degrades beyond 2 SD
-
-<Callout type="warning" title="Overfitting Warning">
-  The #1 killer of quantitative strategies is overfitting — finding patterns in historical noise that don't persist
-  forward. Always use out-of-sample data and walk-forward testing. If a strategy looks "too good" in backtest, it
-  probably IS too good to be true.
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  আটটি অ্যাসেট **সিন্থেটিক**: প্রতিটির ধীর ড্রিফট চক্র ও দৈনিক নয়েজ আছে, মাঝপথে সব ট্রেন্ড উল্টে যায়। টেস্টে লেনদেন
+  খরচ ধরা হয়নি। ফল র‍্যান্ডম সিডের ওপর নির্ভর করে, আসল মার্কেট সম্পর্কে কিছু বলে না; পথের আকারই মূল কথা।
 </Callout>
+
+| নিয়ম             | মোট ফল | সর্বোচ্চ Drawdown | কী ঘটেছে                                                                 |
+| ----------------- | ------ | ----------------- | ------------------------------------------------------------------------ |
+| Cross-sectional   | +১৭%   | ২৩%               | প্রথম বছরে সবচেয়ে খারাপ প্রায় −২২%, তারপর +৩৮% পর্যন্ত উঠে কিছুটা ফেরত |
+| Time-series       | +১৪%   | ১০%               | ছোট দোলা; ফেরত দেওয়ার আগে প্রায় +২৩% পর্যন্ত                           |
+| Equal-weight hold | −১০%   | ২১%               | অ্যাসেটগুলোর ট্রেন্ড পরস্পর কাটাকাটি হয়ে নিচে সরেছে                     |
+
+আকার থেকে তিনটি জিনিস। ট্রেন্ড তৈরি হওয়ার সময় Momentum নিয়ম **অনেকদিন পানির নিচে** থাকতে পারে — এখানে প্রায় ৩৩০ দিন। ট্রেন্ড টিকলে এগুলো **লাভ করে**, আর ট্রেন্ড ঘুরলে **ফেরত দেয়**, কারণ সবসময় শেষ ট্রেন্ডই অনুসরণ করে। আর Cross-sectional সংস্করণের দোলা বেশি, কারণ বইয়ের অর্ধেক Short।
+
+---
+
+## ব্যবহারিক বিষয়
+
+| বিষয়                   | বিস্তারিত                                                               |
+| ----------------------- | ----------------------------------------------------------------------- |
+| খরচ                     | রিব্যালেন্সিংয়ে অর্থ লাগে; বাস্তবসম্মত স্প্রেড ও স্লিপেজে পরীক্ষা করুন |
+| Lookback ও হোল্ডিং সময় | একটি "সেরা" মান নয়, পাশের মানগুলো পরীক্ষা করুন (যেমন ৩, ৬ ও ১২ মাস)    |
+| বৈচিত্র্য               | যত বেশি স্বাধীন মার্কেট, মিলিত Momentum পথ তত মসৃণ                      |
+| পজিশন সাইজিং            | ভোলাটিলিটি অনুযায়ী স্কেল করুন যাতে প্রতিটি অ্যাসেট তুলনীয় ঝুঁকি দেয়  |
+| রিভার্সালের ঝুঁকি       | ট্রেন্ড একসাথে উল্টালে Momentum তীব্রভাবে পড়তে পারে                    |
+
+### উদাহরণ (চার্ট ছাড়া) — একটি কারেন্সি পেয়ারে Time-series নিয়ম
+
+নিয়ম: ১২৬-দিনের রিটার্ন ধনাত্মক হলে Long, ঋণাত্মক হলে Short, মাসিক রিব্যালেন্স। EUR/USD ১২৬ দিনে ৪% বেড়েছে, তাই **1.0850** এ Long। পরিকল্পনা: Stop **1.0780** (৭০ পিপ), স্থির টার্গেটের বদলে ট্রেইলিং এক্সিট; রেফারেন্স হিসেবে **1.0990** (১৪০ পিপ) পর্যন্ত মুভ হবে **১ : ২.০**। পরের রিব্যালেন্সে ১২৬-দিনের রিটার্ন ঋণাত্মক হলে Stop যেখানেই থাকুক, বেরিয়ে যান।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                  | সমাধান                                              |
+| ------------------------------------ | --------------------------------------------------- |
+| একটি সময়কালে Momentum বিচার         | দীর্ঘ নমুনা ও অনেক মার্কেট ব্যবহার করুন             |
+| একই ডেটায় Lookback অপ্টিমাইজ        | [Walk-Forward](/bn/quantitative/walk-forward) দেখুন |
+| খরচ উপেক্ষা                          | প্রতিটি টেস্টে ধরুন                                 |
+| কাঁচা এককে প্রতিটি অ্যাসেট সমান সাইজ | ভোলাটিলিটি অনুযায়ী স্কেল করুন                      |
+| লোকসানের পর্বে ছেড়ে দেওয়া          | শুরুর আগে সহ্যযোগ্য Drawdown ঠিক করুন               |
+
+---
+
+## অনুশীলন
+
+1. আপনার নাগালের দশটি মার্কেটের জন্য ট্রেইলিং ১২৬-দিনের রিটার্ন হিসাব করে আজ র‍্যাঙ্ক করুন। কোনগুলো উপরের ও নিচের তিনে?
+2. Cross-sectional নিয়ম পাঁচ বছরের দৈনিক ডেটায় মাসিক রিব্যালেন্সিংয়ে ব্যাকটেস্ট করুন। নতুন Equity High ছাড়া সবচেয়ে লম্বা সময় কত?
+3. ৬৩ ও ২৫২-দিনের Lookback এ আবার করুন। ফল কি টেকে?
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা    | বিস্তারিত                                                              |
+| -------- | ---------------------------------------------------------------------- |
+| Momentum | সাম্প্রতিক বিজয়ীরা কিছুদিন জিততে থাকে                                 |
+| ধরন      | Time-series (নিজের ট্রেন্ড) বনাম Cross-sectional (আপেক্ষিক র‍্যাঙ্কিং) |
+| টেস্ট    | দীর্ঘ লোকসানের পর লাভ এসেছে, তারপর আংশিক উল্টেছে                       |
+| ঝুঁকি    | খরচ, Drawdown, ট্রেন্ড রিভার্সাল, প্যারামিটার Overfitting              |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Cross-Asset Momentum](/bn/intermarket/cross-asset-momentum)
+- [Mean Reversion Models](/bn/quantitative/mean-reversion)
+- [Walk-Forward Optimization](/bn/quantitative/walk-forward)
+- [Equity Curve Management](/bn/quantitative/equity-curve-management)

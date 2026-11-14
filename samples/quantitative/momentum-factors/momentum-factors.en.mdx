@@ -1,0 +1,108 @@
+---
+title: "Momentum Factor Strategies"
+description: "Momentum as a quantitative factor: time-series momentum (an asset's own trend) versus cross-sectional momentum (winners against losers), how each is built, a synthetic eight-asset test showing a long losing stretch before the gains, the role of costs and drawdowns, and what trend-following funds actually do — with a worked chart and an animated walkthrough."
+level: advanced
+order: 5
+lastUpdated: "2026-11-14"
+---
+
+## What Is Momentum?
+
+**Momentum** is the tendency for assets that have done well recently to keep doing well for a while, and for recent losers to keep lagging. It has been documented across stocks, bonds, commodities and currencies in long academic samples, and it is one of the best-known **factors** in systematic investing.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original said that trend-following CTAs "generate returns" from momentum, as if reliably. Trend-following funds
+  have had strong and weak decades, long drawdowns, and results that depend on fees, costs and the period measured.
+  Momentum is a documented tendency, not a guaranteed premium; this lesson shows a synthetic example that includes a
+  long losing stretch.
+</Callout>
+
+---
+
+## Two Kinds
+
+| Type                   | Rule                                                                 | Exposure                                   |
+| ---------------------- | -------------------------------------------------------------------- | ------------------------------------------ |
+| **Time-series** (absolute) | Hold each asset long if its own past return is positive, short if negative | Can be net long or net short the market   |
+| **Cross-sectional** (relative) | Rank assets by past return; long the top group, short the bottom group | Roughly market-neutral by construction    |
+
+Time-series momentum asks "is this asset trending?"; cross-sectional asks "which assets are doing better than the others?". The lookback (here 126 days, about six months) and the rebalancing interval (here 21 days) are parameters to test, not constants of nature.
+
+---
+
+## A Test on Eight Synthetic Assets
+
+![Cumulative result of three rules on eight synthetic assets over 574 trading days with a 126-day lookback and monthly rebalancing: cross-sectional momentum ends at +17% (maximum drawdown 23%), time-series momentum at +14% (maximum drawdown 10%) and equal-weight buy-and-hold at −10% (maximum drawdown 21%); both momentum rules lose ground for about a year before climbing to +38% and +23% and giving part of it back](/images/quantitative/momentum-factors/momentum-factors-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/mf-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The eight assets are **synthetic**: each has a slow drift cycle plus daily noise, with all trends reversing partway
+  through. The test uses no transaction costs. The outcome depends on the random seed and means nothing about real
+  markets; the shape of the path is the point.
+</Callout>
+
+| Rule                  | Total result | Max drawdown | What happened                                                          |
+| --------------------- | ------------ | ------------ | ---------------------------------------------------------------------- |
+| Cross-sectional       | +17%         | 23%          | About −22% at its worst in the first year, then up to +38% before giving part back |
+| Time-series           | +14%         | 10%          | Smaller swings; up to about +23% before giving back                     |
+| Equal-weight hold     | −10%         | 21%          | Drifted down while the assets' trends offset                             |
+
+Take three things from the shape. Momentum rules can spend **a long time under water** — about 330 days here — while trends are still forming. They **gain when trends persist**, and they **give back** when trends turn, because they are always following the last trend. And the cross-sectional version has bigger swings because it holds half its book short.
+
+---
+
+## Practical Points
+
+| Point                          | Detail                                                                         |
+| ------------------------------ | ------------------------------------------------------------------------------ |
+| Costs                          | Rebalancing costs money; test with realistic spreads and slippage              |
+| Lookback and holding period    | Test neighbours (for example 3, 6 and 12 months), not one "best" value         |
+| Diversification                | The more independent markets, the smoother the combined momentum path          |
+| Position sizing                | Scale by volatility so each asset contributes comparable risk                  |
+| Reversal risk                  | Momentum can fall sharply when trends reverse together                         |
+
+### Example (no chart) — a time-series rule on one currency pair
+
+Rule: long if the 126-day return is positive, short if negative, rebalance monthly. EUR/USD is up 4% over 126 days, so you are long at **1.0850**. Plan: stop **1.0780** (70 pips), target a trailing exit rather than a fixed target; as a reference, a move to **1.0990** (140 pips) would be **1 : 2.0**. If the 126-day return turns negative at the next rebalance, you exit regardless of where the stop is.
+
+---
+
+## Common Mistakes
+
+| Mistake                                         | Fix                                                        |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| Judging momentum over one stretch               | Use long samples and many markets                          |
+| Optimising the lookback on the same data        | See [Walk-Forward](/en/quantitative/walk-forward)          |
+| Ignoring costs                                  | Include them in every test                                 |
+| Sizing every asset equally in raw units         | Scale by volatility                                        |
+| Quitting during the losing stretch              | Decide the drawdown you can accept before starting         |
+
+---
+
+## Practice
+
+1. For ten markets you can access, compute the trailing 126-day return and rank them today. Which are in the top and bottom three?
+2. Backtest the cross-sectional rule on daily data for five years with monthly rebalancing. What is the longest period without a new equity high?
+3. Repeat with 63 and 252-day lookbacks. Do the results hold up?
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                                    |
+| ---------------- | ------------------------------------------------------------------------- |
+| Momentum         | Recent winners tend to keep winning for a while                           |
+| Types            | Time-series (own trend) vs cross-sectional (relative ranking)             |
+| Test             | Gains arrived after a long losing stretch, then partly reversed           |
+| Risks            | Costs, drawdowns, trend reversals, parameter overfitting                  |
+
+---
+
+## Related Topics
+
+- [Cross-Asset Momentum](/en/intermarket/cross-asset-momentum)
+- [Mean Reversion Models](/en/quantitative/mean-reversion)
+- [Walk-Forward Optimization](/en/quantitative/walk-forward)
+- [Equity Curve Management](/en/quantitative/equity-curve-management)
