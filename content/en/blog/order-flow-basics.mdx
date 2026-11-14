@@ -1,345 +1,124 @@
 ---
-title: "Order Flow Basics — Reading Volume & Institutional Activity for Better Entries"
-description: "A complete introduction to order flow: how institutional orders move price, volume analysis, bid/ask dynamics, and how to combine order flow with SMC concepts for higher probability entries."
+title: "Order Flow Basics — What Is Inside a Candle"
+description: "What order flow is and isn't: aggressive versus passive orders, volume at price, delta, the point of control and the main tools (DOM, volume profile, VWAP, footprint), what data you need, and why spot forex has limits. A worked futures example with a 1 to 3.7 planned reward-to-risk."
 date: "2026-05-13"
 author: "Trading Docs"
 category: "SMC"
-tags: ["order-flow", "volume", "footprint", "execution", "institutional", "liquidity"]
-readingTime: 18
+tags: ["order-flow", "volume", "footprint", "execution", "liquidity"]
+readingTime: 7
 featured: true
 ---
 
-## What is Order Flow?
+A candle shows four prices: open, high, low and close. **Order flow** looks at the **trades inside it**: how much traded at each price, and whether buyers or sellers were the aggressors. It adds information about _how_ price moved. It does not reveal who is trading or why.
 
-Order flow refers to the actual buying and selling pressure in the market — the real-time battle between buyers and sellers at every price level. While price charts show you WHAT happened, order flow shows you WHY it happened and WHO is in control.
-
-Understanding order flow helps you:
-
-- Identify **institutional activity** vs retail noise
-- Confirm entries at Order Blocks and FVGs
-- Spot **absorption** (hidden buying/selling)
-- Understand volume spikes and what they mean
-- Avoid false breakouts before they trap you
-
-<Callout type="tip" title="Why Order Flow Matters">
-  Price moves because of ORDERS, not because of patterns. Understanding how orders interact gives you a mechanical edge
-  that pure chart reading cannot provide.
+<Callout type="warning" title="Corrected and toned down">
+  The original said order flow shows "institutional activity" and implied it works the same in spot forex. Order flow
+  shows executed volume and, on some platforms, resting orders. Spot forex has no central exchange, so real order flow
+  tools are best used on **futures** (for example 6E for EUR/USD).
 </Callout>
 
 ---
 
-## How Price Actually Moves — Market Microstructure
+## The Vocabulary
 
-### The Order Book
+| Term                       | Meaning                                               |
+| -------------------------- | ----------------------------------------------------- |
+| **Aggressive buyer**       | A market buy that hits the **ask**; takes liquidity   |
+| **Aggressive seller**      | A market sell that hits the **bid**; takes liquidity  |
+| **Passive orders**         | Limit orders waiting in the book; provide liquidity   |
+| **Volume at price**        | How many contracts traded at each price               |
+| **Delta**                  | Volume bought at the ask minus volume sold at the bid |
+| **Point of control (POC)** | The price with the most volume                        |
 
-```
-Price moves when aggressive orders HIT resting orders:
+In the [Introduction to Order Flow](/en/order-flow/introduction) lesson, a synthetic 5-minute candle opens 1.0852 and closes 1.0857; the volume at 1.0854 (800 contracts) is its POC, 2,500 contracts were bought at the ask and 1,650 sold at the bid, so delta is **+850**: net aggressive buying that agrees with the rising candle.
 
-Resting Orders (Limit Orders):
-- Buy Limits: "I'll buy IF price comes to me at 1.0800"
-- Sell Limits: "I'll sell IF price comes to me at 1.0850"
-- These DON'T move price (they provide liquidity)
+### The Chart
 
-Aggressive Orders (Market Orders):
-- Market Buy: "Buy NOW at whatever price" → Hits sell limits → Price UP
-- Market Sell: "Sell NOW at whatever price" → Hits buy limits → Price DOWN
-- These MOVE price (they consume liquidity)
+![A synthetic 5-minute futures candle with the volume at each price split into sold at the bid and bought at the ask, with the point of control and delta marked](/images/order-flow/introduction/inside-one-candle-dark.webp)
 
-Key Insight:
-- Price rises when aggressive BUYERS exhaust available sell limits
-- Price falls when aggressive SELLERS exhaust available buy limits
-- Whoever is MORE aggressive wins the short-term direction
-```
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/order-flow/inside-one-candle-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Supply vs Demand in Real-Time
-
-```
-At any price level:
-- Buy Orders (Bids) vs Sell Orders (Asks/Offers)
-- If more aggressive buying → Price moves UP
-- If more aggressive selling → Price moves DOWN
-- If balanced → Price consolidates/ranges
-
-Volume tells you HOW MUCH activity
-Direction tells you WHO won
-Combining both = Order Flow Reading
-```
+<Callout type="info" title="About this chart">
+  Synthetic data (contracts at nine price levels) (From the lesson: [Introduction to Order
+  Flow](/en/order-flow/introduction).)
+</Callout>
 
 ---
 
-## Key Order Flow Concepts
+## The Main Tools
 
-### 1. Volume Spikes at Key Levels
+| Tool           | What it shows                                   | Lesson                                              |
+| -------------- | ----------------------------------------------- | --------------------------------------------------- |
+| DOM / Level 2  | Resting limit orders at each price              | [DOM and Level 2](/en/order-flow/dom-level2)        |
+| Volume profile | Volume by price over a period                   | [Volume Profile](/en/order-flow/volume-profile)     |
+| VWAP           | Volume-weighted average price                   | [VWAP](/en/order-flow/vwap)                         |
+| Delta          | Buy minus sell volume                           | [Delta Analysis](/en/order-flow/delta-analysis)     |
+| Footprint      | Bid and ask volume at each price in each candle | [Footprint Charts](/en/order-flow/footprint-charts) |
 
-```
-Normal Volume → Sudden Large Volume Spike at OB/FVG Level
-= Institutional Orders Being Filled
-
-What to look for:
-- Volume 2-5× average at your POI
-- Price reacts sharply after volume spike
-- This CONFIRMS your SMC level is valid
-
-Volume Spike + Price Reaction at OB = Strong Confirmation
-Volume Spike + No Reaction = Level being absorbed/broken
-```
-
-### 2. Aggressive Market Orders (Displacement)
-
-```
-When you see large impulsive candles (displacement):
-- This = Aggressive market orders consuming liquidity
-- Big body, small wicks = One side completely dominant
-- Creates FVGs because orders consumed ALL available liquidity
-
-Order Flow Reading:
-- Strong bullish displacement = Aggressive institutional BUYING
-- Strong bearish displacement = Aggressive institutional SELLING
-- This is WHY displacement creates valid FVGs and OBs
-```
-
-### 3. Absorption (Hidden Orders)
-
-```
-Absorption = Large resting orders ABSORBING aggressive orders
-
-On Chart: Price hits a level repeatedly but DOESN'T break
-In Order Flow: Massive selling hitting the level, but hidden buy limits absorbing it all
-
-Signs of Absorption:
-- High volume with NO price movement
-- Multiple candles testing same level
-- Wicks at level (aggression being absorbed)
-- Eventually: Price reverses sharply (absorbed all sellers → now buyers dominate)
-
-This is what happens at strong Order Blocks!
-```
-
-### 4. Exhaustion (Running Out of Orders)
-
-```
-Exhaustion = Aggressive side running out of fuel
-
-Signs:
-- Decreasing volume on each push (less conviction)
-- Smaller candle bodies (losing momentum)
-- Longer wicks (price attempting but failing)
-- Eventually: Reversal (other side takes over)
-
-Application:
-- If price approaches your OB with DECREASING volume → Good sign (sellers exhausted)
-- If price approaches your OB with INCREASING volume → Caution (may break through)
-```
+Start with volume profile and VWAP (the simplest), add delta, and use footprint and DOM last.
 
 ---
 
-## Practical Order Flow Signals for SMC Traders
+## What Data You Need
 
-### Signal 1: Volume Confirmation at Order Block
+| Market               | Order-flow data                                                             |
+| -------------------- | --------------------------------------------------------------------------- |
+| Futures (6E, ES, GC) | Centralised exchange data: real volume, trade-by-trade bid/ask, one book    |
+| Stocks               | Exchange data with real volume, fragmented across venues                    |
+| **Spot forex**       | No central exchange: broker volume is **tick volume** or that broker's flow |
 
-```
-Setup: Price reaches your 4H Bullish OB
-Volume Check:
-- Volume SPIKE as price enters OB = Institutions are buying here ✓
-- Price quickly rejects with displacement = OB VALID
-- Enter on retrace to FVG created by rejection
-
-Without Volume:
-- Price enters OB but low/normal volume
-- Slow, grinding price action
-- OB may be weak or already mitigated
-- Use extra caution or skip
-```
-
-### Signal 2: Volume Divergence Before Reversal
-
-```
-Concept: Price makes new low, but volume is DECREASING
-
-Example:
-- Price drops to create Lower Low #1 (High Volume)
-- Price drops to create Lower Low #2 (Medium Volume)
-- Price drops to create Lower Low #3 (Low Volume)
-- Selling EXHAUSTING → Reversal incoming
-
-Application:
-- Look for this at major support/demand zones
-- Combine with equal lows (liquidity sweep setup)
-- After volume divergence + sweep = High probability reversal
-```
-
-### Signal 3: Breakout Validation
-
-```
-Real Breakout vs Fake Breakout (Order Flow):
-
-REAL Breakout:
-- Volume INCREASES on the break
-- Candle body closes BEYOND level
-- Continued momentum after break
-- New volume supporting new direction
-
-FAKE Breakout (Sweep):
-- Volume spike ON the level (not after)
-- Only wick beyond (body closes back)
-- Volume drops immediately after
-- Price reverses quickly
-
-This is HOW you distinguish sweeps from breaks in real-time!
-```
-
-### Signal 4: Session Volume Patterns
-
-```
-Volume Distribution by Session:
-- Asian: LOW volume (20-30% of daily average)
-- London Open: SPIKE (volume 2-3×)
-- London-NY Overlap: MAXIMUM (highest volume)
-- NY Afternoon: DECLINING
-- After NY Close: MINIMAL
-
-Trading Rule:
-- High volume sessions = Strong moves, valid signals
-- Low volume sessions = Noise, false signals, ranging
-- Trade ONLY in high-volume windows = Kill Zone logic confirmed by volume
-```
+Order flow **confirms**; it does not replace structure, levels and a plan.
 
 ---
 
-## Order Flow and Smart Money Concepts Integration
+## Example (no chart)
 
-### Volume at Liquidity Sweeps
-
-```
-When Smart Money sweeps liquidity:
-- Massive volume spike (all those stops triggering = market orders)
-- Quick price reversal (Smart Money absorbs those orders)
-- FVG/Displacement away from sweep
-
-Order Flow Confirmation:
-- Sweep happens → Volume 3-5× average = CONFIRMED sweep
-- If sweep with low volume → Possibly continuation, not reversal
-- High volume sweep + immediate reversal = Highest probability entry
-```
-
-### Volume at FVG Creation
-
-```
-FVG = Area where price moved so fast, not all orders filled
-In Order Flow Terms:
-- Aggressive orders consumed ALL resting orders at those prices
-- No trading happened in the FVG zone
-- When price returns: Resting orders may now be there (institutional refills)
-
-Confirmation:
-- When price returns to FVG, look for volume spike
-- Volume spike = Orders being filled (confirms FVG validity)
-- No volume on return = FVG may be stale/mitigated
-```
-
-### Volume Profile and SMC
-
-```
-Volume Profile (VP) shows WHERE most trading occurred:
-
-High Volume Node (HVN): Many trades happened here
-- Acts like magnet for price
-- Price tends to consolidate here
-- Traditional "value area"
-
-Low Volume Node (LVN): Few trades happened here
-- Price moved quickly through
-- Acts like FVG equivalent
-- Price tends to move fast when revisiting
-
-Application:
-- OB at LVN = Strong (price will move fast on return)
-- OB at HVN = Weak (price may consolidate, not react cleanly)
-- FVG = Always at LVN by definition (fast movement = low time spent)
-```
-
----
-
-## Practical Tools for Order Flow Reading
-
-### Without Footprint Charts (For Most Retail Traders)
-
-```
-You DON'T need expensive tools. Use:
-
-1. Volume Indicator (Standard):
-- Compare current volume to 20-period average
-- Spike = 2× average or more
-- Look for spikes at your POIs
-
-2. Volume Spread Analysis (VSA):
-- Wide spread + High volume = Strong move
-- Narrow spread + High volume = Absorption
-- Wide spread + Low volume = Potential false move
-- Narrow spread + Low volume = No interest
-
-3. Candle Analysis AS Order Flow:
-- Big body = Aggressive orders (displacement)
-- Long wicks = Rejection/absorption
-- Small body + high volume = Battle (indecision before breakout)
-
-4. Tick Volume (Forex):
-- Not true volume but correlates well (~90%)
-- Use same rules as above
-- Better than no volume analysis
-```
-
-### With Footprint Charts (Advanced)
-
-```
-Footprint Chart Shows:
-- Exact buy vs sell volume at each price level
-- Delta (difference between buying and selling)
-- Imbalances (one side 3-4× the other)
-
-Key Patterns:
-- Buy Imbalance at bottom = Absorption (bullish)
-- Sell Imbalance at top = Absorption (bearish)
-- Delta Divergence = Reversal signal
-- Stacked Imbalances = Strong directional move
-
-Note: Most retail traders don't need footprint charts.
-Standard volume + SMC is sufficient for profitable trading.
-```
+6E (EUR/USD futures) pulls back to a daily support at **1.0850**. A 5-minute candle shows heavy selling at the bid (1,800 contracts) but the low holds, and the next candle's delta is **+620** with a close above **1.0854**. Plan: buy **1.0855**, stop **1.0846** (below support): risk 9 pips; target **1.0888**: reward 33 pips, **1 : 3.7** planned. The order-flow evidence only adds to a level you had already marked.
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Avoid These">
-
-**1. Volume without context** — Volume spike alone means nothing. It needs price context (at a level? with structure?).
-
-**2. Overcomplicating** — You don't need DOM, footprints, or Level 2 to trade well. Simple volume + SMC works.
-
-**3. Ignoring volume completely** — Many SMC traders skip volume. Adding even basic volume analysis improves confirmation.
-
-**4. Using volume in low-liquidity sessions** — Asian session volume is unreliable. Focus on London/NY.
-
-**5. Volume on tick charts for crypto** — Crypto has real volume data. Use it! Forex tick volume is an approximation.
-
-</Callout>
+| Mistake                              | Fix                                   |
+| ------------------------------------ | ------------------------------------- |
+| Using tick volume as exchange volume | Know what your data is                |
+| Trading order flow without a level   | Mark levels and structure first       |
+| Reading many tools at once           | Use one or two for a month            |
+| Trusting one candle's delta          | Look at several candles and the level |
 
 ---
 
-## Key Takeaways
+## Practice
 
-| Concept                 | Application                                    |
-| ----------------------- | ---------------------------------------------- |
-| **Volume Spike at POI** | Confirms OB/FVG validity                       |
-| **Absorption**          | High volume + No movement = Hidden orders      |
-| **Exhaustion**          | Decreasing volume = Reversal coming            |
-| **Displacement Volume** | High volume candle = Institutional activity    |
-| **Sweep Confirmation**  | Volume spike during sweep = Valid signal       |
-| **Session Volume**      | High volume sessions only = Kill Zone logic    |
-| **LVN = FVG**           | Low volume areas = Price moves fast            |
-| **Simple Tools**        | Standard volume bar is enough for most traders |
+1. On a futures chart or replay, pick one candle and write its volume by price, POC and delta.
+2. Compare the candle's colour with its delta.
+3. Note what the next candle did at that level.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
-Order flow is a practical complement to SMC and ICT — it tells you who is in control and confirms your structural analysis with market reality.
+---
 
-For more depth, see [Order Flow Analysis](/en/order-flow/introduction).
+## Summary
+
+| Idea       | Detail                                          |
+| ---------- | ----------------------------------------------- |
+| Order flow | Executed trades inside the candles              |
+| Delta      | Bought at the ask minus sold at the bid         |
+| Data       | Best on futures; spot forex has no central book |
+| Use        | Confirmation, not a replacement for analysis    |
+
+---
+
+## Related Topics
+
+- [Introduction to Order Flow](/en/order-flow/introduction)
+- [Volume Profile](/en/order-flow/volume-profile)
+- [Delta Analysis](/en/order-flow/delta-analysis)
+- [Footprint Charts](/en/order-flow/footprint-charts)

@@ -1,0 +1,113 @@
+---
+title: "Order Flow Basics — What Is Inside a Candle"
+description: "What order flow is and isn't: aggressive versus passive orders, volume at price, delta, the point of control and the main tools (DOM, volume profile, VWAP, footprint), what data you need, and why spot forex has limits. A worked futures example with a 1 to 3.7 planned reward-to-risk."
+date: "2026-05-13"
+author: "Trading Docs"
+category: "SMC"
+tags: ["order-flow", "volume", "footprint", "execution", "liquidity"]
+readingTime: 7
+featured: true
+---
+
+A candle shows four prices: open, high, low and close. **Order flow** looks at the **trades inside it**: how much traded at each price, and whether buyers or sellers were the aggressors. It adds information about *how* price moved. It does not reveal who is trading or why.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original said order flow shows "institutional activity" and implied it works the same in spot forex. Order flow shows executed volume and, on some platforms, resting orders. Spot forex has no central exchange, so real order flow tools are best used on **futures** (for example 6E for EUR/USD).
+</Callout>
+
+---
+
+## The Vocabulary
+
+| Term                        | Meaning                                                                    |
+| --------------------------- | -------------------------------------------------------------------------- |
+| **Aggressive buyer**        | A market buy that hits the **ask**; takes liquidity                        |
+| **Aggressive seller**       | A market sell that hits the **bid**; takes liquidity                       |
+| **Passive orders**          | Limit orders waiting in the book; provide liquidity                        |
+| **Volume at price**         | How many contracts traded at each price                                    |
+| **Delta**                   | Volume bought at the ask minus volume sold at the bid                      |
+| **Point of control (POC)**  | The price with the most volume                                             |
+
+In the [Introduction to Order Flow](/en/order-flow/introduction) lesson, a synthetic 5-minute candle opens 1.0852 and closes 1.0857; the volume at 1.0854 (800 contracts) is its POC, 2,500 contracts were bought at the ask and 1,650 sold at the bid, so delta is **+850**: net aggressive buying that agrees with the rising candle.
+
+### The Chart
+
+![A synthetic 5-minute futures candle with the volume at each price split into sold at the bid and bought at the ask, with the point of control and delta marked](/images/order-flow/introduction/inside-one-candle-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/order-flow/inside-one-candle-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic data (contracts at nine price levels) (From the lesson: [Introduction to Order Flow](/en/order-flow/introduction).)
+</Callout>
+
+---
+
+## The Main Tools
+
+| Tool               | What it shows                                  | Lesson                                                      |
+| ------------------ | ---------------------------------------------- | ----------------------------------------------------------- |
+| DOM / Level 2      | Resting limit orders at each price             | [DOM and Level 2](/en/order-flow/dom-level2)                |
+| Volume profile     | Volume by price over a period                  | [Volume Profile](/en/order-flow/volume-profile)             |
+| VWAP               | Volume-weighted average price                  | [VWAP](/en/order-flow/vwap)                                 |
+| Delta              | Buy minus sell volume                          | [Delta Analysis](/en/order-flow/delta-analysis)             |
+| Footprint          | Bid and ask volume at each price in each candle | [Footprint Charts](/en/order-flow/footprint-charts)        |
+
+Start with volume profile and VWAP (the simplest), add delta, and use footprint and DOM last.
+
+---
+
+## What Data You Need
+
+| Market                    | Order-flow data                                                              |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| Futures (6E, ES, GC)      | Centralised exchange data: real volume, trade-by-trade bid/ask, one book     |
+| Stocks                    | Exchange data with real volume, fragmented across venues                     |
+| **Spot forex**            | No central exchange: broker volume is **tick volume** or that broker's flow  |
+
+Order flow **confirms**; it does not replace structure, levels and a plan.
+
+---
+
+## Example (no chart)
+
+6E (EUR/USD futures) pulls back to a daily support at **1.0850**. A 5-minute candle shows heavy selling at the bid (1,800 contracts) but the low holds, and the next candle's delta is **+620** with a close above **1.0854**. Plan: buy **1.0855**, stop **1.0846** (below support): risk 9 pips; target **1.0888**: reward 33 pips, **1 : 3.7** planned. The order-flow evidence only adds to a level you had already marked.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Using tick volume as exchange volume | Know what your data is |
+| Trading order flow without a level | Mark levels and structure first |
+| Reading many tools at once | Use one or two for a month |
+| Trusting one candle's delta | Look at several candles and the level |
+
+---
+
+## Practice
+
+1. On a futures chart or replay, pick one candle and write its volume by price, POC and delta.
+2. Compare the candle's colour with its delta.
+3. Note what the next candle did at that level.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Order flow | Executed trades inside the candles |
+| Delta | Bought at the ask minus sold at the bid |
+| Data | Best on futures; spot forex has no central book |
+| Use | Confirmation, not a replacement for analysis |
+
+---
+
+## Related Topics
+
+- [Introduction to Order Flow](/en/order-flow/introduction)
+- [Volume Profile](/en/order-flow/volume-profile)
+- [Delta Analysis](/en/order-flow/delta-analysis)
+- [Footprint Charts](/en/order-flow/footprint-charts)

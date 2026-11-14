@@ -1,301 +1,124 @@
 ---
-title: "Order Flow Basics — Volume ও Institutional Activity পড়ে Better Entry নেওয়ার Complete Guide"
-description: "Order Flow কী, Institutional Orders কীভাবে Price Move করে, Volume Analysis, Bid/Ask Dynamics, এবং SMC Concepts এর সাথে Order Flow Combine করে Higher Probability Entry নেওয়ার উপায়।"
+title: "Order Flow Basics — ক্যান্ডেলের ভেতরে কী আছে"
+description: "Order Flow কী ও কী নয়: Aggressive বনাম Passive অর্ডার, প্রাইসে ভলিউম, Delta, Point of Control ও প্রধান সরঞ্জাম (DOM, Volume Profile, VWAP, Footprint), কী ডেটা লাগে, আর কেন স্পট ফরেক্সের সীমা আছে। ১ : ৩.৭ পরিকল্পিত রিওয়ার্ড-টু-রিস্কে ফিউচার্স উদাহরণসহ।"
 date: "2026-05-13"
 author: "Trading Docs"
 category: "SMC"
-tags: ["order-flow", "volume", "footprint", "execution", "institutional", "liquidity"]
-readingTime: 18
+tags: ["order-flow", "volume", "footprint", "execution", "liquidity"]
+readingTime: 7
 featured: true
 ---
 
-## Order Flow কী?
+একটি ক্যান্ডেল চারটি দাম দেখায়: Open, High, Low ও Close। **Order Flow** দেখে এর **ভেতরের ট্রেডগুলো**: প্রতিটি দামে কত ট্রেড হয়েছে, আর ক্রেতা না বিক্রেতা আগ্রাসী ছিল। এটি প্রাইস _কীভাবে_ নড়েছে সে তথ্য যোগ করে। কে ট্রেড করছে বা কেন, তা প্রকাশ করে না।
 
-Order Flow হলো Market এ প্রকৃত Buying এবং Selling Pressure — প্রতিটি Price Level এ Buyers ও Sellers এর Real-Time Battle। Price Chart আপনাকে দেখায় কী হয়েছে, কিন্তু Order Flow দেখায় **কেন** হয়েছে এবং **কে** Control এ আছে।
-
-Order Flow বুঝলে আপনি পারবেন:
-
-- **Institutional Activity** চিনতে (vs Retail Noise)
-- Order Blocks ও FVGs এ Entry **Confirm** করতে
-- **Absorption** (Hidden Buying/Selling) Spot করতে
-- Volume Spikes এর প্রকৃত অর্থ বুঝতে
-- False Breakouts আপনাকে Trap করার আগেই চিনতে
-
-<Callout type="tip" title="কেন Order Flow গুরুত্বপূর্ণ">
-  Price Move করে ORDERS এর কারণে, Patterns এর কারণে নয়। Orders কীভাবে Interact করে তা বুঝলে আপনি একটি Mechanical Edge
-  পাবেন যা শুধু Chart Reading দিতে পারে না।
+<Callout type="warning" title="সংশোধিত ও নরম করা হয়েছে">
+  মূল লেখায় বলা হয়েছিল Order Flow "প্রাতিষ্ঠানিক কার্যকলাপ" দেখায় এবং ইঙ্গিত ছিল স্পট ফরেক্সেও একইভাবে কাজ করে। Order
+  Flow Executed ভলিউম ও কিছু প্ল্যাটফর্মে Resting অর্ডার দেখায়। স্পট ফরেক্সে কেন্দ্রীয় এক্সচেঞ্জ নেই, তাই আসল Order
+  Flow সরঞ্জাম **ফিউচার্সে** (যেমন EUR/USD এর জন্য 6E) ব্যবহার করাই ভালো।
 </Callout>
 
 ---
 
-## Price আসলে কীভাবে Move করে — Market Microstructure
+## শব্দভান্ডার
 
-### Order Book
+| শব্দ                       | অর্থ                                            |
+| -------------------------- | ----------------------------------------------- |
+| **Aggressive ক্রেতা**      | **Ask** এ আঘাত করা মার্কেট Buy; লিকুইডিটি নেয়  |
+| **Aggressive বিক্রেতা**    | **Bid** এ আঘাত করা মার্কেট Sell; লিকুইডিটি নেয় |
+| **Passive অর্ডার**         | বুকে অপেক্ষারত Limit অর্ডার; লিকুইডিটি দেয়     |
+| **প্রাইসে ভলিউম**          | প্রতিটি দামে কত কন্ট্রাক্ট ট্রেড হয়েছে         |
+| **Delta**                  | Ask এ কেনা ভলিউম মাইনাস Bid এ বেচা ভলিউম        |
+| **Point of Control (POC)** | সবচেয়ে বেশি ভলিউমের দাম                        |
 
-```
-Price Move করে যখন Aggressive Orders Resting Orders কে Hit করে:
+[Introduction to Order Flow](/bn/order-flow/introduction) লেসনে একটি সিন্থেটিক ৫-মিনিটের ক্যান্ডেল 1.0852 এ খোলে আর 1.0857 এ Close করে; 1.0854 এ ভলিউম (৮০০ কন্ট্রাক্ট) এর POC, Ask এ ২,৫০০ কন্ট্রাক্ট কেনা ও Bid এ ১,৬৫০ বেচা, তাই Delta **+৮৫০**: ওঠা ক্যান্ডেলের সাথে মেলা নেট আগ্রাসী ক্রয়।
 
-Resting Orders (Limit Orders):
-- Buy Limits: "আমি কিনব যদি Price 1.0800 তে আসে"
-- Sell Limits: "আমি বিক্রি করব যদি Price 1.0850 তে আসে"
-- এগুলো Price MOVE করে না (Liquidity Provide করে)
+### চার্ট
 
-Aggressive Orders (Market Orders):
-- Market Buy: "এখনই কিনো যেকোনো দামে" → Sell Limits Hit → Price UP
-- Market Sell: "এখনই বিক্রি করো" → Buy Limits Hit → Price DOWN
-- এগুলো Price MOVE করে (Liquidity Consume করে)
+![একটি সিন্থেটিক ৫-মিনিটের ফিউচার্স ক্যান্ডেল, প্রতিটি দামে ভলিউম Bid এ বেচা ও Ask এ কেনায় ভাগ করা, POC ও Delta চিহ্নিত](/images/order-flow/introduction/inside-one-candle-dark.webp)
 
-মূল কথা:
-- Price ওঠে যখন Aggressive BUYERS Available Sell Limits Exhaust করে
-- Price নামে যখন Aggressive SELLERS Available Buy Limits Exhaust করে
-- যে পক্ষ বেশি AGGRESSIVE সে Short-Term Direction জেতে
-```
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/order-flow/inside-one-candle-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
----
-
-## মূল Order Flow Concepts
-
-### 1. Key Levels এ Volume Spikes
-
-```
-Normal Volume → OB/FVG Level এ হঠাৎ Large Volume Spike
-= Institutional Orders Fill হচ্ছে
-
-দেখুন:
-- আপনার POI তে 2-5× Average Volume
-- Volume Spike এর পর Price Sharply React করে
-- এটি আপনার SMC Level VALID Confirm করে
-
-Volume Spike + OB তে Price Reaction = Strong Confirmation
-Volume Spike + No Reaction = Level Break হচ্ছে
-```
-
-### 2. Aggressive Market Orders (Displacement)
-
-```
-যখন Large Impulsive Candles (Displacement) দেখেন:
-- এটি = Aggressive Market Orders Liquidity Consume করছে
-- Big Body, Small Wicks = একটি Side সম্পূর্ণ Dominant
-- FVG তৈরি হয় কারণ Orders সব Available Liquidity Consume করেছে
-
-Order Flow Reading:
-- Strong Bullish Displacement = Aggressive Institutional BUYING
-- Strong Bearish Displacement = Aggressive Institutional SELLING
-- এজন্যই Displacement Valid FVGs ও OBs তৈরি করে
-```
-
-### 3. Absorption (Hidden Orders)
-
-```
-Absorption = Large Resting Orders Aggressive Orders কে ABSORB করছে
-
-Chart এ: Price একটি Level বারবার Hit করে কিন্তু Break করে না
-Order Flow এ: Massive Selling Hit করছে কিন্তু Hidden Buy Limits সব Absorb করছে
-
-চিহ্ন:
-- High Volume কিন্তু Price Move নেই
-- Multiple Candles একই Level Test করছে
-- Level এ Wicks (Aggression Absorbed হচ্ছে)
-- শেষে: Sharp Reversal (সব Sellers Absorbed → Buyers Dominate)
-
-এটিই Strong Order Blocks এ ঘটে!
-```
-
-### 4. Exhaustion (Orders শেষ হয়ে যাচ্ছে)
-
-```
-Exhaustion = Aggressive Side এর Fuel শেষ
-
-চিহ্ন:
-- প্রতিটি Push এ Decreasing Volume
-- ছোট Candle Bodies (Momentum হারাচ্ছে)
-- লম্বা Wicks (Price চেষ্টা করছে কিন্তু ব্যর্থ)
-- শেষে: Reversal (অন্য Side Takeover করে)
-
-Application:
-- যদি Price আপনার OB তে DECREASING Volume নিয়ে আসে → Good (Sellers Exhausted)
-- যদি INCREASING Volume নিয়ে আসে → Caution (Break Through হতে পারে)
-```
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  সিন্থেটিক ডেটা (নয়টি প্রাইস লেভেলে কন্ট্রাক্ট) (লেসন থেকে: [Introduction to Order
+  Flow](/bn/order-flow/introduction).)
+</Callout>
 
 ---
 
-## SMC Traders এর জন্য Practical Order Flow Signals
+## প্রধান সরঞ্জাম
 
-### Signal 1: Order Block এ Volume Confirmation
+| সরঞ্জাম        | কী দেখায়                                       | লেসন                                                |
+| -------------- | ----------------------------------------------- | --------------------------------------------------- |
+| DOM / Level 2  | প্রতিটি দামে Resting Limit অর্ডার               | [DOM and Level 2](/bn/order-flow/dom-level2)        |
+| Volume Profile | একটি সময়কালে দাম অনুযায়ী ভলিউম                | [Volume Profile](/bn/order-flow/volume-profile)     |
+| VWAP           | ভলিউম-ভারিত গড় দাম                             | [VWAP](/bn/order-flow/vwap)                         |
+| Delta          | Buy মাইনাস Sell ভলিউম                           | [Delta Analysis](/bn/order-flow/delta-analysis)     |
+| Footprint      | প্রতিটি ক্যান্ডেলে প্রতিটি দামে Bid ও Ask ভলিউম | [Footprint Charts](/bn/order-flow/footprint-charts) |
 
-```
-Setup: Price আপনার 4H Bullish OB তে পৌঁছেছে
-
-Volume Check:
-- OB তে Enter করতেই Volume SPIKE = Institutions এখানে Buy করছে ✓
-- Price Quickly Reject করে Displacement সহ = OB VALID
-- Rejection এর FVG তে Retrace এ Enter করুন
-
-Volume ছাড়া:
-- Price OB তে ঢুকেছে কিন্তু Low/Normal Volume
-- Slow, Grinding Price Action
-- OB Weak হতে পারে বা Already Mitigated
-- Extra Caution বা Skip করুন
-```
-
-### Signal 2: Reversal এর আগে Volume Divergence
-
-```
-Price নতুন Low করছে কিন্তু Volume DECREASING:
-- Lower Low #1 (High Volume)
-- Lower Low #2 (Medium Volume)
-- Lower Low #3 (Low Volume)
-- Selling EXHAUSTING → Reversal আসছে
-
-Application:
-- Major Support/Demand Zones এ এটি খুঁজুন
-- Equal Lows (Liquidity Sweep Setup) এর সাথে Combine করুন
-- Volume Divergence + Sweep = High Probability Reversal
-```
-
-### Signal 3: Breakout Validation
-
-```
-Real Breakout vs Fake Breakout (Order Flow):
-
-REAL Breakout:
-- Break এ Volume INCREASES
-- Body Close Level এর ওপারে
-- Break এর পর Continued Momentum
-
-FAKE Breakout (Sweep):
-- Level এ Volume Spike (Break এর পরে নয়)
-- শুধু Wick Beyond (Body ফিরে আসে)
-- তাৎক্ষণিক Volume Drop
-- Price দ্রুত Reverse করে
-
-এভাবেই Real-Time এ Sweeps ও Breaks আলাদা করবেন!
-```
-
-### Signal 4: Session Volume Patterns
-
-```
-Session অনুযায়ী Volume Distribution:
-- Asian: LOW (Daily Average এর 20-30%)
-- London Open: SPIKE (2-3×)
-- London-NY Overlap: MAXIMUM
-- NY Afternoon: DECLINING
-
-Trading Rule:
-- High Volume Sessions = Strong Moves, Valid Signals
-- Low Volume Sessions = Noise, False Signals
-- শুধু High-Volume Windows এ Trade = Kill Zone Logic Volume দ্বারা Confirmed
-```
+Volume Profile ও VWAP (সবচেয়ে সরল) দিয়ে শুরু করুন, Delta যোগ করুন, আর Footprint ও DOM শেষে ব্যবহার করুন।
 
 ---
 
-## Order Flow এবং Smart Money Concepts Integration
+## কী ডেটা লাগে
 
-### Liquidity Sweeps এ Volume
+| মার্কেট               | Order-flow ডেটা                                                                |
+| --------------------- | ------------------------------------------------------------------------------ |
+| ফিউচার্স (6E, ES, GC) | কেন্দ্রীয় এক্সচেঞ্জ ডেটা: আসল ভলিউম, ট্রেড-বাই-ট্রেড Bid/Ask, একটি বুক        |
+| স্টক                  | আসল ভলিউমসহ এক্সচেঞ্জ ডেটা, ভেন্যু জুড়ে বিভক্ত                                |
+| **স্পট ফরেক্স**       | কেন্দ্রীয় এক্সচেঞ্জ নেই: ব্রোকারের ভলিউম **Tick Volume** বা ওই ব্রোকারের ফ্লো |
 
-```
-যখন Smart Money Liquidity Sweep করে:
-- Massive Volume Spike (সব Stops Trigger = Market Orders)
-- Quick Price Reversal (Smart Money সেগুলো Absorb করে)
-- Sweep থেকে FVG/Displacement
-
-Confirmation:
-- Sweep → Volume 3-5× Average = CONFIRMED Sweep
-- Low Volume Sweep → সম্ভবত Continuation, Reversal নয়
-- High Volume Sweep + Immediate Reversal = Highest Probability Entry
-```
-
-### FVG Creation এ Volume
-
-```
-FVG = যে Area তে Price এত দ্রুত Move করেছে, সব Orders Fill হয়নি
-
-Order Flow Terms এ:
-- Aggressive Orders সব Resting Orders Consume করেছে
-- FVG Zone এ কোনো Trading হয়নি
-- Price Return করলে: Institutional Refill Orders এখন সেখানে থাকতে পারে
-
-Confirmation:
-- FVG তে Price Return করলে Volume Spike দেখুন
-- Volume Spike = Orders Fill হচ্ছে (FVG Validity Confirm)
-- Return এ Volume নেই = FVG Stale/Mitigated হতে পারে
-```
-
-### Volume Profile এবং SMC
-
-```
-High Volume Node (HVN): অনেক Trading হয়েছে
-- Price এর জন্য Magnet এর মতো কাজ করে
-- Price Consolidate করে এখানে
-
-Low Volume Node (LVN): কম Trading হয়েছে
-- Price দ্রুত Pass করেছে
-- FVG Equivalent হিসেবে কাজ করে
-
-Application:
-- LVN তে OB = Strong (Return এ Price দ্রুত Move করবে)
-- HVN তে OB = Weak (Consolidation হতে পারে)
-- FVG = সবসময় LVN (দ্রুত Movement = কম সময় ব্যয়)
-```
+Order Flow **নিশ্চিত করে**; স্ট্রাকচার, লেভেল ও পরিকল্পনার জায়গা নেয় না।
 
 ---
 
-## Practical Tools
+## উদাহরণ (চার্ট ছাড়া)
 
-### Footprint Charts ছাড়া (বেশিরভাগ Retail Traders)
-
-```
-ব্যয়বহুল Tools লাগবে না:
-
-1. Standard Volume Indicator:
-- Current Volume কে 20-Period Average এর সাথে Compare করুন
-- Spike = 2× Average বা বেশি
-
-2. Volume Spread Analysis (VSA):
-- Wide Spread + High Volume = Strong Move
-- Narrow Spread + High Volume = Absorption
-- Wide Spread + Low Volume = Potential False Move
-
-3. Candle Analysis AS Order Flow:
-- Big Body = Aggressive Orders (Displacement)
-- Long Wicks = Rejection/Absorption
-- Small Body + High Volume = Battle (Breakout আসছে)
-
-4. Tick Volume (Forex):
-- True Volume নয় কিন্তু ~90% Correlate করে
-- উপরের Rules একই ভাবে Apply করুন
-```
+6E (EUR/USD ফিউচার্স) ডেইলি Support **1.0850** এ পুলব্যাক করে। ৫-মিনিটের ক্যান্ডেল Bid এ ভারী বিক্রি (১,৮০০ কন্ট্রাক্ট) দেখায় কিন্তু Low টিকে যায়, আর পরের ক্যান্ডেলের Delta **+৬২০** এবং **1.0854** এর উপরে Close। পরিকল্পনা: **1.0855** এ Buy, Stop **1.0846** (Support এর নিচে): রিস্ক ৯ পিপ; টার্গেট **1.0888**: রিওয়ার্ড ৩৩ পিপ, পরিকল্পিত **১ : ৩.৭**। Order-flow প্রমাণ শুধু আগে চিহ্নিত লেভেলের সাথে যোগ হয়।
 
 ---
 
 ## সাধারণ ভুল
 
-<Callout type="warning" title="এগুলো এড়িয়ে চলুন">
-
-**1. Context ছাড়া Volume** — Volume Spike একা কিছু বোঝায় না। Price Context দরকার।
-
-**2. জটিল করা** — DOM, Footprints, Level 2 ছাড়াও ভালো Trade করা যায়। Simple Volume + SMC যথেষ্ট।
-
-**3. Volume সম্পূর্ণ Ignore করা** — Basic Volume Analysis যোগ করলেই Confirmation উন্নত হয়।
-
-**4. Low-Liquidity Sessions এ Volume** — Asian Session Volume Unreliable। London/NY তে Focus করুন।
-
-</Callout>
+| ভুল                                | সমাধান                              |
+| ---------------------------------- | ----------------------------------- |
+| Tick Volume কে এক্সচেঞ্জ ভলিউম ধরা | আপনার ডেটা কী তা জানুন              |
+| লেভেল ছাড়া Order Flow ট্রেড       | আগে লেভেল ও স্ট্রাকচার চিহ্নিত করুন |
+| একসাথে অনেক সরঞ্জাম পড়া           | এক মাস এক-দুটি ব্যবহার করুন         |
+| একটি ক্যান্ডেলের Delta তে ভরসা     | কয়েকটি ক্যান্ডেল ও লেভেল দেখুন     |
 
 ---
 
-## Key Takeaways
+## অনুশীলন
 
-| Concept                 | Application                                 |
-| ----------------------- | ------------------------------------------- |
-| **POI তে Volume Spike** | OB/FVG Validity Confirm করে                 |
-| **Absorption**          | High Volume + No Movement = Hidden Orders   |
-| **Exhaustion**          | Decreasing Volume = Reversal আসছে           |
-| **Displacement Volume** | High Volume Candle = Institutional Activity |
-| **Sweep Confirmation**  | Sweep এ Volume Spike = Valid Signal         |
-| **Session Volume**      | শুধু High Volume Sessions = Kill Zone Logic |
-| **Simple Tools**        | Standard Volume Bar বেশিরভাগের জন্য যথেষ্ট  |
+1. ফিউচার্স চার্ট বা রিপ্লেতে একটি ক্যান্ডেল বেছে দাম অনুযায়ী ভলিউম, POC ও Delta লিখুন।
+2. ক্যান্ডেলের রং ও Delta তুলনা করুন।
+3. সেই লেভেলে পরের ক্যান্ডেল কী করেছে লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
 
-Order Flow হলো SMC ও ICT এর Practical Complement — এটি বলে কে Control এ আছে এবং আপনার Structural Analysis কে Market Reality দিয়ে Confirm করে।
+---
 
-বিস্তারিত দেখুন: [Order Flow Analysis](/bn/order-flow/introduction)।
+## সারাংশ
+
+| ধারণা      | বিস্তারিত                                       |
+| ---------- | ----------------------------------------------- |
+| Order Flow | ক্যান্ডেলের ভেতরের Executed ট্রেড               |
+| Delta      | Ask এ কেনা মাইনাস Bid এ বেচা                    |
+| ডেটা       | ফিউচার্সে ভালো; স্পট ফরেক্সে কেন্দ্রীয় বুক নেই |
+| ব্যবহার    | নিশ্চিতকরণ, বিশ্লেষণের বিকল্প নয়               |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Introduction to Order Flow](/bn/order-flow/introduction)
+- [Volume Profile](/bn/order-flow/volume-profile)
+- [Delta Analysis](/bn/order-flow/delta-analysis)
+- [Footprint Charts](/bn/order-flow/footprint-charts)
