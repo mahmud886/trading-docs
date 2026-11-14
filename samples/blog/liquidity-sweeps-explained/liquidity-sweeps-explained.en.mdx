@@ -1,0 +1,110 @@
+---
+title: "Liquidity Sweeps Explained — Anatomy of a Sweep and How to Trade It"
+description: "A liquidity sweep is a brief move through an obvious high or low that closes back inside. This short guide covers the three parts of a sweep (the level, the wick, the close back), the confirmation you need before entering, the stop placement, and how a sweep differs from a breakout, with a worked previous-day-high example."
+date: "2026-05-13"
+author: "Trading Docs"
+category: "SMC"
+tags: ["liquidity", "sweeps", "stop-hunt", "smc"]
+readingTime: 5
+featured: false
+---
+
+A **liquidity sweep** happens when price pushes just beyond an obvious level (a previous high or low, equal highs or lows), triggers the orders resting there, and then **closes back inside the range**. It is a pattern in candles; what caused it is an interpretation.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original described sweeps as deliberate stop hunts and implied they reverse reliably. Some sweeps reverse and many turn into real breakouts. This version focuses on how to tell them apart and how to limit the cost of being wrong.
+</Callout>
+
+---
+
+## Anatomy of a Sweep
+
+| Part                  | What you see                                                             |
+| --------------------- | ------------------------------------------------------------------------ |
+| **1. The level**      | An obvious high or low: previous day's high or low, equal highs or lows, session extremes |
+| **2. The wick**       | Price trades beyond the level, often with a quick spike                  |
+| **3. The close back** | A candle **closes back inside** the previous range                       |
+| **4. Confirmation**   | A lower-timeframe structure shift in the opposite direction              |
+
+Without part 3 you do not have a sweep, you have a breakout. See [Liquidity Sweep](/en/ict/liquidity-sweep) for the full anatomy and [Liquidity Concepts](/en/blog/liquidity-concepts-complete-guide) for the types of levels.
+
+### The Chart
+
+![A synthetic EUR/USD sweep of the previous day's high: price spikes above it and closes back inside](/images/ict/liquidity-sweep/eurusd-pdh-sweep-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/ict/sweep-anatomy-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Liquidity Sweep](/en/ict/liquidity-sweep).)
+</Callout>
+
+---
+
+## Trading It
+
+| Step | Rule                                                                                   |
+| ---- | -------------------------------------------------------------------------------------- |
+| 1    | Mark the level **before** price gets there                                              |
+| 2    | Wait for the sweep and a close back inside                                              |
+| 3    | Wait for a structure shift on a lower timeframe (a close beyond the last swing)         |
+| 4    | Enter on the retest, with the stop **beyond the sweep's extreme**                       |
+| 5    | Target the opposite side of the range or the next liquidity                             |
+
+If price closes beyond the swept level again and holds, treat the move as a breakout and stand aside or reverse only on a new setup.
+
+---
+
+## Why Sweeps Fail
+
+| Failure                                     | Looks like                                                      |
+| ------------------------------------------- | --------------------------------------------------------------- |
+| The close back inside never comes           | It was a breakout                                               |
+| Sweep against a strong higher-timeframe trend | Reversal fades quickly                                         |
+| A sweep during a news spike                 | Wicks are large and arbitrary                                   |
+| Entering before confirmation                | You take the whole wick against you                             |
+
+---
+
+## Example (no chart)
+
+The previous day's high is **1.0890**. At the New York open (6:00 PM BD in summer) EUR/USD spikes to **1.0897** and a 15-minute candle closes at **1.0884**, back inside. A 5-minute candle then closes below the last higher low. Plan: sell **1.0882**, stop **1.0900** (above the sweep high): risk 18 pips; target **1.0850**: reward 32 pips, **1 : 1.8** planned. If price closes above **1.0900**, the sweep idea fails.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Entering at the wick | Wait for the close back inside and a shift |
+| Calling any wick a sweep | Require an obvious level and a close back inside |
+| Stop inside the wick | Place it beyond the sweep's extreme |
+| Ignoring the larger trend | Prefer sweeps that align with it |
+
+---
+
+## Practice
+
+1. Find ten previous-day high or low touches and label each sweep or breakout.
+2. For the sweeps, note whether a lower-timeframe shift followed.
+3. Record the R reached after each confirmed entry.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Sweep | A move beyond an obvious level that closes back inside |
+| Needed | The close back, then a structure shift |
+| Stop | Beyond the sweep's extreme |
+| Caution | Many beyond-level moves are breakouts |
+
+---
+
+## Related Topics
+
+- [Liquidity Sweep](/en/ict/liquidity-sweep)
+- [Liquidity Pools](/en/smc/liquidity-pools)
+- [Liquidity Concepts](/en/blog/liquidity-concepts-complete-guide)
+- [Liquidity Sweeps and Smart Money](/en/blog/liquidity-sweeps-smart-money)
