@@ -1,0 +1,119 @@
+---
+title: "Mean Reversion Models"
+description: "How mean-reversion strategies are built: the z-score (distance from a rolling mean in standard deviations), entries at ±2 and exits at the mean, stops, the half-life of a mean-reverting series, why the same rule fails on a random walk, and how pairs trading extends the idea — with a synthetic two-series test and an animated walkthrough."
+level: advanced
+order: 4
+lastUpdated: "2026-11-14"
+---
+
+## The Idea
+
+A series is **mean-reverting** if, after moving away from its average, it tends to come back. A mean-reversion strategy **fades** stretched moves: sell when price is far above its average, buy when far below, and exit near the average.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original described mean reversion as "strategies used by quantitative funds" including statistical arbitrage. These
+  strategies do exist, but whether a *particular* series reverts is an empirical question, and many do not.
+  Single-instrument mean reversion in a trending market is one of the classic ways to lose money. This lesson
+  shows both outcomes on synthetic data.
+</Callout>
+
+---
+
+## The Z-Score
+
+> **z = (price − rolling mean) ÷ rolling standard deviation**
+
+A z of +2 means price is two standard deviations above its recent average. In a bell-shaped distribution about 5% of observations lie beyond ±2, but market data is not that tidy: stretched readings cluster, and a z of 3 or 4 does happen.
+
+| Parameter     | Typical test range                                    | Trade-off                                                     |
+| ------------- | ----------------------------------------------------- | ------------------------------------------------------------- |
+| Window        | 20 to 60 bars                                         | Short = noisy; long = slow to adapt                           |
+| Entry z       | ±1.5 to ±2.5                                          | Higher = fewer, more stretched trades                         |
+| Exit z        | 0 (the mean) or ±0.5                                  | Exiting early reduces profit per trade                        |
+| Stop z        | ±3 to ±4, or a fixed distance                         | The stop is what limits the cost of being wrong               |
+
+---
+
+## The Same Rule on Two Series
+
+Rule: window 40; short at z > +2, long at z < −2; exit when z crosses 0; stop if z reaches 3.5 against the position (checked on closes); no costs.
+
+![Top: a synthetic mean-reverting series with its 40-bar mean and ±2 standard-deviation bands and the trades marked. Bottom: cumulative result of the same rule on the mean-reverting series (+34 points, 11 trades, 11 winners) and on a random walk (−20 points, 7 trades, 5 winners, one loss of about 27 points)](/images/quantitative/mean-reversion/mean-reversion-zscore-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/mr-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Both series are **synthetic** and 400 bars long: one built to revert (an Ornstein–Uhlenbeck process), one a plain
+  random walk. A test this small proves nothing about a market; it demonstrates the mechanism.
+</Callout>
+
+| Series                | Trades | Winners | Result (points) | Worst trade |
+| --------------------- | ------ | ------- | --------------- | ----------- |
+| Mean-reverting        | 11     | 11      | +34             | +2 (all won) |
+| Random walk           | 7      | 5       | −20             | −27         |
+
+On the random walk **most trades still win** (5 of 7), but the two losers are far bigger than the winners, and one of them is a stop-out of 27 points that erases the rest. A high win rate does not make the strategy sound: **the shape of the losses matters as much as the win rate** (see [Expectancy](/en/quantitative/expectancy-formula)).
+
+---
+
+## Is the Series Mean-Reverting?
+
+A simple model: **x(t+1) − x(t) = −θ · (x(t) − mean) + noise**. θ is the pull back to the mean per bar. For the series above θ = 0.12, which gives a **half-life** of ln(2) ÷ θ ≈ **5.4 bars**: half of a deviation is gone after about five bars.
+
+| Check                           | What to look for                                                          |
+| ------------------------------- | ------------------------------------------------------------------------- |
+| Half-life                       | A few bars to a few weeks, shorter than your holding period tolerates     |
+| Statistical test                | An augmented Dickey–Fuller test on the series or spread rejects a random walk |
+| Stability                       | The estimate holds across different periods, not just one                 |
+| Regime                          | A trending market can break a relationship that held for years            |
+
+---
+
+## Pairs Trading
+
+**Pairs trading** applies the idea to the **spread** between two related instruments (for example two similar stocks, or a stock and its sector index). The spread can be mean-reverting even when each leg trends. You trade the spread's z-score: long one leg and short the other when the spread is stretched. The relationship must be tested (the legs need to be **cointegrated**) and monitored, because it can break.
+
+### Example (no chart) — fading a stretch on a single instrument
+
+EUR/USD trades at **1.0900** while its 40-bar mean is **1.0860** and the standard deviation is 0.0018: z = (1.0900 − 1.0860) ÷ 0.0018 = **+2.2**. Plan: sell **1.0900**, target **1.0860** (the mean, 40 pips), stop at z = 3.5, i.e. 1.0860 + 3.5 × 0.0018 = **1.0923** (23 pips): **1 : 1.7** planned. If a news event is driving the move rather than noise, the stop is the plan's protection.
+
+---
+
+## Common Mistakes
+
+| Mistake                                         | Fix                                                        |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| Fading a trend because z is high                | Test that the series actually reverts first                |
+| No stop                                         | The one trade that doesn't revert can cost more than all the winners |
+| Judging by win rate                             | Look at expectancy and the worst loss                      |
+| Using a mean that includes the move itself      | Test different windows and keep one                        |
+| Pairs without a cointegration check             | Test the spread, and re-test regularly                     |
+
+---
+
+## Practice
+
+1. Take daily closes of a pair for two years. Compute a 40-day z-score. How often does |z| exceed 2?
+2. After |z| > 2, what was the average change over the next 5 days in the direction of the mean?
+3. Fit θ with a regression of daily changes on the previous deviation, and compute the half-life. Is it stable across halves of the sample?
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                                    |
+| ---------------- | ------------------------------------------------------------------------- |
+| Z-score          | (price − rolling mean) ÷ rolling standard deviation                       |
+| Strategy         | Fade at ±2, exit at the mean, with a stop                                 |
+| Key question     | Does the series actually revert? Test it                                  |
+| Risk             | The few trades that don't revert can cost more than many winners          |
+
+---
+
+## Related Topics
+
+- [Momentum Factors](/en/quantitative/momentum-factors)
+- [Expectancy Formula](/en/quantitative/expectancy-formula)
+- [Backtesting Methodology](/en/quantitative/backtesting-methodology)
+- [Introduction to Quantitative Trading](/en/quantitative/introduction)
