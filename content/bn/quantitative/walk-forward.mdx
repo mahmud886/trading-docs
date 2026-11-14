@@ -1,62 +1,125 @@
 ---
-title: "ওয়াক-ফরওয়ার্ড অপটিমাইজেশন"
-description: "ওয়াক-ফরওয়ার্ড অ্যানালাইসিস মাস্টার করুন — স্ট্র্যাটেজি ভ্যালিডেশনের গোল্ড স্ট্যান্ডার্ড। ইন-স্যাম্পল/আউট-অফ-স্যাম্পল টেস্টিং ও কার্ভ-ফিটিং এড়ানো শিখুন।"
+title: "Walk-Forward Optimization"
+description: "Walk-forward বিশ্লেষণ একটি নির্দিষ্ট প্যারামিটার সেট নয়, অপ্টিমাইজেশন পদ্ধতিকে পরীক্ষা করে: অতীতের একটি উইন্ডোতে অপ্টিমাইজ, পরের উইন্ডোতে ট্রেড, এগিয়ে গিয়ে পুনরাবৃত্তি, তারপর সংযুক্ত Out-of-sample ফল ও বাছা প্যারামিটারের স্থিতিশীলতা বিচার। একটি সিন্থেটিক ১৯-উইন্ডো উদাহরণ (Walk-forward +১৬% বনাম সব ডেটায় বাছা সেরা নিয়ম +৪৮%) ও অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: expert
 order: 9
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Walk-Forward Optimization
+## Walk-Forward বিশ্লেষণ কী?
 
-Master walk-forward analysis — the gold standard for strategy validation. Learn in-sample/out-of-sample testing, parameter stability, and avoiding curve-fitting.
+স্ট্র্যাটেজি অপ্টিমাইজ করলে আপনি তাকে অতীত ডেটায় ফিট করেন, আর ফিট করা ফল তাকে ভালো দেখায় ([Backtesting Methodology](/bn/quantitative/backtesting-methodology) দেখুন)। **Walk-forward বিশ্লেষণ** এর বদলে **পদ্ধতিটি** পরীক্ষা করে:
 
-<Callout type="info" title="Quantitative Edge">
-  The difference between gambling and trading is QUANTIFICATION. If you cannot express your edge as a number, you don't
-  have an edge — you have a hope. Quantitative methods turn intuition into measurable, repeatable processes.
+1. In-sample উইন্ডোতে (যেমন শেষ ২৫০ বার) **অপ্টিমাইজ** করে সেরা প্যারামিটার বাছুন।
+2. সেই প্যারামিটার পরের, অদেখা Out-of-sample উইন্ডোতে (যেমন ৬০ বার) **ট্রেড** করুন।
+3. Out-of-sample দৈর্ঘ্যের সমান **এগিয়ে যান** আর পুনরাবৃত্তি করুন।
+4. সব Out-of-sample অংশ একটি Equity কার্ভে **জুড়ে** দিন।
+
+সংযুক্ত কার্ভে শুধু সেই ফল থাকে যার সাথে অপ্টিমাইজার ফিট করতে পারত না, তাই এটি রিয়েল টাইমে পুনরায় অপ্টিমাইজ করলে কী হতো তার আরও ন্যায্য অনুমান।
+
+<Callout type="warning" title="সংশোধিত ও নরম করা হয়েছে">
+  মূল লেসনে Walk-forward কে যাচাইয়ের "গোল্ড স্ট্যান্ডার্ড" বলা হয়েছিল এবং স্থির দক্ষতার থ্রেশহোল্ড দেওয়া হয়েছিল। এটি
+  একক In-sample অপ্টিমাইজেশনের চেয়ে অনেক ভালো পরীক্ষা, কিন্তু নিশ্চয়তা নয়: পুরো Walk-forward রেকর্ড তবুও একটি
+  ঐতিহাসিক পথ, আর ফল ভালো দেখানো পর্যন্ত উইন্ডোর দৈর্ঘ্য টিউন করলে আপনি পদ্ধতিটিকেই Overfit করেছেন।
 </Callout>
 
 ---
 
-## Core Principles
+## ৩৫টি নিয়ম ও ১৯টি উইন্ডোর একটি উদাহরণ
 
-Quantitative trading is built on these foundations:
+প্রাইস সিন্থেটিক: দুর্বল, ভাসমান ট্রেন্ড ও নয়েজসহ ১,৪০০টি দৈনিক বার। নিয়মগুলো ৩৫টি Moving-average ক্রসওভার (fast ৫–২৫, slow ৩০–১২০, fast গড় slow এর উপরে থাকলে Long, নইলে Short, কোনো খরচ নেই)। প্রতিটি উইন্ডো ২৫০ বারে অপ্টিমাইজ করে পরের ৬০ বারে ট্রেড করে।
 
-- **Everything is probability** — no certainty, only statistical edges
-- **Large sample sizes** — individual trades are meaningless, systems matter
-- **Mathematical expectancy** — positive expected value over time
-- **Risk of ruin** — survival first, profits second
-- **Process over outcome** — judge decisions, not results
+![উপরে: ২৫০ থেকে ১,৩৯০ দিনে Walk-forward ট্রেডিংয়ের (+১৬%, সর্বোচ্চ Drawdown ৩২%), পুরো নমুনায় বাছা সেরা একক নিয়মের (fast ১০, slow ৭৫: +৪৮%, সর্বোচ্চ Drawdown ২২%) এবং Buy-and-hold এর (−১৭%, সর্বোচ্চ Drawdown ৪৯%) সঞ্চিত ফল। নিচে: ১৯টি উইন্ডোর প্রতিটিতে বাছা slow Moving-average দৈর্ঘ্য, যা ৩০ থেকে ১২০ পর্যন্ত এবং ১৮ ধাপের ১০টিতে বদলায়](/images/quantitative/walk-forward/walk-forward-dark.webp)
+
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/quantitative/wf-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ডেটা **সিন্থেটিক**, আর ফল র‍্যান্ডম সিডের ওপর নির্ভর করে। সংখ্যাগুলো একটি নমুনায় পদ্ধতির আচরণ দেখায়, কোনো আসল
+  স্ট্র্যাটেজি কী করবে তা নয়।
+</Callout>
+
+| পরিমাপ                   | Walk-forward (Out-of-sample) | সব ডেটায় বাছা সেরা নিয়ম | Buy-and-hold |
+| ------------------------ | ---------------------------- | ------------------------- | ------------ |
+| ফল, দিন ২৫০–১,৩৯০        | +১৬%                         | +৪৮%                      | −১৭%         |
+| সর্বোচ্চ Drawdown        | ৩২%                          | ২২%                       | ৪৯%          |
+| বাছতে ভবিষ্যৎ ডেটা লাগে? | না                           | **হ্যাঁ**                 | না           |
+
+টেবিল পড়া: পুরো নমুনার "সেরা" নিয়ম ভালো দেখায় (+৪৮%), কিন্তু ভবিষ্যৎসহ পুরো সময় দেখেই কেবল এটি বাছা যেত। Walk-forward রেকর্ডই আপনি আসলে ট্রেড করতে পারতেন। এখানে এটি তবুও **Buy-and-hold কে হারিয়েছে**, কিন্তু ১,০৫০ দিনের মধ্যে প্রায় +৫০% এ উঠে **বেশিরভাগ ফেরত দিয়েছে**, ৩২% Drawdown: মনে করিয়ে দেয় যে ধনাত্মক Walk-forward ফল মসৃণ নয়।
 
 ---
 
-## Practical Framework
+## প্যারামিটারের স্থিতিশীলতা
 
-### Step 1: Define Your Edge
+নিচের প্যানেল Equity কার্ভের মতোই গুরুত্বপূর্ণ। অপ্টিমাইজার slow দৈর্ঘ্য বেছেছে ৪৫, ৭৫, ৩০, ১২০, ১০৫, ৬০, ৯০ ইত্যাদি: ১৮ ধাপে **১০ বার বদল**, ৩০ থেকে ১২০ পর্যন্ত। "সেরা" প্যারামিটার এভাবে লাফালে অপ্টিমাইজার প্রতি উইন্ডোর নয়েজের পেছনে ছুটছে, যা সতর্ক করে যে নিয়মের Edge (থাকলে) দুর্বল এবং নির্দিষ্ট সেটিংয়ে বাঁধা নয়।
 
-- What is your win rate?
-- What is your average win vs average loss?
-- What is your expectancy per trade?
+| যা দেখেন                                            | যা ইঙ্গিত করে                               |
+| --------------------------------------------------- | ------------------------------------------- |
+| বাছা প্যারামিটার সংকীর্ণ ব্যান্ডে থাকে              | Edge সঠিক সেটিংয়ের প্রতি খুব সংবেদনশীল নয় |
+| বাছা প্যারামিটার গ্রিড জুড়ে লাফায়                 | অপ্টিমাইজার নয়েজ ফিট করছে                  |
+| প্রতি উইন্ডোতে Out-of-sample In-sample এর অনেক নিচে | Overfitting                                 |
+| Walk-forward ধনাত্মক কিন্তু গভীর Drawdown সহ        | এবড়োখেবড়ো পথ আশা করুন; সেভাবে সাইজ করুন   |
 
-### Step 2: Size Appropriately
+---
 
-- Use Kelly Criterion or fixed fractional sizing
-- Never risk more than your edge justifies
-- Account for correlation between positions
+## ডিজাইনের পছন্দ
 
-### Step 3: Validate Statistically
+| পছন্দ                 | বিবেচনা                                                                   |
+| --------------------- | ------------------------------------------------------------------------- |
+| In-sample দৈর্ঘ্য     | খুব ছোট = এলোমেলো বাছাই; খুব লম্বা = মানিয়ে নিতে ধীর                     |
+| Out-of-sample দৈর্ঘ্য | ছোট হলে বেশি উইন্ডো; লম্বা হলে লেনদেনের ফ্রিকোয়েন্সি কমে                 |
+| Anchored বনাম Rolling | Anchored সব অতীত ডেটা রাখে; Rolling পুরোনো ভুলে যায়                      |
+| অপ্টিমাইজেশন লক্ষ্য   | মোট রিটার্ন ভাগ্যবান নিয়ম বাছে; ঝুঁকি-সমন্বিত বা Robust পরিমাপ আরও স্থির |
+| খরচ                   | প্রতিটি উইন্ডোতে ধরুন                                                     |
 
-- Minimum 100+ trade sample for significance
-- Out-of-sample testing required
-- Walk-forward validation for robustness
+### উদাহরণ (চার্ট ছাড়া) — Walk-forward ফলের ওপর কাজ করা
 
-### Step 4: Monitor & Adapt
+সর্বশেষ উইন্ডো fast ২৫ / slow ১২০ বেছেছে আর fast গড় slow এর উপরে, তাই নিয়ম Long। পরিকল্পনা: **1.0850** এ EUR/USD Buy, Stop **1.0800** (৫০ পিপ), টার্গেট **1.0950** (১০০ পিপ): পরিকল্পিত **১ : ২.০**। উইন্ডো জুড়ে বাছা slow দৈর্ঘ্য ৩০ থেকে ১২০ এ সরেছে বলে এই সংকেতকে কম-আস্থার ধরুন: কম সাইজে ট্রেড করুন আর আশা করুন পরের ৬০ বারের পর নিয়ম আবার অপ্টিমাইজ হয়ে সম্ভবত বদলাবে।
 
-- Track equity curve vs expected behavior
-- Reduce size during drawdowns beyond 1 SD
-- Pause if strategy degrades beyond 2 SD
+---
 
-<Callout type="warning" title="Overfitting Warning">
-  The #1 killer of quantitative strategies is overfitting — finding patterns in historical noise that don't persist
-  forward. Always use out-of-sample data and walk-forward testing. If a strategy looks "too good" in backtest, it
-  probably IS too good to be true.
-</Callout>
+## সাধারণ ভুল
+
+| ভুল                                                | সমাধান                                            |
+| -------------------------------------------------- | ------------------------------------------------- |
+| Walk-forward ফল সর্বোচ্চ করতে উইন্ডোর দৈর্ঘ্য বাছা | আগে ঠিক করুন, বা কয়েকটি পরীক্ষা করে সবগুলো জানান |
+| শুধু পুরো-নমুনার সেরা জানানো                       | Walk-forward কার্ভ জানান                          |
+| প্যারামিটারের স্থিতিশীলতা উপেক্ষা                  | উইন্ডো জুড়ে বাছা প্যারামিটার চার্ট করুন          |
+| Walk-forward কে প্রমাণ ধরা                         | এটি একটি পথ; ছোট লাইভ ট্রেডিং দিয়ে অনুসরণ করুন   |
+| খরচ ভুলে যাওয়া                                    | প্রতিটি উইন্ডোতে ধরুন                             |
+
+---
+
+## অনুশীলন
+
+1. আপনার ব্যবহৃত একটি নিয়ম-পরিবার নিন (যেমন Moving-average ক্রসওভার)। ২৫০ In-sample ও ৬০ Out-of-sample বারে Walk-forward চালান।
+2. সংযুক্ত Out-of-sample ফলকে সব ডেটার সেরা নিয়মের সাথে তুলনা করুন।
+3. বাছা প্যারামিটার চার্ট করুন। কতটা স্থির?
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা        | বিস্তারিত                                                       |
+| ------------ | --------------------------------------------------------------- |
+| Walk-forward | উইন্ডোতে অপ্টিমাইজ, পরেরটিতে ট্রেড, এগিয়ে যান, ফল জুড়ে দিন    |
+| কেন          | সংযুক্ত কার্ভে শুধু অদেখা ডেটা থাকে                             |
+| উদাহরণের ফল  | +১৬% বনাম সেরা পুরো-নমুনার নিয়মের +৪৮% (যার জন্য ভবিষ্যৎ লাগত) |
+| যাচাই        | প্যারামিটারের স্থিতিশীলতা ও Drawdown, শুধু শেষ সংখ্যা নয়       |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Backtesting Methodology](/bn/quantitative/backtesting-methodology)
+- [Monte Carlo Simulations](/bn/quantitative/monte-carlo)
+- [Equity Curve Management](/bn/quantitative/equity-curve-management)
+- [Introduction to Quantitative Trading](/bn/quantitative/introduction)
