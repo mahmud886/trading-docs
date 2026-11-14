@@ -1,169 +1,151 @@
 ---
-title: "Continuation Patterns in Price Action — Complete Guide"
-description: "Master Price Action continuation patterns. Learn flags, pennants, consolidation within trend, BOS confirmation, and how to enter continuation trades with precision."
+title: "Continuation Patterns — Complete Guide"
+description: "Trade continuation patterns: why trends pause, flags, pennants, inside bars and order-block pullbacks, BOS as confirmation, three entry strategies (flag breakout, BOS + OB, FVG retest), measured-move targets, how to tell continuation from reversal, and planned examples, with a chart and an animated walkthrough."
 level: intermediate
 order: 13
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
 ## What Are Continuation Patterns?
 
-Continuation patterns are **price structures that form within an existing trend** before price continues in the same direction. They represent temporary pauses (rest periods) where the market consolidates before the next impulse move.
+**Continuation patterns** are pauses inside a trend that usually end with the trend carrying on. They let you join a trend after it has proved itself, with a clear stop beyond the pause.
 
-<Callout type="info" title="Why Continuations Are Best">
-  Continuation trades are SAFER than reversal trades because you're trading WITH the trend. The market has already shown
-  its direction — you're simply entering at a better price during a pause.
+### Why trends pause
+
+After a fast move, some traders take profit and others wait for a better price. Price moves sideways or slightly against the trend while orders rebalance. If no strong opposite side appears, the trend resumes.
+
+---
+
+## The Bull Flag
+
+![GBP/USD 1H: an 80-pip flagpole from 1.2600 to 1.2680, a down-sloping flag that retraces 38%, a close above the flag; buy 1.2674, stop 1.2645, target 1.2754](/images/price-action/continuation/bull-flag-continuation-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/continuation-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
+
+1. **Flagpole:** a fast rally from **1.2600 to 1.2680**: 80 pips in seven candles.
+2. **Flag:** a small channel sloping **against** the trend, retracing **38%** of the pole, with smaller candles.
+3. **Breakout:** a candle **closes above** the flag's upper line.
+4. **The trade:**
+
+| Level   | Price       | Note                              |
+| ------- | ----------- | --------------------------------- |
+| Entry   | 1.2674      | The breakout close                |
+| Stop    | 1.2645      | Below the 1.2650 flag low         |
+| Target  | 1.2754      | Entry + flagpole height (80 pips) |
+| **R:R** | **1 : 2.8** | Risk 29 pips, reward 80 pips      |
+
+---
+
+## Types of Continuation
+
+| Pattern                  | Shape                                                     | Rules of thumb                                                          |
+| ------------------------ | --------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **Flag**                 | A small channel sloping against the trend                 | Retraces 23.6–50% of the pole                                           |
+| **Pennant**              | A small symmetrical triangle after a pole                 | Short; breaks in the pole's direction                                   |
+| **Inside bar**           | A candle entirely within the previous candle's range      | Enter on a break of the mother bar's high (uptrend); stop below its low |
+| **Order-block pullback** | A pullback to the last opposite candle before the impulse | Stop beyond the OB; target the next liquidity                           |
+
+<Callout type="info" title="Clarified: how deep a flag can be">
+  The original allowed flags up to 61.8% in one place and 50% in another. A pullback that deep is usually called a
+  pullback rather than a flag. This lesson uses **23.6–50%** for flags; deeper pauses are covered in
+  [Pullbacks](/en/price-action/pullbacks).
 </Callout>
 
 ---
 
-## Why Trends Pause
+## BOS as Confirmation
 
-Trends don't move in straight lines. They pause because:
+A continuation is confirmed when price **breaks the last swing in the trend's direction** (a BOS):
 
-1. **Profit-taking** — Early traders locking gains
-2. **Counter-trend traders** — Entering against the move
-3. **Order absorption** — Large orders being filled gradually
-4. **Time-based** — Waiting for session/news catalyst
-5. **Rebalancing** — Price returning to fair value
+- **Bullish:** a close above the last higher high after the pause.
+- **Bearish:** a close below the last lower low after the pause.
 
----
-
-## Types of Continuation Structures
-
-### 1. Flag (Most Common)
-
-```
-Strong impulse up (flagpole)
-   │
-   │  ╲ ╲ ╲  ← Slight downward channel (flag)
-   │  ╱ ╱ ╱     3-10 candles, shallow
-   │
-   │  Breakout above flag = CONTINUATION
-   │
-   │  Target: Flagpole length from breakout
-```
-
-**Rules:**
-
-- Flag should retrace 23.6%-50% of the impulse
-- Flag duration: shorter than impulse
-- Volume decreases during flag, increases on break
-- Deeper than 61.8% = likely NOT a flag (reversal risk)
-
-### 2. Pennant
-
-- Converging trendlines after impulse (triangle shape)
-- Similar to flag but symmetrical
-- Usually resolves in 5-15 candles
-- Break in trend direction = continuation
-
-### 3. Inside Bar Continuation
-
-```
-Strong bullish candle
-   │
-   [Inside bar] ← Smaller candle within the range of prior
-   │
-   Break above inside bar high = continuation long
-   Stop: Below inside bar low
-```
-
-### 4. Order Block Pullback (ICT/SMC)
-
-```
-1. Strong impulse creates BOS (Break of Structure)
-2. Price pulls back to the last opposing candle (Order Block)
-3. Price reacts from Order Block
-4. Continuation in original direction
-5. Target: Next liquidity or opposing OB
-```
+Until the BOS, the pause could still turn into a reversal.
 
 ---
 
-## BOS as Continuation Confirmation
+## Three Entry Strategies
 
-**Break of Structure (BOS)** confirms the trend is continuing:
-
-### Bullish BOS:
-
-- Price breaks above the most recent swing high
-- Confirms higher high → trend intact
-- After BOS, look for pullback entry
-
-### Bearish BOS:
-
-- Price breaks below the most recent swing low
-- Confirms lower low → trend intact
-- After BOS, look for pullback entry
+| Strategy          | Entry                                             | Stop                      | Target                      |
+| ----------------- | ------------------------------------------------- | ------------------------- | --------------------------- |
+| **Flag breakout** | Close beyond the flag line                        | Beyond the flag's extreme | Flagpole height projected   |
+| **BOS + OB**      | After a BOS, on the pullback into the order block | Beyond the OB             | The next swing or liquidity |
+| **FVG retest**    | On the retrace into the FVG the impulse left      | Beyond the FVG            | The next liquidity          |
 
 ---
 
-## Continuation Entry Strategies
+## Continuation or Reversal?
 
-### Strategy 1: Flag Breakout
-
-```
-1. Identify strong impulse move (clear flagpole)
-2. Wait for consolidation (flag/pennant)
-3. Enter on breakout of flag boundary
-4. Stop: Below flag low (bullish) or above flag high (bearish)
-5. Target: Measured move (flagpole distance)
-6. R:R: Typically 1:2 to 1:3
-```
-
-### Strategy 2: BOS + Pullback to OB
-
-```
-1. BOS occurs (trend continuation confirmed)
-2. Mark the Order Block (last opposing candle before BOS)
-3. Wait for price to pull back to OB zone
-4. Enter with confirmation candle at OB
-5. Stop: Below OB (bullish) or above (bearish)
-6. Target: Next swing high/low or liquidity
-```
-
-### Strategy 3: FVG (Fair Value Gap) Retest
-
-```
-1. Strong impulse creates an FVG (gap between candles)
-2. Price returns to fill the FVG
-3. Enter at FVG zone with trend
-4. Stop: Beyond FVG
-5. Target: Next liquidity target
-```
+| Clue                     | Continuation              | Reversal                 |
+| ------------------------ | ------------------------- | ------------------------ |
+| **Pullback depth**       | 23.6–61.8%                | Beyond 78.6%             |
+| **Candles in the pause** | Small, overlapping        | Large, against the trend |
+| **Structure**            | Holds the last higher low | Breaks it (CHOCH)        |
+| **Breakout**             | In the trend's direction  | Against it               |
 
 ---
 
-## Continuation vs. Reversal — How to Tell
+## Examples (No Chart)
 
-| Factor         | Continuation (Trade It)  | Reversal (Avoid/Counter) |
-| -------------- | ------------------------ | ------------------------ |
-| Trend age      | Fresh trend (few swings) | Extended (many swings)   |
-| Pullback depth | 23.6%-61.8%              | Beyond 78.6%             |
-| Pullback speed | Slow, corrective         | Fast, impulsive          |
-| Volume         | Decreasing in pullback   | Increasing in pullback   |
-| Structure      | HH/HL intact             | CHOCH forming            |
-| HTF alignment  | Same direction as HTF    | Against HTF              |
+### 1. EUR/USD bear flag
+
+EUR/USD drops 90 pips from **1.0950 to 1.0860**, then drifts up in a small channel to **1.0890** (33%). A 1H candle closes below the channel at **1.0878**. Sell **1.0878**, stop **1.0895** above the flag, target **1.0788** (entry − 90-pip pole): risk 17 pips, reward 90 pips, **R:R 1 : 5.3** (planned). A target at the next support, if closer, is more conservative.
+
+### 2. Gold inside bar
+
+In a 4H uptrend, a candle forms entirely inside the previous candle (high **2,418**, low **2,402**). Buy on a break of **2,418**, stop **2,400** below the mother bar, target the last swing high at **2,460**: risk $18, reward $42, **R:R 1 : 2.3** (planned).
 
 ---
 
 ## Common Mistakes
 
-| Mistake                               | Solution                               |
-| ------------------------------------- | -------------------------------------- |
-| Entering during the impulse (chasing) | Wait for the pause/pullback            |
-| Flag too deep (actually a reversal)   | Max 61.8% retracement for continuation |
-| No trend confirmation (BOS)           | Only trade continuations after BOS     |
-| Entering before break confirmation    | Wait for candle close beyond structure |
-| Ignoring higher timeframe             | Continuation must align with HTF trend |
+| Mistake                                    | Fix                                     |
+| ------------------------------------------ | --------------------------------------- |
+| Calling a deep retracement a flag          | Flags retrace 23.6–50%                  |
+| Entering before the breakout close         | Wait for the close beyond the flag line |
+| Trading flags against the higher timeframe | Only with the trend                     |
+| Ignoring a large counter-trend candle      | It's a warning of reversal, not a flag  |
+| Using the pole target into a major level   | Target the level if it comes first      |
+
+---
+
+## Practice
+
+1. Find 10 flags or pennants on the 1H chart.
+2. Measure each flag's retracement and note which ones broke in the trend's direction.
+3. Check how many reached the measured target, and how many stopped at a level before it.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Aspect        | Key point                                       |
+| ------------- | ----------------------------------------------- |
+| **Patterns**  | Flag, pennant, inside bar, OB pullback          |
+| **Flag rule** | 23.6–50% retracement, sloping against the trend |
+| **Confirm**   | Close beyond the pattern; BOS                   |
+| **Target**    | Flagpole height, or the next level              |
+| **Danger**    | Deep pauses and large counter-trend candles     |
 
 ---
 
 ## Related Topics
 
-- [Pullbacks](/en/price-action/pullbacks) — Entering on retracements
-- [Market Structure](/en/price-action/market-structure) — BOS confirmation
-- [Trend Trading](/en/price-action/trend-trading) — Trading with the trend
-- [Breakouts](/en/price-action/breakouts) — Flag/pennant breakouts
-- [Entry Models](/en/price-action/entry-models) — Precise entry techniques
+- [Pullbacks](/en/price-action/pullbacks) — deeper pauses in a trend
+- [Market Structure](/en/price-action/market-structure) — BOS and CHOCH
+- [Breakouts](/en/price-action/breakouts) — the breakout from the pattern
+- [Entry Models](/en/price-action/entry-models) — precise entries
