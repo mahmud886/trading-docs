@@ -26,7 +26,7 @@ def table(head, rows):
 def render(spec, lang):
     s, t = spec[lang], L[lang]
     fm = spec["fm"]
-    lines = ["---", f'title: "{s["title"]}"', f'description: "{s["description"]}"', f'date: "{fm["date"]}"', 'author: "Trading Docs"',
+    lines = ["---", f'title: "{s["title"].replace(chr(34), chr(92) + chr(34))}"', f'description: "{s["description"].replace(chr(34), chr(92) + chr(34))}"', f'date: "{fm["date"]}"', 'author: "Trading Docs"',
              f'category: "{fm["category"]}"', "tags: [" + ", ".join(f'"{x}"' for x in fm["tags"]) + "]", f'readingTime: {fm["reading"]}',
              f'featured: {"true" if fm.get("featured") else "false"}', "---", ""]
     lines += [s["intro"], ""]
