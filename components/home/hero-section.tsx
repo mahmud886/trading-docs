@@ -6,7 +6,7 @@ type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
 
 export function HeroSection({ lang, dict }: { lang: string; dict: Dictionary }) {
   return (
-    <section className="relative mx-auto max-w-6xl px-6 pb-24 pt-28 text-center sm:pt-36">
+    <section className="relative mx-auto max-w-6xl px-3 sm:px-5 xl:px-6 pb-24 pt-28 text-center sm:pt-36">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,255,157,0.03)_0%,transparent_70%)]" />
       </div>

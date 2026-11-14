@@ -69,7 +69,7 @@ export function MTFAnalyzer() {
         Back to Tools
       </Link>
 
-      <div className="bg-card border border-border rounded-2xl backdrop-blur-xl p-8">
+      <div className="bg-card border border-border rounded-2xl backdrop-blur-xl p-4 sm:p-8">
         <h1 className="text-3xl font-bold text-foreground">Multi-Timeframe Analysis</h1>
         <p className="text-muted-foreground mt-2">
           Analyze multiple timeframes simultaneously to find confluence setups

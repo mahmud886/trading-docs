@@ -4,7 +4,7 @@ import { BookOpen, ArrowRight, Activity } from "lucide-react";
 export function CtaSection({ lang }: { lang: string }) {
   return (
     <section className="relative border-t border-border/30">
-      <div className="mx-auto max-w-4xl px-6 py-28 text-center">
+      <div className="mx-auto max-w-4xl px-3 sm:px-5 xl:px-6 py-28 text-center">
         <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
           {lang === "bn" ? "আজই শুরু করুন" : "Start Your Journey Today"}
         </h2>

@@ -55,7 +55,7 @@ export function JournalTemplate() {
         Back to Tools
       </Link>
 
-      <div className="bg-card border border-border rounded-2xl backdrop-blur-xl p-8">
+      <div className="bg-card border border-border rounded-2xl backdrop-blur-xl p-4 sm:p-8">
         <div className="flex items-center justify-between mb-2">
           <h1 className="text-3xl font-bold text-foreground">Trading Journal</h1>
           <button

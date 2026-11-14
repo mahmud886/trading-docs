@@ -17,7 +17,7 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
   const isBn = locale === "bn";
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-10">
+    <div className="mx-auto max-w-6xl py-10">
       {/* Header */}
       <div className="mb-12">
         <h1 className="text-4xl font-bold text-foreground sm:text-5xl">{isBn ? "ট্রেডিং ব্লগ" : "Trading Blog"}</h1>

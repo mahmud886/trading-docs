@@ -49,7 +49,7 @@ export function FibonacciCalculator() {
         Back to Tools
       </Link>
 
-      <div className="bg-card border border-border rounded-2xl backdrop-blur-xl p-8">
+      <div className="bg-card border border-border rounded-2xl backdrop-blur-xl p-4 sm:p-8">
         <h1 className="text-3xl font-bold text-foreground">Fibonacci Calculator</h1>
         <p className="text-muted-foreground mt-2">
           Calculate Fibonacci retracement and extension levels for technical analysis

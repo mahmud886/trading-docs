@@ -3,7 +3,7 @@ import { BarChart3, Shield, ArrowRight, Brain } from "lucide-react";
 
 export function ToolsSection({ lang }: { lang: string }) {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-28">
+    <section className="mx-auto max-w-6xl px-3 sm:px-5 xl:px-6 py-28">
       <div className="mb-12 text-center">
         <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
           {lang === "bn" ? "প্রো ট্রেডিং টুলস" : "Professional Trading Tools"}

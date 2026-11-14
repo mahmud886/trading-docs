@@ -15,7 +15,7 @@ import {
 
 export function CategoriesSection({ lang }: { lang: string }) {
   return (
-    <section className="relative mx-auto max-w-6xl px-6 pb-28">
+    <section className="relative mx-auto max-w-6xl px-3 sm:px-5 xl:px-6 pb-28">
       <div className="mb-12 text-center">
         <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
           {lang === "bn" ? "কোর ট্রেডিং ফ্রেমওয়ার্ক" : "Core Trading Frameworks"}

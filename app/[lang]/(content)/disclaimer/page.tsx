@@ -20,7 +20,7 @@ export default async function DisclaimerPage({ params }: { params: Promise<{ lan
       </div>
 
       {/* Critical Risk Warning */}
-      <div className="mb-12 rounded-2xl border-2 border-yellow-500/30 bg-yellow-500/5 p-8">
+      <div className="mb-12 rounded-2xl border-2 border-yellow-500/30 bg-yellow-500/5 p-4 sm:p-8">
         <div className="flex items-start gap-4">
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-yellow-500/10">
             <AlertTriangle size={24} className="text-yellow-400" />
@@ -41,7 +41,7 @@ export default async function DisclaimerPage({ params }: { params: Promise<{ lan
       {/* Sections */}
       <div className="space-y-8">
         {/* Not Financial Advice */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-500/10">
               <Info size={16} className="text-red-400" />
@@ -56,7 +56,7 @@ export default async function DisclaimerPage({ params }: { params: Promise<{ lan
         </section>
 
         {/* Risk Disclosure */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-orange/10">
               <TrendingDown size={16} className="text-accent-orange" />
@@ -111,7 +111,7 @@ export default async function DisclaimerPage({ params }: { params: Promise<{ lan
         </section>
 
         {/* Accuracy */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-blue/10">
               <Info size={16} className="text-accent-blue" />
@@ -126,7 +126,7 @@ export default async function DisclaimerPage({ params }: { params: Promise<{ lan
         </section>
 
         {/* Third-Party */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-purple/10">
               <ExternalLink size={16} className="text-accent-purple" />
@@ -141,7 +141,7 @@ export default async function DisclaimerPage({ params }: { params: Promise<{ lan
         </section>
 
         {/* Personal Responsibility */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-green/10">
               <UserX size={16} className="text-accent-green" />
@@ -156,7 +156,7 @@ export default async function DisclaimerPage({ params }: { params: Promise<{ lan
         </section>
 
         {/* Our Mission */}
-        <section className="rounded-2xl border border-accent-green/20 bg-accent-green/5 p-8">
+        <section className="rounded-2xl border border-accent-green/20 bg-accent-green/5 p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-green/10">
               <Heart size={16} className="text-accent-green" />

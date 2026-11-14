@@ -1,7 +1,7 @@
 export function InstitutionalEdgeSection({ lang }: { lang: string }) {
   return (
     <section className="relative border-t border-border/30">
-      <div className="mx-auto max-w-6xl px-6 py-28">
+      <div className="mx-auto max-w-6xl px-3 sm:px-5 xl:px-6 py-28">
         <div className="text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-blue/20 bg-accent-blue/5 px-5 py-2.5 text-sm font-medium text-accent-blue">
             🏦 {lang === "bn" ? "ইনস্টিটিউশনাল এজ" : "The Institutional Edge"}

@@ -11,7 +11,7 @@ export async function Footer({ lang }: { lang: Locale }) {
       {/* Subtle top glow line */}
       <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-green/20 to-transparent" />
 
-      <div className="mx-auto max-w-[1440px] px-6 py-16">
+      <div className="mx-auto max-w-[1440px] px-3 sm:px-5 xl:px-6 py-16">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">

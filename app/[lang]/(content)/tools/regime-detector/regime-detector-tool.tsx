@@ -84,7 +84,7 @@ export function RegimeDetectorPage() {
   const currentStrategy = strategies[result.regime];
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-10">
+    <div className="mx-auto max-w-4xl py-10">
       <Link
         href={`/${lang}/tools`}
         className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
@@ -162,7 +162,7 @@ export function RegimeDetectorPage() {
       </div>
 
       {/* Result */}
-      <div className={`mt-8 rounded-xl border p-8 text-center ${result.bg}`}>
+      <div className={`mt-8 rounded-xl border p-4 sm:p-8 text-center ${result.bg}`}>
         <div className={`text-5xl font-bold ${result.color}`}>{result.regime}</div>
         <div className="mt-2 text-sm text-muted-foreground">Confidence: {result.confidence.toFixed(0)}%</div>
       </div>

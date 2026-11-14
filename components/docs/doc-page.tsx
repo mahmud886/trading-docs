@@ -57,7 +57,7 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
     const docs = orderedSlugs.map((s) => getDocBySlug(lang as Locale, category, s)).filter(Boolean);
 
     return (
-      <div className="px-8 py-10">
+      <div className="px-3 py-10 sm:px-5 xl:px-6">
         <div className="mb-8">
           <div className="mb-4 h-1 w-16 rounded-full" style={{ backgroundColor: config.color }} />
           <h1 className="text-4xl font-bold text-foreground">{getCategoryLabel(category, lang)}</h1>
@@ -80,7 +80,7 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
             )}
           </div>
         ) : (
-          <div className="rounded-xl border border-border bg-card p-8 text-center">
+          <div className="rounded-xl border border-border bg-card p-4 sm:p-8 text-center">
             <p className="text-muted-foreground">
               {lang === "bn" ? "বিষয়বস্তু শীঘ্রই আসছে। পরে আবার দেখুন!" : "Content coming soon. Check back later!"}
             </p>
@@ -124,7 +124,7 @@ export async function DocPage({ lang, slug, category }: DocPageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <div className="flex gap-10 px-8 py-10">
+      <div className="flex gap-10 px-3 py-10 sm:px-5 xl:px-8">
         <article className="min-w-0 max-w-3xl flex-1">
           <Breadcrumbs
             lang={lang}

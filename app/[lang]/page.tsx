@@ -60,7 +60,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <InstitutionalEdgeSection lang={lang} />
       <CtaSection lang={lang} />
       {featuredPosts.length > 0 && (
-        <section className="relative mx-auto max-w-6xl px-6 py-28">
+        <section className="relative mx-auto max-w-6xl px-3 sm:px-5 xl:px-6 py-28">
           <FeaturedBlogs posts={featuredPosts} locale={lang} />
         </section>
       )}

@@ -35,7 +35,7 @@ export function SwapCalculatorPage() {
   const wednesdayTriple = dailySwap * 3 * lotSize;
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-10">
+    <div className="mx-auto max-w-4xl py-10">
       <Link
         href={`/${lang}/tools`}
         className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"

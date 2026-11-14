@@ -24,7 +24,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
       {/* Sections */}
       <div className="space-y-8">
         {/* Acceptance */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-green/10">
               <UserCheck size={16} className="text-accent-green" />
@@ -39,7 +39,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
         </section>
 
         {/* Educational Purpose */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-blue/10">
               <BookOpen size={16} className="text-accent-blue" />
@@ -62,7 +62,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
         </section>
 
         {/* User Responsibilities */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-orange/10">
               <UserCheck size={16} className="text-accent-orange" />
@@ -98,7 +98,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
         </section>
 
         {/* Intellectual Property */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-purple/10">
               <Copyright size={16} className="text-accent-purple" />
@@ -135,7 +135,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
         </section>
 
         {/* Limitation of Liability */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-500/10">
               <Scale size={16} className="text-red-400" />
@@ -150,7 +150,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
         </section>
 
         {/* Changes */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-green/10">
               <RefreshCcw size={16} className="text-accent-green" />
@@ -165,7 +165,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
         </section>
 
         {/* Governing Law */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-blue/10">
               <Gavel size={16} className="text-accent-blue" />

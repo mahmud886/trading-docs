@@ -6,7 +6,7 @@ type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
 export function LearningPathsSection({ lang, dict }: { lang: string; dict: Dictionary }) {
   return (
     <section className="relative border-t border-border/30">
-      <div className="relative mx-auto max-w-6xl px-6 py-28">
+      <div className="relative mx-auto max-w-6xl px-3 sm:px-5 xl:px-6 py-28">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl">{dict.home.featuredTitle}</h2>
           <p className="mt-4 text-lg text-muted-foreground">{dict.home.featuredSubtitle}</p>

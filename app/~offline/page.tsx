@@ -3,7 +3,7 @@ import { LogoMark } from "@/components/brand/logo-mark";
 
 export default function OfflinePage() {
   return (
-    <main className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-6 text-center">
+    <main className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-3 sm:px-5 xl:px-6 text-center">
       <LogoMark className="h-16 w-16 rounded-2xl xl:h-16 xl:w-16" iconSize={36} />
       <h1 className="mt-6 text-2xl font-bold">
         Trading<span className="neon-text">Docs</span>

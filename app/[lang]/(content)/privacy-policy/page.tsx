@@ -35,7 +35,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
       {/* Sections */}
       <div className="space-y-10">
         {/* Introduction */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-blue/10">
               <Globe size={16} className="text-accent-blue" />
@@ -50,7 +50,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
         </section>
 
         {/* Information We Collect */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-purple/10">
               <Database size={16} className="text-accent-purple" />
@@ -93,7 +93,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
         </section>
 
         {/* How We Use Information */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-orange/10">
               <Eye size={16} className="text-accent-orange" />
@@ -121,7 +121,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
         </section>
 
         {/* Data Sharing */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-500/10">
               <Lock size={16} className="text-red-400" />
@@ -139,7 +139,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
         </section>
 
         {/* Third-Party Links */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="text-xl font-semibold text-foreground">{isBn ? "তৃতীয় পক্ষের লিংক" : "Third-Party Links"}</h2>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             {isBn
@@ -149,7 +149,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
         </section>
 
         {/* Data Security */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-green/10">
               <Lock size={16} className="text-accent-green" />
@@ -164,7 +164,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
         </section>
 
         {/* Contact */}
-        <section className="rounded-2xl border border-border bg-card p-8">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-8">
           <h2 className="flex items-center gap-3 text-xl font-semibold text-foreground">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-blue/10">
               <Mail size={16} className="text-accent-blue" />

@@ -65,7 +65,7 @@ export default function ChartsPage() {
   const filters = ["all", "forex", "commodity", "index", "crypto", "institutional"] as const;
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-10">
+    <div className="mx-auto max-w-6xl py-10">
       <h1 className="text-4xl font-bold text-foreground">{t.title}</h1>
       <p className="mt-3 text-lg text-muted-foreground">{t.subtitle}</p>
 

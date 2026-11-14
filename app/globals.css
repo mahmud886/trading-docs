@@ -497,8 +497,10 @@ aside a[class*="rounded-full"] {
 }
 
 /* Opening a modal hides the page scrollbar; keep its space so nothing shifts */
-html {
-  scrollbar-gutter: stable;
+@media (hover: hover) {
+  html {
+    scrollbar-gutter: stable;
+  }
 }
 
 /* The search box sits inside its own bordered bar, so it needs no focus ring of its own */

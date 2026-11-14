@@ -40,7 +40,7 @@ export function SessionTimeline() {
 
   if (!now) {
     return (
-      <div className="rounded-2xl border border-border bg-card p-8">
+      <div className="rounded-2xl border border-border bg-card p-4 sm:p-8">
         <div className="h-48 animate-pulse rounded-lg bg-zinc-800/50" />
       </div>
     );
