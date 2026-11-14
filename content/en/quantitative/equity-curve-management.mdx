@@ -1,62 +1,121 @@
 ---
 title: "Equity Curve Management"
-description: "Learn to manage your strategy based on equity curve behavior. Understand when to increase/decrease size, when to pause, and equity curve trading rules."
+description: "Managing a strategy by the behaviour of its own equity curve: an equity-curve moving-average filter, risk reduction in drawdown, pausing rules, and what the evidence from 1,000 simulated sequences says (usually a smaller maximum drawdown, but a final result that is better only about half the time). With a worked 300-trade chart and an animated walkthrough."
 level: advanced
 order: 8
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Equity Curve Management
+## What Is Equity Curve Management?
 
-Learn to manage your strategy based on equity curve behavior. Understand when to increase/decrease size, when to pause, and equity curve trading rules.
+**Equity curve management** adjusts how much you trade — or whether you trade — based on how your own equity curve is behaving. The common forms are:
 
-<Callout type="info" title="Quantitative Edge">
-  The difference between gambling and trading is QUANTIFICATION. If you cannot express your edge as a number, you don't
-  have an edge — you have a hope. Quantitative methods turn intuition into measurable, repeatable processes.
+| Technique               | Rule (example)                                                        | Aim                                      |
+| ----------------------- | --------------------------------------------------------------------- | ---------------------------------------- |
+| **Equity-curve filter** | Trade only while the equity curve is above its N-trade moving average | Stop trading through a bad stretch       |
+| **Drawdown scaling**    | Cut risk per trade by half once drawdown passes a threshold           | Slow the damage                          |
+| **Pause rule**          | Stop trading after a drawdown of X until a review is done             | Force a check that the edge still exists |
+| **Scaling up**          | Raise risk modestly when the curve makes new highs                    | Press an edge that seems to be working   |
+
+<Callout type="warning" title="Corrected and toned down">
+  The original gave fixed rules ("reduce size beyond 1 SD", "pause beyond 2 SD") as if they were standard. Those are
+  choices, not laws, and the evidence for them is mixed. An equity-curve rule can reduce drawdown, but it does not
+  create an edge, and it can skip the recovery. This lesson measures both effects.
 </Callout>
 
 ---
 
-## Core Principles
+## A Worked Example: A Fading Edge
 
-Quantitative trading is built on these foundations:
+The system takes 300 trades with wins of +1.5R and losses of −1R. The win rate is **50%** in trades 1–100, **33%** in trades 101–200 (negative expectancy: 0.33 × 1.5 − 0.67 = −0.17R), and **50%** again in 201–300. The filter rule is: take the next trade only if the equity curve of **all signals** is above its **20-trade moving average**; skipped trades still update that "virtual" curve.
 
-- **Everything is probability** — no certainty, only statistical edges
-- **Large sample sizes** — individual trades are meaningless, systems matter
-- **Mathematical expectancy** — positive expected value over time
-- **Risk of ruin** — survival first, profits second
-- **Process over outcome** — judge decisions, not results
+![Top: the equity curve of all signals of a 300-trade synthetic system whose win rate fades from 50% to 33% in trades 101–200 and returns to 50%, with its 20-trade moving average and shaded stretches where the filter skips the next trade. Bottom: cumulative R with the filter (+19R, maximum drawdown 16R, 156 of 300 trades) against always trading (+12R, maximum drawdown 24R)](/images/quantitative/equity-curve-management/equity-curve-filter-dark.webp)
+
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/quantitative/ec-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The trades are **synthetic**: a random sequence from the three win-rate stretches. This particular sequence is one of
+  many (see the 1,000-sequence result below).
+</Callout>
+
+| Measure                              | Always trade | With the filter                                     |
+| ------------------------------------ | ------------ | --------------------------------------------------- |
+| Trades taken                         | 300          | 156                                                 |
+| Final result                         | +12.5R       | +19R                                                |
+| Maximum drawdown                     | 23.5R        | 15.5R                                               |
+| Result in the weak stretch (101–200) | about −18R   | the filter skips most of it: trades taken 22 of 100 |
+
+In this sequence the filter skipped 78 of the 100 trades in the weak stretch and ended ahead. That is the flattering case. The same system and rule on **1,000** random sequences gives:
+
+| Over 1,000 simulated sequences          | Result |
+| --------------------------------------- | ------ |
+| The filter lowered the maximum drawdown | 92%    |
+| The filter gave a higher final result   | 50%    |
+| Average reduction in maximum drawdown   | 13.7R  |
+| Average difference in final result      | +1.3R  |
+
+So the dependable effect is **a smaller drawdown**. The effect on profit is close to a coin flip: when the edge truly fades, the filter helps; when a drawdown is just noise, it **skips the recovery** and costs money.
 
 ---
 
-## Practical Framework
+## Choosing and Testing the Rule
 
-### Step 1: Define Your Edge
+| Parameter / choice      | Consideration                                                                                 |
+| ----------------------- | --------------------------------------------------------------------------------------------- |
+| Averaging window        | Short = twitchy and skips too much; long = slow to react                                      |
+| Using the virtual curve | You must keep tracking skipped trades so the filter can turn back on                          |
+| Re-entry rule           | Define exactly when you resume                                                                |
+| Test out-of-sample      | The rule has its own parameters — see [Backtesting](/en/quantitative/backtesting-methodology) |
 
-- What is your win rate?
-- What is your average win vs average loss?
-- What is your expectancy per trade?
+### Example (no chart) — a risk-scaling rule
 
-### Step 2: Size Appropriately
+Rule: normal risk is **1%** per trade; when the equity curve is more than **10R** below its peak, risk **0.5%**; return to 1% when it makes a new peak. Entry **1.0850**, stop **1.0830** (20 pips), target **1.0880** (**1 : 1.5** planned): in drawdown, the same trade is sized at half the risk (on a 10,000 account, 50 instead of 100, i.e. 2.5 per pip instead of 5). If the edge returns the cost is slower recovery; if it has gone, the saving is about half the further loss.
 
-- Use Kelly Criterion or fixed fractional sizing
-- Never risk more than your edge justifies
-- Account for correlation between positions
+---
 
-### Step 3: Validate Statistically
+## Common Mistakes
 
-- Minimum 100+ trade sample for significance
-- Out-of-sample testing required
-- Walk-forward validation for robustness
+| Mistake                                 | Fix                                                   |
+| --------------------------------------- | ----------------------------------------------------- |
+| Stopping tracking when you stop trading | Track every signal so the rule can resume             |
+| Assuming a filter adds profit           | Mostly it trims drawdown; test the profit effect      |
+| Tuning the window on the same data      | Test out-of-sample and across many sequences          |
+| Changing rules mid-drawdown             | Decide the rule beforehand                            |
+| Treating a pause as a verdict           | A pause is a review point, not proof the edge is gone |
 
-### Step 4: Monitor & Adapt
+---
 
-- Track equity curve vs expected behavior
-- Reduce size during drawdowns beyond 1 SD
-- Pause if strategy degrades beyond 2 SD
+## Practice
 
-<Callout type="warning" title="Overfitting Warning">
-  The #1 killer of quantitative strategies is overfitting — finding patterns in historical noise that don't persist
-  forward. Always use out-of-sample data and walk-forward testing. If a strategy looks "too good" in backtest, it
-  probably IS too good to be true.
-</Callout>
+1. Chart your last 100 trades as an equity curve in R with its 20-trade average. How often is the curve below its average?
+2. Apply the filter rule to your history: how many trades would it have skipped, and what R did they carry?
+3. Simulate your own trade list in random order 1,000 times and compare drawdown and final result with and without the rule.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea          | Detail                                                                       |
+| ------------- | ---------------------------------------------------------------------------- |
+| Management    | Trade less or smaller when your own equity curve is weak                     |
+| Evidence here | Max drawdown lower in 92% of simulated sequences; final result better in 50% |
+| Cost          | It can skip recoveries; keep tracking skipped trades                         |
+| Use           | A drawdown-control tool, not an edge                                         |
+
+---
+
+## Related Topics
+
+- [Monte Carlo Simulations](/en/quantitative/monte-carlo)
+- [Kelly Criterion](/en/quantitative/kelly-criterion)
+- [Walk-Forward Optimization](/en/quantitative/walk-forward)
+- [Expectancy Formula](/en/quantitative/expectancy-formula)
