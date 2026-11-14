@@ -1,0 +1,108 @@
+---
+title: "Premium and Discount Zones in Nested Ranges — The Complete Picture"
+description: "How premium and discount work across nested ranges (weekly inside monthly, daily inside weekly, intraday inside daily), how to rank PD arrays inside each half, when the two halves disagree, and a worked premium sell with a 1 to 3 planned reward-to-risk."
+date: "2026-05-19"
+author: "Trading Docs"
+category: "SMC"
+tags: ["premium-discount", "smc", "equilibrium", "dealing-range", "pd-arrays"]
+readingTime: 8
+featured: true
+---
+
+A single 50% level is easy to draw. In practice ranges are **nested**: a daily range sits inside a weekly one, an intraday range inside the daily. The same price can be in **discount of the hourly range** and in **premium of the daily range** at the same time. Working out how those layers combine is the core of using premium and discount well.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original treated premium and discount as institutional rules and quoted high accuracy. The 50% split and the idea of ranked arrays are conventions: useful for organising entries, but not proven predictors. Judge them by your own records.
+</Callout>
+
+---
+
+## Nested Ranges
+
+| Layer      | Example range                  | Equilibrium | Role                                   |
+| ---------- | ------------------------------ | ----------- | -------------------------------------- |
+| Higher     | Weekly: **1.0700 – 1.1000**    | 1.0850      | The side of the larger market          |
+| Middle     | Daily: **1.0800 – 1.0950**     | 1.0875      | Where today's range sits               |
+| Lower      | 1-hour: **1.0860 – 1.0900**    | 1.0880      | The range you trade inside             |
+
+A price of **1.0890** is in premium of the 1-hour range (above 1.0880) and of the daily range (above 1.0875), and, with the weekly equilibrium at 1.0850, also of the weekly range. All three layers agree: a premium location for sells. A price of **1.0840** is in discount of the weekly and daily ranges but could be in premium of a tiny hourly range: here the layers **disagree** and the larger ones should carry more weight. See [Dealing Range](/en/ict/dealing-range).
+
+### The Chart
+
+![A synthetic EUR/USD dealing range map with the equilibrium and the premium and discount halves of nested ranges](/images/ict/dealing-range/eurusd-dealing-range-map-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/ict/dealing-range-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Dealing Range](/en/ict/dealing-range).)
+</Callout>
+
+---
+
+## Ranking PD Arrays Inside a Half
+
+| Rank (stronger first)                    | Why                                                          |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| Zone formed at the range extreme (after a sweep) | Origin of the move and close to the stop-loss               |
+| Order block with displacement and a gap  | Two features agree                                           |
+| Fair value gap alone                     | One feature                                                  |
+| Level near equilibrium                   | Weakest: the middle of the range gives little edge           |
+
+Prefer zones deep in the correct half and far from equilibrium. See [PD Arrays](/en/ict/pd-arrays) and [Premium and Discount Trading Guide](/en/blog/premium-discount-trading-guide).
+
+---
+
+## When the Layers Disagree
+
+| Situation                                               | Response                                                         |
+| ------------------------------------------------------- | ---------------------------------------------------------------- |
+| All layers premium (or all discount)                    | Clean location: trade with a zone and confirmation               |
+| Higher layer discount, lower premium                    | Mixed: reduce size or wait for the lower range to shift         |
+| Price near equilibrium on the main layer                | Skip: little location advantage                                  |
+| A layer's range has just broken                         | Redraw it first                                                  |
+
+---
+
+## Example (no chart)
+
+Layers agree: price is in premium of the weekly (**1.0850**), daily (**1.0875**) and hourly (**1.0880**) ranges at **1.0888**. A bearish order block with a gap sits at **1.0880 – 1.0890** and a 5-minute candle rejects it. Plan: sell **1.0882**, stop **1.0898** (above the block): risk 16 pips; target **1.0834** (the daily range's lower half): reward 48 pips, **1 : 3.0** planned. If price closes above **1.0898**, the idea is cancelled.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Using one range and ignoring the layers | Check at least two timeframes |
+| Trading near equilibrium | Prefer zones deep in the correct half |
+| Not redrawing after a break | Update the range when structure changes |
+| Treating the layers as equal | Give the larger ranges more weight |
+
+---
+
+## Practice
+
+1. Mark the weekly, daily and 1-hour ranges and their equilibria on one pair.
+2. List where the current price sits in each.
+3. Record how often your trades came from a location where all layers agreed.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Nested ranges | Weekly, daily and intraday each have their own equilibrium |
+| Best case | All layers agree on premium or discount |
+| Disagreement | Let the larger layer carry more weight, or wait |
+| Status | A convention to test, not a proven predictor |
+
+---
+
+## Related Topics
+
+- [Dealing Range](/en/ict/dealing-range)
+- [PD Arrays](/en/ict/pd-arrays)
+- [Premium and Discount](/en/smc/premium-discount)
+- [Premium and Discount Trading Guide](/en/blog/premium-discount-trading-guide)
