@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { type Locale, getDictionary } from "@/lib/i18n";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { StylePicker } from "@/components/theme/style-picker";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { SearchModal } from "@/components/search-modal";
 import { MobileMenuProvider, MobileMenuTrigger, MobileMenuPanel } from "@/components/layout/mobile-menu";
@@ -27,10 +26,7 @@ export async function Navbar({ lang }: { lang: Locale }) {
     <MobileMenuProvider>
       {/* Navbar — sticky header with backdrop-blur (creates stacking context) */}
       <NavbarWrapper>
-        <div
-          data-shell="nav-inner"
-          className="mx-auto flex h-14 max-w-[1440px] items-center justify-between px-3 md:h-12 xl:h-16 xl:px-6"
-        >
+        <div className="mx-auto flex h-14 max-w-[1440px] items-center justify-between px-3 md:h-12 xl:h-16 xl:px-6">
           <Link
             href={`/${lang}`}
             className="flex items-center gap-1.5 text-base font-bold text-foreground transition-opacity hover:opacity-80 md:text-sm xl:gap-2.5 xl:text-xl"
@@ -43,8 +39,7 @@ export async function Navbar({ lang }: { lang: Locale }) {
 
           <NavbarContent links={links} />
 
-          <div data-shell="nav-actions" className="flex items-center gap-0.5 xl:gap-2">
-            <StylePicker lang={lang} />
+          <div className="flex items-center gap-0.5 xl:gap-2">
             <ThemeSwitcher />
             <LanguageSwitcher currentLang={lang} />
             <SearchModal />

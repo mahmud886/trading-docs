@@ -6,7 +6,7 @@ export async function Footer({ lang }: { lang: Locale }) {
   const dict = await getDictionary(lang);
 
   return (
-    <footer data-shell="footer" className="relative border-t border-border/30">
+    <footer className="relative border-t border-border/30">
       {/* Subtle top glow line */}
       <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-green/20 to-transparent" />
 

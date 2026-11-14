@@ -25,13 +25,10 @@ export default async function DocsLayout({
 }) {
   const { lang } = await params;
   return (
-    <div data-shell="docs" className="mx-auto flex max-w-[1440px]">
+    <div className="mx-auto flex max-w-[1440px]">
       {/* Desktop sidebar — always visible on lg+ */}
       <Suspense fallback={<SidebarSkeleton />}>
-        <aside
-          data-shell="docs-aside"
-          className="sticky top-16 hidden h-[calc(100vh-4rem)] w-72 shrink-0 overflow-y-auto border-r border-border/30 lg:block"
-        >
+        <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-72 shrink-0 overflow-y-auto border-r border-border/30 lg:block">
           <Sidebar lang={lang as Locale} />
         </aside>
       </Suspense>
@@ -41,9 +38,7 @@ export default async function DocsLayout({
         <Sidebar lang={lang as Locale} />
       </SidebarDrawer>
 
-      <div data-shell="docs-main" className="min-w-0 flex-1">
-        {children}
-      </div>
+      <div className="min-w-0 flex-1">{children}</div>
     </div>
   );
 }

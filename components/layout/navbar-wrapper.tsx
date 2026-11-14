@@ -16,7 +16,6 @@ export function NavbarWrapper({ children }: { children: React.ReactNode }) {
 
   return (
     <header
-      data-shell="nav"
       className={`sticky top-0 z-40 transition-all duration-300 ${
         scrolled
           ? "border-b border-border/40 bg-background/60 backdrop-blur-2xl shadow-[0_1px_20px_rgba(0,0,0,0.1)]"

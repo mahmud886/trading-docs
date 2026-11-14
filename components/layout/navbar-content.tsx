@@ -17,7 +17,7 @@ export function NavbarContent({ links }: NavbarContentProps) {
   };
 
   return (
-    <nav data-shell="nav-links" className="hidden items-center gap-0 md:flex xl:gap-1">
+    <nav className="hidden items-center gap-0 md:flex xl:gap-1">
       {links.map((link) => {
         const active = isActive(link.href);
         return (

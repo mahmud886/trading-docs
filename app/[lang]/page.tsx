@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import { getFeaturedBlogPosts } from "@/lib/blog";
-import { HomeLayoutSwitch } from "@/components/home/home-layout-switch";
-import { BentoHome, IndexHome } from "@/components/home/home-layouts";
-import { AppHome, ImmersiveHome } from "@/components/home/home-layouts-more";
 import { HeroSection } from "@/components/home/hero-section";
 import { CategoriesSection } from "@/components/home/categories-section";
 import { LearningPathsSection } from "@/components/home/learning-paths-section";
@@ -54,7 +51,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const dict = await getDictionary(lang as Locale);
   const featuredPosts = getFeaturedBlogPosts(lang as Locale, 3);
 
-  const classic = (
+  return (
     <div className="relative">
       <HeroSection lang={lang} dict={dict} />
       <CategoriesSection lang={lang} />
@@ -62,20 +59,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <ToolsSection lang={lang} />
       <InstitutionalEdgeSection lang={lang} />
       <CtaSection lang={lang} />
-    </div>
-  );
-
-  return (
-    <div className="relative">
-      <HomeLayoutSwitch
-        layouts={{
-          classic,
-          bento: <BentoHome lang={lang} />,
-          index: <IndexHome lang={lang} />,
-          app: <AppHome lang={lang} />,
-          immersive: <ImmersiveHome lang={lang} />,
-        }}
-      />
       {featuredPosts.length > 0 && (
         <section className="relative mx-auto max-w-6xl px-6 py-28">
           <FeaturedBlogs posts={featuredPosts} locale={lang} />

@@ -5,8 +5,6 @@ import { SerwistProvider } from "@serwist/turbopack/react";
 import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { StyleHead } from "@/components/theme/style-head";
-import { StyleSync } from "@/components/theme/style-sync";
 import { ReadingProgress } from "@/components/docs/reading-progress";
 import { generateWebsiteSchema, generateOrganizationSchema } from "@/lib/schema";
 
@@ -49,7 +47,6 @@ export default async function LangLayout({
   return (
     <html lang={lang} suppressHydrationWarning={true} data-scroll-behavior="smooth" className={fontClasses}>
       <head>
-        <StyleHead />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       </head>
@@ -66,8 +63,7 @@ export default async function LangLayout({
 
         <SerwistProvider swUrl="/serwist/sw.js">
           <Providers>
-            <StyleSync />
-            <div data-shell="root" className="relative z-10">
+            <div className="relative z-10">
               <ReadingProgress />
               <Navbar lang={lang as Locale} />
               <main className="flex-1">{children}</main>
