@@ -1,0 +1,111 @@
+---
+title: "Trading Psychology — Fear, Greed, FOMO and Revenge Trading"
+description: "How fear, greed, FOMO and revenge trading show up in a trading plan and what rules limit the damage: pre-set risk, a daily loss limit, a cooling-off routine and a loss-streak table showing that long losing runs are normal even for a profitable system."
+date: "2026-05-11"
+author: "Trading Docs"
+category: "Psychology"
+tags: ["psychology", "emotions", "discipline", "mindset"]
+readingTime: 9
+featured: true
+---
+
+Most traders know what to do and still don't do it. Emotions matter because **trading puts money and uncertainty together**. You cannot remove them, but you can write rules that limit what they are able to do.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original claimed fixed percentages of traders fail from psychology and promised that specific techniques cure emotions. No such figures are established. This version describes common patterns and practical rules; none of it is therapy or a guarantee.
+</Callout>
+
+---
+
+## Four Common Patterns
+
+| Emotion          | What it looks like                                   | Rule that limits it                                       |
+| ---------------- | ---------------------------------------------------- | --------------------------------------------------------- |
+| **Fear**         | Skipping valid setups, closing winners early         | Fixed small risk per trade so one loss doesn't hurt       |
+| **Greed**        | Oversizing, moving targets, holding past the plan    | Size from the stop; take the planned exit                 |
+| **FOMO**         | Chasing a move that has already run                  | Trade only at planned levels (see [Timeframe Selection](/en/blog/timeframe-selection)) |
+| **Revenge**      | Doubling size after a loss to win it back            | Daily loss limit and a mandatory break                    |
+
+### The Chart
+
+![Many simulated equity paths of the same strategy with their drawdown distribution on synthetic data](/images/quantitative/monte-carlo/monte-carlo-drawdown-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/mc-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Illustration from the Monte Carlo lesson (synthetic trades) (From the lesson: [Monte Carlo](/en/quantitative/monte-carlo).)
+</Callout>
+
+---
+
+## Losing Streaks Are Normal
+
+With a win rate *p*, the chance of **n losses in a row** at a given moment is (1 − *p*)ⁿ, and over many trades a long streak becomes likely. For a 45% win rate, a run of 5 losses has probability 0.55⁵ ≈ 5.0% at any starting trade; over 200 trades the chance of seeing at least one such run is very high.
+
+| Streak of losses | Probability at one start (win rate 45%) | Drawdown at 1% risk |
+| ---------------- | ---------------------------------------- | ------------------- |
+| 3                | 16.6%                                    | 3.0%                |
+| 5                | 5.0%                                     | 4.9%                |
+| 8                | 0.8%                                     | 7.7%                |
+| 10               | 0.25%                                    | 9.6%                |
+
+See [Monte Carlo](/en/quantitative/monte-carlo): the same system produces very different drawdowns depending on the order of trades. Knowing this in advance makes a streak a **planned event**, not a crisis.
+
+---
+
+## A Simple Protocol
+
+| Trigger                            | Action                                                    |
+| ---------------------------------- | --------------------------------------------------------- |
+| Two losses in a row                | Pause for 30 minutes, re-read the plan                    |
+| Daily loss limit reached (for example 2%) | Stop for the day, no exceptions                    |
+| Feeling the urge to "get it back"  | Close the platform and write what you feel                |
+| Weekly review                      | Compare plan trades against emotional ones                |
+
+Log the emotion in your [trading journal](/en/blog/trading-journal-template) so patterns become visible. If stress affects your sleep, health or finances, talk to a professional; a trading rule is no substitute.
+
+---
+
+## Example (no chart)
+
+Account 10,000, risk 1% = 100. Trade 1: buy EUR/USD **1.0850**, stop **1.0830**, target **1.0890** (**1 : 2.0**), size 100 ÷ (20 × 10) = **0.5 lot**: stopped out (−1R). Trade 2 stopped (−1R): the day is at −2%, which is the daily loss limit, so you stop. The urge to "win it back" appears; the rule says close the platform. Tomorrow the next planned setup again risks 1% (0.5 lot, not 1.0). A doubled third trade risking 2% could have turned a 2% day into a 4% one.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Doubling size after losses | Keep size fixed by the stop |
+| No daily loss limit | Set one before the session |
+| Hiding emotions | Log them in the journal |
+| Judging by one result | Judge by the plan and the sample |
+
+---
+
+## Practice
+
+1. Write your own daily loss limit and cooling-off rule.
+2. Compute the streak table for your own win rate.
+3. For one week log the emotion before each entry.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Emotions | Cannot be removed, only limited by rules |
+| Streaks | Long losing runs are normal and can be computed |
+| Protocol | Pause, daily limit, journal |
+| Caution | Seek professional help if stress is serious |
+
+---
+
+## Related Topics
+
+- [Monte Carlo](/en/quantitative/monte-carlo)
+- [Session Psychology](/en/forex-sessions/session-psychology)
+- [Avoiding Overtrading](/en/blog/avoiding-overtrading)
+- [Trading Discipline Guide](/en/blog/trading-psychology-discipline-complete)

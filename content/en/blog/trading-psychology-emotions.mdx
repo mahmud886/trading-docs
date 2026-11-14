@@ -1,6 +1,6 @@
 ---
-title: "Trading Psychology: Overcoming Fear, Greed, and Revenge Trading"
-description: "Master the mental game of trading. Learn how to overcome fear, greed, FOMO, and revenge trading — the biggest killers of trading accounts."
+title: "Trading Psychology — Fear, Greed, FOMO and Revenge Trading"
+description: "How fear, greed, FOMO and revenge trading show up in a trading plan and what rules limit the damage: pre-set risk, a daily loss limit, a cooling-off routine and a loss-streak table showing that long losing runs are normal even for a profitable system."
 date: "2026-05-11"
 author: "Trading Docs"
 category: "Psychology"
@@ -9,220 +9,114 @@ readingTime: 9
 featured: true
 ---
 
-## The Real Enemy in Trading
+Most traders know what to do and still don't do it. Emotions matter because **trading puts money and uncertainty together**. You cannot remove them, but you can write rules that limit what they are able to do.
 
-You've studied Price Action. You understand Risk Management. Your strategy works on backtests. So why do you keep losing money?
-
-**Because you haven't mastered your emotions.**
-
-Statistics show that **80-90% of traders lose money**, not because their strategy is bad, but because **they can't execute it consistently**. Fear, greed, impatience, and emotional decision-making destroy more trading accounts than bad entries ever could.
-
-The good news? **Trading psychology can be trained and improved** — just like any other skill.
-
----
-
-## The Four Deadly Emotions
-
-### 1. FEAR
-
-Fear shows up in different forms:
-
-**Fear of Missing Out (FOMO)**
-
-- You see price spike without you
-- Panic and chase the move
-- Entry at the absolute worst possible time
-- Market reverses, you get stopped out
-
-**Fear of Loss**
-
-- You're down on a trade
-- Instead of exiting with small loss, you "hold for revenge"
-- Position gets worse
-- You panic sell at the bottom
-
-**Fear of Being Wrong**
-
-- You take a trade that hits your stop loss
-- Instead of accepting the loss with integrity, you move the stop loss
-- This is **delaying disaster**, not avoiding it
-- The loss eventually comes AND it's bigger
-
-<Callout type="warning" title="The Fix for Fear">
-  **Accept that losses are PART of trade**. Even professionals with 60% win rates lose 40% of the time. A loss doesn't
-  mean you're bad; it means the setup didn't work THIS TIME. Remove the emotion from it.
+<Callout type="warning" title="Corrected and toned down">
+  The original claimed fixed percentages of traders fail from psychology and promised that specific techniques cure
+  emotions. No such figures are established. This version describes common patterns and practical rules; none of it is
+  therapy or a guarantee.
 </Callout>
 
 ---
 
-### 2. GREED
+## Four Common Patterns
 
-Greed is when you get a 50-pip winner and want to hold for 200 pips.
+| Emotion     | What it looks like                                | Rule that limits it                                                                    |
+| ----------- | ------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| **Fear**    | Skipping valid setups, closing winners early      | Fixed small risk per trade so one loss doesn't hurt                                    |
+| **Greed**   | Oversizing, moving targets, holding past the plan | Size from the stop; take the planned exit                                              |
+| **FOMO**    | Chasing a move that has already run               | Trade only at planned levels (see [Timeframe Selection](/en/blog/timeframe-selection)) |
+| **Revenge** | Doubling size after a loss to win it back         | Daily loss limit and a mandatory break                                                 |
 
-**What happens:**
+### The Chart
 
-- You hit your first take profit level
-- "No, let it run..." you think
-- Price dips 20 pips
-- You panic hold
-- Price dips another 50 pips
-- You close at breakeven or small loss
-- You just turned a 50-pip win into zero or a loss
+![Many simulated equity paths of the same strategy with their drawdown distribution on synthetic data](/images/quantitative/monte-carlo/monte-carlo-drawdown-dark.webp)
 
-**The consequences:**
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/quantitative/mc-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-- You become bitter (why did I close the winner?)
-- You chase harder on the next trade
-- You override your plan
-- One bad decision leads to another
-
-<Callout type="tip" title="The Fix for Greed">
-**Stick to your predetermined take profit**. If you want more profit, take 50% at your first target and let 50% run. But don't override your plan mid-trade. Discipline > Profits.
+<Callout type="info" title="About this chart">
+  Illustration from the Monte Carlo lesson (synthetic trades) (From the lesson: [Monte
+  Carlo](/en/quantitative/monte-carlo).)
 </Callout>
 
 ---
 
-### 3. REVENGE TRADING
+## Losing Streaks Are Normal
 
-Revenge trading is when you lose a trade and immediately take another, bigger trade to "get the money back."
+With a win rate _p_, the chance of **n losses in a row** at a given moment is (1 − _p_)ⁿ, and over many trades a long streak becomes likely. For a 45% win rate, a run of 5 losses has probability 0.55⁵ ≈ 5.0% at any starting trade; over 200 trades the chance of seeing at least one such run is very high.
 
-**How it usually goes:**
+| Streak of losses | Probability at one start (win rate 45%) | Drawdown at 1% risk |
+| ---------------- | --------------------------------------- | ------------------- |
+| 3                | 16.6%                                   | 3.0%                |
+| 5                | 5.0%                                    | 4.9%                |
+| 8                | 0.8%                                    | 7.7%                |
+| 10               | 0.25%                                   | 9.6%                |
 
-- You lose -50 pips on EUR/USD
-- Instead of stepping back, you immediately go ALL IN on GBP/USD
-- You're now trading on emotion, not logic
-- The trade fails
-- Now you're down -150 pips, and your account is stressed
-
-**Why it's dangerous:**
-
-- You're trading to fix emotions, not because the setup is good
-- Account stress clouds judgment
-- You break your position sizing rules
-- One bad trade compounds into three
-
-<Callout type="warning" title="The Fix for Revenge Trading">
-  **Take a break after losses**. Walk away for 1-2 hours. Get some water. Do something else. Come back when your
-  emotions are neutral. The market will still be there; it's not going anywhere.
-</Callout>
+See [Monte Carlo](/en/quantitative/monte-carlo): the same system produces very different drawdowns depending on the order of trades. Knowing this in advance makes a streak a **planned event**, not a crisis.
 
 ---
 
-### 4. OVERCONFIDENCE
+## A Simple Protocol
 
-The opposite of fear is overconfidence — and it's just as destructive.
+| Trigger                                   | Action                                     |
+| ----------------------------------------- | ------------------------------------------ |
+| Two losses in a row                       | Pause for 30 minutes, re-read the plan     |
+| Daily loss limit reached (for example 2%) | Stop for the day, no exceptions            |
+| Feeling the urge to "get it back"         | Close the platform and write what you feel |
+| Weekly review                             | Compare plan trades against emotional ones |
 
-**What overconfidence looks like:**
-
-- You had 3 winners in a row
-- You increase position size
-- You skip your risk management rules
-- You trade setups that DON'T meet your criteria
-- One big loss comes and **wipes out weeks of gains**
-
-**Real example:**
-
-- Account: $10,000
-- Win streak: +$500, +$700, +$400 (total +$1,600)
-- You feel invincible
-- You risk $600 on one trade (6% instead of 1%)
-- You lose that trade
-- Account: $9,400 — Most of your gains evaporated
-
-<Callout type="info" title="The Fix for Overconfidence">
-  **Rigorously stick to your rules, especially after wins**. Consistency beats hot streaks every time. The best traders
-  are boring traders who follow their system exactly.
-</Callout>
+Log the emotion in your [trading journal](/en/blog/trading-journal-template) so patterns become visible. If stress affects your sleep, health or finances, talk to a professional; a trading rule is no substitute.
 
 ---
 
-## The Four-Step Process to Emotional Trading Control
+## Example (no chart)
 
-### Step 1: Become Aware
-
-The first step is **noticing** when you're trading emotionally:
-
-- Are you rushing entries?
-- Are you deviating from your plan?
-- Are you trying to "revenge trade"?
-- Are you over-sizing?
-
-**Write it down.** Keep a trading journal and note whenever you acted emotionally. This creates awareness.
-
-### Step 2: Pause Before Acting
-
-Before you enter a trade, **pause for 5 seconds** and ask:
-
-- ✅ Does this setup meet my criteria?
-- ✅ Is my stop loss and take profit predefined?
-- ✅ Am I risking 1-2% of my account?
-- ✅ Am I trading this because of the setup, or because of emotion?
-
-### Step 3: Execute with Discipline
-
-Once you've confirmed the setup is good:
-
-- **Enter with conviction** — no second-guessing
-- **Let the trade play out** — don't adjust your stop loss out of hope
-- **Hit your take profit** when price reaches it, even if you "think" it'll go higher
-
-<Callout type="tip" title="Pro Tip">
-  Use tight stops on bad trades and let winners run with predetermined targets. This removes guesswork and keeps you
-  following YOUR PLAN, not your emotions.
-</Callout>
-
-### Step 4: Review & Learn
-
-At the end of each week, review your journal:
-
-- Which trades were emotional?
-- What triggered the emotional response?
-- How could you have handled it better?
-- What's one thing to improve next week?
+Account 10,000, risk 1% = 100. Trade 1: buy EUR/USD **1.0850**, stop **1.0830**, target **1.0890** (**1 : 2.0**), size 100 ÷ (20 × 10) = **0.5 lot**: stopped out (−1R). Trade 2 stopped (−1R): the day is at −2%, which is the daily loss limit, so you stop. The urge to "win it back" appears; the rule says close the platform. Tomorrow the next planned setup again risks 1% (0.5 lot, not 1.0). A doubled third trade risking 2% could have turned a 2% day into a 4% one.
 
 ---
 
-## The Trading Psychology Checklist
+## Common Mistakes
 
-Before EVERY trade, verify:
-
-| Check                                    | Yes/No | Why It Matters                      |
-| ---------------------------------------- | ------ | ----------------------------------- |
-| Does the setup meet my written criteria? | ☐      | Prevents impulsive trades           |
-| Is my stop defined BEFORE entry?         | ☐      | Prevents "hope-based" trading       |
-| Am I risking 1-2% max?                   | ☐      | Protects account from blowups       |
-| Am I in a calm mental state?             | ☐      | Emotional traders lose consistently |
-| Have I slept on this decision?           | ☐      | If unsure, skip to the next setup   |
+| Mistake                    | Fix                              |
+| -------------------------- | -------------------------------- |
+| Doubling size after losses | Keep size fixed by the stop      |
+| No daily loss limit        | Set one before the session       |
+| Hiding emotions            | Log them in the journal          |
+| Judging by one result      | Judge by the plan and the sample |
 
 ---
 
-## The Long Game
+## Practice
 
-Here's the truth about trading psychology: **It never fully goes away.**
-
-Even traders with 10+ years of experience still feel fear sometimes. The difference is:
-
-- They've trained themselves to **recognize** the emotion
-- They have a **protocol** for managing it
-- They prioritize **discipline over profits**
-
-Your goal isn't to never feel fear or greed. Your goal is to **feel it and act anyway** — to follow your plan regardless of emotions.
+1. Write your own daily loss limit and cooling-off rule.
+2. Compute the streak table for your own win rate.
+3. For one week log the emotion before each entry.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
 ---
 
-## Key Takeaways
+## Summary
 
-| Mistake             | Consequence                           | Fix                              |
-| ------------------- | ------------------------------------- | -------------------------------- |
-| **Fear**            | Miss trades, panic sell winners       | Accept losses as part of trading |
-| **Greed**           | Hold winning trades too long          | Stick to preset take profits     |
-| **Revenge Trading** | Compound losses with emotional trades | Take breaks after losses         |
-| **Overconfidence**  | Over-size and blow up account         | Stick to your rules always       |
+| Idea     | Detail                                          |
+| -------- | ----------------------------------------------- |
+| Emotions | Cannot be removed, only limited by rules        |
+| Streaks  | Long losing runs are normal and can be computed |
+| Protocol | Pause, daily limit, journal                     |
+| Caution  | Seek professional help if stress is serious     |
 
-**The best traders aren't the ones with the best strategies — they're the ones with the best discipline.**
+---
 
-Your trading psychology determines your long-term success far more than your entry signal ever will.
+## Related Topics
 
-Start journaling, become aware, and build the discipline to execute your plan consistently.
-
-Happy trading! 📈
+- [Monte Carlo](/en/quantitative/monte-carlo)
+- [Session Psychology](/en/forex-sessions/session-psychology)
+- [Avoiding Overtrading](/en/blog/avoiding-overtrading)
+- [Trading Discipline Guide](/en/blog/trading-psychology-discipline-complete)
