@@ -103,7 +103,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
   const minRead = isBn ? "মিনিট পড়া" : "min read";
 
   return (
-    <div>
+    <div className="mx-auto max-w-3xl">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Link
         href={`/${lang}/blog`}
@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
       </Link>
 
       <article>
-        <div className="mb-8">
+        <div className="mb-10 border-b border-border/60 pb-8">
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
             {post.category && (
               <span className="rounded-full border border-border px-2.5 py-0.5 font-medium">{post.category}</span>
@@ -131,11 +131,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
               </span>
             )}
           </div>
-          <h1 className="mt-4 text-4xl font-bold text-foreground">{post.title}</h1>
-          {post.description && <p className="mt-3 text-lg text-muted-foreground">{post.description}</p>}
+          <h1 className="mt-5 text-4xl font-bold leading-tight tracking-tight text-foreground [text-wrap:balance] sm:text-5xl">
+            {post.title}
+          </h1>
+          {post.description && <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{post.description}</p>}
         </div>
 
-        <div className="prose max-w-none dark:prose-invert">{mdxContent}</div>
+        <div className="prose max-w-none text-[1.02rem] dark:prose-invert">{mdxContent}</div>
       </article>
 
       {/* Related Posts */}

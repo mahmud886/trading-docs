@@ -334,7 +334,7 @@ export default async function ToolsPage({ params }: { params: Promise<{ lang: st
                   {tool.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{tool.description}</p>
-                <span className="mt-4 inline-block text-xs font-medium text-muted-foreground group-hover:text-accent-green">
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent-green/80 transition-all group-hover:gap-2 group-hover:text-accent-green">
                   {locale === "bn" ? "টুল খুলুন →" : "Launch Tool →"}
                 </span>
               </div>
