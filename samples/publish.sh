@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Publish one lesson from samples/<section>/<slug> to the site, build, commit, push and fast-forward main.
+# Publish one lesson from samples/<section>/<slug> to the site, build, commit, push; main only with PUSH_MAIN=1 (each main push triggers a Vercel deploy).
 # Usage: samples/publish.sh <section> <slug> "<commit subject>" "<commit body>"
 set -euo pipefail
 sec=$1; slug=$2; subject=$3; body=$4
@@ -40,5 +40,5 @@ git commit -q -m "$subject" -m "$body" -m "Co-Authored-By: Claude Opus 5.5 <nore
 Claude-Session: https://claude.ai/code/session_01NwitYNpi7ecf2M24KK5cFd"
 retry() { for i in 1 2 3 4 5; do "$@" && return 0; sleep $((i * 8)); done; return 1; }
 retry git push -q -u origin claude/ict-deep-lessons
-retry git push -q origin claude/ict-deep-lessons:main
+[ "${PUSH_MAIN:-0}" = 1 ] && retry git push -q origin claude/ict-deep-lessons:main || true
 git log --oneline -1
