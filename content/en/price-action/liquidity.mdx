@@ -1,188 +1,162 @@
 ---
 title: "Liquidity in Price Action — Complete Guide"
-description: "Master the concept of liquidity in Price Action trading. Learn how smart money targets liquidity pools, stop hunts, liquidity sweeps, and how to trade with institutional order flow."
+description: "Understand liquidity in price action: buy-side and sell-side liquidity, where stop orders collect (equal highs and lows, swings, trendlines, session and weekly levels), how a liquidity sweep works, how to trade a sweep and reversal, internal vs external liquidity and the liquidity cycle, with a chart and an animated walkthrough."
 level: intermediate
 order: 15
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## What is Liquidity?
+## What Is Liquidity?
 
-In Price Action trading, liquidity refers to **clusters of pending orders** (stop losses, limit orders) sitting at predictable price levels. Smart money (institutions) targets these pools to fill their large orders. Understanding liquidity is the key to understanding WHY price moves to certain levels before reversing.
+In trading, **liquidity** means orders waiting to be filled. To buy a large amount, someone needs a lot of sell orders to buy from, and the reverse.
 
-<Callout type="info" title="The Secret of Smart Money">
-  Institutions need liquidity to enter and exit large positions. They can't just buy 500 lots at market — they need
-  someone to sell to them. Stop losses of retail traders provide that liquidity. This is why price often "hunts" obvious
-  levels before moving.
+Some of the biggest clusters of orders are **stop losses**. They sit in predictable places: just beyond obvious highs and lows. When price reaches them, they turn into market orders, which is why price often runs just past an obvious level.
+
+<Callout type="info" title="Clarified: 'retail stops' and 'hunting'">
+  The original said retail stop losses provide the liquidity institutions need, and that price "hunts" them. Stops from
+  all kinds of traders cluster beyond obvious levels, and price often trades through those levels. Whether any one move
+  was a deliberate hunt can't be seen on a chart; the pattern can, and that's what this lesson trades.
 </Callout>
 
 ---
 
-## Types of Liquidity
+## Buy-Side and Sell-Side
 
-### Buy-Side Liquidity (BSL)
+| Type                          | Where       | Whose orders                                      |
+| ----------------------------- | ----------- | ------------------------------------------------- |
+| **Buy-side liquidity (BSL)**  | Above highs | Stops of short sellers, buy-stop breakout entries |
+| **Sell-side liquidity (SSL)** | Below lows  | Stops of buyers, sell-stop breakdown entries      |
 
-Resting orders **above** swing highs, equal highs, and resistance levels:
+---
 
-- Stop losses of SHORT positions
-- Buy stop orders (breakout traders)
-- Provides fuel for institutions to SELL into
+## Sweep, Then the Other Side
 
-### Sell-Side Liquidity (SSL)
+![EUR/USD 1H: buy-side liquidity above equal highs at 1.1060, sell-side liquidity below equal lows at 1.1000; a wick to 1.0985 sweeps the sell stops and closes back above; buy 1.1005, stop 1.0980, target 1.1060](/images/price-action/liquidity/liquidity-sweep-to-bsl-dark.png)
 
-Resting orders **below** swing lows, equal lows, and support levels:
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/liquidity-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-- Stop losses of LONG positions
-- Sell stop orders (breakdown traders)
-- Provides fuel for institutions to BUY into
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
 
-### Visual:
+1. **Pools form:** equal highs at **1.1060** (BSL above) and equal lows at **1.1000** (SSL below).
+2. **The sweep:** a candle wicks to **1.0985**, triggering the sell stops, and **closes back above 1.1000**.
+3. **The trade:** with the sell-side taken, the next obvious pool is the buy-side above.
 
-```
-         BSL (Buy-Side Liquidity)
-─────────── Equal Highs / Swing Highs ───────────
-         ↑ Stop losses of shorts sit here
-         ↑ Buy stops of breakout traders
+| Level   | Price       | Note                                |
+| ------- | ----------- | ----------------------------------- |
+| Entry   | 1.1005      | After the close back above 1.1000   |
+| Stop    | 1.0980      | Below the 1.0985 sweep low          |
+| Target  | 1.1060      | The equal highs: buy-side liquidity |
+| **R:R** | **1 : 2.2** | Risk 25 pips, reward 55 pips        |
 
-    PRICE ACTION HAPPENS HERE
-    (Fair Value / Trading Range)
-
-         ↓ Stop losses of longs sit here
-         ↓ Sell stops of breakdown traders
-─────────── Equal Lows / Swing Lows ───────────
-         SSL (Sell-Side Liquidity)
-```
+<Callout type="info" title="Completed: the example">
+  The original's sweep example (equal lows 1.1000, sweep to 1.0985, buy 1.1005, stop 1.0980) gave the target only as
+  "the next BSL above". Here it's the 1.1060 equal highs, for a planned 1 : 2.2.
+</Callout>
 
 ---
 
 ## Where Liquidity Pools Form
 
-| Location                  | Type | Why Retail Places Orders Here                |
-| ------------------------- | ---- | -------------------------------------------- |
-| **Swing Highs**           | BSL  | "Obvious resistance" — shorts place SL above |
-| **Swing Lows**            | SSL  | "Obvious support" — longs place SL below     |
-| **Equal Highs**           | BSL  | Double/triple top — massive stops above      |
-| **Equal Lows**            | SSL  | Double/triple bottom — massive stops below   |
-| **Trendline touches**     | Both | Traders using trendlines place tight stops   |
-| **Round numbers**         | Both | Psychological levels attract orders          |
-| **Previous day/week H/L** | Both | Institutional reference points               |
+| Pool                                 | Why stops gather there                         | Strength         |
+| ------------------------------------ | ---------------------------------------------- | ---------------- |
+| **Equal highs / lows**               | Obvious double tops/bottoms; stops just beyond | Strong           |
+| **Swing highs / lows**               | The natural stop for anyone trading the swing  | Strong if recent |
+| **Trendlines**                       | Stops sit just beyond the line                 | Medium           |
+| **Previous day / week high and low** | Watched by many traders                        | Strong           |
+| **Session highs / lows**             | The Asian range high and low before London     | Medium–strong    |
+| **Round numbers**                    | Stops placed at or just beyond them            | Medium           |
+
+Weaker pools: levels already swept, single-touch levels, and very old levels.
 
 ---
 
-## Liquidity Sweeps (Stop Hunts)
+## Anatomy of a Sweep
 
-A liquidity sweep occurs when price **temporarily pierces** a key level to trigger resting orders, then reverses. This is how institutions fill their positions.
+1. An obvious level forms (equal lows at 1.1000).
+2. Traders buy there and place stops just below.
+3. Price trades below, triggering those stops.
+4. The stops (sell orders) are absorbed by buyers.
+5. Price **closes back above** the level and moves away.
 
-### Anatomy of a Sweep:
-
-```
-1. Equal lows form at 1.1000 (obvious support)
-2. Retail traders place buy limits at 1.1000, SL below at 1.0990
-3. Thousands of sell stops accumulate below 1.0990
-4. Smart money pushes price below 1.0990 (triggers sell stops)
-5. Smart money BUYS the sell stops (fills their long position)
-6. Price immediately reverses back above 1.1000
-7. Retail traders got stopped out; institutions got filled
-
-THIS is the "stop hunt" — it's not manipulation,
-it's institutions needing liquidity to fill large orders.
-```
+A sweep needs the **close back inside**. If price closes beyond the level and holds, it's a breakout.
 
 ---
 
-## Trading Liquidity Sweeps
+## Trading a Sweep
 
-### Setup: Sweep and Reverse
-
-```
-Entry Criteria:
-1. Identify obvious liquidity pool (equal highs/lows, swing points)
-2. Wait for price to sweep beyond the level (wick/spike)
-3. Look for immediate rejection (strong close back inside)
-4. Enter on the reversal with stop beyond the sweep
-
-Long Example:
-- Equal lows at 1.1000
-- Price drops to 1.0985 (sweeps the liquidity)
-- Strong bullish candle closes above 1.1000
-- Enter long at 1.1005
-- Stop: Below 1.0980 (beyond the sweep)
-- Target: Next BSL above (buy-side liquidity)
-```
-
-### Sweep + Order Block Entry:
-
-```
-1. Price sweeps liquidity below equal lows
-2. Fills into a bullish Order Block just below the sweep
-3. Strong rejection candle from the OB
-4. Enter long with stop below OB
-5. Target: Opposite liquidity (BSL above)
-
-This is the HIGHEST confidence setup in ICT/SMC methodology.
-```
+| Step | Rule                                                               |
+| ---- | ------------------------------------------------------------------ |
+| 1    | Mark the pool (equal highs/lows, swing, session level)             |
+| 2    | Wait for price to trade beyond it                                  |
+| 3    | Wait for a close back inside (and ideally a lower-timeframe CHOCH) |
+| 4    | Enter on the close or on a retrace into the order block / FVG      |
+| 5    | Stop beyond the sweep's extreme                                    |
+| 6    | Target the opposite pool                                           |
 
 ---
 
-## Liquidity Concepts in Practice
+## Internal vs External Liquidity
 
-### Internal vs. External Liquidity:
+| Type         | Where                                      | Role                       |
+| ------------ | ------------------------------------------ | -------------------------- |
+| **External** | Beyond the range's or swing's high and low | The main targets           |
+| **Internal** | Inside the range: minor highs/lows, FVGs   | Stepping stones on the way |
 
-| Type         | Definition                                 | Trading Approach        |
-| ------------ | ------------------------------------------ | ----------------------- |
-| **External** | Above/below major swing points (target)    | Where price is GOING    |
-| **Internal** | Fair Value Gaps, Order Blocks within range | Where price enters FROM |
+**The liquidity cycle:** price often moves from one pool to the next, taking one side (a sweep), then travelling to the opposite side. See [Internal & External Liquidity](/en/smc/internal-external-liquidity).
 
-### The Liquidity Cycle:
+### Example (no chart) — gold, previous day's high
 
-```
-Price seeks liquidity in a predictable cycle:
-
-1. Takes Buy-Side Liquidity (sweeps highs)
-2. Reverses toward Sell-Side Liquidity
-3. Takes Sell-Side Liquidity (sweeps lows)
-4. Reverses toward Buy-Side Liquidity
-5. Repeat
-
-Understanding this cycle tells you WHERE price is going next.
-```
-
----
-
-## Identifying High-Probability Liquidity Levels
-
-### Strongest Liquidity Pools:
-
-1. **Equal highs/lows** — The more touches, the more stops accumulate
-2. **Obvious trendline levels** — Retail traders cluster stops below/above
-3. **Previous session high/low** — Institutional reference points
-4. **Weekly high/low** — Major liquidity targets
-5. **Unswept swing points** — Price will likely return to sweep them
-
-### Weak Liquidity (Avoid):
-
-- Already swept levels (liquidity already taken)
-- Insignificant single touches
-- Very old levels (orders may have expired)
+Gold's previous day's high is **2,420**. In the London session it runs to **2,427** and closes back below. Sell **2,418**, stop **2,430**, target the previous day's low at **2,385**: risk $12, reward $33, **R:R 1 : 2.75** (planned).
 
 ---
 
 ## Common Mistakes
 
-| Mistake                               | Solution                                          |
-| ------------------------------------- | ------------------------------------------------- |
-| Trading the initial break as breakout | Wait for sweep + rejection to confirm it's a hunt |
-| Not identifying where liquidity sits  | Mark equal H/L, swing points on every chart       |
-| Fighting the sweep direction          | The sweep IS the opportunity — trade the reversal |
-| Ignoring higher-timeframe liquidity   | D1/W1 liquidity overrules M15 liquidity           |
-| Entering before the sweep completes   | Wait for candle close confirmation                |
+| Mistake                                    | Fix                                               |
+| ------------------------------------------ | ------------------------------------------------- |
+| Placing your own stop at the obvious level | Put it beyond structure, not exactly at the level |
+| Trading the first push through a level     | Wait for the close back inside                    |
+| Calling a breakout a sweep                 | A close beyond that holds is a breakout           |
+| Targeting pools already taken              | Target untouched pools                            |
+| Ignoring the higher-timeframe draw         | Sweeps against a strong HTF trend often fail      |
+
+---
+
+## Practice
+
+1. On a 1H chart, mark every equal high and low and the previous day's high and low.
+2. Note which ones were swept and whether price closed back inside.
+3. After each sweep, check if price reached the opposite pool.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Concept   | Key point                                                              |
+| --------- | ---------------------------------------------------------------------- |
+| **BSL**   | Stops above highs                                                      |
+| **SSL**   | Stops below lows                                                       |
+| **Sweep** | Beyond the pool, then a close back inside                              |
+| **Trade** | Enter after the close, stop beyond the sweep, target the opposite pool |
+| **Cycle** | One side taken, then the other                                         |
 
 ---
 
 ## Related Topics
 
-- [Market Structure](/en/price-action/market-structure) — Structure context for sweeps
-- [Fakeouts](/en/price-action/fakeouts) — Fakeouts are liquidity sweeps
-- [Reversal Concepts](/en/price-action/reversal-concepts) — Reversals after sweeps
-- [Support & Resistance](/en/price-action/support-resistance) — Where liquidity sits
-- [Entry Models](/en/price-action/entry-models) — Sweep-based entries
+- [Swing Highs & Lows](/en/price-action/swing-high-low) — where pools form
+- [Fakeouts](/en/price-action/fakeouts) — failed breaks through pools
+- [Liquidity Pools](/en/smc/liquidity-pools) — the SMC view
+- [Entry Models](/en/price-action/entry-models) — sweep-based entries

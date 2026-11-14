@@ -1,149 +1,162 @@
 ---
-title: "Price Action-এ Liquidity — সম্পূর্ণ গাইড"
-description: "Price Action Trading-এ Liquidity Concept আয়ত্ত করুন। Smart Money কীভাবে Liquidity Pool Target করে, Stop Hunt, Liquidity Sweep এবং Institutional Order Flow-এর সাথে Trade করা শিখুন।"
+title: "প্রাইস অ্যাকশনে লিকুইডিটি — সম্পূর্ণ গাইড"
+description: "প্রাইস অ্যাকশনে Liquidity বুঝুন: Buy-Side আর Sell-Side Liquidity, Stop Order কোথায় জমে (Equal High ও Low, Swing, Trendline, সেশন আর সাপ্তাহিক লেভেল), Liquidity Sweep কীভাবে কাজ করে, Sweep আর Reversal কীভাবে ট্রেড করবেন, Internal বনাম External Liquidity আর Liquidity চক্র — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 15
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
 ## Liquidity কী?
 
-Price Action Trading-এ Liquidity বলতে বোঝায় পূর্বানুমানযোগ্য Price Level-এ বসে থাকা **Pending Order-এর Cluster** (Stop Loss, Limit Order)। Smart Money (Institution) তাদের বড় Order Fill করতে এই Pool-গুলো Target করে। Liquidity বোঝা হলো Price কেন নির্দিষ্ট Level-এ যায় এবং তারপর Reverse করে — তা বোঝার চাবিকাঠি।
+ট্রেডিংয়ে **Liquidity** মানে Fill হওয়ার অপেক্ষায় থাকা Order। বড় পরিমাণ কিনতে হলে কেনার জন্য অনেক Sell Order দরকার, আর উল্টোটাও।
 
-<Callout type="info" title="Smart Money-র রহস্য">
-  Institution-দের বড় Position-এ Entry ও Exit করতে Liquidity প্রয়োজন। তারা সহজে Market-এ ৫০০ Lot কিনতে পারে না — তাদের
-  কারো কাছ থেকে কেনা দরকার। Retail Trader-দের Stop Loss সেই Liquidity সরবরাহ করে। এজন্যই Price প্রায়ই সুস্পষ্ট Level
-  "Hunt" করে তারপর Move করে।
+Order এর সবচেয়ে বড় কিছু গুচ্ছ হলো **Stop Loss**। এগুলো অনুমানযোগ্য জায়গায় থাকে: স্পষ্ট High আর Low এর ঠিক ওপারে। Price সেখানে পৌঁছালে এগুলো Market Order হয়ে যায়, এজন্যই Price প্রায়ই স্পষ্ট লেভেলের ঠিক ওপারে যায়।
+
+<Callout type="info" title="স্পষ্ট করা: 'রিটেইল Stop' আর 'Hunting'">
+  মূল লেসনে বলা হয়েছিল রিটেইল Stop Loss প্রতিষ্ঠানগুলোর দরকারি Liquidity দেয়, আর Price সেগুলো "শিকার" করে। সব ধরনের
+  ট্রেডারের Stop স্পষ্ট লেভেলের ওপারে জমে, আর Price প্রায়ই সেই লেভেল পার হয়। কোনো নির্দিষ্ট Move ইচ্ছাকৃত শিকার ছিল কি
+  না চার্টে দেখা যায় না; প্যাটার্ন দেখা যায়, আর এই লেসন সেটাই ট্রেড করে।
 </Callout>
 
 ---
 
-## Liquidity-র প্রকারভেদ
+## Buy-Side আর Sell-Side
 
-### Buy-Side Liquidity (BSL)
-
-Swing High, Equal High ও Resistance Level-এর **উপরে** বসে থাকা Order:
-
-- SHORT Position-এর Stop Loss
-- Breakout Trader-দের Buy Stop Order
-- Institution-দের SELL করার জন্য জ্বালানি সরবরাহ করে
-
-### Sell-Side Liquidity (SSL)
-
-Swing Low, Equal Low ও Support Level-এর **নিচে** বসে থাকা Order:
-
-- LONG Position-এর Stop Loss
-- Breakdown Trader-দের Sell Stop Order
-- Institution-দের BUY করার জন্য জ্বালানি সরবরাহ করে
-
-### দৃশ্যমান:
-
-```
-         BSL (Buy-Side Liquidity)
-─────────── Equal High / Swing High ───────────
-         ↑ Short-দের Stop Loss এখানে বসে
-         ↑ Breakout Trader-দের Buy Stop
-
-    PRICE ACTION এখানে ঘটে
-    (Fair Value / Trading Range)
-
-         ↓ Long-দের Stop Loss এখানে বসে
-         ↓ Breakdown Trader-দের Sell Stop
-─────────── Equal Low / Swing Low ───────────
-         SSL (Sell-Side Liquidity)
-```
+| ধরন                           | কোথায়       | কার Order                                        |
+| ----------------------------- | ------------ | ------------------------------------------------ |
+| **Buy-Side Liquidity (BSL)**  | High এর উপরে | Short Seller দের Stop, Buy-Stop Breakout এন্ট্রি |
+| **Sell-Side Liquidity (SSL)** | Low এর নিচে  | Buyer দের Stop, Sell-Stop Breakdown এন্ট্রি      |
 
 ---
 
-## যেখানে Liquidity Pool তৈরি হয়
+## Sweep, তারপর অন্য দিক
 
-| অবস্থান                   | ধরন  | কেন Retail এখানে Order রাখে                   |
-| ------------------------- | ---- | --------------------------------------------- |
-| **Swing High**            | BSL  | "সুস্পষ্ট Resistance" — Short-রা উপরে SL রাখে |
-| **Swing Low**             | SSL  | "সুস্পষ্ট Support" — Long-রা নিচে SL রাখে     |
-| **Equal High**            | BSL  | Double/Triple Top — বিপুল Stop উপরে           |
-| **Equal Low**             | SSL  | Double/Triple Bottom — বিপুল Stop নিচে        |
-| **Trendline Touch**       | উভয় | Trendline ব্যবহারকারীরা Tight Stop রাখে       |
-| **Round Number**          | উভয় | Psychological Level Order আকর্ষণ করে          |
-| **Previous Day/Week H/L** | উভয় | Institutional Reference Point                 |
+![EUR/USD 1H: 1.1060 এর Equal High এর উপরে Buy-Side Liquidity, 1.1000 এর Equal Low এর নিচে Sell-Side Liquidity; 1.0985 পর্যন্ত Wick Sell Stop Sweep করে উপরে ফিরে Close করে; 1.1005 এ Buy, Stop 1.0980, টার্গেট 1.1060](/images/price-action/liquidity/liquidity-sweep-to-bsl-dark.png)
 
----
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/liquidity-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-## Liquidity Sweep (Stop Hunt)
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
+</Callout>
 
-Liquidity Sweep ঘটে যখন Price সাময়িকভাবে একটি Key Level **ভেদ করে** Resting Order Trigger করে, তারপর Reverse করে। এভাবে Institution তাদের Position Fill করে।
+1. **Pool তৈরি:** **1.1060** এ Equal High (উপরে BSL) আর **1.1000** এ Equal Low (নিচে SSL)।
+2. **Sweep:** একটি ক্যান্ডেলের Wick **1.0985** পর্যন্ত যায়, Sell Stop Trigger করে, আর **1.1000 এর উপরে ফিরে Close** করে।
+3. **ট্রেড:** Sell-Side নেওয়া হয়ে গেছে, পরের স্পষ্ট Pool উপরের Buy-Side।
 
-### Sweep-এর বিশ্লেষণ:
+| লেভেল   | প্রাইস      | নোট                             |
+| ------- | ----------- | ------------------------------- |
+| এন্ট্রি | 1.1005      | 1.1000 এর উপরে ফিরে Close এর পর |
+| Stop    | 1.0980      | 1.0985 Sweep Low এর নিচে        |
+| টার্গেট | 1.1060      | Equal High: Buy-Side Liquidity  |
+| **R:R** | **১ : ২.২** | রিস্ক ২৫ পিপ, রিওয়ার্ড ৫৫ পিপ  |
 
-```
-1. 1.1000-এ Equal Low তৈরি হয় (সুস্পষ্ট Support)
-2. Retail Trader 1.1000-এ Buy Limit রাখে, SL 1.0990-এর নিচে
-3. 1.0990-এর নিচে হাজার হাজার Sell Stop জমা হয়
-4. Smart Money Price-কে 1.0990-এর নিচে ঠেলে দেয় (Sell Stop Trigger)
-5. Smart Money সেই Sell Stop কিনে নেয় (Long Position Fill)
-6. Price তাৎক্ষণিক 1.1000-এর উপরে ফিরে আসে
-7. Retail Trader Stop Out হলো; Institution Fill হলো
-
-এটাই "Stop Hunt" — এটি Manipulation নয়,
-Institution-দের বড় Order Fill করতে Liquidity প্রয়োজন।
-```
-
----
-
-## Liquidity Sweep Trade করা
-
-### Setup: Sweep and Reverse
-
-```
-Entry Criteria:
-1. সুস্পষ্ট Liquidity Pool চিহ্নিত করুন (Equal High/Low, Swing Point)
-2. Price Level-এর বাইরে Sweep করার অপেক্ষা করুন (Wick/Spike)
-3. তাৎক্ষণিক Rejection খুঁজুন (ভিতরে শক্তিশালী Close)
-4. Sweep-এর বাইরে Stop দিয়ে Reversal-এ Enter
-
-Long উদাহরণ:
-- 1.1000-এ Equal Low
-- Price 1.0985-এ নামে (Liquidity Sweep)
-- শক্তিশালী Bullish Candle 1.1000-এর উপরে Close
-- 1.1005-এ Long Enter
-- Stop: 1.0980-এর নিচে (Sweep-এর বাইরে)
-- Target: উপরের পরবর্তী BSL (Buy-side Liquidity)
-```
+<Callout type="info" title="সম্পূর্ণ করা: উদাহরণ">
+  মূল লেসনের Sweep উদাহরণে (Equal Low 1.1000, 1.0985 পর্যন্ত Sweep, 1.1005 এ Buy, Stop 1.0980) টার্গেট শুধু "উপরের পরের
+  BSL" বলা ছিল। এখানে এটা 1.1060 এর Equal High, পরিকল্পিত ১ : ২.২।
+</Callout>
 
 ---
 
-## Liquidity Cycle
+## Liquidity Pool কোথায় তৈরি হয়
 
-```
-Price পূর্বানুমানযোগ্য Cycle-এ Liquidity খোঁজে:
+| Pool                               | সেখানে Stop কেন জমে                      | শক্তি                    |
+| ---------------------------------- | ---------------------------------------- | ------------------------ |
+| **Equal High / Low**               | স্পষ্ট Double Top/Bottom; ঠিক ওপারে Stop | শক্তিশালী                |
+| **Swing High / Low**               | Swing ট্রেড করা যে কারো স্বাভাবিক Stop   | সাম্প্রতিক হলে শক্তিশালী |
+| **Trendline**                      | লাইনের ঠিক ওপারে Stop                    | মাঝারি                   |
+| **আগের দিন / সপ্তাহের High ও Low** | অনেক ট্রেডার দেখেন                       | শক্তিশালী                |
+| **সেশনের High / Low**              | London এর আগে Asian Range এর High আর Low | মাঝারি–শক্তিশালী         |
+| **রাউন্ড নাম্বার**                 | এর ঠিক ওপারে বা সেখানে রাখা Stop         | মাঝারি                   |
 
-1. Buy-Side Liquidity নেয় (High Sweep করে)
-2. Sell-Side Liquidity-র দিকে Reverse করে
-3. Sell-Side Liquidity নেয় (Low Sweep করে)
-4. Buy-Side Liquidity-র দিকে Reverse করে
-5. পুনরাবৃত্তি
+দুর্বল Pool: আগেই Sweep হওয়া লেভেল, একবার ছোঁয়া লেভেল, আর খুব পুরনো লেভেল।
 
-এই Cycle বোঝা বলে দেয় Price পরবর্তীতে কোথায় যাচ্ছে।
-```
+---
+
+## Sweep এর গঠন
+
+1. একটি স্পষ্ট লেভেল তৈরি হয় (1.1000 এ Equal Low)।
+2. ট্রেডাররা সেখানে কেনেন আর ঠিক নিচে Stop রাখেন।
+3. Price নিচে ট্রেড করে, সেই Stop গুলো Trigger করে।
+4. Stop গুলো (Sell Order) Buyer রা শোষণ করে।
+5. Price লেভেলের **উপরে ফিরে Close** করে দূরে যায়।
+
+Sweep এর জন্য **ভিতরে ফিরে Close** দরকার। Price লেভেলের ওপারে Close করে টিকে থাকলে সেটা Breakout।
+
+---
+
+## Sweep ট্রেড করা
+
+| ধাপ | নিয়ম                                                           |
+| --- | --------------------------------------------------------------- |
+| ১   | Pool মার্ক করুন (Equal High/Low, Swing, সেশন লেভেল)             |
+| ২   | Price এর ওপারে ট্রেড করার অপেক্ষা করুন                          |
+| ৩   | ভিতরে ফিরে Close এর অপেক্ষা (আর ভালো হয় Lower Timeframe CHOCH) |
+| ৪   | Close এ বা Order Block / FVG তে রিট্রেসে এন্ট্রি                |
+| ৫   | Sweep এর এক্সট্রিমের ওপারে Stop                                 |
+| ৬   | উল্টো দিকের Pool টার্গেট                                        |
+
+---
+
+## Internal বনাম External Liquidity
+
+| ধরন          | কোথায়                                 | ভূমিকা         |
+| ------------ | -------------------------------------- | -------------- |
+| **External** | রেঞ্জ বা Swing এর High আর Low এর ওপারে | প্রধান টার্গেট |
+| **Internal** | রেঞ্জের ভিতরে: ছোট High/Low, FVG       | পথের ধাপ       |
+
+**Liquidity চক্র:** Price প্রায়ই এক Pool থেকে পরেরটায় যায়, এক দিক নেয় (Sweep), তারপর উল্টো দিকে যায়। দেখুন [Internal & External Liquidity](/bn/smc/internal-external-liquidity)।
+
+### উদাহরণ (চার্ট ছাড়া) — Gold, আগের দিনের High
+
+Gold এর আগের দিনের High **2,420**। London সেশনে এটা **2,427** পর্যন্ত যায় আর নিচে ফিরে Close করে। **2,418** এ Sell, Stop **2,430**, আগের দিনের Low **2,385** টার্গেট: রিস্ক $12, রিওয়ার্ড $33, **R:R ১ : ২.৭৫** (পরিকল্পিত)।
 
 ---
 
 ## সাধারণ ভুল
 
-| ভুল                                    | সমাধান                                           |
-| -------------------------------------- | ------------------------------------------------ |
-| Initial Break-কে Breakout হিসেবে Trade | Sweep + Rejection দিয়ে Confirm করুন যে Hunt     |
-| Liquidity কোথায় বসে চিহ্নিত না করা    | প্রতিটি Chart-এ Equal H/L, Swing Point Mark করুন |
-| Sweep Direction-এর বিরুদ্ধে লড়াই      | Sweep-ই সুযোগ — Reversal Trade করুন              |
-| Higher-timeframe Liquidity উপেক্ষা     | D1/W1 Liquidity M15 Liquidity-কে Override করে    |
-| Sweep সম্পন্ন হওয়ার আগে Enter         | Candle Close Confirmation অপেক্ষা করুন           |
+| ভুল                                       | সমাধান                                                    |
+| ----------------------------------------- | --------------------------------------------------------- |
+| নিজের Stop স্পষ্ট লেভেলে রাখা             | ঠিক লেভেলে নয়, Structure এর ওপারে রাখুন                  |
+| লেভেলের ভিতর দিয়ে প্রথম ধাক্কা ট্রেড করা | ভিতরে ফিরে Close এর অপেক্ষা করুন                          |
+| Breakout কে Sweep বলা                     | ওপারে Close করে টিকে থাকলে সেটা Breakout                  |
+| আগেই নেওয়া Pool টার্গেট করা              | অক্ষত Pool টার্গেট করুন                                   |
+| Higher Timeframe এর Draw উপেক্ষা          | শক্তিশালী HTF ট্রেন্ডের বিরুদ্ধে Sweep প্রায়ই ব্যর্থ হয় |
+
+---
+
+## অনুশীলন
+
+1. 1H চার্টে প্রতিটি Equal High ও Low আর আগের দিনের High ও Low মার্ক করুন।
+2. কোনগুলো Sweep হয়েছে আর Price ভিতরে ফিরে Close করেছে কি না লিখুন।
+3. প্রতিটি Sweep এর পর Price উল্টো Pool এ পৌঁছেছে কি না দেখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা     | মূল কথা                                                      |
+| --------- | ------------------------------------------------------------ |
+| **BSL**   | High এর উপরে Stop                                            |
+| **SSL**   | Low এর নিচে Stop                                             |
+| **Sweep** | Pool এর ওপারে, তারপর ভিতরে ফিরে Close                        |
+| **ট্রেড** | Close এর পর এন্ট্রি, Sweep এর ওপারে Stop, উল্টো Pool টার্গেট |
+| **চক্র**  | এক দিক নেওয়া, তারপর অন্যটা                                  |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Market Structure](/bn/price-action/market-structure) — Sweep-এর জন্য Structure Context
-- [Fakeouts](/bn/price-action/fakeouts) — Fakeout হলো Liquidity Sweep
-- [Reversal Concepts](/bn/price-action/reversal-concepts) — Sweep-এর পর Reversal
-- [Support ও Resistance](/bn/price-action/support-resistance) — যেখানে Liquidity বসে
-- [Entry Models](/bn/price-action/entry-models) — Sweep-based Entry
+- [Swing Highs & Lows](/bn/price-action/swing-high-low) — Pool কোথায় তৈরি হয়
+- [Fakeouts](/bn/price-action/fakeouts) — Pool এর ভিতর দিয়ে ব্যর্থ ভাঙন
+- [Liquidity Pools](/bn/smc/liquidity-pools) — SMC দৃষ্টিভঙ্গি
+- [Entry Models](/bn/price-action/entry-models) — Sweep ভিত্তিক এন্ট্রি
