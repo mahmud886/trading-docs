@@ -1,0 +1,105 @@
+---
+title: "Risk Management Essentials — Five Rules That Keep You in the Game"
+description: "The five basic rules (a fixed risk per trade, a stop-loss on every trade, a minimum reward-to-risk, daily and weekly loss limits, and no averaging down), why drawdowns are harder to recover from than they look (a 50% loss needs a 100% gain), and how bad a run of trades can get even for a positive-expectancy system."
+date: "2026-04-20"
+author: "Trading Docs"
+category: "Academy"
+tags: ["risk-management", "position-sizing", "stop-loss", "beginner"]
+readingTime: 7
+featured: true
+---
+
+Risk management is not a way to make a strategy profitable; it is a way to **stay in business long enough** for an edge to show. The rules below are simple, and each one exists because a specific kind of loss is otherwise easy to suffer.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original gave absolute statements about what "professionals" do and fixed numbers without sources. The five rules below are common practice; the exact numbers (1%, 2R, 3%) are starting points that you should set from your own tolerance and data.
+</Callout>
+
+---
+
+## The Five Rules
+
+| # | Rule                                    | Why                                                                          | Example setting                |
+| - | --------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------ |
+| 1 | **Fixed risk per trade**                | One loss should never decide the month                                       | 1% of the account              |
+| 2 | **A stop-loss on every trade**          | Limits the loss to a known amount before you enter                           | Placed at a structural level   |
+| 3 | **A minimum reward-to-risk**            | A positive expectancy needs winners that are large enough                    | At least 1 : 1.5 planned       |
+| 4 | **Daily and weekly loss limits**        | Stops a bad stretch from becoming a disaster                                 | −2R a day, −5R a week          |
+| 5 | **No averaging down**                   | Adding to a loser turns a small loss into a large one                        | Never add to a losing position |
+
+See [Position Sizing 101](/en/blog/position-sizing-101) for the size calculation and [Risk Management](/en/price-action/risk-management) for the equity-curve effect.
+
+### The Chart
+
+![Forty resampled equity paths of a 100-trade backtest and the distributions of final result and maximum drawdown](/images/quantitative/monte-carlo/monte-carlo-drawdown-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/mc-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Illustration from the Monte Carlo lesson (synthetic trades) (From the lesson: [Monte Carlo Simulations](/en/quantitative/monte-carlo).)
+</Callout>
+
+---
+
+## Drawdowns Are Harder to Recover From Than They Look
+
+| Loss from the peak | Gain needed to get back |
+| ------------------ | ----------------------- |
+| 10%                | 11.1%                   |
+| 20%                | 25%                     |
+| 30%                | 42.9%                   |
+| 50%                | 100%                    |
+
+The formula is 1 ÷ (1 − loss) − 1. Because recovery needs a larger percentage than the loss, **avoiding deep drawdowns matters more than chasing big gains**.
+
+---
+
+## How Bad Can a Run Get?
+
+Even a system with positive expectancy can have a long run of losses. In the [Monte Carlo](/en/quantitative/monte-carlo) lesson a 100-trade backtest with an expectancy of +0.125R was resampled 4,000 times: the **median** maximum drawdown was 9R, but the **95th percentile** was 18R, and **12%** of the paths ended below zero after 100 trades. At 1% risk per trade, 18R is about a 16.5% drawdown; at 2% it is about 30.5%. The risk per trade should be small enough for the bad end of that range to be survivable.
+
+---
+
+## Example (no chart)
+
+Account 10,000, risk 1% = 100. EUR/USD buy **1.0850**, stop **1.0830** (20 pips), target **1.0890** (40 pips): **1 : 2.0** planned. Size = 100 ÷ (20 × 10) = **0.50 standard lot**. Daily limit −2R (200): after two stopped trades you stop for the day. If the day's first trade runs −1R and a third setup appears, you skip it: a third loss would break the daily limit.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Moving the stop further away | A stop only moves toward profit, never further from price |
+| Taking trades with less than your minimum reward-to-risk | Skip them |
+| Risking more after a loss to "get it back" | Keep risk fixed; stop at the daily limit |
+| Averaging down | Accept the small loss |
+
+---
+
+## Practice
+
+1. Write your five rules with your own numbers on one page.
+2. Compute 18 losses at your risk per trade and the resulting drawdown.
+3. Check each of your last 20 trades against rules 1 to 3.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Rules | Fixed risk, stop on every trade, minimum reward-to-risk, loss limits, no averaging down |
+| Recovery | A 50% loss needs a 100% gain |
+| Path risk | Even positive systems have bad runs; size for them |
+| Numbers | The 1% and 2R figures are starting points to adjust |
+
+---
+
+## Related Topics
+
+- [Position Sizing 101](/en/blog/position-sizing-101)
+- [Monte Carlo Simulations](/en/quantitative/monte-carlo)
+- [Risk Management](/en/price-action/risk-management)
+- [Risk Management Masterclass](/en/blog/risk-management-position-sizing-masterclass)
