@@ -1,80 +1,119 @@
 ---
 title: "Session Analysis — Complete Guide"
-description: "Master trading session analysis. Learn London, New York, Asian session characteristics, session-based strategies, and optimal trading times."
+description: "Read the trading day by session in Bangladesh time: what the Asian, London and New York sessions and the overlap tend to do, the Asian-range playbook (fakeout first, trade the second move), London-to-New-York continuation, and summer/winter time changes, with a chart and an animated walkthrough."
 level: intermediate
 order: 31
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
 ## Why Sessions Matter
 
-The Forex market operates 24/5 but is NOT equally active at all times. Each **trading session** has unique characteristics, volume patterns, and behavior. Professional traders align their strategy with session tendencies.
+Forex trades 24 hours a day, five days a week, but activity isn't even. As each financial centre opens, different participants arrive, volume changes and price behaves differently. Session analysis means using **time** as well as price.
 
 ---
 
-## Major Trading Sessions
+## Sessions in Bangladesh Time
 
-| Session               | Time (EST)         | Character              | Volatility |
-| --------------------- | ------------------ | ---------------------- | ---------- |
-| **Asian/Tokyo**       | 7:00 PM - 4:00 AM  | Ranging, consolidation | Low        |
-| **London**            | 3:00 AM - 12:00 PM | Trending, breakouts    | High       |
-| **New York**          | 8:00 AM - 5:00 PM  | Continuation/reversal  | High       |
-| **London/NY Overlap** | 8:00 - 12:00 PM    | Maximum volatility     | Highest    |
+| Session                     | Local hours                | **BD time (US/UK summer)** | **BD time (winter)** | Typical character                 |
+| --------------------------- | -------------------------- | -------------------------- | -------------------- | --------------------------------- |
+| **Tokyo / Asia**            | 9:00 AM – 6:00 PM Tokyo    | 6:00 AM – 3:00 PM          | 6:00 AM – 3:00 PM    | Quieter; ranges are common        |
+| **London**                  | 8:00 AM – 5:00 PM London   | 1:00 PM – 10:00 PM         | 2:00 PM – 11:00 PM   | Volume rises; directional moves   |
+| **New York**                | 8:00 AM – 5:00 PM New York | 6:00 PM – 3:00 AM          | 7:00 PM – 4:00 AM    | US data; continuation or reversal |
+| **London–New York overlap** | —                          | 6:00 PM – 10:00 PM         | 7:00 PM – 11:00 PM   | Usually the busiest hours         |
 
----
+Japan doesn't change its clocks, so Tokyo stays at 6:00 AM BD all year. London and New York move **one hour later** in BD time in winter. In this lesson the "Asian range" means **6:00 AM – 12:00 PM BD** — the hours before London.
 
-## Session Characteristics
-
-### Asian Session:
-
-- Creates the daily range (consolidation)
-- Defines support/resistance for London
-- Low volume, tight spreads
-- Ideal for: Range trading, identifying levels
-
-### London Session:
-
-- Breaks the Asian range (directional move)
-- Often creates the daily high or low
-- Highest forex volume session
-- Ideal for: Breakouts, trend initiation, sweeps
-
-### New York Session:
-
-- Continues London's direction OR reverses it
-- Creates the other daily extreme
-- High-impact US news occurs here
-- Ideal for: Continuation trades, news reactions
+<Callout type="warning" title="Corrected">
+  The original table gave times in US Eastern time only and called the Asian session "low volume, tight spreads".
+  Spreads are often **wider** in quiet hours, not tighter. Check your broker's spreads by session.
+</Callout>
 
 ---
 
-## Session-Based Strategies
+## The Asian-Range Playbook
 
-### Asian Range Breakout:
+![EUR/USD 30m from 6:00 AM to 8:30 PM BD: Asia builds a 20-pip range 1.0852–1.0872, London's first push at 1:00 PM sweeps the Asian high and closes back inside, the second move closes below the Asian low, and a short is taken on the retest at 1.0850 with stop 1.0861 and target 1.0812](/images/price-action/session-analysis/session-asian-range-dark.png)
 
-```
-1. Mark Asian session high and low
-2. London opens → watch for break of Asian range
-3. First break may be a fakeout (sweep)
-4. Trade the second move with confirmation
-5. Target: 1-2× Asian range width
-```
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/session-analysis-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### London Sweep → NY Continuation:
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
 
-```
-1. London sweeps previous day's high/low
-2. Creates the daily extreme
-3. NY session continues in same direction
-4. Enter on NY pullback to OB/FVG
-5. Target: Next daily level
-```
+| Step | Time (BD)          | What happens                                                                            |
+| ---- | ------------------ | --------------------------------------------------------------------------------------- |
+| 0    | 6:00 AM – 12:00 PM | Asia builds a **20-pip** range: high **1.0872**, low **1.0852**                         |
+| ①    | 1:00 PM            | London's first push sweeps the Asian high to 1.0880, **closes back inside** — a fakeout |
+| ②    | 2:30 PM            | The second move **closes below** the Asian low                                          |
+| ③    | 3:30 PM            | Sell the retest at **1.0850**; stop **1.0861** above the retest high                    |
+| —    | from 6:00 PM       | New York continues lower                                                                |
+
+Target: **2× the Asian range** below the low = 1.0852 − 40 pips = **1.0812**. Risk **11 pips**, reward **38 pips**, **1 : 3.5** planned.
+
+The rule isn't "fade the first break". It is: **don't trust a break until a candle closes outside the range and holds** — whichever side that turns out to be.
+
+---
+
+## London → New York
+
+| Scenario         | What you see                                | How to use it                               |
+| ---------------- | ------------------------------------------- | ------------------------------------------- |
+| **Continuation** | NY pulls back into London's move and holds  | Buy/sell the pullback in London's direction |
+| **Reversal**     | NY breaks London's last swing after US data | Wait for a structure break before switching |
+| **Range**        | London's high and low hold all evening      | Range-trade or stand aside                  |
+
+US data is usually released at **8:30 AM New York = 6:30 PM BD (summer) / 7:30 PM BD (winter)**. Avoid entering in the minutes before it — see [News Impact](/en/price-action/news-impact).
+
+### Example (no chart) — gold, London to New York
+
+Gold's Asian range is **2,398 – 2,408**. At 1:30 PM BD London breaks above and closes at **2,412**, then pulls back to 2,409 and holds. Buy **2,410**, stop **2,403** (inside the range), target **2,428** (previous-day high): risk $7, reward $18, **1 : 2.6** planned. Exit before 6:30 PM BD if US data is due.
+
+---
+
+## Common Mistakes
+
+| Mistake                                        | Fix                                                 |
+| ---------------------------------------------- | --------------------------------------------------- |
+| Using session times without converting to BD   | Write BD times on your chart; change them in winter |
+| Trading the first spike out of the range       | Wait for a close outside and a hold                 |
+| Trading Asia's range with London-sized targets | Targets follow the session's activity               |
+| Holding through US data without a plan         | Close, reduce, or accept the gap risk in advance    |
+
+---
+
+## Practice
+
+1. For 20 days, mark the Asian range (6:00 AM – 12:00 PM BD) on EUR/USD or gold.
+2. Note whether London's first break held or failed, and which side the day's move went.
+3. Record the time of the day's high and low in BD time.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Session  | BD time (summer)   | Use it for                      |
+| -------- | ------------------ | ------------------------------- |
+| Asia     | 6:00 AM – 3:00 PM  | Marking the range               |
+| London   | 1:00 PM – 10:00 PM | The day's direction             |
+| New York | 6:00 PM – 3:00 AM  | Continuation, reversal, US data |
+| Overlap  | 6:00 PM – 10:00 PM | Usually the busiest hours       |
 
 ---
 
 ## Related Topics
 
-- [Intraday](/en/price-action/intraday) — Intraday framework
-- [Liquidity](/en/price-action/liquidity) — Session-based liquidity
-- [Breakouts](/en/price-action/breakouts) — Session breakouts
-- [News Impact](/en/price-action/news-impact) — News during sessions
+- [Intraday](/en/price-action/intraday) — intraday framework
+- [Liquidity](/en/price-action/liquidity) — session highs and lows as liquidity
+- [Breakouts](/en/price-action/breakouts) — session breakouts
+- [News Impact](/en/price-action/news-impact) — news during sessions
+- [Best Trading Times for Bangladesh](/en/forex-sessions/best-trading-times-bd)
