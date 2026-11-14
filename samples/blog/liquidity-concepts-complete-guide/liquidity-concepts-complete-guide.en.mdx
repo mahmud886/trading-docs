@@ -1,0 +1,110 @@
+---
+title: "Liquidity Concepts — Where the Stops Are and How Price Reacts to Them"
+description: "What liquidity means on a chart (clusters of resting stop and pending orders), the main types (equal highs and lows, previous day and session extremes, trendline and range liquidity), buy-side versus sell-side, how a sweep differs from a breakout, and a worked sell-side sweep entry with a planned 1 to 2.3 reward-to-risk."
+date: "2026-05-19"
+author: "Trading Docs"
+category: "SMC"
+tags: ["liquidity", "bsl", "ssl", "stop-hunt", "sweep"]
+readingTime: 8
+featured: true
+---
+
+On a chart, **liquidity** is where many orders are likely to rest: stop-losses of traders already in the market and pending entries of traders waiting to join. When price reaches such a cluster, orders trigger and volume appears, which is why these areas often matter. The idea is simple; reading it takes judgement.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original described liquidity grabs as deliberate hunts by institutions and gave confident success rates. We cannot see who places orders, and no reliable rate is established. The versions below describe **where resting orders are likely**, not who is acting.
+</Callout>
+
+---
+
+## Types of Liquidity
+
+| Type                         | Where it sits                                         | Side                                  |
+| ---------------------------- | ----------------------------------------------------- | ------------------------------------- |
+| **Equal highs**              | Two or more highs at nearly the same price            | Buy-side (stops of shorts above)      |
+| **Equal lows**               | Two or more lows at nearly the same price             | Sell-side (stops of longs below)      |
+| **Previous day's high/low**  | Yesterday's extremes                                  | Buy-side above, sell-side below       |
+| **Session highs/lows**       | Asian, London or New York extremes                    | Both                                  |
+| **Trendline or range edges** | Where many traders place stops beyond a visible line  | Both                                  |
+
+**Buy-side liquidity (BSL)** sits above price (buy stops and the stops of shorts). **Sell-side liquidity (SSL)** sits below. See [Liquidity Pools](/en/smc/liquidity-pools), [Equal Highs and Lows](/en/smc/equal-highs-lows) and [Internal and External Liquidity](/en/smc/internal-external-liquidity).
+
+### The Chart
+
+![A synthetic map of liquidity pools: equal highs and lows, previous day's high and low, and session extremes marked on a chart](/images/smc/liquidity-pools/liquidity-pools-map-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/smc/liquidity-pools-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Liquidity Pools](/en/smc/liquidity-pools).)
+</Callout>
+
+---
+
+## Sweep, Run or Breakout?
+
+| Behaviour                                         | Name              | What price does after                                 |
+| ------------------------------------------------- | ----------------- | ----------------------------------------------------- |
+| Wick through the level, **closes back inside**    | **Sweep**         | Often reverses; it needs confirmation                 |
+| Closes beyond the level and **holds** there       | **Breakout/run**  | Often continues                                       |
+| Closes beyond, then **falls back** within a few candles | Failed breakout | Same idea as a sweep, slower                       |
+
+You cannot know in advance which one you will get. The practical rule: wait for the **close** and for a lower-timeframe structure shift before acting. See [Liquidity Sweeps Explained](/en/blog/liquidity-sweeps-explained).
+
+---
+
+## Using Liquidity
+
+| Use                         | How                                                                               |
+| --------------------------- | --------------------------------------------------------------------------------- |
+| As a **target**             | Take profit just before the next obvious cluster                                  |
+| As a **trigger**            | Watch a sweep of a cluster, then a shift of structure, then enter on the return   |
+| As a **warning**            | Don't put your stop exactly where everyone else does (just beyond equal lows)     |
+
+Liquidity is context: it tells you where price may be drawn and where reactions may start, but it does not predict direction.
+
+---
+
+## Example (no chart)
+
+EUR/USD has equal lows at **1.0820**. Price dips to **1.0814** at the London open and closes back at **1.0824**; a 5-minute candle then closes above the last lower high. Plan: buy **1.0828**, stop **1.0810** (below the sweep low): risk 18 pips; target **1.0870** (the next swing high, where buy-side liquidity sits): reward 42 pips, **1 : 2.3** planned. If price closes below **1.0810**, the sweep idea is wrong.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Assuming every sweep reverses | Wait for a close and a structure shift |
+| Placing stops exactly beyond equal highs or lows | Give the stop room beyond the obvious cluster |
+| Treating a close beyond the level as a sweep | That is a breakout until proven otherwise |
+| Ignoring the higher-timeframe direction | Prefer sweeps that align with the larger trend |
+
+---
+
+## Practice
+
+1. Mark equal highs, equal lows and previous-day extremes on one chart.
+2. For ten touches, label each sweep, run or failed breakout.
+3. Compare how many sweeps reversed within 10 candles.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Liquidity | Clusters of resting stops and pending orders |
+| Types | Equal highs and lows, daily and session extremes, line edges |
+| Behaviours | Sweep (back inside), run (holds beyond), failed breakout |
+| Use | Targets, triggers and warnings; not a direction forecast |
+
+---
+
+## Related Topics
+
+- [Liquidity Pools](/en/smc/liquidity-pools)
+- [Equal Highs and Lows](/en/smc/equal-highs-lows)
+- [Liquidity Sweep](/en/ict/liquidity-sweep)
+- [Liquidity Sweeps Explained](/en/blog/liquidity-sweeps-explained)

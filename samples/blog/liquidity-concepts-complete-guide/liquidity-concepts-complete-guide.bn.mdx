@@ -1,0 +1,110 @@
+---
+title: "Liquidity Concepts — Stop কোথায় আর প্রাইস কীভাবে সাড়া দেয়"
+description: "চার্টে Liquidity মানে কী (Resting Stop ও পেন্ডিং অর্ডারের গুচ্ছ), প্রধান ধরন (Equal High-Low, আগের দিন ও সেশনের চরম, ট্রেন্ডলাইন ও রেঞ্জ লিকুইডিটি), Buy-side বনাম Sell-side, Sweep কীভাবে Breakout থেকে আলাদা, আর ১ : ২.৩ পরিকল্পিত রিওয়ার্ড-টু-রিস্কে Sell-side Sweep এন্ট্রির উদাহরণ।"
+date: "2026-05-19"
+author: "Trading Docs"
+category: "SMC"
+tags: ["liquidity", "bsl", "ssl", "stop-hunt", "sweep"]
+readingTime: 8
+featured: true
+---
+
+চার্টে **Liquidity** হলো যেখানে অনেক অর্ডার জমে থাকার সম্ভাবনা: মার্কেটে থাকা ট্রেডারদের Stop-loss ও যোগ দিতে অপেক্ষারত ট্রেডারদের পেন্ডিং এন্ট্রি। প্রাইস এমন গুচ্ছে পৌঁছালে অর্ডার ট্রিগার হয় ও ভলিউম আসে, তাই এই এলাকা প্রায়ই গুরুত্বপূর্ণ। ধারণা সরল; পড়তে বিচার লাগে।
+
+<Callout type="warning" title="সংশোধিত ও নরম করা হয়েছে">
+  মূল লেখায় Liquidity Grab কে প্রতিষ্ঠানের ইচ্ছাকৃত শিকার বলে বর্ণনা করা হয়েছিল এবং আত্মবিশ্বাসী সাফল্যের হার ছিল। কে অর্ডার বসায় আমরা দেখতে পাই না, আর নির্ভরযোগ্য কোনো হার প্রতিষ্ঠিত নয়। নিচের সংস্করণ বর্ণনা করে **Resting অর্ডার কোথায় থাকার সম্ভাবনা**, কে কাজ করছে তা নয়।
+</Callout>
+
+---
+
+## Liquidity এর ধরন
+
+| ধরন                         | কোথায় থাকে                                         | দিক                                  |
+| ---------------------------- | ----------------------------------------------------- | ------------------------------------- |
+| **Equal High**              | প্রায় একই দামে দুই বা বেশি High            | Buy-side (উপরে Short এর Stop)      |
+| **Equal Low**               | প্রায় একই দামে দুই বা বেশি Low             | Sell-side (নিচে Long এর Stop)      |
+| **আগের দিনের High/Low**  | গতকালের চরম                                  | উপরে Buy-side, নিচে Sell-side       |
+| **সেশনের High/Low**       | এশিয়ান, London বা New York এর চরম                    | উভয়                                  |
+| **ট্রেন্ডলাইন বা রেঞ্জের কিনারা** | দৃশ্যমান রেখার ওপারে অনেকে Stop বসায়  | উভয়                                  |
+
+**Buy-side Liquidity (BSL)** প্রাইসের উপরে (Buy Stop ও Short এর Stop)। **Sell-side Liquidity (SSL)** নিচে। [Liquidity Pools](/bn/smc/liquidity-pools), [Equal Highs and Lows](/bn/smc/equal-highs-lows) ও [Internal and External Liquidity](/bn/smc/internal-external-liquidity) দেখুন।
+
+### চার্ট
+
+![Liquidity Pool এর একটি সিন্থেটিক ম্যাপ: চার্টে চিহ্নিত Equal High ও Low, আগের দিনের High-Low ও সেশনের চরম](/images/smc/liquidity-pools/liquidity-pools-map-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/smc/liquidity-pools-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  শেখানোর জন্য সিন্থেটিক ক্যান্ডেল (লেসন থেকে: [Liquidity Pools](/bn/smc/liquidity-pools).)
+</Callout>
+
+---
+
+## Sweep, Run নাকি Breakout?
+
+| আচরণ                                         | নাম              | পরে প্রাইস কী করে                                 |
+| ------------------------------------------------- | ----------------- | ----------------------------------------------------- |
+| লেভেল ভেদ করে Wick, **ভেতরে ফিরে Close**    | **Sweep**         | প্রায়ই উল্টায়; নিশ্চিতকরণ লাগে                 |
+| লেভেলের ওপারে Close ও সেখানে **টিকে থাকে**       | **Breakout/Run**  | প্রায়ই চলতে থাকে                                       |
+| ওপারে Close, তারপর কয়েক ক্যান্ডেলে **ফিরে আসে** | ব্যর্থ Breakout | Sweep এর মতোই ধারণা, ধীরে                       |
+
+আগে থেকে কোনটি পাবেন তা জানা যায় না। ব্যবহারিক নিয়ম: কাজের আগে **Close** ও লোয়ার-টাইমফ্রেম স্ট্রাকচার শিফটের অপেক্ষা করুন। [Liquidity Sweeps Explained](/bn/blog/liquidity-sweeps-explained) দেখুন।
+
+---
+
+## Liquidity ব্যবহার
+
+| ব্যবহার                         | কীভাবে                                                                               |
+| --------------------------- | --------------------------------------------------------------------------------- |
+| **টার্গেট** হিসেবে             | পরের সুস্পষ্ট গুচ্ছের ঠিক আগে মুনাফা নিন                                  |
+| **ট্রিগার** হিসেবে            | গুচ্ছের Sweep, তারপর স্ট্রাকচার শিফট দেখুন, তারপর ফেরায় এন্ট্রি   |
+| **সতর্কতা** হিসেবে            | সবার মতো ঠিক একই জায়গায় Stop রাখবেন না (Equal Low এর ঠিক ওপারে)     |
+
+Liquidity হলো প্রসঙ্গ: এটি বলে প্রাইস কোথায় আকৃষ্ট হতে পারে ও প্রতিক্রিয়া কোথায় শুরু হতে পারে, কিন্তু দিক পূর্বাভাস দেয় না।
+
+---
+
+## উদাহরণ (চার্ট ছাড়া)
+
+EUR/USD তে **1.0820** এ Equal Low। London খোলায় প্রাইস **1.0814** এ নেমে **1.0824** এ ফিরে Close করে; তারপর ৫-মিনিটের ক্যান্ডেল শেষ Lower High এর উপরে Close করে। পরিকল্পনা: **1.0828** এ Buy, Stop **1.0810** (Sweep Low এর নিচে): রিস্ক ১৮ পিপ; টার্গেট **1.0870** (পরের Swing High, যেখানে Buy-side Liquidity): রিওয়ার্ড ৪২ পিপ, পরিকল্পিত **১ : ২.৩**। প্রাইস **1.0810** এর নিচে Close করলে Sweep ধারণা ভুল।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল | সমাধান |
+| --- | --- |
+| প্রতিটি Sweep উল্টায় ধরা | Close ও স্ট্রাকচার শিফটের অপেক্ষা করুন |
+| Equal High বা Low এর ঠিক ওপারে Stop | সুস্পষ্ট গুচ্ছের ওপারে Stop এর জায়গা দিন |
+| লেভেলের ওপারে Close কে Sweep ধরা | প্রমাণ না হওয়া পর্যন্ত এটি Breakout |
+| হায়ার-টাইমফ্রেমের দিক উপেক্ষা | বড় ট্রেন্ডের সাথে মেলা Sweep পছন্দ করুন |
+
+---
+
+## অনুশীলন
+
+1. একটি চার্টে Equal High, Equal Low ও আগের দিনের চরম চিহ্নিত করুন।
+2. দশটি ছোঁয়ার প্রতিটিকে Sweep, Run বা ব্যর্থ Breakout লেবেল করুন।
+3. কতগুলো Sweep ১০ ক্যান্ডেলের মধ্যে উল্টেছে তুলনা করুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা | বিস্তারিত |
+| --- | --- |
+| Liquidity | Resting Stop ও পেন্ডিং অর্ডারের গুচ্ছ |
+| ধরন | Equal High-Low, দৈনিক ও সেশনের চরম, রেখার কিনারা |
+| আচরণ | Sweep (ভেতরে ফেরা), Run (ওপারে টেকা), ব্যর্থ Breakout |
+| ব্যবহার | টার্গেট, ট্রিগার ও সতর্কতা; দিকের পূর্বাভাস নয় |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Liquidity Pools](/bn/smc/liquidity-pools)
+- [Equal Highs and Lows](/bn/smc/equal-highs-lows)
+- [Liquidity Sweep](/bn/ict/liquidity-sweep)
+- [Liquidity Sweeps Explained](/bn/blog/liquidity-sweeps-explained)
