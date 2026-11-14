@@ -1,111 +1,118 @@
 ---
-title: "Daily Bias Trading Guide — Build a Clear Intraday Trading Plan"
-description: "Learn how to define daily bias using higher-timeframe structure, liquidity, and session timing so you can trade with direction instead of guesswork."
+title: "Daily Bias — How to Plan the Day's Direction Before It Starts"
+description: "Daily bias is a working hypothesis about which side of the day's range is more likely to be reached first. This guide gives a four-question checklist (structure, previous day's high and low, premium or discount, news), shows how a bias can be wrong, and uses Bangladesh-time session windows."
 date: "2026-05-11"
 author: "Trading Docs"
 category: "ICT"
-tags: ["daily-bias", "bias", "ict", "sessions", "liquidity"]
-readingTime: 8
+tags: ["daily-bias", "ict", "market-structure", "liquidity", "planning"]
+readingTime: 6
 featured: true
 ---
 
-## What is Daily Bias?
+A **daily bias** is a hypothesis, written before the session starts, about which direction price is more likely to travel today. It is not a forecast: it decides which setups you will **look for** and which you will **ignore**.
 
-**Daily bias** is your directional plan for the day. It answers one simple question: are you looking to buy, sell, or stay flat?
-
-Without a bias, traders often take random trades from both sides of the market. With a bias, you know which setups are worth your attention and which ones to ignore.
-
-<Callout type="tip" title="Bias is Not a Prediction">
-  Daily bias is a probability framework, not a guarantee. You are simply deciding which side has the better structure,
-  liquidity, and timing.
+<Callout type="warning" title="Corrected and toned down">
+  The original presented bias as something you could determine with high accuracy and tied it to what "institutions"
+  intend. Neither is established. Treat the bias as a filter that can be wrong, and keep a record of how often it was.
 </Callout>
 
 ---
 
-## How to Build Daily Bias
+## A Four-Question Checklist
 
-### Step 1: Read the Higher Timeframe
+| Question                           | How to answer it                                        | Leans bullish if…                                     |
+| ---------------------------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| **1. Higher-timeframe structure**  | Read the daily and 4-hour swings                        | Higher highs and higher lows, or a bullish break      |
+| **2. Previous day's high and low** | Did price take one side and reject, or close beyond it? | It swept the low and closed back above                |
+| **3. Premium or discount**         | Where is price within the larger dealing range?         | It sits in discount (below the 50% level)             |
+| **4. Scheduled news**              | Check the calendar (US data is at 6:30 PM BD in summer) | No high-impact release will reverse the picture early |
 
-Look at the Daily and 4H charts first.
+Count the answers: four agreeing is a clear bias, two against two is **no bias**. A day with no bias is a day to trade less or not at all. See the [Daily Bias](/en/ict/daily-bias) lesson and the [daily session bias checklist](/en/forex-sessions/daily-session-bias).
 
-Ask:
+### The Chart
 
-- Is the market making higher highs and higher lows?
-- Is price breaking recent lows or highs?
-- Where is the nearest liquidity pool?
+![A synthetic EUR/USD daily-bias chart: a sweep of the previous day's low, a close back above it, and the daily structure](/images/ict/daily-bias/eurusd-daily-bias-dark.webp)
 
-### Step 2: Mark Key Levels
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/daily-bias-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-Mark:
-
-- Previous day high and low
-- Asia session high and low
-- Weekly high and low
-- Major Order Blocks or FVGs
-
-### Step 3: Check the Session Context
-
-The same bias behaves differently depending on the session.
-
-- **Asian session** often builds range
-- **London session** often manipulates or sweeps liquidity
-- **New York session** often delivers the real move
-
-### Step 4: Decide the Day's Direction
-
-If structure is bullish, liquidity is below price, and the sweep happens during London, the probability may favor a bullish continuation in New York.
-
----
-
-## Daily Bias Checklist
-
-Before you trade, ask yourself:
-
-1. What is the HTF trend?
-2. Which side has resting liquidity?
-3. Did the market sweep a key level?
-4. Did CHOCH or MSS confirm the shift?
-5. Is price in premium or discount?
-6. Is the setup inside a Kill Zone?
-
-If the answers are unclear, do not force a trade.
-
----
-
-## Example: Bullish Bias on EUR/USD
-
-- Daily chart is making higher lows
-- Price sweeps the Asian low during London
-- 15M prints bullish CHOCH and MSS
-- Price retraces into a bullish FVG
-- Entry is taken during the New York AM Kill Zone
-- Target is the previous day high
-
-This is a clean bias-to-execution workflow: **analysis first, entry second**.
-
----
-
-## Common Daily Bias Mistakes
-
-<Callout type="warning" title="Avoid These Errors">
-
-**1. Changing bias too often** — Let structure tell the story.
-
-**2. Trading before London or New York** — The best moves often happen in the right session window.
-
-**3. Ignoring liquidity** — Bias without liquidity context is incomplete.
-
-**4. Buying and selling the same day without a plan** — Pick a side and wait for confirmation.
-
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Daily Bias](/en/ict/daily-bias).)
 </Callout>
 
 ---
 
-## Key Takeaways
+## When the Bias Is Wrong
 
-- Daily bias helps you trade with direction
-- Build it from higher-timeframe structure, liquidity, and session timing
-- Use it to filter trades, not force trades
-- The best biases often align with a sweep, CHOCH/MSS, and a clean retracement entry
+| Situation                                    | What to do                                                 |
+| -------------------------------------------- | ---------------------------------------------------------- |
+| Price closes through your invalidation level | The bias is off: stand aside or flip only with a new setup |
+| A news release breaks the structure          | Re-check the checklist after the release                   |
+| The first move of London goes against you    | Wait for a close and a structure shift before deciding     |
 
-For the full lesson, read the complete [Daily Bias guide](/en/ict/daily-bias).
+Set the invalidation **before** the session, for example: bullish bias is cancelled by a 1-hour close below yesterday's low.
+
+---
+
+## Timing in Bangladesh Time
+
+| Window (BD, US/UK summer) | Use                                                      |
+| ------------------------- | -------------------------------------------------------- |
+| 6:00 AM – 12:00 PM        | Asian session: mark the range and write the bias         |
+| 1:00 PM onward            | London open: the first test of the bias                  |
+| 6:00 PM onward            | New York open: continuation or reversal of London's move |
+
+Add one hour in winter for London and New York.
+
+---
+
+## Example (no chart)
+
+Bias is bullish: the daily structure makes higher lows, yesterday's low at **1.0812** was swept and closed back above, and price is in discount. At the London open (1:00 PM BD, summer) EUR/USD dips to **1.0818** and closes back above the Asian low. Plan: buy **1.0850** after a 5-minute structure shift, stop **1.0830**, target **1.0890**: risk 20 pips, reward 40, **1 : 2.0** planned. A 1-hour close below **1.0812** cancels the bias.
+
+---
+
+## Common Mistakes
+
+| Mistake                                       | Fix                                            |
+| --------------------------------------------- | ---------------------------------------------- |
+| Deciding the bias after seeing the first move | Write it before the session                    |
+| Forcing a bias on every day                   | Allow "no bias" and trade less                 |
+| Having no invalidation level                  | Set the level that cancels the bias in advance |
+| Ignoring the news calendar                    | Check it in BD time before the session         |
+
+---
+
+## Practice
+
+1. Write a bias and an invalidation level before each session for 20 days.
+2. After the session, mark whether the bias was right, wrong or unclear.
+3. Compare your results on days with four agreeing answers against the rest.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea         | Detail                                                                  |
+| ------------ | ----------------------------------------------------------------------- |
+| Bias         | A written hypothesis about the day's direction, made before the session |
+| Checklist    | Structure, previous high/low, premium or discount, news                 |
+| No bias      | Is a valid answer; trade less                                           |
+| Invalidation | Set it in advance                                                       |
+
+---
+
+## Related Topics
+
+- [Daily Bias](/en/ict/daily-bias)
+- [Daily Session Bias](/en/forex-sessions/daily-session-bias)
+- [Dealing Range](/en/ict/dealing-range)
+- [Premium and Discount Trading Guide](/en/blog/premium-discount-trading-guide)
