@@ -1,0 +1,110 @@
+---
+title: "Cross-Asset Momentum Signals"
+description: "What momentum means across asset classes (time-series momentum: an asset's own recent trend), how to test a simple rule on equities, bonds, gold and currencies, why a rule can work on one asset and not another, how other markets' momentum can serve as context for a currency pair, and the main traps (costs, overfitting, regime changes) — with a synthetic four-asset test and an animated walkthrough."
+level: advanced
+order: 6
+lastUpdated: "2026-11-14"
+---
+
+## What Is Cross-Asset Momentum?
+
+**Time-series momentum** is the idea that an asset which has been rising tends to keep rising for a while, and one that has been falling tends to keep falling. Academic work has documented it across stocks, bonds, commodities and currencies over long samples. **Cross-asset** momentum means looking at that trend in **several** markets and using it as context for the one you trade.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original said momentum in equities, bonds and commodities creates "leading signals for forex". Trends in one
+  market do not reliably lead another, and we found no source for a fixed lead time. What is documented is momentum
+  **within** each market over long periods, with weak periods and sharp reversals. Here it is treated as a hypothesis
+  to test, not an established edge for any pair.
+</Callout>
+
+---
+
+## A Simple Test on Four Assets
+
+The rule: each day, look at the return over the past **60 days**. If positive, hold a long position for the next day; if negative, hold a short. No costs.
+
+![Synthetic daily data for four assets over 300 days with a 60-day momentum rule: the equity index gains 36% (buy-and-hold 35%), gold gains 25% (buy-and-hold 22%), the bond index returns −1% (buy-and-hold −2%) and the FX pair −2% (buy-and-hold +5%)](/images/intermarket/cross-asset-momentum/cross-asset-momentum-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/intermarket/cam-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The data is **synthetic**: a slow trend cycle was built into the equity index and gold, and the bond index and FX pair
+  are close to random walks. It illustrates the method; it says nothing about real markets.
+</Callout>
+
+| Asset         | Momentum rule | Buy-and-hold | Reading                                                   |
+| ------------- | ------------- | ------------ | --------------------------------------------------------- |
+| Equity index  | +36%          | +35%         | Gains, but only about equal to holding the index          |
+| Gold          | +25%          | +22%         | Slightly ahead of holding                                 |
+| Bond index    | −1%           | −2%          | Nothing useful: no persistent trend to follow             |
+| FX pair       | −2%           | +5%          | Worse than holding: moves were close to random            |
+
+Three honest points from the table. Where trends persisted the rule **made money**, but it mostly matched buy-and-hold in rising markets. Where moves were noise it **gained nothing**. And this is **gross** of costs: every sign flip would pay spread and slippage.
+
+---
+
+## Using Momentum as Context for a Pair
+
+| Idea                                              | How to use it                                                       |
+| ------------------------------------------------- | ------------------------------------------------------------------- |
+| Check the trend of related markets                | Stocks, yields, the dollar index, gold — do they agree with your pair's trend? |
+| Agreement across markets                          | Raises confidence in a trade that follows the shared direction      |
+| Disagreement                                      | Reduce size or wait; the trend may be ending or local               |
+| Lookback choice                                   | Use the same horizon you trade, and test two (for example 20 and 60 days) |
+
+### Example (no chart) — agreement as context
+
+EUR/USD has risen for 60 days, the dollar index has fallen for 60 days and US 2-year yields have fallen. A pullback to **1.0880** holds. Plan: buy **1.0885**, stop **1.0860**, target **1.0950**: risk 25 pips, reward 65, **1 : 2.6** planned. If the dollar index turns up and closes above its 60-day high, the agreement is gone and the plan is off.
+
+---
+
+## Traps
+
+| Trap                              | What goes wrong                                                          |
+| --------------------------------- | ------------------------------------------------------------------------ |
+| Costs                             | Frequent flips can turn a gross gain into a loss                         |
+| Overfitting the lookback          | A window picked because it looked best in the past is likely to fail     |
+| Regime changes                    | Momentum can reverse sharply after long runs                             |
+| One market only                   | A rule that worked on equities may not work on FX                        |
+| Testing on the data that built it | Test on a separate period                                                |
+
+---
+
+## Common Mistakes
+
+| Mistake                                         | Fix                                                        |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| Treating another market's trend as a signal     | Use it as context and require your own setup               |
+| Ignoring costs in a test                        | Include spread and slippage                                |
+| Choosing the lookback after seeing the results  | Fix it first; test neighbours (not just the best one)      |
+| Trusting a short sample                         | Use as many market regimes as you can                      |
+| Assuming momentum works in every market         | Test each separately                                       |
+
+---
+
+## Practice
+
+1. For one pair you trade, compute the 20-day and 60-day trailing returns and note the sign each day for a year.
+2. Count how often the sign matched the next day's direction. Is it better than a coin flip?
+3. Repeat for a related market (stocks or the dollar index). Do the signs agree with your pair's?
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                                    |
+| ---------------- | ------------------------------------------------------------------------- |
+| Momentum         | An asset's own recent trend tends to persist, with weak spells            |
+| Cross-asset      | Compare trends across markets as context                                  |
+| Test             | A simple rule shows gains only where trends persisted — and ignores costs |
+| Traps            | Costs, overfitting, regime changes                                        |
+
+---
+
+## Related Topics
+
+- [Risk-On / Risk-Off](/en/intermarket/risk-on-risk-off)
+- [Currency Strength](/en/intermarket/currency-strength)
+- [Introduction to Intermarket Analysis](/en/intermarket/introduction)
+- [Quantitative: Momentum Factors](/en/quantitative/momentum-factors)
