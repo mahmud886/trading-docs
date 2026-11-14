@@ -1,756 +1,120 @@
 ---
-title: "Liquidity Sweeps এবং Smart Money: Institutional Traders কীভাবে Retail Traders কে Trap করে — Complete Guide"
-description: "Liquidity Sweep কী, কীভাবে কাজ করে, এবং Smart Money কীভাবে Retail Stop Losses Target করে তা শিখুন। Institutional Order Flow, Sweep Patterns, এবং Professional Trading Strategies সহ Complete Analysis।"
+title: "Liquidity Sweeps ও Liquidity Cycle — Sweep নাকি Run?"
+description: 'Sweep (প্রাইস লেভেল নিয়ে উল্টায়) ও Run (প্রাইস লেভেল নিয়ে চলতেই থাকে) কীভাবে আলাদা করবেন, ট্রেডাররা যে বিল্ড-আপ, Sweep ও মুভের পুনরাবৃত্ত চক্র খোঁজেন, সিদ্ধান্তের চেকলিস্ট, আর "Smart Money" ব্যাখ্যা কীভাবে বিভ্রান্ত করতে পারে।'
 date: "2026-05-06"
 author: "Trading Docs"
 category: "Smart Money Concepts"
-tags: ["liquidity", "sweeps", "smart-money", "institutional", "stop-hunt", "order-flow"]
-readingTime: 28
-featured: true
+tags: ["liquidity", "sweeps", "smart-money", "liquidity-cycle"]
+readingTime: 7
+featured: false
 ---
 
-## Liquidity Sweep কী? — Institutional Deep Dive
+প্রাইস বারবার **Liquidity বানায়** (যে High বা Low Stop আকর্ষণ করে), **সেটি নেয়**, তারপর **নড়ে**, হয় যে পথে এসেছে সেখানে ফিরে, নয়তো সামনে। ট্রেডাররা প্রায়ই একে চক্র বলেন। ব্যবহারিক প্রশ্ন সবসময় একই: প্রাইস লেভেল নেওয়ার পর সেটি **Sweep** (রিভার্সাল) নাকি **Run** (কন্টিনিউয়েশন)?
 
-একটি **Liquidity Sweep** হলো যখন Price এমন একটি Level এ চলে যায় যেখানে অনেক Stop Loss Cluster করা থাকে, সেগুলো সব Trigger করে, এবং তারপর বিপরীত দিকে Sharp Reversal করে। এটি Financial Market এর সবচেয়ে Fundamental Concepts এর একটি — এবং এটি বুঝলে আপনি Market কে সম্পূর্ণ নতুন দৃষ্টিকোণ থেকে দেখতে পারবেন।
-
-**সহজ কথায়:** Smart Money (Institutional Traders, Banks, Hedge Funds) Liquidity জমা করতে Retail Stop Losses "Hunt" করে, তারপর তাদের পছন্দের দিকে Price Push করে।
-
-### কেন Liquidity Sweeps ঘটে? — Market Microstructure
-
-Institutional Traders দের একটি Fundamental Problem আছে: **তাদের Orders এত বড় যে Normal Market Conditions এ Fill হয় না।**
-
-```
-Problem:
-- JP Morgan $200 Million EUR/USD Buy করতে চায়
-- Current Market Depth: শুধু $50 Million Sell Orders Available
-- যদি তারা সরাসরি কেনে: Price 80+ Pips Spike করবে (Slippage)
-
-Solution:
-- Retail Traders দের Stop Loss Trigger করা
-- Stop Loss = Market Sell Orders (Opposite Direction)
-- যখন Retail Stops Hit হয় → Automatic Sell Orders Execute হয়
-- Institutions এই Sell Orders এর বিপরীতে Buy করে
-- Result: Large Orders Filled at Better Price
-
-This is WHY Sweeps Happen — Not Manipulation, But Necessity
-```
-
-### Liquidity Types: Buy-Side ও Sell-Side
-
-**Sell-Side Liquidity (SSL):**
-
-- Swing Lows এর নিচে Clustered Stop Losses
-- Buy Stops Resting Below Support
-- Smart Money এগুলো Target করে Long Entry নিতে
-
-**Buy-Side Liquidity (BSL):**
-
-- Swing Highs এর উপরে Clustered Stop Losses
-- Sell Stops Resting Above Resistance
-- Smart Money এগুলো Target করে Short Entry নিতে
-
-```
-Market Structure:
-                BSL (Stop Losses Above)
-    ─────────── Swing High ───────────
-    │                                │
-    │        PRICE RANGE             │
-    │                                │
-    ─────────── Swing Low ────────────
-                SSL (Stop Losses Below)
-
-Smart Money Sequence:
-1. Sweep SSL (Take Stops Below) → Go Long
-2. OR Sweep BSL (Take Stops Above) → Go Short
-```
+<Callout type="warning" title="সংশোধিত ও নরম করা হয়েছে">
+  মূল লেখায় Sweep কে রিটেইলের Stop শিকারকারী "Smart Money" হিসেবে দেখানো হয়েছিল এবং সাফল্যের হার ছিল। অর্ডারের পেছনে
+  কে তা আমরা দেখতে পাই না, আর উল্টে যাওয়া Sweep সরল সরবরাহ-চাহিদা দিয়েও সমান ভালো ব্যাখ্যা করা যায়। চার্ট গোছাতে
+  শব্দভান্ডার কাজে লাগলে ব্যবহার করুন, কিন্তু সিদ্ধান্ত নিন প্রাইস **কী করে** তার ওপর, কে করছে বলে কল্পনা করেন তার ওপর
+  নয়।
+</Callout>
 
 ---
 
-## Retail Traders এর Stop Loss কোথায় Cluster করে?
+## চক্র
 
-### 1. Recent Swing Lows এ (সবচেয়ে সাধারণ)
+| পর্যায়       | যা দেখেন                                       | যা করবেন                               |
+| ------------- | ---------------------------------------------- | -------------------------------------- |
+| **১. বিল্ড**  | Equal High বা Low, সংকীর্ণ রেঞ্জ, স্পষ্ট লেভেল | লেভেল চিহ্নিত করুন; এখনো কিছু করবেন না |
+| **২. নেওয়া** | প্রাইস লেভেলের ওপারে ট্রেড করে                 | **Close** ও পরের ক্যান্ডেল দেখুন       |
+| **৩. মুভ**    | হয় রিভার্সাল (Sweep) নয়তো ওপারে গ্রহণ (Run)  | শুধু নিশ্চিতকরণে কাজ করুন              |
 
-```
-Example:
-- Price 1.0800 এ Low তৈরি করে
-- Retail Traders: "আমি এর নিচে 5-10 Pips Stop রাখব"
-- Stops Cluster: 1.0790 - 1.0795 এ
-- Smart Money: "Perfect. এই Stops নিয়ে Long Entry করব।"
-- Sweep: Price 1.0788 এ যায়, Stops Trigger হয়, তারপর Reversal
-```
+[Liquidity](/bn/ict/liquidity) লেসন EUR/USD তে চক্র দেখায়, আর [Liquidity Concepts](/bn/blog/liquidity-concepts-complete-guide) লেভেলের ধরন তালিকা করে।
 
-### 2. Round Numbers (Psychological Levels) এ
+### চার্ট
 
-```
-Example:
-- EUR/USD 1.0900 এ (Round Number)
-- Retail Traders Round Number এর নিচে 1.0890 এ Stop রাখে
-- Additional Cluster: 1.0885-1.0895 এ
-- Smart Money Sweep: 1.0882 তে নামে
-- Result: Mass Stop Loss Trigger → Instant Reversal
-```
+![Sweep (প্রাইস লেভেল নিয়ে উল্টায়) ও Run (প্রাইস লেভেল নিয়ে চলতেই থাকে) এর একটি সিন্থেটিক তুলনা](/images/ict/liquidity/sweep-vs-run-dark.webp)
 
-### 3. Moving Average Levels এ
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/ict/liquidity-cycle-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-```
-Example:
-- 200 MA 1.0850 তে
-- Retail: "Strong Support! MA Bounce আসবে!"
-- Stops Placed Below MA: 1.0840-1.0845
-- Smart Money: Price MA এর নিচে Push করে
-- Stops Trigger → Institutions Buy at Discount
-- Price MA উপরে Return করে → Retail: "দেখ, MA Worked!"
-- Reality: MA "Worked" কারণ Institutions সেখানে Buy করেছে
-```
-
-### 4. Previous Day High/Low এ
-
-```
-Example:
-- Previous Day High (PDH): 1.0950
-- Retail Shorts enter below 1.0950 with Stops at 1.0960-1.0970
-- Smart Money Sweep: Price 1.0965 এ যায়
-- Stops Trigger → Sells Fill Institutional Buys
-- কিন্তু THIS time: If they're going Short after the sweep
-- Price Reverses Down from above PDH
-```
-
-### 5. Equal Highs / Equal Lows (সবচেয়ে Obvious Liquidity)
-
-```
-Equal Lows:
-- Price 3 বার 1.0800 তে Low করে
-- Retail: "Triple Bottom! Very Strong Support!"
-- MASSIVE Stop Loss Cluster below 1.0800
-- Smart Money: "Maximum Liquidity = Maximum Opportunity"
-- Sweep Below EQLs → Largest Position Fills
-- This is WHY "Triple Bottoms" often fail initially
-```
-
-### 6. Trendline Touches
-
-```
-Ascending Trendline:
-- Retail Draws Trendline
-- Places Stops Just Below Trendline
-- Smart Money Knows WHERE Retail Stops Are
-- Sweeps Below Trendline
-- Retail Panics: "Trendline Broken!"
-- Price Reverses → Actually Respects the Trend
-```
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  শেখানোর জন্য সিন্থেটিক ক্যান্ডেল (লেসন থেকে: [Liquidity](/bn/ict/liquidity).)
+</Callout>
 
 ---
 
-## Sweep আসছে কীভাবে চিনবেন: Professional Detection
+## Sweep নাকি Run? চেকলিস্ট
 
-### Signal #1: Failed Breakout (Fake Break)
+| প্রশ্ন                      | **Sweep** এর দিকে         | **Run** এর দিকে             |
+| --------------------------- | ------------------------- | --------------------------- |
+| ক্যান্ডেল কোথায় Close করে? | পুরোনো রেঞ্জের ভেতরে ফিরে | লেভেলের ওপারে               |
+| পরের ক্যান্ডেল কী করে?      | লেভেল থেকে দূরে সরে       | ওপারে টিকে বা বাড়ে         |
+| হায়ার-টাইমফ্রেমের দিক      | ভাঙার বিপরীতে             | ভাঙার সাথে                  |
+| মুভের গতি                   | দ্রুত স্পাইক, দ্রুত ফেরা  | ধীর ঠেলা, ছোট পুলব্যাক      |
+| পরে স্ট্রাকচার              | বিপরীত দিকে শিফট          | একই দিকে নতুন High (বা Low) |
 
-```
-Sequence:
-1. Price Key Level এর কাছে Consolidate করে
-2. Sudden Move: Level Break করে (Retail: "Breakout!")
-3. FOMO Entry: Retail Traders Chase করে
-4. Immediate Reversal: Price Level এর ভেতরে ফিরে আসে
-5. Stops Hit: FOMO Entries সব Stop Out হয়
-
-Detection:
-- Break হয়েছে কিন্তু Body Close Level এর ওপারে হয়নি
-- Just Wicks/Shadows Beyond Level
-- Quick Reversal (1-3 Candles)
-- Volume Spike on Reversal (Institutional Activity)
-```
-
-### Signal #2: Long Wicks (Rejection Candles)
-
-```
-Characteristics:
-- Candle Body Small (Opening Near Closing)
-- Wick Very Long (2× Body বা বেশি)
-- Wick Points INTO Liquidity Zone
-- Body Closes BACK Inside Range
-
-What This Shows:
-- Price Briefly Went to Sweep Stops
-- Immediately Rejected (Institutional Buying/Selling)
-- Long Wick = Real-Time Sweep Evidence
-```
-
-### Signal #3: Volume Spike on Reversal
-
-```
-Normal Volume → Sudden Massive Volume Spike
-+ Price Sharply Reverses at Key Level
-= Liquidity Just Got Taken
-
-Volume Analysis:
-- Normal Candles: 5,000-10,000 Volume
-- Sweep Candle: 50,000+ Volume
-- This 5-10× Volume = Institutional Orders Filling
-- Confirmation of Stop Hunt Complete
-```
-
-### Signal #4: Time of Day (Session Opens)
-
-```
-Most Sweeps Happen During:
-- London Open (02:00-05:00 EST) → Asian Highs/Lows Swept
-- NY Open (08:30-10:00 EST) → London Highs/Lows Swept
-- News Releases → Any Level Can Be Swept
-
-Why:
-- Session Opens = Maximum Institutional Activity
-- Fresh Liquidity Available
-- Retail Positions Vulnerable (Tight Stops)
-```
-
-### Signal #5: Divergence Before Sweep
-
-```
-Before Major Sweeps, Often See:
-- RSI Divergence (Price Making Equal Lows, RSI Making Higher Lows)
-- Momentum Weakening on Approach to Level
-- Lower Volume on Each Successive Test
-- This Shows: Selling Pressure Decreasing = Setup for Upside Sweep
-
-Hidden Divergence:
-- If Bullish Hidden Divergence + Equal Lows Below
-- High Probability of SSL Sweep → Bullish Reversal
-```
+কোনো একটি সারি সিদ্ধান্ত দেয় না; যত বেশি সারি মেলে, চিত্র তত স্পষ্ট। ভাগ হলে **সরে থাকুন**।
 
 ---
 
-## Sweep Trading Models: Complete Strategies
+## যা বিভ্রান্ত করতে পারে
 
-### Model 1: Sweep + Displacement + FVG Entry
-
-**সবচেয়ে Clean এবং High-Probability Model:**
-
-```
-Step 1: Identify Liquidity Pool
-- Equal Lows/Highs
-- Previous Day High/Low
-- Session High/Low
-- Obvious Swing Points
-
-Step 2: Wait for Sweep
-- Price Takes the Level
-- Stops Trigger (Volume Spike)
-- Wick Shows Rejection
-
-Step 3: Wait for Displacement
-- Strong Candle AWAY from Sweep Level
-- FVG Created (Proves Institutional Entry)
-- BOS/CHOCH on LTF
-
-Step 4: Entry at FVG
-- Price Retraces to FVG Created After Sweep
-- Enter with LTF Confirmation
-- Stop Below Sweep Low (Protected)
-- Target: Opposite Liquidity (BSL if Long, SSL if Short)
-```
-
-### Model 2: Session Sweep Strategy
-
-```
-London Kill Zone Model:
-1. Mark Asian Session High and Low
-2. Wait for London to Sweep One Side
-   - If Sweeps Asian Low → Look for Longs
-   - If Sweeps Asian High → Look for Shorts
-3. Displacement After Sweep = Entry Signal
-4. Trade in Sweep Reversal Direction
-5. Target: Opposite Side of Asian Range + Beyond
-
-Statistics (Backtested):
-- Asian Low Swept → Long Setup: ~60% Win Rate
-- Asian High Swept → Short Setup: ~58% Win Rate
-- Both Swept (Wait for Last Sweep): ~65% Win Rate
-```
-
-### Model 3: PDH/PDL (Previous Day High/Low) Sweep
-
-```
-Daily Bias + PDH/PDL Sweep:
-1. Determine Daily Bias (Higher TF Analysis)
-2. If Bullish Bias:
-   - Wait for Price to Sweep PDL (Previous Day Low)
-   - This = Sell-Side Liquidity Taken
-   - Look for Bullish Entry After Sweep
-   - Target: PDH (Previous Day High)
-3. If Bearish Bias:
-   - Wait for Price to Sweep PDH
-   - This = Buy-Side Liquidity Taken
-   - Look for Bearish Entry After Sweep
-   - Target: PDL
-
-Risk:Reward:
-- PDL to PDH = Often 80-150+ Pips (Forex Majors)
-- With 15-25 Pip Stop = 1:4 to 1:8 R:R
-- This is Why Daily Bias + Sweep = Powerful
-```
+| ফাঁদ                                    | কেন                                  |
+| --------------------------------------- | ------------------------------------ |
+| প্রতিটি Wick কে শিকার বিশ্বাস করা       | বেশিরভাগ Wick নয়েজ                  |
+| লেভেলের ওপারের প্রথম ক্যান্ডেলে ট্রেড   | এখনো Sweep ও Run আলাদা করা যায় না   |
+| শুধু জেতা Sweep গোনা                    | চিহ্নিত প্রতিটি লেভেলের রেকর্ড রাখুন |
+| গল্পকে হারা ট্রেড ধরে রাখার কারণ বানানো | গল্প আপনার Stop কোথায় তা বদলায় না  |
 
 ---
 
-## Real-World Sweep Examples: Detailed Walkthroughs
+## উদাহরণ (চার্ট ছাড়া)
 
-### Example 1: Bitcoin Daily — Classic Retail Trap
-
-```
-Day 1: Bitcoin $45,000 এ High করে
-- Retail Traders Buy করে
-- Stop Loss Place: $44,700-$44,800
-- "Strong Support at $45K!"
-
-Day 2: The Sweep
-- Asian Session: Slow drift down
-- London Open: Sudden spike to $44,680
-- Stops Triggered: Mass Selling ($44,700 Stops = Market Sell)
-- Volume: 3× Normal (Institutional Buying)
-- 15 Minutes Later: Price at $44,950
-- 1 Hour Later: New High at $45,200
-
-Day 3: Continuation
-- Bitcoin Breaks $45,200 Resistance
-- Rallies to $46,500
-- Retail Who Got Stopped: "Market Manipulated Me!"
-- Smart Money: "Collected Fuel, Took Off"
-
-Institutional Logic:
-✅ Stops Below $44,700 = Sell Orders = Institutional Buy Opportunity
-✅ Panic Selling = Cheap Price for Smart Money
-✅ After Collection → Push Price to Next Target
-```
-
-### Example 2: EUR/USD London Sweep — Forex Precision
-
-```
-Context:
-- Daily: Bullish (Higher Highs, Higher Lows)
-- Asian Range: 1.0820 - 1.0850 (30 Pips)
-- Retail Stops: Below 1.0815 (Below Asian Low)
-
-London Open (02:15 EST):
-- Price Drops to 1.0812 (Below Asian Low by 8 Pips)
-- Stops Trigger: 1.0815-1.0820 Stops ALL Hit
-- Volume: Massive Spike (5× Normal)
-- Wick: Long Lower Wick on 15M Candle
-- Close: Back at 1.0825 (Inside Asian Range)
-
-Entry Setup:
-- 5M CHOCH at 1.0828
-- FVG at 1.0823-1.0826
-- Entry: 1.0825 (FVG CE)
-- Stop: 1.0810 (Below Sweep Low) = 15 Pips
-- Target: PDH at 1.0910 = 85 Pips
-- R:R: 1:5.7
-
-Result: Target Hit by NY Session
-```
-
-### Example 3: Gold NFP Sweep — News-Driven Liquidity
-
-```
-Before NFP:
-- Gold: $2,380 - $2,400 Range for 2 Days
-- Buy Stops Above: $2,405 (Above Range)
-- Sell Stops Below: $2,375 (Below Range)
-- Retail: Split (Some Long, Some Short)
-
-NFP Release (08:30 EST):
-- Data: Much Stronger Than Expected (USD Bullish)
-- Initial Reaction: Gold Spikes DOWN to $2,372
-- SSL SWEPT: All Buy Stops Below $2,375 Triggered
-- BUT: Gold REVERSES within 5 Minutes
-- Price Rises to $2,395 within 30 Minutes
-- Then to $2,410 by End of Day
-
-Why Reversal Despite USD-Bullish Data:
-- Smart Money Used NFP Volatility as COVER
-- Real Intent: Accumulate Gold (Geopolitical Hedge)
-- Used Downside Sweep to Fill Buy Orders
-- After Fill: Pushed Price to Real Target (Above $2,400)
-
-Lesson: Initial News Reaction ≠ Final Direction
-```
+এশিয়ান High **1.0880**। দুপুর ১:১০ BD তে প্রাইস **1.0888** এ যায় কিন্তু ১৫-মিনিটের ক্যান্ডেল **1.0874** এ, ভেতরে ফিরে Close করে; পরের ক্যান্ডেল Lower High বানায় আর ৫-মিনিটের ক্যান্ডেল শেষ Higher Low এর নিচে Close করে। চেকলিস্ট: ভেতরে Close, দূরে সরা, হায়ার টাইমফ্রেম নিরপেক্ষ, দ্রুত স্পাইক: চার সারি Sweep এর দিকে। পরিকল্পনা: **1.0872** এ Sell, Stop **1.0892** (স্পাইকের উপরে): রিস্ক ২০ পিপ; টার্গেট **1.0832** (এশিয়ান Low): রিওয়ার্ড ৪০ পিপ, পরিকল্পিত **১ : ২.০**। প্রাইস **1.0892** এর উপরে Close করলে একে Run ধরে বাতিল করুন।
 
 ---
 
-## Trap Patterns: Common Institutional Setups
+## সাধারণ ভুল
 
-### Trap #1: Double Top/Bottom Sweep
-
-```
-Double Top Example:
-- Price makes High at 1.0950
-- Dips → Returns to 1.0950 (Double Top)
-- Retail: "Double Top! Short with Stop at 1.0960!"
-- Reality: MASSIVE Stop Cluster at 1.0960-1.0970
-- Smart Money Sweeps 1.0965 → Collects ALL Short Stops
-- Then: Price Reverses DOWN
-
-Double Bottom Sweep:
-- Price makes Low at 1.0800 twice
-- Retail: "Double Bottom! Buy with Stop at 1.0790!"
-- Smart Money Sweeps 1.0785
-- Collects Long Stops
-- THEN decides direction (Could go UP or continue DOWN)
-```
-
-### Trap #2: Breakout Fakeout (Classic Stop Hunt)
-
-```
-Setup:
-- Range: 1.0850 - 1.0900 for 3 Days
-- Retail: "Breakout above 1.0900 = Buy!"
-- Breakout Orders: Buy Stop at 1.0905-1.0910
-- Stops on Breakout Buys: 1.0890 (Just Below Range Top)
-
-Execution:
-- Price Spikes to 1.0915 (Triggers Buy Stops)
-- Retail Enters Long (FOMO)
-- Price Immediately Reverses
-- Drops to 1.0885 (Stops All Hit)
-- Continues to 1.0820 (Much Lower)
-
-What Happened:
-- Smart Money SOLD INTO Breakout Buying
-- Used Breakout Buyers as Exit Liquidity
-- Retail Bought → Smart Money Sold to Them
-- Then Pushed Price Down (Real Direction)
-```
-
-### Trap #3: Gap Sweep (Weekend/News Gap)
-
-```
-Friday Close: EUR/USD at 1.0850
-Weekend: Negative EUR News
-
-Monday Open: Gaps DOWN to 1.0810 (-40 Pips)
-- Retail Panic: "Sell! Gap Down! Bear Market!"
-- Retail Panic Sells at 1.0810-1.0815
-- Stops on These Sells: 1.0840-1.0850
-
-Smart Money:
-- Buys the Panic (Collects Sell Orders)
-- Monday NY: Price at 1.0860 (Gap Filled + Above)
-- Tuesday: Price at 1.0900
-
-Lesson:
-- Gaps Often Fill (70-80% of Gaps Fill Within 5 Days)
-- Panic Selling INTO Gap = Providing Liquidity to Smart Money
-- Smart Money Buys Panic, Sells Euphoria
-```
-
-### Trap #4: Trend Line Break Sweep
-
-```
-Ascending Trendline (3 Touches):
-- Touch 1: 1.0700
-- Touch 2: 1.0750
-- Touch 3: 1.0800
-- Expected Touch 4: 1.0850
-
-What Happens:
-- Price Drops BELOW Trendline to 1.0840
-- Retail: "Trendline Broken! Trend Over! Short!"
-- Stops from Long Traders Below TL: 1.0835-1.0845
-- All Triggered → Smart Money Buys Here
-- Price Reverses UP → Makes New High
-
-Reality:
-- Trendline is a TOOL, Not a Wall
-- Smart Money Knows WHERE Retail Places Stops (Below TL)
-- Sweep Below → Collect → Continue Trend
-- Trendlines "Overshoot" Then Resume = Sweep Pattern
-```
+| ভুল                                        | সমাধান                                           |
+| ------------------------------------------ | ------------------------------------------------ |
+| লেভেলের ওপারের প্রথম ক্যান্ডেলকে সংকেত ধরা | Close ও পরের ক্যান্ডেলের অপেক্ষা করুন            |
+| প্রতিটি রেঞ্জে চক্র চাপানো                 | যে লেভেল অনেক ট্রেডার দেখবে শুধু সেখানে কাজ করুন |
+| লোকসানকে গল্প দিয়ে ব্যাখ্যা               | বরং চেকলিস্টের সারিগুলো রিভিউ করুন               |
+| চিহ্নিত লেভেলের রেকর্ড না রাখা             | প্রতিটি লেভেল ও ফল লগ করুন                       |
 
 ---
 
-## Smart Money এর সাথে কীভাবে Trade করবেন: Professional Playbook
+## অনুশীলন
 
-### Step 1: চিহ্নিত করুন যেখানে Retail Stops আছে
-
-```
-Liquidity Mapping Checklist:
-□ Previous Swing Highs/Lows
-□ Equal Highs/Equal Lows
-□ Round Numbers (00, 50 Levels)
-□ Previous Day/Week/Month High/Low
-□ Asian/London/NY Session Highs/Lows
-□ Trendline Touches
-□ Moving Averages (50, 100, 200)
-□ Fibonacci Levels (61.8%, 78.6%)
-□ News Event Levels
-□ Range Boundaries
-```
-
-### Step 2: Sweep এর পূর্বাভাস দিন
-
-```
-High-Probability Sweep Conditions:
-- Price Approaching Liquidity Level Slowly (Accumulating)
-- Lower Volume on Approach (No Real Selling/Buying Pressure)
-- Divergence Present (RSI, MACD)
-- Time: Near Session Open
-- Context: HTF Trend Supports Reversal After Sweep
-```
-
-### Step 3: Sweep হতে অপেক্ষা করুন
-
-```
-Confirmation of Sweep:
-- Wick Beyond Level (Not Body Close)
-- Volume Spike (3× or More Normal)
-- Quick Rejection (1-3 Candles Return Inside)
-- If Body Closes Beyond = NOT a Sweep = Real Break
-```
-
-### Step 4: Entry After Sweep
-
-```
-Entry Methods (Best to Worst):
-1. FVG Entry After Sweep Displacement (Best R:R)
-2. Order Block Entry Near Sweep Level (Good R:R)
-3. LTF CHOCH/BOS After Sweep (Safest)
-4. Aggressive: Limit Order at Sweep Level (Riskiest)
-
-Stop Placement:
-- Below Sweep Wick (Safest)
-- Below Recent LTF Structure (Tighter)
-- ATR-Based (Dynamic)
-
-Target:
-- Opposite Liquidity Pool (Primary)
-- Previous Structure Levels (Secondary)
-- Session Highs/Lows (Tertiary)
-```
-
-### Step 5: Risk Management for Sweep Trades
-
-```
-Position Sizing:
-- Standard: 1% Per Trade
-- If A+ Setup (Multiple Confluence): 1.5% Max
-- If Lower Confidence: 0.5%
-
-Partial Profits:
-- TP1 at 1:2 R:R: Take 40%
-- TP2 at 1:3 R:R: Take 30%
-- Runner: Let 30% Target Opposite Liquidity with Trailing Stop
-
-Daily Limit:
-- Maximum 2 Sweep Trades Per Day
-- If Both Lose → Stop Trading
-```
+1. চার্টে দশটি সুস্পষ্ট লেভেল চিহ্নিত করে প্রতিটি নেওয়াকে Sweep বা Run লেবেল করুন।
+2. প্রতিটির জন্য চেকলিস্ট ভরে কোন সারি সেরা ভবিষ্যদ্বক্তা দেখুন।
+3. কতগুলো ট্রেড করতেন ও প্রতিটির R লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
 
 ---
 
-## Liquidity এবং Macroeconomic Context
+## সারাংশ
 
-### Central Bank Meeting Days
-
-```
-FOMC/ECB/BOJ Days:
-- MAXIMUM Liquidity Sweeps Occur
-- Both Sides Often Swept ("Whipsaw")
-- Strategy: Wait AFTER the Whipsaw
-- Trade the FINAL Direction (Not Initial Spike)
-
-Example (FOMC):
-1. 14:00 EST: Rate Decision Released
-2. Initial Spike: UP 80 Pips (BSL Swept)
-3. 14:05: Reversal DOWN 120 Pips (SSL Swept)
-4. 14:30 (Press Conference): Final Direction Established
-5. ENTRY: Trade the Final Direction with FVG from Press Conference Move
-```
-
-### Risk-On vs Risk-Off Sweep Behavior
-
-```
-Risk-On Environment:
-- SSL More Likely to be Swept (Then Long)
-- AUD, NZD, Equity Indices = Sweep Low → Rally
-- JPY Pairs = Sweep Low → Rally (Carry Trade)
-- Gold = Sweep High → Sell (Risk-On = Gold Weak)
-
-Risk-Off Environment:
-- BSL More Likely to be Swept (Then Short)
-- AUD, NZD = Sweep High → Drop
-- Gold, JPY = Sweep Low → Rally (Safe Haven)
-- Equity Indices = Sweep High → Drop
-```
-
-### Seasonal Liquidity Patterns
-
-```
-January: "January Effect" — Fresh Institutional Allocation
-- Major Sweeps of Previous Year Levels
-- New Trends Establish
-
-Quarter End (Mar, Jun, Sep, Dec):
-- Portfolio Rebalancing = Unusual Sweeps
-- Hedge Fund Window Dressing
-- Mutual Fund Repositioning
-
-NFP Week (First Friday):
-- Tuesday-Thursday: Pre-positioning
-- Friday: Maximum Sweep Potential
-- Monday After: Real Direction Emerges
-```
+| ধারণা          | বিস্তারিত                                                               |
+| -------------- | ----------------------------------------------------------------------- |
+| চক্র           | বিল্ড, নেওয়া, মুভ                                                      |
+| Sweep বনাম Run | Close, পরের ক্যান্ডেল, হায়ার টাইমফ্রেম ও পরের স্ট্রাকচার দিয়ে ঠিক হয় |
+| সরে থাকুন      | চেকলিস্ট ভাগ হলে                                                        |
+| সতর্কতা        | অর্ডারের পেছনে কে তা অদৃশ্য                                             |
 
 ---
 
-## Advanced Sweep Concepts
+## সম্পর্কিত বিষয়
 
-### Inducement vs Real Liquidity
-
-```
-Inducement:
-- Small, Recent Liquidity Pool
-- Created to LURE Traders into Position
-- Then Swept to Trap Them
-- Example: A Minor Low Created Just to be Taken
-
-Real Liquidity:
-- Major, Obvious Level
-- Multiple Touches/Tests
-- Significant Stop Loss Cluster
-- Example: Monthly Low, Equal Lows (3+ Touches)
-
-Trading Rule:
-- Don't Trade INDUCEMENT Sweeps (Too Small, Low R:R)
-- Trade REAL Liquidity Sweeps (Major Levels, High R:R)
-```
-
-### Liquidity Void (Imbalance After Sweep)
-
-```
-After Sweep:
-- If STRONG Displacement = Liquidity Void (FVG)
-- Void = Area of Unfilled Orders
-- Price WILL Return to Fill (Usually)
-- THIS is Your Entry = FVG After Sweep
-
-Quality Check:
-- Larger Void = Stronger Displacement = Higher Probability
-- Void Aligned with HTF Trend = Best
-- Void in Premium/Discount Zone = Extra Confluence
-```
-
-### Multiple Liquidity Sweeps (Cascading)
-
-```
-Sometimes Smart Money Sweeps MULTIPLE Levels:
-
-Level 1: Minor Swing Low (First Stops Taken)
-Price Bounces → BUT:
-Level 2: Previous Week Low (More Stops Taken)
-Small Bounce → THEN:
-Level 3: Monthly Low (MAXIMUM Stops Taken)
-FINAL Reversal (This is Where Real Entry Happens)
-
-Rule:
-- Don't Enter After First Sweep if DEEPER Liquidity Visible
-- Wait for FINAL Sweep (Deepest Level)
-- Enter After Deepest Sweep = Strongest Setup
-```
-
----
-
-## Liquidity Sweep এবং Trader Psychology
-
-### Retail Psychology at Sweep Points
-
-```
-Phase 1 (Before Sweep):
-- Retail Confident: "Support Will Hold!"
-- Position Sized Up: "Adding to Winner!"
-- Tight Stops: "Just Below Support!"
-
-Phase 2 (During Sweep):
-- Stop Hits: "What?! No! Support Broke!"
-- Panic: "I'm Stopping Out!"
-- Reverse Entry: "Now I'm Short! It's Breaking Down!"
-
-Phase 3 (After Sweep):
-- Price Reverses: "Wait... It's Coming Back?"
-- Regret: "I Shouldn't Have Sold!"
-- FOMO Re-Entry: Buys Back at Worse Price
-- "The Market Is Manipulated!" ← Common Retail Response
-
-Phase 4 (Reality):
-- Market Isn't "Manipulated" in Traditional Sense
-- Institutions NEED Liquidity to Fill Orders
-- This Process is NATURAL Market Mechanics
-- Understanding This = Trading WITH Smart Money
-```
-
-### How to Think Like Smart Money
-
-```
-Retail Mindset: "Where Will Price Go?"
-Smart Money Mindset: "Where Is the Liquidity?"
-
-Retail: Sees Support → Places Stop Below → Gets Stopped
-Smart Money: Sees Stop Cluster → Takes Stops → THEN Decides Direction
-
-Key Mental Shift:
-- BEFORE: "I'll Buy at Support"
-- AFTER: "I'll Wait for Support to be Swept, THEN Buy"
-
-This Single Shift = Dramatically Better Entries
-```
-
----
-
-## মূল বার্তা: Institutional Summary
-
-Professional Traders Sweep Trade করে — এগুলোর বিরুদ্ধে লড়াই করে না।
-
-| Concept             | Rule                                      |
-| ------------------- | ----------------------------------------- |
-| **Liquidity**       | Stops = Fuel for Institutional Moves      |
-| **Sweep Direction** | Sweep SSL → Go Long, Sweep BSL → Go Short |
-| **Confirmation**    | Displacement + FVG After Sweep            |
-| **Entry**           | FVG/OB After Sweep Reversal               |
-| **Stop**            | Below/Above Sweep Extreme                 |
-| **Target**          | Opposite Liquidity Pool                   |
-| **Session**         | London/NY Opens = Prime Sweep Time        |
-| **Psychology**      | Wait for Sweep, Don't Fight It            |
-| **Patience**        | Let Sweep COMPLETE Before Entering        |
-| **Risk**            | 1% Max, 2 Trades/Day Maximum              |
-
-```
-❌ Beginners: "Market আমাকে Stop Out করেছে!"
-✅ Professionals: "Smart Money তাদের Hand দেখিয়েছে। এখন আমি জানি তারা কোন দিকে যাচ্ছে।"
-```
-
----
-
-## Sweep Trading Checklist
-
-```
-Pre-Trade:
-□ Major Liquidity Level Identified?
-□ HTF Trend Direction Clear?
-□ Session Timing Good? (Kill Zone)
-□ No Major News in Next 30 Minutes?
-□ Sweep NOT Yet Occurred? (Patient)
-
-During Sweep:
-□ Wick Beyond Level (Not Body Close)?
-□ Volume Spike Visible?
-□ Quick Rejection (1-3 Candles)?
-□ Displacement Away from Sweep?
-□ FVG/OB Created?
-
-Post-Sweep Entry:
-□ LTF Confirmation (CHOCH/BOS)?
-□ Entry at FVG/OB?
-□ Stop Below Sweep Extreme?
-□ R:R Minimum 1:3?
-□ Position Size Calculated (1% Max)?
-□ No Correlation with Other Open Trades?
-```
-
-বিস্তারিত Liquidity Concepts এর জন্য আমাদের সম্পূর্ণ [Liquidity Trading Guide](/bn/smc/liquidity) দেখুন। 📊
+- [Liquidity](/bn/ict/liquidity)
+- [Liquidity Sweep](/bn/ict/liquidity-sweep)
+- [Liquidity Sweeps Explained](/bn/blog/liquidity-sweeps-explained)
+- [Liquidity Concepts](/bn/blog/liquidity-concepts-complete-guide)

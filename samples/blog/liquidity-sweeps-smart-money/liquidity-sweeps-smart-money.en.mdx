@@ -1,0 +1,109 @@
+---
+title: "Liquidity Sweeps and the Liquidity Cycle — Sweep or Run?"
+description: "How to tell a sweep (price takes a level and reverses) from a run (price takes a level and keeps going), the repeating cycle of build-up, sweep and move that traders look for, a decision checklist, and the ways the \"smart money\" explanation can mislead you."
+date: "2026-05-06"
+author: "Trading Docs"
+category: "Smart Money Concepts"
+tags: ["liquidity", "sweeps", "smart-money", "liquidity-cycle"]
+readingTime: 7
+featured: false
+---
+
+Price repeatedly **builds liquidity** (highs or lows that attract stops), **takes it** and then **moves**, either back the way it came or onward. Traders often describe this as a cycle. The practical question is always the same: after price takes a level, is it a **sweep** (reversal) or a **run** (continuation)?
+
+<Callout type="warning" title="Corrected and toned down">
+  The original framed sweeps as "smart money" hunting retail stops and quoted success rates. We can't observe who is behind an order, and a sweep that reverses is explained equally well by simple supply and demand. Use the vocabulary if it helps you organise the chart, but base decisions on what price **does**, not on who you imagine is doing it.
+</Callout>
+
+---
+
+## The Cycle
+
+| Phase                | What you see                                                                 | What you do                              |
+| -------------------- | ---------------------------------------------------------------------------- | ---------------------------------------- |
+| **1. Build**         | Equal highs or lows, tight ranges, a clear level                              | Mark the level; do nothing yet           |
+| **2. Take**          | Price trades beyond the level                                                 | Watch the **close** and the next candles |
+| **3. Move**          | Either a reversal (sweep) or acceptance beyond it (run)                       | Act only on confirmation                 |
+
+The [Liquidity](/en/ict/liquidity) lesson shows the cycle on EUR/USD, and [Liquidity Concepts](/en/blog/liquidity-concepts-complete-guide) lists the types of levels.
+
+### The Chart
+
+![A synthetic comparison of a sweep (price takes a level and reverses) and a run (price takes a level and keeps going)](/images/ict/liquidity/sweep-vs-run-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/ict/liquidity-cycle-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Liquidity](/en/ict/liquidity).)
+</Callout>
+
+---
+
+## Sweep or Run? A Checklist
+
+| Question                                       | Points to a **sweep**                         | Points to a **run**                          |
+| ---------------------------------------------- | --------------------------------------------- | -------------------------------------------- |
+| Where does the candle close?                   | Back inside the old range                     | Beyond the level                             |
+| What does the next candle do?                  | Moves away from the level                     | Holds or extends beyond                      |
+| Higher-timeframe direction                     | Against the break                             | With the break                               |
+| Speed of the move                              | Quick spike, quick return                     | Steady push, small pullbacks                 |
+| Structure after                                | A shift in the opposite direction             | New highs (or lows) in the same direction    |
+
+No single row decides it; the more rows agree, the clearer the picture. When they split, **stand aside**.
+
+---
+
+## What Can Mislead You
+
+| Trap                                       | Why                                                              |
+| ------------------------------------------ | ---------------------------------------------------------------- |
+| Believing every wick is a hunt             | Most wicks are noise                                             |
+| Trading the first beyond-level candle      | You can't yet tell sweep from run                                |
+| Counting only the winning sweeps           | Keep a record of every level you marked                          |
+| Using the story as a reason to hold a loser | The story doesn't change where your stop is                      |
+
+---
+
+## Example (no chart)
+
+The Asian high is **1.0880**. At 1:10 PM BD price pushes to **1.0888** but a 15-minute candle closes at **1.0874**, back inside; the next candle makes a lower high and a 5-minute candle closes below the last higher low. Checklist: close inside, move away, higher timeframe neutral, quick spike: four rows point to a sweep. Plan: sell **1.0872**, stop **1.0892** (above the spike): risk 20 pips; target **1.0832** (the Asian low): reward 40 pips, **1 : 2.0** planned. If price closes above **1.0892**, treat it as a run and cancel.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Treating a first beyond-level candle as a signal | Wait for the close and the next candles |
+| Forcing the cycle onto every range | Only act on levels many traders would see |
+| Explaining losses with a story | Review the rows in the checklist instead |
+| Skipping a record of marked levels | Log every level and outcome |
+
+---
+
+## Practice
+
+1. Mark ten obvious levels on a chart and label each take as sweep or run.
+2. Fill in the checklist table for each, then see which rows were the best predictors.
+3. Write down how many you would have traded and the R of each.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Cycle | Build, take, move |
+| Sweep vs run | Decided by the close, the next candles, the higher timeframe and structure after |
+| Stand aside | When the checklist splits |
+| Caution | Who is behind an order is unobservable |
+
+---
+
+## Related Topics
+
+- [Liquidity](/en/ict/liquidity)
+- [Liquidity Sweep](/en/ict/liquidity-sweep)
+- [Liquidity Sweeps Explained](/en/blog/liquidity-sweeps-explained)
+- [Liquidity Concepts](/en/blog/liquidity-concepts-complete-guide)
