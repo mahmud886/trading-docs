@@ -1,145 +1,125 @@
 ---
-title: "DOM & Level 2 Data Reading — Complete Guide"
-description: "Master Depth of Market (DOM) and Level 2 data reading. Learn to identify institutional orders, spoofing, absorption, and real-time supply/demand imbalances used by professional traders."
+title: "DOM and Level 2 — Complete Guide"
+description: "Read the order book: what depth of market shows, the difference between Level 1 and Level 2, thick and thin levels, walls that hold and walls that are consumed, absorption and pulling, how books differ between futures and spot forex, and how to use the DOM without trusting it blindly, with a three-snapshot chart and an animated walkthrough."
 level: intermediate
 order: 2
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## What is DOM (Depth of Market)?
+## What Is the DOM?
 
-The Depth of Market (DOM), also known as Level 2, the Order Book, or the Ladder, shows all **pending limit orders** at each price level in real-time. It's the closest you can get to seeing institutional intent before price moves.
+The **depth of market (DOM)** — also called **Level 2**, the **order book** or the **ladder** — lists the resting **limit orders** at each price: bids (buy limits) below the market and asks (sell limits) above it.
 
-<Callout type="info" title="Level 1 vs Level 2">
-  **Level 1** = Best bid/ask price only. **Level 2** = Full order book depth showing ALL pending orders at every price
-  level. Professional traders need Level 2 for edge.
+| Level       | What it shows                                 |
+| ----------- | --------------------------------------------- |
+| **Level 1** | Best bid, best ask, last price                |
+| **Level 2** | Resting orders at several prices on each side |
+
+The DOM shows what's **resting**; the **tape** (time and sales) shows what's **executed**. You need both: a resting order isn't a trade, and it can be removed at any time.
+
+<Callout type="warning" title="Toned down">
+  The original called the DOM "the closest you can get to seeing institutional intent". A resting order shows what
+  someone is **willing** to do right now, not what they will do, and it can be cancelled in milliseconds. Large
+  participants also often hide size. Read the DOM as a *snapshot of offers*, not as intent.
 </Callout>
 
 ---
 
-## DOM Structure
+## Reading the Ladder
 
-```
-PRICE    |  BID (Buy Limits)  |  ASK (Sell Limits)
----------|--------------------|-----------------
-1.0955   |                    |  450 contracts
-1.0954   |                    |  320 contracts
-1.0953   |                    |  180 contracts  ← Best Ask
-1.0952   |  220 contracts     |                 ← Best Bid
-1.0951   |  380 contracts     |
-1.0950   |  850 contracts     |                 ← Large support
-1.0949   |  290 contracts     |
-```
+![Three snapshots of a synthetic order book: at 10:00:00 a 450-contract ask wall rests at 1.0955; at 10:00:20 buyers have executed 320 contracts at the wall, 130 remain and price stalls; at 10:00:35 the wall is consumed, the next asks are thin and price moves through](/images/order-flow/dom-level2/dom-wall-three-snapshots-dark.webp)
 
----
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/order-flow/dom-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-## Reading the DOM
-
-### Key Observations
-
-1. **Thick levels**: Large order clusters = potential support/resistance
-2. **Thin levels**: Few orders = price can move through quickly
-3. **Refreshing orders**: Orders that keep appearing = institutional algo
-4. **Pulling orders**: Orders disappearing before being hit = spoofing
-
-### Bid/Ask Imbalance
-
-- **More bids than asks** = bullish pressure building
-- **More asks than bids** = bearish pressure building
-- **Sudden disappearance** of one side = imminent move
-
----
-
-## DOM Trading Patterns
-
-### 1. Absorption
-
-When a large limit order "absorbs" aggressive orders without price moving:
-
-```
-Scenario: 500-lot limit buy at 1.0950
-- Market sellers hit it: 100 lots... 200 lots... 300 lots...
-- Price STAYS at 1.0950 (the limit order absorbs selling)
-- Eventually sellers exhaust → price bounces UP
-
-Interpretation: Strong institutional buyer at that level
-```
-
-### 2. Iceberg Orders
-
-Large orders hidden as small visible quantities:
-
-```
-Visible: 10 lots at 1.0950
-Reality: 500 lots total, showing only 10 at a time
-Sign: The same level keeps "refreshing" after being hit
-```
-
-### 3. Spoofing / Layering
-
-Fake orders placed to manipulate perception:
-
-```
-Spoofer places 1000 lots on bid side (looks like strong support)
-Retail/algos see this and buy
-Spoofer cancels bids AND sells into the buying
-Price drops — spoofer profits
-```
-
-<Callout type="warning" title="Spoofing is Illegal">
-  Spoofing is illegal in regulated markets (fined by SEC/CFTC). However, it still occurs in crypto and less regulated
-  venues. Learn to identify it to avoid being trapped.
+<Callout type="info" title="About this chart">
+  The snapshots are **synthetic**, hand-built to show one idea. Real books change many times a second.
 </Callout>
 
-### 4. Stacking
+| Snapshot | What the book shows                                                                 | What it suggests                                                     |
+| -------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| 10:00:00 | Asks 180 / 320 / **450** / 140 …; bids 220 / 380 / **850** …; a wall at 1.0955      | Possible resistance above, support below                             |
+| 10:00:20 | 320 contracts executed at 1.0955 → 130 left; the bid side has moved up behind price | The wall is being traded into; price stalls while it is absorbing    |
+| 10:00:35 | Asks at 1.0955 and 1.0956 are gone; next asks 190 / 150 / 90 / 60                   | The wall was consumed and what remains is thin — price moves through |
 
-Multiple limit orders placed in sequence to create a "wall":
-
-```
-1.0960: 200 lots
-1.0959: 200 lots
-1.0958: 200 lots
-1.0957: 200 lots  ← "Stacked" sell wall
-
-This creates resistance. If price breaks through = strong signal.
-```
+The lesson isn't "walls are resistance". It's that **a wall is a hypothesis**: it matters only if it holds when it's traded into. When it's consumed, the book behind it decides how fast price moves.
 
 ---
 
-## DOM Trading Rules
+## What to Watch
 
-### For Scalping
+| Observation                           | Possible reading                                                  | Caution                                                     |
+| ------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Thick level**                       | Possible support or resistance                                    | It can disappear or be hidden                               |
+| **Thin levels**                       | Price can move through quickly                                    | Thin books also gap on news                                 |
+| **Orders refilling**                  | Someone is reloading at the same price                            | See [Iceberg and Spoofing](/en/order-flow/iceberg-spoofing) |
+| **Orders vanishing before being hit** | They may have been cancelled for many reasons, including spoofing | Don't assume manipulation                                   |
+| **Bid/ask imbalance**                 | One side is heavier right now                                     | Imbalance changes constantly; check the tape                |
 
-1. Identify levels with unusual order size (3x+ average)
-2. Watch if aggressive orders can break through
-3. If absorbed → fade the aggressor
-4. If broken → join the breakout
+### Absorption in the DOM
 
-### For Confirmation
+An **absorbing** level takes aggressive volume without price moving through it: the tape shows many contracts executing at one price while the displayed size stays about the same or refills. In the chart, 320 contracts hit the wall and price stalled — until the rest of the wall went.
 
-1. Have your SMC/ICT bias first (HTF direction)
-2. Drop to DOM at your entry level
-3. Confirm institutional presence (absorption, iceberg, stacking)
-4. Enter with confidence when DOM confirms
+### Example (no chart) — using the DOM as one input
 
----
-
-## DOM Limitations
-
-- **Only shows LIMIT orders** — market orders are invisible until executed
-- **Orders can be cancelled** — what you see may not execute
-- **Crypto DOM is fragmented** — multiple exchanges = incomplete picture
-- **Speed required** — DOM changes in milliseconds
-- **Not suitable for swing trading** — short-term tool only
+Price rallies to **1.0954** and meets an ask wall at **1.0955**. Instead of selling "because there's a wall", the plan: _if_ the wall is consumed (size falls below 100 with buyers still lifting) and price trades at **1.0956**, buy **1.0957**, stop **1.0951** (below the last bid cluster), target **1.0975**: risk 6, reward 18, **1 : 3.0** planned. If instead the wall holds and the tape shows buyers drying up, there's no trade.
 
 ---
 
-## Recommended Platforms for DOM
+## DOM Across Markets
 
-| Platform       | Best For           | Cost         |
-| -------------- | ------------------ | ------------ |
-| Sierra Chart   | Futures DOM        | $26/month    |
-| Bookmap        | Visual DOM heatmap | $39/month    |
-| Jigsaw Trading | DOM analysis       | $37/month    |
-| Quantower      | Multi-asset DOM    | Free/Premium |
-| ATAS           | Futures + Crypto   | $69/month    |
+| Market            | What the DOM shows                                                                        |
+| ----------------- | ----------------------------------------------------------------------------------------- |
+| Futures (e.g. 6E) | One exchange's central limit order book — the full resting depth                          |
+| Stocks            | One venue's book; several others trade the same stock                                     |
+| **Spot forex**    | No central book: a broker's DOM shows only its own liquidity providers or its own clients |
+
+Spot-forex traders who want order-book information often use the **futures** book as a proxy.
+
+---
+
+## Common Mistakes
+
+| Mistake                                                | Fix                                                  |
+| ------------------------------------------------------ | ---------------------------------------------------- |
+| Trading a wall as if it were a guarantee               | Wait to see how it behaves when traded into          |
+| Ignoring the tape                                      | Watch executed volume next to the book               |
+| Calling every disappearing order "spoofing"            | Cancellations are normal; look for repeated patterns |
+| Using a broker's "DOM" for spot forex like a real book | Know what liquidity it represents                    |
+| Scalping the DOM without a stop                        | Size and stop first; speed second                    |
+
+---
+
+## Practice
+
+1. On a futures DOM (or a replay), watch one large resting order for 10 minutes. Does it hold, refill, vanish or get consumed?
+2. Write the tape volume traded at that price during that time.
+3. Note what price did after the wall changed.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea   | Detail                                                          |
+| ------ | --------------------------------------------------------------- |
+| DOM    | Resting limit orders at each price; Level 2 = depth             |
+| Tape   | Executed trades — read alongside the book                       |
+| Walls  | A hypothesis: they matter only if they hold when traded into    |
+| Limits | Resting orders can be cancelled; spot forex has no central book |
+
+---
+
+## Related Topics
+
+- [Introduction to Order Flow](/en/order-flow/introduction)
+- [Absorption and Exhaustion](/en/order-flow/absorption-exhaustion)
+- [Iceberg and Spoofing](/en/order-flow/iceberg-spoofing)
+- [Footprint Charts](/en/order-flow/footprint-charts)

@@ -1,145 +1,125 @@
 ---
-title: "DOM ও Level 2 ডেটা রিডিং — সম্পূর্ণ গাইড"
-description: "ডেপথ অফ মার্কেট (DOM) ও Level 2 ডেটা রিডিং মাস্টার করুন। ইনস্টিটিউশনাল অর্ডার, স্পুফিং, অ্যাবসর্পশন এবং রিয়েল-টাইম সাপ্লাই/ডিমান্ড ইমব্যালেন্স চিনতে শিখুন।"
+title: "DOM and Level 2 — সম্পূর্ণ গাইড"
+description: "অর্ডার বুক পড়া: Depth of Market কী দেখায়, Level 1 আর Level 2 এর পার্থক্য, মোটা ও পাতলা লেভেল, যে ওয়াল টিকে থাকে আর যেটা Consume হয়ে যায়, Absorption আর অর্ডার সরিয়ে নেওয়া, ফিউচার্স আর Spot ফরেক্সে বুক কীভাবে আলাদা, আর DOM অন্ধভাবে বিশ্বাস না করে কীভাবে ব্যবহার করবেন — তিন-স্ন্যাপশট চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 2
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## What is DOM (Depth of Market)?
+## DOM কী?
 
-The Depth of Market (DOM), also known as Level 2, the Order Book, or the Ladder, shows all **pending limit orders** at each price level in real-time. It's the closest you can get to seeing institutional intent before price moves.
+**Depth of Market (DOM)** — **Level 2**, **Order Book** বা **Ladder** ও বলা হয় — প্রতিটি প্রাইসে অপেক্ষমাণ **Limit অর্ডার** তালিকাভুক্ত করে: মার্কেটের নিচে Bid (Buy Limit) আর উপরে Ask (Sell Limit)।
 
-<Callout type="info" title="Level 1 vs Level 2">
-  **Level 1** = Best bid/ask price only. **Level 2** = Full order book depth showing ALL pending orders at every price
-  level. Professional traders need Level 2 for edge.
+| লেভেল       | কী দেখায়                                     |
+| ----------- | --------------------------------------------- |
+| **Level 1** | সেরা Bid, সেরা Ask, শেষ প্রাইস                |
+| **Level 2** | প্রতিটি পাশে কয়েকটি প্রাইসে অপেক্ষমাণ অর্ডার |
+
+DOM দেখায় কী **অপেক্ষমাণ**; **Tape** (Time and Sales) দেখায় কী **এক্সিকিউটেড**। দুটোই লাগে: অপেক্ষমাণ অর্ডার ট্রেড নয়, আর যেকোনো সময় সরানো যায়।
+
+<Callout type="warning" title="সুর নরম করা হয়েছে">
+  মূল লেসনে DOM কে "প্রাতিষ্ঠানিক উদ্দেশ্য দেখার সবচেয়ে কাছের জিনিস" বলা হয়েছিল। অপেক্ষমাণ অর্ডার দেখায় কেউ এখন কী
+  করতে **ইচ্ছুক**, কী করবে নয়, আর মিলিসেকেন্ডে বাতিল করা যায়। বড় অংশগ্রহণকারীরা প্রায়ই সাইজ লুকায়। DOM কে *অফারের
+  স্ন্যাপশট* হিসেবে পড়ুন, উদ্দেশ্য হিসেবে নয়।
 </Callout>
 
 ---
 
-## DOM Structure
+## ল্যাডার পড়া
 
-```
-PRICE    |  BID (Buy Limits)  |  ASK (Sell Limits)
----------|--------------------|-----------------
-1.0955   |                    |  450 contracts
-1.0954   |                    |  320 contracts
-1.0953   |                    |  180 contracts  ← Best Ask
-1.0952   |  220 contracts     |                 ← Best Bid
-1.0951   |  380 contracts     |
-1.0950   |  850 contracts     |                 ← Large support
-1.0949   |  290 contracts     |
-```
+![একটি সিন্থেটিক অর্ডার বুকের তিনটি স্ন্যাপশট: 10:00:00 এ 1.0955 এ ৪৫০-কন্ট্রাক্টের Ask ওয়াল; 10:00:20 এ ক্রেতারা ওয়ালে ৩২০ কন্ট্রাক্ট এক্সিকিউট করেছে, ১৩০ বাকি আর প্রাইস আটকে আছে; 10:00:35 এ ওয়াল Consume হয়েছে, পরের Ask পাতলা আর প্রাইস ভেদ করে গেছে](/images/order-flow/dom-level2/dom-wall-three-snapshots-dark.webp)
 
----
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/order-flow/dom-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-## Reading the DOM
-
-### Key Observations
-
-1. **Thick levels**: Large order clusters = potential support/resistance
-2. **Thin levels**: Few orders = price can move through quickly
-3. **Refreshing orders**: Orders that keep appearing = institutional algo
-4. **Pulling orders**: Orders disappearing before being hit = spoofing
-
-### Bid/Ask Imbalance
-
-- **More bids than asks** = bullish pressure building
-- **More asks than bids** = bearish pressure building
-- **Sudden disappearance** of one side = imminent move
-
----
-
-## DOM Trading Patterns
-
-### 1. Absorption
-
-When a large limit order "absorbs" aggressive orders without price moving:
-
-```
-Scenario: 500-lot limit buy at 1.0950
-- Market sellers hit it: 100 lots... 200 lots... 300 lots...
-- Price STAYS at 1.0950 (the limit order absorbs selling)
-- Eventually sellers exhaust → price bounces UP
-
-Interpretation: Strong institutional buyer at that level
-```
-
-### 2. Iceberg Orders
-
-Large orders hidden as small visible quantities:
-
-```
-Visible: 10 lots at 1.0950
-Reality: 500 lots total, showing only 10 at a time
-Sign: The same level keeps "refreshing" after being hit
-```
-
-### 3. Spoofing / Layering
-
-Fake orders placed to manipulate perception:
-
-```
-Spoofer places 1000 lots on bid side (looks like strong support)
-Retail/algos see this and buy
-Spoofer cancels bids AND sells into the buying
-Price drops — spoofer profits
-```
-
-<Callout type="warning" title="Spoofing is Illegal">
-  Spoofing is illegal in regulated markets (fined by SEC/CFTC). However, it still occurs in crypto and less regulated
-  venues. Learn to identify it to avoid being trapped.
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  স্ন্যাপশটগুলো **সিন্থেটিক**, একটি ধারণা দেখাতে হাতে তৈরি। আসল বুক সেকেন্ডে অনেকবার বদলায়।
 </Callout>
 
-### 4. Stacking
+| স্ন্যাপশট | বুক কী দেখায়                                                                     | কী ইঙ্গিত দেয়                                            |
+| --------- | --------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| 10:00:00  | Ask 180 / 320 / **450** / 140 …; Bid 220 / 380 / **850** …; 1.0955 এ একটি ওয়াল   | উপরে সম্ভাব্য Resistance, নিচে Support                    |
+| 10:00:20  | 1.0955 এ ৩২০ কন্ট্রাক্ট এক্সিকিউটেড → ১৩০ বাকি; Bid পাশ প্রাইসের পেছনে উপরে উঠেছে | ওয়ালে ট্রেড হচ্ছে; শোষণের সময় প্রাইস আটকে যায়          |
+| 10:00:35  | 1.0955 আর 1.0956 এর Ask নেই; পরের Ask 190 / 150 / 90 / 60                         | ওয়াল Consume হয়েছে আর যা বাকি তা পাতলা — প্রাইস ভেদ করে |
 
-Multiple limit orders placed in sequence to create a "wall":
-
-```
-1.0960: 200 lots
-1.0959: 200 lots
-1.0958: 200 lots
-1.0957: 200 lots  ← "Stacked" sell wall
-
-This creates resistance. If price breaks through = strong signal.
-```
+শিক্ষাটা "ওয়াল মানেই Resistance" নয়। শিক্ষা হলো **ওয়াল একটি অনুমান**: এতে ট্রেড করা হলে যদি টিকে থাকে তবেই গুরুত্ব। Consume হলে এর পেছনের বুকই ঠিক করে প্রাইস কত দ্রুত নড়বে।
 
 ---
 
-## DOM Trading Rules
+## কী দেখবেন
 
-### For Scalping
+| পর্যবেক্ষণ                     | সম্ভাব্য পাঠ                           | সতর্কতা                                                       |
+| ------------------------------ | -------------------------------------- | ------------------------------------------------------------- |
+| **মোটা লেভেল**                 | সম্ভাব্য Support বা Resistance         | অদৃশ্য হতে বা লুকানো থাকতে পারে                               |
+| **পাতলা লেভেল**                | প্রাইস দ্রুত ভেদ করতে পারে             | পাতলা বুক নিউজেও Gap করে                                      |
+| **অর্ডার আবার ভরছে**           | কেউ একই প্রাইসে রিলোড করছে             | দেখুন [Iceberg and Spoofing](/bn/order-flow/iceberg-spoofing) |
+| **Hit হওয়ার আগে অর্ডার উধাও** | অনেক কারণে বাতিল হতে পারে, Spoofing সহ | ম্যানিপুলেশন ধরে নেবেন না                                     |
+| **Bid/Ask Imbalance**          | এক পাশ এখন ভারী                        | Imbalance ক্রমাগত বদলায়; Tape দেখুন                          |
 
-1. Identify levels with unusual order size (3x+ average)
-2. Watch if aggressive orders can break through
-3. If absorbed → fade the aggressor
-4. If broken → join the breakout
+### DOM এ Absorption
 
-### For Confirmation
+**Absorbing** লেভেল প্রাইস ভেদ না করে Aggressive Volume নেয়: Tape এ এক প্রাইসে অনেক কন্ট্রাক্ট এক্সিকিউট হয় যখন দেখানো সাইজ প্রায় একই থাকে বা আবার ভরে। চার্টে ৩২০ কন্ট্রাক্ট ওয়ালে আঘাত করেছে আর প্রাইস আটকেছে — ওয়ালের বাকিটা সরে যাওয়া পর্যন্ত।
 
-1. Have your SMC/ICT bias first (HTF direction)
-2. Drop to DOM at your entry level
-3. Confirm institutional presence (absorption, iceberg, stacking)
-4. Enter with confidence when DOM confirms
+### উদাহরণ (চার্ট ছাড়া) — DOM কে একটি ইনপুট হিসেবে ব্যবহার
 
----
-
-## DOM Limitations
-
-- **Only shows LIMIT orders** — market orders are invisible until executed
-- **Orders can be cancelled** — what you see may not execute
-- **Crypto DOM is fragmented** — multiple exchanges = incomplete picture
-- **Speed required** — DOM changes in milliseconds
-- **Not suitable for swing trading** — short-term tool only
+প্রাইস র‍্যালি করে **1.0954** এ গিয়ে **1.0955** এর Ask ওয়ালে ঠেকে। "ওয়াল আছে" বলে Sell না করে পরিকল্পনা: _যদি_ ওয়াল Consume হয় (সাইজ ১০০ এর নিচে নামে আর ক্রেতারা তখনো Lift করছে) আর প্রাইস **1.0956** এ ট্রেড করে, তবে **1.0957** এ Buy, Stop **1.0951** (শেষ Bid ক্লাস্টারের নিচে), টার্গেট **1.0975**: রিস্ক ৬, রিওয়ার্ড ১৮, পরিকল্পিত **১ : ৩.০**। উল্টে ওয়াল টিকে গিয়ে Tape এ ক্রেতা শুকিয়ে গেলে কোনো ট্রেড নেই।
 
 ---
 
-## Recommended Platforms for DOM
+## বিভিন্ন মার্কেটে DOM
 
-| Platform       | Best For           | Cost         |
-| -------------- | ------------------ | ------------ |
-| Sierra Chart   | Futures DOM        | $26/month    |
-| Bookmap        | Visual DOM heatmap | $39/month    |
-| Jigsaw Trading | DOM analysis       | $37/month    |
-| Quantower      | Multi-asset DOM    | Free/Premium |
-| ATAS           | Futures + Crypto   | $69/month    |
+| মার্কেট            | DOM কী দেখায়                                                                        |
+| ------------------ | ------------------------------------------------------------------------------------ |
+| ফিউচার্স (যেমন 6E) | একটি এক্সচেঞ্জের কেন্দ্রীয় Limit Order Book — পূর্ণ অপেক্ষমাণ গভীরতা                |
+| স্টক               | একটি ভেন্যুর বুক; আরও কয়েকটি একই স্টক ট্রেড করে                                     |
+| **Spot ফরেক্স**    | কেন্দ্রীয় বুক নেই: ব্রোকারের DOM শুধু নিজের Liquidity Provider বা ক্লায়েন্ট দেখায় |
+
+অর্ডার-বুকের তথ্য চাওয়া Spot-ফরেক্স ট্রেডাররা প্রায়ই **ফিউচার্স** বুককে প্রক্সি হিসেবে ব্যবহার করেন।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                                   | সমাধান                                         |
+| ----------------------------------------------------- | ---------------------------------------------- |
+| ওয়ালকে নিশ্চয়তা ধরে ট্রেড                           | ট্রেড হলে এটা কেমন আচরণ করে দেখার অপেক্ষা করুন |
+| Tape উপেক্ষা                                          | বুকের পাশে এক্সিকিউটেড Volume দেখুন            |
+| উধাও হওয়া প্রতিটি অর্ডারকে "Spoofing" বলা            | বাতিল স্বাভাবিক; পুনরাবৃত্ত প্যাটার্ন খুঁজুন   |
+| Spot ফরেক্সে ব্রোকারের "DOM" কে আসল বুকের মতো ব্যবহার | এটা কোন Liquidity প্রতিনিধিত্ব করে তা জানুন    |
+| Stop ছাড়া DOM Scalping                               | আগে সাইজ আর Stop; গতি পরে                      |
+
+---
+
+## অনুশীলন
+
+1. একটি ফিউচার্স DOM এ (বা রিপ্লেতে) ১০ মিনিট একটি বড় অপেক্ষমাণ অর্ডার দেখুন। এটা কি টিকে, রিফিল হয়, উধাও হয়, নাকি Consume হয়?
+2. ওই সময়ে ওই প্রাইসে Tape এর ট্রেড Volume লিখুন।
+3. ওয়াল বদলানোর পর প্রাইস কী করেছে লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা | বিস্তারিত                                                        |
+| ----- | ---------------------------------------------------------------- |
+| DOM   | প্রতিটি প্রাইসে অপেক্ষমাণ Limit অর্ডার; Level 2 = গভীরতা         |
+| Tape  | এক্সিকিউটেড ট্রেড — বুকের পাশে পড়ুন                             |
+| ওয়াল | একটি অনুমান: ট্রেড হলে টিকলে তবেই গুরুত্ব                        |
+| সীমা  | অপেক্ষমাণ অর্ডার বাতিল করা যায়; Spot ফরেক্সে কেন্দ্রীয় বুক নেই |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Order Flow এর ভূমিকা](/bn/order-flow/introduction)
+- [Absorption and Exhaustion](/bn/order-flow/absorption-exhaustion)
+- [Iceberg and Spoofing](/bn/order-flow/iceberg-spoofing)
+- [Footprint Charts](/bn/order-flow/footprint-charts)

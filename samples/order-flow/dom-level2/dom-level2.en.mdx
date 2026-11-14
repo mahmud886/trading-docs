@@ -1,0 +1,117 @@
+---
+title: "DOM and Level 2 — Complete Guide"
+description: "Read the order book: what depth of market shows, the difference between Level 1 and Level 2, thick and thin levels, walls that hold and walls that are consumed, absorption and pulling, how books differ between futures and spot forex, and how to use the DOM without trusting it blindly, with a three-snapshot chart and an animated walkthrough."
+level: intermediate
+order: 2
+lastUpdated: "2026-11-14"
+---
+
+## What Is the DOM?
+
+The **depth of market (DOM)** — also called **Level 2**, the **order book** or the **ladder** — lists the resting **limit orders** at each price: bids (buy limits) below the market and asks (sell limits) above it.
+
+| Level      | What it shows                                      |
+| ---------- | -------------------------------------------------- |
+| **Level 1** | Best bid, best ask, last price                    |
+| **Level 2** | Resting orders at several prices on each side     |
+
+The DOM shows what's **resting**; the **tape** (time and sales) shows what's **executed**. You need both: a resting order isn't a trade, and it can be removed at any time.
+
+<Callout type="warning" title="Toned down">
+  The original called the DOM "the closest you can get to seeing institutional intent". A resting order shows what
+  someone is **willing** to do right now, not what they will do, and it can be cancelled in milliseconds. Large
+  participants also often hide size. Read the DOM as a *snapshot of offers*, not as intent.
+</Callout>
+
+---
+
+## Reading the Ladder
+
+![Three snapshots of a synthetic order book: at 10:00:00 a 450-contract ask wall rests at 1.0955; at 10:00:20 buyers have executed 320 contracts at the wall, 130 remain and price stalls; at 10:00:35 the wall is consumed, the next asks are thin and price moves through](/images/order-flow/dom-level2/dom-wall-three-snapshots-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/order-flow/dom-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The snapshots are **synthetic**, hand-built to show one idea. Real books change many times a second.
+</Callout>
+
+| Snapshot   | What the book shows                                  | What it suggests                                   |
+| ---------- | ---------------------------------------------------- | -------------------------------------------------- |
+| 10:00:00   | Asks 180 / 320 / **450** / 140 …; bids 220 / 380 / **850** …; a wall at 1.0955 | Possible resistance above, support below |
+| 10:00:20   | 320 contracts executed at 1.0955 → 130 left; the bid side has moved up behind price | The wall is being traded into; price stalls while it is absorbing |
+| 10:00:35   | Asks at 1.0955 and 1.0956 are gone; next asks 190 / 150 / 90 / 60 | The wall was consumed and what remains is thin — price moves through |
+
+The lesson isn't "walls are resistance". It's that **a wall is a hypothesis**: it matters only if it holds when it's traded into. When it's consumed, the book behind it decides how fast price moves.
+
+---
+
+## What to Watch
+
+| Observation             | Possible reading                                          | Caution                                       |
+| ----------------------- | --------------------------------------------------------- | --------------------------------------------- |
+| **Thick level**         | Possible support or resistance                            | It can disappear or be hidden                 |
+| **Thin levels**         | Price can move through quickly                            | Thin books also gap on news                   |
+| **Orders refilling**    | Someone is reloading at the same price                    | See [Iceberg and Spoofing](/en/order-flow/iceberg-spoofing) |
+| **Orders vanishing before being hit** | They may have been cancelled for many reasons, including spoofing | Don't assume manipulation |
+| **Bid/ask imbalance**   | One side is heavier right now                             | Imbalance changes constantly; check the tape  |
+
+### Absorption in the DOM
+
+An **absorbing** level takes aggressive volume without price moving through it: the tape shows many contracts executing at one price while the displayed size stays about the same or refills. In the chart, 320 contracts hit the wall and price stalled — until the rest of the wall went.
+
+### Example (no chart) — using the DOM as one input
+
+Price rallies to **1.0954** and meets an ask wall at **1.0955**. Instead of selling "because there's a wall", the plan: *if* the wall is consumed (size falls below 100 with buyers still lifting) and price trades at **1.0956**, buy **1.0957**, stop **1.0951** (below the last bid cluster), target **1.0975**: risk 6, reward 18, **1 : 3.0** planned. If instead the wall holds and the tape shows buyers drying up, there's no trade.
+
+---
+
+## DOM Across Markets
+
+| Market                  | What the DOM shows                                                   |
+| ----------------------- | -------------------------------------------------------------------- |
+| Futures (e.g. 6E)       | One exchange's central limit order book — the full resting depth     |
+| Stocks                  | One venue's book; several others trade the same stock                |
+| **Spot forex**          | No central book: a broker's DOM shows only its own liquidity providers or its own clients |
+
+Spot-forex traders who want order-book information often use the **futures** book as a proxy.
+
+---
+
+## Common Mistakes
+
+| Mistake                                        | Fix                                                    |
+| ---------------------------------------------- | ------------------------------------------------------ |
+| Trading a wall as if it were a guarantee       | Wait to see how it behaves when traded into            |
+| Ignoring the tape                              | Watch executed volume next to the book                 |
+| Calling every disappearing order "spoofing"    | Cancellations are normal; look for repeated patterns   |
+| Using a broker's "DOM" for spot forex like a real book | Know what liquidity it represents              |
+| Scalping the DOM without a stop                | Size and stop first; speed second                      |
+
+---
+
+## Practice
+
+1. On a futures DOM (or a replay), watch one large resting order for 10 minutes. Does it hold, refill, vanish or get consumed?
+2. Write the tape volume traded at that price during that time.
+3. Note what price did after the wall changed.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                       |
+| ---------------- | ------------------------------------------------------------ |
+| DOM              | Resting limit orders at each price; Level 2 = depth          |
+| Tape             | Executed trades — read alongside the book                    |
+| Walls            | A hypothesis: they matter only if they hold when traded into |
+| Limits           | Resting orders can be cancelled; spot forex has no central book |
+
+---
+
+## Related Topics
+
+- [Introduction to Order Flow](/en/order-flow/introduction)
+- [Absorption and Exhaustion](/en/order-flow/absorption-exhaustion)
+- [Iceberg and Spoofing](/en/order-flow/iceberg-spoofing)
+- [Footprint Charts](/en/order-flow/footprint-charts)
