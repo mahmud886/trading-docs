@@ -1,89 +1,143 @@
 ---
-title: "Intraday Trading with Price Action — Complete Guide"
-description: "Master intraday Price Action trading. Learn session-based setups, kill zone entries, daily bias determination, and intraday trade management."
+title: "Intraday Trading — Complete Guide"
+description: "Trade intraday with price action: the kill zones in Bangladesh time (summer and winter), setting a daily bias, three intraday entry methods (session sweep, bias + order block, FVG fill), a worked London-to-New York FVG trade, intraday rules and planned examples, with a chart and an animated walkthrough."
 level: intermediate
 order: 24
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## What is Intraday Trading?
+## What Is Intraday Trading?
 
-Intraday trading means opening and closing all positions **within the same trading day**. Using Price Action on M15-H1, intraday traders focus on high-volume sessions (kill zones) for 30-100 pip moves.
+**Intraday trading** means opening and closing every position on the same day. With price action on the 15-minute and 1-hour charts, the aim is usually 20–80 pips during the active sessions, with no positions held overnight.
 
-<Callout type="info" title="Intraday Edge">
-  Intraday trading eliminates overnight risk and provides daily income potential. Combined with session analysis and
-  higher-timeframe bias, it offers repeatable daily opportunities.
+<Callout type="info" title="Clarified: 'daily income'">
+  The original said intraday trading "provides daily income potential". It avoids overnight risk and gives regular
+  opportunities, but many days have no good setup and some days lose. Treat it as a way to trade, not a paycheque.
 </Callout>
 
 ---
 
-## Kill Zones
+## Kill Zones in Bangladesh Time
 
-| Kill Zone        | Time (EST)     | Character             |
-| ---------------- | -------------- | --------------------- |
-| **London Open**  | 2:00-5:00 AM   | Trend initiation      |
-| **NY Open**      | 7:00-10:00 AM  | Continuation/reversal |
-| **London Close** | 10:00-12:00 PM | Profit-taking         |
+| Kill zone         | New York time       | BD (US summer)  | BD (US winter)  | Character                       |
+| ----------------- | ------------------- | --------------- | --------------- | ------------------------------- |
+| **London open**   | 2:00 – 5:00 AM      | 12:00 – 3:00 PM | 1:00 – 4:00 PM  | Trend start; Asian-range sweeps |
+| **New York open** | 7:00 – 10:00 AM     | 5:00 – 8:00 PM  | 6:00 – 9:00 PM  | Continuation or reversal        |
+| **London close**  | 10:00 AM – 12:00 PM | 8:00 – 10:00 PM | 9:00 – 11:00 PM | Profit-taking                   |
 
----
-
-## Daily Bias Determination
-
-```
-1. D1 candle direction (bullish/bearish)
-2. H4 structure (HH/HL or LH/LL)
-3. Price position relative to D1 levels
-4. Previous session behavior
-
-Bias = most likely direction for today
-Only trade aligned with this bias.
-```
+<Callout type="warning" title="Corrected: time zone">
+  The original listed these in "EST" only. EST is New York's winter time; the windows follow New York's clock all year,
+  so the BD times shift by an hour between US summer and winter. See [Kill Zones](/en/smc/kill-zones).
+</Callout>
 
 ---
 
-## Intraday Entry Methods
+## Setting the Daily Bias
 
-### Session High/Low Sweep:
+1. **Daily candle and structure:** is the daily trend up or down?
+2. **4H structure:** HH/HL or LH/LL?
+3. **Location:** is price near a daily level, in premium or discount?
+4. **Yesterday:** did the last session close strong or reverse?
 
-1. Identify previous session range (Asian H/L)
-2. Wait for new session to sweep one side
-3. Enter on reversal after sweep
-4. Stop: Beyond sweep wick
-5. Target: Opposite session extreme
+The bias is the direction you'll trade **today**. Skip setups against it.
 
-### Bias + Order Block:
+---
 
-1. Determine daily bias
-2. Mark H1 Order Blocks aligned with bias
-3. Wait for pullback to OB during kill zone
-4. Enter on M15 confirmation
-5. Target: D1 key level or daily extreme
+## London Leaves a Gap, New York Fills It
 
-### FVG Fill Entry:
+![EUR/USD 15m, 12:00–6:45 PM BD: London drives up from 1.0850 and leaves an FVG at 1.0867–1.0879, tops at 1.0906; New York retraces into the FVG; buy 1.0874, stop 1.0858, target 1.0912](/images/price-action/intraday/intraday-fvg-sessions-dark.png)
 
-1. London creates impulse (leaves FVG)
-2. NY session retraces to fill FVG
-3. Enter at FVG with bias
-4. Target: London extreme or beyond
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/intraday-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
+
+1. **Bias:** bullish (daily uptrend).
+2. **London (12:00 PM BD):** a strong impulse from **1.0850** leaves a **fair value gap at 1.0867 – 1.0879**. London tops at **1.0906**.
+3. **Midday:** price drifts lower; the gap stays open.
+4. **New York (5:00 PM BD):** price retraces into the gap.
+
+| Level   | Price       | Note                                       |
+| ------- | ----------- | ------------------------------------------ |
+| Entry   | 1.0874      | Inside the London FVG                      |
+| Stop    | 1.0858      | Below the gap                              |
+| Target  | 1.0912      | Just above the London high (its buy stops) |
+| **R:R** | **1 : 2.4** | Risk 16 pips, reward 38 pips               |
+
+The trade is closed by the end of the NY session whether or not the target is reached.
+
+---
+
+## Three Intraday Entry Methods
+
+| Method                   | Steps                                                                                   | Stop             | Target                             |
+| ------------------------ | --------------------------------------------------------------------------------------- | ---------------- | ---------------------------------- |
+| **Session sweep**        | Mark the Asian high/low; wait for London to sweep one side and reverse                  | Beyond the sweep | The opposite session extreme       |
+| **Bias + order block**   | Mark 1H OBs in the bias direction; wait for a pullback in a kill zone; 15m confirmation | Beyond the OB    | A daily level or the day's extreme |
+| **FVG fill** (the chart) | London impulse leaves an FVG; NY retraces into it                                       | Beyond the FVG   | The London extreme or beyond       |
 
 ---
 
 ## Intraday Rules
 
-1. **Only trade during kill zones**
-2. **One direction per day**
-3. **Maximum 3 trades per day**
-4. **Close all by end of NY session**
-5. **Daily loss limit: 2%**
-6. **Align with D1/H4 bias**
-7. **Avoid 15 min before/after high-impact news**
+1. **Trade the kill zones**; skip quiet hours.
+2. **One direction per day**, the bias.
+3. **At most three trades a day.**
+4. **Flat by the end of the NY session** (around 11 PM – 2 AM BD depending on season).
+5. **Daily loss limit 2%.**
+6. **No entries in the 15 minutes around high-impact news** (US data is at 6:30 PM BD in summer).
+
+### Example (no chart) — GBP/USD session sweep
+
+Bias bearish. The Asian range is **1.2700 – 1.2725**. At about **12:30 PM BD** London takes the Asian high to **1.2731** and closes back inside, then breaks the last 15m higher low. Sell **1.2720**, stop **1.2736**, target the Asian low area **1.2690**: risk 16 pips, reward 30 pips, **R:R 1 : 1.9** (planned).
+
+---
+
+## Common Mistakes
+
+| Mistake                                    | Fix                                        |
+| ------------------------------------------ | ------------------------------------------ |
+| Trading both directions in one day         | One bias, one direction                    |
+| Trading the Asian session on EUR/GBP pairs | Wait for London                            |
+| Holding an intraday trade overnight        | Close by the end of the session            |
+| Revenge trading after a loss               | Daily trade cap and loss limit             |
+| Using winter times in summer               | Check which column applies to today's date |
+
+---
+
+## Practice
+
+1. For two weeks, write the daily bias before 12 PM BD.
+2. Mark the Asian range, London's impulse and any FVG it leaves.
+3. Note whether NY retraced into the FVG and what happened next.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Aspect      | Key point                                             |
+| ----------- | ----------------------------------------------------- |
+| **Windows** | London open, NY open (BD times shift by season)       |
+| **Bias**    | Set before the session; trade only with it            |
+| **Methods** | Session sweep, bias + OB, FVG fill                    |
+| **Rules**   | Max three trades, 2% daily limit, flat by session end |
 
 ---
 
 ## Related Topics
 
-- [Session Analysis](/en/price-action/session-analysis) — Kill zone details
-- [Scalping](/en/price-action/scalping) — Faster approach
-- [Entry Models](/en/price-action/entry-models) — Entry timing
-- [Multi-Timeframe Analysis](/en/price-action/multi-timeframe-analysis) — Daily bias
-- [Trade Management](/en/price-action/trade-management) — Managing positions
+- [Session Analysis](/en/price-action/session-analysis) — what each session does
+- [Scalping](/en/price-action/scalping) — the faster version
+- [Multi-Timeframe Analysis](/en/price-action/multi-timeframe-analysis) — setting the bias
+- [Trade Management](/en/price-action/trade-management) — managing the position
