@@ -1,62 +1,125 @@
 ---
-title: "কেলি ক্রাইটেরিয়ন ও ফ্র্যাকশনাল কেলি পজিশন সাইজিং"
-description: "কেলি ক্রাইটেরিয়ন ব্যবহার করে অপটিমাল পজিশন সাইজিং শিখুন। ফুল কেলি, ফ্র্যাকশনাল কেলি এবং ইনস্টিটিউশনাল ট্রেডাররা কেন 25-50% কেলি ব্যবহার করে বুঝুন।"
+title: "Kelly Criterion and Fractional Kelly Position Sizing"
+description: "Kelly Criterion দীর্ঘমেয়াদি প্রবৃদ্ধি সর্বোচ্চ করা স্টেক দেয়, f* = p − q/b। এই লেসনে ট্রেডিংয়ের ভাষায় সূত্র, প্রবৃদ্ধির বক্ররেখা (কেন Half Kelly অনেক কম দোলায় প্রায় ৭৫% প্রবৃদ্ধি রাখে আর Double Kelly এ কোনো প্রবৃদ্ধি নেই), চার স্টেক সাইজে সিমুলেটেড Drawdown, আর কেন অনুমানের ত্রুটিই Kelly এর ভগ্নাংশ ধরার প্রধান কারণ।"
 level: intermediate
 order: 3
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
 ## Kelly Criterion
 
-Learn optimal position sizing using Kelly Criterion. Understand full Kelly, fractional Kelly, and why most institutional traders use 25-50% Kelly for capital preservation.
+**Kelly Criterion** পুনরাবৃত্ত বাজিতে মূলধনের কত অংশ স্টেক করলে দীর্ঘমেয়াদে সম্পদ সবচেয়ে দ্রুত বাড়ে তা খুঁজে বের করে। যে ট্রেড _p_ সম্ভাবনায় ঝুঁকির _b_ গুণ জেতে আর _q = ১ − p_ সম্ভাবনায় ঝুঁকির পরিমাণ হারে, তার জন্য:
 
-<Callout type="info" title="Quantitative Edge">
-  The difference between gambling and trading is QUANTIFICATION. If you cannot express your edge as a number, you don't
-  have an edge — you have a hope. Quantitative methods turn intuition into measurable, repeatable processes.
+> **f\* = p − q / b** (সমতুল্য (b·p − q) / b)
+
+এখানে \*f\*\* হলো **প্রতি ট্রেডে ঝুঁকিতে রাখা মূলধনের ভগ্নাংশ** (Stop পর্যন্ত দূরত্ব, পজিশনের সাইজ নয়)।
+
+<Callout type="warning" title="সংশোধিত ও নরম করা হয়েছে">
+  মূল লেসনে বলা হয়েছিল "বেশিরভাগ প্রাতিষ্ঠানিক ট্রেডার ২৫–৫০% Kelly ব্যবহার করে"। এর উৎস আমরা পাইনি। অনেক চর্চাকারী
+  Kelly এর ভগ্নাংশ ধরেন, আর কারণ সুপরিচিত: ইনপুটগুলো অনুমান, আর পূর্ণ Kelly খুব দোলায়। নিচের ভগ্নাংশগুলোকে পরীক্ষার
+  উদাহরণ ধরুন, ইন্ডাস্ট্রি মান নয়।
 </Callout>
 
 ---
 
-## Core Principles
+## ট্রেডিংয়ের ভাষায় একটি উদাহরণ
 
-Quantitative trading is built on these foundations:
+একটি সিস্টেম **৪৫%** ট্রেডে **+১.৫R** জেতে আর **৫৫%** এ **−১R** হারে: _p_ = ০.৪৫, _b_ = ১.৫, Expectancy +০.১২৫R।
 
-- **Everything is probability** — no certainty, only statistical edges
-- **Large sample sizes** — individual trades are meaningless, systems matter
-- **Mathematical expectancy** — positive expected value over time
-- **Risk of ruin** — survival first, profits second
-- **Process over outcome** — judge decisions, not results
+> f\* = ০.৪৫ − ০.৫৫ / ১.৫ = **০.০৮৩৩** → পূর্ণ Kelly তে প্রতি ট্রেডে মূলধনের প্রায় **৮.৩%** ঝুঁকি
+
+| স্টেক         | প্রতি ট্রেডে ঝুঁকি | প্রতি ট্রেডে প্রত্যাশিত লগ প্রবৃদ্ধি |
+| ------------- | ------------------ | ------------------------------------ |
+| পূর্ণ Kelly   | ৮.৩%               | +০.৫১%                               |
+| Half Kelly    | ৪.২%               | +০.৩৯%                               |
+| Quarter Kelly | ২.১%               | +০.২৩%                               |
+
+Half Kelly পূর্ণ Kelly এর প্রায় **৭৫%** প্রবৃদ্ধি রাখে, অথচ প্রতি ট্রেডে অর্ধেক ঝুঁকি নেয়।
 
 ---
 
-## Practical Framework
+## প্রবৃদ্ধির বক্ররেখা ও চার স্টেক সাইজ
 
-### Step 1: Define Your Edge
+![উপরে: ৫৫% জেতা সমান-অর্থের বাজির স্টেক ভগ্নাংশের বিপরীতে প্রতি বাজিতে প্রত্যাশিত লগ প্রবৃদ্ধি, ১০% এ (পূর্ণ Kelly, প্রতি বাজিতে ০.৫০%) শীর্ষ, Half Kelly ০.৩৭৫%, Quarter Kelly ০.২২% আর Double Kelly প্রায় শূন্য। নিচে: ওই স্টেকে একই ৪০০টি সিমুলেটেড বাজি লগ স্কেলে: Quarter Kelly ×২.৩ সর্বোচ্চ Drawdown ৩৪%, Half Kelly ×৪.১ ও ৫৭%, পূর্ণ Kelly ×৬.১ ও ৮৩%, Double Kelly ×০.৬ ও ৯৯%](/images/quantitative/kelly-criterion/kelly-criterion-dark.webp)
 
-- What is your win rate?
-- What is your average win vs average loss?
-- What is your expectancy per trade?
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/quantitative/kelly-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Step 2: Size Appropriately
-
-- Use Kelly Criterion or fixed fractional sizing
-- Never risk more than your edge justifies
-- Account for correlation between positions
-
-### Step 3: Validate Statistically
-
-- Minimum 100+ trade sample for significance
-- Out-of-sample testing required
-- Walk-forward validation for robustness
-
-### Step 4: Monitor & Adapt
-
-- Track equity curve vs expected behavior
-- Reduce size during drawdowns beyond 1 SD
-- Pause if strategy degrades beyond 2 SD
-
-<Callout type="warning" title="Overfitting Warning">
-  The #1 killer of quantitative strategies is overfitting — finding patterns in historical noise that don't persist
-  forward. Always use out-of-sample data and walk-forward testing. If a strategy looks "too good" in backtest, it
-  probably IS too good to be true.
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  সিমুলেশনে সরলতর সমান-অর্থের ক্ষেত্র (৫৫% জয়ের সম্ভাবনা, তাই *f\** = ১০%) আর ৪০০ বাজির **একটি** এলোমেলো ক্রম ব্যবহার
+  হয়েছে, তাই সঠিক সংখ্যা রান ভেদে বদলায়; বক্ররেখার আকার বদলায় না।
 </Callout>
+
+| স্টেক (সমান-অর্থ, ৫৫% জয়) | ভগ্নাংশ | প্রতি বাজিতে প্রবৃদ্ধি | চূড়ান্ত গুণিতক (একটি রান) | সর্বোচ্চ Drawdown (একটি রান) |
+| -------------------------- | ------- | ---------------------- | -------------------------- | ---------------------------- |
+| ¼ Kelly                    | ২.৫%    | +০.২২%                 | ×২.৩                       | ৩৪%                          |
+| ½ Kelly                    | ৫%      | +০.৩৮%                 | ×৪.১                       | ৫৭%                          |
+| পূর্ণ Kelly                | ১০%     | +০.৫০%                 | ×৬.১                       | ৮৩%                          |
+| 2× Kelly                   | ২০%     | −০.০১%                 | ×০.৬                       | ৯৯%                          |
+
+এ থেকে তিনটি জিনিস। **প্রবৃদ্ধি Kelly তে শীর্ষে** ওঠে আর দুই দিকে পড়ে, কিন্তু বেশি-বাজির দিকে অনেক দ্রুত পড়ে: Double Kelly তে প্রবৃদ্ধি নেই আর Drawdown প্রায় পুরো। **পূর্ণ Kelly এর Drawdown কঠোর**, যদিও প্রবৃদ্ধি সেরা। আর এই একটি রানে পূর্ণ Kelly সর্বোচ্চে শেষ হয়েছে, কিন্তু সেটি একটি রান: বহু রানে চূড়ান্ত ফলের ক্রম Drawdown এর ক্রমের চেয়ে অনেক বেশি বদলায়।
+
+---
+
+## কেন ভগ্নাংশ ব্যবহার
+
+| কারণ             | বিস্তারিত                                                                      |
+| ---------------- | ------------------------------------------------------------------------------ |
+| অনুমানের ত্রুটি  | _p_ ও _b_ আপনি কখনো জানেন না; বেশি অনুমান পূর্ণ Kelly কে বেশি-বাজিতে পরিণত করে |
+| Drawdown         | Half Kelly প্রায় এক-চতুর্থাংশ কম প্রবৃদ্ধিতে সাধারণ Drawdown অনেক কমায়       |
+| বদলানো পরিস্থিতি | Edge ক্ষয়ে যায়; ভগ্নাংশ স্টেক জায়গা রাখে                                    |
+| মানসিক সীমা      | যে Drawdown সহ্য হয় না তা টেনে নেওয়া যায় না                                 |
+
+অনুমানের বিষয়টি সংখ্যায়: প্রকৃত জয়ের হার **৪০%** কিন্তু আপনি **৪৫%** ভেবে পূর্ণ Kelly (৮.৩%) ধরলে প্রকৃত প্রত্যাশিত প্রবৃদ্ধি প্রতি ট্রেডে প্রায় **−০.৫১%**। একই পরিস্থিতিতে Half Kelly দেয় প্রায় −০.১৩% আর Quarter Kelly প্রায় −০.০৩%: তবুও ঋণাত্মক, কিন্তু ক্ষতি অনেক কম।
+
+### উদাহরণ (চার্ট ছাড়া) — ট্রেডের সাইজ ঠিক করা
+
+অ্যাকাউন্ট **১০,০০০**, Quarter Kelly: **২.১%** = প্রতি ট্রেডে **২১০** ঝুঁকি। এন্ট্রি **1.0850**, Stop **1.0830** (২০ পিপ), টার্গেট **1.0880** (৩০ পিপ): পরিকল্পিত **১ : ১.৫**। এই ট্রেডে প্রতি পিপের মান ২১০ ÷ ২০ = **১০.৫**, মানে USD-কোটেড পেয়ারে প্রায় ১.০৫ স্ট্যান্ডার্ড লট। আপনার অনুমিত জয়ের হার ৩৮% এ নামলে \*f\*\* = ০.৩৮ − ০.৬২ / ১.৫ = −০.০৩৩: সূত্র বলে ট্রেড করবেন না।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                       | সমাধান                                             |
+| ----------------------------------------- | -------------------------------------------------- |
+| অনুমানের সংখ্যায় পূর্ণ Kelly ধরা         | ভগ্নাংশ ব্যবহার করুন; ইনপুট স্ট্রেস করুন           |
+| ট্রেডপ্রতি ঝুঁকির বদলে পজিশন সাইজ ব্যবহার | \*f\*\* হলো Stop লাগলে হারানো মূলধনের ভগ্নাংশ      |
+| একসাথে সম্পর্কিত পজিশনে Kelly প্রয়োগ     | মিলিত ঝুঁকি প্রতিটি ট্রেডের চেয়ে বড়              |
+| _p_ ও _b_ তে খরচ উপেক্ষা                  | খরচের পরের জয়ের হার ও Reward-to-risk ব্যবহার করুন |
+| Expectancy ঋণাত্মক হলেও ব্যবহার           | Kelly বলে স্টেক শূন্য                              |
+
+---
+
+## অনুশীলন
+
+1. আপনার নিজের অনুমিত জয়ের হার ও গড় Reward-to-risk দিয়ে \*f\*\* হিসাব করুন।
+2. জয়ের হার ৫ পয়েন্ট কমিয়ে আবার হিসাব করুন। \*f\*\* কত দ্রুত কমে?
+3. আপনি আসলে Kelly এর কত ভগ্নাংশ ঝুঁকি নেবেন ঠিক করে আপনার সর্বোচ্চ Drawdown সহনশীলতা লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা               | বিস্তারিত                                                   |
+| ------------------- | ----------------------------------------------------------- |
+| সূত্র               | f\* = p − q / b (প্রতি ট্রেডে ঝুঁকিতে রাখা মূলধনের ভগ্নাংশ) |
+| প্রবৃদ্ধির বক্ররেখা | f\* এ শীর্ষ, নিচে ধীরে আর উপরে দ্রুত পড়ে                   |
+| ভগ্নাংশ             | Half Kelly ≈ ৭৫% প্রবৃদ্ধি, অনেক ছোট Drawdown সহ            |
+| প্রধান কারণ         | জয়ের হার ও পেআউট ত্রুটিসহ অনুমান করা                       |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Expectancy Formula](/bn/quantitative/expectancy-formula)
+- [Monte Carlo Simulations](/bn/quantitative/monte-carlo)
+- [Equity Curve Management](/bn/quantitative/equity-curve-management)
+- [Introduction to Quantitative Trading](/bn/quantitative/introduction)

@@ -1,62 +1,125 @@
 ---
-title: "Kelly Criterion & Fractional Kelly Position Sizing"
-description: "Learn optimal position sizing using Kelly Criterion. Understand full Kelly, fractional Kelly, and why most institutional traders use 25-50% Kelly for capital preservation."
+title: "Kelly Criterion and Fractional Kelly Position Sizing"
+description: "The Kelly criterion gives the stake that maximises long-run growth, f* = p − q/b. This lesson shows the formula in trading terms, the growth curve (why half Kelly keeps about 75% of the growth with far smaller swings, and double Kelly has none), simulated drawdowns at four stake sizes, and why estimation error is the main reason to bet a fraction of Kelly."
 level: intermediate
 order: 3
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Kelly Criterion
+## The Kelly Criterion
 
-Learn optimal position sizing using Kelly Criterion. Understand full Kelly, fractional Kelly, and why most institutional traders use 25-50% Kelly for capital preservation.
+The **Kelly criterion** finds the fraction of capital to stake on a repeated bet so that wealth grows as fast as possible in the long run. For a trade that wins _b_ times the amount risked with probability _p_ and loses the amount risked with probability _q = 1 − p_:
 
-<Callout type="info" title="Quantitative Edge">
-  The difference between gambling and trading is QUANTIFICATION. If you cannot express your edge as a number, you don't
-  have an edge — you have a hope. Quantitative methods turn intuition into measurable, repeatable processes.
+> **f\* = p − q / b** (equivalently (b·p − q) / b)
+
+Here \*f\*\* is the **fraction of capital risked per trade** (the distance to the stop, not the position size).
+
+<Callout type="warning" title="Corrected and toned down">
+  The original said "most institutional traders use 25–50% Kelly". We found no source for that. Many practitioners do
+  bet a fraction of Kelly, and the reason is well understood: the inputs are estimated, and full Kelly is very volatile.
+  Treat the fractions below as illustrations to test, not as industry standards.
 </Callout>
 
 ---
 
-## Core Principles
+## An Example in Trading Terms
 
-Quantitative trading is built on these foundations:
+A system wins **45%** of trades for **+1.5R** and loses **55%** for **−1R**: _p_ = 0.45, _b_ = 1.5, expectancy +0.125R.
 
-- **Everything is probability** — no certainty, only statistical edges
-- **Large sample sizes** — individual trades are meaningless, systems matter
-- **Mathematical expectancy** — positive expected value over time
-- **Risk of ruin** — survival first, profits second
-- **Process over outcome** — judge decisions, not results
+> f\* = 0.45 − 0.55 / 1.5 = **0.0833** → risk about **8.3%** of capital per trade at full Kelly
+
+| Stake         | Risk per trade | Expected log growth per trade |
+| ------------- | -------------- | ----------------------------- |
+| Full Kelly    | 8.3%           | +0.51%                        |
+| Half Kelly    | 4.2%           | +0.39%                        |
+| Quarter Kelly | 2.1%           | +0.23%                        |
+
+Half Kelly keeps about **75%** of the growth of full Kelly while risking half as much per trade.
 
 ---
 
-## Practical Framework
+## The Growth Curve and Four Stake Sizes
 
-### Step 1: Define Your Edge
+![Top: expected log growth per bet for even-money bets won 55% of the time against the fraction staked, peaking at 10% (full Kelly, 0.50% per bet), with half Kelly at 0.375%, quarter Kelly at 0.22% and double Kelly at about zero. Bottom: the same 400 simulated bets at those stakes on a log scale: quarter Kelly ×2.3 with a 34% maximum drawdown, half Kelly ×4.1 with 57%, full Kelly ×6.1 with 83%, and double Kelly ×0.6 with 99%](/images/quantitative/kelly-criterion/kelly-criterion-dark.webp)
 
-- What is your win rate?
-- What is your average win vs average loss?
-- What is your expectancy per trade?
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/quantitative/kelly-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Step 2: Size Appropriately
-
-- Use Kelly Criterion or fixed fractional sizing
-- Never risk more than your edge justifies
-- Account for correlation between positions
-
-### Step 3: Validate Statistically
-
-- Minimum 100+ trade sample for significance
-- Out-of-sample testing required
-- Walk-forward validation for robustness
-
-### Step 4: Monitor & Adapt
-
-- Track equity curve vs expected behavior
-- Reduce size during drawdowns beyond 1 SD
-- Pause if strategy degrades beyond 2 SD
-
-<Callout type="warning" title="Overfitting Warning">
-  The #1 killer of quantitative strategies is overfitting — finding patterns in historical noise that don't persist
-  forward. Always use out-of-sample data and walk-forward testing. If a strategy looks "too good" in backtest, it
-  probably IS too good to be true.
+<Callout type="info" title="About this chart">
+  The simulation uses a simpler even-money case (55% win probability, so *f\** = 10%) and **one** random sequence of 400
+  bets, so the exact numbers vary from run to run; the shape of the curve does not.
 </Callout>
+
+| Stake (even-money, 55% wins) | Fraction | Growth per bet | Final multiple (one run) | Max drawdown (one run) |
+| ---------------------------- | -------- | -------------- | ------------------------ | ---------------------- |
+| ¼ Kelly                      | 2.5%     | +0.22%         | ×2.3                     | 34%                    |
+| ½ Kelly                      | 5%       | +0.38%         | ×4.1                     | 57%                    |
+| Full Kelly                   | 10%      | +0.50%         | ×6.1                     | 83%                    |
+| 2× Kelly                     | 20%      | −0.01%         | ×0.6                     | 99%                    |
+
+Three things to take from it. **Growth peaks at Kelly** and falls on both sides, but falls much faster on the over-betting side: double Kelly has no growth and a near-total drawdown. **Full Kelly's drawdown is severe** even though its growth is the best. And in this one run full Kelly ended highest, but that is one run: across runs, the ordering of final results varies much more than the ordering of drawdowns.
+
+---
+
+## Why Use a Fraction
+
+| Reason               | Detail                                                                     |
+| -------------------- | -------------------------------------------------------------------------- |
+| Estimation error     | You never know _p_ and _b_; an overestimate makes full Kelly an over-bet   |
+| Drawdowns            | Half Kelly cuts the typical drawdown a lot for about a quarter less growth |
+| Changing conditions  | Edges fade; a fractional stake leaves room                                 |
+| Psychological limits | A drawdown you can't stand won't be sat through                            |
+
+The estimation point in numbers: if the true win rate is **40%** but you believe **45%** and bet full Kelly (8.3%), the true expected growth is about **−0.51%** per trade. Betting half Kelly in the same situation gives about −0.13% and quarter Kelly about −0.03%: still negative, but far less damaging.
+
+### Example (no chart) — sizing a trade
+
+Account **10,000**, quarter Kelly: risk **2.1%** = **210** per trade. Entry **1.0850**, stop **1.0830** (20 pips), target **1.0880** (30 pips): **1 : 1.5** planned. Each pip is worth 210 ÷ 20 = **10.5** for this trade, i.e. about 1.05 standard lots on a USD-quoted pair. If your estimated win rate falls to 38%, \*f\*\* = 0.38 − 0.62 / 1.5 = −0.033: the formula says do not trade it.
+
+---
+
+## Common Mistakes
+
+| Mistake                                        | Fix                                                        |
+| ---------------------------------------------- | ---------------------------------------------------------- |
+| Betting full Kelly on estimated numbers        | Use a fraction; stress the inputs                          |
+| Using position size instead of risk per trade  | \*f\*\* is the fraction of capital lost if the stop is hit |
+| Applying Kelly to correlated positions at once | Combined risk is larger than each trade's                  |
+| Ignoring costs in _p_ and _b_                  | Use after-cost win rate and reward-to-risk                 |
+| Using it when expectancy is negative           | Kelly says stake zero                                      |
+
+---
+
+## Practice
+
+1. Take your own estimated win rate and average reward-to-risk and compute \*f\*\*.
+2. Recompute with the win rate 5 points lower. How fast does \*f\*\* fall?
+3. Decide what fraction of Kelly you would actually risk and write down your maximum drawdown tolerance.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea         | Detail                                                     |
+| ------------ | ---------------------------------------------------------- |
+| Formula      | f\* = p − q / b (fraction of capital risked per trade)     |
+| Growth curve | Peaks at f\*, falls slowly below it and fast above it      |
+| Fractions    | Half Kelly ≈ 75% of the growth with much smaller drawdowns |
+| Main reason  | Win rate and payoff are estimated with error               |
+
+---
+
+## Related Topics
+
+- [Expectancy Formula](/en/quantitative/expectancy-formula)
+- [Monte Carlo Simulations](/en/quantitative/monte-carlo)
+- [Equity Curve Management](/en/quantitative/equity-curve-management)
+- [Introduction to Quantitative Trading](/en/quantitative/introduction)
