@@ -1,111 +1,155 @@
 ---
-title: "Price Action দিয়ে Range Trading — সম্পূর্ণ গাইড"
-description: "Range-bound Market Trading আয়ত্ত করুন। Range চিহ্নিতকরণ, S/R-এর মধ্যে Bounce Trade, Breakout Anticipate করা এবং কার্যকরভাবে Range Trade Manage করা শিখুন।"
+title: "রেঞ্জ ট্রেডিং — সম্পূর্ণ গাইড"
+description: "প্রাইস অ্যাকশন দিয়ে রেঞ্জ ট্রেড করুন: রেঞ্জ কীভাবে চিনবেন, মাঝখান আর প্রান্তের টার্গেটসহ Support এ Buy আর Resistance এ Sell, সীমার ওপারে Stop, রেঞ্জ কখন ভাঙে আর কীভাবে Breakout ট্রেডে বদলাবেন, রেঞ্জের নিয়ম আর পরিকল্পিত উদাহরণ — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 20
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Range Trading কী?
+## রেঞ্জ ট্রেডিং কী?
 
-Range Trading হলো Price Trending না করলে **প্রতিষ্ঠিত Support ও Resistance Level-এর মধ্যে** Trade করার Strategy। Market তার সময়ের প্রায় ৬০-৭০% Range-এ কাটায়, এটিকে একটি মূল্যবান দক্ষতা করে তোলে।
+**রেঞ্জ ট্রেডিং** মানে Price যখন Support আর Resistance এর মাঝে পাশাপাশি চলে, তখন Support এর কাছে Buy আর Resistance এর কাছে Sell। এটা ট্রেন্ড ট্রেডিংয়ের উল্টো: ভাঙন অনুসরণের বদলে প্রান্তে Fade করেন।
 
-<Callout type="info" title="Range বাস্তবতা">
-  বেশিরভাগ Trader শুধু Trend-এ ফোকাস করেন, কিন্তু Price Trend-এর চেয়ে বেশি Range করে। একজন দক্ষ Range Trader Sideways
-  Market-এ ধারাবাহিক Profit করতে পারেন যেখানে Trend Trader বসে থাকেন।
+<Callout type="info" title="স্পষ্ট করা: 'মার্কেট ৬০–৭০% সময় রেঞ্জে থাকে'">
+  মূল লেসনে বলা হয়েছিল মার্কেট "প্রায় ৬০–৭০% সময়" রেঞ্জে থাকে। এটা জনপ্রিয় সংখ্যা কিন্তু স্পষ্ট উৎস নেই, আর অংশটা
+  মার্কেট, টাইমফ্রেম আর রেঞ্জের সংজ্ঞার ওপর নির্ভর করে। গুরুত্বপূর্ণ হলো রেঞ্জে থাকলে সেটা চিনতে পারা।
 </Callout>
 
 ---
 
-## Range চিহ্নিতকরণ
+## রেঞ্জ চেনা
 
-### বৈশিষ্ট্য:
-
-- স্পষ্ট Support ও Resistance-এর মধ্যে Price Bounce করছে
-- কোনো স্পষ্ট HH/HL বা LH/LL Pattern নেই
-- উভয় Boundary-তে একাধিক Touch (প্রতিটিতে ৩+)
-- Candle মিশ্র Direction (কোনো প্রভাবশালী রঙ নেই)
-
-### Range কাঠামো:
-
-```
-Resistance ─────────────────────── (Sell Zone)
-     ↕ Trading Range ↕
-Support ────────────────────────── (Buy Zone)
-
-নিয়ম:
-- Support-এ (Lower Boundary) Buy
-- Resistance-এ (Upper Boundary) Sell
-- Boundary-র বাইরে Stop
-- Target: বিপরীত Boundary (বা আংশিকের জন্য Midpoint)
-```
+- একটি স্পষ্ট High এ অন্তত **দুটি ছোঁয়া** আর একটি স্পষ্ট Low এ **দুটি**।
+- **নতুন High বা Low নেই**: Structure সমতল।
+- ক্যান্ডেলগুলো **ওভারল্যাপ** করে; প্রান্ত থেকে প্রান্তে Move একই রকম আকারের।
+- **মাঝখান** প্রায়ই ছোট Pivot হিসেবে কাজ করে।
 
 ---
 
-## Range Trading Strategy
+## মেঝেতে Buy
 
-### Support-এ Buy:
+![GBP/USD 1H: ৬০ পিপের রেঞ্জ 1.2700–1.2760, প্রতিটি প্রান্তে দুটি ছোঁয়া; একটি ক্যান্ডেল Support এর নিচে Wick দিয়ে ভিতরে ফিরে Close করে; 1.2708 এ Buy, Stop 1.2690, TP1 1.2730 মাঝখানে, TP2 1.2752](/images/price-action/range-trading/range-trading-support-buy-dark.png)
 
-```
-1. Price Range Support-এ আসে
-2. Bullish Rejection Candle-এর জন্য অপেক্ষা (Pin Bar, Engulfing)
-3. Rejection Candle-এর উপরে Long Enter
-4. Stop: Support-এর নিচে + Buffer (5-15 Pip)
-5. Target 1: Range Midpoint (Range-এর 50%)
-6. Target 2: Range Resistance
-7. R:R: সাধারণত 1:2 থেকে 1:3
-```
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/range-trading-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Resistance-এ Sell:
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
+</Callout>
 
-```
-1. Price Range Resistance-এ আসে
-2. Bearish Rejection Candle-এর জন্য অপেক্ষা
-3. Rejection Candle-এর নিচে Short Enter
-4. Stop: Resistance-এর উপরে + Buffer
-5. Target 1: Range Midpoint
-6. Target 2: Range Support
-```
+1. **রেঞ্জ:** Resistance **1.2760**, Support **1.2700**, প্রতিটি দুবার ছোঁয়া। মাঝখান **1.2730**।
+2. **সিগন্যাল:** Support এ একটি ক্যান্ডেল **1.2700 এর নিচে Wick** দিয়ে **ভিতরে ফিরে Close** করে: লেভেল টিকেছে।
+3. **ট্রেড:**
 
----
+| লেভেল   | প্রাইস | নোট                                      |
+| ------- | ------ | ---------------------------------------- |
+| এন্ট্রি | 1.2708 | Rejection ক্যান্ডেলের পর                 |
+| Stop    | 1.2690 | Wick এর নিচে, রেঞ্জের বাইরে              |
+| TP1     | 1.2730 | মাঝখান: **১ : ১.২** (প্রায় অর্ধেক বন্ধ) |
+| TP2     | 1.2752 | Resistance এর ঠিক নিচে: **১ : ২.৪**      |
 
-## Range কখন ভাঙে
-
-### Breakout Signal:
-
-- এক Boundary-তে Compression (Resistance-এ Higher Low)
-- Boundary Approach-এ Volume বাড়ছে
-- Range-এর বাইরে শক্তিশালী Impulsive Candle Close
-- Pullback Range-এর বাইরে থাকে (ভিতরে ফেরে না)
-
-### Range Break-এর পর Strategy:
-
-```
-1. Range Break হয় (Boundary-র বাইরে শক্তিশালী Close)
-2. ভাঙা Boundary-র Retest-এর জন্য অপেক্ষা
-3. পুরনো Resistance নতুন Support হয় (বা উল্টো)
-4. Trend-এর সাথে Retest-এ Enter
-5. Stop: Range-এর ভিতরে ফিরে
-6. Target: Breakout থেকে Range Width Project (Measured Move)
-```
+ট্রেডের একটা অংশ মাঝখানে আর বাকিটা উল্টো প্রান্তের কাছে নেওয়াই সাধারণ পদ্ধতি: রেঞ্জ প্রায়ই মাঝখানে থমকে যায়।
 
 ---
 
-## Range Trading নিয়ম
+## স্ট্র্যাটেজি
 
-1. **শুধু স্পষ্ট Range Trade করুন** — উভয় Boundary-তে ন্যূনতম ৩+ Touch
-2. **Bounce Trade করুন, Break নয়** (Confirmed না হওয়া পর্যন্ত)
-3. **Range-এ Size কমান** — এটি শেষ পর্যন্ত ভাঙবেই
-4. **Boundary-তে Alert সেট করুন** — অতিরিক্ত পর্যবেক্ষণ করবেন না
-5. **Flip করতে প্রস্তুত থাকুন** — Range ভাঙলে Breakout Mode-এ Switch
-6. **Boundary-তে Stop** — Range Break-এর মধ্য দিয়ে কখনো Hold করবেন না
+| ধাপ | Support এ Buy                                           | Resistance এ Sell                   |
+| --- | ------------------------------------------------------- | ----------------------------------- |
+| ১   | রেঞ্জ নিশ্চিত করুন (প্রতি দিকে ২+ ছোঁয়া)               | একই                                 |
+| ২   | Price Support এ পৌঁছানোর অপেক্ষা                        | Price Resistance এ পৌঁছানোর অপেক্ষা |
+| ৩   | Rejection খুঁজুন (Pin Bar, Engulfing, ভিতরে ফিরে Close) | একই, Resistance এ                   |
+| ৪   | Support এর নিচে + ৫–১৫ পিপ Stop                         | Resistance এর উপরে + ৫–১৫ পিপ Stop  |
+| ৫   | মাঝখানে TP1, Resistance এর কাছে TP2                     | মাঝখানে TP1, Support এর কাছে TP2    |
+
+পুরো Position এ অন্তত ১ : ২ লক্ষ্য রাখুন। স্প্রেড আর বাফারের পর রেঞ্জ এর জন্য খুব সরু হলে বাদ দিন।
+
+---
+
+## রেঞ্জ যখন ভাঙে
+
+### ভাঙনের লক্ষণ
+
+- এক প্রান্তে ছোঁয়াগুলো কাছাকাছি হয়ে আসে (তার বিরুদ্ধে Compression — দেখুন [Compression](/bn/price-action/compression))।
+- বড় Body সহ প্রান্তের **ওপারে Close**।
+- ভাঙনে স্বাভাবিকের চেয়ে বেশি Volume।
+
+### ভাঙনের পর
+
+1. **রেঞ্জ ট্রেড বন্ধ করুন।** আপনার Fade এর Stop আগেই প্রান্তের ওপারে থাকা উচিত।
+2. অন্য দিক থেকে ভাঙা প্রান্তের **Retest** এর অপেক্ষা করুন।
+3. Retest এ এন্ট্রি; রেঞ্জের ভিতরে Stop।
+4. Breakout থেকে **রেঞ্জের উচ্চতা** প্রক্ষেপ টার্গেট। দেখুন [Breakouts](/bn/price-action/breakouts)।
+
+---
+
+## উদাহরণ (চার্ট ছাড়া)
+
+### ১. Resistance এ EUR/USD Sell
+
+EUR/USD **1.0850 – 1.0910** এ রেঞ্জ করে। **1.0908** এ একটি 1H Shooting Star তৈরি হয়। **1.0903** এ Sell, Stop **1.0918**, মাঝখান **1.0880** এ TP1 (**১ : ১.৫**), **1.0858** এ TP2 (**১ : ৩.০**), দুটোই পরিকল্পিত।
+
+### ২. Gold রেঞ্জ ভাঙন
+
+Gold দুই দিন **2,380 – 2,410** এ রেঞ্জ করে, তারপর একটি 4H ক্যান্ডেল **2,418** এ Close করে। **2,412** এ Retest টেকে। **2,413** এ Buy, ভিতরে **2,402** এ Stop, টার্গেট **2,440** (2,410 + 30): রিস্ক $11, রিওয়ার্ড $27, **R:R ১ : ২.৫** (পরিকল্পিত)।
+
+---
+
+## রেঞ্জের নিয়ম
+
+1. প্রতি দিকে **২+ ছোঁয়া** সহ শুধু স্পষ্ট রেঞ্জ ট্রেড করুন।
+2. **প্রান্তে Fade** করুন, মাঝে নয়।
+3. প্রান্তে **Rejection** এর অপেক্ষা করুন; চাপের মধ্যে থাকা রেঞ্জে অন্ধভাবে Limit Order দেবেন না।
+4. আংশিক প্রফিটের জন্য **মাঝখান** ব্যবহার করুন।
+5. Stop সীমার **ওপারে** রাখুন, বাফারসহ।
+6. **রেঞ্জ ভাঙলে ধরে রাখবেন না।** প্রান্তের ওপারে Close রেঞ্জ ট্রেড শেষ করে।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                            | সমাধান                              |
+| ------------------------------ | ----------------------------------- |
+| রেঞ্জের মাঝখানে ট্রেড          | শুধু প্রান্তের কাছে                 |
+| ট্রেন্ডের পুলব্যাককে রেঞ্জ বলা | আগে সমতল Structure দেখুন            |
+| ঠিক প্রান্তে Stop              | ওপারে, Sweep এর জন্য বাফারসহ        |
+| চাপের মধ্যে থাকা প্রান্তে Fade | Compression প্রায়ই ভাঙনের আগে আসে  |
+| সরু রেঞ্জে স্প্রেড উপেক্ষা     | খরচের পর R:R না মিললে রেঞ্জ বাদ দিন |
+
+---
+
+## অনুশীলন
+
+1. 1H চার্টে প্রতি দিকে দুই বা বেশি ছোঁয়াসহ পাঁচটি রেঞ্জ খুঁজুন।
+2. প্রতিটির প্রান্তে Rejection ক্যান্ডেল মার্ক করে এন্ট্রি, Stop, TP1 আর TP2 পরিকল্পনা করুন।
+3. প্রতিটি রেঞ্জ কীভাবে শেষ হয়েছে লিখুন: কোন দিক ভেঙেছে আর Retest টিকেছে কি না।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| বিষয়         | মূল কথা                                   |
+| ------------- | ----------------------------------------- |
+| **রেঞ্জ**     | সমতল Structure; প্রতি দিকে ২+ ছোঁয়া      |
+| **এন্ট্রি**   | প্রান্তে Rejection                        |
+| **Stop**      | সীমার ওপারে + বাফার                       |
+| **টার্গেট**   | মাঝখান, তারপর উল্টো প্রান্ত               |
+| **বের হওয়া** | প্রান্তের ওপারে Close রেঞ্জ ট্রেড শেষ করে |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Support ও Resistance](/bn/price-action/support-resistance) — Range Boundary
-- [Compression](/bn/price-action/compression) — Range-এর মধ্যে Compression
-- [Breakouts](/bn/price-action/breakouts) — Range Breakout
-- [Fakeouts](/bn/price-action/fakeouts) — False Range Break
-- [Confirmation](/bn/price-action/confirmation) — Range Edge-এ Entry Confirmation
+- [Support & Resistance](/bn/price-action/support-resistance) — প্রান্তগুলো
+- [Breakouts](/bn/price-action/breakouts) — রেঞ্জ শেষ হলে
+- [Compression](/bn/price-action/compression) — ভাঙনের আগের সতর্কতা
+- [Confirmation](/bn/price-action/confirmation) — Rejection নিশ্চিত করা
