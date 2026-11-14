@@ -1,60 +1,127 @@
 ---
-title: "DXY ↔ Major Pairs Correlation Models"
-description: "Master the relationship between the US Dollar Index and major currency pairs. Learn how DXY movements predict EUR/USD, GBP/USD, and commodity currencies with institutional precision."
+title: "DXY and Major Pairs — Correlation Models"
+description: "What the US Dollar Index is made of (EUR 57.6%, JPY 13.6%, GBP 11.9%, CAD 9.1%, SEK 4.2%, CHF 3.6%), why EUR/USD mirrors it closely and AUD/USD and USD/JPY less so, how to use DXY as context for a pair, and why it can mislead — with the basket weights, a synthetic correlation chart and an animated walkthrough."
 level: intermediate
 order: 2
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## DXY ↔ Major Pairs Correlation Models
+## What Is the Dollar Index?
 
-Master the relationship between the US Dollar Index and major currency pairs. Learn how DXY movements predict EUR/USD, GBP/USD, and commodity currencies with institutional precision.
+The **US Dollar Index (DXY)** measures the dollar against a fixed basket of six currencies. Its weights have not changed since the euro's introduction in 1999:
 
-<Callout type="info" title="Institutional Perspective">
-  No hedge fund or institutional desk trades a single instrument in isolation. Understanding intermarket correlations is
-  what separates professional macro traders from retail speculators.
+| Currency        | Weight |
+| --------------- | ------ |
+| Euro (EUR)      | 57.6%  |
+| Japanese yen    | 13.6%  |
+| British pound   | 11.9%  |
+| Canadian dollar | 9.1%   |
+| Swedish krona   | 4.2%   |
+| Swiss franc     | 3.6%   |
+
+Two consequences follow straight from the table: the index is **mostly a euro-versus-dollar measure**, and currencies that aren't in it (AUD, NZD, NOK, most emerging-market currencies) are related to it only indirectly.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original said DXY movements "predict" EUR/USD, GBP/USD and commodity currencies "with institutional precision".
+  DXY and the pairs are largely **the same information**: the euro is over half the index, so EUR/USD and DXY are close
+  to mirror images by construction, not one forecasting the other. Treat DXY as confirmation and context.
 </Callout>
 
 ---
 
-## Key Concepts
+## How Pairs Relate to DXY
 
-This topic covers the essential frameworks that institutional traders use for cross-market analysis and correlation-based trading decisions.
+![DXY basket weights (EUR 57.6%, JPY 13.6%, GBP 11.9%, CAD 9.1%, SEK 4.2%, CHF 3.6%) beside a synthetic 120-day correlation of daily returns with DXY: EUR/USD −0.94, GBP/USD −0.70, AUD/USD −0.41, USD/JPY +0.32, USD/CAD +0.60, USD/CHF +0.76](/images/intermarket/dxy-correlation/dxy-pairs-dark.webp)
 
----
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/intermarket/dxy-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-## Why This Matters
-
-Understanding intermarket relationships gives you:
-
-- **Early warning signals** before moves happen in your primary market
-- **Confirmation** of your directional bias from correlated assets
-- **Risk management** through correlation-aware position sizing
-- **Edge** that most retail traders completely ignore
-
----
-
-## Practical Application
-
-### For Forex Traders
-
-- Check DXY direction before trading any USD pair
-- Monitor yield differentials for carry trade opportunities
-- Watch VIX for risk sentiment shifts
-
-### For Index Traders
-
-- Bond yields lead equity moves by 1-3 days
-- VIX term structure predicts volatility expansion
-- Sector rotation signals come from intermarket flows
-
-### For Commodity Traders
-
-- Real yields drive gold inversely
-- USD strength pressures all commodities
-- Chinese data leads base metals
-
-<Callout type="warning" title="Correlation ≠ Causation">
-  Correlations change over time and can break during crisis periods. Always use correlations as ONE input in your
-  analysis, never as the sole decision factor. Regularly update your correlation matrices.
+<Callout type="info" title="About this chart">
+  The weights are the published DXY weights. The correlations are **synthetic** (120 days built to show the pattern);
+  real values vary with the window and the period.
 </Callout>
+
+| Pair    | Dollar is… | Direction vs DXY | Synthetic correlation | Why                                                      |
+| ------- | ---------- | ---------------- | --------------------- | -------------------------------------------------------- |
+| EUR/USD | quote      | Against          | −0.94                 | Euro is 57.6% of the basket                              |
+| GBP/USD | quote      | Against          | −0.70                 | Pound is 11.9%, with its own drivers                     |
+| AUD/USD | quote      | Against          | −0.41                 | Not in the basket; also trades with risk and commodities |
+| USD/JPY | base       | With             | +0.32                 | Yen is 13.6%, but also a risk and rates currency         |
+| USD/CAD | base       | With             | +0.60                 | CAD is 9.1%; oil is a separate driver                    |
+| USD/CHF | base       | With             | +0.76                 | Franc is 3.6% but often moves with the euro              |
+
+The pattern: **dollar as quote currency** (EUR/USD, GBP/USD, AUD/USD) → pair moves against DXY; **dollar as base currency** (USD/JPY, USD/CAD, USD/CHF) → moves with it. How tight the link is depends on how much of the basket the other currency is — and on whatever else drives that currency.
+
+---
+
+## Using DXY as Context
+
+| Situation                                      | Reading                                                               |
+| ---------------------------------------------- | --------------------------------------------------------------------- |
+| DXY and EUR/USD moving in opposite directions  | Normal; DXY adds little new information for EUR/USD                   |
+| DXY rises, GBP/USD or AUD/USD **doesn't fall** | The pair has its own driver (UK data, commodities, risk); look for it |
+| DXY breaks a level, your pair hasn't yet       | A pair move may follow — or the pair may be the one that's right      |
+| USD/JPY ignores DXY                            | Rates and risk sentiment often dominate the yen                       |
+
+### Example (no chart) — DXY as confirmation
+
+DXY has broken above its previous day's high and EUR/USD is falling toward **1.0870**. Plan: sell a break of the day's low at **1.0860** only once EUR/USD itself confirms; stop **1.0885**, target **1.0820**: risk 25 pips, reward 40, **1 : 1.6** planned. If DXY falls back below its breakout level, the dollar-strength reason is gone and the plan is off.
+
+---
+
+## Limits
+
+| Limit                                   | Detail                                                                          |
+| --------------------------------------- | ------------------------------------------------------------------------------- |
+| The index is euro-heavy                 | DXY is a poor guide to currencies that aren't in it                             |
+| Correlations change                     | See [the introduction](/en/intermarket/introduction); re-measure on your window |
+| DXY is not tradable directly everywhere | Futures (DX) exist; spot-forex brokers use their own indices or none            |
+| Event days                              | Pairs can diverge sharply on national data or central-bank news                 |
+
+---
+
+## Common Mistakes
+
+| Mistake                                               | Fix                                                |
+| ----------------------------------------------------- | -------------------------------------------------- |
+| Treating DXY as a forecast of EUR/USD                 | They are close to the same information             |
+| Using DXY for AUD or NZD as if they were in it        | They aren't; expect looser links                   |
+| Trading a DXY signal with no confirmation in the pair | Wait for the pair to show it                       |
+| Forgetting the base/quote direction                   | Dollar as quote → inverse; dollar as base → direct |
+| Ignoring news that moves one currency only            | Check the calendar                                 |
+
+---
+
+## Practice
+
+1. Export daily returns for DXY and EUR/USD, GBP/USD, USD/JPY and AUD/USD for six months. Compute each correlation.
+2. Rank the pairs from tightest to loosest. Does it follow the basket weights?
+3. Find a day when DXY and a pair disagreed. What explained it?
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea      | Detail                                                      |
+| --------- | ----------------------------------------------------------- |
+| DXY       | Six-currency basket; euro 57.6%                             |
+| Direction | Dollar as quote → pair moves against DXY; as base → with it |
+| Strength  | Follows the other currency's weight and its own drivers     |
+| Use       | Context and confirmation, not a forecast                    |
+
+---
+
+## Related Topics
+
+- [Introduction to Intermarket Analysis](/en/intermarket/introduction)
+- [Currency Strength](/en/intermarket/currency-strength)
+- [Yield Curve Dynamics](/en/intermarket/yield-curve)
+- [Risk-On / Risk-Off](/en/intermarket/risk-on-risk-off)
