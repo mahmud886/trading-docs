@@ -1,0 +1,107 @@
+---
+title: "এন্ট্রি মডেল — সম্পূর্ণ গাইড"
+description: "প্রাইস অ্যাকশন ট্রেডে কীভাবে ঢুকবেন বাছুন: Risk Entry, Confirmation Entry আর Break-Retest Entry, প্রতিটি R:R এ কী করে, Break-even এর জন্য প্রতিটির কত Win Rate দরকার, একই Stop আর টার্গেটসহ একটি Gold উদাহরণ, আর কোন পরিস্থিতিতে কোন মডেল — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
+level: intermediate
+order: 27
+lastUpdated: "2026-11-14"
+---
+
+## এন্ট্রি মডেল কী?
+
+**এন্ট্রি মডেল** হলো সেটআপ বৈধ হওয়ার পর **কখন আর কোথায়** ঢুকবেন তার নিয়ম। সেটআপ বলে "Resistance এ Short"; এন্ট্রি মডেল বলে "Zone এ Limit Order দিয়ে", "Bearish Engulfing Close হওয়ার পর", বা "Structure ভেঙে Retest হওয়ার পর"।
+
+---
+
+## তিনটি মূল মডেল
+
+| মডেল               | কীভাবে                                                   | বিনিময়                            |
+| ------------------ | ------------------------------------------------------- | --------------------------------- |
+| **Risk Entry**     | Zone এ Limit Order; Confirmation নেই                      | সেরা প্রাইস; Zone টিকবে তার প্রমাণ নেই |
+| **Confirmation**   | Zone এ Rejection বা Engulfing ক্যান্ডেল Close এর অপেক্ষা   | কিছু প্রমাণ; খারাপ প্রাইস            |
+| **Break-Retest**   | Lower Timeframe CHOCH এর অপেক্ষা, তারপর Retest এ এন্ট্রি   | সবচেয়ে বেশি প্রমাণ; সবচেয়ে খারাপ প্রাইস; মিস হতে পারে |
+
+<Callout type="warning" title="সরানো হয়েছে: প্রতিটি মডেলের Win Rate">
+  মূল লেসনে প্রতিটি মডেলের Win Rate ("~৪৫–৫৫%", "~৫৫–৬৫%", "~৬০–৭৫%") আর R:R রেঞ্জ দেওয়া ছিল। এই সংখ্যাগুলোর উৎস নেই আর
+  এগুলো পুরোপুরি ট্রেডার, মার্কেট আর নিয়মের ওপর নির্ভর করে। যা হিসাব *করা যায়* তা হলো প্রতিটি মডেলের **কত** Win Rate দরকার,
+  নিচে দেখানো।
+</Callout>
+
+---
+
+## একই Short, তিনটি এন্ট্রি
+
+![Gold 15m এ 2,420–2,425 Resistance এ Short, Stop 2,428, টার্গেট 2,388: Risk Entry 2,420 (1:4.0, ২০% জয় দরকার), Confirmation 2,414 (1:1.9, ৩৫%), Break-Retest 2,412 (1:1.5, ৪০%)](/images/price-action/entry-models/entry-models-breakeven-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/price-action/entry-models-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
+</Callout>
+
+তিনটিতেই একই Stop (**2,428**, Resistance এর উপরে) আর টার্গেট (**2,388**):
+
+| মডেল                        | এন্ট্রি  | রিস্ক | রিওয়ার্ড | **R:R**     | Break-even Win Rate |
+| --------------------------- | ------ | ---- | ------- | ----------- | ------------------- |
+| **A · Risk Entry**          | 2,420  | $8   | $32     | **১ : ৪.০** | **২০%**             |
+| **B · Confirmation** (Engulfing Close) | 2,414 | $14 | $26 | **১ : ১.৯** | **৩৫%**       |
+| **C · Break-Retest** (2,409.5 এর নিচে CHOCH এর পর) | 2,412 | $16 | $24 | **১ : ১.৫** | **৪০%** |
+
+**Break-even Win Rate = ১ ÷ (১ + R:R)।** ১ : ৪ এর Risk Entry লাভজনক যদি ৫টির মধ্যে ১টির বেশি কাজ করে; ১ : ১.৫ এর Break-Retest এ দরকার ৫টির মধ্যে ২টি। প্রশ্ন কোন মডেল "সেরা" তা নয়, বরং **কোনটা দিয়ে আপনি যথেষ্ট বার জিততে পারেন**।
+
+মডেল C ব্যবহার করা অনেক ট্রেডার Zone এর উপরের বদলে Retest এর Swing এর ঠিক উপরে Stop টাইট করেন; এতে এর R:R ভালো হয় (দেখুন [Advanced Execution Models](/bn/smc/advanced-execution-models))।
+
+---
+
+## মডেল বাছাই
+
+| পরিস্থিতি                          | মডেল                 | কেন                                |
+| --------------------------------- | -------------------- | --------------------------------- |
+| ট্রেন্ডের সাথে শক্তিশালী Higher Timeframe Zone | Risk Entry | কনটেক্সটই ট্রেড বহন করে          |
+| সাধারণ সেটআপ                       | Confirmation         | প্রাইস আর প্রমাণের ভারসাম্য          |
+| Counter-Trend                     | Break-Retest         | সবচেয়ে বেশি প্রমাণ দরকার            |
+| দ্রুত মার্কেট / Scalping           | Risk বা Confirmation | Retest হয়তো আসবেই না             |
+| Swing Trading                     | Confirmation বা Break-Retest | ধৈর্যের সময় আছে             |
+
+### উদাহরণ (চার্ট ছাড়া) — EUR/USD Confirmation এন্ট্রি
+
+EUR/USD **1.0850** এর Daily Support এ পুলব্যাক করে। একটি 4H Bullish Engulfing **1.0862** এ Close করে। **1.0862** এ Buy, Zone এর নিচে **1.0838** এ Stop, টার্গেট **1.0930**: রিস্ক ২৪ পিপ, রিওয়ার্ড ৬৮ পিপ, **R:R ১ : ২.৮** (পরিকল্পিত), Break-even Win Rate **২৬%**।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                           | সমাধান                                              |
+| --------------------------------------------- | ------------------------------------------------- |
+| সেটআপের মাঝে মডেল বদলানো                       | Price Zone এ পৌঁছানোর আগে বাছুন                     |
+| শুধু R:R দিয়ে মডেল বিচার                        | R:R কে তার দরকারি Win Rate এর সাথে তুলনা করুন        |
+| ট্রেন্ডের বিরুদ্ধে Risk Entry                    | শুধু শক্তিশালী কনটেক্সটে ব্যবহার করুন                 |
+| মিস হওয়া Break-Retest এর পেছনে দৌড়ানো           | Retest নেই তো ট্রেড নেই                            |
+
+---
+
+## অনুশীলন
+
+1. অতীতের ২০টি সেটআপে একই Stop আর টার্গেটে A, B আর C এন্ট্রি কোথায় হতো লিখুন।
+2. প্রতিটি মডেলে কোন সেটআপ টার্গেটে পৌঁছেছে আর কোনটা Stop হিট করেছে লিখুন।
+3. প্রতিটি মডেলের Win Rate হিসাব করে তার Break-even Win Rate এর সাথে তুলনা করুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| মডেল            | প্রাইস  | প্রমাণ   | দরকার (চার্টে)    |
+| --------------- | ------ | ------- | ---------------- |
+| Risk Entry      | সেরা   | নেই     | ২০% জয়           |
+| Confirmation    | মাঝারি  | কিছুটা   | ৩৫%              |
+| Break-Retest    | খারাপ  | সবচেয়ে বেশি | ৪০%           |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Confirmation](/bn/price-action/confirmation) — Confirmation এর কৌশল
+- [Confluence](/bn/price-action/confluence) — Zone কতটা শক্তিশালী
+- [Exit Models](/bn/price-action/exit-models) — ট্রেডের বাকি অর্ধেক
+- [Entry Confirmation](/bn/smc/entry-confirmation) — SMC দৃষ্টিভঙ্গি

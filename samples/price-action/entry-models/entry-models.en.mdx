@@ -1,0 +1,107 @@
+---
+title: "Entry Models — Complete Guide"
+description: "Choose how to enter a price action trade: the risk entry, confirmation entry and break-retest entry, what each does to R:R, the win rate each needs just to break even, a worked gold example with the same stop and target, and a guide to which model suits which situation, with a chart and an animated walkthrough."
+level: intermediate
+order: 27
+lastUpdated: "2026-11-14"
+---
+
+## What Is an Entry Model?
+
+An **entry model** is the rule for **when and where** you enter once a setup is valid. The setup says "short at resistance"; the entry model says "with a limit order in the zone", "after a bearish engulfing closes", or "after structure breaks and retests".
+
+---
+
+## Three Core Models
+
+| Model              | How                                                     | Trade-off                         |
+| ------------------ | ------------------------------------------------------- | --------------------------------- |
+| **Risk entry**     | A limit order in the zone; no confirmation              | Best price; no proof the zone holds |
+| **Confirmation**   | Wait for a rejection or engulfing candle to close at the zone | Some proof; worse price      |
+| **Break-retest**   | Wait for a lower-timeframe CHOCH, then enter on the retest | Most proof; worst price; may be missed |
+
+<Callout type="warning" title="Removed: win rates per model">
+  The original gave each model a win rate ("~45–55%", "~55–65%", "~60–75%") and R:R ranges. Those numbers have no
+  source and depend entirely on the trader, market and rules. What *can* be calculated is the win rate each model
+  **needs**, shown below.
+</Callout>
+
+---
+
+## Same Short, Three Entries
+
+![Gold 15m short at resistance 2,420–2,425 with stop 2,428 and target 2,388: risk entry 2,420 (1:4.0, needs 20% winners), confirmation 2,414 (1:1.9, needs 35%), break-retest 2,412 (1:1.5, needs 40%)](/images/price-action/entry-models/entry-models-breakeven-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/price-action/entry-models-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
+
+All three use the same stop (**2,428**, above resistance) and target (**2,388**):
+
+| Model                       | Entry  | Risk | Reward | **R:R**   | Break-even win rate |
+| --------------------------- | ------ | ---- | ------ | --------- | ------------------- |
+| **A · Risk entry**          | 2,420  | $8   | $32    | **1 : 4.0** | **20%**           |
+| **B · Confirmation** (engulfing close) | 2,414 | $14 | $26 | **1 : 1.9** | **35%**       |
+| **C · Break-retest** (after the CHOCH below 2,409.5) | 2,412 | $16 | $24 | **1 : 1.5** | **40%** |
+
+**Break-even win rate = 1 ÷ (1 + R:R).** A risk entry at 1 : 4 is profitable if more than 1 in 5 trades work; a break-retest entry at 1 : 1.5 needs 2 in 5. The question isn't which model is "best", but **which one you can win often enough with**.
+
+Many traders using model C tighten the stop to just above the retest's swing instead of above the zone; that improves its R:R (see [Advanced Execution Models](/en/smc/advanced-execution-models)).
+
+---
+
+## Choosing a Model
+
+| Situation                         | Model                | Why                               |
+| --------------------------------- | -------------------- | --------------------------------- |
+| Strong higher-timeframe zone, with the trend | Risk entry  | The context carries the trade     |
+| Ordinary setup                    | Confirmation         | Balance of price and proof        |
+| Counter-trend                     | Break-retest         | Needs the most proof              |
+| Fast markets / scalping           | Risk or confirmation | The retest may never come         |
+| Swing trading                     | Confirmation or break-retest | Time allows patience      |
+
+### Example (no chart) — EUR/USD confirmation entry
+
+EUR/USD pulls back to daily support at **1.0850**. A 4H bullish engulfing closes at **1.0862**. Buy **1.0862**, stop **1.0838** below the zone, target **1.0930**: risk 24 pips, reward 68 pips, **R:R 1 : 2.8** (planned), break-even win rate **26%**.
+
+---
+
+## Common Mistakes
+
+| Mistake                                       | Fix                                               |
+| --------------------------------------------- | ------------------------------------------------- |
+| Switching models mid-setup                    | Choose before price reaches the zone              |
+| Judging a model by its R:R alone              | Compare R:R with the win rate it needs            |
+| Risk entries against the trend                | Use them only with strong context                 |
+| Chasing a missed break-retest                 | No retest, no trade                               |
+
+---
+
+## Practice
+
+1. For 20 past setups, record where entries A, B and C would have been, with the same stop and target.
+2. Note which setups reached the target and which hit the stop for each model.
+3. Compute each model's win rate and compare it with its break-even win rate.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Model           | Price  | Proof  | Needs (in the chart) |
+| --------------- | ------ | ------ | -------------------- |
+| Risk entry      | Best   | None   | 20% winners          |
+| Confirmation    | Middle | Some   | 35%                  |
+| Break-retest    | Worst  | Most   | 40%                  |
+
+---
+
+## Related Topics
+
+- [Confirmation](/en/price-action/confirmation) — confirmation techniques
+- [Confluence](/en/price-action/confluence) — how strong the zone is
+- [Exit Models](/en/price-action/exit-models) — the other half of the trade
+- [Entry Confirmation](/en/smc/entry-confirmation) — the SMC view
