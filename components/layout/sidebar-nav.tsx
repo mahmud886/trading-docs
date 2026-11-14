@@ -15,7 +15,7 @@ interface SidebarNavProps {
 
 export function SidebarNav({ tree, category, lang }: SidebarNavProps) {
   return (
-    <nav className="space-y-1 p-4">
+    <nav className="space-y-0.5 px-3 pb-4 pt-1">
       {tree.map((node) => (
         <SidebarItem key={node.slug} node={node} category={category} lang={lang} depth={0} />
       ))}
@@ -47,7 +47,7 @@ function SidebarItem({
         <button
           onClick={() => setExpanded(!expanded)}
           className={cn(
-            "flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm transition-all",
+            "flex w-full items-center gap-2 rounded-lg px-3 py-1.5 text-[13px] transition-all",
             isChildActive ? "text-foreground" : "text-muted-foreground hover:bg-accent-green/5 hover:text-foreground",
           )}
           style={{ paddingLeft: `${depth * 12 + 12}px` }}
@@ -74,7 +74,7 @@ function SidebarItem({
     <Link
       href={href}
       className={cn(
-        "block rounded-lg px-3 py-2 text-sm capitalize transition-all",
+        "block rounded-lg px-3 py-1.5 text-[13px] capitalize leading-snug transition-all",
         isActive
           ? "bg-accent-green/10 font-medium text-accent-green shadow-[inset_2px_0_0_var(--accent-green)]"
           : "text-muted-foreground hover:bg-accent-green/5 hover:text-foreground",

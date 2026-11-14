@@ -158,13 +158,13 @@ export function SearchModal() {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="group flex items-center gap-0.5 rounded-full border border-border bg-card p-0.5 text-[8px] text-muted-foreground transition-all duration-300 hover:border-accent-green/40 hover:bg-accent-green/5 hover:shadow-[0_0_20px_rgba(0,255,157,0.06)] xl:gap-2 xl:px-3.5 xl:py-1.5 xl:text-sm"
+        className="group flex items-center gap-1.5 rounded-full border border-border bg-card p-2 text-[8px] text-muted-foreground transition-all duration-300 hover:border-accent-green/40 hover:bg-accent-green/5 hover:shadow-[0_0_20px_rgba(0,255,157,0.06)] xl:gap-2 xl:px-3.5 xl:py-1.5 xl:text-sm"
       >
         <Search
-          size={10}
+          size={16}
           className="text-accent-green/60 transition-colors group-hover:text-accent-green xl:h-3.5 xl:w-3.5"
         />
-        {/*<span className="hidden xl:inline">Search...</span>*/}
+        <span className="hidden xl:inline">Search</span>
         <kbd className="ml-0.5 hidden rounded border border-border bg-muted/60 px-0.5 py-px font-mono text-[7px] text-muted-foreground md:inline xl:ml-1 xl:rounded-md xl:px-1.5 xl:py-0.5 xl:text-[10px]">
           ⌘K
         </kbd>

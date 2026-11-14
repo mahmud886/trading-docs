@@ -51,13 +51,6 @@ export function MobileMenuContent({ lang, links, onClose }: MobileMenuContentPro
       >
         {lang === "bn" ? "চার্ট" : "Charts"}
       </Link>
-      <Link
-        href={`/${lang}/tools`}
-        onClick={onClose}
-        className="rounded-lg px-4 py-3 text-sm text-muted-foreground transition-all hover:bg-accent-green/5 hover:text-foreground"
-      >
-        {lang === "bn" ? "টুলস" : "Tools"}
-      </Link>
     </nav>
   );
 }

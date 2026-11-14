@@ -34,16 +34,17 @@ export function Toc({ items, label }: { items: TocItem[]; label?: string }) {
       <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-accent-green/70">
         {label || "On this page"}
       </p>
-      <ul className="space-y-1.5 border-l border-border">
+      <ul className="space-y-0.5 border-l border-border">
         {items.map((item) => (
-          <li key={item.id} style={{ paddingLeft: `${(item.level - 2) * 12 + 12}px` }}>
+          <li key={item.id}>
             <a
               href={`#${item.id}`}
+              style={{ paddingLeft: `${(item.level - 2) * 12 + 12}px` }}
               className={cn(
-                "block text-[13px] leading-relaxed transition-all",
+                "-ml-px block border-l-2 py-1 text-[13px] leading-snug transition-all",
                 activeId === item.id
-                  ? "font-medium text-accent-green shadow-[-1px_0_0_var(--accent-green)]"
-                  : "text-muted-foreground hover:text-foreground",
+                  ? "border-accent-green font-medium text-accent-green"
+                  : "border-transparent text-muted-foreground hover:border-border hover:text-foreground",
               )}
             >
               {item.text}

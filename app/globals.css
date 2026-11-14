@@ -479,3 +479,10 @@ aside a[class*="rounded-full"] {
     background-color 0.15s ease,
     color 0.15s ease;
 }
+
+/* Sidebar scroller: thin bar and a soft fade at the bottom edge */
+.sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 1.5rem), transparent);
+}

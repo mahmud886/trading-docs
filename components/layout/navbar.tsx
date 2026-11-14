@@ -26,7 +26,7 @@ export async function Navbar({ lang }: { lang: Locale }) {
     <MobileMenuProvider>
       {/* Navbar — sticky header with backdrop-blur (creates stacking context) */}
       <NavbarWrapper>
-        <div className="mx-auto flex h-14 max-w-[1440px] items-center justify-between px-3 md:h-12 xl:h-16 xl:px-6">
+        <div className="mx-auto flex h-14 max-w-[1440px] items-center justify-between px-3 sm:px-5 xl:h-16 xl:px-6">
           <Link
             href={`/${lang}`}
             className="flex items-center gap-1.5 text-base font-bold text-foreground transition-opacity hover:opacity-80 md:text-sm xl:gap-2.5 xl:text-xl"
