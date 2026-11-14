@@ -1,0 +1,122 @@
+---
+title: "Footprint Charts — Complete Guide"
+description: "Read inside every candle: a footprint chart shows bid and ask volume at each price. Learn the cell layout, point of control, diagonal imbalances and stacked imbalances, a heavy-effort bar that gets absorbed, how to combine footprints with levels, and the data limits, with a four-candle chart and an animated walkthrough."
+level: advanced
+order: 6
+lastUpdated: "2026-11-14"
+---
+
+## What Is a Footprint Chart?
+
+A **footprint chart** replaces each candle's body with a grid of numbers: at **each price** inside the candle, the volume **sold at the bid** (left) and **bought at the ask** (right). It's the single-candle view from the [introduction](/en/order-flow/introduction), repeated across the chart.
+
+From one footprint you can read the candle's **delta**, its **point of control** (the price with the most volume) and **imbalances** between neighbouring prices.
+
+<Callout type="warning" title="Toned down">
+  The original treated imbalances and stacked cells as institutional footprints ("institutions buying/selling
+  aggressively"). Footprints show **executed aggressive volume by price**, nothing about who is trading. They can also
+  look very different on different data feeds and tick sizes. Use them as detail about how a candle formed.
+</Callout>
+
+---
+
+## Four Candles
+
+![Four synthetic footprint candles with bid × ask at each price: A balanced, B with six stacked buy imbalances and delta +1,580, C with the heaviest cell 650 × 880 at its high and a close lower (absorption), D with six stacked sell imbalances and delta −1,330](/images/order-flow/footprint-charts/footprint-four-candles-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/order-flow/footprint-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The numbers are **synthetic**, in contracts. Cells read **bid × ask**: contracts sold at the bid × contracts bought at the ask.
+</Callout>
+
+| Candle | What its footprint shows                                                           | Delta / volume     | Reading                                                |
+| ------ | ---------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------ |
+| **A**  | Volume spread across six prices; POC 340 × 360 in the middle; no stacked imbalances | −50 / 2,530        | Balanced rotation — nobody dominated                   |
+| **B**  | At six prices in a row the ask is ≥ 3× the bid one price lower                     | +1,580 / 2,560     | Buyers lifting offers all the way up the candle        |
+| **C**  | The biggest cell (650 × 880) is at the high, yet the candle closes lower          | +370 / 3,770       | Heavy buying at the high that failed to hold: possible absorption |
+| **D**  | At six prices in a row the bid is ≥ 3× the ask one price higher                    | −1,330 / 2,530     | Sellers hitting bids all the way down; closes on its low |
+
+---
+
+## How to Read a Cell Grid
+
+| Element                      | How to read it                                                                  |
+| ---------------------------- | ------------------------------------------------------------------------------- |
+| **Bid × ask**                | Sold at the bid × bought at the ask, at that price                              |
+| **Delta**                    | Σ ask − Σ bid across the candle                                                 |
+| **POC**                      | The price with the largest total — a candle-level "fair price"                  |
+| **Buy imbalance**            | Ask at price *p* ≥ 3 × bid at price *p − 1 tick* (diagonal comparison)          |
+| **Sell imbalance**           | Bid at price *p* ≥ 3 × ask at price *p + 1 tick*                                |
+| **Stacked imbalances**       | Three or more imbalances at adjacent prices in the same direction               |
+
+The diagonal comparison matters: aggressive buyers at price *p* are matched against sellers resting at *p*, so the comparison is made against the neighbouring level to see whether the next level was also lifted.
+
+---
+
+## What Footprints Are Used For
+
+| Pattern                            | Possible reading                                        | Caution                                      |
+| ---------------------------------- | ------------------------------------------------------- | -------------------------------------------- |
+| **Stacked buy imbalances**         | Aggressive buying through many prices; some traders use the zone as support on a retest | They don't guarantee a hold          |
+| **Stacked sell imbalances**        | Aggressive selling through many prices; zone as resistance on a retest | Same                                     |
+| **Heavy volume at an extreme, price rejects** | Absorption or exhaustion (see [Absorption and Exhaustion](/en/order-flow/absorption-exhaustion)) | Needs the next candles to confirm |
+| **POC at the extreme of a candle** | One-sided candle: most volume traded at the end         | Compare with delta and the next bar          |
+| **Thin prices inside a candle**    | Price moved through quickly                             | Can be a gap in data too                     |
+
+### Example (no chart) — retest of a stacked-imbalance zone
+
+After candle **B** (stacked buy imbalances from 1.0854 to 1.0859), price pulls back into the zone at **1.0855** and shows **sell-side volume drying up** (bid volume under 100 at each price). Plan: buy **1.0856**, stop **1.0851** (below the imbalance zone's start), target **1.0869** (one-and-a-half times the candle's height above its high): risk 5, reward 13, **1 : 2.6** planned. If price trades back through **1.0853** on sell-side volume, the zone has failed and the idea is off.
+
+---
+
+## Limits
+
+| Limit                          | Why it matters                                                  |
+| ------------------------------ | --------------------------------------------------------------- |
+| **Data quality**               | Needs trade-by-trade data with correct bid/ask tagging          |
+| **Tick size and imbalance ratio** | The same candle shows different imbalances with 2:1, 3:1 or 4:1 thresholds |
+| **One venue**                  | A broker's footprint in spot forex covers only its own flow     |
+| **Screen clutter**             | Too many candles of numbers slows decisions                     |
+| **No context**                 | A stacked imbalance mid-range means little without a level      |
+
+---
+
+## Common Mistakes
+
+| Mistake                                           | Fix                                                    |
+| ------------------------------------------------- | ------------------------------------------------------ |
+| Treating every imbalance as a signal              | Only those at levels with a plan                       |
+| Changing the imbalance ratio to fit an idea       | Pick a ratio and keep it                               |
+| Trusting tick-volume "footprints" in spot forex   | Use futures or real-volume data                        |
+| Ignoring what the next candle did                 | Footprints describe; the follow-through confirms       |
+| No stop                                           | Put it beyond the imbalance zone or the absorbed extreme |
+
+---
+
+## Practice
+
+1. On a futures footprint (or a replay), find three candles with stacked imbalances and mark the zone.
+2. Note whether price came back to the zone and what the footprint showed on the retest.
+3. Find one candle with its largest cell at the extreme and record what the next candles did.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea                | Detail                                                             |
+| ------------------- | ------------------------------------------------------------------ |
+| Footprint           | Bid × ask volume at every price in each candle                     |
+| Reads               | Delta, POC, imbalances, stacked imbalances                         |
+| Imbalance           | A 3:1 ratio between diagonal neighbours                            |
+| Limits              | Needs real classified data; confirm with price and levels          |
+
+---
+
+## Related Topics
+
+- [Delta Analysis](/en/order-flow/delta-analysis)
+- [Absorption and Exhaustion](/en/order-flow/absorption-exhaustion)
+- [Volume Profile](/en/order-flow/volume-profile)
+- [Introduction to Order Flow](/en/order-flow/introduction)
