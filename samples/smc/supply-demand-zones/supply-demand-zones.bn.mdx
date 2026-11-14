@@ -1,0 +1,163 @@
+---
+title: "সাপ্লাই ও ডিমান্ড জোন — সম্পূর্ণ গাইড"
+description: "Supply আর Demand Zone খুঁজুন ও ট্রেড করুন: দ্রুত Move এর আগের Base, চারটি প্যাটার্ন (Rally-Base-Rally, Drop-Base-Rally, Rally-Base-Drop, Drop-Base-Drop), Proximal আর Distal লাইন, Support/Resistance আর Order Block থেকে পার্থক্য, আর চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ একটি সম্পূর্ণ উদাহরণ।"
+level: intermediate
+order: 30
+lastUpdated: "2026-11-14"
+---
+
+## Supply বা Demand Zone কী?
+
+**Demand Zone** হলো এমন প্রাইস এলাকা যেখানে কেনা স্পষ্টভাবে বেচাকে হারিয়েছে: Price একটি ছোট **Base** এ থেমেছে, তারপর দ্রুত উপরে চলে গেছে। **Supply Zone** উল্টো: Base, তারপর দ্রুত পতন।
+
+ধারণাটা হলো বড় Order গুলো Base এ আংশিক Fill হয়েছিল। Price ফিরলে বাকি Order গুলো আবার মুখোমুখি হয়ে রিঅ্যাকশন তৈরি করতে পারে।
+
+<Callout type="info" title="স্পষ্ট করা: 'অপূর্ণ Order'">
+  মূল লেসনে বলা হয়েছিল অপূর্ণ Institutional Order Zone এ "থেকে যায়", তাই "Price সেগুলো Fill করতে ফেরে"। এটা মডেলের
+  ব্যাখ্যা, আর চার্ট থেকে যাচাই করা যায় না। যা যাচাই করা যায় তা হলো ছাপ: টাইট Base আর দ্রুত প্রস্থান। Zone কে সম্ভাব্য
+  রিঅ্যাকশন এলাকা হিসেবে দেখুন, নিশ্চিত হিসেবে নয়।
+</Callout>
+
+---
+
+## চারটি প্যাটার্ন
+
+| প্যাটার্ন  | Base এর আগে | Base এর পরে | Zone     | ধরন            |
+| -------- | ----------- | ---------- | -------- | ------------- |
+| **DBR**  | Drop        | Rally      | Demand   | Reversal      |
+| **RBR**  | Rally       | Rally      | Demand   | Continuation  |
+| **RBD**  | Rally       | Drop       | Supply   | Reversal      |
+| **DBD**  | Drop        | Drop       | Supply   | Continuation  |
+
+**Base** হলো এক থেকে কয়েকটি ছোট ক্যান্ডেল (Body রেঞ্জের মোটামুটি অর্ধেক বা কম)। **Leg-Out** হলো Base ছেড়ে যাওয়া এক বা একাধিক বড় Body র ক্যান্ডেল।
+
+---
+
+## Zone আঁকা
+
+![EUR/USD 1H: 1.0963–1.0975 এ Rally-Base-Drop Supply Zone আর 1.0880–1.0891 এ Drop-Base-Rally Demand Zone, Demand এ প্রথম ফেরায় Long](/images/smc/supply-demand-zones/supply-demand-zones-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/smc/supply-demand-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
+</Callout>
+
+| লাইন          | Demand Zone                   | Supply Zone                   |
+| ------------- | ----------------------------- | ----------------------------- |
+| **Proximal**  | Base এর সবচেয়ে উঁচু **Body**   | Base এর সবচেয়ে নিচু **Body**   |
+| **Distal**    | Base এর সবচেয়ে নিচু **Wick**   | Base এর সবচেয়ে উঁচু **Wick**   |
+
+চার্টে:
+
+- **Supply (RBD):** একটি Rally, দুটি Base ক্যান্ডেল, তারপর দ্রুত পতন। Proximal **1.0963**, Distal **1.0975**।
+- **Demand (DBR):** একটি Drop, দুটি Base ক্যান্ডেল, তারপর দ্রুত Rally। Proximal **1.0891**, Distal **1.0880**।
+
+আঁকার অন্য উপায়ের জন্য দেখুন [Proximal & Distal Lines](/bn/smc/proximal-distal-lines)।
+
+---
+
+## চার্টের ট্রেড
+
+Price Demand থেকে Rally করে, তারপর প্রথমবার ফেরে। Proximal লাইনে Buy; টার্গেট পরের বিপরীত Zone।
+
+| লেভেল    | প্রাইস  | নোট                                  |
+| ------- | ------ | ----------------------------------- |
+| এন্ট্রি  | 1.0891 | Demand Proximal, প্রথম ফেরা          |
+| Stop    | 1.0875 | 1.0880 Distal এর ৫ পিপ নিচে           |
+| টার্গেট  | 1.0963 | Supply Proximal (বিপরীত Zone)        |
+| **R:R** | **১ : ৪.৫** | রিস্ক ১৬ পিপ, রিওয়ার্ড ৭২ পিপ    |
+
+---
+
+## Zone বনাম Support/Resistance বনাম Order Block
+
+| টুল                     | কী থেকে তৈরি                                | প্রস্থ                   |
+| ----------------------- | ------------------------------------------ | ---------------------- |
+| Support / Resistance    | একই প্রাইসে বারবার মোড়                      | একটি লাইন বা সরু ব্যান্ড |
+| Supply / Demand Zone    | দ্রুত Move এর আগের Base                     | পুরো Base              |
+| [Order Block](/bn/smc/order-blocks) | Displacement এর আগের শেষ বিপরীত ক্যান্ডেল | একটি ক্যান্ডেল  |
+
+Order Block সাধারণত Base এর শেষ ক্যান্ডেল, তাই এটা S&D Zone এর **ভিতরে** থাকে। অনেক ট্রেডার কনটেক্সটের জন্য Zone আর টাইট এন্ট্রির জন্য এর ভিতরের OB ব্যবহার করেন।
+
+---
+
+## Zone এর মান
+
+| বিষয়               | শক্তিশালী                              | দুর্বল                              |
+| ------------------ | ------------------------------------- | ---------------------------------- |
+| Leg-Out            | দ্রুত, বড় ক্যান্ডেল, FVG রেখে যায়      | ধীর, একটার ওপর আরেকটা পড়া ক্যান্ডেল   |
+| Base এ সময়         | ১–৩ ক্যান্ডেল                          | অনেক ক্যান্ডেল                      |
+| Freshness          | এখনও ফেরা হয়নি                        | কয়েকবার ফেরা হয়েছে                 |
+| Leg-Out এর ফল      | Structure ভেঙেছে                      | রেঞ্জের ভিতরেই থেকেছে               |
+| অবস্থান            | Demand Discount এ, Supply Premium এ    | উল্টো                              |
+
+<Callout type="info" title="স্পষ্ট করা: Volume আর ফেরার গতি">
+  মূল লেসনে শক্তির চিহ্ন হিসেবে "Zone এ কম Volume" আর ধীরে ফেরাও দেওয়া ছিল। দুটোই প্রচলিতভাবে শেখানো হয়, কিন্তু Spot Forex এ
+  কেন্দ্রীয় Volume নেই, আর ফেরার গতি নিয়ে প্রমাণ মিশ্র। বড়জোর ছোট বিষয় হিসেবে ব্যবহার করুন।
+  [Zone Strength Scoring](/bn/smc/zone-strength-scoring) এই টেবিলকে স্কোরে পরিণত করে।
+</Callout>
+
+---
+
+## ধাপে ধাপে ট্রেড
+
+1. **Move খুঁজুন:** আপনার ট্রেডিং টাইমফ্রেমে একটি দ্রুত Leg, ভালো হয় যদি Structure ভেঙে থাকে।
+2. ঠিক তার আগের **Base খুঁজুন** আর Proximal ও Distal লাইন আঁকুন।
+3. **কনটেক্সট দেখুন:** Higher Timeframe ট্রেন্ড, আর Premium/Discount।
+4. Zone এ প্রথম ফেরার **অপেক্ষা** করুন।
+5. Proximal লাইনে **এন্ট্রি** নিন (বা Zone এর ভিতরে Lower Timeframe CHOCH এর অপেক্ষা করুন)।
+6. Distal লাইনের কয়েক পিপ ওপারে **Stop**; পরের বিপরীত Zone বা Liquidity লেভেলে **টার্গেট**।
+
+<Callout type="warning" title="Zone কখন শেষ">
+  **Distal লাইনের ওপারে Close** Zone কে বাতিল করে। প্রতিবার ফেরাও Zone এর কিছুটা খরচ করে; দেখুন
+  [Fresh vs Tested Zones](/bn/smc/fresh-vs-tested)।
+</Callout>
+
+### দ্বিতীয় উদাহরণ (চার্ট ছাড়া) — Gold, Supply (RBD)
+
+Gold Rally করে **2,412 – 2,420** এর একটি 4H Base এ পৌঁছায় (Proximal 2,412, Distal 2,420), তারপর $35 পড়ে। প্রথম ফেরায় **2,412** এ Sell, Stop **2,423**, টার্গেট Demand Zone Proximal **2,370**: রিস্ক $11, রিওয়ার্ড $42, **R:R ১ : ৩.৮** (পরিকল্পিত)।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                     | সমাধান                                                |
+| --------------------------------------- | ---------------------------------------------------- |
+| দ্রুত Leg-Out ছাড়াই Zone আঁকা            | দ্রুত Move নেই তো Zone নেই                            |
+| অনেক ক্যান্ডেল জুড়ে Zone আঁকা             | শুধু Base; টাইট রাখুন                                  |
+| বহুবার ফেরা Zone ট্রেড করা                | প্রথম ফেরাকে অগ্রাধিকার দিন                           |
+| Stop ঠিক Distal লাইনে                    | স্প্রেড আর Wick এর জন্য বাফার যোগ করুন                  |
+| Higher Timeframe দিক উপেক্ষা             | আগে Uptrend এ Demand, Downtrend এ Supply ট্রেড করুন    |
+
+---
+
+## অনুশীলন
+
+1. ১০টি চার্টে যত DBR, RBR, RBD আর DBD পান মার্ক করুন।
+2. প্রতিটি Zone এর জন্য লিখুন প্রথম ফেরায় রিঅ্যাকশন হয়েছিল কি না, আর কত পিপ।
+3. যে Zone গুলো কাজ করেছে তাদের কোন মানের বিষয়গুলো মিল ছিল লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| বিষয়        | মূল কথা                                               |
+| ----------- | ---------------------------------------------------- |
+| **Zone**    | দ্রুত Move এর আগের Base                               |
+| **প্যাটার্ন** | DBR, RBR (Demand); RBD, DBD (Supply)                 |
+| **লাইন**    | Proximal = কাছের Body; Distal = দূরের Wick             |
+| **ট্রেড**    | প্রথম ফেরা, Distal এর ওপারে Stop, বিপরীত Zone টার্গেট   |
+| **বাতিল**   | Distal লাইনের ওপারে Close                              |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Fresh vs Tested Zones](/bn/smc/fresh-vs-tested) — প্রথম ফেরা কেন গুরুত্বপূর্ণ
+- [Rally-Base-Rally](/bn/smc/rally-base-rally) — Continuation প্যাটার্ন
+- [Zone Strength Scoring](/bn/smc/zone-strength-scoring) — Zone গ্রেডিং
+- [Proximal & Distal Lines](/bn/smc/proximal-distal-lines) — আঁকা আর এন্ট্রি
+- [Order Blocks](/bn/smc/order-blocks) — Zone এর ভিতরের ক্যান্ডেল
