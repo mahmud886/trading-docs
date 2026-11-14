@@ -359,6 +359,9 @@ export function buildStyleCss(): string {
           .join("");
         css += `${sel}{${vars}}`;
       }
+      if (s.id === "bold") {
+        css += `${sel} [class*="border-border"]{border-width:2px}${sel} :is(.glass-card,[class*="bg-card"]){box-shadow:4px 4px 0 var(--foreground)}`;
+      }
       if (s.display) css += `${sel} :is(h1,h2,h3){font-family:${s.display};letter-spacing:-0.01em}`;
       return css;
     })

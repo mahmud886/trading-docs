@@ -48,5 +48,5 @@ Vercel deploys were turned off because storage was full. Turn them back on only 
 - `lib/themes/styles.ts`: design-token styles. Each style overrides the CSS variables from `globals.css` for light and dark mode (`html[data-style="..."]` and `html.dark[data-style="..."]`). Add a style by adding one entry; the CSS is generated.
 - `components/theme/`: `StyleHead` (generated CSS and a pre-paint script, no flash), `StyleSync` (keeps `<html data-style>` in step), `StylePicker` (navbar dropdown for style and home layout).
 - Styles: `neon` (default), `navy-gold`, `editorial`, `swiss`, `saas`, `bold`, `bento`, `app`, `immersive`.
-- `lib/themes/layouts.ts` and `components/home/`: selectable home layouts (`classic`, `bento`, `index`, `app`, `immersive`). `HomeLayoutSwitch` renders the saved one; the server renders `classic`.
-- Preferences live in localStorage (`td-style`, `td-home-layout`) through `hooks/use-local-pref.ts`.
+- `lib/themes/layouts.ts`, `app/layouts.css` and `components/home/`: site layouts. A layout restructures the whole shell (navigation, docs sidebar, page frame, footer) through `html[data-layout]` and the `data-shell` hooks, and picks the matching home page. Selectable layouts (`classic`, `bento`, `index`, `app`, `immersive`). `HomeLayoutSwitch` renders the saved one; the server renders `classic`.
+- Preferences live in localStorage (`td-style`, `td-layout`) through `hooks/use-local-pref.ts`.

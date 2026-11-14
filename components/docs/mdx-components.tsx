@@ -1,3 +1,4 @@
+import { Children, isValidElement } from "react";
 import type { MDXComponents } from "mdx/types";
 import { CopyButton } from "./copy-button";
 import { Callout } from "./callout";
@@ -56,7 +57,20 @@ export function createMdxComponents(): MDXComponents {
       const id = generateHeadingId(typeof props.children === "string" ? props.children : undefined);
       return <h4 id={id} className="mt-6 scroll-mt-20 text-lg font-semibold text-foreground" {...props} />;
     },
-    p: (props) => <p className="mt-4 leading-7 text-card-foreground" {...props} />,
+    p: ({ children, ...props }) => {
+      // Images and videos render block elements (<div>), which cannot sit inside <p> without a hydration error.
+      const hasBlock = Children.toArray(children).some(
+        (c) => isValidElement(c) && (c.type === "img" || typeof c.type !== "string"),
+      );
+      const className = "mt-4 leading-7 text-card-foreground";
+      return hasBlock ? (
+        <div className={className}>{children}</div>
+      ) : (
+        <p className={className} {...props}>
+          {children}
+        </p>
+      );
+    },
     ul: (props) => (
       <ul className="mt-4 list-disc space-y-2 pl-6 text-card-foreground marker:text-accent-green/40" {...props} />
     ),

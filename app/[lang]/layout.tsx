@@ -67,7 +67,7 @@ export default async function LangLayout({
         <SerwistProvider swUrl="/serwist/sw.js">
           <Providers>
             <StyleSync />
-            <div className="relative z-10">
+            <div data-shell="root" className="relative z-10">
               <ReadingProgress />
               <Navbar lang={lang as Locale} />
               <main className="flex-1">{children}</main>
