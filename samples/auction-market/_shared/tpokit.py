@@ -32,7 +32,7 @@ def profile_stats(rows):
 
 
 def draw_tpo(fig, t, rows, n_periods, tick, *, poc, val, vah, colors=None, size=12, row=None, col=None, alpha=1.0,
-             first_period=0, last_period=None):
+             first_period=0, last_period=None, row_colors=None):
     """Plot letters (periods < n_periods only). POC row accent, value-area rows ink, others muted."""
     last_period = n_periods if last_period is None else last_period
     kw = dict(row=row, col=col) if row else {}
@@ -40,7 +40,7 @@ def draw_tpo(fig, t, rows, n_periods, tick, *, poc, val, vah, colors=None, size=
         idx = [i for i in rows[p] if first_period <= i < min(n_periods, last_period)]
         if not idx:
             continue
-        base = t.accent if p == poc else (t.ink if val <= p <= vah else t.ink3)
+        base = (row_colors or {}).get(round(p, 6)) or (t.accent if p == poc else (t.ink if val <= p <= vah else t.ink3))
         cols = [(colors or {}).get(i, base) for i in idx]
         fig.add_trace(go.Scatter(x=list(range(len(idx))), y=[p] * len(idx), mode="text", text=[LETTERS[i] for i in idx],
                                  textfont=dict(family=FONT, size=size, color=cols), opacity=alpha, showlegend=False,
