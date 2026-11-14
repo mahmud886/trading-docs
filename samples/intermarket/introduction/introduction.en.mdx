@@ -1,0 +1,121 @@
+---
+title: "Introduction to Intermarket Analysis"
+description: "Why the markets you trade are linked (the dollar, interest rates, risk appetite, commodities), how to measure a relationship with correlation, why correlations change, and a workable routine for using other markets as context rather than as signals — with a synthetic correlation-breakdown chart and an animated walkthrough."
+level: beginner
+order: 1
+lastUpdated: "2026-11-14"
+---
+
+## What Is Intermarket Analysis?
+
+**Intermarket analysis** looks at how different markets — currencies, bonds, stocks, commodities — move **in relation to each other**, and uses that as **context** for the market you trade. A currency pair doesn't move in isolation: US interest rates, the dollar, risk appetite and commodity prices all feed into it.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original said "no institutional fund trades a single instrument in isolation" and that correlations are what
+  "separate professionals from retail". We don't have a source for either. Many traders, professional and otherwise, trade
+  one market well. Intermarket analysis is a way to add context, not a requirement, and not an edge by itself.
+</Callout>
+
+---
+
+## Why Markets Are Linked
+
+| Link                    | Common tendency (not a rule)                                                 |
+| ----------------------- | ---------------------------------------------------------------------------- |
+| **The US dollar**       | It is on one side of most major pairs, so dollar moves show up across them   |
+| **Interest rates**      | Higher expected US rates often support the dollar; lower often weigh on it   |
+| **Risk appetite**       | In risk-off periods stocks often fall while the dollar, yen and franc often firm |
+| **Commodities**         | Oil can matter for CAD and NOK; gold is often negatively related to the dollar |
+
+Each of these has periods when it doesn't hold. They are starting hypotheses to check on your own data.
+
+---
+
+## Measuring a Relationship
+
+**Correlation** is a number from **−1** (move in opposite directions) to **+1** (move together); **0** means no linear relationship. Use the correlation of **returns** (daily percent changes), not of price levels, which can look related just because both trend.
+
+| Value             | Reading                           |
+| ----------------- | --------------------------------- |
+| −1 to −0.7        | Strong inverse                    |
+| −0.7 to −0.3      | Moderate inverse                  |
+| −0.3 to +0.3      | Weak or none                      |
+| +0.3 to +1        | Positive, increasingly strong     |
+
+---
+
+## Correlation Changes
+
+![Synthetic daily data for the dollar index and EUR/USD rebased to 100: EUR/USD moves against the dollar for the first 90 days with a return correlation of −0.85, then the link almost disappears with a correlation of −0.04; a rolling 20-day correlation panel moves from about −0.9 to about zero](/images/intermarket/introduction/intermarket-correlation-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/intermarket/intermarket-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The data is **synthetic**: 140 days with a strong inverse link built into the first 90, then almost none. Real
+  relationships weaken and strengthen more gradually.
+</Callout>
+
+| Window                     | Correlation of daily returns | Reading                          |
+| -------------------------- | ---------------------------- | -------------------------------- |
+| Days 1 – 89                | −0.85                        | A strong inverse link            |
+| Days 91 – 139              | −0.04                        | The link has disappeared         |
+| Rolling 20-day line        | About −0.95 to −0.66, then within ±0.12 | It shows the change, with a lag of about the window length |
+
+Two lessons: a past correlation is not a promise, and a **rolling** correlation shows when the relationship is changing, but only after the fact.
+
+---
+
+## A Workable Routine
+
+| Step | What to do                                                                               |
+| ---- | ---------------------------------------------------------------------------------------- |
+| 1    | Pick one or two related markets for the pair you trade (see the next lessons)            |
+| 2    | Measure correlation of returns on the window you trade (for example 20 and 60 days)      |
+| 3    | Note whether the relationship is stable or changing                                      |
+| 4    | Use it as **context**: does the related market support or contradict your idea?          |
+| 5    | If they disagree, size down or wait — don't treat either as the answer                   |
+
+### Example (no chart) — context, not a signal
+
+You plan to buy EUR/USD at **1.0870** after a pullback; stop **1.0850**, target **1.0910**: risk 20 pips, reward 40, **1 : 2.0** planned. The dollar index is rising and its 20-day correlation with EUR/USD is −0.8. The related market contradicts your idea, so you halve the size or wait for a clearer setup. If its correlation had been near zero, you would give the dollar index less weight.
+
+---
+
+## Common Mistakes
+
+| Mistake                                          | Fix                                                        |
+| ------------------------------------------------ | ---------------------------------------------------------- |
+| Treating correlation as causation                | A shared driver or coincidence can produce it              |
+| Using price-level correlation                    | Use returns                                                |
+| Assuming a relationship is fixed                 | Re-measure; watch the rolling value                        |
+| Using one correlation window                     | Compare a short and a long window                          |
+| Trading only on the other market                 | Your own market's structure and risk plan come first       |
+
+---
+
+## Practice
+
+1. Download daily closes for EUR/USD and the dollar index for six months. Compute the correlation of daily returns.
+2. Compute it for the last 20 days and the last 60 days. Are they the same?
+3. Pick one day where the two disagreed. What did EUR/USD do next?
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                                 |
+| ---------------- | ---------------------------------------------------------------------- |
+| Intermarket      | Using related markets as context for the one you trade                 |
+| Correlation      | −1 to +1, measured on returns, not price levels                        |
+| Changes          | Relationships strengthen, weaken and break; re-measure                 |
+| Use              | One input among several, never a rule                                  |
+
+---
+
+## Related Topics
+
+- [DXY and Major Pairs](/en/intermarket/dxy-correlation)
+- [Yield Curve Dynamics](/en/intermarket/yield-curve)
+- [Risk-On / Risk-Off](/en/intermarket/risk-on-risk-off)
+- [Currency Strength](/en/intermarket/currency-strength)

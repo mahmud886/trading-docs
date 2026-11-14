@@ -1,60 +1,129 @@
 ---
-title: "ইন্টারমার্কেট অ্যানালাইসিস পরিচিতি"
-description: "মার্কেটগুলো কিভাবে একে অপরের সাথে সংযুক্ত তা বুঝুন। কোনো ইনস্টিটিউশনাল ফান্ড বিচ্ছিন্নভাবে ট্রেড করে না — পেশাদার পোর্টফোলিও সিদ্ধান্তের কোরিলেশন শিখুন।"
+title: "Introduction to Intermarket Analysis"
+description: "আপনি যে মার্কেটে ট্রেড করেন তা কেন অন্যগুলোর সাথে যুক্ত (ডলার, সুদের হার, Risk Appetite, কমোডিটি), Correlation দিয়ে সম্পর্ক কীভাবে মাপবেন, Correlation কেন বদলায়, এবং অন্য মার্কেটকে সংকেত নয়, প্রসঙ্গ হিসেবে ব্যবহারের একটি কার্যকর রুটিন — একটি সিন্থেটিক Correlation-ভাঙনের চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: beginner
 order: 1
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Introduction to Intermarket Analysis
+## Intermarket Analysis কী?
 
-Understand how markets are interconnected. No institutional fund trades a single instrument in isolation — learn the correlations that drive professional portfolio decisions.
+**Intermarket Analysis** দেখে বিভিন্ন মার্কেট — কারেন্সি, বন্ড, স্টক, কমোডিটি — একে অপরের সাথে **সম্পর্কে** কীভাবে চলে, আর সেটিকে আপনার ট্রেড করা মার্কেটের **প্রসঙ্গ** হিসেবে ব্যবহার করে। একটি কারেন্সি পেয়ার বিচ্ছিন্নভাবে চলে না: মার্কিন সুদের হার, ডলার, Risk Appetite ও কমোডিটির দাম সবই এতে প্রভাব ফেলে।
 
-<Callout type="info" title="Institutional Perspective">
-  No hedge fund or institutional desk trades a single instrument in isolation. Understanding intermarket correlations is
-  what separates professional macro traders from retail speculators.
+<Callout type="warning" title="সংশোধিত ও নরম করা হয়েছে">
+  মূল লেসনে বলা হয়েছিল "কোনো প্রাতিষ্ঠানিক ফান্ড একক ইন্সট্রুমেন্টে ট্রেড করে না" এবং Correlation "পেশাদার ও রিটেইলকে
+  আলাদা করে"। কোনোটারই উৎস আমাদের নেই। অনেক ট্রেডার, পেশাদার বা অন্য, একটি মার্কেটেই ভালো ট্রেড করেন। Intermarket
+  Analysis প্রসঙ্গ যোগ করার উপায়, বাধ্যতামূলক নয়, আর নিজে থেকে কোনো Edge-ও নয়।
 </Callout>
 
 ---
 
-## Key Concepts
+## মার্কেট কেন যুক্ত
 
-This topic covers the essential frameworks that institutional traders use for cross-market analysis and correlation-based trading decisions.
+| সংযোগ             | সাধারণ প্রবণতা (নিয়ম নয়)                                                            |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| **মার্কিন ডলার**  | বেশিরভাগ মেজর পেয়ারের এক পাশে ডলার, তাই ডলারের মুভ সবখানে দেখা যায়                  |
+| **সুদের হার**     | মার্কিন সুদের হারের প্রত্যাশা বাড়লে প্রায়ই ডলার সমর্থন পায়; কমলে প্রায়ই চাপে পড়ে |
+| **Risk Appetite** | Risk-off সময়ে স্টক প্রায়ই পড়ে, আর ডলার, ইয়েন ও ফ্র্যাংক প্রায়ই শক্ত হয়          |
+| **কমোডিটি**       | তেল CAD ও NOK এর জন্য গুরুত্বপূর্ণ হতে পারে; সোনা প্রায়ই ডলারের সাথে বিপরীত সম্পর্কে |
 
----
-
-## Why This Matters
-
-Understanding intermarket relationships gives you:
-
-- **Early warning signals** before moves happen in your primary market
-- **Confirmation** of your directional bias from correlated assets
-- **Risk management** through correlation-aware position sizing
-- **Edge** that most retail traders completely ignore
+প্রতিটির এমন সময় আছে যখন তা খাটে না। এগুলো নিজের ডেটায় যাচাই করার প্রাথমিক অনুমান।
 
 ---
 
-## Practical Application
+## সম্পর্ক মাপা
 
-### For Forex Traders
+**Correlation** হলো **−১** (বিপরীত দিকে চলে) থেকে **+১** (একসাথে চলে) পর্যন্ত একটি সংখ্যা; **০** মানে কোনো রৈখিক সম্পর্ক নেই। **রিটার্নের** (দৈনিক শতাংশ পরিবর্তন) Correlation ব্যবহার করুন, প্রাইস লেভেলের নয় — কারণ দুটি ট্রেন্ড করলেই সম্পর্ক আছে মনে হতে পারে।
 
-- Check DXY direction before trading any USD pair
-- Monitor yield differentials for carry trade opportunities
-- Watch VIX for risk sentiment shifts
+| মান            | পাঠ                      |
+| -------------- | ------------------------ |
+| −১ থেকে −০.৭   | শক্তিশালী বিপরীত         |
+| −০.৭ থেকে −০.৩ | মাঝারি বিপরীত            |
+| −০.৩ থেকে +০.৩ | দুর্বল বা নেই            |
+| +০.৩ থেকে +১   | ধনাত্মক, ক্রমে শক্তিশালী |
 
-### For Index Traders
+---
 
-- Bond yields lead equity moves by 1-3 days
-- VIX term structure predicts volatility expansion
-- Sector rotation signals come from intermarket flows
+## Correlation বদলায়
 
-### For Commodity Traders
+![ডলার ইনডেক্স ও EUR/USD এর সিন্থেটিক দৈনিক ডেটা, ১০০ এ রিবেজড: প্রথম ৯০ দিন EUR/USD ডলারের বিপরীতে চলে, রিটার্ন Correlation −০.৮৫; তারপর সম্পর্ক প্রায় মিলিয়ে যায়, Correlation −০.০৪; Rolling ২০-দিনের Correlation প্যানেল প্রায় −০.৯ থেকে প্রায় শূন্যে সরে](/images/intermarket/introduction/intermarket-correlation-dark.webp)
 
-- Real yields drive gold inversely
-- USD strength pressures all commodities
-- Chinese data leads base metals
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/intermarket/intermarket-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-<Callout type="warning" title="Correlation ≠ Causation">
-  Correlations change over time and can break during crisis periods. Always use correlations as ONE input in your
-  analysis, never as the sole decision factor. Regularly update your correlation matrices.
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ডেটা **সিন্থেটিক**: ১৪০ দিন, প্রথম ৯০ দিনে শক্তিশালী বিপরীত সম্পর্ক বানানো, তারপর প্রায় নেই। আসল সম্পর্ক আরও ধীরে
+  দুর্বল বা শক্তিশালী হয়।
 </Callout>
+
+| সময়কাল               | দৈনিক রিটার্নের Correlation                   | পাঠ                                           |
+| --------------------- | --------------------------------------------- | --------------------------------------------- |
+| দিন ১ – ৮৯            | −০.৮৫                                         | শক্তিশালী বিপরীত সম্পর্ক                      |
+| দিন ৯১ – ১৩৯          | −০.০৪                                         | সম্পর্ক মিলিয়ে গেছে                          |
+| Rolling ২০-দিনের রেখা | প্রায় −০.৯৫ থেকে −০.৬৬, তারপর ±০.১২ এর মধ্যে | পরিবর্তন দেখায়, প্রায় উইন্ডো-দৈর্ঘ্য দেরিতে |
+
+দুটি শিক্ষা: অতীতের Correlation প্রতিশ্রুতি নয়, আর **Rolling** Correlation দেখায় সম্পর্ক কখন বদলাচ্ছে, কিন্তু ঘটনার পরে।
+
+---
+
+## একটি কার্যকর রুটিন
+
+| ধাপ | কী করবেন                                                                                  |
+| --- | ----------------------------------------------------------------------------------------- |
+| ১   | আপনার ট্রেড করা পেয়ারের জন্য এক-দুটি সম্পর্কিত মার্কেট বাছুন (পরের লেসনগুলো দেখুন)       |
+| ২   | যে সময়কালে ট্রেড করেন তাতে রিটার্নের Correlation মাপুন (যেমন ২০ ও ৬০ দিন)                |
+| ৩   | সম্পর্ক স্থির না বদলাচ্ছে লিখুন                                                           |
+| ৪   | **প্রসঙ্গ** হিসেবে ব্যবহার করুন: সম্পর্কিত মার্কেট আপনার ধারণাকে সমর্থন করছে না বিরোধিতা? |
+| ৫   | দ্বিমত হলে সাইজ কমান বা অপেক্ষা করুন — কোনোটিকেই উত্তর ধরবেন না                           |
+
+### উদাহরণ (চার্ট ছাড়া) — প্রসঙ্গ, সংকেত নয়
+
+পুলব্যাকের পর **1.0870** এ EUR/USD Buy পরিকল্পনা; Stop **1.0850**, টার্গেট **1.0910**: রিস্ক ২০ পিপ, রিওয়ার্ড ৪০, পরিকল্পিত **১ : ২.০**। ডলার ইনডেক্স বাড়ছে আর EUR/USD এর সাথে তার ২০-দিনের Correlation −০.৮। সম্পর্কিত মার্কেট আপনার ধারণার বিরোধিতা করছে, তাই সাইজ অর্ধেক করুন বা স্পষ্ট সেটআপের অপেক্ষা করুন। Correlation শূন্যের কাছে থাকলে ডলার ইনডেক্সকে কম গুরুত্ব দিতেন।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                | সমাধান                                           |
+| ---------------------------------- | ------------------------------------------------ |
+| Correlation কে কারণ ধরা            | একই চালক বা কাকতালীয়তাতেও হতে পারে              |
+| প্রাইস-লেভেলের Correlation ব্যবহার | রিটার্ন ব্যবহার করুন                             |
+| সম্পর্ক স্থির ধরা                  | আবার মাপুন; Rolling মান দেখুন                    |
+| একটি Correlation উইন্ডো ব্যবহার    | ছোট ও লম্বা উইন্ডো তুলনা করুন                    |
+| শুধু অন্য মার্কেটের ওপর ট্রেড      | নিজের মার্কেটের স্ট্রাকচার ও রিস্ক পরিকল্পনা আগে |
+
+---
+
+## অনুশীলন
+
+1. ছয় মাসের EUR/USD ও ডলার ইনডেক্সের দৈনিক Close নামান। দৈনিক রিটার্নের Correlation হিসাব করুন।
+2. শেষ ২০ ও ৬০ দিনের জন্য আলাদা করে হিসাব করুন। একই কি?
+3. এমন একটি দিন বাছুন যেদিন দুটি একমত ছিল না। এরপর EUR/USD কী করেছে?
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা       | বিস্তারিত                                                  |
+| ----------- | ---------------------------------------------------------- |
+| Intermarket | সম্পর্কিত মার্কেটকে আপনার মার্কেটের প্রসঙ্গ হিসেবে ব্যবহার |
+| Correlation | −১ থেকে +১, রিটার্নে মাপা, প্রাইস লেভেলে নয়               |
+| পরিবর্তন    | সম্পর্ক শক্তিশালী, দুর্বল হয় ও ভাঙে; আবার মাপুন           |
+| ব্যবহার     | একাধিক ইনপুটের একটি, কখনো নিয়ম নয়                        |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [DXY and Major Pairs](/bn/intermarket/dxy-correlation)
+- [Yield Curve Dynamics](/bn/intermarket/yield-curve)
+- [Risk-On / Risk-Off](/bn/intermarket/risk-on-risk-off)
+- [Currency Strength](/bn/intermarket/currency-strength)
