@@ -1,76 +1,123 @@
 ---
-title: "Proximal vs Distal Lines — Precision Zone Trading"
-description: "Master proximal and distal line concepts for supply/demand zones. Learn which boundary to use for entries, stops, and targets for maximum precision."
+title: "Proximal & Distal Lines — Complete Guide"
+description: "Draw a supply or demand zone precisely with proximal and distal lines (body-to-wick or wick-to-wick), then choose where to enter inside it: at the proximal line, at 50%, or deep near the distal, and see the trade-off between R:R and getting filled, with a chart and an animated walkthrough."
 level: advanced
 order: 34
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Proximal vs Distal Lines
+## The Two Lines
 
-Master proximal and distal line concepts for supply/demand zones. Learn which boundary to use for entries, stops, and targets for maximum precision.
+Every supply or demand zone has two edges:
 
-<Callout type="info" title="Supply & Demand in SMC Context">
-  Supply and demand zones are the FOUNDATION that Order Blocks are built upon. Understanding institutional S&D gives you
-  a deeper understanding of WHY order blocks work and how to identify the strongest ones.
+- **Proximal line:** the edge **nearest** to current price. Price reaches it first.
+- **Distal line:** the edge **farthest** from current price. A close beyond it invalidates the zone.
+
+| Zone       | Proximal (standard)          | Distal                       |
+| ---------- | ---------------------------- | ---------------------------- |
+| **Demand** | Highest **body** in the base | Lowest **wick** in the base  |
+| **Supply** | Lowest **body** in the base  | Highest **wick** in the base |
+
+---
+
+## Body-to-Wick or Wick-to-Wick?
+
+| Method           | Proximal from     | Zone    | Effect                                        |
+| ---------------- | ----------------- | ------- | --------------------------------------------- |
+| **Body-to-wick** | The base's bodies | Tighter | Better R:R; price may turn before reaching it |
+| **Wick-to-wick** | The base's wicks  | Wider   | Fills more often; worse R:R                   |
+
+The distal line is the far wick in both. Pick one method and use it every time, so your results are comparable.
+
+---
+
+## Three Entries in One Zone
+
+![EUR/USD 15m demand zone 1.0882–1.0898: entries at the proximal line (1:2.6), at 50% (1:4.6) and deep near the distal (1:7.8); the return turns at 1.0888, so only the first two fill](/images/smc/proximal-distal-lines/proximal-distal-lines-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/proximal-distal-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
 </Callout>
 
----
+The demand zone is **1.0882 – 1.0898** (body-to-wick). The wick-to-wick version would put the proximal at **1.0903**. All three entries share the stop (**1.0876**, below the distal) and target (**1.0955**):
 
-## Key Principles
+| Entry | Where                     | Price  | Risk    | Reward  | **R:R**     | Filled? |
+| ----- | ------------------------- | ------ | ------- | ------- | ----------- | ------- |
+| **A** | Proximal line             | 1.0898 | 22 pips | 57 pips | **1 : 2.6** | Yes     |
+| **B** | 50% of the zone           | 1.0890 | 14 pips | 65 pips | **1 : 4.6** | Yes     |
+| **C** | Deep, 3 pips above distal | 1.0885 | 9 pips  | 70 pips | **1 : 7.8** | **No**  |
 
-### Institutional Supply Zone
-
-- Area where institutional SELLING overwhelmed buying
-- Price fell aggressively FROM this zone
-- Unfilled sell orders remain = price returns to fill them
-- Acts as resistance with institutional backing
-
-### Institutional Demand Zone
-
-- Area where institutional BUYING overwhelmed selling
-- Price rose aggressively FROM this zone
-- Unfilled buy orders remain = price returns to fill them
-- Acts as support with institutional backing
+The return turned at **1.0888**. A and B filled; C, with the best R:R on paper, missed the trade entirely.
 
 ---
 
-## Zone Quality Criteria
+## Choosing the Entry
 
-| Criteria        | Strong Zone         | Weak Zone               |
-| --------------- | ------------------- | ----------------------- |
-| Departure speed | Fast (displacement) | Slow (grinding)         |
-| Time at level   | Brief (1-3 candles) | Extended (many candles) |
-| Freshness       | Never tested        | Tested multiple times   |
-| Volume          | Low volume in zone  | High volume             |
-| Return speed    | Slow approach       | Fast V-shape            |
+| Entry        | Use when                                                                     |
+| ------------ | ---------------------------------------------------------------------------- |
+| **Proximal** | Strong, fresh zone; fast markets; you don't want to miss it                  |
+| **50%**      | Wide zones; a balance of fill rate and R:R                                   |
+| **Deep**     | Only with a lower-timeframe CHOCH inside the zone, or as a small extra order |
+| **Split**    | Half at the proximal, half at 50% (same total risk)                          |
 
----
-
-## Practical Application
-
-### Identifying Zones
-
-1. Find a strong impulsive move (displacement)
-2. Mark the base/consolidation BEFORE the move
-3. Zone = the consolidation area before displacement
-4. Proximal line = nearest edge to current price
-5. Distal line = far edge of the zone
-
-### Trading Zones
-
-1. Wait for price to return to the zone
-2. Look for rejection/confirmation at the zone
-3. Enter with stop beyond the distal line
-4. Target = next opposing zone or liquidity level
-
-### Combining with ICT/SMC
-
-- S&D zone + Order Block inside = high probability
-- S&D zone + FVG at zone boundary = precision entry
-- S&D zone + Liquidity sweep before entry = A+ setup
-
-<Callout type="warning" title="Zone Invalidation">
-  A zone is INVALIDATED when price closes through the distal line with displacement. Tested zones lose strength with
-  each touch. After 3 tests, consider the zone consumed. Always use fresh zones for highest probability.
+<Callout type="info" title="Clarified: stops and targets">
+  The original said to use "which boundary" for entries, stops and targets "for maximum precision". The usual roles are:
+  **enter** at or inside the proximal line, **stop** a few pips beyond the distal line (not on it, where wicks reach),
+  and **target** the proximal line of the next opposing zone, which price reaches before that zone's distal.
 </Callout>
+
+### Second example (no chart) — a supply zone, split entry
+
+GBP/USD supply **1.2742 – 1.2756** (proximal 1.2742, distal 1.2756). Split a 1% risk: half at the proximal **1.2742**, half at 50% **1.2749**; stop **1.2761**; target the next demand's proximal at **1.2680**. Leg 1: risk 19 pips, reward 62 pips (**1 : 3.3**). Leg 2: risk 12 pips, reward 69 pips (**1 : 5.8**). Both planned. If price turns at 1.2745, only leg 1 fills.
+
+---
+
+## Common Mistakes
+
+| Mistake                                        | Fix                                                |
+| ---------------------------------------------- | -------------------------------------------------- |
+| Mixing body-to-wick and wick-to-wick           | Pick one method                                    |
+| Stop exactly on the distal line                | Add a few pips for spread and wicks                |
+| Always entering deep for the best R:R          | Count the trades you miss; check the fill rate     |
+| Targeting the opposing zone's distal line      | Target its proximal line; price reaches that first |
+| Proximal and distal far apart (very wide zone) | Use 50% or a lower-timeframe refinement            |
+
+---
+
+## Practice
+
+1. Draw 20 zones both ways (body-to-wick and wick-to-wick).
+2. For each, record whether price reached the proximal, the 50% level, and the deep level.
+3. Calculate the fill rate and average R:R for each entry.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Line / entry  | Key point                                      |
+| ------------- | ---------------------------------------------- |
+| **Proximal**  | Nearest edge; standard entry; fills most often |
+| **50%**       | Better R:R; fills less often                   |
+| **Distal**    | Far edge; the stop goes just beyond it         |
+| **Trade-off** | Deeper entry = better R:R, more missed trades  |
+
+---
+
+## Related Topics
+
+- [Supply & Demand Zones](/en/smc/supply-demand-zones) — drawing the zone
+- [Zone Strength Scoring](/en/smc/zone-strength-scoring) — which zones deserve a proximal entry
+- [Advanced Execution Models](/en/smc/advanced-execution-models) — refining the entry with a CHOCH
+- [Order Blocks](/en/smc/order-blocks) — the 50% (mean threshold) idea for a single candle
