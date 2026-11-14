@@ -1,0 +1,118 @@
+---
+title: "Price Action Exit Models — Complete Guide"
+description: "Plan the exit before the entry: fixed targets, structural exits, trailing stops, partial exits and time exits, how each one behaves on the same trade, which suits which style, and the rules that keep exits honest, with a chart and an animated walkthrough."
+level: intermediate
+order: 28
+lastUpdated: "2026-11-14"
+---
+
+## Why Exits Matter
+
+The entry decides your risk; the **exit decides what you keep**. Two traders with the same entry and stop can finish the same trade at +1R and +3R just because they use different exit rules.
+
+An **exit model** is that rule, written down before you enter.
+
+---
+
+## Five Exit Models
+
+| Model            | Where you get out                                              | Strength                   | Weakness                        |
+| ---------------- | -------------------------------------------------------------- | -------------------------- | ------------------------------- |
+| **Fixed target** | A set level: 2R, a measured move, a Fibonacci extension         | Simple, no decisions       | Leaves the rest of a big move   |
+| **Structural**   | Just before the next opposing level: S/R, swing, liquidity pool | Uses what the chart shows  | Needs a clear level             |
+| **Trailing stop**| Under each new higher low (long) / above each lower high (short), or an ATR distance | Rides trends | Gives back profit at the turn |
+| **Partial exit** | Part at 1R / 2R, the rest held                                  | Books profit, eases pressure | Smaller result if the trend runs |
+| **Time exit**    | At a set time: session close, N hours/days                     | Ends stale trades          | Ignores price                   |
+
+---
+
+## Same Long, Four Exits
+
+![GBP/USD 1H long at 1.2700 with stop 1.2680: fixed 2R target 1.2740 (+2R), structural exit 1.2758 below resistance (+2.9R), trailing stop under higher lows hit at 1.2735 (+1.75R), time exit at the New York close 1.2726 (+1.3R)](/images/price-action/exit-models/exit-models-four-exits-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/price-action/exit-models-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**. The R results are simulated on this one price path to show how exits differ; they
+  are not a track record, and on a different path the ranking changes.
+</Callout>
+
+Buy GBP/USD **1.2700**, stop **1.2680** (1R = 20 pips), resistance above at **1.2760 – 1.2770** (yesterday's high). Times are Bangladesh time in US summer.
+
+| Exit                                    | Rule                                                       | Exit price | Result     |
+| --------------------------------------- | ---------------------------------------------------------- | ---------- | ---------- |
+| **A · Fixed target**                    | Sell at 2R                                                 | 1.2740     | **+2.0R**  |
+| **B · Structural**                      | Sell 2 pips below resistance                               | 1.2758     | **+2.9R**  |
+| **C · Trailing**                        | After each new high, stop 1 pip under the latest higher low (1.2721, then 1.2735) | 1.2735 | **+1.75R** |
+| **D · Time**                            | Flat at the New York close, 2:00 AM BD (4 PM New York)       | 1.2726     | **+1.3R**  |
+
+What it shows:
+
+- **B** won here because a clear level sat in the way and price turned there. Without that level, B has nothing to aim at.
+- **A** was the earliest and simplest, but missed the next 18 pips.
+- **C** gave back profit at the turn — that's the price of riding a trend. If price had kept trending, C would have beaten everything.
+- **D** ignored price entirely; useful for intraday traders who never hold overnight.
+
+---
+
+## Partial Exits
+
+A common plan: **50% at 1R** (stop to break-even), **30% at 2R**, **20%** trailed or held to the final target. On the path above, that would book 0.5 × 1 + 0.3 × 2 + 0.2 × 2.9 (held to the structural exit) = **+1.68R**.
+
+Partials smooth the result; they never beat holding everything to the best exit. See [Trade Management](/en/price-action/trade-management) for what moving the stop to break-even can cost.
+
+---
+
+## Exit by Trading Style
+
+| Style      | Typical exit                       | Why                                    |
+| ---------- | ---------------------------------- | -------------------------------------- |
+| Scalping   | Fixed target                       | No time to manage; costs matter        |
+| Intraday   | Structural + time (session close)  | Levels for targets, flat before the close |
+| Swing      | Partial + trailing                 | Lets multi-day moves run               |
+| Position   | Structural + wide trailing         | Major levels, weekly swings            |
+
+### Example (no chart) — gold fixed target vs structural
+
+Short XAU/USD at **2,420**, stop **2,428** ($8 risk). Fixed 2R target: **2,404**. The next daily support is **2,391**, so a structural exit just above it at **2,393** plans **1 : 3.4**. Before the trade, decide which one you'll use — and don't switch while the trade is open.
+
+---
+
+## Common Mistakes
+
+| Mistake                                        | Fix                                                    |
+| ---------------------------------------------- | ------------------------------------------------------ |
+| Deciding the exit after entering               | Write it in the plan before the order                  |
+| Moving the target further away mid-trade       | Only the stop may move, and only toward profit         |
+| Targets straight through an opposing level      | Exit before the level, not inside it                   |
+| Trailing too tight on a fast timeframe          | Trail by structure on the timeframe you entered on     |
+| Holding intraday trades overnight "for more"    | Use a time exit                                        |
+
+---
+
+## Practice
+
+1. Take 20 past trades and record exits A–D for each, with the same entry and stop.
+2. Total R for each exit model across all 20.
+3. Note which market conditions (trend, range, news) favoured which exit.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Rule                                   | Why                                       |
+| -------------------------------------- | ----------------------------------------- |
+| Plan the exit before the entry         | Decisions in a trade are emotional        |
+| Respect opposing levels                | Price often turns there                   |
+| Know what each exit gives up           | No exit wins on every path                |
+| Test your exit on your own trades      | Choose by data, not by the last trade     |
+
+---
+
+## Related Topics
+
+- [Entry Models](/en/price-action/entry-models)
+- [Trade Management](/en/price-action/trade-management)
+- [Risk Management](/en/price-action/risk-management)
+- [Support & Resistance](/en/price-action/support-resistance)
