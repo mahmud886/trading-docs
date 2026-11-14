@@ -1,0 +1,126 @@
+---
+title: "Delta Analysis — Complete Guide"
+description: "Delta is volume bought at the ask minus volume sold at the bid: per bar, cumulative and at price. How to read confirmation and divergence, why a candle's colour and its delta can disagree, how cumulative delta resets and drifts, and a worked divergence example with a three-panel chart and an animated walkthrough."
+level: advanced
+order: 5
+lastUpdated: "2026-11-14"
+---
+
+## What Is Delta?
+
+**Delta** is the difference between **volume traded at the ask** (aggressive buying) and **volume traded at the bid** (aggressive selling):
+
+> Delta = volume at ask − volume at bid
+
+Positive delta means aggressive buyers outweighed aggressive sellers; negative means the reverse. Delta says who was **more aggressive**, not who was right or who won.
+
+<Callout type="warning" title="Corrected">
+  The original said "a green candle can have negative delta … institutions are buying the dip" and called delta "the
+  truth behind the candle". It's a different measure of the same trades, not a truer one. A green candle with negative
+  delta means more volume traded at the bid than at the ask while price still rose — which can mean passive buyers
+  absorbed the selling, **or** that classification and thin liquidity are distorting the number. Treat it as a clue.
+</Callout>
+
+---
+
+## Three Kinds of Delta
+
+| Kind                     | What it is                                             | Use                                         |
+| ------------------------ | ------------------------------------------------------ | ------------------------------------------- |
+| **Bar delta**            | Delta of one candle                                    | Who dominated this bar                      |
+| **Cumulative delta (CVD)** | The running total of bar delta from a chosen start   | The direction of aggressive pressure over time |
+| **Delta at price**       | Delta at each price in a bar (the footprint)           | Where in the bar the imbalance happened — see [Footprint Charts](/en/order-flow/footprint-charts) |
+
+CVD depends on **where you start counting** (usually the session open) and resets or drifts with the choice. Compare **shapes** (highs, lows, slopes), not absolute values.
+
+---
+
+## A Divergence
+
+![A synthetic EUR/USD 5-minute chart with three panels: price makes a higher high on the second leg up, but delta per bar on that leg is only +750 in 10 bars compared with +4,080 on the first leg, and cumulative delta makes a lower high of 3,600 compared with 4,080; price then falls with delta of −2,440](/images/order-flow/delta-analysis/delta-divergence-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/order-flow/delta-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The candles and delta are **synthetic**, in contracts. Real delta comes from trade-by-trade data classified as buys or
+  sells.
+</Callout>
+
+| Stage             | Price                         | Delta                                                  |
+| ----------------- | ----------------------------- | ------------------------------------------------------ |
+| First leg up      | Rises 22 pips in 12 bars      | +4,080 (every bar positive); CVD reaches 4,080         |
+| Pullback          | Falls 10 pips                 | −1,230; CVD falls to 2,850                             |
+| Second leg up     | **Higher high** (1.0879 vs 1.0873) | Only **+750** in 10 bars; CVD peaks at **3,600** — a **lower high** |
+| Drop              | Falls 21 pips                 | −2,440; CVD falls to 1,160                             |
+
+At the second high, price said "new high" while aggressive buying had **weakened** — a **bearish divergence**. In this synthetic session the divergence was followed by a fall; in real markets divergences often fail, especially in strong trends.
+
+---
+
+## Reading Delta Signals
+
+| Signal                                               | Reading                                        | Caution                                            |
+| ---------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------- |
+| Price up + CVD up                                    | Confirmation                                   | Doesn't mean it can't reverse                      |
+| Price up + CVD down/flat                             | Bearish divergence: advance on weaker buying   | Can persist for a long time in trends              |
+| Price down + CVD down                                | Confirmation                                   |                                                    |
+| Price down + CVD up/flat                             | Bullish divergence: decline on weaker selling  | Same caution                                       |
+| Large positive delta, price doesn't rise             | Possible absorption by passive sellers         | See [Absorption and Exhaustion](/en/order-flow/absorption-exhaustion) |
+| Large negative delta, price doesn't fall             | Possible absorption by passive buyers          | Same                                               |
+
+### Example (no chart) — acting on a divergence
+
+On a 6E chart price makes a high at **1.0879**, CVD is below its earlier peak, and the next candle closes below the previous candle's low at **1.0875**. Plan: sell **1.0874**, stop **1.0882** (above the high), target **1.0858** (the start of the move): risk 8, reward 16, **1 : 2.0** planned. The trigger is the **price confirmation** (a close below the prior low), not the divergence alone. If price closes above **1.0882**, the divergence has failed.
+
+---
+
+## Limits
+
+| Limit                              | Why it matters                                          |
+| ---------------------------------- | ------------------------------------------------------- |
+| Classification                     | Delta depends on labelling each trade a buy or sell     |
+| One venue                          | In spot forex, a broker's delta covers only its own flow |
+| Where CVD starts                   | Different starts give different lines                    |
+| Divergences fail often             | Strong trends can run on weakening delta for a long time |
+| Needs real volume                  | Tick-volume "delta" is a weaker approximation            |
+
+---
+
+## Common Mistakes
+
+| Mistake                                       | Fix                                                    |
+| --------------------------------------------- | ------------------------------------------------------ |
+| Trading a divergence without confirmation     | Wait for a close beyond the prior swing                |
+| Comparing CVD values across sessions          | Compare shapes within one session                      |
+| Treating delta as "institutional buying"      | It's aggressive volume; it can come from anyone        |
+| Ignoring price context                        | Mark levels and structure first                        |
+| No stop                                       | Place it beyond the divergence extreme                 |
+
+---
+
+## Practice
+
+1. On a futures chart, plot bar delta and cumulative delta from the session open for five sessions.
+2. Mark each swing high and low in price and compare with the CVD at those points.
+3. List divergences and whether they led to a reversal, and whether a price confirmation preceded it.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea                | Detail                                                             |
+| ------------------- | ------------------------------------------------------------------ |
+| Delta               | Volume at the ask minus volume at the bid                          |
+| Types               | Bar delta, cumulative delta, delta at price                        |
+| Divergence          | New price extreme without a new CVD extreme — a clue, not a signal |
+| Rule                | Wait for price to confirm; stop beyond the extreme                 |
+
+---
+
+## Related Topics
+
+- [Introduction to Order Flow](/en/order-flow/introduction)
+- [Footprint Charts](/en/order-flow/footprint-charts)
+- [Absorption and Exhaustion](/en/order-flow/absorption-exhaustion)
+- [Volume Spread Analysis](/en/wyckoff/volume-spread-analysis)

@@ -1,162 +1,133 @@
 ---
-title: "ডেল্টা ও কিউমুলেটিভ ডেল্টা অ্যানালাইসিস — সম্পূর্ণ গাইড"
-description: "ডেল্টা অ্যানালাইসিস মাস্টার করুন — বায়িং ও সেলিং ভলিউমের পার্থক্য। কিউমুলেটিভ ডেল্টা ডাইভার্জেন্স এবং ইনস্টিটিউশনাল দিকনির্দেশ নিশ্চিত করুন।"
+title: "Delta Analysis — সম্পূর্ণ গাইড"
+description: "Delta হলো Ask এ কেনা Volume বিয়োগ Bid এ বেচা Volume: প্রতি বার, Cumulative আর প্রাইসে। Confirmation আর Divergence কীভাবে পড়বেন, ক্যান্ডেলের রঙ আর Delta কেন না মিলতে পারে, Cumulative Delta কীভাবে রিসেট ও সরে যায়, আর তিন-প্যানেল চার্ট ও অ্যানিমেটেড ওয়াকথ্রুসহ একটি Divergence উদাহরণ।"
 level: advanced
 order: 5
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## What is Delta?
+## Delta কী?
 
-Delta measures the **difference between aggressive buying volume and aggressive selling volume** at each price level or within each candle. It reveals WHO is more aggressive — buyers or sellers — regardless of what the price candle shows.
+**Delta** হলো **Ask এ ট্রেড হওয়া Volume** (Aggressive কেনা) আর **Bid এ ট্রেড হওয়া Volume** (Aggressive বেচা) এর পার্থক্য:
 
-<Callout type="info" title="Delta = Truth Behind the Candle">
-  A green bullish candle can have NEGATIVE delta (more selling). This means sellers were aggressive but buyers absorbed
-  them via limit orders. This is a powerful signal that most traders miss.
+> Delta = Ask এর Volume − Bid এর Volume
+
+Positive Delta মানে Aggressive ক্রেতারা বিক্রেতাদের চেয়ে বেশি ছিল; Negative মানে উল্টো। Delta বলে কে **বেশি Aggressive** ছিল, কে সঠিক বা কে জিতেছে তা নয়।
+
+<Callout type="warning" title="সংশোধিত">
+  মূল লেসনে বলা ছিল "সবুজ ক্যান্ডেলের Delta Negative হতে পারে … প্রতিষ্ঠান Dip কিনছে" আর Delta কে "ক্যান্ডেলের পেছনের
+  সত্য" বলা হয়েছিল। এটা একই ট্রেডের ভিন্ন পরিমাপ, বেশি সত্য পরিমাপ নয়। Negative Delta সহ সবুজ ক্যান্ডেল মানে প্রাইস
+  উঠলেও Ask এর চেয়ে Bid এ বেশি Volume ট্রেড হয়েছে — যার অর্থ হতে পারে Passive ক্রেতারা বিক্রি শোষণ করেছে, **অথবা**
+  শ্রেণিবিন্যাস আর পাতলা Liquidity সংখ্যাটিকে বিকৃত করছে। এটাকে একটি সূত্র হিসেবে দেখুন।
 </Callout>
 
 ---
 
-## Delta Formula
+## তিন ধরনের Delta
 
-```
-Delta = Volume at Ask (aggressive buys) - Volume at Bid (aggressive sells)
+| ধরন                        | এটা কী                                       | ব্যবহার                                                                                   |
+| -------------------------- | -------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Bar Delta**              | একটি ক্যান্ডেলের Delta                       | এই বারে কে প্রভাবশালী ছিল                                                                 |
+| **Cumulative Delta (CVD)** | বাছাই করা শুরু থেকে Bar Delta এর ক্রমযোগ     | সময়ের সাথে Aggressive চাপের দিক                                                          |
+| **Delta at Price**         | একটি বারের প্রতিটি প্রাইসে Delta (Footprint) | বারের কোথায় Imbalance হয়েছে — দেখুন [Footprint Charts](/bn/order-flow/footprint-charts) |
 
-Positive Delta (+) = More aggressive buying
-Negative Delta (-) = More aggressive selling
-Zero Delta (≈0) = Balanced / indecision
-```
-
----
-
-## Types of Delta
-
-### 1. Candle Delta (Per-Bar)
-
-- Net buying/selling for each individual candle
-- Quick snapshot of who dominated that candle
-
-### 2. Cumulative Delta (Running Total)
-
-- Running sum of all delta values over time
-- Shows overall institutional pressure direction
-- Like an "internal trend line" of buying/selling
-
-### 3. Delta at Price (Footprint)
-
-- Delta broken down by each price level within a candle
-- Most granular view — shows exact levels of imbalance
+CVD **কোথা থেকে গোনা শুরু করেন** তার উপর নির্ভর করে (সাধারণত সেশনের ওপেন) আর পছন্দের সাথে রিসেট বা সরে যায়। পরম মান নয়, **আকার** (High, Low, ঢাল) তুলনা করুন।
 
 ---
 
-## Reading Delta Signals
+## একটি Divergence
 
-### Bullish Signals
+![একটি সিন্থেটিক EUR/USD ৫-মিনিট চার্ট, তিন প্যানেল: দ্বিতীয় লেগে প্রাইস Higher High করে, কিন্তু ওই লেগে প্রতি বার Delta ১০ বারে মাত্র +750, প্রথম লেগের +4,080 এর তুলনায়, আর Cumulative Delta 4,080 এর তুলনায় 3,600 এর Lower High করে; তারপর প্রাইস −2,440 Delta সহ পড়ে](/images/order-flow/delta-analysis/delta-divergence-dark.webp)
 
-| Signal                                  | Description        | Meaning                             |
-| --------------------------------------- | ------------------ | ----------------------------------- |
-| Rising price + Rising cumulative delta  | Trend confirmation | Genuine buying pressure             |
-| Falling price + Rising cumulative delta | **Divergence**     | Sellers exhausting, reversal coming |
-| Large positive delta on pullback candle | Absorption         | Institutions buying the dip         |
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/order-flow/delta-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Bearish Signals
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেল আর Delta **সিন্থেটিক**, কন্ট্রাক্টে। আসল Delta আসে Buy বা Sell হিসেবে শ্রেণিবদ্ধ ট্রেড-বাই-ট্রেড ডেটা থেকে।
+</Callout>
 
-| Signal                                   | Description        | Meaning                            |
-| ---------------------------------------- | ------------------ | ---------------------------------- |
-| Falling price + Falling cumulative delta | Trend confirmation | Genuine selling pressure           |
-| Rising price + Falling cumulative delta  | **Divergence**     | Buyers exhausting, reversal coming |
-| Large negative delta on rally candle     | Absorption         | Institutions selling the rally     |
+| পর্যায়           | প্রাইস                               | Delta                                                          |
+| ----------------- | ------------------------------------ | -------------------------------------------------------------- |
+| প্রথম লেগ উপরে    | ১২ বারে ২২ পিপ ওঠে                   | +4,080 (প্রতিটি বার Positive); CVD 4,080 এ পৌঁছায়             |
+| পুলব্যাক          | ১০ পিপ পড়ে                          | −1,230; CVD 2,850 এ নামে                                       |
+| দ্বিতীয় লেগ উপরে | **Higher High** (1.0879 বনাম 1.0873) | ১০ বারে মাত্র **+750**; CVD **3,600** এ শীর্ষ — **Lower High** |
+| পতন               | ২১ পিপ পড়ে                          | −2,440; CVD 1,160 এ নামে                                       |
 
----
-
-## Cumulative Delta Divergence
-
-The most powerful delta signal — when price and cumulative delta disagree:
-
-```
-BULLISH DIVERGENCE:
-Price: Making lower lows ↓↓↓
-Cum. Delta: Making higher lows ↑↑↑
-= Sellers hitting bids but being ABSORBED by institutional limit buys
-= Reversal likely — institutions accumulating
-
-BEARISH DIVERGENCE:
-Price: Making higher highs ↑↑↑
-Cum. Delta: Making lower highs ↓↓↓
-= Buyers lifting offers but being ABSORBED by institutional limit sells
-= Reversal likely — institutions distributing
-```
+দ্বিতীয় High এ প্রাইস বলছিল "নতুন High" যখন Aggressive কেনা **দুর্বল** হয়েছে — একটি **Bearish Divergence**। এই সিন্থেটিক সেশনে Divergence এর পরে পতন এসেছে; আসল মার্কেটে Divergence প্রায়ই ব্যর্থ হয়, বিশেষ করে শক্তিশালী ট্রেন্ডে।
 
 ---
 
-## Delta + ICT/SMC Integration
+## Delta সংকেত পড়া
 
-### At Order Blocks
+| সংকেত                              | পাঠ                                      | সতর্কতা                                                                 |
+| ---------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------- |
+| প্রাইস উপরে + CVD উপরে             | নিশ্চিতকরণ                               | উল্টাতে পারবে না তা নয়                                                 |
+| প্রাইস উপরে + CVD নিচে/সমান        | Bearish Divergence: দুর্বল কেনায় উত্থান | ট্রেন্ডে অনেকক্ষণ চলতে পারে                                             |
+| প্রাইস নিচে + CVD নিচে             | নিশ্চিতকরণ                               |                                                                         |
+| প্রাইস নিচে + CVD উপরে/সমান        | Bullish Divergence: দুর্বল বেচায় পতন    | একই সতর্কতা                                                             |
+| বড় Positive Delta, প্রাইস ওঠে না  | Passive বিক্রেতাদের সম্ভাব্য শোষণ        | দেখুন [Absorption and Exhaustion](/bn/order-flow/absorption-exhaustion) |
+| বড় Negative Delta, প্রাইস পড়ে না | Passive ক্রেতাদের সম্ভাব্য শোষণ          | একই                                                                     |
 
-- Bullish OB + Positive delta spike at that level = CONFIRMED institutional buying
-- Bearish OB + Negative delta spike = CONFIRMED institutional selling
-- OB with neutral delta = Weak OB, lower probability
+### উদাহরণ (চার্ট ছাড়া) — Divergence এ কাজ করা
 
-### At Liquidity Sweeps
-
-- Sweep of lows + Immediate positive delta shift = Smart money buying
-- Sweep of highs + Immediate negative delta shift = Smart money selling
-- Delta confirms the "intent" behind the sweep
-
-### At FVG Fill
-
-- FVG fills with opposing delta = Just technical fill, original bias intact
-- FVG fills with confirming delta = Potential reversal of original move
+6E চার্টে প্রাইস **1.0879** এ High করে, CVD আগের শীর্ষের নিচে, আর পরের ক্যান্ডেল আগের ক্যান্ডেলের Low **1.0875** এর নিচে Close করে। পরিকল্পনা: **1.0874** এ Sell, Stop **1.0882** (High এর উপরে), টার্গেট **1.0858** (মুভের শুরু): রিস্ক ৮, রিওয়ার্ড ১৬, পরিকল্পিত **১ : ২.০**। ট্রিগার **প্রাইসের নিশ্চিতকরণ** (আগের Low এর নিচে Close), শুধু Divergence নয়। **1.0882** এর উপরে Close হলে Divergence ব্যর্থ।
 
 ---
 
-## Practical Delta Trading Rules
+## সীমাবদ্ধতা
 
-### Entry Confirmation
-
-1. Identify your setup (OB, FVG, sweep) using ICT/SMC
-2. Drop to LTF and watch delta
-3. Wait for delta to CONFIRM your direction:
-   - For longs: Positive delta shift / absorption of sellers
-   - For shorts: Negative delta shift / absorption of buyers
-4. Enter with delta confirmation, stop below structure
-
-### Exit/Invalidation
-
-- If delta diverges AGAINST your position = early warning
-- If cumulative delta makes new extreme against you = exit early
-- Don't fight sustained delta pressure
+| সীমা                      | কেন গুরুত্বপূর্ণ                                               |
+| ------------------------- | -------------------------------------------------------------- |
+| শ্রেণিবিন্যাস             | Delta নির্ভর করে প্রতিটি ট্রেডকে Buy বা Sell লেবেল দেওয়ার উপর |
+| এক ভেন্যু                 | Spot ফরেক্সে ব্রোকারের Delta শুধু তার নিজের ফ্লো কভার করে      |
+| CVD কোথায় শুরু           | ভিন্ন শুরু ভিন্ন লাইন দেয়                                     |
+| Divergence প্রায়ই ব্যর্থ | শক্তিশালী ট্রেন্ড দুর্বল Delta তেও অনেকক্ষণ চলতে পারে          |
+| আসল Volume লাগে           | Tick-Volume "Delta" দুর্বল আনুমানিক                            |
 
 ---
 
-## Delta Absorption Patterns
+## সাধারণ ভুল
 
-### Buying Absorption (Bullish)
-
-```
-Multiple red candles with POSITIVE delta
-= Sellers aggressive but being absorbed by limit buyers
-= Invisible institutional accumulation
-= Spring-like energy building for move UP
-```
-
-### Selling Absorption (Bearish)
-
-```
-Multiple green candles with NEGATIVE delta
-= Buyers aggressive but being absorbed by limit sellers
-= Invisible institutional distribution
-= Energy building for move DOWN
-```
+| ভুল                               | সমাধান                                    |
+| --------------------------------- | ----------------------------------------- |
+| নিশ্চিতকরণ ছাড়া Divergence ট্রেড | আগের Swing এর ওপারে Close এর অপেক্ষা করুন |
+| ভিন্ন সেশনের CVD মান তুলনা        | এক সেশনের ভেতরে আকার তুলনা করুন           |
+| Delta কে "প্রাতিষ্ঠানিক কেনা" ধরা | এটা Aggressive Volume; যে কেউ করতে পারে   |
+| প্রাইস কনটেক্সট উপেক্ষা           | আগে লেভেল আর Structure চিহ্নিত করুন       |
+| Stop নেই                          | Divergence এর চরম বিন্দুর ওপারে রাখুন     |
 
 ---
 
-## Tools for Delta Analysis
+## অনুশীলন
 
-| Platform     | Delta Features                   | Best For             |
-| ------------ | -------------------------------- | -------------------- |
-| Sierra Chart | Full delta, cum delta, footprint | Professional futures |
-| ATAS         | Advanced delta profiles          | Crypto + Futures     |
-| Bookmap      | Visual delta heatmap             | Real-time scalping   |
-| VolSys       | Delta dashboard                  | Quick analysis       |
-| TradingView  | Basic delta indicators           | Beginner friendly    |
+1. একটি ফিউচার্স চার্টে পাঁচটি সেশনের জন্য ওপেন থেকে Bar Delta আর Cumulative Delta প্লট করুন।
+2. প্রাইসের প্রতিটি Swing High ও Low চিহ্নিত করে সেই বিন্দুতে CVD এর সাথে তুলনা করুন।
+3. Divergence গুলো তালিকা করুন আর সেগুলো Reversal এ গেছে কি না এবং আগে প্রাইসের নিশ্চিতকরণ ছিল কি না লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা      | বিস্তারিত                                             |
+| ---------- | ----------------------------------------------------- |
+| Delta      | Ask এর Volume বিয়োগ Bid এর Volume                    |
+| ধরন        | Bar Delta, Cumulative Delta, Delta at Price           |
+| Divergence | নতুন CVD চরম ছাড়া নতুন প্রাইস চরম — সূত্র, সংকেত নয় |
+| নিয়ম      | প্রাইসের নিশ্চিতকরণের অপেক্ষা; চরমের ওপারে Stop       |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Order Flow এর ভূমিকা](/bn/order-flow/introduction)
+- [Footprint Charts](/bn/order-flow/footprint-charts)
+- [Absorption and Exhaustion](/bn/order-flow/absorption-exhaustion)
+- [Volume Spread Analysis](/bn/wyckoff/volume-spread-analysis)
