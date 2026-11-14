@@ -1,0 +1,137 @@
+---
+title: "Zone Strength Scoring — Complete Guide"
+description: "Build a simple, repeatable score for supply and demand zones: five factors scored 0–2 (leg-out, time in base, freshness, structure, location), grades and position size by score, two zones compared on one chart, and how to check whether the score works for you, with an animated walkthrough."
+level: advanced
+order: 33
+lastUpdated: "2026-11-14"
+---
+
+## Why Score Zones?
+
+Every chart has many zones. Without a rule for choosing, it's easy to take the one you happen to be looking at. A **score** makes the choice the same every time: you grade the zone first, and the grade decides whether you trade it and at what size.
+
+---
+
+## The Score Card
+
+Five factors, each scored **0, 1 or 2**, for a total out of **10**:
+
+| Factor              | 2 points                               | 1 point                    | 0 points                      |
+| ------------------- | -------------------------------------- | -------------------------- | ----------------------------- |
+| **Leg-out**         | Displacement that leaves an FVG        | Strong, no FVG             | Slow, overlapping candles     |
+| **Time in base**    | 1–2 candles                            | 3–4 candles                | 5 or more                     |
+| **Freshness**       | First touch                            | Second touch               | Third touch or later          |
+| **Broke structure** | Leg-out made a new high (demand) or low (supply) | —                | No break                      |
+| **Location**        | Demand in discount / supply in premium | Near equilibrium           | Demand in premium / supply in discount |
+
+| Score  | Grade | Action                       |
+| ------ | ----- | ---------------------------- |
+| 8–10   | A     | Trade at normal risk         |
+| 5–7    | B     | Trade at reduced risk, or wait for a lower-timeframe CHOCH |
+| 0–4    | C     | Skip                         |
+
+<Callout type="info" title="Changed: volume and approach speed">
+  The original's factors included "volume" and the speed of the return. Spot forex has no central volume, and the
+  evidence on approach speed is mixed, so this card uses factors you can read directly from price. If you trade
+  futures or stocks with real volume, you can add it as a sixth factor.
+</Callout>
+
+---
+
+## Two Zones on One Chart
+
+![EUR/USD 1H: zone A (10/10) at 1.0830–1.0838 and zone B (4/10) at 1.0879–1.0889; B fails, A holds and gives a long at 1.0838](/images/smc/zone-strength-scoring/zone-strength-scoring-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/smc/zone-scoring-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result. A high score doesn't guarantee a zone holds.
+</Callout>
+
+| Factor          | Zone A (1.0830 – 1.0838) | Zone B (1.0879 – 1.0889) |
+| --------------- | ------------------------ | ------------------------ |
+| Leg-out         | **2** — displacement, FVG | **0** — slow, no FVG    |
+| Time in base    | **2** — 1 candle          | **1** — 4 candles       |
+| Freshness       | **2** — first touch       | **1** — second touch    |
+| Broke structure | **2** — new high          | **2** — new high        |
+| Location        | **2** — discount          | **0** — premium         |
+| **Total**       | **10 / 10 (A)**           | **4 / 10 (skip)**       |
+
+Location is measured on the leg from **1.0830 to 1.0910**: equilibrium is 1.0870, so zone A is in discount and zone B in premium.
+
+Zone B gives two small bounces, then closes below its distal line. Zone A, touched for the first time, holds:
+
+| Level   | Price  | Note                               |
+| ------- | ------ | ---------------------------------- |
+| Entry   | 1.0838 | Zone A proximal, first touch       |
+| Stop    | 1.0822 | Below the 1.0830 distal            |
+| Target  | 1.0900 | Below the 1.0910 high              |
+| **R:R** | **1 : 3.9** | Risk 16 pips, reward 62 pips  |
+
+---
+
+## Using the Score
+
+1. **Score every zone when you draw it,** not when price gets there. It stops you from talking yourself into a setup.
+2. **Rescore on each touch:** freshness drops by one point per touch.
+3. **Let the grade set the risk:** for example, 1% for A, 0.5% for B (see [Risk Models](/en/smc/risk-models)).
+4. **When two zones compete,** trade the higher score. A low-scoring zone between price and a high-scoring one is often the liquidity that gets taken first.
+
+### Second example (no chart) — a supply zone
+
+GBP/USD supply at **1.2745 – 1.2758**: displacement with an FVG (2), a 2-candle base (2), fresh (2), the leg-out broke the last low (2), and it sits at equilibrium of the current leg (1). **Score 9/10 (A).** Sell **1.2745**, stop **1.2763**, target **1.2690**: risk 18 pips, reward 55 pips, **R:R 1 : 3.1** (planned), at full risk.
+
+---
+
+## Does the Score Work for You?
+
+The card is a starting point, not a tested model. Check it:
+
+| Step | What to record                                   |
+| ---- | ------------------------------------------------ |
+| 1    | Score every zone you trade, and every one you skip |
+| 2    | Record the result in R for the ones you trade    |
+| 3    | After 30+ trades, compare average R for A, B and C |
+| 4    | Change the weights if one factor clearly matters more for your market |
+
+---
+
+## Common Mistakes
+
+| Mistake                                      | Fix                                             |
+| -------------------------------------------- | ----------------------------------------------- |
+| Scoring after price arrives                  | Score when you draw the zone                    |
+| Forgetting to lower freshness after a touch  | Rescore on every touch                          |
+| Treating 10/10 as certain                    | It's a ranking, not a guarantee; always use a stop |
+| Adding factors until every zone scores well  | Keep the card short and fixed                   |
+| Never checking the score against results     | Track average R by grade                        |
+
+---
+
+## Practice
+
+1. Score 20 zones on past charts with the card.
+2. For each, record whether the first touch reacted.
+3. Compare the reaction rate for scores 8–10, 5–7 and 0–4.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Aspect       | Key point                                               |
+| ------------ | ------------------------------------------------------- |
+| **Card**     | 5 factors × 0–2 points = 10                             |
+| **Grades**   | 8–10 trade · 5–7 reduce or confirm · 0–4 skip           |
+| **When**     | Score on drawing; rescore on each touch                 |
+| **Check**    | Track results by grade and adjust                       |
+
+---
+
+## Related Topics
+
+- [Supply & Demand Zones](/en/smc/supply-demand-zones) — the zones being scored
+- [Fresh vs Tested Zones](/en/smc/fresh-vs-tested) — the freshness factor
+- [Premium & Discount](/en/smc/premium-discount) — the location factor
+- [Risk Models](/en/smc/risk-models) — risk by grade
