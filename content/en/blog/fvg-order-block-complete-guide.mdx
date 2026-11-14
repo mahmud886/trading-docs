@@ -1,277 +1,120 @@
 ---
-title: "FVG & Order Block Complete Guide — Precision Entries"
-description: "Combine Fair Value Gaps and Order Blocks to find the highest-probability entry zones with multiple confluences."
+title: "FVG and Order Block Together — Building a Confluence Entry"
+description: "How a fair value gap and an order block can overlap to define a tighter entry zone: what each one is, how to rank overlaps, how to place the stop and target, and the ways the combination fails. With a worked EUR/USD entry at a 1 to 3.1 planned reward-to-risk."
 date: "2026-05-19"
 author: "Trading Docs"
 category: "SMC"
 tags: ["fvg", "order-block", "smc", "entry-setup", "confluence"]
-readingTime: 22
+readingTime: 8
 featured: true
 ---
 
-## What is an FVG? (Fair Value Gap)
+An **order block** marks where a strong move began (the last opposite candle). A **fair value gap** marks the unfilled range left by the move itself. When the two **overlap or sit next to each other**, they define a smaller area to watch than either alone. This is confluence; it narrows the risk but does not guarantee a reaction.
 
-An **FVG** is a price zone where fast displacement created inefficiency.
-
-In simple terms: Price moved so fast that buyers and sellers didn't get fully matched. That imbalance creates a void that price must eventually fill.
-
-### Bullish FVG Requirements:
-
-- **Candle 1's High** < **Candle 3's Low**
-- Strong displacement in between
-- Upward momentum/direction
-
-### Interactive FVG Chart Analysis:
-
-**What the chart shows:**
-
-- **Candle 1:** Closes at 1.0900 (first candle)
-- **Candle 2:** Strong bullish displacement move
-- **Candle 3:** Opens at 1.0920 (a gap opens!)
-- **Yellow Zone:** Between 1.0900-1.0920 = **THE FVG** (the inefficiency)
-- **Blue Line:** Price returns to fill the FVG = **The magnet effect**
-
-**Key Insight:** Once a Fair Value Gap is formed, price almost ALWAYS returns to fill it at some point. This is one of the most reliable market mechanics in trading.
-
-### Bearish FVG Requirements:
-
-```
-Candle 1:  Close = 1.0900
-Candle 2:  (strong selling)
-Candle 3:  Open = 1.0880
-
-Condition: Candle 1's Low > Candle 3's High
-```
-
-**On Chart:**
-
-```
-1.0900 ├─ ← Candle 1 Close
-1.0890 │     ↓ This gap = FVG
-       ├─ ← Candle 3 Open (gap down)
-1.0880 ┘
-```
-
-<Callout type="tip" title="FVG Behavior">
-  Price treats FVGs like "magnets"—it returns to rebalance the efficiency gap.
+<Callout type="warning" title="Corrected and toned down">
+  The original described the pair as a high-probability institutional setup with fixed odds. No such odds are
+  established. Treat the overlap as a **better-defined zone**, not as a signal.
 </Callout>
 
 ---
 
-## What is an Order Block?
+## The Two Building Blocks
 
-An **Order Block** is the candle where institutional traders loaded major positions.
+| Concept                  | What it is                                     | Role in the setup                              |
+| ------------------------ | ---------------------------------------------- | ---------------------------------------------- |
+| **Order block (OB)**     | The last opposite candle before a displacement | Marks where the move started                   |
+| **Fair value gap (FVG)** | The three-candle gap left by the displacement  | Marks where price moved too quickly to overlap |
+| **Overlap**              | The part of the OB and FVG that share prices   | A narrower zone and a tighter stop             |
 
-### Bullish Order Block:
+See [Order Blocks](/en/smc/order-blocks) and [Fair Value Gap](/en/smc/fair-value-gap) for each in detail, and [Understanding Order Blocks](/en/blog/understanding-order-blocks) and [Fair Value Gap Explained](/en/blog/fair-value-gap-explained) for the basics.
 
-```
-Strong candle during upward move
-↓
-Sellers try to break it
-↓
-Fail and bounce back up
+### The Chart
 
-This candle = Bullish Order Block
-```
+![A synthetic EUR/USD bullish order block: the last down candle before a strong move up, and price later returning to the zone](/images/smc/order-blocks/bullish-order-block-eurusd-dark.webp)
 
-### Bearish Order Block:
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/smc-fvg-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-```
-Strong candle during downward move
-↓
-Buyers try to push it higher
-↓
-Fail and reverse back down
-
-This candle = Bearish Order Block
-```
-
----
-
-## Order Block Visual Guide
-
-**Understanding the diagram:**
-
-- **Left side:** Shows Bullish Order Block (institutional buy zone)
-- **Right side:** Shows Bearish Order Block (institutional sell zone)
-
-### Pattern Recognition:
-
-The chart clearly shows:
-
-1. **Initial Strong Move** (red down or green up)
-2. **OB Zone** highlighted - this is where institutions filled orders
-3. **Pullback/Retracement** - price moves away briefly
-4. **Retest Phase** - price returns to OB zone
-5. **Final confirmation** - candle pattern validates entry
-
-**Note:** The real power comes when OB zone + FVG + Supply/Demand zone all overlap = **massive confluence**
-
----
-
-## FVG + Order Block Together
-
-### The Strongest Setup
-
-**Order Block with FVG Inside:**
-
-```
-         Bullish OB
-         ┌────────┐
-         │ ██████ │ ← Strong buy candle
-1350 ────┤ ██████ │
-         │ ██████ │
-1340 ────┼────┬───┤
-         │    │   │
-         │    ↑   │ ← FVG here
-1330 ────┼────┴───┤
-         │        │
-1320 ────┴────────┘
-```
-
-**Why This Works:**
-
-1. Order Block = institutional presence
-2. FVG = technical void to fill
-3. Together = high probability rebalance + push
-
-<Callout type="warning" title="Remember">
-  FVG + Order Block only work when they align with **trend direction**.
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Order Blocks](/en/smc/order-blocks).)
 </Callout>
 
 ---
 
-## Complete Entry Setup
+## Ranking an Overlap
 
-### Pre-Check:
+| Feature                    | Stronger                                   | Weaker                        |
+| -------------------------- | ------------------------------------------ | ----------------------------- |
+| Displacement               | Several large candles that break structure | One modest candle             |
+| Liquidity taken first      | A clear sweep before the move              | None                          |
+| Higher-timeframe direction | Same direction as the larger trend         | Against it                    |
+| Freshness                  | Not yet revisited                          | Already tested more than once |
+| Room to the target         | At least 2R before the next opposing level | Little space                  |
 
-1. **High timeframe trend** (4H or Daily) = Uptrend
-2. **Swing Structure** = Making higher highs and higher lows
-3. **Any CHOCH yet?** = No, still bullish
-
-### Finding Entry Zone:
-
-1. **Identify Order Block** = That strong buy candle
-2. **Find FVG** = Gap inside or near Order Block
-3. **Multiple confluences?** = 2+ levels confirmed
-
-### Entry Rules:
-
-```
-When price enters FVG:
-↓
-Watch for bullish candle formation
-↓
-Candle Close above Order Block
-↓
-ENTER - Place stop below Bullish OB
-```
+Count the stronger features. A zone with one or two is a watch-list item; a zone with four or five is worth a plan. See [Zone Strength Scoring](/en/smc/zone-strength-scoring).
 
 ---
 
-## Real Chart Case Study (GBPUSD 15M)
+## Entry, Stop and Failure
 
-**Timeline:**
+| Item    | Rule                                                                                      |
+| ------- | ----------------------------------------------------------------------------------------- |
+| Entry   | At the overlap, or the FVG midpoint inside the OB, after a lower-timeframe reaction       |
+| Stop    | Beyond the **far edge of the order block** (the swing that created it)                    |
+| Target  | The nearest opposing liquidity or level, partial profit there                             |
+| Failure | A candle **closes through** the order block: the zone is broken and the idea is cancelled |
 
-```
-T1: 1.2800  London Open - Strong buy candle (Bullish OB!)
-            High: 1.2825, Low: 1.2775, Close: 1.2810
-            ↓
-T2: 1.2820  Minor pullback
-            High: 1.2830, Low: 1.2815
-            ↑
-            FVG created: Between 1.2810 (T1 Close) and 1.2815 (T2 Low)
-
-T3: 1.2790  (Round number support test)
-            High: 1.2810, Low: 1.2785
-
-T4: 1.2800  FVG zone but weak candle
-            High: 1.2805, Low: 1.2790
-
-T5: 1.2815  ✓ Success! Bullish candle above Order Block
-            High: 1.2825, Low: 1.2805, Close: 1.2820
-
-🎯 ENTRY ZONE: 1.2800 - 1.2810
-   STOP: 1.2775 (Below Bullish OB)
-   TARGET: Next Swing High = 1.2850
-```
-
-**Result:**
-
-- Entry: 1.2808
-- Stop: 1.2775 (33 pips risk)
-- Target: 1.2850 (42 pips reward)
-- Risk:Reward = 1.27:1
+Typical ways it fails: price slices through without a reaction; the gap fills completely and the block is broken; a news spike overwhelms the zone.
 
 ---
 
-## Multi-Timeframe Strategy
+## Example (no chart)
 
-### For Scalpers (5M & 15M):
-
-- FVGs form more frequently
-- Held for shorter duration
-- Quick entries and exits
-
-### For Swing Traders (1H & 4H):
-
-- FVGs are more reliable
-- Held for longer duration
-- Better profit targets
-
-<Callout type="tip" title="Multi-Timeframe Sync">
-  When a 4H FVG aligns with 15M confluence, the setup becomes extremely strong.
-</Callout>
+Bullish order block **1.0826 – 1.0834**; the gap above it spans **1.0836 – 1.0842**. Price returns to the top of the block and the lower edge of the gap at **1.0836** and a 5-minute candle rejects. Plan: buy **1.0836**, stop **1.0822** (below the order block): risk 14 pips; target **1.0880**: reward 44 pips, **1 : 3.1** planned. If a candle closes below **1.0822**, the zone has failed and the plan is cancelled.
 
 ---
 
-## FVG & Order Block Failures
+## Common Mistakes
 
-### When FVG is Never Hit:
-
-```
-Likely causes:
-1. Countertrend on higher timeframe
-2. Major news release
-3. Order Block wasn't actually strong
-→ Skip entry—wait for next opportunity
-```
-
-### When Signal Was Wrong:
-
-```
-Avoid:
-1. Trend reversed exactly before entry
-2. Confluence was only one level
-3. Near round numbers = high noise
-```
+| Mistake                             | Fix                                      |
+| ----------------------------------- | ---------------------------------------- |
+| Treating overlap as a signal        | Wait for a reaction and confirmation     |
+| Stop inside the block               | Place it beyond the far edge             |
+| Using already-tested zones as fresh | Prefer zones price has not revisited     |
+| Entering with less than 2R of room  | Skip trades with a nearby opposing level |
 
 ---
 
-## Checklist: FVG + Order Block Setup
+## Practice
 
-```
-☐ Trend confirmed on high TF?
-☐ Swing Structure valid?
-☐ Order Block clearly identified?
-☐ FVG inside or near Order Block?
-☐ 2+ confluences present?
-☐ Stop loss level defined?
-☐ Risk/Reward ≥ 1:1?
-```
+1. Find five order blocks that have a fair value gap beside them and mark the overlap.
+2. Score each zone with the table above.
+3. Note which scores produced a reaction on the return.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
 ---
 
-## Key Takeaways
+## Summary
 
-✓ **FVGs** = Price inefficiencies that act as magnets
+| Idea    | Detail                                                    |
+| ------- | --------------------------------------------------------- |
+| OB      | The last opposite candle before a displacement            |
+| FVG     | The unfilled range the displacement leaves                |
+| Overlap | A narrower, better-defined zone and a tighter stop        |
+| Caution | Confluence narrows risk; it does not guarantee a reaction |
 
-✓ **Order Blocks** = Institutional order clusters
+---
 
-✓ **Together** = Highest probability setups
+## Related Topics
 
-✓ **Confluences** = Multiple confirmations at one level
-
-Next: **Supply, Demand, and Liquidity Hunting** — where smart money actually hides.
-
-[Supply & Demand with Liquidity](/en/blog/supply-demand-liquidity-complete)
+- [Order Blocks](/en/smc/order-blocks)
+- [Fair Value Gap](/en/smc/fair-value-gap)
+- [Zone Strength Scoring](/en/smc/zone-strength-scoring)
+- [Understanding Order Blocks](/en/blog/understanding-order-blocks)

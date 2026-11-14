@@ -1,0 +1,111 @@
+---
+title: "FVG and Order Block Together — Building a Confluence Entry"
+description: "How a fair value gap and an order block can overlap to define a tighter entry zone: what each one is, how to rank overlaps, how to place the stop and target, and the ways the combination fails. With a worked EUR/USD entry at a 1 to 3.1 planned reward-to-risk."
+date: "2026-05-19"
+author: "Trading Docs"
+category: "SMC"
+tags: ["fvg", "order-block", "smc", "entry-setup", "confluence"]
+readingTime: 8
+featured: true
+---
+
+An **order block** marks where a strong move began (the last opposite candle). A **fair value gap** marks the unfilled range left by the move itself. When the two **overlap or sit next to each other**, they define a smaller area to watch than either alone. This is confluence; it narrows the risk but does not guarantee a reaction.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original described the pair as a high-probability institutional setup with fixed odds. No such odds are established. Treat the overlap as a **better-defined zone**, not as a signal.
+</Callout>
+
+---
+
+## The Two Building Blocks
+
+| Concept                | What it is                                                              | Role in the setup                             |
+| ---------------------- | ----------------------------------------------------------------------- | --------------------------------------------- |
+| **Order block (OB)**   | The last opposite candle before a displacement                           | Marks where the move started                  |
+| **Fair value gap (FVG)** | The three-candle gap left by the displacement                          | Marks where price moved too quickly to overlap |
+| **Overlap**            | The part of the OB and FVG that share prices                             | A narrower zone and a tighter stop            |
+
+See [Order Blocks](/en/smc/order-blocks) and [Fair Value Gap](/en/smc/fair-value-gap) for each in detail, and [Understanding Order Blocks](/en/blog/understanding-order-blocks) and [Fair Value Gap Explained](/en/blog/fair-value-gap-explained) for the basics.
+
+### The Chart
+
+![A synthetic EUR/USD bullish order block: the last down candle before a strong move up, and price later returning to the zone](/images/smc/order-blocks/bullish-order-block-eurusd-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/smc/smc-fvg-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Order Blocks](/en/smc/order-blocks).)
+</Callout>
+
+---
+
+## Ranking an Overlap
+
+| Feature                                    | Stronger                                           | Weaker                              |
+| ------------------------------------------ | -------------------------------------------------- | ----------------------------------- |
+| Displacement                               | Several large candles that break structure         | One modest candle                   |
+| Liquidity taken first                      | A clear sweep before the move                      | None                                |
+| Higher-timeframe direction                 | Same direction as the larger trend                 | Against it                          |
+| Freshness                                  | Not yet revisited                                  | Already tested more than once       |
+| Room to the target                         | At least 2R before the next opposing level         | Little space                        |
+
+Count the stronger features. A zone with one or two is a watch-list item; a zone with four or five is worth a plan. See [Zone Strength Scoring](/en/smc/zone-strength-scoring).
+
+---
+
+## Entry, Stop and Failure
+
+| Item          | Rule                                                                                         |
+| ------------- | -------------------------------------------------------------------------------------------- |
+| Entry         | At the overlap, or the FVG midpoint inside the OB, after a lower-timeframe reaction          |
+| Stop          | Beyond the **far edge of the order block** (the swing that created it)                       |
+| Target        | The nearest opposing liquidity or level, partial profit there                                |
+| Failure       | A candle **closes through** the order block: the zone is broken and the idea is cancelled    |
+
+Typical ways it fails: price slices through without a reaction; the gap fills completely and the block is broken; a news spike overwhelms the zone.
+
+---
+
+## Example (no chart)
+
+Bullish order block **1.0826 – 1.0834**; the gap above it spans **1.0836 – 1.0842**. Price returns to the top of the block and the lower edge of the gap at **1.0836** and a 5-minute candle rejects. Plan: buy **1.0836**, stop **1.0822** (below the order block): risk 14 pips; target **1.0880**: reward 44 pips, **1 : 3.1** planned. If a candle closes below **1.0822**, the zone has failed and the plan is cancelled.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Treating overlap as a signal | Wait for a reaction and confirmation |
+| Stop inside the block | Place it beyond the far edge |
+| Using already-tested zones as fresh | Prefer zones price has not revisited |
+| Entering with less than 2R of room | Skip trades with a nearby opposing level |
+
+---
+
+## Practice
+
+1. Find five order blocks that have a fair value gap beside them and mark the overlap.
+2. Score each zone with the table above.
+3. Note which scores produced a reaction on the return.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| OB | The last opposite candle before a displacement |
+| FVG | The unfilled range the displacement leaves |
+| Overlap | A narrower, better-defined zone and a tighter stop |
+| Caution | Confluence narrows risk; it does not guarantee a reaction |
+
+---
+
+## Related Topics
+
+- [Order Blocks](/en/smc/order-blocks)
+- [Fair Value Gap](/en/smc/fair-value-gap)
+- [Zone Strength Scoring](/en/smc/zone-strength-scoring)
+- [Understanding Order Blocks](/en/blog/understanding-order-blocks)
