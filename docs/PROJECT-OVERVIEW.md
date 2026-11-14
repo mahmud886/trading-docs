@@ -42,3 +42,10 @@ Vercel deploys were turned off because storage was full. Turn them back on only 
 - `hooks/`: `useNow` (ticking clock, SSR-safe), `useMounted`.
 - `scripts/`: only active scripts; old content generators are in `scripts/legacy/` (ignored by lint/prettier).
 - `npm run build` no longer rewrites files; run `npm run format` yourself.
+
+## Styles and layouts (design engine)
+
+- `lib/themes/styles.ts`: design-token styles. Each style overrides the CSS variables from `globals.css` for light and dark mode (`html[data-style="..."]` and `html.dark[data-style="..."]`). Add a style by adding one entry; the CSS is generated.
+- `components/theme/`: `StyleHead` (generated CSS and a pre-paint script, no flash), `StyleSync` (keeps `<html data-style>` in step), `StylePicker` (navbar dropdown for style and home layout).
+- `lib/themes/layouts.ts` and `components/home/`: selectable home layouts (`classic`, `bento`, `index`). `HomeLayoutSwitch` renders the saved one; the server renders `classic`.
+- Preferences live in localStorage (`td-style`, `td-home-layout`) through `hooks/use-local-pref.ts`.

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { type Locale, getDictionary } from "@/lib/i18n";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { StylePicker } from "@/components/theme/style-picker";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { SearchModal } from "@/components/search-modal";
 import { MobileMenuProvider, MobileMenuTrigger, MobileMenuPanel } from "@/components/layout/mobile-menu";
@@ -40,6 +41,7 @@ export async function Navbar({ lang }: { lang: Locale }) {
           <NavbarContent links={links} />
 
           <div className="flex items-center gap-0.5 xl:gap-2">
+            <StylePicker lang={lang} />
             <ThemeSwitcher />
             <LanguageSwitcher currentLang={lang} />
             <SearchModal />
