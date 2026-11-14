@@ -1,228 +1,126 @@
 ---
-title: "Position Sizing 101: The Secret to Never Blowing Your Account"
-description: "Master position sizing to protect your capital. Learn the 1% rule, Kelly Criterion, and how to size positions professionally to survive losing streaks."
+title: "Position Sizing 101 — How Big Should Each Trade Be?"
+description: "The position-size formula (size = money at risk divided by stop distance times pip value), lot sizes and pip values, fixed-fractional risk of 0.5% to 2%, what a run of losses does to an account at each risk level, and worked EUR/USD and USD/JPY calculations with a 1 to 3 planned reward-to-risk."
 date: "2026-05-10"
 author: "Trading Docs"
 category: "Risk Management"
 tags: ["position-sizing", "risk", "money-management", "capital-protection"]
-readingTime: 8
+readingTime: 7
 featured: true
 ---
 
-## The #1 Reason Trading Accounts Blow Up
+**Position size** decides how much a stop-out costs. A good setup with an oversized position can end an account; a modest edge with a small, steady size can last. The calculation is short and mechanical: choose the **money you are willing to lose**, find the **stop distance**, and let those two numbers set the size.
 
-You know the feeling. You had a great strategy. Your backtests looked perfect. You were so confident...
-
-Then one bad trade wiped out your entire account.
-
-**How did it happen?**
-
-Not because your strategy was bad. But because **you sized your position wrong**.
-
-Position sizing is the single most important factor in trading — more important than entry signals, more important than indicators, more important than anything else. Yet most traders ignore it completely.
-
----
-
-## The 1% Rule (The Foundation)
-
-The **1% Rule** is the most common position sizing method used by professional traders:
-
-**Risk only 1% of your total account on any single trade.**
-
-### How it works:
-
-Let's say you have a **$10,000 account**.
-
-1% of $10,000 = **$100**
-
-So you risk a maximum of **$100 per trade**.
-
-If your stop loss is **50 pips away**, and you're trading EUR/USD (each pip = $10 on a standard lot):
-
-- **$100 ÷ $10 per pip ÷ 50 pips = 0.2 standard lots** (or 2 micro lots)
-
-That's your position size.
-
-### Why 1%?
-
-**Draw-downs are INEVITABLE.** Even pros have losing streaks. If you risk too much, one bad streak will wipe you out.
-
-With 1% risk, here's what happens after a losing streak:
-
-| Scenario | Position Size       | 5 Losses in a Row             | 10 Losses                     | Recovery Needed      |
-| -------- | ------------------- | ----------------------------- | ----------------------------- | -------------------- |
-| 1% Risk  | Your account after: | -$500 (from $10K to $9,500)   | -$1,000 (from $10K to $9,000) | 5-10 wins to recover |
-| 5% Risk  | Your account after: | -$2,500 (from $10K to $7,500) | -$5,000 (from $10K to $5,000) | **50+ wins needed**  |
-| 10% Risk | Your account after: | -$5,000 (from $10K to $5,000) | -$10,000 (ACCOUNT BLOWN)      | **Starting over**    |
-
-**See the difference?**
-
-With 1% risk, a 10-loss streak hurts but doesn't kill you. With 10% risk, you're done.
-
----
-
-## The Kelly Criterion (For Advanced Traders)
-
-The Kelly Criterion is a mathematical formula to calculate the **optimal position size** based on your win rate and reward-to-risk ratio.
-
-**Formula:**
-
-```
-Position Size % = (Win % × Average Win) - (Loss % × Average Loss)
-                  ÷ Average Win
-```
-
-### Example:
-
-If your strategy has:
-
-- **Win rate:** 60%
-- **Average winner:** 100 pips
-- **Average loser:** 50 pips
-
-```
-Position Size % = (0.60 × 100) - (0.40 × 50)
-                  ÷ 100
-                = (60 - 20)
-                  ÷ 100
-                = 40%
-```
-
-This means you can risk **40% per trade** and still grow your account optimally.
-
-<Callout type="warning" title="Kelly Criterion Warning">
-This assumes:
-1. Your statistics are ACCURATE (from 100+ real trades, not backtests)
-2. Your past performance continues into the future
-3. You're willing to risk larger positions
-
-Most traders use **Half-Kelly (20%)** for safety, since real trading has slippage and fees that reduce effectiveness.
-
+<Callout type="warning" title="Corrected and toned down">
+  The original gave one-size-fits-all rules and quoted survival figures without sources. The risk level you choose
+  depends on your edge, your tolerance for drawdown and your account; the table below shows the arithmetic so you can
+  decide.
 </Callout>
 
 ---
 
-## Real-World Position Sizing Examples
+## The Formula
 
-### Example 1: Conservative Day Trader
+> **Position size = (account × risk %) ÷ (stop distance in pips × pip value per unit of size)**
 
-- **Account:** $5,000
-- **Risk per trade:** 1% = $50
-- **Trading:** EUR/USD, micro lots
-- **Stop loss:** 40 pips
+| Lot type         | Units   | Pip value (USD-quoted pair such as EUR/USD) |
+| ---------------- | ------- | ------------------------------------------- |
+| Standard lot     | 100,000 | About 10 USD per pip                        |
+| Mini lot (0.10)  | 10,000  | About 1 USD per pip                         |
+| Micro lot (0.01) | 1,000   | About 0.10 USD per pip                      |
 
-Position size = $50 ÷ $10 per 100 pips ÷ 40 pips = **0.125 micro lots (12.5 pips per pip value)**
+For USD/JPY a standard lot is worth about **1,000 yen per pip** (0.01 × 100,000), which is roughly 6.7 USD when USD/JPY is 150; check your platform's pip value for pairs without USD as the quote currency.
 
-Actually, simplest: Use a **1 micro lot** (10,000 units) = $0.10 per pip
+Example: account 5,000, risk 1% = **50**; stop **25 pips**; pip value needed = 50 ÷ 25 = **2 USD per pip** = **0.20 standard lot**. See [Risk Management](/en/price-action/risk-management) for how risk per trade shapes an equity curve.
 
-- Risk = $0.10 × 40 pips = $4 per stop (well under 1%)
+### The Chart
 
----
+![A synthetic equity curve showing the effect of risking a fixed percentage of the account per trade](/images/price-action/risk-management/risk-per-trade-equity-dark.webp)
 
-### Example 2: Gold Trader (Larger Account)
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/risk-management-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-- **Account:** $50,000
-- **Risk per trade:** 1% = $500
-- **Trading:** Gold (XAU/USD), 1 lot = 100 oz
-- **Stop loss:** 20 pips ($20 per pip for 1 lot)
-
-Position size = $500 ÷ $20 per pip per lot = **25 lots** (25 × 100 oz = 2,500 oz)
-
-Verify: 25 lots × $20 per pip × 20 pips = $10,000... **Wait, that's 20% of account!**
-
-Let's recalculate: We want $500 risk
-
-- $500 ÷ $20 per pip = 25 pips
-- So our stop should be 25 pips, not 20
-
-OR reduce lots: $500 ÷ $20 per pip ÷ 20 pips = 1.25 lots ✅
+<Callout type="info" title="About this chart">
+  Synthetic trades for teaching (From the lesson: [Risk Management](/en/price-action/risk-management).)
+</Callout>
 
 ---
 
-## Common Position Sizing Mistakes
+## What a Losing Run Does
 
-### Mistake #1: Ignoring Account Size Swings
+The account after _n_ consecutive full losses at risk _r_ is (1 − r)^n. For 10 losses in a row:
 
-"I risked 2% on that last trade and made $200. So I can risk 2% again."
+| Risk per trade | Account after 10 losses | Loss   | Gain needed to recover |
+| -------------- | ----------------------- | ------ | ---------------------- |
+| 0.5%           | 95.1%                   | −4.9%  | +5.1%                  |
+| 1%             | 90.4%                   | −9.6%  | +10.6%                 |
+| 2%             | 81.7%                   | −18.3% | +22.4%                 |
+| 5%             | 59.9%                   | −40.1% | +67.0%                 |
 
-**Wrong.** Your 1% risk should always be calculated from your NEW account balance after wins and losses.
-
-- Account: $10,000 → 1% = $100
-- After winning: $10,500 → 1% = $105
-- After losing $500: $10,000 → 1% = $100
-
-Recalculate your position size after EVERY trade.
-
-### Mistake #2: Increasing Risk After Wins
-
-"I just made 3 wins. I'm hot. I'll risk 3% this time."
-
-This is how drawdowns turn into account blowups. **Stick to 1% regardless of win streaks.**
-
-### Mistake #3: Adjusting Stop Loss to "Fit" Position Size
-
-"My strategy says stop at 50 pips, but I sized for a 30-pip stop to get more pips. Let me move the stop."
-
-**NEVER.** Position size is determined by your stop loss, not the other way around. If a setup requires a 50-pip stop, adjust your position size downward, don't move the stop.
+Recovery is harder than the loss: a 20% loss needs a **25%** gain, 30% needs 42.9%, 50% needs **100%**. Ten losses in a row is not impossible for a system with a modest win rate, so the risk per trade should be small enough that such a run is survivable. See [Monte Carlo Simulations](/en/quantitative/monte-carlo) for how likely bad runs are.
 
 ---
 
-## The Position Sizing Formula Cheat Sheet
+## Choosing the Risk Level
 
-**Quick reference for common scenarios:**
+| Factor               | Consideration                                                              |
+| -------------------- | -------------------------------------------------------------------------- |
+| Edge                 | A system with a larger, proven edge can bear more risk per trade           |
+| Drawdown tolerance   | Pick a risk such that a bad run is a drawdown you can sit through          |
+| Correlated positions | Two EUR/USD-type trades are close to one bigger trade: count them together |
+| Account size         | A very small account may force larger percentages: that is a warning       |
 
-```
-Position Size = Risk Amount ÷ (Stop Loss in Pips × Pip Value)
-```
-
-### Standard Lot (100,000 units):
-
-- EUR/USD: 1 pip = $10
-- GBP/USD: 1 pip = $10
-- USD/JPY: 1 pip = $10 (approximately)
-
-### Micro Lot (10,000 units):
-
-- EUR/USD: 1 pip = $1
-- GBP/USD: 1 pip = $1
-
-### Example Calculation:
-
-- Account: $5,000 (1% risk = $50)
-- Stop loss: 50 pips
-- Pair: EUR/USD (standard lot, $10 per pip)
-
-Position size = $50 ÷ ($10 × 50 pips) = **0.1 standard lots** (1 micro lot)
+Many traders use 0.5% to 2% as a starting range; that is a convention, not a rule. Review it with data.
 
 ---
 
-## Position Sizing in Different Markets
+## Example (no chart)
 
-| Market                 | Pip Value         | Risk per Trade (1%) | Common Stop    | Position Sizing  |
-| ---------------------- | ----------------- | ------------------- | -------------- | ---------------- |
-| **Forex** ($10K acct)  | $10 per pip (std) | $100                | 40-50 pips     | 0.2-0.25 lots    |
-| **Gold** ($10K acct)   | Varies by lot     | $100                | 20-30 pips     | 0.3-0.5 lots     |
-| **Crypto** ($10K acct) | Variable          | $100                | 5-10% of entry | Fraction of coin |
-| **Stocks** ($10K acct) | 1¢ per share      | $100                | Risk: 1-2 pts  | 50-100 shares    |
+Account 10,000 at 1% risk (100). EUR/USD: entry **1.0850**, stop **1.0825** (25 pips), target **1.0925** (75 pips): **1 : 3.0** planned. Size = 100 ÷ (25 × 10) = **0.40 standard lot**. USD/JPY at 150.00 with a 30-pip stop (0.30 yen): pip value per standard lot is about 1,000 yen = 6.67 USD, so size = 100 ÷ (30 × 6.67) = **0.50 standard lot**. If either stop is hit, the loss is about 100, whatever the pair.
 
 ---
 
-## The Bottom Line
+## Common Mistakes
 
-**Position sizing is your shield against disaster.**
+| Mistake                                     | Fix                                        |
+| ------------------------------------------- | ------------------------------------------ |
+| Fixed lot size regardless of stop           | Recompute the size from the stop each time |
+| Widening the stop without reducing the size | A wider stop needs a smaller position      |
+| Counting correlated trades separately       | Treat them as one larger risk              |
+| Risking more after a loss                   | Keep risk fixed; reduce if anything        |
 
-Rules:
+---
 
-1. ✅ Risk 1% of your account per trade (1%)
-2. ✅ Recalculate after every trade
-3. ✅ Never adjust your stop loss to "fit" your position
-4. ✅ Never increase risk after winning streaks
-5. ✅ Use micro lots when starting out (less pressure)
+## Practice
 
-A trader with a mediocre strategy but **excellent position sizing** will out-earn a trader with a great strategy but **poor position sizing** 100% of the time.
+1. Write down your account, your risk % and compute the money at risk.
+2. For three recent trades compute the size you should have used.
+3. Use the table to find the risk where 10 losses would be a drawdown you can accept.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
-Boring? Yes. Effective? Absolutely.
+---
 
-Master position sizing and you'll never blow an account again.
+## Summary
 
-Happy trading! 📈
+| Idea        | Detail                                                 |
+| ----------- | ------------------------------------------------------ |
+| Formula     | Size = money at risk ÷ (stop pips × pip value)         |
+| Risk        | A fixed fraction of the account, chosen in advance     |
+| Losing run  | Account = (1 − r)^n; recovery needs more than the loss |
+| Correlation | Count related trades together                          |
+
+---
+
+## Related Topics
+
+- [Risk Management](/en/price-action/risk-management)
+- [Kelly Criterion](/en/quantitative/kelly-criterion)
+- [Monte Carlo Simulations](/en/quantitative/monte-carlo)
+- [Risk Management Essentials](/en/blog/risk-management-essentials)
