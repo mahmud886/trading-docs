@@ -364,3 +364,84 @@ html {
 .dark .theme-light-only {
   display: none;
 }
+
+/* ═══ Polish layer — small refinements on top of the original look ═══ */
+
+/* Headings: tighter and balanced */
+main h1,
+main h2,
+main h3 {
+  text-wrap: balance;
+}
+main h1 {
+  letter-spacing: -0.025em;
+}
+
+/* Card-like links lift gently and pick up the accent */
+a[class*="border-border"][class*="rounded-"],
+.glass-card {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+a[class*="border-border"][class*="rounded-"]:hover,
+.glass-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent-green) 45%, transparent);
+  box-shadow: 0 14px 34px -18px var(--glow-color);
+}
+
+/* Navbar: a faint accent hairline under the bar */
+header[class*="sticky"]::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-line), transparent);
+  pointer-events: none;
+}
+
+/* Form controls in the calculators */
+input[type="number"],
+input[type="text"],
+select,
+textarea {
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+input[type="range"] {
+  accent-color: var(--accent-green);
+}
+
+/* Callouts and tables read a little softer */
+main table {
+  border-radius: 0.75rem;
+}
+main hr {
+  border-color: var(--neon-line);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  a[class*="border-border"][class*="rounded-"]:hover,
+  .glass-card:hover {
+    transform: none;
+  }
+}
+
+/* Bangla conjuncts need normal letter spacing */
+[lang="bn"] main h1,
+[lang="bn"] main h2,
+[lang="bn"] main h3 {
+  letter-spacing: normal !important;
+}

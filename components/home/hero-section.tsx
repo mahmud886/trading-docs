@@ -16,7 +16,9 @@ export function HeroSection({ lang, dict }: { lang: string; dict: Dictionary }) 
         {lang === "bn" ? "ইনস্টিটিউশনাল-গ্রেড ট্রেডিং শিক্ষা" : "Institutional-Grade Trading Education"}
       </div>
 
-      <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-7xl">{dict.hero.title}</h1>
+      <h1 className="bg-gradient-to-b from-foreground from-55% to-accent-green bg-clip-text text-5xl font-bold tracking-tighter text-transparent sm:text-8xl">
+        {dict.hero.title}
+      </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
         {lang === "bn"
           ? "প্রাইস অ্যাকশন থেকে অর্ডার ফ্লো, ওয়াইকফ থেকে কোয়ান্টিটেটিভ ট্রেডিং — সম্পূর্ণ ইনস্টিটিউশনাল ফ্রেমওয়ার্ক। শিখুন কিভাবে ব্যাংক ও হেজ ফান্ড মার্কেট মুভ করে।"
