@@ -11,6 +11,8 @@ if ls "$src"/output/*.png >/dev/null 2>&1; then
   cp "$src"/output/*.png "public/images/$sec/$slug/"
   cp "$src"/output/*.mp4 public/videos/$sec/ 2>/dev/null || true
 fi
+# Ship WebP images and 1600x900 videos (and point the lesson at .webp) to keep deployments small.
+python3 scripts/optimize-assets.py --content >/dev/null
 fail=0
 for l in en bn; do
   f=content/$l/$sec/$slug.mdx

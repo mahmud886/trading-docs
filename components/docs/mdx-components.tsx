@@ -6,6 +6,7 @@ import { SessionTimeline } from "@/components/trading/session-timeline";
 import { WorldMarketClock } from "@/components/trading/world-market-clock";
 import { SessionCardsGrid } from "@/components/trading/session-card";
 import { SessionHeatmap } from "@/components/trading/session-heatmap";
+import { FullscreenVideo, ZoomImage } from "./zoomable-media";
 
 // Create a factory function to generate components with fresh ID tracking
 export function createMdxComponents(): MDXComponents {
@@ -111,37 +112,25 @@ export function createMdxComponents(): MDXComponents {
       if (src?.includes("-dark.")) {
         return (
           <>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="theme-dark-only mt-6 rounded-xl border border-border" alt="" loading="lazy" {...props} />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="theme-light-only mt-6 rounded-xl border border-border"
-              alt=""
-              loading="lazy"
-              {...props}
-              src={src.replace("-dark.", "-light.")}
-            />
+            <ZoomImage themeClass="theme-dark-only" {...props} />
+            <ZoomImage themeClass="theme-light-only" {...props} src={src.replace("-dark.", "-light.")} />
           </>
         );
       }
-      // eslint-disable-next-line @next/next/no-img-element
-      return <img className="mt-6 rounded-xl border border-border" alt="" loading="lazy" {...props} />;
+      return <ZoomImage {...props} />;
     },
-    video: (props) => {
+    // MDX does not route raw <video> JSX through this map, so lessons use <LessonVideo /> instead.
+    LessonVideo: (props) => {
       const src = typeof props.src === "string" ? props.src : undefined;
       if (src?.includes("-dark.")) {
         return (
           <>
-            <video {...props} className={`theme-dark-only ${props.className ?? ""}`} />
-            <video
-              {...props}
-              className={`theme-light-only ${props.className ?? ""}`}
-              src={src.replace("-dark.", "-light.")}
-            />
+            <FullscreenVideo themeClass="theme-dark-only" {...props} />
+            <FullscreenVideo themeClass="theme-light-only" {...props} src={src.replace("-dark.", "-light.")} />
           </>
         );
       }
-      return <video {...props} />;
+      return <FullscreenVideo {...props} />;
     },
     Callout,
     ICTGlossaryCards,
