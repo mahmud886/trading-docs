@@ -1,0 +1,120 @@
+---
+title: "Volume Profile — Complete Guide"
+description: "Volume by price instead of by time: how a profile is built, the point of control, the 70% value area, high- and low-volume nodes, balanced and two-distribution sessions, how to use profile levels as references rather than walls, and a worked example, with a session chart and an animated walkthrough."
+level: intermediate
+order: 3
+lastUpdated: "2026-11-14"
+---
+
+## What Is a Volume Profile?
+
+A **volume profile** turns volume sideways: instead of volume per **time** bar, it shows the volume that traded at each **price** over a period. It answers *where was trading accepted, and where did price move through quickly?*
+
+<Callout type="warning" title="Toned down">
+  The original said institutions "don't care about time-based volume" and that the profile "shows exactly" where they
+  filled orders. A profile shows **where volume traded**, not who traded it. And the point of control doesn't "act as a
+  magnet" by rule — price often returns to it, and often doesn't.
+</Callout>
+
+---
+
+## Building and Reading One
+
+![A synthetic 5-minute session on EUR/USD with the volume profile on the right: a high-volume node near 1.0858, a second near 1.0874 which holds the point of control, and a low-volume node near 1.0867 between them; the 70% value area spans 1.0858 to 1.0879](/images/order-flow/volume-profile/volume-profile-session-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/order-flow/volume-profile-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The session is **synthetic**. The profile is built by spreading each candle's volume evenly across the ticks it covers; real
+  profiles use trade-by-trade volume at price.
+</Callout>
+
+| Component                    | Definition                                                      | In the chart                          |
+| ---------------------------- | --------------------------------------------------------------- | ------------------------------------- |
+| **POC** point of control     | The price with the most volume                                  | 1.0874                                |
+| **Value area (VA)**          | The contiguous area around the POC holding 70% of the volume    | 1.0858 – 1.0879                       |
+| **VAH / VAL**                | The top and bottom of the value area                            | 1.0879 / 1.0858                       |
+| **HVN** high-volume node     | A cluster of volume: price spent time and traded there          | 1.0858 and 1.0874                     |
+| **LVN** low-volume node      | A thin area: price moved through quickly                        | 1.0867 (≈ 5% of the POC's volume)     |
+
+The 70% value area is built **outward from the POC**, adding whichever neighbouring price has more volume. In a session with two nodes like this one, the area spans both — and the LVN sits in the middle of it. That's why the LVN and HVNs matter alongside the value area.
+
+---
+
+## What the Shapes Suggest
+
+| Profile shape                    | Often describes                              | Common idea                                         |
+| -------------------------------- | -------------------------------------------- | --------------------------------------------------- |
+| **One bulge (D-shape)**          | A balanced session                           | Price rotates around the POC                        |
+| **Two bulges (b / double distribution)** | A move to a new area, like this chart | The LVN is a "fast" area between two accepted areas |
+| **Thin tail at one end**         | A rejection of those prices                  | Price moved there and left                          |
+
+These are descriptions of what happened, and shapes only suggest what may happen next.
+
+---
+
+## Using Profile Levels
+
+| Level                  | Typical use                                                          | Caution                                        |
+| ---------------------- | -------------------------------------------------------------------- | ---------------------------------------------- |
+| **POC**                | A fair-value reference; targets for mean reversion                   | Price can trend away from the POC all day      |
+| **VAH / VAL**          | Edges of accepted value; entries on tests and holds, or breakouts    | Test them with the tape; don't treat as walls  |
+| **HVN**                | Price tends to slow, rotate or stall around it                       | A strong move can run through an HVN           |
+| **LVN**                | Price tends to move through quickly; useful as a stop/target reference | A fast move can reverse in an LVN too         |
+
+### Example (no chart) — an LVN as a target and a stop reference
+
+In the chart, price has rotated around the upper HVN near **1.0874** and falls back to **1.0872**. Plan: buy a hold of the POC at **1.0873**, stop **1.0866** (just below the LVN, since losing the area means price may drop through the thin zone), target **1.0885** (above the session high): risk 7, reward 12, **1 : 1.7** planned. If price closes below **1.0867**, the upper area has been rejected and the thin zone below is open.
+
+---
+
+## Which Profile?
+
+| Profile            | Period                      | Use                                                          |
+| ------------------ | --------------------------- | ------------------------------------------------------------ |
+| **Session profile** | One trading day            | Today's POC, VA and nodes                                    |
+| **Composite / weekly** | Several days or weeks   | Longer-term value and nodes                                  |
+| **Fixed range**    | From a chosen swing         | Where trading accepted after a move                          |
+
+Previous-day POC, VAH and VAL are popular references the next day. Which profile to trust is something to test on your own market.
+
+---
+
+## Common Mistakes
+
+| Mistake                                       | Fix                                                    |
+| --------------------------------------------- | ------------------------------------------------------ |
+| Treating the POC as a magnet                  | It's a reference; plan for it not to hold              |
+| Using tick volume as if it were exchange volume | Prefer futures or real-volume markets                |
+| Ignoring the period                           | The same price has different profiles on different periods |
+| Trading every node                            | Combine with structure, session and a stop             |
+| Forgetting the value area is contiguous       | Two-node sessions have a thin zone inside the VA       |
+
+---
+
+## Practice
+
+1. Build a profile for yesterday's session on a futures chart. Mark POC, VAH, VAL and the main nodes.
+2. Note where today's price opened relative to the value area and what it did at VAH/VAL.
+3. Mark one LVN and see how price behaved when it crossed it.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea                | Detail                                                             |
+| ------------------- | ------------------------------------------------------------------ |
+| Profile             | Volume by price over a period                                      |
+| POC / VA            | The most-traded price / the area holding 70% of the volume         |
+| Nodes               | HVN: accepted areas · LVN: areas price moved through quickly       |
+| Use                 | References and context; not walls                                  |
+
+---
+
+## Related Topics
+
+- [Introduction to Order Flow](/en/order-flow/introduction)
+- [VWAP](/en/order-flow/vwap)
+- [Value Area (Auction Market)](/en/auction-market/value-area)
+- [Market Profile](/en/auction-market/market-profile)
