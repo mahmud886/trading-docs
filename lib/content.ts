@@ -1,3 +1,4 @@
+import { ACADEMY_GROUPS, ACADEMY_MORE_TITLE } from "@/lib/academy-groups";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -118,7 +119,30 @@ export interface TreeNode {
 export function getSidebarTree(locale: Locale, category: string): TreeNode[] {
   const dir = path.join(contentDir, locale, category);
   if (!fs.existsSync(dir)) return [];
-  return buildTree(dir);
+  const tree = buildTree(dir);
+  return category === "academy" ? groupAcademyTree(tree, locale) : tree;
+}
+
+/** Splits the long Academy foundation folder into topic groups (see lib/academy-groups.ts). */
+function groupAcademyTree(tree: TreeNode[], locale: Locale): TreeNode[] {
+  const lang = locale === "bn" ? "bn" : "en";
+  return tree.map((node) => {
+    if (node.slug !== "markets-trading-basics" || !node.children) return node;
+    const bySlug = new Map(node.children.map((c) => [c.slug.split("/").pop() ?? "", c]));
+    const used = new Set<string>();
+    const groups: TreeNode[] = [];
+    for (const g of ACADEMY_GROUPS) {
+      const children = g.slugs.map((s) => bySlug.get(s)).filter((c): c is TreeNode => !!c);
+      children.forEach((c) => used.add(c.slug));
+      if (children.length > 0) {
+        groups.push({ title: g.title[lang], slug: `${node.slug}/_group-${g.id}`, children });
+      }
+    }
+    const rest = node.children.filter((c) => !used.has(c.slug));
+    if (rest.length > 0)
+      groups.push({ title: ACADEMY_MORE_TITLE[lang], slug: `${node.slug}/_group-more`, children: rest });
+    return { ...node, children: groups };
+  });
 }
 
 function buildTree(dir: string, baseParts: string[] = []): TreeNode[] {

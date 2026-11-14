@@ -23,6 +23,11 @@ export function SidebarNav({ tree, category, lang }: SidebarNavProps) {
   );
 }
 
+function containsActive(node: TreeNode, pathname: string, category: string, lang: string): boolean {
+  if (!node.children || node.children.length === 0) return pathname === `/${lang}/${category}/${node.slug}`;
+  return node.children.some((c) => containsActive(c, pathname, category, lang));
+}
+
 function SidebarItem({
   node,
   category,
@@ -38,7 +43,7 @@ function SidebarItem({
   const href = `/${lang}/${category}/${node.slug}`;
   const isActive = pathname === href;
   const hasChildren = node.children && node.children.length > 0;
-  const isChildActive = hasChildren && node.children!.some((c) => pathname.includes(c.slug));
+  const isChildActive = hasChildren && containsActive(node, pathname, category, lang);
   const [expanded, setExpanded] = useState(isActive || isChildActive);
 
   if (hasChildren) {

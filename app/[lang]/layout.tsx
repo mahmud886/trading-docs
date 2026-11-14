@@ -5,13 +5,14 @@ import { SerwistProvider } from "@serwist/turbopack/react";
 import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { ThemeGuard } from "@/components/theme/theme-guard";
 import { ReadingProgress } from "@/components/docs/reading-progress";
 import { generateWebsiteSchema, generateOrganizationSchema } from "@/lib/schema";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -63,6 +64,7 @@ export default async function LangLayout({
 
         <SerwistProvider swUrl="/serwist/sw.js">
           <Providers>
+            <ThemeGuard />
             <div className="relative z-10">
               <ReadingProgress />
               <Navbar lang={lang as Locale} />

@@ -68,6 +68,7 @@ export function SearchModal() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
+  const keyboardRef = useRef(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -106,32 +107,40 @@ export function SearchModal() {
     };
   }, [open]);
 
-  // Search with debounce
+  // Search with debounce. A newer query cancels the older request, so results never arrive out of order.
+  const abortRef = useRef<AbortController | null>(null);
   const search = useCallback(async (q: string) => {
+    abortRef.current?.abort();
     if (q.length < 2) {
       setResults([]);
+      setLoading(false);
       return;
     }
+    const controller = new AbortController();
+    abortRef.current = controller;
     setLoading(true);
     try {
       const lang = window.location.pathname.split("/")[1] || "en";
-      const res = await fetch(`/${lang}/api/search?q=${encodeURIComponent(q)}`);
+      const res = await fetch(`/${lang}/api/search?q=${encodeURIComponent(q)}`, { signal: controller.signal });
       const data = await res.json();
       setResults(data);
       setActiveIndex(-1);
-    } catch {
+      setLoading(false);
+    } catch (err) {
+      if ((err as Error).name === "AbortError") return;
       setResults([]);
+      setLoading(false);
     }
-    setLoading(false);
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => search(query), 250);
+    const timer = setTimeout(() => search(query), 200);
     return () => clearTimeout(timer);
   }, [query, search]);
 
   // Keyboard navigation inside results
   function handleKeyNav(e: React.KeyboardEvent) {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") keyboardRef.current = true;
     if (e.key === "ArrowDown") {
       e.preventDefault();
       setActiveIndex((prev) => Math.min(prev + 1, results.length - 1));
@@ -145,9 +154,10 @@ export function SearchModal() {
     }
   }
 
-  // Scroll active item into view
+  // Scroll the active item into view, but only when the keyboard moved it. Scrolling because of a mouse hover
+  // moved the list under the pointer, which changed the hover target again and made the list jump.
   useEffect(() => {
-    if (activeIndex >= 0 && listRef.current) {
+    if (activeIndex >= 0 && listRef.current && keyboardRef.current) {
       const items = listRef.current.querySelectorAll("[data-result]");
       items[activeIndex]?.scrollIntoView({ block: "nearest" });
     }
@@ -209,7 +219,7 @@ export function SearchModal() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search documentation..."
-            className="flex-1 bg-transparent text-lg text-foreground outline-none placeholder:text-muted-foreground/60"
+            className="search-input flex-1 bg-transparent text-lg text-foreground outline-none focus:shadow-none focus-visible:outline-none placeholder:text-muted-foreground/60"
             autoFocus
           />
           {query && (
@@ -233,9 +243,9 @@ export function SearchModal() {
         </div>
 
         {/* Results area */}
-        <div ref={listRef} className="max-h-[60vh] overflow-y-auto">
-          {/* Loading skeleton */}
-          {loading && (
+        <div ref={listRef} className="max-h-[60vh] min-h-24 overflow-y-auto overscroll-contain">
+          {/* Loading skeleton (only when there is nothing to show yet) */}
+          {loading && results.length === 0 && (
             <div className="space-y-1 p-3">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="flex items-center gap-3 rounded-xl p-3">
@@ -263,8 +273,8 @@ export function SearchModal() {
           )}
 
           {/* Results list */}
-          {!loading && results.length > 0 && (
-            <div className="space-y-2 p-3">
+          {results.length > 0 && (
+            <div className={`space-y-2 p-3 transition-opacity duration-150 ${loading ? "opacity-60" : "opacity-100"}`}>
               <div className="mb-1 px-3 py-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground/60">
                 {results.length} result{results.length !== 1 ? "s" : ""} found
               </div>
@@ -285,7 +295,10 @@ export function SearchModal() {
                       router.push(result.slug);
                       close();
                     }}
-                    onMouseEnter={() => setActiveIndex(idx)}
+                    onMouseMove={() => {
+                      keyboardRef.current = false;
+                      if (activeIndex !== idx) setActiveIndex(idx);
+                    }}
                     className={`group flex w-full items-start gap-3 rounded-xl border p-3.5 text-left transition-all duration-150 ${
                       isActive
                         ? "border-accent-green/30 bg-accent-green/8 shadow-sm"

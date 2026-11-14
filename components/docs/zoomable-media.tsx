@@ -14,6 +14,24 @@ export function ZoomImage({ themeClass = "", className = "", ...img }: ImgProps 
   const [open, setOpen] = useState(false);
   const label = typeof img.alt === "string" && img.alt ? img.alt : "Chart";
 
+  // The dark/light twin that is hidden never loads lazily, so switching theme showed a blank frame.
+  // Fetch it once the browser is idle.
+  useEffect(() => {
+    if (!themeClass || !img.src) return;
+    const src = String(img.src);
+    const run = () => {
+      const pre = new Image();
+      pre.decoding = "async";
+      pre.src = src;
+    };
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(run, { timeout: 4000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const id = window.setTimeout(run, 2000);
+    return () => window.clearTimeout(id);
+  }, [themeClass, img.src]);
+
   return (
     <div className={`${themeClass} group relative mt-6`}>
       <button
@@ -173,6 +191,20 @@ type FullscreenVideoEl = HTMLVideoElement & { webkitEnterFullscreen?: () => void
 export function FullscreenVideo({ themeClass = "", className = "", ...video }: VideoProps & { themeClass?: string }) {
   const ref = useRef<FullscreenVideoEl>(null);
 
+  // A hidden dark/light twin should not fetch anything. Only the video that is shown loads its metadata.
+  useEffect(() => {
+    const v = ref.current;
+    if (!v || !themeClass) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting) && v.preload === "none") v.preload = "metadata";
+      },
+      { rootMargin: "200px" },
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, [themeClass]);
+
   function toggle() {
     const v = ref.current;
     if (!v) return;
@@ -183,7 +215,12 @@ export function FullscreenVideo({ themeClass = "", className = "", ...video }: V
 
   return (
     <div className={`${themeClass} group relative mt-6`}>
-      <video ref={ref} {...video} className={className.replace(/\bmt-6\b/, "").trim()} />
+      <video
+        ref={ref}
+        {...video}
+        preload={themeClass ? "none" : video.preload}
+        className={className.replace(/\bmt-6\b/, "").trim()}
+      />
       <button
         type="button"
         onClick={toggle}
