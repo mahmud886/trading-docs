@@ -1,118 +1,168 @@
 ---
-title: "Price Action দিয়ে Swing Trading — সম্পূর্ণ গাইড"
-description: "H4/D1 Timeframe-এ Price Action Swing Trading আয়ত্ত করুন। Swing Entry Technique, Multi-day Trade Management এবং Swing Trading Position Sizing শিখুন।"
+title: "সুইং ট্রেডিং — সম্পূর্ণ গাইড"
+description: "Daily আর 4H চার্টে প্রাইস অ্যাকশন দিয়ে Swing ট্রেড করুন: Weekly–Daily–4H কাঠামো, তিনটি এন্ট্রি কৌশল (Daily Order Block, Fibonacci পুলব্যাক, S/R Flip), চওড়া Stop এর জন্য সাইজিং, ধরে রাখা আর Trail এর নিয়ম, রাতারাতি খরচ আর উইকেন্ড গ্যাপ, বাংলাদেশে Daily Close ঘিরে রুটিন, আর একটি উদাহরণ — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 23
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
 ## Swing Trading কী?
 
-Swing Trading ২-২০+ দিন Position ধরে রেখে **Multi-day Price Swing** ক্যাপচার করে। H4 ও D1 Chart-এ Price Action ব্যবহার করে, Swing Trader ন্যূনতম Screen Time-এ ১০০-৫০০+ Pip Move লক্ষ্য করে — Full-time Job থাকা ব্যক্তিদের জন্য আদর্শ।
+**Swing Trading** Daily আর 4H চার্ট দিয়ে **কয়েক দিন থেকে কয়েক সপ্তাহের** Move ধরে। টার্গেট বড় (মেজর পেয়ারে প্রায়ই ১০০–৫০০ পিপ), Stop চওড়া, আর Day Trading বা Scalping এর চেয়ে অনেক কম স্ক্রিন টাইম লাগে।
 
-<Callout type="info" title="বেশিরভাগ Trader-এর জন্য সেরা Style">
-  Swing Trading Profit Potential, সময় প্রতিশ্রুতি ও মনস্তাত্ত্বিক স্বাচ্ছন্দ্যের সেরা ভারসাম্য দেয়। দিনে ১-২ বার Chart
-  Check, Intraday Noise এড়ানো, এবং উল্লেখযোগ্য Market Move ক্যাপচার।
+<Callout type="info" title="স্পষ্ট করা: 'বেশিরভাগ ট্রেডারের জন্য সেরা স্টাইল'">
+  মূল লেসনে Swing Trading কে বেশিরভাগ ট্রেডারের জন্য সেরা স্টাইল বলা হয়েছিল। চাকরিজীবীদের জন্য এটা মানানসই, কারণ কম
+  স্ক্রিন টাইম লাগে আর খরচ কম গুরুত্বপূর্ণ, কিন্তু "সেরা" ব্যক্তির ওপর নির্ভর করে। এর বিনিময় হলো কম ট্রেড, চওড়া Stop,
+  আর রাতারাতি খরচ ও উইকেন্ড গ্যাপের মধ্যে ধরে রাখা।
 </Callout>
 
 ---
 
-## Swing Trading Framework
+## কাঠামো
 
-### Timeframe:
+| উদ্দেশ্য           | টাইমফ্রেম |
+| ------------------ | --------- |
+| Bias / দিক         | Weekly    |
+| সেটআপ আর লেভেল     | Daily     |
+| এন্ট্রির সময়      | 4H        |
+| নির্ভুলতা (ঐচ্ছিক) | 1H        |
 
-| উদ্দেশ্য         | Timeframe            |
-| ---------------- | -------------------- |
-| Bias/Direction   | Weekly (W1)          |
-| Setup চিহ্নিতকরণ | Daily (D1)           |
-| Entry Timing     | 4-Hour (H4)          |
-| Precision Entry  | 1-Hour (H1) — ঐচ্ছিক |
-
-### প্রক্রিয়া:
-
-```
-1. W1: সামগ্রিক Bias নির্ধারণ (Bull/Bear/Range)
-2. D1: Key Level, Structure ও Setup চিহ্নিত
-3. H4: D1 Level-এ Entry Confirmation অপেক্ষা
-4. Structure-এর বাইরে Stop দিয়ে Enter
-5. Target: D1 Swing High/Low বা Key Level
-6. Manage: দিনে ২× Check (সকাল + সন্ধ্যা)
-```
+1. **Weekly:** ট্রেন্ড আর বড় লেভেল।
+2. **Daily:** Structure, Key Level, সেটআপ।
+3. **4H:** Daily লেভেলে Confirmation ক্যান্ডেল বা CHOCH এর অপেক্ষা।
+4. Daily Structure এর ওপারে Stop দিয়ে **এন্ট্রি**।
+5. পরের Daily Swing বা লেভেল **টার্গেট**।
+6. দিনে দুবার **ম্যানেজ**।
 
 ---
 
-## Swing Entry Technique
+## Daily Flip, কয়েক দিন ধরে রাখা
 
-### ১. D1 Order Block Entry:
+![GBP/USD Daily: 1.2580–1.2600 এর Resistance দুবার ফেরায়, ভাঙে, আর Support হিসেবে Retest হয়; 1.2615 এ Buy, Stop 1.2555, টার্গেট 1.2800; ৬০ পিপে ১% রিস্ক মানে প্রায় 0.16 লট](/images/price-action/swing-trading/daily-swing-flip-dark.png)
 
-```
-- D1 BOS তৈরি করে (নতুন High/Low)
-- D1 Order Block Mark করুন
-- OB Zone-এ Alert সেট করুন
-- Price OB-তে পৌঁছালে H4-এ নামুন
-- H4 Bullish/Bearish Confirmation-এ Enter
-- Stop: D1 OB-এর বাইরে
-- Target: পরবর্তী D1 Swing Point
-```
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/swing-trading-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### ২. D1 Fibonacci Pullback:
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
+</Callout>
 
-```
-- D1 Trend স্পষ্ট (HH/HL বা LH/LL)
-- Price শেষ D1 Swing-এর 50-61.8% Retrace
-- H4 Fib Zone-এ Rejection দেখায়
-- 78.6%-এর নিচে Stop দিয়ে Enter
-- Target: Trend Direction-এ নতুন D1 Swing
-```
+1. **1.2580 – 1.2600** এর **Daily Resistance** দুবার Price ফেরায়।
+2. একটি Daily ক্যান্ডেল **এর উপরে Close** করে: Zone টা Support হয়ে যায়।
+3. কয়েক দিন পর Price Zone **Retest** করে উপরে Close করে। 4H চার্ট নিশ্চিত করে।
 
----
+| লেভেল   | প্রাইস      | নোট                             |
+| ------- | ----------- | ------------------------------- |
+| এন্ট্রি | 1.2615      | Retest আর 4H Confirmation এর পর |
+| Stop    | 1.2555      | Zone এর নিচে (৬০ পিপ)           |
+| টার্গেট | 1.2800      | পরের Daily লেভেল                |
+| **R:R** | **১ : ৩.১** | রিস্ক ৬০ পিপ, রিওয়ার্ড ১৮৫ পিপ |
 
-## Swing Trade Management
-
-### Position Sizing:
-
-```
-Swing Stop চওড়া (50-150 Pip), তাই Position ছোট হতে হবে:
-
-Account: $10,000
-Risk: 1% = $100
-Stop: 80 Pip
-Pip Value: Standard Lot-এ $10
-Position: $100 ÷ (80 × $10) = 0.125 Lot (0.12 বা 0.13)
-```
-
-### Holding Period নিয়ম:
-
-- ন্যূনতম Hold: ২ দিন (Trade Develop হতে দিন)
-- সর্বোচ্চ Hold: Target Hit বা Thesis Invalidate পর্যন্ত
-- Intraday Noise-এর কারণে Exit করবেন না
-- দিনে শুধু ২× Check
-
-### Trailing Strategy:
-
-- ১R Gain-এর পর Stop Break-even-এ সরান
-- নতুন Swing Point তৈরি হলে তার পিছনে Trail
-- 1:2 R:R-এ ৫০% Close, বাকি Major Target-এ Trail
+**সাইজ:** $10,000 অ্যাকাউন্টের ১% = $100। $100 ÷ (60 × $10) = 0.167 লট → **0.16** (নিচের দিকে রাউন্ড)।
 
 ---
 
-## Part-time Trader-দের জন্য সুবিধা
+## তিনটি এন্ট্রি কৌশল
 
-| বিষয়           | সুবিধা                         |
-| --------------- | ------------------------------ |
-| Screen Time     | দিনে ৩০ মিনিট - ১ ঘণ্টা        |
-| সিদ্ধান্তের গতি | Analysis-এর জন্য যথেষ্ট সময়   |
-| আবেগের চাপ      | কম (প্রতিটি Tick দেখা লাগে না) |
-| খরচ             | কম Trade = কম Spread Cost      |
-| ঘুম             | রাতে Chart দেখার প্রয়োজন নেই  |
-| সামঞ্জস্যতা     | Full-time Job-এর সাথে কাজ করে  |
+| কৌশল                         | সেটআপ                                                   | Stop              | টার্গেট          |
+| ---------------------------- | ------------------------------------------------------- | ----------------- | ---------------- |
+| **Daily Order Block**        | একটি Daily BOS; OB মার্ক; Price ফিরলে 4H Confirmation   | Daily OB এর ওপারে | পরের Daily Swing |
+| **Daily Fibonacci পুলব্যাক** | স্পষ্ট Daily ট্রেন্ড; ৫০–৬১.৮% এ পুলব্যাক; 4H Rejection | ৭৮.৬% এর নিচে     | নতুন Daily Swing |
+| **Daily S/R Flip**           | Resistance ভাঙে; Retest টেকে; 4H Rejection              | Zone এর নিচে      | পরের Daily লেভেল |
+
+---
+
+## Swing ট্রেড ম্যানেজ করা
+
+### চওড়া Stop এর জন্য সাইজিং
+
+Swing Stop প্রায়ই ৫০–১৫০ পিপ, তাই Position ছোট। মূল লেসনের উদাহরণ: $10,000 অ্যাকাউন্ট, ১% রিস্ক ($100), ৮০ পিপ Stop → $100 ÷ (80 × $10) = **0.125 লট → 0.12**।
+
+### ধরে রাখা
+
+- ট্রেডকে অন্তত কয়েক দিন দিন; Intraday নয়েজে বের হবেন না।
+- টার্গেটে পৌঁছানো বা সেটআপ বাতিল হওয়া (Stop লেভেলের ওপারে Daily Close) পর্যন্ত থাকুন।
+- দিনে দুবার দেখুন।
+
+### Trail
+
+- প্রায় **+1R** এর পর, বা পরের Daily Swing তৈরি হলে Stop Break-even এ সরান।
+- **১ : ২** এ অর্ধেক বন্ধ করে বাকিটা Daily Swing এর পেছনে বড় টার্গেট পর্যন্ত Trail করুন।
+
+### রাতারাতি খরচ আর গ্যাপ
+
+- **Swap:** Daily Rollover পেরিয়ে ধরে রাখলে সুদ কাটে বা যোগ হয়; লম্বা সময়ে এটা জমে।
+- **উইকেন্ড গ্যাপ:** সোমবার Price আপনার Stop এর ওপারে খুলতে পারে। সাইজ এমন রাখুন যাতে গ্যাপ আপনার রিস্কের নিয়ম না ভাঙে।
+
+---
+
+## বাংলাদেশ থেকে একটি রুটিন
+
+| কখন (BD, US গ্রীষ্ম)                                         | কী                                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------------ |
+| সকাল (প্রায় রাত ৩:০০ BD তে Daily Close এর পর; শীতে ভোর ৪টা) | নতুন Daily ক্যান্ডেল পড়ুন, লেভেল আপডেট করুন, Alert দিন            |
+| সন্ধ্যা                                                      | Alert দেওয়া লেভেলে 4H Confirmation দেখুন; খোলা ট্রেড ম্যানেজ করুন |
+
+### দ্বিতীয় উদাহরণ (চার্ট ছাড়া) — Gold Daily পুলব্যাক
+
+Gold এর Daily ট্রেন্ড উপরে। এটা **2,350** পর্যন্ত ৫০% পুলব্যাক করে, যেখানে একটি 4H Bullish Engulfing তৈরি হয়। **2,356** এ Buy, ৭৮.৬% এর নিচে **2,328** এ Stop, Daily High **2,440** টার্গেট: রিস্ক $28, রিওয়ার্ড $84, **R:R ১ : ৩.০** (পরিকল্পিত)।
+
+---
+
+## খণ্ডকালীন ট্রেডারদের জন্য কেন মানানসই
+
+| বিষয়           | সুবিধা                                  |
+| --------------- | --------------------------------------- |
+| স্ক্রিন টাইম    | দিনে ৩০ মিনিট – ১ ঘণ্টা                 |
+| সিদ্ধান্তের গতি | শান্তভাবে বিশ্লেষণের সময়               |
+| খরচ             | কম ট্রেড; টার্গেটের তুলনায় স্প্রেড ছোট |
+| মানানসই         | পূর্ণকালীন চাকরির পাশে চলে              |
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                    | সমাধান                                   |
+| -------------------------------------- | ---------------------------------------- |
+| Daily সেটআপে Intraday আকারের Stop      | Daily Structure এর ওপারে Stop; সাইজ কমান |
+| প্রতিটি 5 মিনিটের ক্যান্ডেল দেখা       | দিনে দুবার দেখুন                         |
+| লম্বা ধরে রাখায় Swap উপেক্ষা          | ঢোকার আগে Swap রেট দেখুন                 |
+| খুব তাড়াতাড়ি Stop Break-even এ সরানো | +1R বা নতুন Daily Swing এর অপেক্ষা করুন  |
+
+---
+
+## অনুশীলন
+
+1. প্রতি উইকেন্ডে চারটি পেয়ারে Weekly Bias আর তিনটি Daily লেভেল মার্ক করুন।
+2. সেই লেভেলে Alert দিন আর Alert বাজলেই শুধু 4H দেখুন।
+3. এন্ট্রি, Stop, টার্গেট, সাইজ আর Swap সহ প্রতিটি ট্রেড পরিকল্পনা করুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| বিষয়        | মূল কথা                                        |
+| ------------ | ---------------------------------------------- |
+| **কাঠামো**   | Weekly Bias, Daily সেটআপ, 4H এন্ট্রি           |
+| **Stop**     | চওড়া; Position সাইজ কমান                      |
+| **ম্যানেজ**  | দিনে দুবার; ১ : ২ এ আংশিক; Daily Swing এ Trail |
+| **খরচ**      | Swap আর উইকেন্ড গ্যাপ                          |
+| **কার জন্য** | সীমিত স্ক্রিন টাইমের ট্রেডার                   |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — HTF Swing পদ্ধতি
-- [Trend Trading](/bn/price-action/trend-trading) — Trend-এর সাথে Trading
-- [Pullbacks](/bn/price-action/pullbacks) — Swing Pullback Entry
-- [Trade Management](/bn/price-action/trade-management) — Multi-day Trade Manage
-- [Risk Management](/bn/price-action/risk-management) — Swing Position Sizing
+- [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — Top-Down কাঠামো
+- [Trend Trading](/bn/price-action/trend-trading) — Structure এর পেছনে Trail
+- [Pullbacks](/bn/price-action/pullbacks) — Daily পুলব্যাক এন্ট্রি
+- [Risk Management](/bn/price-action/risk-management) — চওড়া Stop এর সাইজিং
