@@ -37,6 +37,8 @@ export interface StyleDefinition {
   swatch: [string, string, string];
   /** Optional serif/display stack applied to headings. */
   display?: string;
+  /** Corner scale for rounded-lg to rounded-3xl. 1 is the default, 0 is square. */
+  radius?: number;
   light: Palette;
   dark: Palette;
 }
@@ -92,6 +94,7 @@ export const STYLES: StyleDefinition[] = [
   },
   {
     id: "navy-gold",
+    radius: 0.25,
     name: "Navy and gold",
     description: "Deep navy with a gold accent and serif headings.",
     swatch: ["#0a1220", "#e9c46a", "#ece7da"],
@@ -121,6 +124,7 @@ export const STYLES: StyleDefinition[] = [
   },
   {
     id: "editorial",
+    radius: 1,
     name: "Editorial",
     description: "Warm paper tones, forest green and serif headings.",
     swatch: ["#f5f1e8", "#0b6b46", "#16231c"],
@@ -151,6 +155,7 @@ export const STYLES: StyleDefinition[] = [
   },
   {
     id: "swiss",
+    radius: 0,
     name: "Swiss",
     description: "Black and white with a single red accent.",
     swatch: ["#f4f4f0", "#0a0a0a", "#e5391a"],
@@ -181,6 +186,7 @@ export const STYLES: StyleDefinition[] = [
   },
   {
     id: "saas",
+    radius: 1.25,
     name: "Indigo",
     description: "Clean white surfaces with an indigo accent.",
     swatch: ["#fbfbfe", "#5b50ff", "#14142b"],
@@ -210,6 +216,7 @@ export const STYLES: StyleDefinition[] = [
   },
   {
     id: "bold",
+    radius: 0.75,
     name: "Bold",
     description: "Cream paper, thick outlines and a yellow accent.",
     swatch: ["#fff7e0", "#111111", "#ffe14d"],
@@ -345,6 +352,13 @@ export function buildStyleCss(): string {
     .map((s) => {
       const sel = `html[data-style="${s.id}"]`;
       let css = `${sel}{${declarations(s.light)}}${sel}.dark{${declarations(s.dark)}}`;
+      if (s.radius !== undefined && s.radius !== 1) {
+        const sizes: Record<string, number> = { sm: 0.25, md: 0.375, lg: 0.5, xl: 0.75, "2xl": 1, "3xl": 1.5 };
+        const vars = Object.entries(sizes)
+          .map(([k, v]) => `--radius-${k}:${(v * (s.radius as number)).toFixed(3)}rem;`)
+          .join("");
+        css += `${sel}{${vars}}`;
+      }
       if (s.display) css += `${sel} :is(h1,h2,h3){font-family:${s.display};letter-spacing:-0.01em}`;
       return css;
     })

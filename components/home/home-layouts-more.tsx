@@ -169,6 +169,11 @@ export function ImmersiveHome({ lang }: { lang: string }) {
           aria-hidden="true"
         >
           <defs>
+            <linearGradient id="imm-line" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0" stopColor="var(--accent-green)" stopOpacity="0.08" />
+              <stop offset="0.55" stopColor="var(--accent-green)" stopOpacity="0.6" />
+              <stop offset="1" stopColor="var(--accent-green)" stopOpacity="1" />
+            </linearGradient>
             <linearGradient id="imm-area" x1="0" x2="0" y1="0" y2="1">
               <stop offset="0" stopColor="var(--accent-green)" stopOpacity="0.28" />
               <stop offset="1" stopColor="var(--accent-green)" stopOpacity="0" />
@@ -181,7 +186,7 @@ export function ImmersiveHome({ lang }: { lang: string }) {
           <path
             d="M0 430 L120 400 L220 415 L330 360 L430 375 L540 300 L640 325 L760 250 L860 270 L980 190 L1090 210 L1200 140 L1320 160 L1440 100"
             fill="none"
-            stroke="var(--accent-green)"
+            stroke="url(#imm-line)"
             strokeWidth="2.5"
             vectorEffect="non-scaling-stroke"
           />
