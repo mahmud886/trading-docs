@@ -1,0 +1,119 @@
+---
+title: "Fibonacci and the Optimal Trade Entry (OTE) — A Practical Guide"
+description: "How to draw a Fibonacci retracement on a confirmed swing, where the 62%–79% optimal trade entry zone sits, how to build confluence with an order block or fair value gap, a full numeric example (entry, stop, target) and why Fibonacci levels are a convention rather than a proven edge."
+date: "2026-05-19"
+author: "Trading Docs"
+category: "ICT"
+tags: ["fibonacci", "ote", "retracement", "ict", "entries"]
+readingTime: 7
+featured: true
+---
+
+A **Fibonacci retracement** divides the distance between a swing low and swing high into ratios (23.6%, 38.2%, 50%, 61.8%, 78.6%) to estimate where a pullback might stop. The **optimal trade entry (OTE)** is an ICT term for the zone between the **62% and 79%** retracement, with the 70.5% level in the middle.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original treated the OTE zone as a reliable area where institutions enter. No study shows Fibonacci levels have predictive power by themselves; traders watch them partly **because many others do**. Use them as one input alongside structure and liquidity.
+</Callout>
+
+---
+
+## Drawing It Correctly
+
+| Step | Rule                                                                                   |
+| ---- | -------------------------------------------------------------------------------------- |
+| 1    | Use a **confirmed** swing: a move that broke structure (for a long, low to high)       |
+| 2    | Draw from the swing low to the swing high (reverse for shorts)                         |
+| 3    | Mark 62%, 70.5% and 79% as the OTE zone                                                |
+| 4    | Check for confluence: an order block, fair value gap or prior support inside the zone  |
+| 5    | Wait for a reaction on a lower timeframe before entering                               |
+
+Example swing: low **1.0800**, high **1.0900** (100 pips). The retracement levels measured down from the high:
+
+| Level  | Price      |
+| ------ | ---------- |
+| 50%    | 1.0850     |
+| 61.8%  | 1.0838     |
+| 70.5%  | 1.0830     |
+| 78.6%  | 1.0821     |
+
+The OTE zone is therefore about **1.0821 – 1.0838**. See [Optimal Trade Entry](/en/ict/ote) and [Pullbacks with Fibonacci](/en/price-action/pullbacks).
+
+### The Chart
+
+![A synthetic EUR/USD bullish optimal trade entry: a Fibonacci retracement with the 62% to 79% zone marked and price reacting inside it](/images/ict/ote/eurusd-bullish-ote-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/ict/ote-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Optimal Trade Entry](/en/ict/ote).)
+</Callout>
+
+---
+
+## Building Confluence
+
+| Confluence                         | Why it adds weight                                          |
+| ---------------------------------- | ----------------------------------------------------------- |
+| Order block or FVG inside the zone | A second reason to expect a reaction                        |
+| Discount in the larger range       | Buying below the 50% level of the dealing range             |
+| Session liquidity swept first      | Stops already taken before the pullback                     |
+| Higher-timeframe trend agrees      | The pullback is against a short-term move only              |
+
+Fibonacci alone is just a ruler; confluence is what turns a level into a setup.
+
+---
+
+## When It Fails
+
+| Failure                                     | What it looks like                                            |
+| ------------------------------------------- | ------------------------------------------------------------- |
+| Price slices through 78.6% and keeps going  | The swing is probably being reversed: stop is hit             |
+| No pullback at all                          | Price runs away and you chase or miss                         |
+| Drawing from the wrong swing                | Different swings give different levels: be consistent         |
+| Too many levels on the chart                | Every price is "near a level"; use a few, with a reason       |
+
+---
+
+## Example (no chart)
+
+Swing low **1.0800**, high **1.0900**. A bullish fair value gap sits at **1.0826 – 1.0834**, inside the OTE zone, and a 5-minute candle rejects it. Plan: buy **1.0830** (the 70.5% level), stop **1.0812** (beyond the 79% level and the gap): risk 18 pips; target **1.0900** (the high): reward 70 pips, **1 : 3.9** planned. If price closes below **1.0812**, the idea is cancelled.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Entering on the level alone | Wait for confluence and a reaction |
+| Stop inside the OTE zone | Place it beyond the swing or the 79% level plus a buffer |
+| Redrawing the retracement to fit the price | Fix the swing before the pullback |
+| Using ten levels | Use 62%, 70.5% and 79%, with reasons |
+
+---
+
+## Practice
+
+1. Draw the OTE zone on five past swings and check whether price reacted.
+2. Note whether there was a confluence inside the zone each time.
+3. Compare reactions with and without confluence.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Retracement | Ratios between a swing low and swing high estimate pullback depth |
+| OTE | The 62%–79% zone with 70.5% in the middle |
+| Edge | Not proven on its own; confluence and confirmation matter |
+| Stop | Beyond the swing or the 79% level plus a buffer |
+
+---
+
+## Related Topics
+
+- [Optimal Trade Entry](/en/ict/ote)
+- [Pullbacks](/en/price-action/pullbacks)
+- [How to Use Fibonacci](/en/blog/how-to-use-fibonacci)
+- [Premium and Discount Trading Guide](/en/blog/premium-discount-trading-guide)
