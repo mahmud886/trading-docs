@@ -1,284 +1,120 @@
 ---
-title: "Supply & Demand with Liquidity Sweeps — Smart Money Tactics"
-description: "Understand how institutional traders find liquidity, execute sweeps and grabs, and use Supply/Demand zones for manipulation."
+title: "Supply and Demand Zones with Liquidity — Putting the Two Together"
+description: "How supply and demand zones (the base before a strong move) and liquidity (resting stops above or below) combine into one setup: a sweep of liquidity, then a reaction from a fresh zone. Zone marking rules, what makes a zone strong or weak, and a worked demand-zone buy with a 1 to 3 planned reward-to-risk."
 date: "2026-05-19"
 author: "Trading Docs"
 category: "SMC"
-tags: ["supply-demand", "liquidity", "sweep", "grab", "smart-money"]
-readingTime: 20
+tags: ["supply-demand", "liquidity", "sweep", "grab", "zones"]
+readingTime: 8
 featured: true
 ---
 
-## What are Supply & Demand Zones?
+A **demand zone** is a small area where price paused (a base) before a strong move up; a **supply zone** is the same before a strong move down. **Liquidity** is where stops and pending orders rest. The two combine into one idea: price **takes liquidity**, **returns to a zone** that started a strong move, and reacts, or it doesn't.
 
-**Supply & Demand zones** are areas where large order clusters exist.
-
-- **Demand Zone** = Below price, many buyers waiting (big buy orders)
-- **Supply Zone** = Above price, many sellers waiting (big sell orders)
-
-### Why They Matter?
-
-Institutional traders know where these zones are. They push price there to fill orders and profit.
-
----
-
-## Understanding Liquidity Sweeps & Grabs
-
-### What is a Liquidity Sweep?
-
-A **sweep** is when price quickly collects stops to fuel momentum.
-
-**Example: Bearish Trap (also called a Sweep**
-
-```
-Stop Loss Area (all retail traders' SL)
-        ↓ ← 1.0815
-        |
-1.0820  ├─ ← Swing Low
-        |
-1.0810  ├─ ← Stop collection zone (Liquidity Pool)
-        |   ↓ ↓ ↓ (everyone's SL here)
-        |
-1.0805  ├─ Limited support
-```
-
-**What Happens:**
-
-1. Price starts forming (people buy)
-2. Dips to collect stops
-3. Then bounces hard upward
-
-### What is a Liquidity Grab?
-
-A **grab** is when price collects liquidity and continues in direction.
-
-**Example:**
-
-```
-           Uptrend
-1.0850
-    |
-1.0840  ├─ ← Institutional buyers cluster (Demand Zone)
-    |       ↑ ↑ (huge buy orders)
-1.0830  ├─
-    |
-1.0820  ├─ ← Swing High (previous)
-    |     ↑
-1.0815  ├─ GRAB - Takes liquidity
-    |
-```
-
-Then price rallies hard and quickly upward.
-
-<Callout type="tip" title="Why Smart Money Does This">
-  Institutional traders grab stops because stops = liquidity. They buy the liquidity cheap, then push price to their
-  targets.
+<Callout type="warning" title="Corrected and toned down">
+  The original called zones "institutional footprints" and gave confident reaction rates. We can't see who trades, and
+  zones fail often. Treat a zone as a **place to look for a reaction**, graded by evidence (displacement, freshness,
+  location), not as a guaranteed turning point.
 </Callout>
 
 ---
 
-## Identifying Liquidity Zones on Charts
+## Marking a Zone
 
-### Most Common Liquidity Zones:
+| Step | Rule                                                                                                 |
+| ---- | ---------------------------------------------------------------------------------------------------- |
+| 1    | Find a **strong move**: several large candles that break structure                                   |
+| 2    | Mark the **base** just before it: the small candles (or last opposite candle) where the move started |
+| 3    | Draw the zone from the base's extreme to its body edge (a proximal and a distal line)                |
+| 4    | Mark it fresh until price returns for the first time                                                 |
 
-```
-1. Previous Swing High: Resistance point
-2. Previous Swing Low: Support point
-3. Round Numbers (1.0800, 1.0850, etc): More stops
-4. Daily High/Low: Weekly retest levels
-5. Stop Clusters: Many traders' SL at same area
-```
+The pattern types (rally–base–rally, drop–base–drop for continuation; rally–base–drop and drop–base–rally for reversal) are covered in [Rally–Base–Rally](/en/smc/rally-base-rally) and [Supply and Demand Zones](/en/smc/supply-demand-zones). See [Proximal and Distal Lines](/en/smc/proximal-distal-lines) for the edges.
 
-### Example 5-Minute Chart (EURUSD):
+### The Chart
 
-```
-Time  Price   Liquidity Zone
----   ------  ----------------
-T1    1.0900  Swing High = liquidity above (everyone's SL here)
-T2    1.0880
-T3    1.0870  ← New uptrend begins
-T4    1.0920  ← Liquidity Grab! Swing High broken
-T5    1.0915
-T6    1.0930  ← Fast momentum (liquidity pulled)
-```
+![Synthetic supply and demand zones marked on a chart with the strong moves that created them](/images/smc/supply-demand-zones/supply-demand-zones-dark.webp)
 
----
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/supply-demand-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-## Supply & Demand Interactive Analysis
-
-## Supply Zones in Detail
-
-A **Supply Zone** is historic resistance where massive selling pressure exists.
-
-### Supply Zones Form When:
-
-1. Price rallies fast then reverses
-2. Many retail traders bought at the high (now losing money)
-3. They want to "break even" by selling at that level
-4. This creates **sell pressure** at that zone
-
-**On the chart above:**
-
-- The red line reaches the Supply zone
-- All those losing traders try to exit
-- Price gets **rejected** (bounces back down)
-- Reason: Sell orders (stop losses) > Buy orders
-
-### Professional Application:
-
-When price touches a Supply zone **and** liquidity is above it, institutions execute stop collection upward before reversing down. This creates a reliable "trap" pattern traders can recognize.
-
-The blue section shows the opposite - **Demand zone** where price bounces UP because losing sellers are buying back at support levels.
-
-### What Happens When Price Reaches Supply:
-
-- All those losing traders sell
-- **Sell pressure increases** → Price stalls
-- **Or** price breaks through (gets squeezed)
-
----
-
-## Demand Zones in Detail
-
-A **Demand Zone** is historic support where massive buying pressure exists.
-
-### Demand Zones Form When:
-
-1. Price crashes fast then bounces
-2. Many traders shorted at the bottom (now losing)
-3. They want to "break even" by buying
-4. This creates buy pressure
-
-**Chart Example:**
-
-```
-1.0900  ┐
-        │ Price falls
-        │
-1.0850  ├─ ← Shorted here by many
-        │   Now losing money
-        │   = Demand Zone (buy pressure)
-1.0800  └─ Lowest point
-```
-
-### What Happens When Price Reaches Demand:
-
-- All those losing traders buy
-- **Buy pressure increases** → Price bounces
-- **Or** price breaks below (gets squeezed)
-
-<Callout type="warning" title="Critical Insight">
-  Supply/Demand zones = real people, real emotions, real money flows—not just chart lines.
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Supply and Demand Zones](/en/smc/supply-demand-zones).)
 </Callout>
 
 ---
 
-## Complete Trading Scenario
+## What Makes a Zone Stronger
 
-### Scene: GBPUSD 1-Hour Chart
+| Feature                    | Stronger                                     | Weaker                    |
+| -------------------------- | -------------------------------------------- | ------------------------- |
+| Departure from the base    | Fast, large candles, a gap left behind       | Slow, overlapping candles |
+| Freshness                  | Never revisited                              | Tested more than once     |
+| Liquidity taken before     | A clear sweep of a high or low into the zone | None                      |
+| Higher-timeframe direction | With the larger trend                        | Against it                |
+| Space to the target        | At least 2R                                  | Close opposing level      |
 
-```
-Context: Uptrend active, Daily trend is bullish
-
-1.2850  ┐
-        │ Supply Zone (tested yesterday, bounced)
-1.2840  ├─ ← Resistance area
-        │
-1.2820  ├─ Swing High (current)
-        │
-1.2800  ├─ ← Order Block (strong buy)
-        │     + Demand Zone
-1.2780  │
-        │ Swing Low
-1.2770  └─
-
-Events:
-T1: Price 1.2795 (Order Block + Demand Zone)
-    → Bullish candle, Close: 1.2805
-
-T2: Price 1.2810 (Swing High area)
-    → Liquidity zone (everyone's SL here)
-
-T3: Price 1.2825 (Supply Zone broken)
-    → GRAB! Liquidity taken
-
-T4: Price 1.2835 and still climbing
-    → Squeeze + fast momentum
-```
-
-**Trading Plan:**
-
-```
-Entry Zone:    1.2790-1.2800 (Demand Zone)
-Stop:          1.2770 (Swing Low)
-Target 1:      1.2820 (Previous Swing High)
-Target 2:      1.2840 (Supply Zone break)
-Risk/Reward:   1:2.5
-```
+See [Zone Strength Scoring](/en/smc/zone-strength-scoring) and [Fresh vs Tested Zones](/en/smc/fresh-vs-tested).
 
 ---
 
-## Supply + Demand Combinations
+## Liquidity as the Trigger
 
-### Scenario 1: Supply + Liquidity Swipe
-
-```
-Price heads to Supply Zone
-→ Liquidity above (stop area)
-→ Price hits and grabs it
-→ Then sharp downward momentum
-
-= Likely but not guaranteed
-```
-
-### Scenario 2: Demand + Order Block
-
-```
-Price crashes through Demand Zone
-→ Then bounces off Order Block
-→ Strong upward push
-
-= Very strong for entries
-```
-
-### Scenario 3: Round Number Noise
-
-```
-1.0800 (Round) = Liquidity + Supply/Demand mixed
-Price oscillates
-→ Sometimes grab, sometimes sweep
-→ Whipsaws likely
-
-= Avoid or use tight stops
-```
+| Sequence                                        | What to do                                              |
+| ----------------------------------------------- | ------------------------------------------------------- |
+| Price sweeps a low, then reaches a demand zone  | Look for a reaction and a structure shift: a buy setup  |
+| Price sweeps a high, then reaches a supply zone | Look for a reaction and a structure shift: a sell setup |
+| Price reaches a zone with no liquidity taken    | Weaker case: wait for more evidence                     |
+| Price closes through the zone                   | The zone has failed: step aside                         |
 
 ---
 
-## Checklist: Supply/Demand + Liquidity Setup
+## Example (no chart)
 
-```
-☐ Trend confirmed?
-☐ Order Block identified?
-☐ Demand or Supply Zone clear?
-☐ Liquidity zone marked? (Swing High/Low or Rounds)
-☐ Which direction am I trading? (Trend or counter?)
-☐ Entry zone defined?
-☐ Stop level clear?
-☐ Risk/Reward correct?
-```
+A demand zone **1.0816 – 1.0824** started a strong rally earlier in the day. Price sweeps the equal lows at **1.0812**, returns to the zone and a 5-minute candle closes above the last lower high. Plan: buy **1.0822**, stop **1.0810** (below the sweep low): risk 12 pips; target **1.0858** (the next swing high): reward 36 pips, **1 : 3.0** planned. If price closes below **1.0810**, the zone has failed.
 
 ---
 
-## Key Points
+## Common Mistakes
 
-✓ **Supply/Demand** = Human psychology + money flow
+| Mistake                          | Fix                                                  |
+| -------------------------------- | ---------------------------------------------------- |
+| Marking every pause as a zone    | Require a strong departure                           |
+| Trading tested zones as if fresh | Prefer first returns                                 |
+| Stop inside the zone             | Place it beyond the zone's distal line and the sweep |
+| Ignoring the larger trend        | Prefer zones with the higher-timeframe direction     |
 
-✓ **Liquidity** = Thousands of stop losses awaiting
+---
 
-✓ **Sweeps** = Smart money collects retail stops
+## Practice
 
-✓ **Grabs** = Quick momentum after stops are taken
+1. Mark five demand and five supply zones with the rules above.
+2. Score each zone with the strength table.
+3. Note which scores produced a reaction on the first return.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
-Next: **Complete Strategy** — putting it all together!
+---
 
-[Complete Trading Strategy - Everything Combined](/en/blog/complete-trading-strategy-advanced)
+## Summary
+
+| Idea     | Detail                                                                |
+| -------- | --------------------------------------------------------------------- |
+| Zone     | The base before a strong move: a place to look for a reaction         |
+| Strength | Fast departure, fresh, liquidity taken, trend-aligned, room to target |
+| Trigger  | A sweep into the zone then a structure shift                          |
+| Caution  | Zones fail often; use a stop beyond the distal line                   |
+
+---
+
+## Related Topics
+
+- [Supply and Demand Zones](/en/smc/supply-demand-zones)
+- [Zone Strength Scoring](/en/smc/zone-strength-scoring)
+- [Liquidity Pools](/en/smc/liquidity-pools)
+- [Liquidity Concepts](/en/blog/liquidity-concepts-complete-guide)
