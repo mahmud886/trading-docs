@@ -1,0 +1,137 @@
+---
+title: "Iceberg Orders and Spoofing — Complete Guide"
+description: "What resting orders in the book can and can't tell you: how an iceberg order shows a small size while much more trades, how a large order that vanishes as price approaches can look like spoofing, why cancellations are normal, what the rules say, and what spot-forex traders can actually see — with a liquidity heatmap and an animated walkthrough."
+level: expert
+order: 8
+lastUpdated: "2026-11-14"
+---
+
+## Two Things the Book Can Do
+
+The order book ([DOM and Level 2](/en/order-flow/dom-level2)) shows **resting** orders. Two patterns make resting size misleading:
+
+| Pattern     | What the book shows                                    | What actually happens                                   |
+| ----------- | ------------------------------------------------------ | ------------------------------------------------------- |
+| **Iceberg** | A small order at a price                               | When it is hit it **refills**, so far more trades there |
+| **Wall that vanishes** | A very large order near price               | It is **cancelled** before price reaches it             |
+
+<Callout type="warning" title="Corrected and toned down">
+  The original lesson said icebergs are "institutional orders" and treated vanishing walls as proof of illegal
+  manipulation. A book cannot tell you who placed an order or why. Many large orders are cancelled for ordinary
+  reasons (a plan changed, a hedge was filled elsewhere, price moved). Treat both patterns as questions, not as
+  conclusions.
+</Callout>
+
+---
+
+## One Session, Both Patterns
+
+![A synthetic EUR/USD 1-minute heatmap of resting size: a large bid wall at 1.0856 resting for eight minutes and cancelled while price is still three ticks above, after which price falls through; then a small bid at 1.0852 of 40 to 48 contracts that keeps refilling while 640 contracts are sold into it, the low holding, followed by a bounce](/images/order-flow/iceberg-spoofing/iceberg-spoofing-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/order-flow/iceberg-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Prices and order-book sizes are **synthetic**. A heatmap like this needs depth-of-market history from a futures or
+  stock venue; it is not available for spot forex.
+</Callout>
+
+| What                 | In the chart                                                              | Reading                                                  |
+| -------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Quiet book           | Resting size under 30 everywhere                                          | Normal                                                   |
+| **Large bid wall**   | Size 100 at 1.0856 for 8 minutes — more than 3× the quiet book            | Looks like strong support                                |
+| Wall cancelled       | Gone while price is still 3 ticks above, then price falls through         | The "support" was never tested — it was just displayed   |
+| **Iceberg bid**      | 40–48 displayed at 1.0852, **640 contracts** sold into it over 10 minutes | Displayed size ≪ traded size: it keeps refilling         |
+| Outcome              | Low holds at 1.0852, price bounces to 1.0861                              | Consistent with a buyer absorbing the selling            |
+
+---
+
+## Iceberg Orders
+
+An iceberg is a legitimate order type on many exchanges: a trader shows only part of a large order so as not to move the price, and the exchange refills the visible part each time it is hit.
+
+**What you can observe**
+
+1. Executed volume at a price **well above** the displayed size there.
+2. The displayed size **reappears** after each fill.
+3. Price does not trade through the level while this goes on.
+
+Caveats: a human can also keep re-posting orders, and the same footprint can come from several different participants. "Hidden size remaining" is a guess you cannot read off the screen.
+
+---
+
+## Spoofing
+
+**Spoofing** means placing orders you don't intend to execute to mislead others about supply or demand, then cancelling them. It is illegal in regulated futures and stock markets, and exchanges and regulators have prosecuted it.
+
+Why you shouldn't build a strategy on spotting it:
+
+| Reason                              | Detail                                                                   |
+| ----------------------------------- | ------------------------------------------------------------------------ |
+| Intent is invisible                 | A cancelled order looks identical whether it was manipulative or not     |
+| Cancellations are normal            | Algorithms add and cancel orders constantly                              |
+| Your data may not show it           | Aggregated or delayed depth can hide or invent walls                     |
+| Price often does what it was going to do | A "pulled wall" and a fall may have nothing to do with each other  |
+
+What is useful, without accusing anyone: **don't trade because a big resting order is displayed**. Resting size that disappears as price approaches gives you no support or resistance.
+
+---
+
+## Spot Forex
+
+Spot forex has no central order book. A broker's depth shows only that broker's liquidity, and "volume" is tick volume. Iceberg and wall analysis therefore needs **currency futures** (for example 6E), and even then reflects one venue.
+
+---
+
+## Using This Carefully
+
+| Evidence                                  | Reasonable use                                                   |
+| ----------------------------------------- | ---------------------------------------------------------------- |
+| Heavy executed volume, price holds        | Treat the level as defended **for now**; look for confirmation   |
+| Displayed size reappearing                | Supports the idea of an iceberg; doesn't tell you its total size |
+| Large wall that appears and vanishes      | Ignore it as support; wait for traded volume                     |
+| Everything together with structure        | One input to a plan with a stop                                  |
+
+### Example (no chart) — acting on the iceberg
+
+After ten minutes of selling into **1.0852** without a new low, a bounce closes at **1.0855**. Plan: buy **1.0855**, stop **1.0850** (below the defended level), target **1.0864** (the earlier swing): risk 5 pips, reward 9, **1 : 1.8** planned. In the data the bounce reaches 1.0861 and the target is not reached. If price closes below **1.0851**, the defence has failed.
+
+---
+
+## Common Mistakes
+
+| Mistake                                         | Fix                                                        |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| Treating a displayed wall as support            | Wait for traded volume at the level                        |
+| Calling every cancelled order "spoofing"        | Cancellations are normal; intent is not visible            |
+| Assuming an iceberg means a particular player   | You only see executed volume                               |
+| Using broker depth in spot forex as "the market" | It shows only that broker's liquidity                      |
+| No stop because "the big order protects me"     | Orders can be pulled at any time                           |
+
+---
+
+## Practice
+
+1. On a futures replay with depth, find two large resting orders. Did price reach them, and did they stay?
+2. Find a level where executed volume far exceeded displayed size. What happened next?
+3. For each, write what you could and could not know from the screen.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea            | Detail                                                                      |
+| --------------- | --------------------------------------------------------------------------- |
+| Iceberg         | Small displayed size that refills; traded volume ≫ displayed volume         |
+| Vanishing wall  | Large resting order cancelled before price arrives — ignore it as support   |
+| Spoofing        | Illegal in regulated markets, but intent can't be read from the book        |
+| Data            | Needs futures or stock depth; not available for spot forex                  |
+
+---
+
+## Related Topics
+
+- [DOM and Level 2](/en/order-flow/dom-level2)
+- [Absorption and Exhaustion](/en/order-flow/absorption-exhaustion)
+- [Footprint Charts](/en/order-flow/footprint-charts)
+- [Introduction to Order Flow](/en/order-flow/introduction)
