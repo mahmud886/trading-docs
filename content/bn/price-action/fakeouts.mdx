@@ -1,123 +1,174 @@
 ---
-title: "Fakeout — সম্পূর্ণ গাইড"
-description: "Fakeout চিহ্নিতকরণ ও Trading আয়ত্ত করুন। False Breakout চেনা, Institutional Trap এবং ব্যর্থ Move থেকে Profit করা শিখুন।"
+title: "ফেকআউট — সম্পূর্ণ গাইড"
+description: "Fakeout (মিথ্যা Breakout) চিনুন ও ট্রেড করুন: কেন হয়, একক-ক্যান্ডেল, একাধিক-ক্যান্ডেলের ফাঁদ, Stop Hunt, সেশন আর নিউজ Fakeout, আসল Breakout থেকে কীভাবে আলাদা করবেন, বাংলাদেশ সময়ে Asian Range এর London Sweep সহ তিনটি স্ট্র্যাটেজি, আর পরিকল্পিত উদাহরণ — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 9
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
 ## Fakeout কী?
 
-Fakeout (False Breakout) ঘটে যখন Price সাময়িকভাবে Support/Resistance Level-এর বাইরে **ভেদ করে** কিন্তু **দ্রুত ভিতরে ফিরে** আসে, Breakout-এ Enter করা Trader-দের Trap করে। Fakeout Trading-এর সবচেয়ে সাধারণ Trap-এর একটি এবং প্রায়ই **Institution দ্বারা Liquidity সংগ্রহের জন্য Engineered** হয়।
+**Fakeout** (মিথ্যা Breakout) হলো একটি লেভেলের ওপারে এমন Move যা **ব্যর্থ** হয়: Price বেরিয়ে যায়, ট্রেডারদের টেনে আনে, তারপর লেভেলের ভিতরে ফিরে আসে। যারা Breakout এ কিনেছিল (বা Breakdown এ বেচেছিল) তারা আটকা পড়ে, আর তাদের বের হওয়া Price কে উল্টো দিকে ঠেলে।
 
-<Callout type="info" title="Fakeout = সুযোগ">
-  বেশিরভাগ Retail Trader Fakeout-কে ভয় পায়। Smart Trader এগুলো পছন্দ করে। একটি Confirmed Fakeout আপনাকে Tight Stop ও
-  বড় Target-সহ High-probability Reversal Entry দেয়। Fakeout Trade করা শিখলে আপনার সবচেয়ে বড় হতাশা সবচেয়ে বড় Edge-এ
-  পরিণত হয়।
+---
+
+## Fakeout কেন হয়
+
+| কারণ                     | কী হয়                                                                  |
+| ------------------------ | ----------------------------------------------------------------------- |
+| **লেভেলের ওপারে Stop**   | ভাঙন লেভেলের ঠিক ওপারের Stop গুলো Trigger করে, তারপর নতুন Order শেষ হয় |
+| **ধারাবাহিকতা নেই**      | প্রথম ধাক্কার পর যথেষ্ট নতুন Buyer (বা Seller) যোগ দেয় না              |
+| **উল্টো দিকে বড় Order** | বড় উল্টো Order Breakout শোষণ করে                                       |
+| **নিউজ Spike**           | রিলিজের দ্রুত Spike প্রথম প্রতিক্রিয়া শেষে উল্টে যায়                  |
+
+<Callout type="info" title="নতুনভাবে বলা: 'Institutional Liquidity সংগ্রহ'">
+  মূল লেসনে Fakeout কে প্রতিষ্ঠানের ইচ্ছাকৃত Liquidity সংগ্রহ বলা হয়েছিল। এটা একটা সম্ভাব্য ব্যাখ্যা, কিন্তু চার্টে
+  উদ্দেশ্য দেখা যায় না। যা দেখা যায় তা হলো প্যাটার্ন: ভাঙন, ধারাবাহিকতা নেই, আর ভিতরে ফিরে Close। এই লেসন সেই
+  প্যাটার্ন ট্রেড করে।
 </Callout>
 
 ---
 
-## Fakeout কেন ঘটে
+## দুই-ক্যান্ডেলের ফাঁদ
 
-### ১. Institutional Liquidity সংগ্রহ
+![EUR/USD 1H: 1.0875–1.0931 এর রেঞ্জ, দুটি ক্যান্ডেল Resistance এর উপরে Close করে, একটি বড় ক্যান্ডেল ভিতরে ফিরে Close করে দুটোকেই ঢেকে দেয়; 1.0938 এ রিট্রেসে Sell, Stop 1.0968, টার্গেট 1.0870](/images/price-action/fakeouts/fakeout-trap-dark.png)
 
-Bank ও Hedge Fund-এর Order Fill করতে বিপুল Liquidity প্রয়োজন। Retail Trader S/R Level-এর ঠিক বাইরে Stop রাখে। Institution Price-কে এই Level ভেদ করায় Stop Trigger করে Liquidity সংগ্রহ করে।
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/fakeouts-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### ২. Weak Breakout Trader Trap
-
-অনভিজ্ঞ Trader প্রতিটি Break-এ Breakout Trade করে। Institution এটি জানে এবং তাদের Trap করার জন্য ব্যবহার করে।
-
-### ৩. Stop Loss Hunting
-
-Clear S/R Level-এর ঠিক বাইরে Stop রাখা — সবচেয়ে সাধারণ Retail ভুল। Institution জানে Stop কোথায় — সেগুলো Target করে।
-
----
-
-## Fakeout চিহ্নিত করা
-
-### Fakeout-এর বৈশিষ্ট্য:
-
-| বৈশিষ্ট্য      | Fakeout                   | Real Breakout           |
-| -------------- | ------------------------- | ----------------------- |
-| Candle Close   | Level-এর ভিতরে ফেরে       | Level-এর বাইরে Close    |
-| Volume         | কম বা স্বাভাবিক           | স্বাভাবিকের 2-3×        |
-| Follow-through | পরবর্তী Candle Reverse    | পরবর্তী Candle Continue |
-| Wick           | Level-এর বাইরে লম্বা Wick | ছোট Wick, বড় Body      |
-| Speed          | দ্রুত Spike ও Reverse     | ধারাবাহিক Movement      |
-| Context        | Range/Counter-trend       | Trend-এর সাথে           |
-
-### Fakeout Pattern:
-
-```
-Fakeout (Liquidity Sweep):
-
-═══ Resistance ═══╱╲══════════════
-   ╱╲   ╱╲   ╱╲╱  ╲ ← Fakeout Spike
-  ╱  ╲ ╱  ╲ ╱      ╲
- ╱    ╲╱    ╲╱        ╲ ← Reversal
-                        ╲ Strong move opposite
-
-Real Breakout:
-
-═══ Resistance ═══╱════════════════
-   ╱╲   ╱╲   ╱╱  ← Close beyond
-  ╱  ╲ ╱  ╲ ╱╱     Continue higher
- ╱    ╲╱    ╲╱
-```
-
----
-
-## Fakeout Trade করা
-
-### Strategy ১: Sweep + Reversal Entry
-
-```
-1. Key S/R Level চিহ্নিত (Equal High/Low, Clear S/R)
-2. Price Level ভেদ করে (Spike/Wick বাইরে)
-3. Candle Level-এর ভিতরে Close করে (Fakeout Confirm)
-4. পরবর্তী Candle-এ Reversal Direction-এ Enter
-5. Stop: Fakeout Wick-এর বাইরে
-6. Target: বিপরীত S/R বা Liquidity Level
-7. R:R: সাধারণত 1:3 থেকে 1:5 (Tight Stop)
-```
-
-### Strategy ২: Fakeout + OB Entry
-
-```
-1. Fakeout ঘটে (Level ভেদ করে ফিরে আসে)
-2. Fakeout Level-এর কাছে Order Block চিহ্নিত
-3. Price OB-তে Pullback করার অপেক্ষা
-4. OB-তে Confirmation-এ Enter
-5. Stop: Fakeout Extreme-এর বাইরে
-6. Target: বিপরীত Liquidity Pool
-```
-
----
-
-## Fakeout এড়ানোর উপায়
-
-1. **প্রতিটি Break-এ তাৎক্ষণিক Enter করবেন না** — Candle Close অপেক্ষা করুন
-2. **Volume Confirm করুন** — Real Breakout-এ Volume 2-3× বাড়ে
-3. **Trend Context বিবেচনা করুন** — Counter-trend Break = সম্ভবত Fakeout
-4. **Stop Level-এর ঠিক বাইরে রাখবেন না** — Buffer দিন
-5. **Retest অপেক্ষা করুন** — Real Breakout Retest ধরে রাখে
-
----
-
-## Fakeout = Liquidity Sweep
-
-<Callout type="info" title="গুরুত্বপূর্ণ সংযোগ">
-  Fakeout ও Liquidity Sweep একই জিনিস। "Fakeout" হলো Retail Trader-এর দৃষ্টিভঙ্গি (আমি Trapped হলাম!)। "Liquidity Sweep"
-  হলো Institutional দৃষ্টিভঙ্গি (আমি Order Fill করলাম!)। বোঝার পর, আপনি Victim থেকে Beneficiary হয়ে যান।
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
 </Callout>
+
+1. **রেঞ্জ:** EUR/USD **1.0875 থেকে 1.0931** এর মধ্যে থাকে।
+2. **টোপ:** দুটি ক্যান্ডেল Resistance এর **উপরে Close** করে, দ্বিতীয়টির Wick **1.0960** পর্যন্ত। Breakout Buyer রা ঢোকে।
+3. **ফাঁদ:** একটি বড় Bearish ক্যান্ডেল 1.0931 এর নিচে ভিতরে ফিরে Close করে আর দুটি Breakout Body কেই **ঢেকে দেয়**। যারা Breakout এ কিনেছিল সবাই এখন লসে।
+4. **ট্রেড:**
+
+| লেভেল   | প্রাইস      | নোট                            |
+| ------- | ----------- | ------------------------------ |
+| এন্ট্রি | 1.0938      | পুরনো লেভেলে রিট্রেসে          |
+| Stop    | 1.0968      | 1.0960 High এর উপরে            |
+| টার্গেট | 1.0870      | রেঞ্জের নিচের নিচে             |
+| **R:R** | **১ : ২.৩** | রিস্ক ৩০ পিপ, রিওয়ার্ড ৬৮ পিপ |
+
+একটি ক্যান্ডেল যা উপরে Wick দিয়ে ভিতরে ফিরে Close করে (Pin Bar) হলো এক-ক্যান্ডেলের সংস্করণ; দেখুন [Swing Failure Pattern](/bn/price-action/swing-high-low)।
+
+---
+
+## Fakeout এর ধরন
+
+| ধরন                         | আকৃতি                                                  | কোথায় সাধারণ           |
+| --------------------------- | ------------------------------------------------------ | ----------------------- |
+| **একক-ক্যান্ডেল**           | Pin Bar: ওপারে Wick, ভিতরে ফিরে Close                  | যেকোনো Key Level        |
+| **একাধিক-ক্যান্ডেলের ফাঁদ** | ওপারে এক বা একাধিক Close, তারপর ভিতরে ফিরে Close       | রেঞ্জের প্রান্ত         |
+| **Stop Hunt**               | Equal High/Low পেরিয়ে তীক্ষ্ণ দৌড়, তারপর রিভার্সাল   | স্পষ্ট Swing পয়েন্ট    |
+| **সেশন**                    | London বা New York আগে Asian Range এর High বা Low নেয় | সেশন ওপেন               |
+| **নিউজ**                    | রিলিজে Spike যা উল্টে যায়                             | NFP, CPI, রেট সিদ্ধান্ত |
+
+---
+
+## Fakeout নাকি আসল Breakout?
+
+| সূত্র              | Fakeout                             | আসল Breakout       |
+| ------------------ | ----------------------------------- | ------------------ |
+| **Close**          | লেভেলের ভিতরে ফিরে                  | লেভেলের ওপারে টেকে |
+| **পরের ক্যান্ডেল** | রেঞ্জে ফেরে                         | দূরে চলতে থাকে     |
+| **Wick**           | লেভেলের ওপারে লম্বা Wick            | ছোট Wick, বড় Body |
+| **ট্রেন্ড**        | Higher Timeframe ট্রেন্ডের বিরুদ্ধে | সাথে               |
+| **Retest**         | অন্য দিক থেকে ব্যর্থ                | টেকে               |
+
+---
+
+## তিনটি স্ট্র্যাটেজি
+
+### ১. S/R এ Pin Bar
+
+এমন Pin Bar এর অপেক্ষা করুন যার Wick Key Level এর ওপারে যায় আর ভিতরে ফিরে Close করে। Close এর পর এন্ট্রি; Wick এর ওপারে ৫–১০ পিপ যোগ করে Stop; উল্টো লেভেল বা রেঞ্জের মাঝখান টার্গেট।
+
+### ২. ভিতরে ফিরে Close (ফাঁদ)
+
+Breakout ক্যান্ডেলগুলোকে লেভেলের ওপারে Close করতে দিন। একটি ক্যান্ডেল ভিতরে ফিরে Close করার পরই এন্ট্রি নিন, ভালো হয় যদি সেটা তাদের ঢেকে দেয়। Fakeout এর এক্সট্রিমের ওপারে Stop; রেঞ্জের অন্য দিক টার্গেট।
+
+### ৩. সেশন Sweep (BD সময়)
+
+1. **Asian Range** মার্ক করুন (প্রায় **সকাল ৬টা – দুপুর ১২টা BD**)।
+2. **London ওপেনে** (গ্রীষ্মে প্রায় **দুপুর ১টা BD**, শীতে দুপুর ২টা) Asian High বা Low এর ওপারে দৌড় দেখুন।
+3. ভিতরে ফিরে Close আর Lower Timeframe Shift এর অপেক্ষা করুন।
+4. Sweep এর ওপারে Stop; Asian Range এর উল্টো দিক আর তার ওপারে টার্গেট।
+
+<Callout type="warning" title="সংশোধিত: Asian Range এর সময়">
+  মূল লেসনে Asian Range দেওয়া ছিল "রাত ২:০০ – সকাল ১০:০০ BD"। Tokyo খোলে **সকাল ৬:০০ BD** তে, তাই Asian Range প্রায়
+  সকাল ৬টা থেকে দুপুর ১২টা BD। দেখুন [Session Liquidity](/bn/smc/session-liquidity)।
+</Callout>
+
+---
+
+## উদাহরণ (চার্ট ছাড়া)
+
+### ১. Gold Stop Hunt
+
+Gold এর **2,400** এ Equal High। এটা **2,410** পর্যন্ত দৌড়ায়, Buy Stop গুলো Trigger করে, আর 2,400 এর নিচে ফিরে Close করে। **2,390** এ Sell, Stop **2,415**, টার্গেট **2,350**: রিস্ক $25, রিওয়ার্ড $40, **R:R ১ : ১.৬** (পরিকল্পিত)।
+
+### ২. NAS100 সেশন Fakeout (BD সময়)
+
+Asian Range **18,200 – 18,280**। প্রায় **দুপুর ১:০০ BD** তে London 18,200 এর নিচে **18,175** পর্যন্ত ভাঙে, তারপর ভিতরে ফিরে Close করে। **18,235** এ Buy, Stop **18,170**, টার্গেট **18,350**: রিস্ক ৬৫ পয়েন্ট, রিওয়ার্ড ১১৫ পয়েন্ট, **R:R ১ : ১.৮** (পরিকল্পিত)।
+
+### ৩. USD/JPY নিউজ Fakeout
+
+NFP তে (গ্রীষ্মে **সন্ধ্যা ৬:৩০ BD**) USD/JPY **149.20** পর্যন্ত Spike করে নামে আর 15m ক্যান্ডেল **149.50** Support এর উপরে ফিরে Close করে। **149.55** এ Buy, Stop **149.15**, টার্গেট **150.30**: রিস্ক ৪০ পিপ, রিওয়ার্ড ৭৫ পিপ, **R:R ১ : ১.৯** (পরিকল্পিত)।
+
+<Callout type="info" title="সরানো হয়েছে: ফলাফল">
+  মূল লেসনে ফলাফল দেওয়া ছিল ("+2.3R", "+$40, TP হিট", "+১১৫ পয়েন্ট", "+৭৫ পিপ")। এগুলো শেখানোর উদাহরণ, তাই শুধু
+  পরিকল্পনা দেখানো হয়েছে।
+</Callout>
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                | সমাধান                                               |
+| ---------------------------------- | ---------------------------------------------------- |
+| Close এর আগেই Fakeout বলা          | ভিতরে ফিরে Close এর অপেক্ষা করুন                     |
+| প্রতিটি Breakout এর বিরুদ্ধে ট্রেড | শুধু Key Level এ, ট্রেন্ডের বিরুদ্ধের ভাঙন Fade করুন |
+| লেভেলের ঠিক ওপারে Stop             | Fakeout এর এক্সট্রিমের ওপারে                         |
+| নিউজের প্রথম কয়েক সেকেন্ডে ট্রেড  | ক্যান্ডেল Close হওয়ার অপেক্ষা করুন                  |
+| Retest টিকে থাকা Breakout উপেক্ষা  | সেটা আসল Breakout; দিক বদলান বা সরে দাঁড়ান          |
+
+---
+
+## অনুশীলন
+
+1. 1H চার্টে ১০টি ব্যর্থ Breakout খুঁজে প্রতিটির ধরন চিহ্নিত করুন।
+2. প্রতিটির ভিতরে ফিরে Close আর Price উল্টো দিকে কতদূর গেছে লিখুন।
+3. ট্রেন্ডের বিরুদ্ধের আর পক্ষের Fakeout তুলনা করুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| বিষয়       | মূল কথা                                                      |
+| ----------- | ------------------------------------------------------------ |
+| **Fakeout** | একটি ভাঙন যা ব্যর্থ হয়ে ভিতরে ফিরে Close করে                |
+| **ফাঁদ**    | ওপারে Close, তারপর একটি ক্যান্ডেল ভিতরে ফিরে তাদের ঢেকে দেয় |
+| **এন্ট্রি** | ভিতরে ফিরে Close এর পর, বা রিট্রেসে                          |
+| **Stop**    | Fakeout এর এক্সট্রিমের ওপারে                                 |
+| **টার্গেট** | রেঞ্জের অন্য দিক                                             |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Liquidity](/bn/price-action/liquidity) — Fakeout-এর Institutional কারণ
-- [Breakouts](/bn/price-action/breakouts) — Real vs. False Breakout
-- [Support ও Resistance](/bn/price-action/support-resistance) — যে Level Fakeout ঘটে
-- [Reversal Concepts](/bn/price-action/reversal-concepts) — Fakeout-এর পর Reversal
-- [Entry Models](/bn/price-action/entry-models) — Fakeout Entry Timing
+- [Breakouts](/bn/price-action/breakouts) — ভাঙন টিকে থাকলে
+- [Swing Highs & Lows](/bn/price-action/swing-high-low) — Swing Failure Pattern
+- [Liquidity](/bn/price-action/liquidity) — Fakeout যে Stop নেয়
+- [Manipulation](/bn/smc/manipulation) — মিথ্যা Move এর SMC দৃষ্টিভঙ্গি
