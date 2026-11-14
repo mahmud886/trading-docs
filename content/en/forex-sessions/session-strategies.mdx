@@ -1,79 +1,128 @@
 ---
-title: "Session-Based Trading Strategies — Complete Guide"
-description: "Master specific strategies for each forex session. Learn London breakout, NY reversal, Asian range, and overlap strategies with BD time."
+title: "Session-Based Strategies — Complete Guide (BD Time)"
+description: "A strategy for each part of the Bangladesh trading day: Asia for preparation and range work, London for sweep reversals and opening-range breaks, the 6:00 PM continuation-or-reversal decision, New York entries and the stop time — with a playbook timeline chart, a worked example and an animated walkthrough."
 level: intermediate
 order: 13
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Session-Based Strategies
+## One Job per Block
 
-Each forex session has unique characteristics that favor specific strategies. Using the right strategy at the right time dramatically improves your win rate.
+Each session has a different job for you. Asia's job is **preparation**, London's is **finding the day's first setup**, the 6:00 PM hour's is **deciding** whether New York continues or reverses, and 10:00 PM's is **stopping**. Using one strategy for all of them is how traders end up trading the quiet hours.
 
----
-
-## Strategy Per Session
-
-### 1. Asian Session Strategy (5:00 AM - 1:00 PM BD)
-
-```
-Strategy: Range Trading + Level Marking
-- Market consolidates (low volatility)
-- Trade bounces within the range (advanced only)
-- PRIMARY USE: Mark levels for London
-- Mark Asian H/L for later sweep
-- Identify key S/R for the day
-- NOT recommended for active trading (for BD pairs)
-```
-
-### 2. London Session Strategy (1:00 PM - 10:00 PM BD)
-
-```
-Strategy: Breakout + Sweep Reversal
-- Wait for Asian Range sweep (first 30-60 min)
-- Trade the reversal after the manipulation
-- Trend initiation — ride the directional move
-- Best window: 2:00 - 5:00 PM BD
-- Highest success rate for SMC setups
-```
-
-### 3. New York Session Strategy (6:00 PM - 3:00 AM BD)
-
-```
-Strategy: Continuation OR Reversal
-- If London move is strong → trade continuation
-- If London overextended → trade NY reversal
-- High-impact US news creates opportunities
-- Best window: 7:00 - 10:00 PM BD
-```
-
-### 4. Overlap Strategy (6:00 - 10:00 PM BD)
-
-```
-Strategy: Maximum Volatility Trades
-- London + NY overlap = highest volume
-- Strongest moves of the day
-- Trade in direction of London's established trend
-- OR trade reversals if London is exhausted
-```
+<Callout type="warning" title="Removed">
+  The original said the right strategy "dramatically improves your win rate" and called London's the "highest success
+  rate for SMC setups". Neither has a source. Sessions change **how often** setups appear and **how far** price moves —
+  they don't change whether a given setup works.
+</Callout>
 
 ---
 
-## Strategy Selection Flowchart
+## The Playbook (BD time, summer)
 
-| Time (BD)       | Bias            | Strategy                          |
-| --------------- | --------------- | --------------------------------- |
-| 1:00 - 2:00 PM  | Wait            | Mark levels, observe manipulation |
-| 2:00 - 5:00 PM  | Bullish/Bearish | London sweep + entry              |
-| 6:00 - 8:00 PM  | Same or Counter | Continuation or NY reversal       |
-| 8:00 - 10:00 PM | Same            | Ride the move, trail stops        |
-| After 10:00 PM  | Close           | Exit positions, done for day      |
+![A session playbook for the Bangladesh day: prepare 6:00 AM–12:30 PM, watch 1:00–1:30 PM, London entries 1:30–5:00 PM, the 6:00 PM decision, New York entries 6:30–10:00 PM, and the 10:00 PM stop](/images/forex-sessions/session-strategies/session-playbook-bd-dark.webp)
+
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/forex-sessions/session-playbook-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+| Block (BD, summer) | Job              | Strategy                                        |
+| ------------------ | ---------------- | ----------------------------------------------- |
+| 6:00 AM – 12:30 PM | Prepare          | Mark the Asian range; write the daily bias      |
+| 1:00 – 1:30 PM     | Watch            | London's first move — no trade                  |
+| 1:30 – 5:00 PM     | London entries   | Sweep reversal or opening-range break           |
+| 6:00 – 6:30 PM     | Decide           | Continuation or reversal for New York           |
+| 6:30 – 10:00 PM    | New York entries | Pullback with London, or sweep + CHOCH reversal |
+| 10:00 PM           | Stop             | London closes: manage or close; no new trades   |
+
+Add one hour to the London and New York blocks in winter. The Asian block doesn't move.
+
+---
+
+## The Strategies
+
+### Asia — prepare, don't trade
+
+Mark the high and low of 6:00 AM – 12:00 PM BD and write your daily bias. Range trading in Asia is possible on JPY and AUD pairs but needs small targets and watching the spread — see [Tokyo Session](/en/forex-sessions/tokyo).
+
+### London — sweep reversal or opening-range break
+
+| Setup                   | Condition                                                | Reference                                     |
+| ----------------------- | -------------------------------------------------------- | --------------------------------------------- |
+| **Sweep reversal**      | Asian high/low taken, close back inside, CHOCH           | [Asian Range](/en/forex-sessions/asian-range) |
+| **Opening-range break** | 1:00 – 1:30 PM range; a close outside it; a retest holds | [London Session](/en/forex-sessions/london)   |
+
+### New York — decide at 6:00 PM
+
+| London's move is…                           | Prefer                                                                                                                               |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Fresh, in open space, with the bias         | Continuation: buy/sell the pullback with London                                                                                      |
+| Stretched, at a big level, against the bias | Reversal — only after New York sweeps London's extreme and a CHOCH forms ([New York Reversal](/en/forex-sessions/new-york-reversal)) |
+| Unclear                                     | Skip, or trade smaller                                                                                                               |
+
+### Stop — 10:00 PM
+
+London closes at 10:00 PM BD (11:00 PM in winter). After that, ranges often shrink; manage open trades and stop opening new ones.
+
+---
+
+## A Worked Day
+
+EUR/USD, summer. The daily bias (written 11:30 AM): **long** on pullbacks, invalidation below the daily low.
+
+1. **12:00 PM:** Asian range **1.0852 – 1.0872**.
+2. **1:00 – 1:30 PM:** London dips to 1.0846 — watch only.
+3. **1:45 PM:** a candle closes back inside; a 5m CHOCH follows. Buy the retest at **1.0860**, stop **1.0842**, target **1.0892**: risk 18 pips, reward 32, **1 : 1.8** planned.
+4. **6:00 PM decision:** London has moved 40 pips with the bias and sits in open space → **continuation**, not reversal.
+5. **7:10 PM:** pullback to London's last higher low; buy **1.0884**, stop **1.0868**, target **1.0915**: risk 16, reward 31, **1 : 1.9** planned.
+6. **10:00 PM:** London closes — manage or close any open trade; no new entries.
+
+The day had two planned setups, each with a defined risk. Many days have none.
+
+---
+
+## Common Mistakes
+
+| Mistake                                          | Fix                                       |
+| ------------------------------------------------ | ----------------------------------------- |
+| Trading Asia's range like London's               | Smaller targets; or skip                  |
+| Deciding continuation vs reversal after the fact | Decide at 6:00 PM with the criteria above |
+| Reversal trades without a sweep and CHOCH        | They need both                            |
+| Using summer times in winter                     | Add one hour to London and New York       |
+| No stop time                                     | Choose one (e.g. 10:00 PM BD) and keep it |
+
+---
+
+## Practice
+
+1. Write your own playbook with the blocks you can actually attend, in BD time for both seasons.
+2. For 15 days, note which block gave a setup that met your rules.
+3. Count the setups you took outside your playbook and their results.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Block    | Job                                           |
+| -------- | --------------------------------------------- |
+| Asia     | Mark levels, write the bias                   |
+| London   | Sweep reversal / opening-range break          |
+| 6:00 PM  | Decide: continuation or reversal              |
+| New York | Trade after data; sweep + CHOCH for reversals |
+| 10:00 PM | Manage; no new trades                         |
 
 ---
 
 ## Related Topics
 
-- [Kill Zones](/en/forex-sessions/kill-zones) — Timing windows
-- [London Open Manipulation](/en/forex-sessions/london-open-manipulation) — London strategy
-- [New York Reversal](/en/forex-sessions/new-york-reversal) — NY strategy
-- [Daily Session Bias](/en/forex-sessions/daily-session-bias) — Direction choice
+- [Kill Zones](/en/forex-sessions/kill-zones) — timing windows
+- [London Open Manipulation](/en/forex-sessions/london-open-manipulation) — the London setup
+- [New York Reversal](/en/forex-sessions/new-york-reversal) — the New York setup
+- [Daily Session Bias](/en/forex-sessions/daily-session-bias) — choosing direction
