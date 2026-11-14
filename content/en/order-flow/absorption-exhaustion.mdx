@@ -1,152 +1,130 @@
 ---
-title: "Absorption & Exhaustion Patterns — Complete Guide"
-description: "Master absorption and exhaustion patterns in order flow. Learn how to identify when institutions are absorbing aggressive orders and when momentum is exhausting for precision reversals."
+title: "Absorption and Exhaustion — Complete Guide"
+description: "Two order-flow clues about when a move may turn: absorption (heavy volume and delta that fail to move price through a level) and exhaustion (a move that keeps going on fading volume and delta, ending on a low-volume spike). How to measure each, how to confirm, how they fail, with a chart of both and an animated walkthrough."
 level: advanced
 order: 7
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Absorption vs Exhaustion
+## Two Clues
 
-These are the two most powerful order flow patterns that reveal institutional activity:
+Both ideas are about **effort versus result** — see [Effort vs Result](/en/wyckoff/effort-vs-result) in the Wyckoff section:
 
-- **Absorption**: When a large passive order "absorbs" aggressive orders without price moving — hidden institutional strength
-- **Exhaustion**: When aggressive orders are depleting without creating further movement — the aggressor is running out of ammunition
+| Clue           | What happens                                                                    | What it suggests                                            |
+| -------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Absorption** | Heavy volume and strong one-sided delta, but price doesn't move through a level | The other side is meeting that pressure with passive orders |
+| **Exhaustion** | A move continues while volume and delta **fade**, ending on a weak new extreme  | Aggressive participation is running out                     |
 
-<Callout type="info" title="The Key Difference">
-  Absorption = Strong hands absorbing weak hands. Price HELD because institutions WANT to defend that level. Exhaustion
-  = Aggressive traders running out of energy. Price STALLS because no one is left to push it further. Both signal
-  reversals, but for different reasons.
+<Callout type="warning" title="Toned down">
+  The original described absorption as "institutions absorbing retail orders" and exhaustion as "smart money has
+  stopped". Order flow shows **what traded and where**, not who traded. Both are patterns in the data; they suggest a
+  possible turn, and about as often they are followed by a pause or a continuation.
 </Callout>
 
 ---
 
-## Absorption Patterns
+## One Session, Both Patterns
 
-### What Absorption Looks Like
+![A synthetic EUR/USD 5-minute session: a decline to support at 1.0850 where three bars of 3,100, 3,400 and 2,900 volume and delta of −2,920 fail to push the low lower (absorption), a rally on delta fading from +540 to +70 and volume from 2,100 to 980, a new high on 700 volume with delta +20 (exhaustion), and a fall on delta of −4,240](/images/order-flow/absorption-exhaustion/absorption-exhaustion-dark.webp)
 
-```
-Time    Price    Bid Volume    Ask Volume    Delta    Price Change
-────    ─────    ──────────    ──────────    ─────    ────────────
-10:01   1.0950   500           50            -450     0
-10:02   1.0950   480           40            -440     0
-10:03   1.0950   450           35            -415     0
-10:04   1.0950   300           30            -270     0 ← Selling slowing
-10:05   1.0951   50            200           +150     +1 ← BREAKOUT
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/order-flow/absorption-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-Large negative delta (heavy selling) BUT price doesn't drop.
-= Massive institutional limit buy ABSORBING all selling pressure.
-= When sellers exhaust → explosive move UP.
-```
+<Callout type="info" title="About this chart">
+  The candles, volume and delta are **synthetic**. Real data is messier, and these labels are interpretations after the
+  fact.
+</Callout>
 
-### Absorption Rules
-
-1. **High volume** at a price level
-2. **Negative/positive delta** (one side aggressive)
-3. **Price DOES NOT MOVE** in the direction of aggression
-4. **Duration**: Minimum 3-5 prints of absorption
-5. **Resolution**: When the aggressor stops → price moves AWAY from them
-
-### Types of Absorption
-
-| Type              | Description                              | Signal      |
-| ----------------- | ---------------------------------------- | ----------- |
-| Bid absorption    | Large limit buys absorbing market sells  | Bullish     |
-| Ask absorption    | Large limit sells absorbing market buys  | Bearish     |
-| Double absorption | Both sides absorbing at different levels | Range-bound |
+| Stage          | What the data shows                                                                                                              | Reading                          |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| Decline        | Delta −200 to −370 per bar; volume 1,300 – 1,740                                                                                 | Selling pressure building        |
+| **Absorption** | Volume **3,100 / 3,400 / 2,900** (≈ 2.4× average), delta **−2,920**, yet the low stays at 1.0850 and the third bar closes higher | Heavy selling met passive buying |
+| Rally          | Delta fades **+540 → +70**; volume fades **2,100 → 980**                                                                         | Each push has less behind it     |
+| **Exhaustion** | New high at 1.0876 on **700** volume (≈ 0.5× average), delta **+20**                                                             | The push ran out of fuel         |
+| Reversal       | Delta −4,240 over 13 bars                                                                                                        | Sellers take over                |
 
 ---
 
-## Exhaustion Patterns
+## Measuring Them
 
-### What Exhaustion Looks Like
-
-```
-Time    Price    Volume    Delta    Candle
-────    ─────    ──────    ─────    ──────
-10:01   1.0950   800       +600     Large green
-10:02   1.0960   600       +400     Medium green
-10:03   1.0965   300       +150     Small green ← Volume declining
-10:04   1.0967   100       +30      Doji ← Almost no energy left
-10:05   1.0965   400       -300     Red ← Reversal begins
-
-Volume and delta DECLINING as price pushes higher.
-= Buyers are exhausting — no fresh demand entering.
-= Reversal imminent.
-```
-
-### Exhaustion Rules
-
-1. **Declining volume** on each push in the trend direction
-2. **Declining delta** magnitude with each candle
-3. **Price making new highs/lows** but with less conviction
-4. **Wicks appearing** at extremes (failed attempts)
-5. **Resolution**: Aggressive counter-move when exhaustion completes
-
-### Exhaustion at Key Levels
-
-Most powerful when exhaustion occurs at:
-
-- Volume Profile VAH/VAL boundaries
-- Order Block zones
-- Liquidity pool locations (EQH/EQL)
-- VWAP standard deviation bands
+| Pattern        | Checks                                                                                                                                                                   |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Absorption** | (1) At a clear level; (2) volume well above average (≥ ~1.8×); (3) delta strongly one-sided; (4) price **doesn't** make progress (the extreme holds, the close recovers) |
+| **Exhaustion** | (1) After a run; (2) delta and volume **fading** over several bars; (3) a new extreme on low volume; (4) a close back off the extreme                                    |
 
 ---
 
-## Trading Absorption
+## Confirming
 
-### Entry Strategy
+Neither pattern is a signal by itself. Common confirmations:
 
-1. **Identify key level** (OB, demand zone, VP POC)
-2. **Watch for absorption** — high delta against the level, price holds
-3. **Wait for resolution** — aggressor exhausts, price starts moving away
-4. **Enter** on first displacement candle after absorption
-5. **Stop loss** below the absorption zone
+1. **A close away from the level** in the expected direction (above the absorbed low; below the exhaustion high).
+2. **A change in delta direction** on the next bars (positive after buyer absorption; negative after exhaustion).
+3. **A retest that holds** with low volume at the level.
 
-### Example: Bullish Absorption Trade
+### Example (no chart) — trading the absorption
 
-```
-Setup: Price at daily bullish OB (1.0950)
-Footprint shows: 500+ lots hitting bid, price holding 1.0950
-Duration: 5 minutes of absorption
-Resolution: Green engulfing candle breaks above 1.0960
-Entry: 1.0962 (above resolution candle)
-Stop: 1.0945 (below absorption zone)
-Target: Next liquidity pool (EQH at 1.1020)
-```
+Price holds **1.0850** through three heavy bars. Plan: buy a close above the highest of those bars (**1.0856**) after a pullback holds above **1.0852**; stop **1.0847** (below the absorbed low), target **1.0870** (the pre-drop swing): risk 5, reward 14, **1 : 2.8** planned. If price closes below **1.0848** on heavy volume, the absorption idea has failed.
+
+### Example (no chart) — trading the exhaustion
+
+After a rally on fading delta, a spike makes a high at **1.0876** on low volume and closes back at **1.0871**. Plan: sell a close below the spike bar's low (**1.0870**); stop **1.0878** (above the high), target **1.0855**: risk 8, reward 15, **1 : 1.9** planned. If price closes above **1.0878** on rising volume, it was not exhaustion.
 
 ---
 
-## Trading Exhaustion
+## How They Fail
 
-### Entry Strategy
-
-1. **Identify extended move** — price far from VWAP/POC
-2. **Watch for declining delta** — momentum fading
-3. **Confirm with volume** — each candle has less volume
-4. **Wait for reversal candle** — first aggressive candle against trend
-5. **Enter** on the reversal with stop beyond the exhaustion extreme
-
----
-
-## Absorption + Exhaustion Combined
-
-The most powerful setup:
-
-```
-1. Price rallies with DECLINING delta (exhaustion of buyers)
-2. Price reaches key resistance (OB, EQH)
-3. At resistance: HIGH volume but price stops (absorption by sellers)
-4. Result: DOUBLE confirmation of reversal
-5. Enter short when first displacement candle breaks structure
-```
+| Failure                        | What it looks like                                         |
+| ------------------------------ | ---------------------------------------------------------- |
+| Absorption is overwhelmed      | Price closes through the level on heavy volume             |
+| "Exhaustion" in a strong trend | Volume fades, price keeps going — trends can run on little |
+| Mistaking a pause for a turn   | Price consolidates and resumes                             |
+| Data issues                    | Delta is mis-tagged on thin or one-venue data              |
 
 ---
 
 ## Common Mistakes
 
-- Confusing LOW VOLUME with absorption (absorption requires HIGH volume)
-- Trading exhaustion too early (wait for actual reversal candle)
-- Not combining with structure (absorption at random levels is meaningless)
-- Over-trading absorption in ranging markets
+| Mistake                                  | Fix                                                      |
+| ---------------------------------------- | -------------------------------------------------------- |
+| Calling any high-volume bar "absorption" | Need a level and no progress                             |
+| Calling any weak push "exhaustion"       | Need several fading bars and a new extreme on low volume |
+| Entering before price confirms           | Wait for the close away                                  |
+| No stop                                  | Beyond the absorbed low / exhaustion high                |
+| Using tick volume as if it were real     | Prefer futures or exchange data                          |
+
+---
+
+## Practice
+
+1. Find three clear support or resistance levels with heavy volume on a futures chart. Did price hold (absorption) or break?
+2. Find two runs with fading delta. Did the last bar make a new extreme on low volume, and what happened next?
+3. For each, note the confirmation (if any) and where the stop would have been.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea       | Detail                                                       |
+| ---------- | ------------------------------------------------------------ |
+| Absorption | Heavy volume and delta at a level, no progress               |
+| Exhaustion | Fading volume and delta, ending in a weak new extreme        |
+| Use        | Clues at levels; confirm with price; stop beyond the extreme |
+| Failure    | Overwhelmed levels; trends that run on fading volume         |
+
+---
+
+## Related Topics
+
+- [Delta Analysis](/en/order-flow/delta-analysis)
+- [Footprint Charts](/en/order-flow/footprint-charts)
+- [Effort vs Result](/en/wyckoff/effort-vs-result)
+- [Iceberg and Spoofing](/en/order-flow/iceberg-spoofing)
