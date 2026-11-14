@@ -1,60 +1,128 @@
 ---
-title: "SPX ↔ VIX Relationship for Regime Detection"
-description: "Master the SPX-VIX inverse correlation and regime detection. Learn how volatility regimes determine institutional behavior and optimal trading strategies."
+title: "SPX and VIX — Volatility Regimes"
+description: "What the VIX is (a 30-day implied-volatility index from S&P 500 options), why it usually moves against stocks, how to bucket days by volatility level and size stops and positions accordingly, why it measures size not direction, and its limits — with a synthetic regime chart and an animated walkthrough."
 level: advanced
 order: 7
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## SPX ↔ VIX Relationship for Regime Detection
+## What Are the SPX and the VIX?
 
-Master the SPX-VIX inverse correlation and regime detection. Learn how volatility regimes determine institutional behavior and optimal trading strategies.
+The **SPX** is the S&P 500 stock index. The **VIX** is an index published by Cboe that estimates the **30-day volatility the options market expects** for the S&P 500, expressed as an annualised percentage. It is calculated from option prices, so it reflects what traders are paying for protection and for risk.
 
-<Callout type="info" title="Institutional Perspective">
-  No hedge fund or institutional desk trades a single instrument in isolation. Understanding intermarket correlations is
-  what separates professional macro traders from retail speculators.
+<Callout type="warning" title="Corrected and toned down">
+  The original said volatility regimes "determine institutional behaviour" and gave optimal strategies by regime. The
+  VIX is a **measure of expected size of moves**, not a trade signal or a forecast of direction. Regime bands such as 15
+  and 20 are rules of thumb, not standards.
 </Callout>
 
 ---
 
-## Key Concepts
+## Reading It
 
-This topic covers the essential frameworks that institutional traders use for cross-market analysis and correlation-based trading decisions.
+A handy approximation: the VIX divided by about **16** (the square root of 252 trading days) is the **typical daily move** the market is pricing, in percent.
 
----
+| VIX | Implied typical daily move (VIX ÷ ~16) |
+| --- | -------------------------------------- |
+| 12  | about 0.75%                            |
+| 20  | about 1.25%                            |
+| 30  | about 1.9%                             |
 
-## Why This Matters
-
-Understanding intermarket relationships gives you:
-
-- **Early warning signals** before moves happen in your primary market
-- **Confirmation** of your directional bias from correlated assets
-- **Risk management** through correlation-aware position sizing
-- **Edge** that most retail traders completely ignore
+Stocks and the VIX usually move **opposite** each other: when stocks fall quickly, option protection becomes more expensive and the VIX jumps.
 
 ---
 
-## Practical Application
+## A Synthetic Regime Chart
 
-### For Forex Traders
+![Synthetic daily data: a stock index falls about 26% from its peak while a VIX-like index rises from about 12 to a peak near 33, then settles; days bucketed by the previous day's volatility index show realised daily volatility of 0.58% (VIX below 15, 145 days), 0.72% (15 to 20, 36 days) and 1.22% (above 20, 77 days)](/images/intermarket/spx-vix-regime/spx-vix-regime-dark.webp)
 
-- Check DXY direction before trading any USD pair
-- Monitor yield differentials for carry trade opportunities
-- Watch VIX for risk sentiment shifts
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/intermarket/sv-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### For Index Traders
-
-- Bond yields lead equity moves by 1-3 days
-- VIX term structure predicts volatility expansion
-- Sector rotation signals come from intermarket flows
-
-### For Commodity Traders
-
-- Real yields drive gold inversely
-- USD strength pressures all commodities
-- Chinese data leads base metals
-
-<Callout type="warning" title="Correlation ≠ Causation">
-  Correlations change over time and can break during crisis periods. Always use correlations as ONE input in your
-  analysis, never as the sole decision factor. Regularly update your correlation matrices.
+<Callout type="info" title="About this chart">
+  The data is **synthetic**: 260 days with a calm period, a stress period, and a gradual return to calm. Real VIX
+  behaviour is noisier, and these exact figures are not real.
 </Callout>
+
+| Bucket (previous day's index) | Days | Realised daily volatility of the stock index | Reading                           |
+| ----------------------------- | ---- | -------------------------------------------- | --------------------------------- |
+| Below 15                      | 145  | 0.58%                                        | Quiet                             |
+| 15 – 20                       | 36   | 0.72%                                        | Elevated                          |
+| Above 20                      | 77   | 1.22%                                        | More than double the quiet bucket |
+
+Daily changes of the stock index and the volatility index have a correlation of **−0.80** in this sample. Note the table says nothing about direction: the stress period here also happened to be a drawdown because the data was built that way.
+
+---
+
+## Using It: Size, Not Direction
+
+| Use                        | How                                                                                                                |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Stop distance**          | Wider stops in high-volatility regimes, tighter in quiet ones                                                      |
+| **Position size**          | Smaller size when volatility is high, so the money at risk stays the same                                          |
+| **Context for currencies** | A rising VIX often goes with risk-off behaviour (see [Risk-On / Risk-Off](/en/intermarket/risk-on-risk-off))       |
+| **Strategy fit**           | Breakout plans often need volatility; mean-reversion plans often prefer quiet markets — test this on your own data |
+
+### Example (no chart) — sizing by regime
+
+You risk 1% of the account per trade. When the VIX is at 12, a stop of 15 pips is normal for your setup; when it jumps to 28, normal swings roughly double, so you widen the stop to 30 pips and **halve the position size** to keep the money at risk the same. Plan with the wider stop: entry **1.0880**, stop **1.0850** (30 pips), target **1.0940** (60 pips): **1 : 2.0** planned. If the VIX falls back below 20, return to your normal stop and size.
+
+---
+
+## Limits
+
+| Limit                               | Detail                                                          |
+| ----------------------------------- | --------------------------------------------------------------- |
+| S&P 500 only                        | It says nothing about a currency pair's own volatility          |
+| Implied, not realised               | Expected volatility can differ from what happens                |
+| Lag and spikes                      | Spikes can fade within days; regimes shift quickly              |
+| Different markets, different gauges | Currencies and bonds have their own implied-volatility measures |
+| Thresholds are conventions          | 15 and 20 are common labels, not rules                          |
+
+---
+
+## Common Mistakes
+
+| Mistake                                        | Fix                                       |
+| ---------------------------------------------- | ----------------------------------------- |
+| Treating a high VIX as "buy" or "sell"         | It measures size, not direction           |
+| Keeping the same stop and size in every regime | Scale with volatility                     |
+| Using the VIX for a currency's own volatility  | Use that pair's ATR or implied volatility |
+| Treating the bands as laws                     | Check the regime on your own data         |
+| Reacting to a one-day VIX spike                | Look at the trend over several days       |
+
+---
+
+## Practice
+
+1. For the last year, bucket days by the previous day's VIX (below 15, 15–20, above 20). Compute the average absolute daily move of your pair in each bucket.
+2. Check whether your pair's daily range differs across buckets.
+3. Rewrite your stop and size rule so it scales with the regime. Log it.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea         | Detail                                                        |
+| ------------ | ------------------------------------------------------------- |
+| VIX          | Expected 30-day volatility of the S&P 500, annualised         |
+| Typical move | VIX ÷ ~16 ≈ typical daily move in percent                     |
+| Use          | Size stops and positions, and gauge risk mood — not direction |
+| Limits       | S&P 500 only; thresholds are conventions                      |
+
+---
+
+## Related Topics
+
+- [Risk-On / Risk-Off](/en/intermarket/risk-on-risk-off)
+- [Cross-Asset Momentum](/en/intermarket/cross-asset-momentum)
+- [Currency Strength](/en/intermarket/currency-strength)
+- [Introduction to Intermarket Analysis](/en/intermarket/introduction)
