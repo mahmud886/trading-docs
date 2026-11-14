@@ -1,95 +1,119 @@
 ---
-title: "Market Structure Shift, CHOCH, and BOS — How to Read Trend Reversals"
-description: "Understand the difference between CHOCH, BOS, and MSS, and learn how to use them to confirm trend changes, breakouts, and reversal entries with SMC precision."
+title: "Market Structure Shift (MSS) — How It Relates to CHOCH and BOS"
+description: "A market structure shift is a break of a key swing with displacement, usually after a liquidity sweep. How MSS relates to CHOCH and BOS (the names overlap between SMC and ICT teaching), a validation checklist, entry and stop placement, and a worked bullish example with a 1 to 3 planned reward-to-risk."
 date: "2026-05-12"
 author: "Trading Docs"
 category: "SMC"
 tags: ["mss", "choch", "bos", "market-structure", "reversal"]
-readingTime: 10
+readingTime: 6
 featured: false
 ---
 
-## Why Market Structure Matters
+A **market structure shift (MSS)** is the break of a significant swing against the prevailing direction, ideally with **displacement** (strong, one-sided candles) and often right after a liquidity sweep. Different teachers use MSS, CHOCH and BOS with slightly different meanings, so define the terms you use and stick to them.
 
-If you cannot read market structure, you are trading blind.
-
-**Market structure** shows whether price is making higher highs and higher lows, or lower highs and lower lows. Once you understand the structure, concepts like CHOCH, BOS, and MSS become much easier to use in real trading.
-
-<Callout type="tip" title="Structure First, Entry Second">
-  A strong trade setup starts with structure. First identify direction, then wait for the shift, and only then look for
-  an entry.
+<Callout type="warning" title="Corrected and toned down">
+  The original treated MSS as a reliable reversal signal and mixed up the three terms. A shift can fail, and many shifts
+  are only pauses in the old trend. Here MSS, CHOCH and BOS are separated and a checklist is given for judging each
+  shift.
 </Callout>
 
 ---
 
-## BOS vs CHOCH vs MSS
+## MSS, CHOCH and BOS — Terms Used Here
 
-These three terms are related, but they are not identical.
+| Term      | Meaning in this guide                                                  | Direction vs trend |
+| --------- | ---------------------------------------------------------------------- | ------------------ |
+| **BOS**   | A close beyond a swing in the direction of the trend                   | With               |
+| **CHOCH** | The first close beyond a swing against the trend                       | Against            |
+| **MSS**   | A CHOCH-type break that comes after a sweep **and** shows displacement | Against            |
 
-| Term      | Meaning                | Trader Use                                        |
-| --------- | ---------------------- | ------------------------------------------------- |
-| **BOS**   | Break of Structure     | Confirms continuation in the current trend        |
-| **CHOCH** | Change of Character    | Early sign that momentum may be shifting          |
-| **MSS**   | Market Structure Shift | A cleaner confirmation that structure has changed |
+So every MSS is an against-trend break, but not every against-trend break qualifies as an MSS: it needs the sweep and the displacement. Compare [CHOCH vs BOS](/en/blog/choch-vs-bos-explained), [Market Structure Shift](/en/smc/market-structure-shift) and [MSS in ICT](/en/ict/mss).
 
-### Simple Interpretation
+### The Chart
 
-- **BOS** says the current trend is still alive
-- **CHOCH** says momentum may be weakening
-- **MSS** says the market has likely shifted direction
+![A synthetic bullish market structure shift: a sweep of a low followed by strong candles closing above the last lower high](/images/smc/market-structure-shift/bullish-mss-dark.webp)
 
----
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/mss-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-## How to Trade a Structure Shift
-
-1. Identify the higher-timeframe trend
-2. Mark the key swing highs and lows
-3. Wait for liquidity to be taken
-4. Watch for CHOCH on a lower timeframe
-5. Confirm with displacement and an MSS
-6. Enter on retracement into an FVG or Order Block
-7. Place your stop beyond the invalidation level
-
-The best structure-shift setups usually happen after a **liquidity sweep**. That is when the market grabs stops first and then reverses.
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Market Structure Shift](/en/smc/market-structure-shift).)
+</Callout>
 
 ---
 
-## Example: Bearish Shift on EUR/USD
+## Validation Checklist
 
-- Daily trend is bullish, but price is approaching resistance
-- London takes the previous high
-- 15M prints a bearish CHOCH
-- A cleaner MSS follows with strong displacement
-- Price retraces into a bearish FVG
-- Entry is taken with stop above the sweep high
-- Target is the opposing liquidity pool
+| Check               | What you want                                                     |
+| ------------------- | ----------------------------------------------------------------- |
+| A sweep first       | Price took a clear high or low before the break                   |
+| Displacement        | Several strong candles, ideally leaving a fair value gap          |
+| A close, not a wick | The candle body closes beyond the swing                           |
+| Context             | At a higher-timeframe level, or aligned with the larger direction |
+| Room                | At least 2R to the next opposing level                            |
 
-This kind of sequence keeps you aligned with how the market actually moves instead of chasing candles.
+Zero or one ticks: ignore it. Four or five: add it to your plan.
+
+---
+
+## Entry and Failure
+
+| Item    | Rule                                                                                 |
+| ------- | ------------------------------------------------------------------------------------ |
+| Entry   | Retest of the break: the gap left by displacement, or the order block that caused it |
+| Stop    | Beyond the sweep's extreme                                                           |
+| Target  | The next opposing liquidity; take partial profit there                               |
+| Failure | A close back beyond the sweep's extreme, or no follow-through after the retest       |
+
+---
+
+## Example (no chart)
+
+EUR/USD is in a downtrend with the last lower high at **1.0850**. Price sweeps a low at **1.0816**, then five strong candles close above **1.0850**, leaving a gap at **1.0840 – 1.0846**: a bullish MSS. Plan: buy a retest at **1.0846**, stop **1.0828** (below the sweep area): risk 18 pips; target **1.0900** (the next swing high): reward 54 pips, **1 : 3.0** planned. If price closes below **1.0828**, the shift failed.
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Avoid These Errors">
-
-**1. Calling every pullback a CHOCH** — A real CHOCH needs structure confirmation.
-
-**2. Trading BOS as a reversal** — BOS usually confirms continuation, not a full shift.
-
-**3. Ignoring displacement** — Without momentum, the shift is weak.
-
-**4. Entering before the sweep** — Let liquidity get taken first when possible.
-
-</Callout>
+| Mistake                      | Fix                                            |
+| ---------------------------- | ---------------------------------------------- |
+| Calling every break an MSS   | Require sweep, displacement and a close        |
+| Entering at the break candle | Plan an entry on the retest                    |
+| Ignoring the larger trend    | Check higher-timeframe context                 |
+| Mixing term definitions      | Write down what MSS, CHOCH and BOS mean to you |
 
 ---
 
-## Key Takeaways
+## Practice
 
-- BOS confirms continuation
-- CHOCH warns of a possible shift
-- MSS confirms the shift more clearly
-- Structure shift setups are strongest after liquidity sweeps and displacement
-- Use them with FVGs, Order Blocks, and premium/discount context
+1. Find ten against-trend breaks and mark which had a sweep and displacement.
+2. Count how many of those reversed the trend over the next 30 candles.
+3. Compare shifts with and without a sweep.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
-For the full lesson, read the complete [Market Structure Shift guide](/en/smc/market-structure-shift).
+---
+
+## Summary
+
+| Idea          | Detail                                                  |
+| ------------- | ------------------------------------------------------- |
+| MSS           | A break against the trend with a sweep and displacement |
+| CHOCH and BOS | First against-trend break and with-trend break          |
+| Checklist     | Sweep, displacement, close, context, room               |
+| Caution       | Shifts can fail; use a stop beyond the sweep            |
+
+---
+
+## Related Topics
+
+- [Market Structure Shift](/en/smc/market-structure-shift)
+- [CHOCH](/en/smc/choch)
+- [BOS](/en/smc/bos)
+- [CHOCH vs BOS](/en/blog/choch-vs-bos-explained)
