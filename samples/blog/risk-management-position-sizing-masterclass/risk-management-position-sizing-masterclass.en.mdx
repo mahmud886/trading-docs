@@ -1,0 +1,108 @@
+---
+title: "Risk Management and Position Sizing Masterclass — From One Trade to a Portfolio"
+description: "An advanced guide to sizing: fractional Kelly and why traders bet less than the optimum, total open risk and correlated positions, volatility-scaled stops, drawdown rules and a worked three-position portfolio where three EUR/USD-style longs are really one bet. Includes the Kelly growth curve and simulated drawdowns."
+date: "2026-05-19"
+author: "Trading Docs"
+category: "Academy"
+tags: ["risk-management", "position-sizing", "advanced", "portfolio"]
+readingTime: 9
+featured: true
+---
+
+At the single-trade level, risk management means a fixed percentage and a stop. At the **portfolio** level you also have to ask: how much risk is open **in total**, and how much of it is really **the same bet**? This guide builds from the single trade up.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original gave institutional-style rules (portfolio heat caps, fixed Kelly fractions) as standards. They are conventions or illustrations; the numbers should come from your own edge estimates, tolerance and testing.
+</Callout>
+
+---
+
+## Sizing Beyond a Fixed Percent
+
+| Method                  | How it works                                                          | When it helps                                   |
+| ----------------------- | --------------------------------------------------------------------- | ----------------------------------------------- |
+| **Fixed fractional**    | Risk the same percent each trade                                      | Simple and robust                               |
+| **Fractional Kelly**    | Risk a fraction (¼ to ½) of the growth-optimal fraction f* = p − q/b  | When you have a credible estimate of p and b    |
+| **Volatility-scaled**   | Stop and size scale with recent volatility (for example ATR)          | Markets whose swings change over time           |
+
+The chart shows why a fraction of Kelly is popular: for 55% even-money bets, **half Kelly keeps about 75% of the growth** but in one 400-bet simulation had a 57% drawdown against 83% for full Kelly, and **double Kelly had no growth at all** and a 99% drawdown. The inputs are estimates, so betting a fraction leaves room for error. See [Kelly Criterion](/en/quantitative/kelly-criterion).
+
+### The Chart
+
+![The Kelly growth curve peaking at the optimal fraction, and four stake sizes simulated over the same 400 bets with their maximum drawdowns](/images/quantitative/kelly-criterion/kelly-criterion-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/kelly-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Illustration from the Kelly lesson (synthetic bets) (From the lesson: [Kelly Criterion](/en/quantitative/kelly-criterion).)
+</Callout>
+
+---
+
+## Portfolio-Level Risk
+
+| Control                          | Rule (example)                                                          | Why                                              |
+| -------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------ |
+| **Total open risk**              | At most 3R open at any time                                              | Caps the loss if everything goes wrong at once   |
+| **Correlated group risk**        | Count USD-linked positions as one bet and cap it at 2R                   | Several pairs can lose together                  |
+| **Daily and weekly loss limits** | −2R a day, −5R a week                                                    | Stops a bad stretch                              |
+| **Drawdown scaling**             | Halve the risk once drawdown passes 10R, restore at a new high           | Slows the damage; can also slow recovery         |
+
+Correlation changes, so treat these as limits to **recheck**, not constants. See [Equity Curve Management](/en/quantitative/equity-curve-management).
+
+---
+
+## Volatility-Scaled Stops
+
+If the average daily range doubles, a normal stop is hit more often by noise. Scale the stop with volatility and **cut the size** so the money at risk stays the same:
+
+| Market state       | Stop       | Size for 100 at risk (EUR/USD) |
+| ------------------ | ---------- | ------------------------------ |
+| Quiet (ATR 60 pips daily)  | 15 pips    | 0.67 standard lot              |
+| Active (ATR 120 pips daily) | 30 pips   | 0.33 standard lot              |
+
+---
+
+## Example (no chart)
+
+Three longs, 1% risk each (100 on a 10,000 account): EUR/USD, GBP/USD and AUD/USD, all expressing a weaker dollar. The correlation between them is high, so this is close to **3R on one bet**. With the correlated-group cap at 2R, take two trades at 1% or all three at 0.67% (67 each). Plan for the EUR/USD leg at 0.67%: entry **1.0850**, stop **1.0830** (20 pips), target **1.0910** (60 pips), **1 : 3.0** planned: size = 67 ÷ (20 × 10) = **0.33 standard lot**.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Counting correlated positions separately | Cap risk per correlated group |
+| Using Kelly with a guessed win rate | Use a fraction, and stress the inputs |
+| Same stop in quiet and active markets | Scale the stop and the size with volatility |
+| Keeping rules you've never tested | Simulate them on your trade list |
+
+---
+
+## Practice
+
+1. List your open positions and group the correlated ones.
+2. Compute total and per-group risk in R.
+3. Choose a Kelly fraction you would actually trade and write down the drawdown you accept.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Sizing | Fixed fractional, fractional Kelly, or volatility-scaled |
+| Portfolio | Cap total open risk and correlated-group risk |
+| Kelly | Half Kelly keeps about 75% of the growth with smaller drawdowns |
+| Numbers | Illustrative: set yours from data |
+
+---
+
+## Related Topics
+
+- [Kelly Criterion](/en/quantitative/kelly-criterion)
+- [Equity Curve Management](/en/quantitative/equity-curve-management)
+- [Monte Carlo Simulations](/en/quantitative/monte-carlo)
+- [Risk Management Essentials](/en/blog/risk-management-essentials)
