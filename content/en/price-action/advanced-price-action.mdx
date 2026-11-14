@@ -1,109 +1,125 @@
 ---
 title: "Advanced Price Action — Complete Guide"
-description: "Master advanced Price Action concepts: institutional order flow, multi-timeframe narrative, advanced liquidity engineering, and professional PA frameworks."
+description: "Put the pieces together into one narrative: dealing ranges and premium/discount, liquidity on both sides, sweeps, displacement and fair value gaps, fresh versus used levels, and a top-down routine from weekly to 15-minute, with a worked GBP/USD chart and an animated walkthrough."
 level: advanced
 order: 33
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Advanced Price Action Concepts
+## What "Advanced" Means Here
 
-Advanced Price Action goes beyond basic patterns and levels to understand the **institutional narrative** — why price moves the way it does, who is moving it, and how to align with institutional order flow.
+Advanced price action isn't new patterns. It is reading the **sequence**: where the range is, where liquidity sits, which side has been taken, and whether price is cheap or expensive within the range. Each idea has its own lesson; this one connects them.
 
----
-
-## The Institutional Narrative
-
-```
-Price doesn't move randomly. Institutions:
-1. Accumulate positions during consolidation
-2. Engineer liquidity sweeps to fill large orders
-3. Create displacement (expansion) to deliver price
-4. Distribute positions at target levels
-5. Repeat the cycle
-
-Your job: Identify WHERE in this cycle price currently is.
-```
+<Callout type="warning" title="Toned down">
+  The original said equal highs and lows are "deliberately created by institutions" and that "retail does the opposite".
+  Nobody can see who placed which orders, and those claims can't be checked. This lesson treats the ideas as a **way to
+  read the chart**, not as knowledge of anyone's intentions.
+</Callout>
 
 ---
 
-## Advanced Concepts
+## The Building Blocks
 
-### 1. Liquidity Engineering
-
-- Equal highs/lows are deliberately created by institutions
-- They serve as targets (liquidity pools to fill into)
-- Understanding this prevents being the victim of stop hunts
-
-### 2. Time-Based Analysis
-
-- Institutions operate on specific timeframes (quarterly, monthly, weekly)
-- Monthly candle open/close = major S/R
-- Weekly bias determines daily direction
-- Quarterly shifts create major trends
-
-### 3. Premium vs. Discount
-
-```
-In a bullish trend:
-- Above 50% of range = PREMIUM (expensive to buy)
-- Below 50% of range = DISCOUNT (cheap to buy)
-
-Smart money buys at DISCOUNT, sells at PREMIUM
-Retail does the opposite (buys high, sells low)
-
-Rule: Only enter longs in discount, shorts in premium
-```
-
-### 4. Displacement
-
-- Displacement = aggressive impulsive candle creating FVG
-- Shows institutional commitment to a direction
-- Use as confirmation of intentions
-- Enter on retracement to displacement FVG
-
-### 5. Mitigation vs. Origination
-
-- Fresh (unmitigated) Order Blocks are strongest
-- Once price returns to an OB and reacts = mitigated
-- Mitigated OBs lose significance
-- Always trade fresh, unmitigated levels
+| Concept                | What it is                                                  | Lesson                                                |
+| ---------------------- | ----------------------------------------------------------- | ----------------------------------------------------- |
+| **Dealing range**      | The latest clear swing low to swing high                    | [Market Structure](/en/price-action/market-structure) |
+| **Premium / discount** | Above / below the range's 50% line                          | [Premium & Discount](/en/smc/premium-discount)        |
+| **Liquidity**          | Stops clustered beyond equal highs/lows and obvious swings  | [Equal Highs & Lows](/en/smc/equal-highs-lows)        |
+| **Sweep**              | A wick beyond that liquidity, then a close back inside      | [Liquidity](/en/price-action/liquidity)               |
+| **Displacement**       | Strong candles in one direction that leave a fair value gap | [Fair Value Gap](/en/smc/fair-value-gap)              |
+| **Fresh vs used**      | A level not yet revisited vs one already tested             | [Fresh vs Tested](/en/smc/fresh-vs-tested)            |
 
 ---
 
-## Building the Full Narrative
+## One Chart, the Whole Narrative
 
-```
-1. WEEKLY: Where is the draw on liquidity? (Target)
-2. DAILY: What is the delivery mechanism? (Trend)
-3. H4: Where are the POIs? (Order Blocks, FVGs)
-4. H1: What is the narrative today? (Session bias)
-5. M15: Where is the entry? (Confirmation + timing)
+![GBP/USD 1H: dealing range 1.2600–1.2720 with the 50% line at 1.2660, equal highs at 1.2720 as the draw on liquidity, equal lows at 1.2625 in discount swept to 1.2616, a displacement leaving an FVG at 1.2643–1.2660, and a long on the retrace at 1.2652 with stop 1.2612 and target 1.2725](/images/price-action/advanced-price-action/advanced-narrative-dark.png)
 
-This top-down approach gives you:
-- Direction from HTF
-- Zones from mid-TF
-- Entries from LTF
-```
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/advanced-price-action-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
+
+| #   | Read                                                            | Price                         |
+| --- | --------------------------------------------------------------- | ----------------------------- |
+| —   | Dealing range; 50% line splits premium from discount            | 1.2600 – 1.2720; 50% = 1.2660 |
+| ①   | Equal highs — liquidity above; the **draw** if buyers take over | 1.2720                        |
+| ②   | Price falls into discount and prints equal lows                 | 1.2625                        |
+| ③   | **Sweep**: wick to 1.2616, close back above the equal lows      | 1.2616                        |
+| ④   | **Displacement**: two strong bullish candles leave an FVG       | 1.2643 – 1.2660               |
+| ⑤   | Buy the retrace into the FVG — still **in discount**            | 1.2652                        |
+
+Stop **1.2612** (below the sweep), target **1.2725** (beyond the equal highs): risk **40 pips**, reward **73 pips**, **1 : 1.8** planned.
+
+Each step answers one question: _where is the liquidity, which side was taken, did price commit, and is the entry cheap within the range?_ If any answer is missing, there is no trade.
 
 ---
 
-## Professional PA Trading Rules
+## Top-Down Routine
 
-1. Always know the weekly draw on liquidity
-2. Only trade in the direction of institutional delivery
-3. Wait for discount/premium alignment
-4. Only enter at unmitigated POIs
-5. Use time (session analysis) as additional filter
-6. Risk management overrides everything
-7. Journal every trade — review weekly
+| Timeframe   | Question                                             | Output                                |
+| ----------- | ---------------------------------------------------- | ------------------------------------- |
+| **Weekly**  | Where is the obvious liquidity (draw)?               | A target area                         |
+| **Daily**   | Which way is structure delivering?                   | Bias: long, short or none             |
+| **H4 / H1** | Where is the dealing range and its 50%? Fresh zones? | Areas of interest in discount/premium |
+| **H1**      | Has one side of liquidity been swept?                | The narrative for today               |
+| **M15**     | Displacement and FVG/structure break at the area?    | Entry, stop, target                   |
+
+Add **time**: London and New York hours (BD time) are when sweeps and displacement most often show up — see [Session Analysis](/en/price-action/session-analysis).
+
+### Example (no chart) — gold short from premium
+
+Gold's daily structure is bearish. The H4 dealing range is **2,380 – 2,440**, 50% at **2,410**. Equal highs sit at **2,432**. In London, price sweeps them to **2,435**, closes back below, and displaces down, leaving an FVG at **2,424 – 2,428** — in premium. Sell **2,426**, stop **2,438**, target **2,388** (just above the range low): risk $12, reward $38, **1 : 3.2** planned.
+
+---
+
+## Common Mistakes
+
+| Mistake                                  | Fix                                                          |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| Labelling everything "manipulation"      | Describe what price did; skip guesses about who did it       |
+| Buying in premium because "it's bullish" | Wait for discount, or skip                                   |
+| Calling any big candle "displacement"    | It must break structure and leave an FVG                     |
+| Drawing a new dealing range every hour   | Use the obvious swing on the timeframe you analyse           |
+| Too many concepts on one chart           | Range, liquidity, sweep, displacement, entry — that's enough |
+
+---
+
+## Practice
+
+1. On 10 past H1 charts, mark the dealing range, the 50% line and equal highs/lows.
+2. Note each sweep and whether a displacement followed.
+3. Record where an FVG entry in discount/premium would have been, with stop and target.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Step                | Question                     |
+| ------------------- | ---------------------------- |
+| Range and 50%       | Is price cheap or expensive? |
+| Liquidity           | Where are the stops?         |
+| Sweep               | Which side was taken?        |
+| Displacement + FVG  | Did price commit?            |
+| Entry, stop, target | Does the R:R fit your plan?  |
 
 ---
 
 ## Related Topics
 
-- [Market Structure](/en/price-action/market-structure) — Structural foundation
-- [Liquidity](/en/price-action/liquidity) — Understanding liquidity
-- [Multi-Timeframe Analysis](/en/price-action/multi-timeframe-analysis) — Top-down
-- [Session Analysis](/en/price-action/session-analysis) — Time-based
-- [Confluence](/en/price-action/confluence) — Stacking confirmations
+- [Market Structure](/en/price-action/market-structure) — structural foundation
+- [Liquidity](/en/price-action/liquidity) — understanding liquidity
+- [Multi-Timeframe Analysis](/en/price-action/multi-timeframe-analysis) — top-down
+- [Session Analysis](/en/price-action/session-analysis) — time-based
+- [Confluence](/en/price-action/confluence) — independent reasons at one price

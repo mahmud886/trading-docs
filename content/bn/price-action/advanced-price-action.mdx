@@ -1,109 +1,125 @@
 ---
-title: "Advanced Price Action — সম্পূর্ণ গাইড"
-description: "Advanced Price Action Concept আয়ত্ত করুন: Institutional Order Flow, Multi-timeframe Narrative, Advanced Liquidity Engineering এবং Professional PA Framework।"
+title: "অ্যাডভান্সড প্রাইস অ্যাকশন — সম্পূর্ণ গাইড"
+description: "টুকরোগুলো জুড়ে একটি গল্প বানান: Dealing Range আর Premium/Discount, দুদিকের Liquidity, Sweep, Displacement আর Fair Value Gap, Fresh বনাম ব্যবহৃত লেভেল, আর Weekly থেকে 15-মিনিট পর্যন্ত Top-Down রুটিন — একটি GBP/USD চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: advanced
 order: 33
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Advanced Price Action Concept
+## এখানে "অ্যাডভান্সড" মানে কী
 
-Advanced Price Action মৌলিক Pattern ও Level-এর বাইরে গিয়ে **Institutional Narrative** বোঝে — Price কেন এভাবে চলে, কে চালাচ্ছে এবং কীভাবে Institutional Order Flow-এর সাথে Align করবেন।
+অ্যাডভান্সড প্রাইস অ্যাকশন নতুন প্যাটার্ন নয়। এটা **ক্রম** পড়া: রেঞ্জ কোথায়, Liquidity কোথায় বসে আছে, কোন দিক নেওয়া হয়েছে, আর রেঞ্জের ভেতরে প্রাইস সস্তা না দামি। প্রতিটি ধারণার নিজস্ব লেসন আছে; এই লেসন সেগুলো জোড়ে।
 
----
-
-## Institutional Narrative
-
-```
-Price Random-ভাবে চলে না। Institution:
-1. Consolidation-এ Position Accumulate করে
-2. বড় Order Fill-এ Liquidity Sweep Engineer করে
-3. Price Deliver করতে Displacement (Expansion) তৈরি করে
-4. Target Level-এ Position Distribute করে
-5. Cycle পুনরাবৃত্তি করে
-
-আপনার কাজ: এই Cycle-এ Price বর্তমানে কোথায় চিহ্নিত করা।
-```
+<Callout type="warning" title="সুর নরম করা হয়েছে">
+  মূল লেসনে বলা ছিল Equal Highs আর Lows "ইনস্টিটিউশন ইচ্ছাকৃতভাবে তৈরি করে" আর "Retail উল্টোটা করে"। কে কোন অর্ডার
+  দিয়েছে কেউ দেখতে পায় না, আর এই দাবিগুলো যাচাই করা যায় না। এই লেসন ধারণাগুলোকে **চার্ট পড়ার একটি উপায়** হিসেবে
+  দেখে, কারও উদ্দেশ্যের জ্ঞান হিসেবে নয়।
+</Callout>
 
 ---
 
-## Advanced Concept
+## মূল উপাদান
 
-### ১. Liquidity Engineering
-
-- Equal High/Low ইচ্ছাকৃতভাবে Institution দ্বারা তৈরি
-- Target হিসেবে কাজ করে (Fill করার Liquidity Pool)
-- বোঝা Stop Hunt-এর শিকার হওয়া প্রতিরোধ করে
-
-### ২. Time-Based Analysis
-
-- Institution নির্দিষ্ট Timeframe-এ কাজ করে (Quarterly, Monthly, Weekly)
-- Monthly Candle Open/Close = প্রধান S/R
-- Weekly Bias Daily Direction নির্ধারণ করে
-- Quarterly Shift বড় Trend তৈরি করে
-
-### ৩. Premium vs. Discount
-
-```
-Bullish Trend-এ:
-- Range-এর ৫০%-এর উপরে = PREMIUM (কিনতে ব্যয়বহুল)
-- Range-এর ৫০%-এর নিচে = DISCOUNT (কিনতে সস্তা)
-
-Smart Money DISCOUNT-এ কেনে, PREMIUM-এ বেচে
-Retail উল্টো করে (বেশিতে কেনে, কমে বেচে)
-
-নিয়ম: শুধু Discount-এ Long, Premium-এ Short Enter করুন
-```
-
-### ৪. Displacement
-
-- Displacement = FVG তৈরিকারী Aggressive Impulsive Candle
-- একটি Direction-এ Institutional Commitment দেখায়
-- Intention-এর Confirmation হিসেবে ব্যবহার করুন
-- Displacement FVG-তে Retracement-এ Enter
-
-### ৫. Mitigation vs. Origination
-
-- Fresh (Unmitigated) Order Block সবচেয়ে শক্তিশালী
-- Price OB-তে ফিরে React করলে = Mitigated
-- Mitigated OB গুরুত্ব হারায়
-- সবসময় Fresh, Unmitigated Level Trade করুন
+| ধারণা                  | এটা কী                                                  | লেসন                                                  |
+| ---------------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| **Dealing Range**      | সর্বশেষ পরিষ্কার Swing Low থেকে Swing High              | [Market Structure](/bn/price-action/market-structure) |
+| **Premium / Discount** | রেঞ্জের ৫০% লাইনের উপরে / নিচে                          | [Premium & Discount](/bn/smc/premium-discount)        |
+| **Liquidity**          | Equal Highs/Lows আর স্পষ্ট Swing এর ওপারে জমা Stop      | [Equal Highs & Lows](/bn/smc/equal-highs-lows)        |
+| **Sweep**              | সেই Liquidity এর ওপারে Wick, তারপর ভেতরে Close          | [Liquidity](/bn/price-action/liquidity)               |
+| **Displacement**       | এক দিকে শক্তিশালী ক্যান্ডেল যা Fair Value Gap রেখে যায় | [Fair Value Gap](/bn/smc/fair-value-gap)              |
+| **Fresh বনাম ব্যবহৃত** | এখনো ফেরত না আসা লেভেল বনাম আগেই টেস্ট হওয়া লেভেল      | [Fresh vs Tested](/bn/smc/fresh-vs-tested)            |
 
 ---
 
-## সম্পূর্ণ Narrative তৈরি
+## একটি চার্ট, পুরো গল্প
 
-```
-1. WEEKLY: Liquidity-র Draw কোথায়? (Target)
-2. DAILY: Delivery Mechanism কী? (Trend)
-3. H4: POI কোথায়? (Order Block, FVG)
-4. H1: আজকের Narrative কী? (Session Bias)
-5. M15: Entry কোথায়? (Confirmation + Timing)
+![GBP/USD 1H: Dealing Range 1.2600–1.2720, ৫০% লাইন 1.2660, Draw on Liquidity হিসেবে 1.2720 এ Equal Highs, Discount এ 1.2625 এ Equal Lows যা 1.2616 পর্যন্ত Sweep হয়, Displacement 1.2643–1.2660 এ FVG রেখে যায়, আর Retrace এ 1.2652 এ Long, Stop 1.2612, টার্গেট 1.2725](/images/price-action/advanced-price-action/advanced-narrative-dark.png)
 
-এই Top-down পদ্ধতি দেয়:
-- HTF থেকে Direction
-- Mid-TF থেকে Zone
-- LTF থেকে Entry
-```
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/advanced-price-action-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
+</Callout>
+
+| #   | পড়া                                                                  | প্রাইস                        |
+| --- | --------------------------------------------------------------------- | ----------------------------- |
+| —   | Dealing Range; ৫০% লাইন Premium আর Discount আলাদা করে                 | 1.2600 – 1.2720; ৫০% = 1.2660 |
+| ①   | Equal Highs — উপরে Liquidity; Buyer নিয়ন্ত্রণ নিলে এটাই **Draw**     | 1.2720                        |
+| ②   | প্রাইস Discount এ নামে আর Equal Lows তৈরি করে                         | 1.2625                        |
+| ③   | **Sweep**: 1.2616 পর্যন্ত Wick, Equal Lows এর উপরে Close              | 1.2616                        |
+| ④   | **Displacement**: দুটি শক্তিশালী Bullish ক্যান্ডেল একটি FVG রেখে যায় | 1.2643 – 1.2660               |
+| ⑤   | FVG তে Retrace এ Buy — এখনো **Discount এ**                            | 1.2652                        |
+
+Stop **1.2612** (Sweep এর নিচে), টার্গেট **1.2725** (Equal Highs এর ওপারে): রিস্ক **৪০ পিপ**, রিওয়ার্ড **৭৩ পিপ**, পরিকল্পিত **১ : ১.৮**।
+
+প্রতিটি ধাপ একটি প্রশ্নের উত্তর দেয়: _Liquidity কোথায়, কোন দিক নেওয়া হয়েছে, প্রাইস কি প্রতিশ্রুতি দেখিয়েছে, আর রেঞ্জের ভেতরে এন্ট্রি কি সস্তা?_ কোনো উত্তর না থাকলে ট্রেড নেই।
 
 ---
 
-## Professional PA Trading নিয়ম
+## Top-Down রুটিন
 
-1. সবসময় Weekly Draw on Liquidity জানুন
-2. শুধু Institutional Delivery-র Direction-এ Trade
-3. Discount/Premium Alignment-এর জন্য অপেক্ষা
-4. শুধু Unmitigated POI-তে Enter
-5. অতিরিক্ত Filter হিসেবে Time (Session Analysis) ব্যবহার
-6. Risk Management সবকিছু Override করে
-7. প্রতিটি Trade Journal করুন — সাপ্তাহিক Review
+| টাইমফ্রেম   | প্রশ্ন                                       | ফলাফল                            |
+| ----------- | -------------------------------------------- | -------------------------------- |
+| **Weekly**  | স্পষ্ট Liquidity (Draw) কোথায়?              | একটি টার্গেট এলাকা               |
+| **Daily**   | Structure কোন দিকে ডেলিভার করছে?             | Bias: Long, Short বা নেই         |
+| **H4 / H1** | Dealing Range আর তার ৫০% কোথায়? Fresh Zone? | Discount/Premium এ আগ্রহের এলাকা |
+| **H1**      | Liquidity এর এক দিক কি Sweep হয়েছে?         | আজকের গল্প                       |
+| **M15**     | এলাকায় Displacement আর FVG/Structure Break? | এন্ট্রি, Stop, টার্গেট           |
+
+**সময়** যোগ করুন: London আর New York এর ঘণ্টাগুলো (BD সময়) তে Sweep আর Displacement সবচেয়ে বেশি দেখা যায় — দেখুন [Session Analysis](/bn/price-action/session-analysis)।
+
+### উদাহরণ (চার্ট ছাড়া) — Premium থেকে Gold Short
+
+Gold এর Daily Structure Bearish। H4 Dealing Range **2,380 – 2,440**, ৫০% **2,410** এ। Equal Highs **2,432** এ। London এ প্রাইস সেগুলো **2,435** পর্যন্ত Sweep করে, নিচে Close করে, আর নিচের দিকে Displace করে **2,424 – 2,428** এ একটি FVG রেখে যায় — Premium এ। **2,426** এ Sell, Stop **2,438**, টার্গেট **2,388** (রেঞ্জ Low এর ঠিক উপরে): রিস্ক $12, রিওয়ার্ড $38, পরিকল্পিত **১ : ৩.২**।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                       | সমাধান                                                    |
+| ----------------------------------------- | --------------------------------------------------------- |
+| সবকিছুকে "Manipulation" বলা               | প্রাইস কী করেছে বলুন; কে করেছে সেই অনুমান বাদ দিন         |
+| "Bullish" বলে Premium এ Buy               | Discount এর অপেক্ষা করুন, নইলে বাদ                        |
+| যেকোনো বড় ক্যান্ডেলকে "Displacement" বলা | এটাকে Structure ভাঙতে আর FVG রেখে যেতে হবে                |
+| প্রতি ঘণ্টায় নতুন Dealing Range আঁকা     | যে টাইমফ্রেম বিশ্লেষণ করছেন তার স্পষ্ট Swing ব্যবহার করুন |
+| এক চার্টে অনেক বেশি ধারণা                 | রেঞ্জ, Liquidity, Sweep, Displacement, এন্ট্রি — যথেষ্ট   |
+
+---
+
+## অনুশীলন
+
+1. অতীতের ১০টি H1 চার্টে Dealing Range, ৫০% লাইন আর Equal Highs/Lows চিহ্নিত করুন।
+2. প্রতিটি Sweep আর তার পর Displacement এসেছে কি না লিখুন।
+3. Discount/Premium এ FVG এন্ট্রি কোথায় হতো, Stop আর টার্গেটসহ লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধাপ                    | প্রশ্ন                           |
+| ---------------------- | -------------------------------- |
+| রেঞ্জ আর ৫০%           | প্রাইস সস্তা না দামি?            |
+| Liquidity              | Stop কোথায়?                     |
+| Sweep                  | কোন দিক নেওয়া হয়েছে?           |
+| Displacement + FVG     | প্রাইস কি প্রতিশ্রুতি দেখিয়েছে? |
+| এন্ট্রি, Stop, টার্গেট | R:R কি আপনার প্ল্যানে মেলে?      |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Market Structure](/bn/price-action/market-structure) — Structural ভিত্তি
+- [Market Structure](/bn/price-action/market-structure) — Structure এর ভিত্তি
 - [Liquidity](/bn/price-action/liquidity) — Liquidity বোঝা
-- [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — Top-down
-- [Session Analysis](/bn/price-action/session-analysis) — Time-based
-- [Confluence](/bn/price-action/confluence) — Confirmation Stack
+- [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — Top-Down
+- [Session Analysis](/bn/price-action/session-analysis) — সময়ভিত্তিক
+- [Confluence](/bn/price-action/confluence) — এক প্রাইসে স্বাধীন কারণ
