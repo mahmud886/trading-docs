@@ -1,76 +1,129 @@
 ---
-title: "Fresh vs Tested Zones — Zone Validity"
-description: "Learn to distinguish between fresh (untested) and tested supply/demand zones. Understand why fresh zones have higher probability and how to grade zone quality."
+title: "Fresh vs Tested Zones — Complete Guide"
+description: "Tell fresh supply and demand zones from tested ones: why the first return usually reacts best, how each touch weakens a zone and builds liquidity beyond it, when a zone is finished, and how to adjust your trading for each touch, with a chart and an animated walkthrough."
 level: intermediate
 order: 31
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Fresh vs Tested Zones
+## Fresh vs Tested
 
-Learn to distinguish between fresh (untested) and tested supply/demand zones. Understand why fresh zones have higher probability and how to grade zone quality.
+- A **fresh** zone hasn't been revisited since price left it.
+- A **tested** zone has been revisited at least once.
 
-<Callout type="info" title="Supply & Demand in SMC Context">
-  Supply and demand zones are the FOUNDATION that Order Blocks are built upon. Understanding institutional S&D gives you
-  a deeper understanding of WHY order blocks work and how to identify the strongest ones.
+The first return to a zone usually reacts best. Each later touch tends to react less, and eventually the zone breaks.
+
+---
+
+## Why Touches Weaken a Zone
+
+1. **Orders get used up.** If the reaction comes from orders left in the base, each touch fills some of them. Fewer remain for the next touch.
+2. **Liquidity builds beyond it.** Traders buying each touch put their stops just below the zone. Every touch adds to that pool, which makes it a better target for a sweep or a break.
+3. **The lows creep closer to the distal line.** Each touch that goes a little deeper shows buyers stepping in later.
+
+<Callout type="info" title="Clarified: 'after 3 tests'">
+  The original said to "consider the zone consumed" after three tests. That's a common rule of thumb, not a measured
+  limit. Some zones break on the second touch, and some hold for more. Watch how each reaction compares with the last:
+  shrinking reactions matter more than the count.
 </Callout>
 
 ---
 
-## Key Principles
+## One Zone, Three Touches
 
-### Institutional Supply Zone
+![GBP/USD 1H demand zone 1.2600–1.2614: first touch reacts 45 pips, second 22, third 10, then a close below the distal line ends the zone](/images/smc/fresh-vs-tested/fresh-vs-tested-zone-dark.png)
 
-- Area where institutional SELLING overwhelmed buying
-- Price fell aggressively FROM this zone
-- Unfilled sell orders remain = price returns to fill them
-- Acts as resistance with institutional backing
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/fresh-vs-tested-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Institutional Demand Zone
-
-- Area where institutional BUYING overwhelmed selling
-- Price rose aggressively FROM this zone
-- Unfilled buy orders remain = price returns to fill them
-- Acts as support with institutional backing
-
----
-
-## Zone Quality Criteria
-
-| Criteria        | Strong Zone         | Weak Zone               |
-| --------------- | ------------------- | ----------------------- |
-| Departure speed | Fast (displacement) | Slow (grinding)         |
-| Time at level   | Brief (1-3 candles) | Extended (many candles) |
-| Freshness       | Never tested        | Tested multiple times   |
-| Volume          | Low volume in zone  | High volume             |
-| Return speed    | Slow approach       | Fast V-shape            |
-
----
-
-## Practical Application
-
-### Identifying Zones
-
-1. Find a strong impulsive move (displacement)
-2. Mark the base/consolidation BEFORE the move
-3. Zone = the consolidation area before displacement
-4. Proximal line = nearest edge to current price
-5. Distal line = far edge of the zone
-
-### Trading Zones
-
-1. Wait for price to return to the zone
-2. Look for rejection/confirmation at the zone
-3. Enter with stop beyond the distal line
-4. Target = next opposing zone or liquidity level
-
-### Combining with ICT/SMC
-
-- S&D zone + Order Block inside = high probability
-- S&D zone + FVG at zone boundary = precision entry
-- S&D zone + Liquidity sweep before entry = A+ setup
-
-<Callout type="warning" title="Zone Invalidation">
-  A zone is INVALIDATED when price closes through the distal line with displacement. Tested zones lose strength with
-  each touch. After 3 tests, consider the zone consumed. Always use fresh zones for highest probability.
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built to show the pattern. They are not real prices, and many zones don't fade this
+  neatly.
 </Callout>
+
+The demand zone is **1.2600 – 1.2614** (proximal 1.2614, distal 1.2600). Reactions are measured from the proximal line:
+
+| Touch    | Low    | Reaction        | Read                                   |
+| -------- | ------ | --------------- | -------------------------------------- |
+| ① Fresh  | 1.2611 | **+45 pips**    | Strong; the best trade                 |
+| ② Second | 1.2608 | +22 pips        | Weaker, deeper                         |
+| ③ Third  | 1.2604 | +10 pips        | Barely reacts; lows near the distal    |
+| ④        | —      | Close at 1.2588 | Below the distal: the zone is finished |
+
+The three lows (1.2611 → 1.2608 → 1.2604) stepped down, and the sell stops under them became the target for the break.
+
+---
+
+## How to Trade Each Touch
+
+| Touch                   | Approach                                                                            |
+| ----------------------- | ----------------------------------------------------------------------------------- |
+| **First (fresh)**       | Your main setup: limit at the proximal line, or a lower-timeframe CHOCH in the zone |
+| **Second**              | Only with extra confluence (HTF trend, discount, a CHOCH); reduce size              |
+| **Third or later**      | Usually skip. Consider the break instead: the stops below are a target              |
+| **Close beyond distal** | The zone is finished; remove it from the chart                                      |
+
+**First-touch trade in the chart:** buy **1.2614**, stop **1.2595** (below the distal), target the **1.2665** swing high: risk 19 pips, reward 51 pips, **R:R 1 : 2.7** (planned).
+
+### Second example (no chart) — a tested supply zone becomes the target
+
+EUR/USD has a 4H supply zone at **1.0950 – 1.0962** that has been touched three times, with highs at 1.0952, 1.0956 and 1.0959. Instead of selling a fourth touch, a trader with a bullish bias buys a 1H demand zone at **1.0905**, stop **1.0893**, targeting the buy stops above the zone at **1.0965**: risk 12 pips, reward 60 pips, **R:R 1 : 5.0** (planned).
+
+---
+
+## What Counts as a Touch?
+
+| Event                                           | Touch?                |
+| ----------------------------------------------- | --------------------- |
+| A wick into the zone                            | Yes                   |
+| A close inside the zone                         | Yes, and a deeper one |
+| Price comes within a few pips but doesn't enter | Usually no; note it   |
+| A close beyond the distal line                  | Zone invalidated      |
+
+---
+
+## Common Mistakes
+
+| Mistake                                 | Fix                                               |
+| --------------------------------------- | ------------------------------------------------- |
+| Treating a tested zone like a fresh one | Count the touches; size down or skip              |
+| Only counting, not comparing reactions  | Shrinking reactions are the warning               |
+| Buying the third touch of a zone        | The stops below it are now the target             |
+| Keeping invalidated zones on the chart  | Delete a zone once price closes beyond the distal |
+
+---
+
+## Practice
+
+1. On 10 charts, mark demand and supply zones and number every touch.
+2. Record the reaction (in pips) to each touch.
+3. Compare the average reaction to touch 1, 2 and 3 in your own data.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Aspect          | Key point                                           |
+| --------------- | --------------------------------------------------- |
+| **Fresh**       | Not yet revisited; usually the best reaction        |
+| **Tested**      | Each touch tends to react less                      |
+| **Warning**     | Shrinking reactions and lows creeping to the distal |
+| **Finished**    | A close beyond the distal line                      |
+| **Opportunity** | Stops beyond a well-tested zone become a target     |
+
+---
+
+## Related Topics
+
+- [Supply & Demand Zones](/en/smc/supply-demand-zones) — drawing the zone
+- [Zone Strength Scoring](/en/smc/zone-strength-scoring) — freshness in the score
+- [Equal Highs & Lows](/en/smc/equal-highs-lows) — the liquidity that builds at repeated touches
+- [Mitigation Blocks](/en/smc/mitigation-blocks) — what happens after a zone fails

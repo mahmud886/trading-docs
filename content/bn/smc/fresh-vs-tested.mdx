@@ -1,76 +1,128 @@
 ---
-title: "ফ্রেশ vs টেস্টেড জোন — জোন ভ্যালিডিটি"
-description: "ফ্রেশ (আনটেস্টেড) ও টেস্টেড সাপ্লাই/ডিমান্ড জোনের পার্থক্য করতে শিখুন। ফ্রেশ জোনের উচ্চ সম্ভাব্যতা কেন এবং জোন কোয়ালিটি গ্রেড করুন।"
+title: "Fresh বনাম Tested Zone — সম্পূর্ণ গাইড"
+description: "Fresh আর Tested Supply ও Demand Zone আলাদা করুন: প্রথম ফেরা কেন সাধারণত সবচেয়ে ভালো রিঅ্যাক্ট করে, প্রতিটি ছোঁয়া কীভাবে Zone কে দুর্বল করে আর তার ওপারে Liquidity তৈরি করে, Zone কখন শেষ, আর প্রতিটি ছোঁয়ায় ট্রেডিং কীভাবে বদলাবেন — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 31
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Fresh vs Tested Zones
+## Fresh বনাম Tested
 
-Learn to distinguish between fresh (untested) and tested supply/demand zones. Understand why fresh zones have higher probability and how to grade zone quality.
+- **Fresh** Zone এ Price ছেড়ে যাওয়ার পর আর ফেরেনি।
+- **Tested** Zone এ অন্তত একবার ফেরা হয়েছে।
 
-<Callout type="info" title="Supply & Demand in SMC Context">
-  Supply and demand zones are the FOUNDATION that Order Blocks are built upon. Understanding institutional S&D gives you
-  a deeper understanding of WHY order blocks work and how to identify the strongest ones.
+Zone এ প্রথম ফেরা সাধারণত সবচেয়ে ভালো রিঅ্যাক্ট করে। পরের প্রতিটি ছোঁয়ায় রিঅ্যাকশন কমার প্রবণতা থাকে, আর শেষে Zone ভেঙে যায়।
+
+---
+
+## ছোঁয়া কেন Zone কে দুর্বল করে
+
+1. **Order খরচ হয়।** রিঅ্যাকশন যদি Base এ রেখে যাওয়া Order থেকে আসে, প্রতিটি ছোঁয়া তার কিছু Fill করে। পরের ছোঁয়ার জন্য কম থাকে।
+2. **ওপারে Liquidity জমে।** প্রতিটি ছোঁয়ায় যারা কেনে তারা Zone এর ঠিক নিচে Stop রাখে। প্রতিটি ছোঁয়া সেই Pool বাড়ায়, ফলে এটা Sweep বা ভাঙনের ভালো টার্গেট হয়।
+3. **Low গুলো Distal লাইনের কাছে আসে।** প্রতিটি ছোঁয়া একটু গভীরে গেলে বোঝা যায় Buyer রা দেরিতে ঢুকছে।
+
+<Callout type="info" title="স্পষ্ট করা: '৩ বার টেস্টের পর'">
+  মূল লেসনে বলা হয়েছিল তিনবার টেস্টের পর "Zone কে শেষ ধরুন"। এটা প্রচলিত একটা ধারণা, মাপা সীমা নয়। কিছু Zone দ্বিতীয়
+  ছোঁয়াতেই ভাঙে, কিছু আরও বেশি টেকে। প্রতিটি রিঅ্যাকশন আগেরটার তুলনায় কেমন দেখুন: সংখ্যার চেয়ে ছোট হয়ে আসা রিঅ্যাকশন
+  বেশি গুরুত্বপূর্ণ।
 </Callout>
 
 ---
 
-## Key Principles
+## একটি Zone, তিনটি ছোঁয়া
 
-### Institutional Supply Zone
+![GBP/USD 1H Demand Zone 1.2600–1.2614: প্রথম ছোঁয়ায় ৪৫ পিপ রিঅ্যাকশন, দ্বিতীয়তে ২২, তৃতীয়তে ১০, তারপর Distal লাইনের নিচে Close এ Zone শেষ](/images/smc/fresh-vs-tested/fresh-vs-tested-zone-dark.png)
 
-- Area where institutional SELLING overwhelmed buying
-- Price fell aggressively FROM this zone
-- Unfilled sell orders remain = price returns to fill them
-- Acts as resistance with institutional backing
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/fresh-vs-tested-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Institutional Demand Zone
-
-- Area where institutional BUYING overwhelmed selling
-- Price rose aggressively FROM this zone
-- Unfilled buy orders remain = price returns to fill them
-- Acts as support with institutional backing
-
----
-
-## Zone Quality Criteria
-
-| Criteria        | Strong Zone         | Weak Zone               |
-| --------------- | ------------------- | ----------------------- |
-| Departure speed | Fast (displacement) | Slow (grinding)         |
-| Time at level   | Brief (1-3 candles) | Extended (many candles) |
-| Freshness       | Never tested        | Tested multiple times   |
-| Volume          | Low volume in zone  | High volume             |
-| Return speed    | Slow approach       | Fast V-shape            |
-
----
-
-## Practical Application
-
-### Identifying Zones
-
-1. Find a strong impulsive move (displacement)
-2. Mark the base/consolidation BEFORE the move
-3. Zone = the consolidation area before displacement
-4. Proximal line = nearest edge to current price
-5. Distal line = far edge of the zone
-
-### Trading Zones
-
-1. Wait for price to return to the zone
-2. Look for rejection/confirmation at the zone
-3. Enter with stop beyond the distal line
-4. Target = next opposing zone or liquidity level
-
-### Combining with ICT/SMC
-
-- S&D zone + Order Block inside = high probability
-- S&D zone + FVG at zone boundary = precision entry
-- S&D zone + Liquidity sweep before entry = A+ setup
-
-<Callout type="warning" title="Zone Invalidation">
-  A zone is INVALIDATED when price closes through the distal line with displacement. Tested zones lose strength with
-  each touch. After 3 tests, consider the zone consumed. Always use fresh zones for highest probability.
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, প্যাটার্ন দেখাতে তৈরি। এগুলো আসল প্রাইস নয়, আর অনেক Zone এত পরিষ্কারভাবে দুর্বল হয় না।
 </Callout>
+
+Demand Zone হলো **1.2600 – 1.2614** (Proximal 1.2614, Distal 1.2600)। রিঅ্যাকশন Proximal লাইন থেকে মাপা:
+
+| ছোঁয়া     | Low    | রিঅ্যাকশন      | পাঠ                                         |
+| ---------- | ------ | -------------- | ------------------------------------------- |
+| ① Fresh    | 1.2611 | **+৪৫ পিপ**    | শক্তিশালী; সেরা ট্রেড                       |
+| ② দ্বিতীয় | 1.2608 | +২২ পিপ        | দুর্বল, গভীর                                |
+| ③ তৃতীয়   | 1.2604 | +১০ পিপ        | প্রায় রিঅ্যাক্ট করে না; Low Distal এর কাছে |
+| ④          | —      | 1.2588 এ Close | Distal এর নিচে: Zone শেষ                    |
+
+তিনটি Low (1.2611 → 1.2608 → 1.2604) ধাপে ধাপে নেমেছে, আর তাদের নিচের Sell Stop ভাঙনের টার্গেট হয়েছে।
+
+---
+
+## প্রতিটি ছোঁয়া কীভাবে ট্রেড করবেন
+
+| ছোঁয়া                    | পদ্ধতি                                                               |
+| ------------------------- | -------------------------------------------------------------------- |
+| **প্রথম (Fresh)**         | মূল সেটআপ: Proximal লাইনে Limit, বা Zone এ Lower Timeframe CHOCH     |
+| **দ্বিতীয়**              | শুধু বাড়তি Confluence থাকলে (HTF ট্রেন্ড, Discount, CHOCH); সাইজ কম |
+| **তৃতীয় বা পরে**         | সাধারণত বাদ। বরং ভাঙন বিবেচনা করুন: নিচের Stop একটা টার্গেট          |
+| **Distal এর ওপারে Close** | Zone শেষ; চার্ট থেকে সরিয়ে দিন                                      |
+
+**চার্টে প্রথম ছোঁয়ার ট্রেড:** **1.2614** এ Buy, Stop **1.2595** (Distal এর নিচে), টার্গেট **1.2665** Swing High: রিস্ক ১৯ পিপ, রিওয়ার্ড ৫১ পিপ, **R:R ১ : ২.৭** (পরিকল্পিত)।
+
+### দ্বিতীয় উদাহরণ (চার্ট ছাড়া) — Tested Supply Zone টার্গেটে পরিণত
+
+EUR/USD এ **1.0950 – 1.0962** এর একটি 4H Supply Zone তিনবার ছোঁয়া হয়েছে, High গুলো 1.0952, 1.0956 আর 1.0959। চতুর্থ ছোঁয়ায় Sell না করে, Bullish Bias এর একজন ট্রেডার **1.0905** এ 1H Demand Zone এ Buy করেন, Stop **1.0893**, টার্গেট Zone এর উপরের Buy Stop **1.0965**: রিস্ক ১২ পিপ, রিওয়ার্ড ৬০ পিপ, **R:R ১ : ৫.০** (পরিকল্পিত)।
+
+---
+
+## কোনটা ছোঁয়া হিসেবে গণ্য?
+
+| ঘটনা                                 | ছোঁয়া?                |
+| ------------------------------------ | ---------------------- |
+| Zone এ Wick ঢোকা                     | হ্যাঁ                  |
+| Zone এর ভিতরে Close                  | হ্যাঁ, আর গভীরতর       |
+| কয়েক পিপের মধ্যে আসে কিন্তু ঢোকে না | সাধারণত না; লিখে রাখুন |
+| Distal লাইনের ওপারে Close            | Zone বাতিল             |
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                               | সমাধান                                  |
+| --------------------------------- | --------------------------------------- |
+| Tested Zone কে Fresh এর মতো দেখা  | ছোঁয়া গুনুন; সাইজ কমান বা বাদ দিন      |
+| শুধু গোনা, রিঅ্যাকশন তুলনা না করা | ছোট হয়ে আসা রিঅ্যাকশনই সতর্কবার্তা     |
+| Zone এর তৃতীয় ছোঁয়ায় Buy       | নিচের Stop এখন টার্গেট                  |
+| বাতিল Zone চার্টে রেখে দেওয়া     | Distal এর ওপারে Close হলে Zone মুছে দিন |
+
+---
+
+## অনুশীলন
+
+1. ১০টি চার্টে Demand আর Supply Zone মার্ক করুন আর প্রতিটি ছোঁয়ায় নম্বর দিন।
+2. প্রতিটি ছোঁয়ার রিঅ্যাকশন (পিপে) লিখুন।
+3. নিজের ডেটায় ছোঁয়া ১, ২ আর ৩ এর গড় রিঅ্যাকশন তুলনা করুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| বিষয়       | মূল কথা                                            |
+| ----------- | -------------------------------------------------- |
+| **Fresh**   | এখনও ফেরা হয়নি; সাধারণত সেরা রিঅ্যাকশন            |
+| **Tested**  | প্রতিটি ছোঁয়ায় রিঅ্যাকশন কমার প্রবণতা            |
+| **সতর্কতা** | ছোট হয়ে আসা রিঅ্যাকশন আর Distal এর দিকে নামা Low  |
+| **শেষ**     | Distal লাইনের ওপারে Close                          |
+| **সুযোগ**   | বহুবার টেস্ট হওয়া Zone এর ওপারের Stop টার্গেট হয় |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Supply & Demand Zones](/bn/smc/supply-demand-zones) — Zone আঁকা
+- [Zone Strength Scoring](/bn/smc/zone-strength-scoring) — স্কোরে Freshness
+- [Equal Highs & Lows](/bn/smc/equal-highs-lows) — বারবার ছোঁয়ায় জমা Liquidity
+- [Mitigation Blocks](/bn/smc/mitigation-blocks) — Zone ব্যর্থ হওয়ার পর কী হয়
