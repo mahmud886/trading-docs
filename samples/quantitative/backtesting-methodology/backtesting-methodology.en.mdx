@@ -1,0 +1,113 @@
+---
+title: "Statistical Backtesting Methodology"
+description: "How to backtest honestly: avoiding look-ahead and survivorship bias, including costs, counting every rule you tried (multiple testing), keeping data out-of-sample, and reading a t-statistic — with a demonstration on random-walk prices where the best of 180 rules earns +50% in-sample and +6% out-of-sample, and an animated walkthrough."
+level: intermediate
+order: 6
+lastUpdated: "2026-11-14"
+---
+
+## Why Backtests Mislead
+
+A **backtest** applies fixed rules to past data. It can show that a rule **would have** done something; it cannot show that the rule has an edge. The danger is not that backtests are inaccurate arithmetic but that they are very easy to **tune until they look good**.
+
+<Callout type="warning" title="Toned down">
+  The original called backtesting a way to "avoid" bias. No method removes it entirely; the goal is to shrink it and
+  to know how much is left. Fixed rules such as "100 trades is enough" are not standards.
+</Callout>
+
+---
+
+## The Common Biases
+
+| Bias                         | What it is                                                                          | How to reduce it                                          |
+| ---------------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| **Look-ahead**               | Using information that wasn't known at decision time (for example today's close to decide today's entry) | Decide on bar *t*, trade on bar *t + 1*; check timestamps |
+| **Survivorship**             | Testing only instruments that still exist, missing those that failed                | Use point-in-time universes including delisted names      |
+| **Overfitting / data snooping** | Tuning rules or parameters on the same data used to judge them                   | Out-of-sample test, few parameters, count your trials     |
+| **Multiple testing**         | Trying many rules and reporting only the best                                       | Adjust for the number of tries                            |
+| **Ignoring costs**           | Spread, commission, slippage, financing                                             | Include realistic costs in every trade                    |
+| **Unrealistic fills**        | Assuming you fill at the level you wanted                                           | Use bid/ask, add slippage, check liquidity                |
+| **Regime dependence**        | A rule that worked in one market state only                                         | Test across several regimes                               |
+
+---
+
+## A Demonstration: The Best of 180 Rules on Noise
+
+![Top: the equity curve of the best in-sample moving-average rule (fast 3, slow 25) on random-walk prices: +50% over the first 500 days, then +6% over the next 500. Bottom: a scatter of in-sample against out-of-sample results for all 180 rules; the average rule makes +5% in-sample and −3% out-of-sample](/images/quantitative/backtesting-methodology/backtest-overfitting-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/bt-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The prices are a **synthetic random walk**: no strategy has an edge by construction. 180 moving-average crossover
+  rules (fast 3–20 × slow 25–81) are tested on the first 500 bars with no costs, and the best is followed on the next
+  500. Results depend on the random seed; the pattern, not the numbers, is the point.
+</Callout>
+
+| Measure                          | Value                                                           |
+| -------------------------------- | --------------------------------------------------------------- |
+| Rules tested                     | 180                                                             |
+| Best in-sample rule              | Fast 3 / slow 25                                                |
+| Its in-sample result             | +50% over about 475 trading days                                |
+| Its out-of-sample result         | +6% over the next 500 days                                      |
+| Average of all 180 rules         | +5% in-sample, −3% out-of-sample                                |
+| t-statistic, in-sample / out-of-sample | 1.9 / 0.4                                                 |
+
+A **t-statistic** is the mean daily return divided by its standard error (standard deviation ÷ √n). As a rough rule, |t| above about 2 is "unlikely by chance for a single test". But the best of 180 independent noise results has an expected |t| of about **√(2 ln 180) ≈ 3.2**: so even a t of 1.9 for the best of 180 is **less** than chance alone typically produces. The out-of-sample t of 0.4 is what an edgeless rule looks like.
+
+---
+
+## A Sound Procedure
+
+| Step | What to do                                                                                  |
+| ---- | ------------------------------------------------------------------------------------------- |
+| 1    | Write the rules and the number of parameters before looking at results                      |
+| 2    | Split the data: build on one part, hold the rest back untouched                              |
+| 3    | Count every rule and parameter set you try (this is your multiple-testing burden)            |
+| 4    | Include costs and realistic fills                                                           |
+| 5    | Test the chosen rule once on the held-back data (see [Walk-Forward](/en/quantitative/walk-forward)) |
+| 6    | Then trade it small, and compare live results with the backtest                              |
+
+### Example (no chart) — reading a backtest honestly
+
+A backtest of 200 trades shows expectancy +0.30R before costs. Costs are 0.10R per trade, so after costs it is **+0.20R**. You tried 40 parameter sets to get there, so the +0.30R is the *best* of 40, not an average, and should be discounted. A plan to test it: entry **1.0850**, stop **1.0830**, target **1.0880** (1 : 1.5), trade it at small size for 100 more trades and compare. If the live expectancy is within the backtest's uncertainty you continue; if it is near zero you stop.
+
+---
+
+## Common Mistakes
+
+| Mistake                                          | Fix                                                        |
+| ------------------------------------------------ | ---------------------------------------------------------- |
+| Reporting only the best parameter set            | Report how many were tried and the spread of results       |
+| Re-using the same out-of-sample data repeatedly  | Once you tune on it, it is in-sample                       |
+| Ignoring costs                                   | Subtract them on every trade                               |
+| Trusting a smooth equity curve                   | Check the sample size, drawdown, and number of trials      |
+| Using the bar's close to trade on the same bar   | Trade on the next bar                                      |
+
+---
+
+## Practice
+
+1. Take a simple rule you like. List every parameter you adjusted to get its best result.
+2. Hold back the last 30% of your data. Re-run the chosen rule on it once.
+3. Compute the t-statistic of the daily returns in each part.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                                    |
+| ---------------- | ------------------------------------------------------------------------- |
+| Backtest         | Shows what rules would have done, not that they have an edge              |
+| Biases           | Look-ahead, survivorship, overfitting, multiple testing, costs, regime    |
+| Demonstration    | Best of 180 noise rules: +50% in-sample, +6% out-of-sample               |
+| Defence          | Out-of-sample data, few parameters, count trials, costs                   |
+
+---
+
+## Related Topics
+
+- [Walk-Forward Optimization](/en/quantitative/walk-forward)
+- [Monte Carlo Simulations](/en/quantitative/monte-carlo)
+- [Expectancy Formula](/en/quantitative/expectancy-formula)
+- [Introduction to Quantitative Trading](/en/quantitative/introduction)
