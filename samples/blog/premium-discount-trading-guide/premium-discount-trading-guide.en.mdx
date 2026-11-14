@@ -1,0 +1,109 @@
+---
+title: "Premium and Discount Trading Guide — Buy Low, Sell High Inside a Range"
+description: "How to split a swing range at its 50% equilibrium into premium (upper half) and discount (lower half), why traders prefer buying in discount and selling in premium, how to combine it with order blocks, the cases where it fails, and a worked EUR/USD buy with a 1 to 2.7 planned reward-to-risk."
+date: "2026-05-13"
+author: "Trading Docs"
+category: "SMC"
+tags: ["premium-discount", "smc", "order-blocks", "fibonacci", "value-zones"]
+readingTime: 7
+featured: true
+---
+
+Take any swing range and draw its **50% midpoint**, the **equilibrium**. Prices above are the **premium** half, prices below are the **discount** half. The idea is simple and old: **buy the lower half, sell the upper half**. It filters entries by where they sit inside a range; it is not a signal by itself.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original tied premium and discount to what "institutions" do and implied a high success rate. Neither is established. The 50% split is a **convention**; its value is that it stops you buying near the top of a range. Test whether it improves your results.
+</Callout>
+
+---
+
+## The Range and Its Halves
+
+| Part              | Definition                                    | Stance                                        |
+| ----------------- | --------------------------------------------- | --------------------------------------------- |
+| **Range**         | Swing low to swing high (or the reverse)       | Choose a clear, confirmed swing               |
+| **Equilibrium**   | The 50% level of the range                    | A reference, not a signal                     |
+| **Premium**       | Above the 50% level                           | Look for sells (or avoid buying)              |
+| **Discount**      | Below the 50% level                           | Look for buys (or avoid selling)              |
+
+Example: range low **1.0800**, high **1.0900**. Equilibrium **1.0850**. Premium **1.0850 – 1.0900**, discount **1.0800 – 1.0850**. See [Premium and Discount](/en/smc/premium-discount) and [Dealing Range](/en/ict/dealing-range).
+
+### The Chart
+
+![A synthetic range with the 50% equilibrium, the premium half above and the discount half below, and order blocks in each](/images/smc/premium-discount/premium-discount-obs-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/smc/premium-discount-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Premium and Discount](/en/smc/premium-discount).)
+</Callout>
+
+---
+
+## Combining With a Zone
+
+| Combination                                        | Why it helps                                                         |
+| -------------------------------------------------- | -------------------------------------------------------------------- |
+| Buy at a bullish order block **in discount**       | Two reasons agree: zone and location                                 |
+| Sell at a bearish order block **in premium**       | Same, reversed                                                       |
+| Zone against the location (buy in premium)         | Needs a very strong reason: it often means chasing                   |
+| Range direction agrees with the higher timeframe   | Trade the larger trend's side of the range                           |
+
+In a strong trend price may stay in premium (or discount) for a long time: waiting for discount can mean never entering. Then use the **last pullback** as the range instead. See [PD Arrays](/en/ict/pd-arrays).
+
+---
+
+## When It Fails
+
+| Failure                                         | What it looks like                                                  |
+| ----------------------------------------------- | ------------------------------------------------------------------- |
+| Range broken, not a range any more              | A close beyond the swing: redraw or step aside                      |
+| Trend never gives a discount                    | Price runs; you wait and miss it                                    |
+| Using too small a range                         | Premium and discount become noise                                   |
+| Treating 50% as a magnet                        | Price often goes straight through it                                |
+
+---
+
+## Example (no chart)
+
+Range **1.0800 – 1.0900**, equilibrium **1.0850**. A bullish order block sits at **1.0826 – 1.0834**, deep in discount, and a 5-minute candle rejects it. Plan: buy **1.0832**, stop **1.0812** (below the block and the range low area): risk 20 pips; target **1.0886** (near the top of the range): reward 54 pips, **1 : 2.7** planned. If price closes below **1.0812**, the idea is cancelled.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Buying in premium because the setup looks good | Require the location to agree, or accept a lower-quality trade |
+| Using the 50% level as an entry | It is a reference: you still need a zone and a reaction |
+| Using a stale range | Redraw after structure breaks |
+| Waiting forever for discount | In trends, use the latest pullback range |
+
+---
+
+## Practice
+
+1. Draw ranges on ten recent swings and mark the 50% level.
+2. Count how many pullback entries came from discount and how many from premium.
+3. Compare the R of the two groups.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Equilibrium | The 50% level of a swing range |
+| Rule | Buy below it, sell above it, ideally at a zone |
+| Limits | Strong trends, broken ranges and tiny ranges |
+| Status | A convention to test, not a signal |
+
+---
+
+## Related Topics
+
+- [Premium and Discount](/en/smc/premium-discount)
+- [Dealing Range](/en/ict/dealing-range)
+- [PD Arrays](/en/ict/pd-arrays)
+- [Premium and Discount Zones](/en/blog/premium-discount-zones-complete)

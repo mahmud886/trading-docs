@@ -1,295 +1,119 @@
 ---
-title: "Premium vs Discount Trading Guide — Complete Institutional Value Zone Framework"
-description: "Master premium and discount concepts to find high-probability entries, align with institutional order flow, and improve risk-reward. Includes OTE zones, Fibonacci integration, multi-timeframe analysis, and professional entry models."
+title: "Premium and Discount Trading Guide — Buy Low, Sell High Inside a Range"
+description: "How to split a swing range at its 50% equilibrium into premium (upper half) and discount (lower half), why traders prefer buying in discount and selling in premium, how to combine it with order blocks, the cases where it fails, and a worked EUR/USD buy with a 1 to 2.7 planned reward-to-risk."
 date: "2026-05-13"
 author: "Trading Docs"
 category: "SMC"
-tags: ["premium-discount", "p&d", "smc", "order-blocks", "fibonacci", "institutional", "value-zones"]
-readingTime: 22
+tags: ["premium-discount", "smc", "order-blocks", "fibonacci", "value-zones"]
+readingTime: 7
 featured: true
 ---
 
-## What is Premium and Discount? — Institutional Foundation
+Take any swing range and draw its **50% midpoint**, the **equilibrium**. Prices above are the **premium** half, prices below are the **discount** half. The idea is simple and old: **buy the lower half, sell the upper half**. It filters entries by where they sit inside a range; it is not a signal by itself.
 
-Premium and Discount are context tools that tell you whether price is above (Premium) or below (Discount) a fair reference point. This is **the most fundamental concept in institutional trading** — because Smart Money always **buys in Discount and sells in Premium**.
-
-- **Discount Zone** = Below fair value — favorable for buyers (cheap price)
-- **Premium Zone** = Above fair value — favorable for sellers (expensive price)
-- **Equilibrium (EQ)** = 50% level — fair value / middle point
-
-```
-Price Range Visualization:
-
-100% ─────── Swing High (Extreme Premium)
- 80% ─────── Premium Zone (Sell Here in Downtrend)
- 70% ───────
- 50% ─────── EQUILIBRIUM (EQ) ← Fair Value
- 30% ───────
- 20% ─────── Discount Zone (Buy Here in Uptrend)
-  0% ─────── Swing Low (Extreme Discount)
-```
-
-<Callout type="tip" title="Why This Works">
-  Institutional traders never buy in Premium or sell in Discount. They always enter at value zones. If you want to trade
-  like them, you must respect Premium/Discount alignment.
+<Callout type="warning" title="Corrected and toned down">
+  The original tied premium and discount to what "institutions" do and implied a high success rate. Neither is
+  established. The 50% split is a **convention**; its value is that it stops you buying near the top of a range. Test
+  whether it improves your results.
 </Callout>
 
-### Why Institutions Trade at Value Zones
+---
 
-```
-Institutional Reality:
-- Bank wants to buy $500M EUR/USD
-- Current Price: 1.0900 (at Equilibrium)
-- Premium: 1.0950 (Too Expensive)
-- Discount: 1.0850 (Good Value)
+## The Range and Its Halves
 
-Strategy:
-- WAIT for Price to reach Discount (1.0850)
-- Or ENGINEER price down (Liquidity Sweep)
-- Buy at Discount = Better Average Entry = More Profit
+| Part            | Definition                               | Stance                           |
+| --------------- | ---------------------------------------- | -------------------------------- |
+| **Range**       | Swing low to swing high (or the reverse) | Choose a clear, confirmed swing  |
+| **Equilibrium** | The 50% level of the range               | A reference, not a signal        |
+| **Premium**     | Above the 50% level                      | Look for sells (or avoid buying) |
+| **Discount**    | Below the 50% level                      | Look for buys (or avoid selling) |
 
-Retail traders who buy Premium provide exit liquidity for institutions.
-```
+Example: range low **1.0800**, high **1.0900**. Equilibrium **1.0850**. Premium **1.0850 – 1.0900**, discount **1.0800 – 1.0850**. See [Premium and Discount](/en/smc/premium-discount) and [Dealing Range](/en/ict/dealing-range).
+
+### The Chart
+
+![A synthetic range with the 50% equilibrium, the premium half above and the discount half below, and order blocks in each](/images/smc/premium-discount/premium-discount-obs-dark.webp)
+
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/premium-discount-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Premium and Discount](/en/smc/premium-discount).)
+</Callout>
 
 ---
 
-## How to Calculate Premium/Discount
+## Combining With a Zone
 
-### Method 1: Fibonacci Tool (Most Popular)
+| Combination                                      | Why it helps                                       |
+| ------------------------------------------------ | -------------------------------------------------- |
+| Buy at a bullish order block **in discount**     | Two reasons agree: zone and location               |
+| Sell at a bearish order block **in premium**     | Same, reversed                                     |
+| Zone against the location (buy in premium)       | Needs a very strong reason: it often means chasing |
+| Range direction agrees with the higher timeframe | Trade the larger trend's side of the range         |
 
-```
-Step 1: Identify last significant Swing Low
-Step 2: Identify last significant Swing High
-Step 3: Draw Fibonacci Tool (Low to High for Bullish)
-
-Key Levels:
-- 0% = Swing Low (Full Discount)
-- 50% = Equilibrium (EQ)
-- 100% = Swing High (Full Premium)
-
-Discount Zone: 0% - 50% (Below EQ)
-Premium Zone: 50% - 100% (Above EQ)
-
-Optimal Trade Entry (OTE): 62% - 79% Retracement
-Sweet Spot: 70.5% Level (ICT Favorite)
-```
-
-### Method 2: Manual 50% Calculation
-
-```
-EQ = (Swing High + Swing Low) ÷ 2
-
-Example:
-- Swing High: 1.0900
-- Swing Low: 1.0800
-- EQ (50%): 1.0850
-
-Above 1.0850 = Premium
-Below 1.0850 = Discount
-```
-
-### Method 3: Multiple Timeframe EQ
-
-```
-Weekly EQ: Broad Direction Context
-Daily EQ: Day Trading Direction
-4H EQ: Intraday Bias
-
-Rule:
-- Weekly Discount + Daily Discount = Strongest Buy Zone
-- Weekly Premium + Daily Premium = Strongest Sell Zone
-- Conflicting TF P&D = Lower Probability (Skip)
-```
+In a strong trend price may stay in premium (or discount) for a long time: waiting for discount can mean never entering. Then use the **last pullback** as the range instead. See [PD Arrays](/en/ict/pd-arrays).
 
 ---
 
-## Premium/Discount with Order Blocks
+## When It Fails
 
-### The Golden Rule
-
-```
-✅ HIGH PROBABILITY:
-- Bullish OB in DISCOUNT → BUY ✓
-- Bearish OB in PREMIUM → SELL ✓
-
-❌ LOW PROBABILITY:
-- Bullish OB in PREMIUM → SKIP ✗
-- Bearish OB in DISCOUNT → SKIP ✗
-
-Why: OB in correct zone = aligned with institutional logic
-Even valid OBs can fail in the wrong zone.
-```
-
-### Practical Example
-
-```
-Bullish Market (4H Uptrend):
-- Swing Low: 1.0750, Swing High: 1.0900
-- EQ: 1.0825
-
-OBs Found:
-- OB #1: 1.0780-1.0790 (Discount ✓) → TRADE
-- OB #2: 1.0810-1.0820 (Discount ✓) → TRADE
-- OB #3: 1.0860-1.0870 (Premium ✗) → SKIP
-
-Entry at OB #2 with Stop Below, Target New High
-```
+| Failure                            | What it looks like                             |
+| ---------------------------------- | ---------------------------------------------- |
+| Range broken, not a range any more | A close beyond the swing: redraw or step aside |
+| Trend never gives a discount       | Price runs; you wait and miss it               |
+| Using too small a range            | Premium and discount become noise              |
+| Treating 50% as a magnet           | Price often goes straight through it           |
 
 ---
 
-## Optimal Trade Entry (OTE): The Sweet Spot
+## Example (no chart)
 
-### OTE Zone (62% - 79% Retracement)
-
-```
-Why 62-79%?
-
-Statistical Edge:
-- Entries at 50% EQ: ~55% Win Rate
-- Entries at 62-79% OTE: ~62-68% Win Rate
-- Entries at 80%+: Higher WR but often missed
-
-The 70.5% Level = ICT Sweet Spot
-- Best balance of hit rate vs win rate
-- Where institutions prefer to fill orders
-```
-
-### Perfect Setup: OTE + OB + FVG
-
-```
-Maximum Probability When:
-1. Price in Discount (Below EQ) ✓
-2. OB in OTE Zone (62-79%) ✓
-3. FVG Within OB ✓
-4. Liquidity Swept Before ✓
-5. LTF CHOCH Confirmation ✓
-
-Expected Win Rate: 70-80%
-Expected R:R: 1:3 to 1:5
-```
-
----
-
-## Multi-Timeframe Premium/Discount
-
-### HTF → LTF Alignment
-
-```
-STRONG LONG:
-Weekly Discount + Daily Discount + 4H BOS Up + OB in Discount
-= Maximum Bullish Confluence
-
-STRONG SHORT:
-Weekly Premium + Daily Premium + 4H BOS Down + OB in Premium
-= Maximum Bearish Confluence
-
-CONFLICTING (Skip):
-Weekly Discount + Daily Premium + No Clear 4H Direction
-= Wait for alignment
-```
-
-### Workflow
-
-```
-1. Weekly: Where is price? → Sets weekly bias
-2. Daily: P&D zone → Confirms direction
-3. 4H: Structure + POIs → Identifies entries
-4. 15M/5M: LTF Confirmation → Executes with tight stop
-```
-
----
-
-## P&D with Liquidity
-
-### Complete Model
-
-```
-Bullish (Discount Buy):
-1. Price in Weekly/Daily Discount ✓
-2. SSL Below = Sweep Target
-3. Price Sweeps SSL → Deep Discount
-4. OB/FVG Created After Sweep
-5. Enter at OB/FVG
-6. Target: BSL Above (Premium Zone)
-
-Bearish (Premium Sell):
-1. Price in Weekly/Daily Premium ✓
-2. BSL Above = Sweep Target
-3. Price Sweeps BSL → Extreme Premium
-4. OB/FVG Created After Sweep
-5. Enter at OB/FVG
-6. Target: SSL Below (Discount Zone)
-```
-
----
-
-## Real-World Examples
-
-### Example 1: EUR/USD Long in Discount
-
-```
-- Weekly: Bullish, price in Discount
-- Swing: 1.0750 (Low) to 1.0950 (High)
-- EQ: 1.0850
-- 4H OB: 1.0790-1.0805 (Deep Discount ✓)
-- Equal Lows below at 1.0780 (SSL)
-
-Execution:
-- Price sweeps 1.0777 (SSL taken)
-- 15M Bullish CHOCH
-- Entry: 1.0798, Stop: 1.0772 (26 pips)
-- Target: 1.0900+ (100+ pips, R:R 1:4)
-```
-
-### Example 2: Gold Short in Premium
-
-```
-- Daily: Bearish after failed BSL
-- Swing: $2,380 (Low) to $2,450 (High)
-- EQ: $2,415
-- 4H Bearish OB: $2,435-$2,442 (Premium ✓)
-- BSL above at $2,445
-
-Execution:
-- Price sweeps $2,445
-- 15M Bearish CHOCH
-- Entry: $2,440, Stop: $2,448 ($8)
-- Target: $2,400 ($40, R:R 1:5)
-```
+Range **1.0800 – 1.0900**, equilibrium **1.0850**. A bullish order block sits at **1.0826 – 1.0834**, deep in discount, and a 5-minute candle rejects it. Plan: buy **1.0832**, stop **1.0812** (below the block and the range low area): risk 20 pips; target **1.0886** (near the top of the range): reward 54 pips, **1 : 2.7** planned. If price closes below **1.0812**, the idea is cancelled.
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Avoid These">
-
-**1. Using P&D in isolation** — Must combine with structure and liquidity.
-
-**2. Rigidly treating 50% EQ** — It's a guide, not a wall. Price can react at 48%.
-
-**3. Wrong timeframe** — 5M P&D is meaningless against 4H direction.
-
-**4. Blindly buying Discount** — Confirmation required. Discount alone ≠ trade signal.
-
-**5. Chasing missed OTE** — If price doesn't reach your zone, SKIP. Don't chase.
-
-**6. Ignoring trend direction** — In a downtrend, "Discount" means "could go lower." P&D only works WITH the trend.
-
-</Callout>
+| Mistake                                        | Fix                                                            |
+| ---------------------------------------------- | -------------------------------------------------------------- |
+| Buying in premium because the setup looks good | Require the location to agree, or accept a lower-quality trade |
+| Using the 50% level as an entry                | It is a reference: you still need a zone and a reaction        |
+| Using a stale range                            | Redraw after structure breaks                                  |
+| Waiting forever for discount                   | In trends, use the latest pullback range                       |
 
 ---
 
-## Key Takeaways
+## Practice
 
-| Concept         | Details                                |
-| --------------- | -------------------------------------- |
-| **Discount**    | Below 50% EQ — Buy zone in uptrend     |
-| **Premium**     | Above 50% EQ — Sell zone in downtrend  |
-| **OTE**         | 62-79% retracement — optimal entry     |
-| **Sweet Spot**  | 70.5% level                            |
-| **Best Setup**  | OB + FVG + OTE + Correct P&D + Sweep   |
-| **Multi-TF**    | All TFs should agree on direction      |
-| **Golden Rule** | Never buy Premium, never sell Discount |
-| **Patience**    | Wait for price to come to YOU          |
+1. Draw ranges on ten recent swings and mark the 50% level.
+2. Count how many pullback entries came from discount and how many from premium.
+3. Compare the R of the two groups.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
-See the lesson: [Premium/Discount](/en/smc/premium-discount).
+---
+
+## Summary
+
+| Idea        | Detail                                         |
+| ----------- | ---------------------------------------------- |
+| Equilibrium | The 50% level of a swing range                 |
+| Rule        | Buy below it, sell above it, ideally at a zone |
+| Limits      | Strong trends, broken ranges and tiny ranges   |
+| Status      | A convention to test, not a signal             |
+
+---
+
+## Related Topics
+
+- [Premium and Discount](/en/smc/premium-discount)
+- [Dealing Range](/en/ict/dealing-range)
+- [PD Arrays](/en/ict/pd-arrays)
+- [Premium and Discount Zones](/en/blog/premium-discount-zones-complete)
