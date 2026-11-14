@@ -1,167 +1,157 @@
 ---
 title: "Pullbacks — Complete Guide"
-description: "Master pullback trading. Learn to identify healthy pullbacks, Fibonacci retracement levels, and optimal pullback entry techniques."
+description: "Trade pullbacks in a trend: why they happen, healthy vs unhealthy pullbacks, Fibonacci retracement levels (38.2%, 50%, 61.8%, 78.6%) and the OTE zone, three entry strategies (Fibonacci + level, EMA, BOS retest), a worked EUR/USD example and planned examples in Bangladesh time, with a chart and an animated walkthrough."
 level: intermediate
 order: 11
-lastUpdated: "2026-05-11"
+lastUpdated: "2026-11-14"
 ---
 
-## What is a Pullback?
+## What Is a Pullback?
 
-A pullback is a **temporary retracement** against the dominant trend before price continues in the original direction. In an uptrend, a pullback is a dip. In a downtrend, a pullback is a rally. Pullbacks provide the **best entry opportunities** because you're entering WITH the trend at a better price.
-
-<Callout type="info" title="Buy the Dip, Sell the Rally">
-  The phrase "buy the dip" is essentially pullback trading. Instead of chasing price after an impulsive move, you wait
-  for price to retrace to a key level and enter at a discount. This gives you a tighter stop loss and a better
-  risk-to-reward ratio.
-</Callout>
+A **pullback** (or retracement) is a move against the trend that doesn't end it: a dip in an uptrend, or a rally in a downtrend. Trends move in steps, impulse then pullback, and pullbacks are where trend traders get in at a better price.
 
 ---
 
 ## Why Pullbacks Happen
 
-1. **Profit-taking** — Traders who bought lower take profits, causing temporary selling
-2. **New sellers** — Counter-trend traders attempt shorts at highs
-3. **Institutional reloading** — Smart money allows a pullback to add to positions at better prices
-4. **Natural market rhythm** — Markets move in waves (impulse → correction → impulse)
+- **Profit-taking:** traders who caught the impulse close part of their positions.
+- **Counter-trend traders** try to fade the move.
+- **Late traders wait** for a better price instead of chasing.
+
+When the profit-taking is done and the counter-trend traders give up, the trend resumes.
 
 ---
 
-## Healthy vs. Unhealthy Pullbacks
+## Healthy vs Unhealthy
 
-### Healthy Pullback ✅ (Trade This)
+| Sign          | Healthy pullback                | Unhealthy (the trend may be ending) |
+| ------------- | ------------------------------- | ----------------------------------- |
+| **Depth**     | 38.2–61.8% of the impulse       | Beyond 78.6%                        |
+| **Candles**   | Smaller and overlapping         | Large and fast, against the trend   |
+| **Structure** | Holds above the last higher low | Breaks the last higher low (CHOCH)  |
+| **Duration**  | Shorter than the impulse        | Longer than the impulse             |
 
-- Retraces **38.2% to 61.8%** of the impulse move
-- Maintains structure (no BOS against the trend)
-- Pullback candles are SMALLER than impulse candles
-- Volume decreases during pullback
-
-### Unhealthy Pullback ❌ (Avoid This)
-
-- Retraces **beyond 78.6%** of the impulse
-- Structure breaks (CHOCH against the trend)
-- Pullback candles are LARGER than impulse candles
-- Increasing volume on the pullback
-
-```
-Healthy Pullback:             Unhealthy Pullback:
-     HH                           HH
-    ╱  ╲                          ╱  ╲
-   ╱    ╲ 50% retrace           ╱    ╲ 88% retrace
-  ╱      ╲╱ ← HL (buy here)   ╱      ╲
- ╱      HL                    ╱        ╲╱ ← Too deep!
-╱                             ╱        Near LL
-                                       (trend may be over)
-```
+See [Trend Analysis](/en/price-action/trend-analysis) for the signs a trend is ending.
 
 ---
 
-## Fibonacci Retracement Levels
+## Fibonacci Meets a Level
 
-The key Fibonacci levels for pullback entries:
+![EUR/USD 4H: a 120-pip impulse from 1.0800 to 1.0920 retraces to 61.8% at 1.0846, right on old resistance at 1.0850; buy 1.0852, stop 1.0825, target 1.0940](/images/price-action/pullbacks/fib-pullback-confluence-dark.png)
 
-| Level     | Significance                             |
-| --------- | ---------------------------------------- |
-| **38.2%** | Shallow pullback — strong trend          |
-| **50.0%** | Moderate pullback — most common          |
-| **61.8%** | Deep pullback — optimal entry (OTE zone) |
-| **70.5%** | ICT OTE sweet spot                       |
-| **78.6%** | Maximum healthy pullback                 |
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/pullbacks-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### The OTE Zone (Optimal Trade Entry)
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
 
-ICT traders focus on the **61.8% - 78.6% zone** as the "sweet spot" for entries. This is where institutions typically reload their positions.
+1. **The level:** before the move, price stalled at **1.0850**: resistance.
+2. **The impulse:** price rallies from **1.0800 to 1.0920** (120 pips), breaking through it.
+3. **The Fibonacci levels** on that impulse: 38.2% at **1.0874**, 50% at **1.0860**, 61.8% at **1.0846**, 78.6% at **1.0826**.
+4. **The pullback** stops at **1.0846**: the 61.8% level, right on the old resistance. Two reasons to expect buyers in one place.
 
----
+| Level   | Price       | Note                               |
+| ------- | ----------- | ---------------------------------- |
+| Entry   | 1.0852      | In the 61.8% / old-resistance zone |
+| Stop    | 1.0825      | Below the 78.6% level              |
+| Target  | 1.0940      | Above the impulse high             |
+| **R:R** | **1 : 3.3** | Risk 27 pips, reward 88 pips       |
 
-## Pullback Entry Strategies
-
-### Strategy 1: Fibonacci + S/R Confluence ⭐
-
-1. Identify an impulse move
-2. Draw Fibonacci from swing low to swing high (uptrend)
-3. Wait for price to pull back to 50-61.8% zone
-4. Check if a S/R level aligns with the Fib level
-5. Look for rejection candle at the confluence
-6. Enter with stop below the 78.6% level
-
-### Strategy 2: EMA Pullback
-
-1. In an uptrend, wait for price to pull back to 20/50 EMA
-2. Look for rejection candle at the EMA
-3. Enter with stop below the EMA
-4. Target: Previous high or next structural level
-
-### Strategy 3: Structure Pullback (BOS Retest)
-
-1. After a BOS, wait for price to pull back to the broken level
-2. The broken level should now act as S/R flip
-3. Enter on rejection at the retested level
-4. Stop below the level, target next structural point
+The 61.8% level is calculated as 1.0920 − (120 × 0.618) = 1.0846.
 
 ---
 
-## Real Trading Examples
+## Fibonacci Levels
 
-### Example 1: EUR/USD 61.8% Pullback
+| Level     | Reading                                                        |
+| --------- | -------------------------------------------------------------- |
+| **38.2%** | Shallow; typical of strong trends                              |
+| **50%**   | Middle; the most common pullback depth                         |
+| **61.8%** | Deep but still healthy                                         |
+| **70.5%** | The middle of ICT's OTE zone                                   |
+| **78.6%** | The deepest healthy pullback; beyond it, the trend is in doubt |
 
-- **Impulse**: EUR/USD rallied from 1.0800 to 1.0920 (+120 pips)
-- **61.8% retrace**: 1.0920 - (120 × 0.618) = **1.0846**
-- **S/R confluence**: Previous resistance at 1.0850 aligns
-- **Signal**: Bullish engulfing at 1.0848
-- **Entry**: 1.0852 | **Stop**: 1.0825 | **Target**: 1.0940
-- **R:R**: 3.3:1 | **Result**: +88 pips ✅
+<Callout type="info" title="Clarified: the OTE zone">
+  The original said the 61.8–78.6% zone is "where institutions typically reload their positions". The OTE (optimal trade
+  entry) zone is an ICT teaching about where to look for entries; it isn't evidence of where institutions trade.
+  Fibonacci levels work best when they line up with something else: a level, a swing or an order block. See [ICT
+  OTE](/en/ict/ote).
+</Callout>
 
-### Example 2: Gold Pullback to 50 EMA
+---
 
-- **Trend**: Gold in strong 4H uptrend
-- **Pullback**: Price dips to 50 EMA at $2,410
-- **Signal**: Hammer candle at $2,410 with long lower wick
-- **Entry**: $2,412 | **Stop**: $2,395 | **Target**: $2,450
-- **R:R**: 2.2:1 | **Result**: +$38 ✅
+## Three Entry Strategies
 
-### Example 3: NAS100 BOS Retest (BD Time)
+| Strategy                 | Setup                                                                            | Stop                     | Target                     |
+| ------------------------ | -------------------------------------------------------------------------------- | ------------------------ | -------------------------- |
+| **Fibonacci + level** ⭐ | Pullback reaches 50–61.8% where an S/R level also sits; a rejection candle forms | Below 78.6%              | The impulse high or beyond |
+| **EMA pullback**         | In a trend, price pulls back to the 20 or 50 EMA and holds                       | Below the pullback low   | The previous high          |
+| **BOS retest**           | Price breaks a swing high, then retests it from above                            | Below the retested level | The next structural level  |
 
-- **NY session** (8:00 PM BD): NAS100 breaks above 18,300 (BOS)
-- **Pullback**: Price retests 18,300 at 9:15 PM BD
-- **Signal**: Price holds 18,300 with small-bodied candles
-- **Entry**: 18,310 | **Stop**: 18,280 | **Target**: 18,400
-- **Result**: +90 points, 3R ✅
+---
+
+## Examples (No Chart)
+
+### 1. Gold pullback to the 50 EMA
+
+Gold is in a 4H uptrend. It pulls back to the 50 EMA near **2,410** and forms a bullish engulfing. Buy **2,412**, stop **2,395** below the pullback low, target **2,450**: risk $17, reward $38, **R:R 1 : 2.2** (planned).
+
+### 2. NAS100 BOS retest (BD time)
+
+In the NY session (about **8:00 PM BD** in US summer), NAS100 breaks above **18,300**. At about **9:15 PM BD**, it retests 18,300 from above and holds. Buy **18,310**, stop **18,280**, target **18,400**: risk 30 points, reward 90 points, **R:R 1 : 3.0** (planned).
+
+<Callout type="info" title="Removed: results">
+  The original listed outcomes ("+88 pips", "+$38", "+90 points, 3R"). These are teaching examples, so only the plans
+  are shown.
+</Callout>
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Pullback Errors">
+| Mistake                                    | Fix                                                    |
+| ------------------------------------------ | ------------------------------------------------------ |
+| Buying a pullback in a range or downtrend  | Confirm the trend first                                |
+| Entering on the first touch of a Fib level | Wait for a rejection candle or a lower-timeframe shift |
+| Using Fibonacci alone                      | Look for a level, swing or OB at the same price        |
+| Stop just below 61.8%                      | Below 78.6%, or below the pullback low                 |
+| Treating an 85% pullback as a bargain      | It's a warning that the trend may be ending            |
 
-**❌ Entering without confirmation** — Don't buy just because price reached a Fib level. Wait for a rejection candle.
+---
 
-**❌ Catching falling knives** — If the pullback is aggressive (large bearish candles), it might be a reversal, not a pullback.
+## Practice
 
-**❌ Too shallow entries** — Entering at the 23.6% retrace gives a wide stop and low R:R. Wait for at least 38.2%.
-
-**❌ Ignoring HTF context** — Only trade pullbacks when the HTF trend is clear and strong.
-
-</Callout>
+1. Find 10 impulses on the 4H chart and draw Fibonacci on each.
+2. Note where each pullback stopped (38.2, 50, 61.8, 78.6%, or beyond).
+3. Mark which pullbacks also hit an S/R level, and how those performed.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
 ---
 
 ## Summary
 
-| Aspect           | Details                                     |
-| ---------------- | ------------------------------------------- |
-| **Definition**   | Temporary retracement within a trend        |
-| **Best Zone**    | 50-61.8% Fibonacci retracement              |
-| **OTE**          | 61.8-78.6% — institutional sweet spot       |
-| **Confirmation** | Rejection candle at Fib + S/R confluence    |
-| **Caution**      | Pullback beyond 78.6% may indicate reversal |
+| Aspect           | Key point                                    |
+| ---------------- | -------------------------------------------- |
+| **Pullback**     | A counter-move that doesn't break the trend  |
+| **Healthy**      | 38.2–61.8%, small candles, holds the last HL |
+| **Warning**      | Beyond 78.6%, or a break of the last HL      |
+| **Best entries** | Fibonacci + a level + a rejection candle     |
+| **Stop**         | Below 78.6% or the pullback low              |
 
 ---
 
 ## Related Topics
 
-- [Trend Analysis](/en/price-action/trend-analysis) — Identifying the trend to trade pullbacks in
-- [Support & Resistance](/en/price-action/support-resistance) — Confluence with pullback levels
-- [Entry Models](/en/price-action/entry-models) — Complete entry techniques
-- [Confirmation](/en/price-action/confirmation) — Confirming pullback entries
-- [ICT OTE](/en/ict/ote) — Optimal Trade Entry concept
+- [Trend Analysis](/en/price-action/trend-analysis) — trend strength and exhaustion
+- [Support & Resistance](/en/price-action/support-resistance) — the level that adds confluence
+- [Continuation](/en/price-action/continuation) — patterns inside pullbacks
+- [ICT OTE](/en/ict/ote) — the 61.8–78.6% zone
