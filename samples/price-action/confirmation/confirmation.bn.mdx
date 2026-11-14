@@ -1,0 +1,113 @@
+---
+title: "কনফার্মেশন কৌশল — সম্পূর্ণ গাইড"
+description: "কোনটা Confirmation আর কোনটা নয়: ক্যান্ডেল Close, Lower Timeframe Structure (CHOCH/BOS), Volume আর Higher Timeframe এর মিল, Zone এ কীভাবে এগুলো একের পর এক জমা করবেন, প্রতিটি Confirmation প্রাইসে কত খরচ করে, আর অতিরিক্ত Confirmation থেকে বাঁচার নিয়ম — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
+level: intermediate
+order: 29
+lastUpdated: "2026-11-14"
+---
+
+## Confirmation কী?
+
+**Confirmation** হলো প্রাইস আপনার লেভেলে পৌঁছানোর পর প্রমাণ যে লেভেলটা আসলেই কাজ করছে। Zone বলে **কোথায়** দেখবেন; Confirmation বলে **কাজ করবেন কি না**।
+
+লেভেলে পৌঁছানো Confirmation **নয়**। প্রাইস হাজারো লেভেল ছুঁয়ে তারপর ভেদ করে চলে যায়।
+
+---
+
+## চার ধরনের Confirmation
+
+| ধরন                       | কী খুঁজবেন                                                     | নিয়ম                                       |
+| ------------------------- | ------------------------------------------------------------- | ------------------------------------------ |
+| **Candlestick**           | Zone এর দিকে Hammer, Engulfing, Pin Bar, Inside Bar Break      | শুধু **Close** এ; ক্যান্ডেলের মাঝের Wick হারিয়ে যেতে পারে |
+| **Structure (LTF)**       | Lower Timeframe এ আপনার দিকে CHOCH বা BOS                      | Swing এর ওপারে **Close**, Wick নয়           |
+| **Volume**                | Rejection বা Breakout ক্যান্ডেলে বেশি Volume                  | শুধু সহায়ক প্রমাণ; Forex এ Volume হলো Tick Volume |
+| **Higher Timeframe**      | ট্রেড Daily/H4 ট্রেন্ডের সাথে মেলে আর HTF লেভেলে আছে            | কনটেক্সট, Lower Timeframe এর আগে চেক করুন   |
+
+---
+
+## Zone এ Confirmation জমা করা
+
+![EUR/USD 15m: প্রাইস H4 Demand Zone 1.0840–1.0850 এ পৌঁছায়, একটি Hammer এর উপরে Close করে, সর্বশেষ Lower High 1.0869 এর উপরে Close CHOCH নিশ্চিত করে, আর Retest এ 1.0862 এ Long, Stop 1.0836, টার্গেট 1.0915](/images/price-action/confirmation/confirmation-stack-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/price-action/confirmation-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
+</Callout>
+
+| ধাপ | প্রমাণ                                                     | ধরন                       |
+| --- | ---------------------------------------------------------- | ------------------------- |
+| ০   | Daily ট্রেন্ড Up; H4 Demand Zone 1.0840 – 1.0850             | Higher Timeframe (কনটেক্সট) |
+| ①   | প্রাইস Zone এ পৌঁছায়                                         | **শুধু লোকেশন**            |
+| ②   | একটি Hammer 1.0841 পর্যন্ত Wick দিয়ে Zone এর উপরে 1.0854 এ **Close** করে | Candlestick       |
+| ③   | একটি ক্যান্ডেল সর্বশেষ Lower High 1.0869 এর উপরে **Close** করে   | Structure (CHOCH)         |
+| ④   | Retest এ **1.0862** এ Buy, Stop **1.0836** (Hammer এর নিচে), টার্গেট **1.0915** | এন্ট্রি      |
+
+পরিকল্পিত: রিস্ক **২৬ পিপ**, রিওয়ার্ড **৫৩ পিপ**, **১ : ২.০**।
+
+### Confirmation এর খরচ
+
+একই Stop আর টার্গেটে Hammer এর Close (1.0854) এ Buy করলে পরিকল্পনা হতো **১ : ৩.৪** (১৮ পিপ রিস্ক, ৬১ রিওয়ার্ড)। Structure এর অপেক্ষা এন্ট্রি ৮ পিপ উপরে নিয়ে গেছে আর R:R নামিয়েছে ১ : ২.০ এ। প্রতিটি প্রমাণের দাম প্রাইসে দিতে হয় — Break-even Win Rate দেখুন [Entry Models](/bn/price-action/entry-models) এ।
+
+<Callout type="warning" title="সরানো হয়েছে: &quot;সর্বোচ্চ আত্মবিশ্বাস&quot;">
+  মূল লেসনে সব টাইমফ্রেমের মিলকে "Maximum Confidence" বলা হয়েছিল। Confirmation সম্ভাবনা বাড়ায়; কখনো ট্রেডকে নিশ্চিত
+  করে না। প্রতিটি Confirmed ট্রেডেও Stop লাগে।
+</Callout>
+
+---
+
+## কোন Confirmation বেশি ওজনদার
+
+| বেশি শক্তিশালী                            | কম শক্তিশালী                             |
+| ---------------------------------------- | --------------------------------------- |
+| Higher Timeframe এর মিল                  | শুধু Lower Timeframe সিগন্যাল             |
+| Close এ Structure Break (CHOCH/BOS)       | একটি মাত্র ক্যান্ডেল প্যাটার্ন               |
+| চিহ্নিত লেভেলে ক্যান্ডেল                   | কোথাও-না-কোথাও একই ক্যান্ডেল               |
+| লেভেলের ওপারে Close                       | লেভেলের ওপারে Wick                        |
+
+### উদাহরণ (চার্ট ছাড়া) — দুটি Confirmation সহ Gold Short
+
+Daily ট্রেন্ড Down অবস্থায় Gold H4 Supply **2,420 – 2,425** এ র‍্যালি করে। একটি 15m Bearish Engulfing **2,414** এ Close করে (ক্যান্ডেল), তারপর সর্বশেষ Higher Low **2,409.5** এর নিচে Close (Structure)। Retest এ **2,412** এ Sell, Stop **2,428**, টার্গেট **2,388**: রিস্ক $16, রিওয়ার্ড $24, পরিকল্পিত **১ : ১.৫**।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                         | সমাধান                                                |
+| ------------------------------------------- | ---------------------------------------------------- |
+| Zone ছোঁয়াকে সিগন্যাল ধরা                    | আগে লোকেশন, তারপর প্রমাণ                              |
+| ক্যান্ডেল Close হওয়ার আগে কাজ করা              | Close এর অপেক্ষা করুন                                  |
+| ৫টি Confirmation এর অপেক্ষা                  | প্ল্যানে সংখ্যা (১–২) ঠিক করুন; বেশি মানে খারাপ প্রাইস    |
+| HTF ট্রেন্ডের বিরুদ্ধে Confirmation            | আগে কনটেক্সট চেক করুন                                 |
+| "Confirmed" বলে Stop বাদ দেওয়া                 | Confirmed ট্রেডও ব্যর্থ হয়                             |
+
+---
+
+## অনুশীলন
+
+1. অতীতের চার্টে ২০টি Zone চিহ্নিত করুন। প্রতিটিতে কোন Confirmation কোন ক্রমে এসেছে লিখুন।
+2. প্রতিটি Confirmation ধাপের পর এন্ট্রি আর R:R লিখুন।
+3. আপনার মার্কেটে কোন কম্বিনেশন সবচেয়ে ভালো কাজ করেছে ট্র্যাক করুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| নিয়ম                                  | কেন                                     |
+| ------------------------------------- | --------------------------------------- |
+| লোকেশন Confirmation নয়                | লেভেল সবসময় ভাঙে                        |
+| Close, Wick নয়                         | Close এর আগে Wick হারিয়ে যেতে পারে       |
+| LTF সিগন্যালের আগে HTF কনটেক্সট         | বড় ট্রেন্ড ছোট সিগন্যালের চেয়ে ভারী      |
+| কতটা প্রমাণ দরকার ঠিক করুন               | বেশি প্রমাণ = খারাপ প্রাইস               |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Entry Models](/bn/price-action/entry-models)
+- [Candlestick Basics](/bn/price-action/candlestick-basics)
+- [Market Structure](/bn/price-action/market-structure)
+- [Volume](/bn/price-action/volume)
+- [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis)
