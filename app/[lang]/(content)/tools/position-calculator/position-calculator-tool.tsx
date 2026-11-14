@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { riskAmountUsd, positionSizeLots } from "@/lib/tools/position-size";
 import { dict } from "./position-calculator-data";
 
 export function PositionCalculator() {
@@ -16,8 +17,8 @@ export function PositionCalculator() {
   const [stopLossDistance, setStopLossDistance] = useState<number>(50);
   const [pairType, setPairType] = useState<string>("major");
 
-  const riskAmount = (accountBalance * riskPercentage) / 100;
-  const positionSize = riskAmount / stopLossDistance;
+  const riskAmount = riskAmountUsd(accountBalance, riskPercentage);
+  const positionSize = positionSizeLots(accountBalance, riskPercentage, stopLossDistance);
 
   return (
     <div className="max-w-2xl mx-auto">

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Plus, Trash2 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { marginSummary, requiredMargin } from "@/lib/tools/margin";
 import { Position } from "./margin-calculator-data";
 
 export function MarginCalculatorPage() {
@@ -37,15 +38,8 @@ export function MarginCalculatorPage() {
   };
 
   // Calculate margin for each position
-  const calculateMargin = (pos: Position) => {
-    const contractValue = pos.lotSize * 100000; // standard lot = 100,000 units
-    return contractValue / pos.leverage;
-  };
-
-  const totalMarginUsed = positions.reduce((sum, pos) => sum + calculateMargin(pos), 0);
-  const freeMargin = accountBalance - totalMarginUsed;
-  const marginLevel = totalMarginUsed > 0 ? (accountBalance / totalMarginUsed) * 100 : Infinity;
-  const marginUsagePercent = (totalMarginUsed / accountBalance) * 100;
+  const { totalMarginUsed, freeMargin, marginLevel, marginUsagePercent } = marginSummary(accountBalance, positions);
+  const calculateMargin = requiredMargin;
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-10">

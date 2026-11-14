@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { pairs, correlationData, getCorrelation, getColor } from "./correlation-matrix-data";
+import { pairs, getCorrelation, getColor } from "./correlation-matrix-data";
 
 export function CorrelationMatrixPage() {
   const pathname = usePathname();

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { riskRewardMetrics } from "@/lib/tools/risk-reward";
 
 export function RiskRewardCalculator() {
   const pathname = usePathname();
@@ -15,29 +16,7 @@ export function RiskRewardCalculator() {
   const [takeProfitPrice, setTakeProfitPrice] = useState<number>(1.1);
   const [lotSize, setLotSize] = useState<number>(1);
 
-  const calculateMetrics = () => {
-    const riskPips = Math.abs(entryPrice - stopLossPrice);
-    const profitPips = Math.abs(takeProfitPrice - entryPrice);
-    const riskRewardRatio = profitPips / riskPips;
-
-    // Assuming $10 per pip for 1.0 lot as baseline
-    const riskAmount = riskPips * 10 * lotSize;
-    const profitAmount = profitPips * 10 * lotSize;
-
-    // Calculate win rate requirements
-    const winRateRequired = 100 / (riskRewardRatio + 1);
-
-    return {
-      riskPips,
-      profitPips,
-      riskRewardRatio,
-      riskAmount,
-      profitAmount,
-      winRateRequired,
-    };
-  };
-
-  const metrics = calculateMetrics();
+  const metrics = riskRewardMetrics(entryPrice, stopLossPrice, takeProfitPrice, lotSize);
 
   return (
     <div className="max-w-2xl mx-auto">
