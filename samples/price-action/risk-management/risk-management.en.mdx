@@ -1,0 +1,154 @@
+---
+title: "Risk Management for Price Action Traders — Complete Guide"
+description: "Manage risk as a price action trader: structural stop placement by setup, the position-size formula, how risk per trade changes drawdowns (the same 40 trades at 1%, 2% and 5%), drawdown recovery maths, daily, weekly and drawdown limits, correlation, and structural vs fixed vs ATR stops, with a chart and an animated walkthrough."
+level: intermediate
+order: 25
+lastUpdated: "2026-11-14"
+---
+
+## Risk Management in Two Steps
+
+1. **Stop at structure:** put the stop beyond the swing, zone or level that would prove the trade wrong, not at a fixed number of pips.
+2. **Size from the stop:** choose the position size so that, if the stop is hit, you lose a fixed percentage of the account.
+
+A wider stop means a smaller position. The amount at risk stays the same.
+
+---
+
+## Where the Stop Goes
+
+| Setup                 | Stop                                            |
+| --------------------- | ----------------------------------------------- |
+| Order block entry     | Beyond the OB's full range, plus a buffer       |
+| Fibonacci pullback    | Beyond 78.6% or the swing point                 |
+| S/R bounce            | Beyond the zone, plus a buffer                  |
+| Trendline bounce      | Beyond the trendline and the last swing         |
+| CHOCH entry           | Beyond the swing that made the CHOCH            |
+| Liquidity sweep       | Beyond the sweep's wick                         |
+
+<Callout type="info" title="Clarified: OB stops">
+  The original said to place OB stops "beyond the OB (body)". The wick is part of the zone and retests often reach
+  it, so this site uses the full range. See [Risk Models](/en/smc/risk-models) for a chart comparing the two.
+</Callout>
+
+---
+
+## Position Size
+
+```
+Lot size = (Account × Risk %) ÷ (Stop in pips × Pip value per lot)
+```
+
+Account $10,000, risk 1% = $100, structural stop 35 pips, pip value $10 per standard lot:
+
+$100 ÷ (35 × $10) = 0.286 → **0.28 lots**
+
+<Callout type="info" title="Corrected: rounding">
+  The original rounded 0.286 up to 0.29 lots. Always round **down**: rounding up risks more than planned.
+</Callout>
+
+---
+
+## Same Trades, Different Risk
+
+![The same 40 synthetic trades (40% winners at 1:2, with 7 losses in a row) at 1%, 2% and 5% risk per trade: maximum drawdowns of 7%, 13% and 30%](/images/price-action/risk-management/risk-per-trade-equity-dark.png)
+
+<video controls muted playsInline loop preload="metadata" src="/videos/price-action/risk-management-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The trades are a **synthetic sequence**, not real results. Risk is a percentage of the current balance, so gains
+  and losses compound.
+</Callout>
+
+The sequence: 40 trades, **16 winners (40%) at +2R**, 24 losers at −1R, including **7 losses in a row**.
+
+| Risk per trade | Max drawdown | Ending balance (from 10,000) |
+| -------------- | ------------ | ---------------------------- |
+| **1%**         | **7%**       | 10,786                       |
+| **2%**         | **13%**      | 11,533                       |
+| **5%**         | **30%**      | 13,417                       |
+
+At 5%, this sequence ends highest, but only after a 30% drawdown. A slightly longer streak (10 losses happen in real trading) would have taken about 40% at 5%, and only about 10% at 1%. The trader who can't sit through the drawdown never sees the ending.
+
+---
+
+## Drawdown Recovery
+
+| Drawdown | Gain needed to recover |
+| -------- | ---------------------- |
+| 10%      | 11%                    |
+| 20%      | 25%                    |
+| 30%      | 43%                    |
+| 50%      | 100%                   |
+
+Losses hurt more than equal gains help. Small risk per trade keeps drawdowns in the range you can recover from.
+
+---
+
+## Risk Rules
+
+1. **0.5–1% per trade** while learning; **2% at most**.
+2. **Stop beyond structure**, with a buffer, never exactly on it.
+3. **Wider stop = smaller position**, never "no stop".
+4. **Correlated trades count together:** EUR/USD and GBP/USD longs are close to one bigger trade; limit the combined risk (for example 2%).
+5. **Daily loss limit 3%:** stop for the day.
+6. **Weekly loss limit 5%:** cut size the next week.
+7. **Drawdown 10%:** stop and review the strategy.
+
+---
+
+## Structural vs Fixed vs ATR Stops
+
+| Method        | How                    | For                              | Against                          |
+| ------------- | ---------------------- | -------------------------------- | -------------------------------- |
+| **Structural** | Beyond swing/OB/zone  | Logical; fewer random stop-outs  | Sometimes wide                   |
+| **Fixed pips** | Always X pips         | Simple                           | May sit inside structure         |
+| **ATR-based** | 1.5–2× ATR             | Adjusts to volatility            | Ignores structure                |
+
+Best of both: place the stop at structure, then check it isn't absurdly small or large compared with ATR, then size the position to fit.
+
+### Example (no chart) — gold
+
+Gold long at **2,355**, structural stop **2,338** below the swing low ($17). Account $8,000, risk 1% = $80. A $1 move is about $100 per standard lot: $80 ÷ (17 × $100) = 0.047 → **0.04 lots**. Target **2,400**: reward $45, **R:R 1 : 2.6** (planned).
+
+---
+
+## Common Mistakes
+
+| Mistake                                  | Fix                                                 |
+| ---------------------------------------- | --------------------------------------------------- |
+| Choosing the lot size first              | Stop first, then size                               |
+| Rounding the size up                     | Round down                                          |
+| Raising risk after losses to "win it back" | Keep risk fixed; cut it after a limit is hit      |
+| Ignoring correlation                     | Count correlated positions together                 |
+| No daily limit                           | Set one before the session                          |
+
+---
+
+## Practice
+
+1. Recalculate the position size of your last 20 trades with the formula.
+2. Find your longest losing streak and work out the drawdown it would cause at 1%, 2% and 5%.
+3. Write your daily, weekly and drawdown limits down.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Rule         | Detail                                      |
+| ------------ | ------------------------------------------- |
+| **Stop**     | Beyond structure, with a buffer             |
+| **Size**     | (Account × risk %) ÷ (stop pips × pip value), rounded down |
+| **Risk**     | 0.5–1% per trade; 2% maximum                |
+| **Limits**   | −3% daily, −5% weekly, −10% review          |
+| **Why**      | Drawdowns grow fast with risk; recovery is harder than the loss |
+
+---
+
+## Related Topics
+
+- [Risk Models](/en/smc/risk-models) — structural vs tight stops on a chart
+- [Trade Management](/en/price-action/trade-management) — managing open trades
+- [Entry Models](/en/price-action/entry-models) — where each model puts the stop
+- [Support & Resistance](/en/price-action/support-resistance) — levels for stops

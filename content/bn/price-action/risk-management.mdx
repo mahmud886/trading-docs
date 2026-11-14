@@ -1,72 +1,162 @@
 ---
-title: "Price Action-এ Risk Management — সম্পূর্ণ গাইড"
-description: "Price Action Trading-এ Risk Management আয়ত্ত করুন। সঠিক Stop Placement, Structure-সহ Position Sizing এবং Drawdown Management নিয়ম শিখুন।"
+title: "প্রাইস অ্যাকশন ট্রেডারদের রিস্ক ম্যানেজমেন্ট — সম্পূর্ণ গাইড"
+description: "প্রাইস অ্যাকশন ট্রেডার হিসেবে রিস্ক ম্যানেজ করুন: সেটআপ অনুযায়ী Structural Stop, Position Size সূত্র, প্রতি ট্রেডের রিস্ক কীভাবে Drawdown বদলায় (একই ৪০টি ট্রেড ১%, ২% আর ৫% এ), Drawdown পুনরুদ্ধারের হিসাব, দৈনিক, সাপ্তাহিক আর Drawdown সীমা, Correlation, আর Structural বনাম Fixed বনাম ATR Stop — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: intermediate
 order: 25
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## PA Trader-দের জন্য Risk Management
+## দুই ধাপে রিস্ক ম্যানেজমেন্ট
 
-Price Action Trading-এ Risk Management **Structural Stop Placement** ব্যবহার করে — Stop যথেচ্ছ Pip Distance-এর বদলে Swing Point, Order Block বা Liquidity Level-এর বাইরে যায়।
+1. **Structure এ Stop:** যে Swing, Zone বা লেভেল ট্রেডটাকে ভুল প্রমাণ করবে তার ওপারে Stop রাখুন, নির্দিষ্ট কত পিপে নয়।
+2. **Stop থেকে সাইজ:** Position সাইজ এমন বাছুন যাতে Stop হিট হলে অ্যাকাউন্টের নির্দিষ্ট শতাংশ যায়।
 
----
-
-## Stop Loss Placement নিয়ম
-
-| Setup Type        | Stop অবস্থান                  |
-| ----------------- | ----------------------------- |
-| Order Block Entry | OB-এর বাইরে (Body)            |
-| Fibonacci Entry   | 78.6% বা Swing Point-এর বাইরে |
-| S/R Bounce        | Zone-এর বাইরে + Buffer        |
-| Trendline Bounce  | Trendline-এর বাইরে            |
-| CHOCH Entry       | CHOCH Swing Point-এর বাইরে    |
-| Liquidity Sweep   | Sweep Wick-এর বাইরে           |
+চওড়া Stop মানে ছোট Position। ঝুঁকিতে থাকা টাকা একই থাকে।
 
 ---
 
-## Position Sizing সূত্র
+## Stop কোথায় যায়
+
+| সেটআপ               | Stop                              |
+| ------------------- | --------------------------------- |
+| Order Block এন্ট্রি | OB এর পুরো রেঞ্জের ওপারে, বাফারসহ |
+| Fibonacci পুলব্যাক  | ৭৮.৬% বা Swing পয়েন্টের ওপারে    |
+| S/R Bounce          | Zone এর ওপারে, বাফারসহ            |
+| Trendline Bounce    | Trendline আর শেষ Swing এর ওপারে   |
+| CHOCH এন্ট্রি       | CHOCH তৈরি করা Swing এর ওপারে     |
+| Liquidity Sweep     | Sweep এর Wick এর ওপারে            |
+
+<Callout type="info" title="স্পষ্ট করা: OB Stop">
+  মূল লেসনে OB Stop "OB এর ওপারে (Body)" রাখতে বলা হয়েছিল। Wick ও Zone এর অংশ আর রিটেস্ট প্রায়ই সেখানে পৌঁছায়, তাই এই
+  সাইট পুরো রেঞ্জ ব্যবহার করে। দুটোর তুলনামূলক চার্ট দেখুন [Risk Models](/bn/smc/risk-models) এ।
+</Callout>
+
+---
+
+## Position সাইজ
 
 ```
-Lot Size = (Account × Risk%) ÷ (Stop Loss Pip × Pip Value)
-
-উদাহরণ:
-- Account: $10,000
-- Risk: 1% = $100
-- Stop: Structure-based = 35 Pip
-- Pip Value: $10 (Standard Lot)
-- Lot Size: $100 ÷ (35 × $10) = 0.29 Lot
+লট সাইজ = (অ্যাকাউন্ট × রিস্ক %) ÷ (পিপে Stop × প্রতি লটে পিপ ভ্যালু)
 ```
 
----
+অ্যাকাউন্ট $10,000, রিস্ক ১% = $100, Structural Stop ৩৫ পিপ, স্ট্যান্ডার্ড লটে পিপ ভ্যালু $10:
 
-## Price Action-এর জন্য Risk নিয়ম
+$100 ÷ (35 × $10) = 0.286 → **0.28 লট**
 
-1. **প্রতি Trade-এ সর্বোচ্চ ১-২%** — আলোচনাযোগ্য নয়
-2. **Structure-এর বাইরে Stop** — Structure-তে নয় (Buffer দিন)
-3. **চওড়া Stop = ছোট Position** (Stop না দেওয়া নয়)
-4. **সর্বোচ্চ ৩ Correlated Position** — EUR/USD + GBP/USD = Correlated
-5. **দৈনিক Loss Limit: 3%** — দিনের জন্য Trading বন্ধ
-6. **সাপ্তাহিক Loss Limit: 5%** — পরবর্তী সপ্তাহে Size কমান
-7. **Max Drawdown: 10%** — সম্পূর্ণ Strategy Review
+<Callout type="info" title="সংশোধিত: রাউন্ডিং">
+  মূল লেসনে 0.286 কে উপরের দিকে 0.29 লট করা হয়েছিল। সবসময় **নিচের দিকে** রাউন্ড করুন: উপরে রাউন্ড করলে পরিকল্পনার বেশি
+  রিস্ক হয়।
+</Callout>
 
 ---
 
-## Structural vs. Fixed Stop
+## একই ট্রেড, আলাদা রিস্ক
 
-| পদ্ধতি     | বর্ণনা                 | সুবিধা                    | অসুবিধা                     |
-| ---------- | ---------------------- | ------------------------- | --------------------------- |
-| Structural | Swing/OB/Zone-এর বাইরে | যৌক্তিক, কম Random SL Hit | কখনো চওড়া                  |
-| Fixed Pip  | সবসময় X Pip           | সহজ, ধারাবাহিক Size       | Structure-এর ভিতরে হতে পারে |
-| ATR-based  | 1.5-2× ATR             | Volatility-adjusted       | Structure সম্মান করে না     |
+![একই ৪০টি সিন্থেটিক ট্রেড (১:২ এ ৪০% জয়, পরপর ৭টি লসসহ) ১%, ২% আর ৫% রিস্কে: সর্বোচ্চ Drawdown ৭%, ১৩% আর ৩০%](/images/price-action/risk-management/risk-per-trade-equity-dark.png)
 
-**সেরা পদ্ধতি: Structural Stop, তারপর Risk%-এ মানানসই Position Size গণনা।**
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/risk-management-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ট্রেডগুলো একটি **সিন্থেটিক ক্রম**, আসল ফলাফল নয়। রিস্ক বর্তমান ব্যালান্সের শতাংশ, তাই লাভ আর লস চক্রবৃদ্ধি হয়।
+</Callout>
+
+ক্রম: ৪০টি ট্রেড, **১৬টি জয় (৪০%) +2R এ**, ২৪টি লস −1R এ, যার মধ্যে **পরপর ৭টি লস**।
+
+| প্রতি ট্রেডে রিস্ক | সর্বোচ্চ Drawdown | শেষ ব্যালান্স (১০,০০০ থেকে) |
+| ------------------ | ----------------- | --------------------------- |
+| **১%**             | **৭%**            | 10,786                      |
+| **২%**             | **১৩%**           | 11,533                      |
+| **৫%**             | **৩০%**           | 13,417                      |
+
+৫% এ এই ক্রম সবচেয়ে উপরে শেষ হয়, কিন্তু শুধু ৩০% Drawdown এর পরে। আরেকটু লম্বা ধারা (বাস্তবে ১০টি লস হয়) ৫% এ প্রায় ৪০% নিয়ে যেত, আর ১% এ মাত্র প্রায় ১০%। যে ট্রেডার Drawdown সহ্য করতে পারেন না, তিনি শেষটা দেখেন না।
+
+---
+
+## Drawdown পুনরুদ্ধার
+
+| Drawdown | ফিরতে কত লাভ দরকার |
+| -------- | ------------------ |
+| ১০%      | ১১%                |
+| ২০%      | ২৫%                |
+| ৩০%      | ৪৩%                |
+| ৫০%      | ১০০%               |
+
+লস সমান লাভের চেয়ে বেশি ক্ষতি করে। প্রতি ট্রেডে কম রিস্ক Drawdown কে পুনরুদ্ধারযোগ্য সীমায় রাখে।
+
+---
+
+## রিস্কের নিয়ম
+
+1. শেখার সময় **প্রতি ট্রেডে ০.৫–১%**; **সর্বোচ্চ ২%**।
+2. **Structure এর ওপারে Stop**, বাফারসহ, কখনও ঠিক তার ওপর নয়।
+3. **চওড়া Stop = ছোট Position**, কখনও "Stop নেই" নয়।
+4. **Correlated ট্রেড একসাথে গণ্য:** EUR/USD আর GBP/USD Long প্রায় একটা বড় ট্রেড; মোট রিস্ক সীমিত করুন (যেমন ২%)।
+5. **দৈনিক লস সীমা ৩%:** দিনের জন্য থামুন।
+6. **সাপ্তাহিক লস সীমা ৫%:** পরের সপ্তাহে সাইজ কমান।
+7. **Drawdown ১০%:** থেমে স্ট্র্যাটেজি রিভিউ করুন।
+
+---
+
+## Structural বনাম Fixed বনাম ATR Stop
+
+| পদ্ধতি          | কীভাবে                 | পক্ষে                        | বিপক্ষে                       |
+| --------------- | ---------------------- | ---------------------------- | ----------------------------- |
+| **Structural**  | Swing/OB/Zone এর ওপারে | যৌক্তিক; কম এলোমেলো Stop হিট | কখনও চওড়া                    |
+| **Fixed পিপ**   | সবসময় X পিপ           | সহজ                          | Structure এর ভিতরে পড়তে পারে |
+| **ATR ভিত্তিক** | ATR এর ১.৫–২ গুণ       | Volatility অনুযায়ী মানায়   | Structure মানে না             |
+
+দুটোর সেরা: Structure এ Stop রাখুন, তারপর দেখুন ATR এর তুলনায় এটা অযৌক্তিকভাবে ছোট বা বড় কি না, তারপর মানানসই Position সাইজ করুন।
+
+### উদাহরণ (চার্ট ছাড়া) — Gold
+
+Gold এ **2,355** এ Long, Swing Low এর নিচে **2,338** এ Structural Stop ($17)। অ্যাকাউন্ট $8,000, রিস্ক ১% = $80। স্ট্যান্ডার্ড লটে $1 Move প্রায় $100: $80 ÷ (17 × $100) = 0.047 → **0.04 লট**। টার্গেট **2,400**: রিওয়ার্ড $45, **R:R ১ : ২.৬** (পরিকল্পিত)।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                               | সমাধান                               |
+| --------------------------------- | ------------------------------------ |
+| আগে লট সাইজ বাছা                  | আগে Stop, তারপর সাইজ                 |
+| সাইজ উপরের দিকে রাউন্ড করা        | নিচের দিকে রাউন্ড করুন               |
+| লসের পর "ফেরত পেতে" রিস্ক বাড়ানো | রিস্ক স্থির রাখুন; সীমা হিট হলে কমান |
+| Correlation উপেক্ষা               | Correlated Position একসাথে গুনুন     |
+| দৈনিক সীমা নেই                    | সেশনের আগে ঠিক করুন                  |
+
+---
+
+## অনুশীলন
+
+1. সূত্র দিয়ে আপনার শেষ ২০টি ট্রেডের Position সাইজ আবার হিসাব করুন।
+2. আপনার সবচেয়ে লম্বা লসের ধারা খুঁজে ১%, ২% আর ৫% এ তা কত Drawdown ঘটাত হিসাব করুন।
+3. আপনার দৈনিক, সাপ্তাহিক আর Drawdown সীমা লিখে রাখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| নিয়ম     | বিবরণ                                                         |
+| --------- | ------------------------------------------------------------- |
+| **Stop**  | Structure এর ওপারে, বাফারসহ                                   |
+| **সাইজ**  | (অ্যাকাউন্ট × রিস্ক %) ÷ (Stop পিপ × পিপ ভ্যালু), নিচে রাউন্ড |
+| **রিস্ক** | প্রতি ট্রেডে ০.৫–১%; সর্বোচ্চ ২%                              |
+| **সীমা**  | দৈনিক −৩%, সাপ্তাহিক −৫%, −১০% এ রিভিউ                        |
+| **কেন**   | রিস্কের সাথে Drawdown দ্রুত বাড়ে; পুনরুদ্ধার লসের চেয়ে কঠিন |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Position Sizing](/bn/academy/position-sizing) — বিস্তারিত গণনা
-- [Trade Management](/bn/price-action/trade-management) — Active Management
-- [Entry Models](/bn/price-action/entry-models) — Model অনুযায়ী Stop Placement
-- [Support ও Resistance](/bn/price-action/support-resistance) — Stop-এর জন্য Level
+- [Risk Models](/bn/smc/risk-models) — চার্টে Structural বনাম টাইট Stop
+- [Trade Management](/bn/price-action/trade-management) — খোলা ট্রেড ম্যানেজ করা
+- [Entry Models](/bn/price-action/entry-models) — প্রতিটি মডেল কোথায় Stop রাখে
+- [Support & Resistance](/bn/price-action/support-resistance) — Stop এর লেভেল
