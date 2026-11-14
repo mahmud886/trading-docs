@@ -1,70 +1,151 @@
 ---
-title: "Advanced SMC Execution Model — সম্পূর্ণ গাইড"
-description: "SMC-তে Advanced Execution আয়ত্ত করুন: Risk Entry, Confirmation Entry, Refined Entry সর্বোত্তম R:R-সহ ও কখন কোনটি ব্যবহার করবেন।"
+title: "Advanced SMC Execution Models — সম্পূর্ণ গাইড"
+description: "একই Point of Interest এ তিনটি SMC Execution Model তুলনা করুন: Risk Entry, Confirmation Entry আর Refined Entry, প্রতিটি কোথায় Stop রাখে, R:R এ কী প্রভাব ফেলে, কখন কোনটা ব্যবহার করবেন, আর মোট রিস্ক না বাড়িয়ে কীভাবে এন্ট্রি Stack করবেন — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: advanced
 order: 17
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## SMC Execution Model
+## Execution Model কী?
 
-Execution Model নির্ধারণ করে POI চিহ্নিত করার পর কীভাবে Trade-এ Enter করবেন। আপনার নির্বাচিত Model R:R, Win Rate ও Move ক্যাপচার প্রভাবিত করে।
+Point of Interest (POI) খুঁজে পাওয়ার পর **Execution Model** ঠিক করে আপনি ঠিক কীভাবে ঢুকবেন: এন্ট্রি কোথায়, Stop কোথায়, আর আগে কী ঘটতে হবে। একই POI আর একই টার্গেট নিয়েও দুজন ট্রেডার মডেলের ওপর নির্ভর করে খুব আলাদা R:R পেতে পারেন।
 
----
-
-## তিনটি Model
-
-### ১. Risk Entry (POI-তে Limit Order)
-
-```
-- সরাসরি OB/FVG-তে Limit Order
-- Confirmation প্রয়োজন নেই
-- সেরা R:R (1:4 থেকে 1:8)
-- Win Rate: ~৪০-৫০%
-- ব্যবহার: A+ Setup, সর্বোচ্চ Confluence
-- ঝুঁকি: Reversal-এর আগে Sweep হতে পারে
-```
-
-### ২. Confirmation Entry (LTF CHOCH)
-
-```
-- POI-তে LTF Structural Shift অপেক্ষা
-- CHOCH Confirmation-এর পর Enter
-- মধ্যম R:R (1:2 থেকে 1:4)
-- Win Rate: ~৫৫-৬৫%
-- ব্যবহার: Standard Setup, মধ্যম Confidence
-- ঝুঁকি: দ্রুত Move মিস, চওড়া Stop
-```
-
-### ৩. Refined Entry (CHOCH-এর মধ্যে FVG)
-
-```
-- LTF CHOCH অপেক্ষা, তারপর CHOCH-এর তৈরি
-  FVG/OB-তে Enter
-- উভয়ের সেরা
-- R:R: 1:3 থেকে 1:6
-- Win Rate: ~৫০-৬০%
-- ব্যবহার: Precision + Confirmation চান
-- ধৈর্য ও দক্ষতা প্রয়োজন
-```
+এই লেসন [Entry Confirmation](/bn/smc/entry-confirmation) এর ওপর তৈরি, যেখানে নির্দিষ্ট Stop রেখে Confirmation এর স্তর তুলনা করা হয়েছিল। এখানে **Stop মডেলের সাথে সরে**, আর সেটাই Refined Entry শেখার মূল কারণ।
 
 ---
 
-## কখন কোনটি ব্যবহার
+## একটি Short এ তিনটি মডেল
 
-| পরিস্থিতি                 | Model                | কারণ                       |
-| ------------------------- | -------------------- | -------------------------- |
-| Perfect A+ Confluence     | Risk Entry           | সর্বোচ্চ R:R, Zone বিশ্বাস |
-| ভালো Setup, নিরাপত্তা চান | Confirmation         | বেশি Win Rate              |
-| Precision চান             | Refined              | সেরা ভারসাম্য              |
-| Counter-trend             | Confirmation/Refined | অতিরিক্ত প্রমাণ প্রয়োজন   |
-| Scalping                  | Risk/Confirmation    | Speed গুরুত্বপূর্ণ         |
+![1H Bearish OB তে EUR/USD 5m Short: Risk Entry 1.0950 (1:5.4), Confirmation 1.0928 (1:1.4), Refined 1.0938, Stop 1.0954 (1:3.6)](/images/smc/advanced-execution-models/execution-models-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/execution-models-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। এগুলো আসল প্রাইস নয়। R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড,
+  ফলাফল নয়।
+</Callout>
+
+POI হলো **1.0950 – 1.0960** এর 1H Bearish OB; তিনটির টার্গেটই **1.0880**।
+
+| মডেল               | এন্ট্রি                                  | Stop                              | রিস্ক  | রিওয়ার্ড | **R:R**     |
+| ------------------ | ---------------------------------------- | --------------------------------- | ------ | --------- | ----------- |
+| **১ Risk**         | OB তে Sell Limit, 1.0950                 | 1.0963, OB এর উপরে                | ১৩ পিপ | ৭০ পিপ    | **১ : ৫.৪** |
+| **২ Confirmation** | CHOCH ক্যান্ডেলের Close এ Sell, 1.0928   | 1.0963, OB এর উপরে                | ৩৫ পিপ | ৪৮ পিপ    | **১ : ১.৪** |
+| **৩ Refined**      | CHOCH এর রেখে যাওয়া FVG তে Sell, 1.0938 | 1.0954, 1.0951 Lower High এর উপরে | ১৬ পিপ | ৫৮ পিপ    | **১ : ৩.৬** |
+
+Refined Entry Confirmation **আর** ভালো R:R দুটোই পায়, কারণ এর Stop কে আর পুরো OB এর উপরে থাকতে হয় না। CHOCH তৈরি হওয়ার পর, যে Lower High সেটা তৈরি করেছে সেটাই নতুন Invalidation পয়েন্ট।
+
+---
+
+## তিনটি মডেল
+
+### ১. Risk Entry
+
+- **কীভাবে:** OB বা FVG এর প্রান্তে Limit Order; Stop Zone এর ওপারে।
+- **পক্ষে:** সেরা প্রাইস আর R:R; দ্রুত Move মিস হয় না।
+- **বিপক্ষে:** Zone হোল্ড করার কোনো প্রমাণ নেই, আর ব্যর্থ প্রতিটি সেটআপে Fill হয়।
+- **কখন:** Higher Timeframe কনটেক্সট খুব শক্তিশালী (A+ সেটআপ), আর Zone টা Fresh।
+
+### ২. Confirmation Entry
+
+- **কীভাবে:** POI তে Lower Timeframe CHOCH এর অপেক্ষা, তারপর CHOCH Close এ Market এ এন্ট্রি; Stop POI এর ওপারে।
+- **পক্ষে:** ঢোকার আগেই Structure বদলেছে।
+- **বিপক্ষে:** সবচেয়ে খারাপ প্রাইস, আর Stop POI এর ওপারে থাকলে চওড়া। R:R প্রায়ই দুর্বল।
+- **কখন:** রিট্রেসের অপেক্ষা করা সম্ভব না, বা Move রিট্রেস ছাড়াই চলে যেতে পারে।
+
+### ৩. Refined Entry
+
+- **কীভাবে:** CHOCH এর অপেক্ষা, তারপর CHOCH এর তৈরি FVG বা OB তে Limit Order; Stop CHOCH তৈরি করা Swing এর ওপারে।
+- **পক্ষে:** Confirmation সাথে টাইট, যৌক্তিক Stop।
+- **বিপক্ষে:** কখনও Price FVG তে ফেরে না, তাই ট্রেড মিস হয়।
+- **কখন:** বেশিরভাগ সেটআপের জন্য ডিফল্ট।
+
+<Callout type="warning" title="সরানো হয়েছে: Win Rate আর R:R রেঞ্জ">
+  মূল লেসনে প্রতিটি মডেলের Win Rate (প্রায় ৪০–৫০%, ৫৫–৬৫%, ৫০–৬০%) আর R:R রেঞ্জ (১:৪–১:৮, ১:২–১:৪, ১:৩–১:৬) দেওয়া ছিল।
+  এই সংখ্যাগুলোর কোনো উৎস নেই, আর এগুলো ট্রেডার, মার্কেট আর নিয়মের ওপর অনেকটা নির্ভর করে। জার্নালে মডেল অনুযায়ী নিজের
+  সংখ্যা ট্র্যাক করুন।
+</Callout>
+
+---
+
+## কখন কোনটা
+
+| পরিস্থিতি                | মডেল                  | কেন                                   |
+| ------------------------ | --------------------- | ------------------------------------- |
+| A+ সেটআপ, Fresh HTF Zone | Risk (ছোট) বা Refined | কনটেক্সটই ট্রেড বহন করে               |
+| সাধারণ সেটআপ             | Refined               | যুক্তিসঙ্গত R:R এ Confirmation        |
+| Counter-Trend            | Refined               | Structure ঘুরেছে তার প্রমাণ দরকার     |
+| নিউজের দ্রুত Move        | Confirmation          | রিট্রেস হয়তো আসবেই না                |
+| শেখার সময়               | Refined               | Structure এর অপেক্ষার অভ্যাস তৈরি করে |
+
+---
+
+## এন্ট্রি Stack করা
+
+**মোট রিস্ক না বাড়িয়ে** একটি ট্রেডকে মডেল ধরে ভাগ করা যায়: POI তে ছোট Risk Entry, আর বাকিটা Refined Entry তে।
+
+চার্ট, $10,000 অ্যাকাউন্ট আর মোট ১% রিস্ক ($100) ধরে:
+
+| অংশ            | রিস্ক       | এন্ট্রি | Stop   | সাইজ                       |
+| -------------- | ----------- | ------- | ------ | -------------------------- |
+| ১ — Risk Entry | ০.২৫% ($25) | 1.0950  | 1.0963 | $25 ÷ (13 × $10) = 0.19 লট |
+| ২ — Refined    | ০.৭৫% ($75) | 1.0938  | 1.0954 | $75 ÷ (16 × $10) = 0.46 লট |
+
+গড় এন্ট্রি প্রায় **1.0941**, এখনও Move এর Premium অর্ধেকে। CHOCH তৈরির আগেই Zone ব্যর্থ হলে শুধু অংশ ১ হারায়: ১% এর বদলে ০.২৫%।
+
+<Callout type="info" title="সংশোধিত: Premium নাকি Discount">
+  মূল লেসনে বলা হয়েছিল Stack করলে প্রতিটি ট্রেডে "গড় এন্ট্রি Premium Zone এ" হয়। এটা **Short** এর জন্য ঠিক। Long এর
+  জন্য লক্ষ্য হলো **Discount** এ গড় এন্ট্রি।
+</Callout>
+
+### দ্বিতীয় উদাহরণ (চার্ট ছাড়া) — Gold Long, Refined Entry
+
+Gold **2,380 – 2,388** এর 4H Bullish OB ছোঁয়। 5m এ **2,394** Lower High এর উপরে CHOCH একটি FVG রেখে যায় **2,389 – 2,392** এ। যে Swing Low CHOCH তৈরি করেছে সেটা **2,384**। **2,390** এ Buy, Stop **2,382**, টার্গেট **2,420**: রিস্ক $8, রিওয়ার্ড $30, **R:R ১ : ৩.৮** (পরিকল্পিত)। CHOCH Close এ (2,396) Confirmation Entry, OB এর নিচে Stop (2,377) হলে R:R হতো ১ : ১.৩।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                   | সমাধান                                   |
+| ------------------------------------- | ---------------------------------------- |
+| ট্রেডের মাঝে মডেল বদলানো              | Price POI তে পৌঁছানোর আগেই মডেল ঠিক করুন |
+| Confirmation Entry তে ডিফল্ট POI Stop | CHOCH Swing এ Refined Stop বিবেচনা করুন  |
+| FVG রিট্রেস না এলে পেছনে দৌড়ানো      | রিট্রেস নেই তো Refined ট্রেড নেই         |
+| Stack করে প্রতিটি অংশে রিস্ক বাড়ানো  | পরিকল্পিত রিস্ক ভাগ করুন; যোগ করবেন না   |
+| Refined Stop কে আবার POI তে সরানো     | CHOCH Swing ভাঙলে ট্রেডের কারণই চলে গেছে |
+
+---
+
+## অনুশীলন
+
+1. অতীতের ২০টি POI ছোঁয়া নিন।
+2. প্রতিটির জন্য Risk, Confirmation আর Refined এন্ট্রি, তাদের Stop, আর একই টার্গেটে R:R লিখুন।
+3. কোনগুলো Refined Stop হিট করত কিন্তু POI Stop নয়, লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| মডেল         | এন্ট্রি                  | Stop                 | বিনিময়                          |
+| ------------ | ------------------------ | -------------------- | -------------------------------- |
+| Risk         | POI তে Limit             | POI এর ওপারে         | সেরা R:R, প্রমাণ নেই             |
+| Confirmation | CHOCH এ Market           | POI এর ওপারে         | প্রমাণ আছে, R:R দুর্বল           |
+| Refined      | CHOCH এর FVG/OB তে Limit | CHOCH Swing এর ওপারে | প্রমাণ আর ভালো R:R; মিস হতে পারে |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Entry Confirmation](/bn/smc/entry-confirmation) — Confirmation Technique
-- [Risk Models](/bn/smc/risk-models) — Model অনুযায়ী Sizing
-- [Order Blocks](/bn/smc/order-blocks) — Entry Zone
-- [Fair Value Gap](/bn/smc/fair-value-gap) — Refined Entry
+- [Entry Confirmation](/bn/smc/entry-confirmation) — নির্দিষ্ট Stop এ Confirmation এর স্তর
+- [Risk Models](/bn/smc/risk-models) — প্রতিটি অংশের সাইজ
+- [Order Blocks](/bn/smc/order-blocks) — POI
+- [Fair Value Gap](/bn/smc/fair-value-gap) — Refined Entry Zone
