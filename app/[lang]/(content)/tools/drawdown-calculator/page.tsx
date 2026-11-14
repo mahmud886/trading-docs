@@ -15,7 +15,7 @@ export default function DrawdownCalculatorPage() {
   const [simulations, setSimulations] = useState(1000);
 
   const runSimulation = () => {
-    let maxDrawdowns: number[] = [];
+    const maxDrawdowns: number[] = [];
 
     for (let sim = 0; sim < simulations; sim++) {
       let equity = 100;

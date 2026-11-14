@@ -15,7 +15,7 @@ export function SidebarDrawer({ children }: SidebarDrawerProps) {
   // Close sidebar on route change (mobile navigation)
   useEffect(() => {
     setIsOpen(false); // eslint-disable-line react-hooks/set-state-in-effect -- intentional: close drawer on navigation
-  }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [pathname]);  
 
   // Close on Escape key
   useEffect(() => {

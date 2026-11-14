@@ -77,8 +77,8 @@ export default function PortfolioAllocation() {
           <div className="relative w-48 h-48">
             <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
               {positions.map((pos, idx) => {
-                let startAngle = positions.slice(0, idx).reduce((sum, p) => sum + p.percentage * 3.6, 0);
-                let endAngle = startAngle + pos.percentage * 3.6;
+                const startAngle = positions.slice(0, idx).reduce((sum, p) => sum + p.percentage * 3.6, 0);
+                const endAngle = startAngle + pos.percentage * 3.6;
 
                 const startRad = (startAngle * Math.PI) / 180;
                 const endRad = (endAngle * Math.PI) / 180;
@@ -226,7 +226,7 @@ export default function PortfolioAllocation() {
         <div className="mt-8 bg-amber-500/10 border border-amber-500/20 rounded-xl p-6">
           <h3 className="font-semibold text-amber-200 mb-2">💡 Portfolio Tips</h3>
           <ul className="text-sm text-foreground space-y-1 list-disc list-inside">
-            <li>Don't allocate more than 100% of your capital</li>
+            <li>Don&apos;t allocate more than 100% of your capital</li>
             <li>Diversify across different currency pairs/assets</li>
             <li>Higher volatility positions should have smaller allocations</li>
             <li>Rebalance periodically when one position grows too large</li>

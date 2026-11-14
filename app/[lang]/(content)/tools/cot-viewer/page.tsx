@@ -184,7 +184,7 @@ export default function CotViewerPage() {
           </li>
           <li>
             • <span className="text-foreground font-medium">Extreme positioning</span> = Potential reversal. When
-            everyone is on one side, who's left to push further?
+            everyone is on one side, who&apos;s left to push further?
           </li>
           <li>
             • <span className="text-foreground font-medium">Weekly change</span> = Most important signal. Are

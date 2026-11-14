@@ -143,7 +143,7 @@ export default function PipValueCalculator() {
           <h3 className="font-semibold text-amber-200 mb-2">💡 Understanding Pips</h3>
           <ul className="text-sm text-foreground space-y-1 list-disc list-inside">
             <li>A pip is the smallest price unit (usually 0.0001 for majors, 0.01 for JPY pairs)</li>
-            <li>Point = 1/10 of a pip (also called "pipette" in some brokers)</li>
+            <li>Point = 1/10 of a pip (also called &quot;pipette&quot; in some brokers)</li>
             <li>1 standard lot = 100,000 units of base currency</li>
             <li>Pip value changes for different currency pairs and lot sizes</li>
           </ul>

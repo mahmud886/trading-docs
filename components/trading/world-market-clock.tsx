@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useNow } from "@/hooks/use-now";
 
 interface ClockData {
   city: string;
@@ -19,13 +19,7 @@ const clocks: ClockData[] = [
 ];
 
 export function WorldMarketClock() {
-  const [time, setTime] = useState<Date | null>(null);
-
-  useEffect(() => {
-    setTime(new Date());
-    const interval = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(interval);
-  }, []);
+  const time = useNow(1000);
 
   if (!time) {
     return (

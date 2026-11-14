@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
+import { useMounted } from "@/hooks/use-mounted";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -45,12 +46,10 @@ function getBarColor(value: number): string {
 export default function CurrencyStrengthPage() {
   const pathname = usePathname();
   const lang = pathname.split("/")[1] || "en";
-  const [strength, setStrength] = useState<Record<string, number>>({});
+  const mounted = useMounted();
   const [timeframe, setTimeframe] = useState("4H");
-
-  useEffect(() => {
-    setStrength(generateStrength());
-  }, [timeframe]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- regenerate when the timeframe changes
+  const strength = useMemo(() => (mounted ? generateStrength() : {}), [mounted, timeframe]);
 
   const sorted = Object.entries(strength).sort(([, a], [, b]) => b - a);
 

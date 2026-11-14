@@ -23,7 +23,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "generate:icons": "node scripts/generate-pwa-icons.mjs",
-    "build": "prettier --write . && npm run generate:icons && next build",
+    "build": "npm run generate:icons && next build",
     "start": "next start",
     "lint": "eslint"
   },

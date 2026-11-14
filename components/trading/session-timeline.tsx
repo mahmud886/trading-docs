@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useNow } from "@/hooks/use-now";
 
 interface SessionInfo {
   name: string;
@@ -36,13 +36,7 @@ function isSessionActive(session: SessionInfo, currentHourBD: number): boolean {
 }
 
 export function SessionTimeline() {
-  const [now, setNow] = useState<Date | null>(null);
-
-  useEffect(() => {
-    setNow(new Date());
-    const interval = setInterval(() => setNow(new Date()), 60000);
-    return () => clearInterval(interval);
-  }, []);
+  const now = useNow(60000);
 
   if (!now) {
     return (
