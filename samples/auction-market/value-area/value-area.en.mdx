@@ -1,0 +1,117 @@
+---
+title: "Value Area Migration — Tracking Where Value Moves"
+description: "How to compare each day's value area with the previous day's: overlapping, higher with no overlap, lower with no overlap. What migration describes (where trading was accepted), how to use previous-day POC, VAH and VAL as references, and its limits — with a five-day chart and an animated walkthrough."
+level: intermediate
+order: 4
+lastUpdated: "2026-11-14"
+---
+
+## What Is Value-Area Migration?
+
+Each day's [Market Profile](/en/auction-market/market-profile) has a **value area** (the range holding about 70% of the day's TPOs) and a **point of control (POC)**. **Migration** is how those move from day to day: the new value area can overlap yesterday's, sit above it, or sit below it.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original said migration reveals "institutional accumulation, distribution and directional intent" and tracked
+  "institutional flow". A value area shows where **time** was spent, not who spent it or why. Migration is a
+  description of where trading was accepted; whether that continues is a separate question.
+</Callout>
+
+---
+
+## Five Days of Migration
+
+![A synthetic EUR/USD five-day chart of value areas and points of control: Monday 1.0848–1.0856, Tuesday 1.0852–1.0862 overlapping and higher, Wednesday 1.0864–1.0874 entirely above Tuesday, Thursday 1.0870–1.0878 overlapping Wednesday, Friday 1.0852–1.0860 entirely below Thursday](/images/auction-market/value-area/value-area-migration-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/auction-market/va-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The five days are **synthetic**: each is a 13-period TPO profile, with POC and value area computed from the letters.
+  Real days are noisier.
+</Callout>
+
+| Day | Value area (POC)        | Compared with the day before                     | Reading                         |
+| --- | ----------------------- | ------------------------------------------------ | ------------------------------- |
+| Mon | 1.0848 – 1.0856 (1.0850) | —                                               | Starting point                  |
+| Tue | 1.0852 – 1.0862 (1.0854) | Overlaps, higher                                | Value drifting up               |
+| Wed | 1.0864 – 1.0874 (1.0868) | **Entirely above** Tuesday's (1.0864 > 1.0862)  | Price accepted at higher prices |
+| Thu | 1.0870 – 1.0878 (1.0870) | Overlaps Wednesday's                            | The move pauses                 |
+| Fri | 1.0852 – 1.0860 (1.0854) | **Entirely below** Thursday's (1.0860 < 1.0870) | Price accepted at lower prices  |
+
+---
+
+## The Three Relationships
+
+| Today's value vs yesterday's | Often described as                | Questions to ask                                            |
+| ---------------------------- | --------------------------------- | ----------------------------------------------------------- |
+| **Overlapping**              | Balance continues                 | Is price rotating inside yesterday's range?                 |
+| **Higher, no overlap**       | Value accepted higher             | Does price hold above yesterday's VAH on pullbacks?         |
+| **Lower, no overlap**        | Value accepted lower              | Does price stay below yesterday's VAL on bounces?           |
+
+"Entirely above" is the strict test. When value only partly overlaps, call it overlapping, and read the POC direction (as Tuesday above) for hints.
+
+---
+
+## Using Previous-Day Levels
+
+| Level          | Possible use                                               | Caution                                              |
+| -------------- | ---------------------------------------------------------- | ---------------------------------------------------- |
+| **Previous POC** | A fair-price reference; a pullback target in a trend     | Price often ignores it                               |
+| **Previous VAH** | After value moves higher: a level to watch as support    | A close back inside yesterday's value weakens the idea |
+| **Previous VAL** | After value moves lower: a level to watch as resistance  | A close back above weakens the idea                  |
+| **Day's high/low** | Extremes of the range                                   | They get broken                                      |
+
+### Example (no chart) — after value moves higher
+
+Wednesday's value area is 1.0864 – 1.0874. Thursday opens above it and pulls back to **1.0874** (Wednesday's VAH). Plan: buy a hold at **1.0875**, stop **1.0869** (just below Wednesday's POC area), target **1.0886**: risk 6 pips, reward 11, **1 : 1.8** planned. If price closes back inside Wednesday's value area, treat the idea of "accepted higher" as weakened and exit.
+
+---
+
+## Limits
+
+| Limit                       | Detail                                                                  |
+| --------------------------- | ----------------------------------------------------------------------- |
+| One day is a small sample   | Two or three days of migration say more than one                        |
+| Forex needs a day definition | Fix the session you use, as in [Market Profile](/en/auction-market/market-profile) |
+| Volume vs TPO               | TPO value areas need only price and time; volume-based ones need real volume |
+| News                        | A single release can move value without any "intent"                    |
+
+---
+
+## Common Mistakes
+
+| Mistake                                           | Fix                                                        |
+| ------------------------------------------------- | ---------------------------------------------------------- |
+| Calling every higher POC "accumulation"           | Describe the move; avoid guessing who is behind it         |
+| Using one day's migration as a signal             | Look at several days and the structure around them         |
+| Treating previous VAH/VAL as walls                | They are references; use a stop                            |
+| Changing the day definition between days          | Keep one session definition                                |
+| Ignoring overlapping days                         | Overlap often means balance — don't force a trend trade    |
+
+---
+
+## Practice
+
+1. For ten days, record each day's POC, VAH and VAL and classify the migration: overlapping, higher, or lower.
+2. After a "no overlap" day, note what price did at the previous VAH or VAL the next day.
+3. Count how often the move continued versus returned inside the old value area. Keep the tally.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                              |
+| ---------------- | ------------------------------------------------------------------- |
+| Migration        | How the value area and POC move from day to day                     |
+| Relationships    | Overlapping · higher, no overlap · lower, no overlap                |
+| Meaning          | Where trading was accepted — not who traded or what happens next    |
+| Use              | Previous-day levels as references, with a stop                      |
+
+---
+
+## Related Topics
+
+- [Market Profile](/en/auction-market/market-profile)
+- [Initial Balance](/en/auction-market/initial-balance)
+- [Balanced vs Imbalanced Markets](/en/auction-market/balanced-imbalanced)
+- [Volume Profile](/en/order-flow/volume-profile)
