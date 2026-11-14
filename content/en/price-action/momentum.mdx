@@ -1,132 +1,151 @@
 ---
-title: "Momentum in Price Action — Complete Guide"
-description: "Master momentum reading in Price Action. Learn to assess candle momentum, impulse vs correction, momentum shifts, and how momentum determines trade direction."
+title: "Momentum — Complete Guide"
+description: "Read momentum straight from the candles: body size, body-to-range ratio, close position and overlap, impulse vs correction, how to spot a momentum shift (fading pushes, then larger opposite bodies), momentum-based trading rules, multi-timeframe momentum and planned examples, with a chart and an animated walkthrough."
 level: intermediate
 order: 18
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## What is Momentum?
+## What Is Momentum?
 
-Momentum is the **speed and strength** of price movement in a given direction. In Price Action, we read momentum directly from candle characteristics — size, close position, wick ratio, and sequence — without needing indicators like RSI or MACD.
+**Momentum** is how fast and how hard price is moving in one direction. You don't need an oscillator to see it: the candles show it directly.
 
-<Callout type="info" title="Momentum is King">
-  The side with more momentum wins. If buyers are creating large bullish candles and sellers are creating small bearish
-  candles, buyers have momentum. ALWAYS trade in the direction of momentum.
+---
+
+## Reading Momentum From Candles
+
+| Sign               | Strong momentum                                    | Weak momentum                  |
+| ------------------ | -------------------------------------------------- | ------------------------------ |
+| **Body size**      | Large compared with recent candles                 | Small                          |
+| **Body-to-range**  | Body is more than ~70% of the range                | Wicks are larger than the body |
+| **Close position** | Near the high (up) or low (down)                   | Mid-candle                     |
+| **Overlap**        | Each candle opens near the last close and moves on | Candles overlap heavily        |
+| **Follow-through** | Several in a row                                   | One candle, then nothing       |
+
+---
+
+## Momentum in the Bodies
+
+![GBP/USD 1H with a body histogram below: three bullish impulses whose average body shrinks from 22 to 15 to 7 pips, then a bearish impulse averaging 21 pips; sell 1.2672, stop 1.2690, target 1.2630](/images/price-action/momentum/momentum-bodies-shift-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/momentum-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result. The lower panel is simply each candle's close minus its open.
 </Callout>
 
----
+| Leg           | Direction | Average body | Reading                                 |
+| ------------- | --------- | ------------ | --------------------------------------- |
+| **Impulse 1** | Up        | **22 pips**  | Strong                                  |
+| **Impulse 2** | Up        | **15 pips**  | Still up, weaker                        |
+| **Impulse 3** | Up        | **7 pips**   | New high on little effort: fading       |
+| **Shift**     | Down      | **21 pips**  | Sellers now push harder than buyers did |
 
-## Reading Momentum from Candles
+Price made a **higher high** in impulse 3, but with the smallest bodies of the move. Then the first bearish leg was three times stronger. That's a momentum shift.
 
-### Strong Momentum Indicators:
-
-| Feature            | Bullish Momentum      | Bearish Momentum    |
-| ------------------ | --------------------- | ------------------- |
-| Candle body        | Large green body      | Large red body      |
-| Close position     | Close near high       | Close near low      |
-| Upper wick         | Small or none         | Large (rejection)   |
-| Lower wick         | Large (rejection)     | Small or none       |
-| Consecutive        | Multiple green in row | Multiple red in row |
-| Body-to-wick ratio | Body > 70% of range   | Body > 70% of range |
-
-### Weak Momentum Indicators:
-
-- Small candle bodies (indecision)
-- Long wicks on both sides (battle)
-- Alternating colors (no direction)
-- Doji or spinning top candles
-- Decreasing candle sizes
+| Level   | Price       | Note                                   |
+| ------- | ----------- | -------------------------------------- |
+| Entry   | 1.2672      | Sell the weak pullback after the shift |
+| Stop    | 1.2690      | Above the pullback                     |
+| Target  | 1.2630      | Back toward the start of impulse 1     |
+| **R:R** | **1 : 2.3** | Risk 18 pips, reward 42 pips           |
 
 ---
 
-## Impulse vs. Correction
+## Impulse vs Correction
 
-### Impulse (Strong Momentum):
+| Impulse                 | Correction                    |
+| ----------------------- | ----------------------------- |
+| Moves with the trend    | Moves against it              |
+| Large bodies, few wicks | Small, overlapping candles    |
+| Fast                    | Slow, choppy                  |
+| Breaks structure        | Stays inside the previous leg |
 
-- Large candles with full bodies
-- Moves quickly in one direction
-- Creates structure breaks (BOS)
-- Creates Fair Value Gaps (FVG)
-- Usually 1-3 candles cover large distance
-
-### Correction (Weak Momentum):
-
-- Smaller candles, often mixed colors
-- Moves slowly, sideways or slightly against trend
-- Does NOT create structure breaks
-- Often fills previous FVGs
-- Takes many candles to cover small distance
-
-### The Key Insight:
-
-```
-IF impulse is bullish and correction is bearish:
-→ Bullish trend is healthy → LOOK FOR LONG entries
-
-IF impulse is bearish and correction is bullish:
-→ Bearish trend is healthy → LOOK FOR SHORT entries
-
-IF impulse and correction are EQUAL in strength:
-→ Trend is weakening → PREPARE for reversal
-```
+In a healthy trend, impulses are clearly stronger than corrections. When corrections start looking like impulses, the trend is in trouble.
 
 ---
 
-## Momentum Shifts
+## Spotting a Momentum Shift
 
-### How to Identify a Momentum Shift:
+1. **Pushes fade:** each impulse in the trend direction has smaller bodies.
+2. **New extremes on little effort:** a new high (or low) made with small candles.
+3. **The opposite side gets bigger:** the first counter-move has larger bodies than the last impulse.
+4. **Structure confirms:** a close beyond the last higher low (or lower high) — see [Market Structure](/en/price-action/market-structure).
 
-1. **Impulses getting shorter** — Each push in trend direction covers less ground
-2. **Corrections getting stronger** — Counter-trend moves becoming impulsive
-3. **Equal impulse/correction** — Neither side has advantage
-4. **First impulsive counter-trend candle** — Strong candle against prevailing trend
-5. **CHOCH confirmation** — Structure break against trend
-
-### Trading the Shift:
-
-```
-1. Trend has been bullish (strong green impulses, weak red corrections)
-2. Notice green impulses shrinking, red corrections growing
-3. First large red engulfing candle appears (momentum shift signal)
-4. Structure breaks (CHOCH) — confirms the shift
-5. Now look for SHORT entries on pullbacks
-```
+**Trading the shift:** wait for the first counter-impulse, then enter on the weak pullback that follows. Stop beyond the pullback; target the start of the last strong impulse or the next level.
 
 ---
 
-## Momentum-Based Trading Rules
+## Rules of Thumb
 
-1. **Only trade with momentum** — Never fight the strong side
-2. **Impulse = direction** — Trade in the impulse direction
-3. **Wait for correction** — Don't enter during impulse (late entry)
-4. **Enter at end of correction** — Best R:R
-5. **Exit when momentum shifts** — Don't hold when momentum reverses
+1. Trade in the direction of the **stronger** side.
+2. Don't fade strong momentum; wait for it to fade first.
+3. Don't chase after three or more large candles.
+4. Enter at the **end of corrections** for the best R:R.
+5. Treat a new high on small candles as a warning, not a signal to buy.
 
 ---
 
 ## Momentum and Timeframes
 
-| Timeframe | Momentum Tells You              |
-| --------- | ------------------------------- |
-| Weekly    | Overall bias (bull/bear market) |
-| Daily     | Current directional control     |
-| H4        | Swing-level momentum            |
-| H1        | Intraday momentum               |
-| M15       | Entry-level momentum            |
+| Timeframe | Use                                      |
+| --------- | ---------------------------------------- |
+| Daily     | The dominant momentum                    |
+| 4H / 1H   | Setup momentum: impulses and corrections |
+| 15m       | Entry momentum                           |
 
-### Multi-Timeframe Momentum Rule:
+Trade lower-timeframe momentum only when it agrees with the higher timeframe.
 
-- Trade in direction of H4/D1 momentum (bias)
-- Enter when M15/H1 momentum aligns with bias
-- Avoid when lower TF momentum opposes higher TF
+### Example (no chart) — gold, fading rally
+
+On 4H, gold makes three pushes up to **2,450**, with average bodies of $14, $9 and $4. Then two bearish candles of about $12 each close below the last higher low at **2,436**. Sell the pullback at **2,440**, stop **2,452**, target **2,410**: risk $12, reward $30, **R:R 1 : 2.5** (planned).
+
+---
+
+## Common Mistakes
+
+| Mistake                                | Fix                                          |
+| -------------------------------------- | -------------------------------------------- |
+| Buying a new high made on tiny candles | Compare its bodies with the earlier impulses |
+| Shorting a single large red candle     | Wait for follow-through and structure        |
+| Entering in the middle of an impulse   | Wait for the correction                      |
+| Reading momentum on one timeframe only | Check the higher timeframe first             |
+
+---
+
+## Practice
+
+1. On a 1H chart, mark five trends and measure the average body of each impulse.
+2. Note where the bodies started shrinking and when structure broke.
+3. Compare the size of the first counter-move with the last impulse.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Concept      | Key point                                           |
+| ------------ | --------------------------------------------------- |
+| **Momentum** | Speed and strength, seen in bodies and closes       |
+| **Strong**   | Large bodies, closes at the extreme, little overlap |
+| **Fading**   | Shrinking bodies, new extremes on little effort     |
+| **Shift**    | Counter-move bodies larger than the last impulse    |
+| **Trade**    | Enter on the weak pullback after the shift          |
 
 ---
 
 ## Related Topics
 
-- [Market Structure](/en/price-action/market-structure) — Momentum creates structure
-- [Expansion](/en/price-action/expansion) — Peak momentum = expansion
-- [Compression](/en/price-action/compression) — Low momentum = compression
-- [Reversal Concepts](/en/price-action/reversal-concepts) — Momentum shift = reversal
-- [Trend Analysis](/en/price-action/trend-analysis) — Momentum defines trend health
+- [Expansion](/en/price-action/expansion) — momentum at its strongest
+- [Trend Analysis](/en/price-action/trend-analysis) — exhaustion signs
+- [Candlestick Psychology](/en/price-action/candlestick-psychology) — what bodies and wicks mean
+- [Volume](/en/price-action/volume) — effort behind the move
