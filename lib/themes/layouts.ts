@@ -10,6 +10,8 @@ export const HOME_LAYOUTS: LayoutOption[] = [
   { id: "classic", name: "Classic", description: "Hero, category grid, learning paths and tools." },
   { id: "bento", name: "Bento", description: "Featured lesson and course tiles in a grid." },
   { id: "index", name: "Index", description: "Large type with a numbered list of courses." },
+  { id: "app", name: "App", description: "Sidebar, resume card and course covers." },
+  { id: "immersive", name: "Immersive", description: "Full-width chart hero and a course rail." },
 ];
 
 export const DEFAULT_HOME_LAYOUT = HOME_LAYOUTS[0].id;
