@@ -1,0 +1,112 @@
+---
+title: "Gold, the Dollar and Bonds"
+description: "The usual relationships between gold, the US dollar and Treasury yields — gold against the dollar, gold against real yields, the dollar with real yields — why they are tendencies rather than laws, how they can decouple, and how to use them as context. With a synthetic three-panel chart and an animated walkthrough."
+level: intermediate
+order: 4
+lastUpdated: "2026-11-14"
+---
+
+## Three Linked Markets
+
+| Pair                     | Common tendency                                                                    | Why people expect it                                            |
+| ------------------------ | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| **Gold vs the dollar**   | Move in opposite directions                                                        | Gold is priced in dollars, so a stronger dollar makes it dearer for others |
+| **Gold vs real yields**  | Move in opposite directions                                                        | Gold pays no interest; higher real yields raise the cost of holding it |
+| **Dollar vs real yields** | Move in the same direction                                                        | Higher US real yields attract capital into dollar assets        |
+
+A **real yield** is the nominal yield minus inflation expectations (see [Yield Curve Dynamics](/en/intermarket/yield-curve)).
+
+<Callout type="warning" title="Corrected and toned down">
+  The original called this a "trinity" institutions use for "hedging, rotation and directional signals". These are
+  common tendencies, not rules, and we found no source for the institutional claims. Gold has at times risen alongside
+  higher real yields, for example when central banks and other buyers were accumulating it. Re-measure before relying
+  on it.
+</Callout>
+
+---
+
+## When the Link Holds, and When It Breaks
+
+![Synthetic daily data for gold, the dollar index and the 10-year real yield over 160 days: in the first 99 days the correlation of daily changes is −0.66 for gold and the dollar and −0.68 for gold and the real yield, with the dollar and real yield at +0.55; after day 100 gold decouples (correlations +0.08 and −0.01) while gold rises from 1,800 to 2,146](/images/intermarket/gold-dollar-bonds/gold-dollar-bonds-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/intermarket/gdb-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The series are **synthetic**, built so that the usual relationships hold for 100 days and then break. Gold prices
+  here are not real quotes.
+</Callout>
+
+| Correlation of daily changes | Days 1 – 99 | Days 101 – 159 | Reading                                      |
+| ---------------------------- | ----------- | -------------- | -------------------------------------------- |
+| Gold vs DXY                  | −0.66       | +0.08          | Link present, then gone                      |
+| Gold vs real yield           | −0.68       | −0.01          | Link present, then gone                      |
+| DXY vs real yield            | +0.55       | +0.54          | Unchanged                                    |
+
+In the second period gold rises from about 1,800 (day 100) to 2,146 while the real yield ends at 1.78% against 1.65% at day 100: **higher real yields did not stop gold**, because something else was driving it. The lesson is about the method: a relationship you rely on needs to be re-checked.
+
+---
+
+## Using It as Context
+
+| Situation                                          | Reasonable reading                                                    |
+| -------------------------------------------------- | --------------------------------------------------------------------- |
+| Dollar and real yields rise, gold falls            | The usual pattern is working: the gold downtrend has support          |
+| Dollar and real yields rise, gold **holds or rises** | Another driver is active (safe-haven demand, central-bank buying); the usual link is weak |
+| Real yields fall, dollar weakens, gold rises       | Everything agrees: confidence in a gold long is higher, not certain   |
+| Signals disagree                                   | Smaller size, or wait                                                 |
+
+### Example (no chart) — gold long with agreeing context
+
+Real yields and the dollar have both been falling for two weeks and gold breaks above **2,040**. Plan: buy a retest at **2,042**, stop **2,018**, target **2,090**: risk 24, reward 48, **1 : 2.0** planned. If the dollar and real yields turn up together while gold closes back below **2,030**, the supporting context has gone and the plan is off.
+
+---
+
+## Limits
+
+| Limit                                            | Detail                                                                |
+| ------------------------------------------------ | --------------------------------------------------------------------- |
+| Other drivers                                    | Safe-haven demand, central-bank buying, geopolitics, positioning      |
+| Windows matter                                   | A 20-day and a 250-day correlation can disagree                       |
+| Real yields are estimated                        | Breakeven inflation moves with its own drivers                        |
+| Event days                                       | Inflation data and central-bank decisions move all three at once      |
+
+---
+
+## Common Mistakes
+
+| Mistake                                          | Fix                                                        |
+| ------------------------------------------------ | ---------------------------------------------------------- |
+| Treating the inverse link as a law               | Re-measure; look at the rolling value                      |
+| Shorting gold just because real yields rose      | Check whether gold is already reacting                     |
+| Using nominal yields in place of real yields     | Check the breakeven or TIPS yield                          |
+| Ignoring the dollar's own drivers                | DXY is mostly the euro; see [DXY and Major Pairs](/en/intermarket/dxy-correlation) |
+| Trading only on the other markets                | The gold chart and your plan come first                    |
+
+---
+
+## Practice
+
+1. Download daily gold, DXY and 10-year TIPS yields for a year. Compute the three correlations of daily changes.
+2. Compute them for the first and second half separately. Did anything change?
+3. Find one stretch where gold ignored real yields. What else was going on?
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                                    |
+| ---------------- | ------------------------------------------------------------------------- |
+| Tendencies       | Gold against the dollar and real yields; dollar with real yields          |
+| Breaks           | Other drivers can make gold ignore the link                               |
+| Method           | Re-measure correlations on your window                                    |
+| Use              | Context that raises or lowers confidence, never a signal alone            |
+
+---
+
+## Related Topics
+
+- [Yield Curve Dynamics](/en/intermarket/yield-curve)
+- [DXY and Major Pairs](/en/intermarket/dxy-correlation)
+- [Risk-On / Risk-Off](/en/intermarket/risk-on-risk-off)
+- [Introduction to Intermarket Analysis](/en/intermarket/introduction)
