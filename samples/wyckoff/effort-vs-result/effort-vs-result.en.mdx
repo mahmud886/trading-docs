@@ -1,0 +1,105 @@
+---
+title: "Effort vs Result — Complete Guide"
+description: "Wyckoff's third law in practice: how volume (effort) normally relates to price progress (result), how to spot a bar that moves too easily or absorbs heavy volume for little progress, how to measure the mismatch, what to do next, with a volume-versus-spread chart and an animated walkthrough."
+level: advanced
+order: 7
+lastUpdated: "2026-11-14"
+---
+
+## The Third Law
+
+Wyckoff's third law says that **effort** (volume) should lead to a matching **result** (price progress). When more volume than usual produces less progress than usual — or a big move happens on little volume — something is out of balance, and that is the **clue**.
+
+<Callout type="warning" title="Toned down">
+  The original said a divergence "= institutional manipulation" and "smart money at work". A mismatch tells you only
+  that supply and demand are not behaving as they have been; it doesn't tell you who is doing it, and it isn't a signal
+  to trade on its own. In spot forex, volume is **tick volume**, a weaker proxy than exchange volume.
+</Callout>
+
+---
+
+## The Usual Relationship
+
+![Synthetic daily candles with volume, and a scatter of volume against spread: most bars sit on a line (more volume, wider spread); one bar moves 3.0 points on volume 900 (ease of movement); one bar makes only a 1.0 spread on the heaviest volume, 3,500 (effort without result), and price turns down afterwards](/images/wyckoff/effort-vs-result/effort-vs-result-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/wyckoff/effort-vs-result-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  The candles and volume are **synthetic**. The dashed line is fitted to the 20 ordinary bars; the band is ±2 standard
+  deviations (≈ 0.3 of spread).
+</Callout>
+
+Across the 20 ordinary bars, **spread rises about 1.4 points for every 1,000 of volume** (spread ≈ −0.65 + 0.0014 × volume). Two bars sit far outside the band:
+
+| Bar                | Volume | Spread | What the usual line predicts       | Reading                                              |
+| ------------------ | ------ | ------ | ---------------------------------- | ---------------------------------------------------- |
+| **Ease of movement** (bar 6) | 900   | 3.0  | about 0.6                         | Price moved easily — little resistance on the way up |
+| **Effort without result** (bar 11) | 3,500 | 1.0 | about 4.2                  | Heavy trading made almost no progress — the other side is absorbing |
+
+After the absorbed bar, price fell more than 4 points within five bars. On this synthetic chart the mismatch was followed by a turn — in real markets it sometimes isn't.
+
+---
+
+## Two Directions of Mismatch
+
+| Mismatch                         | Meaning                                              | Where it matters                                 |
+| -------------------------------- | ---------------------------------------------------- | ------------------------------------------------ |
+| **High effort, low result**      | Absorption: one side is meeting the other's push     | Near highs (supply absorbing demand) or lows (demand absorbing supply) |
+| **Low effort, high result**      | Ease of movement: little opposition                  | Early in a move; or an exhausted move that is easy to reverse |
+
+The same high-effort bar means different things in different places: after a decline near a low it can be **stopping volume** (see [VSA](/en/wyckoff/volume-spread-analysis)); after a rally near a high it can be **distribution**.
+
+---
+
+## How to Use It
+
+1. **Measure** volume and spread against recent averages (or fit a line as above).
+2. **Locate** the bar: trend, range edge, climax area.
+3. **Name the possibilities:** absorption of demand, absorption of supply, an easy move.
+4. **Wait for the next bar(s)** to confirm: a close in the direction the mismatch implies, or a failure at the level.
+5. **Plan with a stop** beyond the mismatch bar's extreme.
+
+### Example (no chart) — an absorbed high
+
+A stock rallies 50 → 61 in nine days on normal volume (1,500 – 2,000). On day 11, volume jumps to 3,500 but the bar's spread is only 1.0 and it closes at **61.0**, near the open. Day 12 closes lower at **60.4**. Plan: sell a close below the absorbed bar's low (**60.4**) with a stop above its high (**61.6**) and a target at the last pullback low **57.0**: risk 1.2, reward 3.4, **1 : 2.8** planned. If price closes above **61.6** on rising volume, the absorption idea is wrong.
+
+---
+
+## Common Mistakes
+
+| Mistake                                      | Fix                                                    |
+| -------------------------------------------- | ------------------------------------------------------ |
+| Reading "high volume" without checking the spread | Always compare volume **and** spread                 |
+| Treating the mismatch as a signal            | It's a clue; wait for confirmation                      |
+| Ignoring location                            | Same bar, different meaning at a high vs a low          |
+| Comparing different sessions or time frames  | Compare like with like                                  |
+| No stop beyond the bar's extreme             | The mismatch bar's high/low is the natural invalidation |
+
+---
+
+## Practice
+
+1. On three charts, mark the highest-volume bar of the last 40 bars; measure its spread against the average.
+2. Find one low-volume, wide-spread bar. What came next?
+3. For each mismatch bar, write the location (trend, edge, climax) and the possibility you'd name.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea             | Detail                                                       |
+| ---------------- | ------------------------------------------------------------ |
+| Law              | Effort (volume) should match result (progress)               |
+| Two mismatches   | High effort/low result: absorption · low effort/high result: ease |
+| Use              | Measure, locate, name, confirm, plan with a stop             |
+| Limit            | A clue, not a signal; weaker with tick volume                |
+
+---
+
+## Related Topics
+
+- [Volume Spread Analysis](/en/wyckoff/volume-spread-analysis)
+- [Introduction to Wyckoff](/en/wyckoff/introduction)
+- [Accumulation Schematic](/en/wyckoff/accumulation-schematic)
+- [Volume](/en/price-action/volume)

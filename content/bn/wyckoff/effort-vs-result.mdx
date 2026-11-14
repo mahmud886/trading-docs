@@ -1,67 +1,113 @@
 ---
-title: "এফোর্ট vs রেজাল্ট প্রিন্সিপল"
-description: "এফোর্ট vs রেজাল্ট প্রিন্সিপল বুঝুন — যখন ভলিউম (এফোর্ট) প্রাইস মুভমেন্টের (রেজাল্ট) সাথে মেলে না, ইনস্টিটিউশনরা অপারেট করছে।"
+title: "Effort vs Result — সম্পূর্ণ গাইড"
+description: "Wyckoff এর তৃতীয় সূত্র বাস্তবে: Volume (Effort) সাধারণত প্রাইসের অগ্রগতির (Result) সাথে কীভাবে সম্পর্কিত, যে বার খুব সহজে নড়ে বা ভারী Volume এ কম অগ্রগতি শোষণ করে তা কীভাবে চিনবেন, অমিল কীভাবে মাপবেন, তারপর কী করবেন — Volume বনাম Spread চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: advanced
 order: 7
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Effort vs Result Principle
+## তৃতীয় সূত্র
 
-Understand the Effort vs Result principle — when volume (effort) doesn't match price movement (result), institutions are operating. Learn to identify divergences.
+Wyckoff এর তৃতীয় সূত্র বলে **Effort** (Volume) এর ফল হওয়া উচিত মানানসই **Result** (প্রাইসের অগ্রগতি)। স্বাভাবিকের চেয়ে বেশি Volume যখন স্বাভাবিকের চেয়ে কম অগ্রগতি দেয় — বা কম Volume এ বড় মুভ হয় — তখন কিছু একটা ভারসাম্যহীন, আর সেটাই **সূত্র**।
 
-<Callout type="info" title="The Foundation of Smart Money">
-  Richard Wyckoff developed his method in the 1930s by studying how JP Morgan, Jesse Livermore, and other "composite
-  operators" manipulated markets. Modern SMC and ICT concepts are DIRECTLY derived from Wyckoff principles.
-  Understanding Wyckoff is understanding the ROOT of institutional trading.
+<Callout type="warning" title="সুর নরম করা হয়েছে">
+  মূল লেসনে বলা ছিল অমিল মানে "প্রাতিষ্ঠানিক ম্যানিপুলেশন" আর "Smart Money এর কাজ"। অমিল শুধু বলে Supply আর Demand আগের
+  মতো আচরণ করছে না; কে করছে তা বলে না, আর এটা একা ট্রেডের সংকেত নয়। Spot ফরেক্সে Volume হলো **Tick Volume**, যা
+  এক্সচেঞ্জ Volume এর চেয়ে দুর্বল প্রক্সি।
 </Callout>
 
 ---
 
-## Wyckoff's Three Laws
+## স্বাভাবিক সম্পর্ক
 
-### 1. Law of Supply and Demand
+![Volume সহ সিন্থেটিক Daily ক্যান্ডেল, আর Volume বনাম Spread এর স্ক্যাটার: বেশিরভাগ বার একটি রেখায় (বেশি Volume, চওড়া Spread); একটি বার ৯০০ Volume এ ৩.০ পয়েন্ট নড়ে (Ease of Movement); একটি বার সর্বোচ্চ Volume ৩,৫০০ এ মাত্র ১.০ Spread করে (Effort without Result), আর পরে প্রাইস নিচে নামে](/images/wyckoff/effort-vs-result/effort-vs-result-dark.webp)
 
-- Price rises when demand > supply
-- Price falls when supply > demand
-- Balance = range (accumulation or distribution)
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/wyckoff/effort-vs-result-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### 2. Law of Cause and Effect
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেল আর Volume **সিন্থেটিক**। ড্যাশ লাইনটি ২০টি সাধারণ বারে ফিট করা; ব্যান্ড ±২ স্ট্যান্ডার্ড ডেভিয়েশন (≈ Spread
+  এর ০.৩)।
+</Callout>
 
-- Every move (effect) requires preparation (cause)
-- The size of the cause determines the size of the effect
-- Accumulation range → Markup. Distribution range → Markdown.
+২০টি সাধারণ বার জুড়ে **প্রতি ১,০০০ Volume এ Spread প্রায় ১.৪ পয়েন্ট বাড়ে** (Spread ≈ −০.৬৫ + ০.০০১৪ × Volume)। দুটি বার ব্যান্ডের অনেক বাইরে:
 
-### 3. Law of Effort vs Result
+| বার                                | Volume | Spread | স্বাভাবিক রেখা কী ধরত | পাঠ                                                          |
+| ---------------------------------- | ------ | ------ | --------------------- | ------------------------------------------------------------ |
+| **Ease of Movement** (বার ৬)       | 900    | 3.0    | প্রায় ০.৬            | প্রাইস সহজে নড়েছে — উপরে যাওয়ার পথে বাধা কম                |
+| **Effort without Result** (বার ১১) | 3,500  | 1.0    | প্রায় ৪.২            | ভারী লেনদেনে প্রায় কোনো অগ্রগতি হয়নি — অন্য পক্ষ শোষণ করছে |
 
-- Volume (effort) should confirm price movement (result)
-- Divergence between effort and result = institutional manipulation
-- High volume + no movement = absorption (smart money at work)
+শোষিত বারের পর পাঁচ বারের মধ্যে প্রাইস ৪ পয়েন্টের বেশি পড়েছে। এই সিন্থেটিক চার্টে অমিলের পরে ঘোরা এসেছে — আসল মার্কেটে কখনো আসে না।
 
 ---
 
-## Practical Application
+## অমিলের দুটি দিক
 
-### Identifying Institutional Phase
+| অমিল                       | অর্থ                                       | কোথায় গুরুত্বপূর্ণ                                                   |
+| -------------------------- | ------------------------------------------ | --------------------------------------------------------------------- |
+| **বেশি Effort, কম Result** | শোষণ: এক পক্ষ অন্য পক্ষের ধাক্কা সামলাচ্ছে | High এর কাছে (Supply Demand শোষে) বা Low এর কাছে (Demand Supply শোষে) |
+| **কম Effort, বেশি Result** | Ease of Movement: বাধা কম                  | মুভের শুরুতে; বা ক্লান্ত মুভ যা সহজে উল্টানো যায়                     |
 
-1. Is the market in accumulation, markup, distribution, or markdown?
-2. Where are we within the current phase?
-3. What event comes next in the sequence?
+একই বেশি-Effort বার ভিন্ন জায়গায় ভিন্ন অর্থ বহন করে: পতনের পর Low এর কাছে এটা **Stopping Volume** হতে পারে ([VSA](/bn/wyckoff/volume-spread-analysis) দেখুন); র‍্যালির পর High এর কাছে এটা **Distribution** হতে পারে।
 
-### Entry Strategy
+---
 
-- Buy during accumulation (at Spring or LPS)
-- Sell during distribution (at UTAD or LPSY)
-- Confirm with volume analysis (VSA principles)
-- Align with higher timeframe phase
+## কীভাবে ব্যবহার করবেন
 
-### Risk Management
+1. সাম্প্রতিক গড়ের সাথে (বা উপরের মতো রেখা ফিট করে) Volume আর Spread **মাপুন**।
+2. বারটির **অবস্থান** দেখুন: ট্রেন্ড, রেঞ্জ প্রান্ত, Climax এলাকা।
+3. **সম্ভাবনার নাম দিন:** Demand শোষণ, Supply শোষণ, সহজ মুভ।
+4. অমিল যা ইঙ্গিত করে সেই দিকে Close, বা লেভেলে ব্যর্থতা দিয়ে **পরের বার(গুলো) দেখে** নিশ্চিত করুন।
+5. অমিলের বারের প্রান্তের ওপারে Stop সহ **পরিকল্পনা করুন**।
 
-- Stop loss below Spring (for longs) or above UTAD (for shorts)
-- Position size based on phase confidence
-- Scale in during confirmation events (SOS, SOW)
+### উদাহরণ (চার্ট ছাড়া) — শোষিত High
 
-<Callout type="warning" title="Pattern Recognition Warning">
-  Wyckoff schematics are IDEALIZED templates. Real markets rarely follow them perfectly. Look for the PRINCIPLE behind
-  each event, not the exact visual pattern. Phase identification is more important than event labeling.
-</Callout>
+একটি স্টক নয় দিনে 50 → 61 এ র‍্যালি করে স্বাভাবিক Volume এ (1,500 – 2,000)। ১১ নম্বর দিনে Volume 3,500 এ লাফ দেয় কিন্তু বারের Spread মাত্র 1.0 আর Open এর কাছে **61.0** এ Close করে। ১২ নম্বর দিন নিচে **60.4** এ Close করে। পরিকল্পনা: শোষিত বারের Low (**60.4**) এর নিচে Close এ Sell, এর High (**61.6**) এর উপরে Stop, আর শেষ পুলব্যাক Low **57.0** এ টার্গেট: রিস্ক ১.২, রিওয়ার্ড ৩.৪, পরিকল্পিত **১ : ২.৮**। বাড়তি Volume এ **61.6** এর উপরে Close হলে শোষণের ধারণা ভুল।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                               | সমাধান                                         |
+| --------------------------------- | ---------------------------------------------- |
+| Spread না দেখে "বেশি Volume" পড়া | সবসময় Volume **আর** Spread তুলনা করুন         |
+| অমিলকে সংকেত ধরা                  | এটা সূত্র; নিশ্চিতকরণের অপেক্ষা করুন           |
+| অবস্থান উপেক্ষা                   | একই বার High এ আর Low এ ভিন্ন অর্থ বহন করে     |
+| ভিন্ন সেশন বা টাইমফ্রেম তুলনা     | সমানের সাথে সমান তুলনা করুন                    |
+| বারের প্রান্তের ওপারে Stop নেই    | অমিলের বারের High/Low ই স্বাভাবিক Invalidation |
+
+---
+
+## অনুশীলন
+
+1. তিনটি চার্টে শেষ ৪০ বারের সর্বোচ্চ-Volume বার চিহ্নিত করুন; গড়ের সাথে এর Spread মাপুন।
+2. একটি কম-Volume, চওড়া-Spread বার খুঁজুন। এর পরে কী এসেছে?
+3. প্রতিটি অমিলের বারের জন্য অবস্থান (ট্রেন্ড, প্রান্ত, Climax) আর যে সম্ভাবনার নাম দেবেন তা লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা    | বিস্তারিত                                                      |
+| -------- | -------------------------------------------------------------- |
+| সূত্র    | Effort (Volume) Result (অগ্রগতি) এর সাথে মিলবে                 |
+| দুই অমিল | বেশি Effort/কম Result: শোষণ · কম Effort/বেশি Result: সহজ মুভ   |
+| ব্যবহার  | মাপুন, অবস্থান দেখুন, নাম দিন, নিশ্চিত করুন, Stop সহ পরিকল্পনা |
+| সীমা     | সূত্র, সংকেত নয়; Tick Volume এ দুর্বল                         |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Volume Spread Analysis](/bn/wyckoff/volume-spread-analysis)
+- [Wyckoff এর ভূমিকা](/bn/wyckoff/introduction)
+- [Accumulation Schematic](/bn/wyckoff/accumulation-schematic)
+- [Volume](/bn/price-action/volume)
