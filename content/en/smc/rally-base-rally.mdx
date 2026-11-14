@@ -1,76 +1,128 @@
 ---
-title: "Rally-Base-Rally & Drop-Base-Drop Patterns"
-description: "Master continuation supply/demand patterns. Learn RBR (Rally-Base-Rally) for demand zones and DBD (Drop-Base-Drop) for supply zones used in institutional trading."
+title: "Rally-Base-Rally & Drop-Base-Drop — Complete Guide"
+description: "Trade continuation supply and demand: rally-base-rally (RBR) demand in uptrends and drop-base-drop (DBD) supply in downtrends, how to recognise the base and leg-out, how RBR and DBR differ, and how to enter on the first return, with a chart and an animated walkthrough."
 level: intermediate
 order: 32
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Rally-Base-Rally & Drop-Base-Drop Patterns
+## What Are RBR and DBD?
 
-Master continuation supply/demand patterns. Learn RBR (Rally-Base-Rally) for demand zones and DBD (Drop-Base-Drop) for supply zones used in institutional trading.
+They're the **continuation** patterns of supply and demand:
 
-<Callout type="info" title="Supply & Demand in SMC Context">
-  Supply and demand zones are the FOUNDATION that Order Blocks are built upon. Understanding institutional S&D gives you
-  a deeper understanding of WHY order blocks work and how to identify the strongest ones.
+- **Rally-base-rally (RBR):** price rallies, pauses in a small base, then rallies again. The base becomes a **demand** zone inside an uptrend.
+- **Drop-base-drop (DBD):** price drops, pauses, then drops again. The base becomes a **supply** zone inside a downtrend.
+
+Each pause is where the trend reloaded. When price pulls back to it, the trend often resumes from there.
+
+| Pattern | Trend | Zone   | Reversal cousin       |
+| ------- | ----- | ------ | --------------------- |
+| **RBR** | Up    | Demand | DBR (drop-base-rally) |
+| **DBD** | Down  | Supply | RBD (rally-base-drop) |
+
+---
+
+## RBR in an Uptrend
+
+![EUR/USD 1H uptrend with two rally-base-rally demand zones; long on the first return to the newer one at 1.0870](/images/smc/rally-base-rally/rally-base-rally-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/smc/rally-base-rally-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. They are not real prices. R:R is the planned
+  risk-to-reward, not a result.
+</Callout>
+
+1. **RBR ①:** two bullish candles, two small base candles, then a large bullish candle. Zone **1.0816 – 1.0824**. The next pullback stops above it, so it stays fresh.
+2. **RBR ②:** the next pause. Zone **1.0863 – 1.0870**. Its leg-out **breaks the 1.0862 high**, which confirms the trend is still making higher highs.
+3. **The trade:** the first pullback into RBR ② fills a buy at the proximal line.
+
+| Level   | Price       | Note                                   |
+| ------- | ----------- | -------------------------------------- |
+| Entry   | 1.0870      | RBR ② proximal, first return           |
+| Stop    | 1.0855      | Below the 1.0863 distal, with a buffer |
+| Target  | 1.0930      | Above the 1.0905 swing high            |
+| **R:R** | **1 : 4.0** | Risk 15 pips, reward 60 pips           |
+
+If RBR ② fails, RBR ① below is the next fresh demand.
+
+---
+
+## Recognising the Pattern
+
+| Part        | What to look for                                                                             |
+| ----------- | -------------------------------------------------------------------------------------------- |
+| **Leg-in**  | One or more candles in the trend direction                                                   |
+| **Base**    | 1–3 small candles; bodies no more than about half their range                                |
+| **Leg-out** | Large candles in the same direction, ideally breaking the last swing high (RBR) or low (DBD) |
+
+<Callout type="info" title="RBR vs DBR">
+  A **DBR** demand forms after a *drop*, so it marks a possible reversal. An **RBR** demand forms after a *rally*, so
+  it's a continuation zone. RBRs are usually traded with the trend; DBRs need more confirmation because they bet on a
+  turn.
 </Callout>
 
 ---
 
-## Key Principles
+## Trading It, Step by Step
 
-### Institutional Supply Zone
+1. **Confirm the trend** on the higher timeframe: higher highs and higher lows for RBR, the opposite for DBD.
+2. **Find the base** whose leg-out broke the last swing.
+3. **Draw** the proximal line (highest body for RBR, lowest body for DBD) and the distal line (the far wick).
+4. **Wait** for the first pullback to the zone.
+5. **Enter** at the proximal line, or on a lower-timeframe CHOCH inside the zone.
+6. **Stop** beyond the distal line; **target** the last swing high (RBR) or low (DBD), or the next liquidity beyond it.
 
-- Area where institutional SELLING overwhelmed buying
-- Price fell aggressively FROM this zone
-- Unfilled sell orders remain = price returns to fill them
-- Acts as resistance with institutional backing
+### Second example (no chart) — DBD in a downtrend
 
-### Institutional Demand Zone
-
-- Area where institutional BUYING overwhelmed selling
-- Price rose aggressively FROM this zone
-- Unfilled buy orders remain = price returns to fill them
-- Acts as support with institutional backing
+GBP/USD is falling. It drops to **1.2680**, bases for two hours between **1.2672 and 1.2685**, then drops 40 pips and breaks the last swing low. On the first pullback, sell at the proximal **1.2672**, stop **1.2690** above the distal, target the next sell-side liquidity at **1.2600**: risk 18 pips, reward 72 pips, **R:R 1 : 4.0** (planned).
 
 ---
 
-## Zone Quality Criteria
+## Common Mistakes
 
-| Criteria        | Strong Zone         | Weak Zone               |
-| --------------- | ------------------- | ----------------------- |
-| Departure speed | Fast (displacement) | Slow (grinding)         |
-| Time at level   | Brief (1-3 candles) | Extended (many candles) |
-| Freshness       | Never tested        | Tested multiple times   |
-| Volume          | Low volume in zone  | High volume             |
-| Return speed    | Slow approach       | Fast V-shape            |
+| Mistake                                        | Fix                                                          |
+| ---------------------------------------------- | ------------------------------------------------------------ |
+| Taking RBRs against the higher-timeframe trend | They're continuation zones; trade them with the trend        |
+| Marking every pause as a base                  | The leg-out must be strong and break structure               |
+| Buying the third touch of an RBR               | First return; see [Fresh vs Tested](/en/smc/fresh-vs-tested) |
+| Buying an RBR high in premium                  | Prefer zones in the discount half of the leg                 |
+| Ignoring a close below the distal line         | That ends the zone, and maybe the trend                      |
 
 ---
 
-## Practical Application
+## Practice
 
-### Identifying Zones
+1. On 10 trending charts, mark each RBR (uptrend) or DBD (downtrend).
+2. Note which ones had a leg-out that broke structure.
+3. Record the reaction at the first return for each.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
-1. Find a strong impulsive move (displacement)
-2. Mark the base/consolidation BEFORE the move
-3. Zone = the consolidation area before displacement
-4. Proximal line = nearest edge to current price
-5. Distal line = far edge of the zone
+---
 
-### Trading Zones
+## Summary
 
-1. Wait for price to return to the zone
-2. Look for rejection/confirmation at the zone
-3. Enter with stop beyond the distal line
-4. Target = next opposing zone or liquidity level
+| Aspect   | RBR                  | DBD                   |
+| -------- | -------------------- | --------------------- |
+| Trend    | Up                   | Down                  |
+| Zone     | Demand               | Supply                |
+| Proximal | Highest base body    | Lowest base body      |
+| Distal   | Lowest base wick     | Highest base wick     |
+| Trade    | Buy the first return | Sell the first return |
 
-### Combining with ICT/SMC
+---
 
-- S&D zone + Order Block inside = high probability
-- S&D zone + FVG at zone boundary = precision entry
-- S&D zone + Liquidity sweep before entry = A+ setup
+## Related Topics
 
-<Callout type="warning" title="Zone Invalidation">
-  A zone is INVALIDATED when price closes through the distal line with displacement. Tested zones lose strength with
-  each touch. After 3 tests, consider the zone consumed. Always use fresh zones for highest probability.
-</Callout>
+- [Supply & Demand Zones](/en/smc/supply-demand-zones) — all four patterns
+- [Fresh vs Tested Zones](/en/smc/fresh-vs-tested) — why the first return matters
+- [BOS](/en/smc/bos) — the break the leg-out should make
+- [Zone Strength Scoring](/en/smc/zone-strength-scoring) — grading the zone
