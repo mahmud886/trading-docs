@@ -1,0 +1,106 @@
+---
+title: "Fair Value Gap Explained — The Three-Candle Imbalance"
+description: "A fair value gap (FVG) is the price range left between the first candle's extreme and the third candle's extreme when a strong move leaves no overlap. How to mark bullish and bearish gaps, the 50% entry, when a gap is invalidated (inversion), and how FVGs fail."
+date: "2026-05-13"
+author: "Trading Docs"
+category: "SMC"
+tags: ["fair-value-gap", "fvg", "imbalance", "smc", "entries"]
+readingTime: 6
+featured: true
+---
+
+A **fair value gap** is a three-candle pattern in which a strong middle candle moves so fast that the first and third candles do not overlap. The unfilled range between them is the gap. Traders watch it as a place where price **may** return and react.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original suggested FVGs are filled or respected with high reliability and tied them to institutional order imbalance. Many gaps are never revisited and many are filled completely. The gap is a **geometric fact**; its significance is a hypothesis.
+</Callout>
+
+---
+
+## How to Mark a Gap
+
+| Type              | Candles                                                                 | Gap range                                          |
+| ----------------- | ----------------------------------------------------------------------- | -------------------------------------------------- |
+| **Bullish FVG**   | Strong up candle in the middle; candle 3's **low** is above candle 1's **high** | From candle 1's high up to candle 3's low          |
+| **Bearish FVG**   | Strong down candle in the middle; candle 3's **high** is below candle 1's **low** | From candle 3's high up to candle 1's low        |
+
+Example: candle 1 high **1.0836**, candle 3 low **1.0842** → bullish gap **1.0836 – 1.0842** (6 pips). Mark it from the third candle forward. See [Fair Value Gap](/en/smc/fair-value-gap), [Imbalance](/en/smc/imbalance) and the ICT view in [FVG](/en/ict/fvg).
+
+### The Chart
+
+![A synthetic EUR/USD bullish fair value gap: a strong up candle leaves a gap between the first candle's high and the third candle's low, and price later returns to it](/images/smc/fair-value-gap/eurusd-bullish-fvg-smc-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/smc/smc-fvg-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic candles for teaching (From the lesson: [Fair Value Gap](/en/smc/fair-value-gap).)
+</Callout>
+
+---
+
+## Using the Gap
+
+| Approach                    | Entry                                         | Stop                                 | Comment                                              |
+| --------------------------- | --------------------------------------------- | ------------------------------------ | ---------------------------------------------------- |
+| **Edge entry**              | The near edge of the gap                      | Beyond the far edge                  | Fills more often, tighter reaction zone              |
+| **50% (midpoint) entry**    | The middle of the gap                         | Beyond the far edge                  | Better price, can be missed                          |
+| **Confirmation entry**      | After a lower-timeframe shift inside the gap  | Beyond the swing                     | Fewer trades, more evidence                          |
+
+A gap is **invalidated** when price **closes through it** (beyond the far edge). A gap that fails this way can **invert**: a bullish gap that is closed through can act as resistance. Context matters more than the gap itself: a gap in the direction of the higher-timeframe trend, after a liquidity sweep, is better evidence than a gap in the middle of a range.
+
+---
+
+## How FVGs Fail
+
+| Failure                                    | What it looks like                                                    |
+| ------------------------------------------ | --------------------------------------------------------------------- |
+| Price never returns                        | The gap stays unfilled; you wait and the move leaves without you      |
+| Price fills the gap and keeps going        | No reaction; a close beyond the far edge                              |
+| A gap during a news spike                  | Large, noisy, often filled quickly                                    |
+| Tiny gaps                                  | A 1-pip gap carries little meaning                                    |
+
+---
+
+## Example (no chart)
+
+Bullish gap **1.0836 – 1.0842** after a sweep of the Asian low, with the 1-hour trend up. Plan: buy the midpoint **1.0839**, stop **1.0832** (below the far edge), target **1.0860** (the next swing high): risk 7 pips, reward 21, **1 : 3.0** planned. If a candle closes below **1.0832**, the gap has failed and the idea is cancelled.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Trading every gap | Prefer gaps with trend, sweep and room to the target |
+| Stop inside the gap | Place it beyond the far edge |
+| Ignoring a close through the gap | That is invalidation, not a dip |
+| Waiting forever for a fill | Set a time limit; some gaps never fill |
+
+---
+
+## Practice
+
+1. Mark ten bullish and bearish gaps and note how many were revisited within 20 candles.
+2. For each, note whether the gap held or a close went through it.
+3. Compare gaps with a sweep before them against gaps without.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| FVG | The unfilled range between candle 1 and candle 3 around a strong candle |
+| Entry | Edge, midpoint or after confirmation; stop beyond the far edge |
+| Invalidation | A close through the gap; it may invert |
+| Caution | A geometric pattern; its significance is a hypothesis |
+
+---
+
+## Related Topics
+
+- [Fair Value Gap](/en/smc/fair-value-gap)
+- [ICT Fair Value Gap](/en/ict/fvg)
+- [Imbalance](/en/smc/imbalance)
+- [FVG and Order Block Guide](/en/blog/fvg-order-block-complete-guide)
