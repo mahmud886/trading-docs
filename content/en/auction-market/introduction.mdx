@@ -1,84 +1,124 @@
 ---
 title: "Introduction to Auction Market Theory"
-description: "Understand Auction Market Theory (AMT) — the framework that explains HOW and WHY price moves. Learn how markets facilitate trade between buyers and sellers through price discovery."
+description: "Auction Market Theory as a way to describe what price is doing: price searches for levels where buyers and sellers both trade, builds volume there (balance), leaves quickly when one side dominates (imbalance), and settles again (new balance) — with a worked chart, the reference levels it gives you, and an animated walkthrough."
 level: beginner
 order: 1
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Introduction to Auction Market Theory
+## What Is Auction Market Theory?
 
-Understand Auction Market Theory (AMT) — the framework that explains HOW and WHY price moves. Learn how markets facilitate trade between buyers and sellers through price discovery.
+**Auction Market Theory (AMT)** describes a market as a continuous auction. Price moves to find the levels where trade happens: up if buyers need more sellers, down if sellers need more buyers. Where both sides trade easily, price **stays** and volume builds. Where they don't, price **moves on quickly**.
 
-<Callout type="info" title="The Auction Process">
-  Markets exist for ONE purpose: to facilitate trade. Price moves UP to find sellers, DOWN to find buyers. When it finds
-  enough of both at a price = fair value (balance). When it can't find enough = price moves until it does (imbalance).
-  This is the entire basis of Auction Market Theory.
+<Callout type="warning" title="Toned down">
+  The original said AMT shows "who is driving" the market and described a "complete institutional framework" together
+  with ICT/SMC. AMT is a **vocabulary for describing** what price and volume did. It doesn't identify participants, and
+  it doesn't predict. Treat its levels as references, as in [Volume Profile](/en/order-flow/volume-profile).
 </Callout>
 
 ---
 
-## Core AMT Principles
+## Balance, Imbalance, New Balance
 
-### Price Discovery
+![A synthetic EUR/USD 5-minute session: a balance area 1.0851 to 1.0861 for 20 bars, a seven-bar drive of 17 pips with each low higher than the last, and a new balance 1.0874 to 1.0882; the profile on the right shows two busy areas separated by a thin zone](/images/auction-market/introduction/auction-phases-dark.webp)
 
-- Markets constantly "auction" to find prices where both buyers and sellers agree
-- Price moves in one direction until it finds opposing interest
-- The auction process creates predictable patterns
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/auction-market/auction-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Balance (Rotation)
-
-- When buyers and sellers are evenly matched
-- Price rotates within a range
-- Volume builds at "fair value" (POC)
-- Strategy: Mean reversion, fade extremes
-
-### Imbalance (Trend)
-
-- When one side dominates
-- Price moves directionally to find the opposing side
-- Low volume at intermediate levels (single prints)
-- Strategy: Follow the imbalance, buy pullbacks in trend
-
----
-
-## Practical Framework
-
-### Step 1: Identify Market State
-
-- **Balanced**: Price rotating, building volume in a range
-- **Imbalanced**: Price moving directionally with conviction
-- **Transitioning**: One state shifting to the other
-
-### Step 2: Apply Correct Strategy
-
-- Balance → Fade extremes, target POC
-- Imbalance → Trade with direction, enter on pullbacks
-- Transition → Look for breakout/breakdown confirmation
-
-### Step 3: Use AMT Reference Levels
-
-- Previous session POC, VAH, VAL
-- Initial Balance high/low
-- Single print zones
-- Excess tails (completed auctions)
-
----
-
-## AMT + ICT/SMC Integration
-
-| AMT Concept     | ICT/SMC Equivalent |
-| --------------- | ------------------ |
-| Value Area High | Premium zone       |
-| Value Area Low  | Discount zone      |
-| POC             | Equilibrium        |
-| Single Prints   | FVG / Imbalance    |
-| Excess          | Liquidity sweep    |
-| Poor High/Low   | Resting liquidity  |
-| IB Breakout     | Session expansion  |
-
-<Callout type="warning" title="Complementary Frameworks">
-  AMT tells you WHERE the market is in its auction process. ICT/SMC tells you WHO is driving it and WHEN they'll act.
-  Combining both creates a complete institutional framework — understanding both the mechanism (AMT) and the operator
-  (Smart Money).
+<Callout type="info" title="About this chart">
+  The session is **synthetic**. The profile is built by spreading each candle's volume over the ticks it covers.
 </Callout>
+
+| State           | What price does                                     | In the chart                              | Profile        |
+| --------------- | --------------------------------------------------- | ----------------------------------------- | -------------- |
+| **Balance**     | Rotates in a range; both sides trade; volume builds | 1.0851 – 1.0861, 20 bars                  | A fat bulge    |
+| **Imbalance**   | Moves one way, finding little opposition            | 7 bars, +17 pips, each low above the last | A thin zone    |
+| **New balance** | Settles at a new area                               | 1.0874 – 1.0882                           | A second bulge |
+
+The profile's 70% value area is built outward from the point of control (1.0880 here), so in a session like this it spans both areas and the thin zone between them. That is a reason to read the **shape**, not only the value-area edges.
+
+---
+
+## A Simple Workflow
+
+| Step | Question                                | Reading                                                              |
+| ---- | --------------------------------------- | -------------------------------------------------------------------- |
+| 1    | Is price balanced, moving, or settling? | Rotation in a range / a run with little overlap / a new range        |
+| 2    | Where did it accept price?              | High-volume areas, previous POC, value-area edges                    |
+| 3    | Where did it move through quickly?      | Thin zones and single prints: price may move quickly there again     |
+| 4    | What does your plan say?                | Fade the edges in balance, follow a break that holds, or stand aside |
+
+---
+
+## Reference Levels AMT Gives You
+
+- Previous session's POC, VAH and VAL ([Value Area](/en/auction-market/value-area)).
+- The opening range, as the [Initial Balance](/en/auction-market/initial-balance).
+- Thin areas and [single prints](/en/auction-market/single-prints).
+- Failed extremes: [excess and poor highs/lows](/en/auction-market/excess-poor-highs-lows).
+
+### Example (no chart) — a test of the new balance
+
+After the drive, price holds the new area's low at **1.0874** twice. Plan: buy a hold at **1.0875**, stop **1.0871** (below the area), target **1.0882** (the top of the area): risk 4 pips, reward 7, **1 : 1.8** planned. If price closes below **1.0873** and stays there, the new balance has failed and the thin zone below is open.
+
+---
+
+## Comparing With ICT/SMC Vocabulary
+
+| AMT term       | Rough ICT/SMC analogue |
+| -------------- | ---------------------- |
+| Value-area top | Premium side           |
+| Value-area low | Discount side          |
+| POC            | Equilibrium            |
+| Single prints  | Imbalance / FVG        |
+
+These are loose analogues for orientation, not equivalences: the two systems define their levels differently and use different data (volume versus candle structure).
+
+---
+
+## Common Mistakes
+
+| Mistake                                         | Fix                                                 |
+| ----------------------------------------------- | --------------------------------------------------- |
+| Treating the POC or value-area edges as walls   | They are references; plan for them to fail          |
+| Calling every range "balance" and fading it     | Wait for evidence that price is accepted there      |
+| Using tick volume as if it were exchange volume | Prefer futures or real-volume data for profiles     |
+| Assuming a drive must continue                  | A drive can end in a new balance, or reverse        |
+| Mixing profile periods                          | State whether you mean session, weekly or composite |
+
+---
+
+## Practice
+
+1. On a futures chart, mark yesterday's balance areas and the move between them.
+2. Label today's first two hours: balance, imbalance or settling?
+3. Mark one thin zone and note how price behaved when it crossed it.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea        | Detail                                                             |
+| ----------- | ------------------------------------------------------------------ |
+| AMT         | A way to describe price as a search for levels where trade happens |
+| Balance     | Rotation and volume build-up                                       |
+| Imbalance   | A fast, one-directional move with little volume per price          |
+| New balance | Price settles in a new area                                        |
+| Use         | Orientation and reference levels, not prediction                   |
+
+---
+
+## Related Topics
+
+- [Market Profile](/en/auction-market/market-profile)
+- [Value Area](/en/auction-market/value-area)
+- [Balanced vs Imbalanced Markets](/en/auction-market/balanced-imbalanced)
+- [Volume Profile](/en/order-flow/volume-profile)

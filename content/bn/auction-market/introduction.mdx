@@ -1,84 +1,124 @@
 ---
-title: "অকশন মার্কেট থিওরি পরিচিতি"
-description: "অকশন মার্কেট থিওরি (AMT) বুঝুন — যে ফ্রেমওয়ার্ক ব্যাখ্যা করে প্রাইস কিভাবে ও কেন মুভ করে। মার্কেট কিভাবে প্রাইস ডিসকভারির মাধ্যমে বায়ার ও সেলারের মধ্যে ট্রেড সহজতর করে শিখুন।"
+title: "Introduction to Auction Market Theory"
+description: "প্রাইস কী করছে তা বর্ণনার উপায় হিসেবে Auction Market Theory: প্রাইস এমন লেভেল খোঁজে যেখানে ক্রেতা ও বিক্রেতা দুজনেই ট্রেড করে, সেখানে Volume জমায় (Balance), এক পক্ষ প্রভাবশালী হলে দ্রুত সরে যায় (Imbalance), আবার থিতু হয় (New Balance) — একটি চার্ট, এটি যে রেফারেন্স লেভেল দেয় তা, আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: beginner
 order: 1
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Introduction to Auction Market Theory
+## Auction Market Theory কী?
 
-Understand Auction Market Theory (AMT) — the framework that explains HOW and WHY price moves. Learn how markets facilitate trade between buyers and sellers through price discovery.
+**Auction Market Theory (AMT)** মার্কেটকে একটি চলমান নিলাম হিসেবে বর্ণনা করে। প্রাইস সেই লেভেল খোঁজে যেখানে ট্রেড হয়: ক্রেতার আরও বিক্রেতা দরকার হলে উপরে, বিক্রেতার আরও ক্রেতা দরকার হলে নিচে। যেখানে দুই পক্ষই সহজে ট্রেড করে, প্রাইস সেখানে **থাকে** আর Volume জমে। যেখানে করে না, প্রাইস **দ্রুত সরে যায়**।
 
-<Callout type="info" title="The Auction Process">
-  Markets exist for ONE purpose: to facilitate trade. Price moves UP to find sellers, DOWN to find buyers. When it finds
-  enough of both at a price = fair value (balance). When it can't find enough = price moves until it does (imbalance).
-  This is the entire basis of Auction Market Theory.
+<Callout type="warning" title="সুর নরম করা হয়েছে">
+  মূল লেসনে বলা হয়েছিল AMT দেখায় মার্কেট "কে চালাচ্ছে" এবং ICT/SMC এর সাথে মিলে এটি "সম্পূর্ণ প্রাতিষ্ঠানিক
+  ফ্রেমওয়ার্ক"। AMT হলো প্রাইস ও Volume কী করেছে তা **বর্ণনার ভাষা**। এটা অংশগ্রহণকারী চেনায় না, ভবিষ্যদ্বাণীও করে না।
+  এর লেভেলগুলোকে রেফারেন্স হিসেবে দেখুন, যেমন [Volume Profile](/bn/order-flow/volume-profile) এ।
 </Callout>
 
 ---
 
-## Core AMT Principles
+## Balance, Imbalance, New Balance
 
-### Price Discovery
+![একটি সিন্থেটিক EUR/USD ৫-মিনিট সেশন: ২০ বার ধরে 1.0851 থেকে 1.0861 Balance এরিয়া, সাত বারের ১৭ পিপের Drive যেখানে প্রতিটি Low আগেরটির উপরে, আর 1.0874 থেকে 1.0882 New Balance; ডানের Profile এ একটি পাতলা অঞ্চল দিয়ে আলাদা দুটি ব্যস্ত এরিয়া](/images/auction-market/introduction/auction-phases-dark.webp)
 
-- Markets constantly "auction" to find prices where both buyers and sellers agree
-- Price moves in one direction until it finds opposing interest
-- The auction process creates predictable patterns
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/auction-market/auction-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Balance (Rotation)
-
-- When buyers and sellers are evenly matched
-- Price rotates within a range
-- Volume builds at "fair value" (POC)
-- Strategy: Mean reversion, fade extremes
-
-### Imbalance (Trend)
-
-- When one side dominates
-- Price moves directionally to find the opposing side
-- Low volume at intermediate levels (single prints)
-- Strategy: Follow the imbalance, buy pullbacks in trend
-
----
-
-## Practical Framework
-
-### Step 1: Identify Market State
-
-- **Balanced**: Price rotating, building volume in a range
-- **Imbalanced**: Price moving directionally with conviction
-- **Transitioning**: One state shifting to the other
-
-### Step 2: Apply Correct Strategy
-
-- Balance → Fade extremes, target POC
-- Imbalance → Trade with direction, enter on pullbacks
-- Transition → Look for breakout/breakdown confirmation
-
-### Step 3: Use AMT Reference Levels
-
-- Previous session POC, VAH, VAL
-- Initial Balance high/low
-- Single print zones
-- Excess tails (completed auctions)
-
----
-
-## AMT + ICT/SMC Integration
-
-| AMT Concept     | ICT/SMC Equivalent |
-| --------------- | ------------------ |
-| Value Area High | Premium zone       |
-| Value Area Low  | Discount zone      |
-| POC             | Equilibrium        |
-| Single Prints   | FVG / Imbalance    |
-| Excess          | Liquidity sweep    |
-| Poor High/Low   | Resting liquidity  |
-| IB Breakout     | Session expansion  |
-
-<Callout type="warning" title="Complementary Frameworks">
-  AMT tells you WHERE the market is in its auction process. ICT/SMC tells you WHO is driving it and WHEN they'll act.
-  Combining both creates a complete institutional framework — understanding both the mechanism (AMT) and the operator
-  (Smart Money).
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  সেশনটি **সিন্থেটিক**। Profile তৈরি হয়েছে প্রতিটি ক্যান্ডেলের Volume তার ছোঁয়া টিকগুলোতে ছড়িয়ে।
 </Callout>
+
+| অবস্থা          | প্রাইস কী করে                                | চার্টে                                   | Profile           |
+| --------------- | -------------------------------------------- | ---------------------------------------- | ----------------- |
+| **Balance**     | রেঞ্জে ঘোরে; দুই পক্ষই ট্রেড করে; Volume জমে | 1.0851 – 1.0861, ২০ বার                  | মোটা ফোলা অংশ     |
+| **Imbalance**   | এক দিকে চলে, সামান্য বাধা পায়               | ৭ বার, +১৭ পিপ, প্রতিটি Low আগেরটির উপরে | পাতলা অঞ্চল       |
+| **New Balance** | নতুন এরিয়ায় থিতু হয়                       | 1.0874 – 1.0882                          | দ্বিতীয় ফোলা অংশ |
+
+Profile এর ৭০% Value Area তৈরি হয় Point of Control (এখানে 1.0880) থেকে বাইরের দিকে, তাই এমন সেশনে এটি দুটি এরিয়া এবং মাঝের পাতলা অঞ্চল সবই ঢেকে ফেলে। তাই শুধু Value Area এর কিনারা নয়, **আকৃতিটাও** পড়ুন।
+
+---
+
+## একটি সহজ ওয়ার্কফ্লো
+
+| ধাপ | প্রশ্ন                                      | পাঠ                                                             |
+| --- | ------------------------------------------- | --------------------------------------------------------------- |
+| ১   | প্রাইস কি Balance এ, চলছে, নাকি থিতু হচ্ছে? | রেঞ্জে ঘোরা / কম ওভারল্যাপের রান / নতুন রেঞ্জ                   |
+| ২   | কোথায় প্রাইস গৃহীত হয়েছে?                 | উচ্চ-Volume এরিয়া, আগের POC, Value Area এর কিনারা              |
+| ৩   | কোথা দিয়ে দ্রুত সরেছে?                     | পাতলা অঞ্চল ও Single Print: সেখানে প্রাইস আবার দ্রুত নড়তে পারে |
+| ৪   | আপনার পরিকল্পনা কী বলে?                     | Balance এ কিনারায় Fade, টিকে থাকা Break অনুসরণ, বা সরে থাকা    |
+
+---
+
+## AMT যে রেফারেন্স লেভেল দেয়
+
+- আগের সেশনের POC, VAH ও VAL ([Value Area](/bn/auction-market/value-area))।
+- ওপেনিং রেঞ্জ, [Initial Balance](/bn/auction-market/initial-balance) হিসেবে।
+- পাতলা এরিয়া ও [Single Print](/bn/auction-market/single-prints)।
+- ব্যর্থ চরম: [Excess এবং Poor High/Low](/bn/auction-market/excess-poor-highs-lows)।
+
+### উদাহরণ (চার্ট ছাড়া) — New Balance এর পরীক্ষা
+
+Drive এর পর প্রাইস নতুন এরিয়ার Low **1.0874** দুবার ধরে রাখে। পরিকল্পনা: **1.0875** এ Hold এ Buy, Stop **1.0871** (এরিয়ার নিচে), টার্গেট **1.0882** (এরিয়ার উপরের দিক): রিস্ক ৪ পিপ, রিওয়ার্ড ৭, পরিকল্পিত **১ : ১.৮**। প্রাইস **1.0873** এর নিচে Close করে সেখানেই থাকলে New Balance ব্যর্থ, আর নিচের পাতলা অঞ্চল খোলা।
+
+---
+
+## ICT/SMC শব্দভান্ডারের সাথে তুলনা
+
+| AMT শব্দ                | মোটামুটি ICT/SMC সমতুল্য |
+| ----------------------- | ------------------------ |
+| Value Area এর উপরের দিক | Premium দিক              |
+| Value Area এর নিচের দিক | Discount দিক             |
+| POC                     | Equilibrium              |
+| Single Prints           | Imbalance / FVG          |
+
+এগুলো দিকনির্দেশের জন্য ঢিলেঢালা সাদৃশ্য, সমতুল্যতা নয়: দুটি সিস্টেম লেভেল আলাদাভাবে সংজ্ঞায়িত করে এবং আলাদা ডেটা (Volume বনাম ক্যান্ডেল স্ট্রাকচার) ব্যবহার করে।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                        | সমাধান                                               |
+| ------------------------------------------ | ---------------------------------------------------- |
+| POC বা Value Area এর কিনারাকে দেয়াল ধরা   | এগুলো রেফারেন্স; ব্যর্থ হওয়ার পরিকল্পনাও রাখুন      |
+| প্রতিটি রেঞ্জকে "Balance" বলে Fade করা     | প্রাইস সেখানে গৃহীত হয়েছে তার প্রমাণের অপেক্ষা করুন |
+| Profile এ Tick Volume কে আসলের মতো ব্যবহার | ফিউচার্স বা আসল-Volume ডেটা পছন্দ করুন               |
+| Drive চলতেই থাকবে ধরে নেওয়া               | Drive New Balance এ শেষ হতে পারে, বা উল্টে যেতে পারে |
+| Profile এর সময়কাল মেশানো                  | সেশন, সাপ্তাহিক না কম্পোজিট — স্পষ্ট করুন            |
+
+---
+
+## অনুশীলন
+
+1. একটি ফিউচার্স চার্টে গতকালের Balance এরিয়া আর তাদের মাঝের মুভ চিহ্নিত করুন।
+2. আজকের প্রথম দুই ঘণ্টা লেবেল করুন: Balance, Imbalance নাকি থিতু হচ্ছে?
+3. একটি পাতলা অঞ্চল চিহ্নিত করে দেখুন সেটি পার হওয়ার সময় প্রাইস কেমন আচরণ করেছে।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা       | বিস্তারিত                                               |
+| ----------- | ------------------------------------------------------- |
+| AMT         | ট্রেড হয় এমন লেভেল খোঁজা হিসেবে প্রাইসকে বর্ণনার উপায় |
+| Balance     | ঘোরা আর Volume জমা                                      |
+| Imbalance   | দ্রুত, একমুখী মুভ — প্রতি দামে কম Volume                |
+| New Balance | প্রাইস নতুন এরিয়ায় থিতু হয়                           |
+| ব্যবহার     | দিকনির্দেশ ও রেফারেন্স লেভেল, ভবিষ্যদ্বাণী নয়          |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Market Profile](/bn/auction-market/market-profile)
+- [Value Area](/bn/auction-market/value-area)
+- [Balanced vs Imbalanced Markets](/bn/auction-market/balanced-imbalanced)
+- [Volume Profile](/bn/order-flow/volume-profile)
