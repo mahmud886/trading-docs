@@ -1,231 +1,152 @@
 ---
 title: "Swing Highs & Lows — Complete Guide"
-description: "Master swing high and low identification. Learn fractal concept, swing failure patterns, and how to use swing points for structure analysis."
+description: "Find swing highs and lows with the 3-candle and 5-candle rules, tell minor from major swings, use swings for structure, stops, targets and liquidity, and trade the swing failure pattern (SFP), with a chart, an animated walkthrough and three planned examples."
 level: beginner
 order: 7
-lastUpdated: "2026-05-11"
+lastUpdated: "2026-11-14"
 ---
 
-## What are Swing Highs and Swing Lows?
+## What Are Swing Highs and Lows?
 
-Swing points are the **building blocks of market structure**. A swing high is a price peak surrounded by lower highs. A swing low is a price trough surrounded by higher lows. They mark where price changed direction and are the foundation for identifying trends, support/resistance, and structure breaks.
+A **swing high** is a peak: a candle whose high is above the candles around it. A **swing low** is a trough: a candle whose low is below the candles around it.
 
-<Callout type="info" title="Foundation of Everything">
-  Without correctly identifying swing highs and lows, you cannot determine trends, draw trendlines, identify BOS/CHOCH,
-  or trade any price action strategy. Master this concept FIRST — everything else builds on it.
+Swings are the building blocks of everything else in price action: trend, structure, support and resistance, stops and targets.
+
+---
+
+## Two Rules for Finding Swings
+
+| Rule                 | Swing high                              | Swing low                              | Finds                        |
+| -------------------- | --------------------------------------- | -------------------------------------- | ---------------------------- |
+| **3-candle** (minor) | High above the candle on each side      | Low below the candle on each side      | Many small swings            |
+| **5-candle** (major) | High above **two** candles on each side | Low below **two** candles on each side | Fewer, more important swings |
+
+The 5-candle rule is the same as the classic **fractal** indicator. Note that a swing is only confirmed once the candles after it have closed: two candles later for the 5-candle rule.
+
+---
+
+## Minor, Major, and the Failure
+
+![EUR/USD 1H: small markers for 3-candle swings, large markers for 5-candle swings, a major swing high at 1.0950, then a swing failure that wicks to 1.0958 and closes back at 1.0942](/images/price-action/swing-high-low/swing-points-sfp-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/swing-high-low-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built around the levels in this lesson. The swing markers are computed from the candles
+  with the two rules. They are not real prices; R:R is the planned risk-to-reward, not a result.
 </Callout>
 
----
+On the same 31 candles, the 3-candle rule marks **10 swings**; the 5-candle rule keeps only **4**. Every major swing is also a minor one, but not the other way round.
 
-## How to Identify Swing Points
-
-### The 3-Candle Rule (Standard)
-
-- **Swing High**: A candle whose HIGH is higher than the high of the candle before AND after it
-- **Swing Low**: A candle whose LOW is lower than the low of the candle before AND after it
-
-```
-Swing High (3-candle):
-      ┃ ← This candle's high is the highest
-    ┃ ┃ ┃
-    ┃ ┃ ┃ ← Candles on both sides have lower highs
-
-Swing Low (3-candle):
-    ┃ ┃ ┃ ← Candles on both sides have higher lows
-    ┃ ┃ ┃
-      ┃ ← This candle's low is the lowest
-```
-
-### The 5-Candle Rule (Strong Swing)
-
-For stronger, more significant swing points, require **2 candles** on each side with lower highs (for SH) or higher lows (for SL).
-
-### Fractals
-
-A fractal is essentially a swing point. The term comes from Bill Williams:
-
-- **Fractal High** = Swing High (bearish fractal)
-- **Fractal Low** = Swing Low (bullish fractal)
+| Type      | Also called        | Use                                         |
+| --------- | ------------------ | ------------------------------------------- |
+| **Major** | External structure | Trend direction, key levels, main targets   |
+| **Minor** | Internal structure | Entry timing, early warnings, tighter stops |
 
 ---
 
-## Types of Swing Points
+## What Swings Are Used For
 
-### Major Swings (External Structure)
-
-Visible on higher timeframes (Daily/4H). These define the overall trend:
-
-- Create the HH/HL or LH/LL pattern
-- Form strong S/R levels
-- Take more candles and time to form
-
-### Minor Swings (Internal Structure)
-
-Visible within each leg of the major structure:
-
-- Create internal sub-waves
-- Used for entry timing on lower timeframes
-- Less significant for overall trend direction
-
-```
-MAJOR (Daily):     HH ────────── New HH
-                  ╱               ╱
-                 ╱     HL        ╱
-                ╱                ╱
-               HL               ╱
-
-MINOR (1H):        ╱╲    ╱╲   ╱╲
-within Daily →    ╱  ╲  ╱  ╲ ╱  ╲
-               HL╱    ╲╱ m  ╲╱ m  → HH
-                      SL       SL
-```
-
----
-
-## Swing Points as Decision Points
-
-Every swing high and low represents a **decision**: the market decided to change direction at that price. This makes swing points powerful levels for:
-
-1. **Support/Resistance** — Previous swing highs become resistance; previous swing lows become support
-2. **Stop Placement** — Place stops beyond swing points (beyond the decision)
-3. **Target Setting** — Previous swings are natural targets
-4. **Trend Identification** — The pattern of swings defines the trend
-5. **Liquidity** — Stop losses cluster below swing lows and above swing highs
+| Use           | How                                               |
+| ------------- | ------------------------------------------------- |
+| **Structure** | HH/HL or LH/LL sequences define the trend         |
+| **Stops**     | Beyond the swing that would prove the trade wrong |
+| **Targets**   | The previous swing high (long) or low (short)     |
+| **Levels**    | Old swings become support and resistance          |
+| **Liquidity** | Stops gather just beyond obvious swings           |
 
 ---
 
 ## Swing Failure Pattern (SFP)
 
-A **Swing Failure Pattern** occurs when price tests a previous swing high or low but fails to close beyond it, then reverses. It's a powerful reversal signal.
+A **swing failure** happens when price trades **beyond** a swing point but **closes back inside** it, often in one candle.
 
-### Bullish SFP (at Swing Low):
+| SFP         | What happens                                 | Bias |
+| ----------- | -------------------------------------------- | ---- |
+| **Bearish** | Wick above a swing high, close back below it | Down |
+| **Bullish** | Wick below a swing low, close back above it  | Up   |
 
-```
-Previous SL: $2,380
-                ╲
-                 ╲
-Previous SL ─── $2,380 ────────────
-                  ╲  ╱ ← Price goes below
-                   ╲╱      but CLOSES above
-                   SFP at $2,375
-                   (wick below, close above)
-                   → BUY signal
-```
+Why it works: the stops beyond the swing are triggered, but no follow-through comes; the traders who broke out are now trapped. It's a **sweep** in SMC terms; see [Liquidity Sweep](/en/ict/liquidity-sweep).
 
-### Bearish SFP (at Swing High):
+**The trade in the chart:** the major swing high is **1.0950**. A candle wicks to **1.0958** and closes at **1.0942**.
 
-```
-Previous SH ─── 1.0950 ────────────
-                  ╱╲ ← Price goes above
-                 ╱  ╲    but CLOSES below
-                ╱    ╲
-                     SFP at 1.0955
-                     (wick above, close below)
-                     → SELL signal
-```
-
-### Why SFP Works:
-
-- Price sweeps the liquidity (stops) beyond the swing point
-- But fails to hold → indicates the opposite side has more strength
-- Essentially a **stop hunt** + rejection in one candle
+| Level   | Price       | Note                         |
+| ------- | ----------- | ---------------------------- |
+| Entry   | 1.0940      | After the SFP candle closes  |
+| Stop    | 1.0965      | Above the 1.0958 wick        |
+| Target  | 1.0880      | The next swing-low area      |
+| **R:R** | **1 : 2.4** | Risk 25 pips, reward 60 pips |
 
 ---
 
-## Real Trading Examples
+## Rules That Help
 
-### Example 1: NAS100 Swing High Identification
-
-- **4H chart**: Mark the obvious peaks
-- Swing High 1: 18,450 (July 5)
-- Swing High 2: 18,520 (July 8) → Higher High confirmed
-- Swing High 3: 18,580 (July 12) → Uptrend confirmed
-- **Trade**: Buy at pullback to the most recent swing low (HL)
-
-### Example 2: EUR/USD Swing Failure Pattern
-
-- **Previous swing high**: 1.0950 (tested 2 times)
-- **SFP candle**: Price wicks to 1.0958, closes at 1.0942
-- **Entry**: Sell at 1.0940 | **Stop**: 1.0965 | **Target**: 1.0880
-- **R:R**: 2.4:1 | **Result**: +58 pips ✅
-
-### Example 3: Gold Swing Low as Support
-
-- **Previous swing low**: $2,350
-- **Price returns**: Drops to $2,352 (2 points from previous SL)
-- **Signal**: Bullish hammer at $2,352
-- **Entry**: $2,355 | **Stop**: $2,338 | **Target**: $2,400
-- **R:R**: 2.6:1 | **Result**: +$45 ✅
-
-### Example 4: NAS100 Multi-Swing Analysis (BD Time)
-
-- **NY Open** (7:30 PM BD): Identify 15M swing structure
-- **Pre-market swing low**: 18,220 (from London session)
-- **NY sweeps**: Price dips to 18,210 (SFP below London SL)
-- **Entry**: Buy at 18,225 | **Stop**: 18,200 | **Target**: 18,320
-- **Session**: 8:00 PM BD entry → 10:30 PM BD target hit
-- **Result**: +95 points, 3.8R ✅
+1. **The most recent swing matters most.** Older swings matter less unless they're also major higher-timeframe levels.
+2. **Broken swings change role.** A broken swing high often becomes support (see [Support & Resistance](/en/price-action/support-resistance)).
+3. **Equal highs and lows are liquidity.** Two swings at the same price attract stops on the other side.
 
 ---
 
-## Swing Point Rules for Structure
+## Examples (No Chart)
 
-### Rule 1: Most Recent Swing Matters Most
+### 1. Gold, a swing low as support
 
-The most recent swing high/low is the most relevant for structure analysis. Older swings lose significance as new ones form.
+Gold pulls back to its last major 4H swing low at **2,350** and forms a bullish pin bar. Buy **2,355**, stop **2,338** below the swing low, target the last swing high at **2,400**: risk $17, reward $45, **R:R 1 : 2.6** (planned).
 
-### Rule 2: Broken Swings Change Role
+### 2. NAS100, 15m swings in the NY session (BD time)
 
-- A broken swing high (BOS) → that high is no longer resistance
-- A broken swing low (BOS) → that low is no longer support
-- Focus on UNBROKEN swing points for S/R
+From the NY open (**7:30 PM BD** in US summer), mark the 15m swings. NAS100 makes a higher low at **18,210** and breaks the last minor high. Buy **18,225** at about **8:00 PM BD**, stop **18,200** below the higher low, target the session's major high at **18,320**: risk 25 points, reward 95 points, **R:R 1 : 3.8** (planned).
 
-### Rule 3: Equal Highs/Lows = Liquidity
-
-When price creates equal (or nearly equal) swing highs or lows:
-
-- **Equal highs** = Buy-side liquidity (stops above)
-- **Equal lows** = Sell-side liquidity (stops below)
-- These are prime targets for institutional sweeps
+<Callout type="info" title="Removed: results">
+  The original listed outcomes for each example ("+58 pips", "+$45", "+95 points, 3.8R"). These are teaching examples,
+  so only the plan is shown.
+</Callout>
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Swing Point Errors">
+| Mistake                                  | Fix                                                   |
+| ---------------------------------------- | ----------------------------------------------------- |
+| Marking a swing before it's confirmed    | Wait for the candles after it to close                |
+| Treating minor swings as major levels    | Use the 5-candle rule on the analysis timeframe       |
+| Stop exactly at the swing                | A few pips beyond it, where a sweep would end         |
+| Calling every wick beyond a swing an SFP | It needs a close back inside, and ideally a key level |
+| Ignoring the higher timeframe            | A 1H SFP against a strong daily trend often fails     |
 
-**❌ Marking every tiny swing** — Focus on OBVIOUS swings visible from a distance. Too many marks create confusion.
+---
 
-**❌ Using wrong timeframe** — Match your swing analysis to your trading style. Scalpers use 15M swings; swing traders use Daily swings.
+## Practice
 
-**❌ Ignoring the SFP** — Swing Failure Patterns are among the highest probability reversals. Don't miss them.
-
-**❌ Not updating swings** — As new swings form, update your chart. Old swings become less relevant.
-
-**❌ Confusing wick for body** — For structure breaks, a BODY close beyond the swing is required, not just a wick.
-
-</Callout>
+1. On a 1H chart, mark 30 candles' swings with both rules and compare the counts.
+2. Find three swing failures at major swings and note what happened over the next 10 candles.
+3. Plan one SFP trade with entry, stop, target and R:R.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
 ---
 
 ## Summary
 
-| Concept              | Details                                                 |
-| -------------------- | ------------------------------------------------------- |
-| **Swing High**       | Price peak with lower highs on both sides               |
-| **Swing Low**        | Price trough with higher lows on both sides             |
-| **3-Candle Rule**    | Standard swing identification                           |
-| **5-Candle Rule**    | Stronger, more reliable swings                          |
-| **SFP**              | Price tests but fails to hold beyond a swing → reversal |
-| **Major vs Minor**   | Major = HTF structure; Minor = internal sub-waves       |
-| **Equal Highs/Lows** | Liquidity pools for institutional targeting             |
+| Concept      | Key point                                           |
+| ------------ | --------------------------------------------------- |
+| **3-candle** | Minor swings; internal structure                    |
+| **5-candle** | Major swings; external structure (fractals)         |
+| **Uses**     | Structure, stops, targets, levels, liquidity        |
+| **SFP**      | Beyond a swing, close back inside: trapped breakout |
 
 ---
 
 ## Related Topics
 
-- [Market Structure](/en/price-action/market-structure) — How swings create structure
-- [Trend Analysis](/en/price-action/trend-analysis) — Swing patterns define trends
-- [Support & Resistance](/en/price-action/support-resistance) — Swing points as S/R
-- [Liquidity](/en/price-action/liquidity) — Stop clusters at swing points
-- [Breakouts](/en/price-action/breakouts) — When swings break
+- [Market Structure](/en/price-action/market-structure) — turning swings into trend
+- [Liquidity](/en/price-action/liquidity) — stops beyond swings
+- [Fakeouts](/en/price-action/fakeouts) — failed breaks of levels
+- [Support & Resistance](/en/price-action/support-resistance) — swings as levels

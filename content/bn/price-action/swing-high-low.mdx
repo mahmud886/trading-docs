@@ -1,106 +1,152 @@
 ---
-title: "Swing High ও Low — সম্পূর্ণ গাইড"
-description: "Swing High ও Low চিহ্নিতকরণ আয়ত্ত করুন। Fractal Concept, Swing Failure Pattern এবং Structure Analysis-এ Swing Point কীভাবে ব্যবহার করবেন শিখুন।"
+title: "সুইং হাই ও লো — সম্পূর্ণ গাইড"
+description: "৩-ক্যান্ডেল আর ৫-ক্যান্ডেলের নিয়মে Swing High আর Low খুঁজুন, Minor আর Major Swing আলাদা করুন, Structure, Stop, টার্গেট আর Liquidity র জন্য Swing ব্যবহার করুন, আর Swing Failure Pattern (SFP) ট্রেড করুন — চার্ট, অ্যানিমেটেড ওয়াকথ্রু আর তিনটি পরিকল্পিত উদাহরণসহ।"
 level: beginner
 order: 7
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Swing High ও Swing Low কী?
+## Swing High আর Low কী?
 
-Swing Point হলো **Market Structure-এর Building Block**। Swing High হলো এমন একটি Price Peak যার দুই পাশে নিচু High আছে। Swing Low হলো এমন একটি Price Trough যার দুই পাশে উচ্চু Low আছে। এগুলো চিহ্নিত করে কোথায় Price Direction পরিবর্তন করেছে এবং Trend, Support/Resistance ও Structure Break চিহ্নিতকরণের ভিত্তি।
+**Swing High** হলো একটি চূড়া: এমন ক্যান্ডেল যার High আশেপাশের ক্যান্ডেলগুলোর উপরে। **Swing Low** হলো একটি খাদ: এমন ক্যান্ডেল যার Low আশেপাশের ক্যান্ডেলগুলোর নিচে।
 
-<Callout type="info" title="সবকিছুর ভিত্তি">
-  সঠিকভাবে Swing High ও Low চিহ্নিত না করে আপনি Trend নির্ধারণ, Trendline আঁকা, BOS/CHOCH চিহ্নিত বা কোনো Price Action
-  Strategy Trade করতে পারবেন না। এই Concept প্রথমে আয়ত্ত করুন — বাকি সবকিছু এর উপর তৈরি।
+প্রাইস অ্যাকশনের বাকি সবকিছুর ভিত্তি Swing: ট্রেন্ড, Structure, Support আর Resistance, Stop আর টার্গেট।
+
+---
+
+## Swing খোঁজার দুটি নিয়ম
+
+| নিয়ম                   | Swing High                                  | Swing Low                                  | খুঁজে পায়                  |
+| ----------------------- | ------------------------------------------- | ------------------------------------------ | --------------------------- |
+| **৩-ক্যান্ডেল** (Minor) | প্রতিটি পাশের ক্যান্ডেলের উপরে High         | প্রতিটি পাশের ক্যান্ডেলের নিচে Low         | অনেক ছোট Swing              |
+| **৫-ক্যান্ডেল** (Major) | প্রতিটি পাশে **দুটি** ক্যান্ডেলের উপরে High | প্রতিটি পাশে **দুটি** ক্যান্ডেলের নিচে Low | কম, বেশি গুরুত্বপূর্ণ Swing |
+
+৫-ক্যান্ডেলের নিয়ম প্রচলিত **Fractal** ইন্ডিকেটরের মতোই। মনে রাখুন, পরের ক্যান্ডেলগুলো Close হলেই Swing নিশ্চিত হয়: ৫-ক্যান্ডেলের নিয়মে দুই ক্যান্ডেল পরে।
+
+---
+
+## Minor, Major, আর Failure
+
+![EUR/USD 1H: ৩-ক্যান্ডেলের Swing এ ছোট মার্কার, ৫-ক্যান্ডেলের Swing এ বড় মার্কার, 1.0950 এ Major Swing High, তারপর 1.0958 পর্যন্ত Wick আর 1.0942 এ ফিরে Close করা Swing Failure](/images/price-action/swing-high-low/swing-points-sfp-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/swing-high-low-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের লেভেলের চারপাশে তৈরি। Swing মার্কারগুলো দুই নিয়মে ক্যান্ডেল থেকে হিসাব করা।
+  এগুলো আসল প্রাইস নয়; R:R হলো পরিকল্পিত রিস্ক-রিওয়ার্ড, ফলাফল নয়।
 </Callout>
 
----
+একই ৩১টি ক্যান্ডেলে ৩-ক্যান্ডেলের নিয়ম **১০টি Swing** মার্ক করে; ৫-ক্যান্ডেলের নিয়ম রাখে মাত্র **৪টি**। প্রতিটি Major Swing একটি Minor Swing ও, কিন্তু উল্টোটা নয়।
 
-## Swing Point কীভাবে চিহ্নিত করবেন
-
-### 3-Candle Rule (Standard)
-
-- **Swing High**: যে Candle-এর HIGH তার আগের ও পরের Candle-এর High-এর চেয়ে উচ্চ
-- **Swing Low**: যে Candle-এর LOW তার আগের ও পরের Candle-এর Low-এর চেয়ে নিম্ন
-
-```
-Swing High (3-Candle):
-      ┃ ← এই Candle-এর High সর্বোচ্চ
-    ┃ ┃ ┃
-    ┃ ┃ ┃ ← দুই পাশের Candle-এর High নিচু
-
-Swing Low (3-Candle):
-    ┃ ┃ ┃ ← দুই পাশের Candle-এর Low উচ্চু
-    ┃ ┃ ┃
-      ┃ ← এই Candle-এর Low সর্বনিম্ন
-```
-
-### 5-Candle Rule (শক্তিশালী Swing)
-
-- দুই পাশে ২টি করে Candle (মোট ৫) — আরো নির্ভরযোগ্য
-- Higher Timeframe-এ Significant Swing Point
+| ধরন       | অন্য নাম           | ব্যবহার                                  |
+| --------- | ------------------ | ---------------------------------------- |
+| **Major** | External Structure | ট্রেন্ডের দিক, Key Level, প্রধান টার্গেট |
+| **Minor** | Internal Structure | এন্ট্রির সময়, আগাম সতর্কতা, টাইট Stop   |
 
 ---
 
-## Swing Point ও Market Structure
+## Swing কীসে ব্যবহার হয়
 
-### Bullish Structure:
-
-```
-HH (Higher High) → প্রতিটি Swing High আগেরটির চেয়ে উচ্চ
-HL (Higher Low)  → প্রতিটি Swing Low আগেরটির চেয়ে উচ্চ
-= UPTREND
-
-      SH3 (HH)
-     ╱
-    ╱   SH2 (HH)
-   ╱   ╱
-  SL2(HL)
- ╱    SH1
-SL1(HL)
-```
-
-### Bearish Structure:
-
-```
-LH (Lower High) → প্রতিটি Swing High আগেরটির চেয়ে নিম্ন
-LL (Lower Low)  → প্রতিটি Swing Low আগেরটির চেয়ে নিম্ন
-= DOWNTREND
-```
+| ব্যবহার       | কীভাবে                                       |
+| ------------- | -------------------------------------------- |
+| **Structure** | HH/HL বা LH/LL ক্রম ট্রেন্ড নির্ধারণ করে     |
+| **Stop**      | যে Swing ট্রেডটাকে ভুল প্রমাণ করবে তার ওপারে |
+| **টার্গেট**   | আগের Swing High (Long) বা Low (Short)        |
+| **লেভেল**     | পুরনো Swing Support আর Resistance হয়        |
+| **Liquidity** | স্পষ্ট Swing এর ঠিক ওপারে Stop জমে           |
 
 ---
 
-## Swing Point-এর গুরুত্ব
+## Swing Failure Pattern (SFP)
 
-| ব্যবহার                 | কীভাবে                              |
-| ----------------------- | ----------------------------------- |
-| **Trend চিহ্নিতকরণ**    | HH/HL = Uptrend, LH/LL = Downtrend  |
-| **BOS চিহ্নিতকরণ**      | Swing High/Low-এর বাইরে Break       |
-| **CHOCH চিহ্নিতকরণ**    | Trend-এর বিরুদ্ধে Swing Point Break |
-| **Support/Resistance**  | পূর্ববর্তী Swing Point = S/R Level  |
-| **Stop Loss Placement** | Swing Point-এর বাইরে Stop           |
-| **Target Setting**      | পরবর্তী Swing Point = Target        |
-| **Fibonacci Drawing**   | Swing Low → Swing High (বা উল্টো)   |
+**Swing Failure** হয় যখন Price একটি Swing পয়েন্টের **ওপারে** ট্রেড করে কিন্তু **ভিতরে ফিরে Close** করে, প্রায়ই একটি ক্যান্ডেলেই।
+
+| SFP         | কী হয়                                   | Bias |
+| ----------- | ---------------------------------------- | ---- |
+| **Bearish** | Swing High এর উপরে Wick, নিচে ফিরে Close | নিচে |
+| **Bullish** | Swing Low এর নিচে Wick, উপরে ফিরে Close  | উপরে |
+
+কেন কাজ করে: Swing এর ওপারের Stop গুলো Trigger হয়, কিন্তু কোনো ধারাবাহিকতা আসে না; যারা Breakout এ ঢুকেছিল তারা এখন আটকা। SMC র ভাষায় এটা একটা **Sweep**; দেখুন [Liquidity Sweep](/bn/ict/liquidity-sweep)।
+
+**চার্টের ট্রেড:** Major Swing High **1.0950**। একটি ক্যান্ডেলের Wick **1.0958** পর্যন্ত যায় আর **1.0942** এ Close করে।
+
+| লেভেল   | প্রাইস      | নোট                            |
+| ------- | ----------- | ------------------------------ |
+| এন্ট্রি | 1.0940      | SFP ক্যান্ডেল Close হওয়ার পর  |
+| Stop    | 1.0965      | 1.0958 Wick এর উপরে            |
+| টার্গেট | 1.0880      | পরের Swing Low এলাকা           |
+| **R:R** | **১ : ২.৪** | রিস্ক ২৫ পিপ, রিওয়ার্ড ৬০ পিপ |
+
+---
+
+## সহায়ক নিয়ম
+
+1. **সবশেষ Swing সবচেয়ে গুরুত্বপূর্ণ।** পুরনো Swing কম গুরুত্বপূর্ণ, যদি না সেগুলো Higher Timeframe এর Major লেভেলও হয়।
+2. **ভাঙা Swing ভূমিকা বদলায়।** ভাঙা Swing High প্রায়ই Support হয় (দেখুন [Support & Resistance](/bn/price-action/support-resistance))।
+3. **Equal High আর Low হলো Liquidity।** একই প্রাইসে দুটি Swing উল্টো দিকে Stop আকর্ষণ করে।
+
+---
+
+## উদাহরণ (চার্ট ছাড়া)
+
+### ১. Gold, Support হিসেবে Swing Low
+
+Gold শেষ Major 4H Swing Low **2,350** এ পুলব্যাক করে একটি Bullish Pin Bar তৈরি করে। **2,355** এ Buy, Swing Low এর নিচে **2,338** এ Stop, শেষ Swing High **2,400** টার্গেট: রিস্ক $17, রিওয়ার্ড $45, **R:R ১ : ২.৬** (পরিকল্পিত)।
+
+### ২. NAS100, NY সেশনে 15m Swing (BD সময়)
+
+NY ওপেন থেকে (US গ্রীষ্মে **সন্ধ্যা ৭:৩০ BD**) 15m Swing মার্ক করুন। NAS100 **18,210** এ Higher Low তৈরি করে শেষ Minor High ভাঙে। প্রায় **রাত ৮:০০ BD** তে **18,225** এ Buy, Higher Low এর নিচে **18,200** এ Stop, সেশনের Major High **18,320** টার্গেট: রিস্ক ২৫ পয়েন্ট, রিওয়ার্ড ৯৫ পয়েন্ট, **R:R ১ : ৩.৮** (পরিকল্পিত)।
+
+<Callout type="info" title="সরানো হয়েছে: ফলাফল">
+  মূল লেসনে প্রতিটি উদাহরণের ফলাফল দেওয়া ছিল ("+৫৮ পিপ", "+$45", "+৯৫ পয়েন্ট, 3.8R")। এগুলো শেখানোর উদাহরণ, তাই শুধু
+  পরিকল্পনা দেখানো হয়েছে।
+</Callout>
 
 ---
 
 ## সাধারণ ভুল
 
-| ভুল                               | সমাধান                                 |
-| --------------------------------- | -------------------------------------- |
-| প্রতিটি ছোট Wick-কে Swing মনে করা | 3-Candle বা 5-Candle Rule ব্যবহার করুন |
-| ভুল Timeframe                     | আপনার Trading TF-এ Swing চিহ্নিত করুন  |
-| Subjective চিহ্নিতকরণ             | নিয়ম-ভিত্তিক পদ্ধতি ব্যবহার করুন      |
-| Minor ও Major Swing গুলিয়ে ফেলা  | HTF = Major, LTF = Minor               |
-| Swing Point Update না করা         | নতুন Candle-এ নতুন Swing হতে পারে      |
+| ভুল                                    | সমাধান                                                      |
+| -------------------------------------- | ----------------------------------------------------------- |
+| নিশ্চিত হওয়ার আগেই Swing মার্ক করা    | পরের ক্যান্ডেলগুলো Close হওয়ার অপেক্ষা করুন                |
+| Minor Swing কে Major লেভেল ভাবা        | বিশ্লেষণের টাইমফ্রেমে ৫-ক্যান্ডেলের নিয়ম ব্যবহার করুন      |
+| Stop ঠিক Swing এ                       | কয়েক পিপ ওপারে, যেখানে Sweep শেষ হবে                       |
+| Swing এর ওপারে প্রতিটি Wick কে SFP বলা | ভিতরে ফিরে Close দরকার, আর ভালো হয় Key Level এ             |
+| Higher Timeframe উপেক্ষা               | শক্তিশালী Daily ট্রেন্ডের বিপরীতে 1H SFP প্রায়ই ব্যর্থ হয় |
+
+---
+
+## অনুশীলন
+
+1. একটি 1H চার্টে ৩০টি ক্যান্ডেলের Swing দুই নিয়মে মার্ক করে সংখ্যা তুলনা করুন।
+2. Major Swing এ তিনটি Swing Failure খুঁজে পরের ১০টি ক্যান্ডেলে কী হয়েছে লিখুন।
+3. এন্ট্রি, Stop, টার্গেট আর R:R সহ একটি SFP ট্রেড পরিকল্পনা করুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা           | মূল কথা                                              |
+| --------------- | ---------------------------------------------------- |
+| **৩-ক্যান্ডেল** | Minor Swing; Internal Structure                      |
+| **৫-ক্যান্ডেল** | Major Swing; External Structure (Fractal)            |
+| **ব্যবহার**     | Structure, Stop, টার্গেট, লেভেল, Liquidity           |
+| **SFP**         | Swing এর ওপারে, ভিতরে ফিরে Close: আটকে পড়া Breakout |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Market Structure](/bn/price-action/market-structure) — Swing-ভিত্তিক Structure
-- [Trend Analysis](/bn/price-action/trend-analysis) — Swing দিয়ে Trend চিহ্নিত
-- [Support ও Resistance](/bn/price-action/support-resistance) — Swing = S/R Level
-- [Breakouts](/bn/price-action/breakouts) — Swing Break = Breakout
-- [Pullbacks](/bn/price-action/pullbacks) — Swing Low-এ Pullback Entry
+- [Market Structure](/bn/price-action/market-structure) — Swing থেকে ট্রেন্ড
+- [Liquidity](/bn/price-action/liquidity) — Swing এর ওপারে Stop
+- [Fakeouts](/bn/price-action/fakeouts) — লেভেলের ব্যর্থ ভাঙন
+- [Support & Resistance](/bn/price-action/support-resistance) — লেভেল হিসেবে Swing
