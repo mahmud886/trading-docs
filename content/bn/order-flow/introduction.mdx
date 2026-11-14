@@ -1,107 +1,142 @@
 ---
-title: "অর্ডার ফ্লো ট্রেডিং পরিচিতি"
-description: "অর্ডার ফ্লো বুঝুন — রিয়েল-টাইম বাই ও সেল অর্ডারের অধ্যয়ন যা রেগুলার চার্টে অদৃশ্য ইনস্টিটিউশনাল অ্যাক্টিভিটি প্রকাশ করে।"
+title: "Order Flow ট্রেডিংয়ের ভূমিকা"
+description: "Order Flow কী আর কী নয়: Aggressive বনাম Passive অর্ডার, ট্রেড কীভাবে ম্যাচ হয়, একটি ক্যান্ডেলের ভেতরের Volume — Ask এ Buyer আর Bid এ Seller — প্রধান টুল (DOM, Volume Profile, VWAP, Delta, Footprint), কোন ডেটা লাগে, আর Spot ফরেক্স ট্রেডারদের সীমাবদ্ধতা — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: beginner
 order: 1
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## What is Order Flow?
+## Order Flow কী?
 
-Order Flow is the study of **actual buy and sell orders** entering the market in real-time. While price charts show you WHERE price went, order flow shows you WHY and HOW it got there.
+**Order Flow** হলো মার্কেটে আসলে যে অর্ডারগুলো এক্সিকিউট হচ্ছে তার অধ্যয়ন — **কে** Aggressive ছিল, **কোন প্রাইসে**, আর **কতটা**। একটি ক্যান্ডেল শুধু Open, High, Low আর Close দেখায়; Order Flow এর ভেতরের ট্রেডগুলো দেখায়।
 
-<Callout type="info" title="The Institutional Edge">
-  Every candle on your chart is the result of thousands of individual orders being matched. Order flow lets you see
-  INSIDE each candle — revealing whether institutions are buying, selling, or absorbing pressure.
+<Callout type="warning" title="সুর নরম করা হয়েছে">
+  মূল লেসনে বলা ছিল Order Flow "সাধারণ চার্টে অদৃশ্য প্রাতিষ্ঠানিক কার্যকলাপ" দেখায় আর এটা "পেশাদার ট্রেডিংয়ের
+  ভিত্তি"। এটা এক্সিকিউটেড Volume দেখায় আর কিছু প্ল্যাটফর্মে অপেক্ষমাণ অর্ডার — কে ট্রেড করছে বা কেন, তা নয়। এটাকে
+  প্রাইস **কীভাবে** নড়েছে সে সম্পর্কে বাড়তি তথ্য হিসেবে দেখুন, কারও উদ্দেশ্যের জানালা হিসেবে নয়।
 </Callout>
 
 ---
 
-## Why Order Flow Matters
+## ট্রেড কীভাবে হয়
 
-### Price Charts vs Order Flow
+প্রতিটি ট্রেডের দুটি পক্ষ:
 
-| Aspect  | Price Charts        | Order Flow              |
-| ------- | ------------------- | ----------------------- |
-| Shows   | Where price went    | Why price moved         |
-| Timing  | After the fact      | Real-time               |
-| Depth   | Surface level       | Institutional intent    |
-| Edge    | Pattern recognition | Supply/demand imbalance |
-| Used by | Retail traders      | Institutional desks     |
+| পক্ষ                  | অর্ডারের ধরন       | ভূমিকা                                  |
+| --------------------- | ------------------ | --------------------------------------- |
+| **Aggressive Buyer**  | Market Buy         | **Ask** এ কেনে, Liquidity নেয়          |
+| **Passive Seller**    | Limit Sell (Ask এ) | অর্ডার বুকে অপেক্ষা করে, Liquidity দেয় |
+| **Aggressive Seller** | Market Sell        | **Bid** এ বেচে, Liquidity নেয়          |
+| **Passive Buyer**     | Limit Buy (Bid এ)  | অর্ডার বুকে অপেক্ষা করে, Liquidity দেয় |
 
-### The Order Matching Process
-
-Every trade requires two parties:
-
-1. **Aggressive buyer** (market order to buy) matched with **passive seller** (limit order to sell)
-2. **Aggressive seller** (market order to sell) matched with **passive buyer** (limit order to buy)
-
-```
-Market Buy Order → Matched with Limit Sell (at Ask) → Price stays/rises
-Market Sell Order → Matched with Limit Buy (at Bid) → Price stays/falls
-```
+Ask এ হওয়া ট্রেড **Buy** আর Bid এ হওয়া ট্রেড **Sell** হিসেবে শ্রেণিবদ্ধ হয়। Passive অংশগ্রহণকারী বড় বা ছোট হতে পারে; বড় অংশগ্রহণকারীরা প্রায়ই প্রাইস না নাড়াতে Limit অর্ডার ব্যবহার করে, কিন্তু ডেটায় কে কে তা বলা নেই।
 
 ---
 
-## Key Order Flow Concepts
+## একটি ক্যান্ডেলের ভেতরে
 
-### 1. Aggressive vs Passive Orders
+![1.0852 এ Open আর 1.0857 এ Close হওয়া একটি সিন্থেটিক 5-মিনিট ফিউচার্স ক্যান্ডেল, পাশে 1.0850 থেকে 1.0858 পর্যন্ত প্রতিটি প্রাইসে Volume — Bid এ বিক্রি (বামে, লাল) আর Ask এ কেনা (ডানে, সবুজ); Point of Control 1.0854 এ 800 কন্ট্রাক্ট, আর ক্যান্ডেলের Delta +850](/images/order-flow/introduction/inside-one-candle-dark.webp)
 
-- **Aggressive orders** (market orders): Take liquidity, cross the spread
-- **Passive orders** (limit orders): Provide liquidity, sit in the order book
-- **Institutions primarily use limit orders** — they provide liquidity and avoid slippage
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/order-flow/inside-one-candle-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### 2. The Order Book (DOM)
-
-The Depth of Market shows all pending limit orders at each price level:
-
-- **Bid side**: Limit buy orders (support)
-- **Ask side**: Limit sell orders (resistance)
-- **Imbalances**: When one side is significantly heavier
-
-### 3. Volume at Price
-
-Unlike time-based volume (volume per candle), Volume at Price shows:
-
-- How much volume traded at each price level
-- Where the most activity occurred (Point of Control)
-- Where price found acceptance vs rejection
-
----
-
-## Order Flow Tools Overview
-
-| Tool                 | What It Shows                | Best For                 |
-| -------------------- | ---------------------------- | ------------------------ |
-| **DOM/Level 2**      | Live order book depth        | Scalping, reading intent |
-| **Volume Profile**   | Volume distribution by price | Finding S/R, value areas |
-| **Footprint Charts** | Bid/ask volume per candle    | Seeing inside candles    |
-| **Delta**            | Buy vs sell pressure         | Confirming moves         |
-| **VWAP**             | Volume-weighted average      | Institutional benchmark  |
-
----
-
-## Who Uses Order Flow?
-
-- **Market makers** — Manage inventory and hedge risk
-- **Prop firm traders** — Edge in execution and timing
-- **Hedge funds** — Confirm directional bias before large entries
-- **HFT firms** — Exploit microsecond imbalances
-- **Institutional desks** — Execute large orders without market impact
-
----
-
-## Getting Started
-
-To begin reading order flow effectively:
-
-1. Start with **Volume Profile** — understand where volume clusters
-2. Add **VWAP** — institutional benchmark price
-3. Learn **Delta** — buy/sell pressure imbalances
-4. Graduate to **Footprint charts** — see inside each candle
-5. Finally **DOM reading** — real-time order book analysis
-
-<Callout type="warning" title="Important">
-  Order flow is NOT a replacement for market structure and price action — it's a CONFIRMATION tool. Always combine with
-  HTF bias (ICT/SMC concepts) before using order flow for precision entries.
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ডেটা **সিন্থেটিক** (নয়টি প্রাইস লেভেলে কন্ট্রাক্ট)। আসল Order-Flow ডেটায় প্রতিটি ট্রেড Buy বা Sell হিসেবে শ্রেণিবদ্ধ
+  করা ফিড লাগে।
 </Callout>
+
+| পরিমাপ                     | চার্টে                         | অর্থ                                                     |
+| -------------------------- | ------------------------------ | -------------------------------------------------------- |
+| **Volume at Price**        | 1.0850 এ 150 থেকে 1.0854 এ 800 | ট্রেডিং কোথায় জমেছে                                     |
+| **Point of Control (POC)** | 1.0854, 800 কন্ট্রাক্ট         | এই ক্যান্ডেলে সর্বোচ্চ Volume এর প্রাইস                  |
+| **Ask এ কেনা**             | 2,500 কন্ট্রাক্ট               | Aggressive কেনা                                          |
+| **Bid এ বেচা**             | 1,650 কন্ট্রাক্ট               | Aggressive বেচা                                          |
+| **Delta**                  | 2,500 − 1,650 = **+850**       | নিট Aggressive কেনা; ওঠা ক্যান্ডেলের সাথে সামঞ্জস্যপূর্ণ |
+
+ক্যান্ডেলের রঙ শুধু বলে প্রাইস কোথায় গেছে। এখানে ল্যাডার দেখায় কীভাবে: 1.0853 – 1.0855 এ ভারী কেনা আর High এর কাছে Seller কমে যাওয়া (1.0858 এ 40 কন্ট্রাক্ট)।
+
+---
+
+## প্রধান টুল
+
+| টুল                 | কী দেখায়                                         | দেখুন                                               |
+| ------------------- | ------------------------------------------------- | --------------------------------------------------- |
+| **DOM / Level 2**   | প্রতিটি প্রাইসে অপেক্ষমাণ Limit অর্ডার            | [DOM and Level 2](/bn/order-flow/dom-level2)        |
+| **Volume Profile**  | একটি সময়কালে প্রাইস অনুযায়ী Volume              | [Volume Profile](/bn/order-flow/volume-profile)     |
+| **VWAP**            | Volume-ওয়েটেড গড় প্রাইস                         | [VWAP](/bn/order-flow/vwap)                         |
+| **Delta**           | Buy বিয়োগ Sell Volume                            | [Delta Analysis](/bn/order-flow/delta-analysis)     |
+| **Footprint চার্ট** | প্রতিটি ক্যান্ডেলে প্রতিটি প্রাইসে Bid/Ask Volume | [Footprint Charts](/bn/order-flow/footprint-charts) |
+
+---
+
+## কোন ডেটা লাগে?
+
+| মার্কেট                    | Order-Flow ডেটা                                                                                                                                   |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ফিউচার্স (যেমন 6E, ES, GC) | কেন্দ্রীভূত এক্সচেঞ্জ ডেটা: আসল Volume, ট্রেড-বাই-ট্রেড Bid/Ask, একটি অর্ডার বুক                                                                  |
+| স্টক                       | আসল Volume সহ এক্সচেঞ্জ ডেটা; একাধিক ভেন্যুতে ছড়ানো                                                                                              |
+| **Spot ফরেক্স**            | কেন্দ্রীয় এক্সচেঞ্জ নেই: ব্রোকারের "Volume" হলো **Tick Volume** বা ওই ব্রোকারের নিজস্ব ফ্লো; অর্ডার-বুক টুল শুধু ওই ব্রোকার/Liquidity পুল দেখায় |
+
+Spot ফরেক্স ট্রেড করলে অনেক Order-Flow টুল **কারেন্সি ফিউচার্সে** (যেমন EUR/USD এর জন্য 6E) প্রক্সি হিসেবে ব্যবহার করা ভালো — তবুও এটা একটি ভেন্যুকেই প্রতিফলিত করে।
+
+---
+
+## কীভাবে শুরু করবেন
+
+1. শব্দভান্ডার শিখুন: Bid, Ask, Aggressive, Passive, Delta, POC।
+2. [Volume Profile](/bn/order-flow/volume-profile) আর [VWAP](/bn/order-flow/vwap) দিয়ে শুরু করুন — সবচেয়ে সহজ টুল।
+3. Volume at Price পড়তে পারলে [Delta](/bn/order-flow/delta-analysis) যোগ করুন।
+4. Footprint চার্ট আর DOM শেষে ব্যবহার করুন; এগুলোতে স্ক্রিনে সবচেয়ে বেশি সময় লাগে।
+5. সবসময় কনটেক্সটের সাথে মেলান: Structure, লেভেল আর আপনার পরিকল্পনা। Order Flow **নিশ্চিত করে**, বিশ্লেষণের বিকল্প নয়।
+
+### উদাহরণ (চার্ট ছাড়া) — নিশ্চিতকরণ হিসেবে Order Flow
+
+6E তে প্রাইস **1.0850** এর একটি Daily Support এ পুলব্যাক করে। লেভেলে একটি ৫-মিনিট ক্যান্ডেল Bid এ ভারী বিক্রি (**1,800** কন্ট্রাক্ট) দেখায় কিন্তু Low টিকে থাকে, আর পরের ক্যান্ডেলের Delta **+620** এবং **1.0854** এর উপরে Close। পরিকল্পনা: **1.0855** এ Buy, Stop **1.0846** (Support এর নিচে), টার্গেট **1.0888**: রিস্ক ৯ পিপ, রিওয়ার্ড ৩৩, পরিকল্পিত **১ : ৩.৭**। Order-Flow এর প্রমাণ (বিক্রি শোষিত, তারপর কেনা) শুধু আগে চিহ্নিত লেভেলের সাথে যোগ হয়।
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                            | সমাধান                                                   |
+| ---------------------------------------------- | -------------------------------------------------------- |
+| Tick Volume কে এক্সচেঞ্জ Volume এর মতো ব্যবহার | আপনার ডেটা কী তা জানুন                                   |
+| কনটেক্সট ছাড়া Order Flow ট্রেড                | আগে লেভেল আর Structure চিহ্নিত করুন                      |
+| একসাথে অনেক টুল পড়া                           | আরও যোগ করার আগে এক মাস এক-দুটি টুল                      |
+| একটি ক্যান্ডেলের Delta তে বেশি ভরসা            | কয়েকটি ক্যান্ডেল আর লেভেল দেখুন                         |
+| ধরে নেওয়া "প্রতিষ্ঠান" দেখা যায়              | আপনি এক্সিকিউটেড Volume আর (কখনো) অপেক্ষমাণ অর্ডার দেখেন |
+
+---
+
+## অনুশীলন
+
+1. একটি ৫-মিনিট ফিউচার্স চার্টে (বা রিপ্লেতে) একটি ক্যান্ডেল বেছে এর Volume at Price, POC আর Delta লিখুন।
+2. ক্যান্ডেলের রঙ আর Delta তুলনা করুন: মেলে কি?
+3. ক্যান্ডেলটি যে লেভেলে তৈরি হয়েছে আর পরের ক্যান্ডেল কী করেছে লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা      | বিস্তারিত                                                              |
+| ---------- | ---------------------------------------------------------------------- |
+| Order Flow | ক্যান্ডেলের ভেতরের এক্সিকিউটেড ট্রেড — কে Aggressive ছিল, কোথায়, কতটা |
+| Delta      | Ask এ কেনা Volume বিয়োগ Bid এ বেচা Volume                             |
+| POC        | সর্বোচ্চ Volume এর প্রাইস                                              |
+| সীমা       | আসল, শ্রেণিবদ্ধ ডেটা লাগে; Spot ফরেক্সে দুর্বল                         |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [DOM and Level 2](/bn/order-flow/dom-level2)
+- [Volume Profile](/bn/order-flow/volume-profile)
+- [Delta Analysis](/bn/order-flow/delta-analysis)
+- [Footprint Charts](/bn/order-flow/footprint-charts)
