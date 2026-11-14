@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import {
   Search,
@@ -94,16 +95,34 @@ export function SearchModal() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [close]);
 
-  // Lock body scroll when open
+  // Lock page scroll while open, and follow the visual viewport so the on-screen keyboard (iOS/Android)
+  // never covers the box and the modal stays where the user is looking, however far the page is scrolled.
+  const wrapRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (open) {
-      document.documentElement.style.overflow = "hidden";
-      setTimeout(() => inputRef.current?.focus(), 50);
-    } else {
+    if (!open) {
       document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      return;
     }
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    const focusTimer = setTimeout(() => inputRef.current?.focus(), 50);
+    const vv = window.visualViewport;
+    const update = () => {
+      const el = wrapRef.current;
+      if (!vv || !el) return;
+      el.style.top = `${vv.offsetTop}px`;
+      el.style.height = `${vv.height}px`;
+    };
+    update();
+    vv?.addEventListener("resize", update);
+    vv?.addEventListener("scroll", update);
     return () => {
+      clearTimeout(focusTimer);
+      vv?.removeEventListener("resize", update);
+      vv?.removeEventListener("scroll", update);
       document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
     };
   }, [open]);
 
@@ -183,10 +202,15 @@ export function SearchModal() {
   }
 
   /* ── Modal ── */
-  return (
+  // Rendered into <body>: the navbar uses backdrop-filter, which makes it the containing block for fixed
+  // children, so a modal inside it was positioned against the navbar instead of the screen.
+  const modal = (
     <div
-      className="fixed inset-0 flex items-center justify-center px-4"
+      ref={wrapRef}
+      className="fixed inset-x-0 flex items-start justify-center px-3 pt-[4vh] sm:items-center sm:px-4 sm:pt-0"
       style={{
+        top: 0,
+        height: "100dvh",
         zIndex: 9997,
         backgroundColor: "rgba(0, 0, 0, 0.6)",
         backdropFilter: "blur(12px)",
@@ -243,7 +267,10 @@ export function SearchModal() {
         </div>
 
         {/* Results area */}
-        <div ref={listRef} className="max-h-[60vh] min-h-24 overflow-y-auto overscroll-contain">
+        <div
+          ref={listRef}
+          className="max-h-[calc(100dvh-13rem)] min-h-24 sm:max-h-[60vh] overflow-y-auto overscroll-contain"
+        >
           {/* Loading skeleton (only when there is nothing to show yet) */}
           {loading && results.length === 0 && (
             <div className="space-y-1 p-3">
@@ -383,7 +410,7 @@ export function SearchModal() {
         </div>
 
         {/* Footer with keyboard hints */}
-        <div className="flex items-center gap-4 border-t border-border px-6 py-3">
+        <div className="hidden items-center gap-4 border-t border-border px-6 py-3 sm:flex">
           <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground/60">
             <kbd className="flex h-5 w-5 items-center justify-center rounded border border-border bg-muted/50 text-[10px]">
               <ArrowUp size={10} />
@@ -413,4 +440,6 @@ export function SearchModal() {
       </div>
     </div>
   );
+
+  return typeof document === "undefined" ? null : createPortal(modal, document.body);
 }
