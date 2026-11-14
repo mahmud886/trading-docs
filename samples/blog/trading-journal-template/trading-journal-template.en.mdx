@@ -1,0 +1,114 @@
+---
+title: "Trading Journal Template — What to Record and How to Review It"
+description: "A practical trading journal: the columns to record for every trade (setup, entry, stop, target, result in R, followed-the-plan, emotion), the metrics to compute (win rate, average win and loss, expectancy with an uncertainty range), a weekly review routine, and a worked 10-trade example."
+date: "2026-05-08"
+author: "Trading Docs"
+category: "Improvement"
+tags: ["journal", "tracking", "analysis", "self-improvement"]
+readingTime: 8
+featured: true
+---
+
+A journal turns trading from memory into **data**. Memory favours the dramatic trades; a log lets you see the average one. Keep it simple enough that you will fill it in after every trade, and review it on a schedule.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original promised that journaling by itself improves results and quoted fixed benchmarks. A journal helps only if you review it and act on it, and the benchmarks depend on the strategy. The template below records what you need to compute your own numbers, along with their uncertainty.
+</Callout>
+
+---
+
+## The Columns
+
+| Column             | What to write                                                             | Why                                       |
+| ------------------ | ------------------------------------------------------------------------- | ----------------------------------------- |
+| Date, time (BD)    | When you entered                                                          | Find which hours work for you             |
+| Pair and direction | EUR/USD long                                                              | Compare pairs                             |
+| Setup              | Your named setup (for example "London sweep and shift")                    | Separate setups in the statistics         |
+| Entry / stop / target | The prices you planned                                                 | Check the plan against the result         |
+| Planned R:R        | Reward divided by risk                                                    | Compare plan and outcome                  |
+| Result in R        | Result divided by the amount risked (−1, +2.3, 0 …)                       | The common unit across sizes              |
+| Followed the plan? | Yes or no                                                                 | Separates plan quality from discipline    |
+| Emotion before/after | One word                                                                | Notices patterns (FOMO, revenge)          |
+| Screenshot         | The chart at entry                                                        | Review with context                       |
+
+### The Chart
+
+![Expectancy against win rate for several reward-to-risk ratios, and a 40-trade synthetic sample with its average R and an interval that includes zero](/images/quantitative/expectancy-formula/expectancy-formula-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/ex-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Illustration from the expectancy lesson (synthetic trades) (From the lesson: [Expectancy Formula](/en/quantitative/expectancy-formula).)
+</Callout>
+
+---
+
+## The Numbers to Compute
+
+| Metric               | Formula                                                                | Note                                          |
+| -------------------- | ---------------------------------------------------------------------- | --------------------------------------------- |
+| Win rate             | Winning trades ÷ all trades                                            | Meaningless without the average win and loss  |
+| Average win / loss   | Mean R of winners / mean R of losers                                   |                                               |
+| **Expectancy**       | Win rate × average win − loss rate × average loss                      | Per trade, in R                               |
+| Standard error       | Standard deviation of R ÷ √(number of trades)                          | The rough uncertainty of the expectancy       |
+| Plan adherence       | Plan trades ÷ all trades                                               | Is the problem the plan or the discipline?    |
+
+See [Expectancy Formula](/en/quantitative/expectancy-formula): in its 40-trade example the expectancy was +0.38R, but the approximate 95% interval ran from −0.07R to +0.82R, which includes zero: **a positive average over a small sample is not proof of an edge**.
+
+---
+
+## A Weekly Review
+
+| Step | What to do                                                                                 |
+| ---- | ------------------------------------------------------------------------------------------ |
+| 1    | Total R for the week, split by plan trades and off-plan trades                              |
+| 2    | List the best and worst trades and read your emotion notes                                  |
+| 3    | Find one pattern (an hour, a setup, an emotion) that repeats                                |
+| 4    | Write one rule change to test next week: only one                                           |
+| 5    | Don't change rules based on fewer than about 30 trades of a given setup                     |
+
+---
+
+## Example (no chart)
+
+Ten trades, in R: +2.0, −1, −1, +1.5, −1, +2.0, −1, 0, +2.5, −1. Winners: 4 (+8.0R total), losers: 5 (−5R), one scratch. Total **+3R**, average **+0.30R** per trade. Standard deviation about 1.5R, standard error about 0.48R, so the rough 95% interval is about −0.65R to +1.25R: ten trades cannot separate an edge from luck. A planned trade for the next entry: buy **1.0850**, stop **1.0830**, target **1.0890** (**1 : 2.0**), logged with its screenshot.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Recording only winners or only losers | Record every trade |
+| Using money instead of R | R lets you compare different sizes |
+| Never reviewing | Review weekly on a fixed day |
+| Changing rules after a few trades | Wait for a larger sample per setup |
+
+---
+
+## Practice
+
+1. Create the journal with the columns above.
+2. Log your next 20 trades with R, plan adherence and emotion.
+3. Compute win rate, expectancy and the standard error.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Journal | A log of every trade, with R and whether you followed the plan |
+| Metrics | Win rate, average win and loss, expectancy, standard error |
+| Review | Weekly; one rule change at a time |
+| Caution | Small samples can't prove an edge |
+
+---
+
+## Related Topics
+
+- [Expectancy Formula](/en/quantitative/expectancy-formula)
+- [Trade Execution Checklist](/en/blog/trade-execution-checklist)
+- [Avoiding Overtrading](/en/blog/avoiding-overtrading)
+- [Risk Management Essentials](/en/blog/risk-management-essentials)

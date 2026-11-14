@@ -1,0 +1,115 @@
+---
+title: "Top 5 Beginner Mistakes in Trading — and What to Do Instead"
+description: "The five mistakes that cost new traders most (no stop or too much risk, overtrading, no written plan or journal, judging a strategy on a few trades, and chasing moves), with the arithmetic of why each hurts and a first-month plan. Shows that a positive edge is only 50% likely to be ahead after 10 trades."
+date: "2026-05-05"
+author: "Trading Docs"
+category: "Academy"
+tags: ["beginner", "mistakes", "psychology", "risk-management"]
+readingTime: 6
+featured: true
+---
+
+Most early losses come from a handful of avoidable habits, not from missing a secret strategy. Each mistake below has a cause, a cost you can compute, and a simple replacement.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original quoted percentages of beginners who fail and fixed timelines for becoming profitable. We found no reliable source for those figures, so they are removed. What remains is arithmetic and habits you can check on your own account.
+</Callout>
+
+---
+
+## The Five Mistakes
+
+| # | Mistake                                         | Why it hurts                                                                     | Do instead                                       |
+| - | ----------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------ |
+| 1 | **No stop, or risking too much per trade**      | A 10% loss needs 11.1% to recover; 50% needs 100%                                | Fixed 0.5–1% risk and a stop on every trade      |
+| 2 | **Overtrading**                                 | Every trade pays a cost; trades with no edge only pay it                         | A trade cap and a written setup list             |
+| 3 | **No plan and no journal**                      | You can't tell what works                                                        | One-page plan; log every trade in R              |
+| 4 | **Judging a strategy on a few trades**          | Small samples are mostly noise                                                   | Judge over many trades, and report uncertainty   |
+| 5 | **Chasing moves**                               | You enter late, at the extreme, and the stop is far away                          | Wait for a pullback or a retest                  |
+
+See [Risk Management Essentials](/en/blog/risk-management-essentials), [Avoiding Overtrading](/en/blog/avoiding-overtrading) and [Trading Journal Template](/en/blog/trading-journal-template).
+
+### The Chart
+
+![A simulation of 30 equity paths of a strategy with a small positive edge and the probability of being ahead after 10, 20, 50, 100, 200 and 500 trades](/images/quantitative/introduction/quant-law-of-large-numbers-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/qi-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Illustration from the quantitative introduction (synthetic simulation) (From the lesson: [Introduction to Quantitative Trading](/en/quantitative/introduction).)
+</Callout>
+
+---
+
+## Why a Few Trades Tell You Little
+
+Take a real, positive edge: wins 45% of the time for +1.5R and loses 55% for −1R, an expectancy of **+0.125R** per trade. The chance that it is **ahead** after *n* trades:
+
+| Trades | Probability the cumulative result is positive |
+| ------ | --------------------------------------------- |
+| 10     | 50%                                           |
+| 20     | 59%                                           |
+| 50     | 71%                                           |
+| 100    | 82%                                           |
+| 200    | 91%                                           |
+
+After 10 trades a system with a genuine edge is as likely to be behind as ahead; a bad month does not mean the idea is bad, and a good month does not mean it is good. See [Introduction to Quantitative Trading](/en/quantitative/introduction).
+
+---
+
+## A First-Month Plan
+
+| Week | Focus                                                                           |
+| ---- | ------------------------------------------------------------------------------- |
+| 1    | Learn the platform; paper-trade one pair; write the one-page plan               |
+| 2    | Mark structure and levels daily; take demo trades only from the plan            |
+| 3    | Log every trade with its reason, R and emotion; review at the end of the week   |
+| 4    | Count plan trades versus off-plan trades; trim the plan; stay on demo or tiny size |
+
+Treat the first months as paid education, with the cost kept small by a fixed tiny risk.
+
+---
+
+## Example (no chart)
+
+A first trade done properly: 10,000 demo account, 0.5% risk (50). EUR/USD buy **1.0850**, stop **1.0830** (20 pips), target **1.0890** (40 pips): **1 : 2.0** planned. Size = 50 ÷ (20 × 10) = **0.25 standard lot**. The stop is placed before entry, the size comes from the stop, and the result is logged in R whether it wins or loses.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Risking a large percentage to "grow fast" | Start small: 0.5% or less |
+| Trading every day because it feels productive | Trade the plan, skip quiet days |
+| Skipping the journal | Ten lines per trade is enough |
+| Quitting a plan after three losses | Judge it over many trades |
+
+---
+
+## Practice
+
+1. Write a one-page plan: pair, timeframe, setup, risk, stop and daily limits.
+2. Compute the size for a 0.5% risk and a 20-pip stop on your account.
+3. Log your next 20 demo trades in R.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Mistakes | No stop or too much risk, overtrading, no plan or journal, small samples, chasing |
+| Arithmetic | A real edge is only 50% likely to be ahead after 10 trades |
+| Habit | Fixed small risk, a plan, a journal, many trades |
+| Mindset | Early months are education |
+
+---
+
+## Related Topics
+
+- [Risk Management Essentials](/en/blog/risk-management-essentials)
+- [Avoiding Overtrading](/en/blog/avoiding-overtrading)
+- [Trading Journal Template](/en/blog/trading-journal-template)
+- [Introduction to Quantitative Trading](/en/quantitative/introduction)
