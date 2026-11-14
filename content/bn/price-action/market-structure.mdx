@@ -1,143 +1,156 @@
 ---
-title: "Market Structure — সম্পূর্ণ গাইড"
-description: "Market Structure Analysis আয়ত্ত করুন। Swing High/Low, HH/HL/LH/LL Pattern, BOS, CHOCH এবং Trend চিহ্নিতকরণের জন্য Internal vs External Structure শিখুন।"
+title: "মার্কেট স্ট্রাকচার — সম্পূর্ণ গাইড"
+description: "Swing High আর Low থেকে Market Structure পড়ুন: ৩ আর ৫ ক্যান্ডেলের Swing নিয়ম, Uptrend (HH/HL), Downtrend (LH/LL) আর রেঞ্জ, Break of Structure (BOS) আর Change of Character (CHOCH), Internal বনাম External Structure, ধাপে ধাপে ম্যাপিং আর দুটি পরিকল্পিত উদাহরণ — চার্ট আর অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: beginner
 order: 4
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
 ## Market Structure কী?
 
-Market Structure হলো **Price Action Trading-এর মেরুদণ্ড**। এটি বলতে বোঝায় Price সময়ের সাথে চলার সময় যে Swing High ও Swing Low-এর Pattern তৈরি করে। এই Swing Point বিশ্লেষণ করে আপনি নির্ধারণ করতে পারেন:
+**Market Structure** হলো Price এর রেখে যাওয়া Swing High আর Swing Low এর প্যাটার্ন। এটা পড়লে প্রতিটি ট্রেডের প্রথম প্রশ্নের উত্তর মেলে: **Price কি উপরে ট্রেন্ড করছে, নিচে, নাকি রেঞ্জে?**
 
-- Market **Trending** (Bullish/Bearish) না **Ranging**
-- কোথায় **Momentum Shift** ঘটে (CHOCH/BOS)
-- আপনার পরবর্তী Trade-এর জন্য **সবচেয়ে কম প্রতিরোধের Direction**
+---
 
-<Callout type="info" title="Structure-ই সবকিছু">
-  Market Structure না বুঝে আপনি অন্ধভাবে Trade করছেন। Structure বলে কে নিয়ন্ত্রণে — Buyer না Seller — এবং কখন
-  নিয়ন্ত্রণ বদল হয়। SMC, ICT ও Price Action-এর প্রতিটি Strategy প্রথম Filter হিসেবে Structure-র উপর নির্ভর করে।
+## Swing High আর Swing Low
+
+| নিয়ম                   | Swing High                               | Swing Low                              |
+| ----------------------- | ---------------------------------------- | -------------------------------------- |
+| **৩-ক্যান্ডেল (Minor)** | প্রতিটি পাশে একটি নিচু High সহ একটি High | প্রতিটি পাশে একটি উঁচু Low সহ একটি Low |
+| **৫-ক্যান্ডেল (Major)** | প্রতিটি পাশে দুটি নিচু High সহ একটি High | প্রতিটি পাশে দুটি উঁচু Low সহ একটি Low |
+
+বিশ্লেষণের টাইমফ্রেমে ৫-ক্যান্ডেলের নিয়ম ব্যবহার করুন যাতে শুধু গুরুত্বপূর্ণ Swing মার্ক হয়। দেখুন [Swing Highs & Lows](/bn/price-action/swing-high-low)।
+
+---
+
+## একটি পূর্ণ চক্র
+
+![EUR/USD 4H: HH/HL আর Bullish BOS সহ Uptrend, 1.0884–1.0910 এ রেঞ্জ, 1.0884 এর নিচে CHOCH, তারপর LH/LL আর Bearish BOS সহ Downtrend](/images/price-action/market-structure/market-structure-cycle-dark.png)
+
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/market-structure-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
+
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  ক্যান্ডেলগুলো **সিন্থেটিক**, এই লেসনের Swing পয়েন্ট থেকে তৈরি। এগুলো আসল প্রাইস নয়।
 </Callout>
 
----
-
-## Bullish Market Structure
-
-```
-Higher High (HH) ও Higher Low (HL) = UPTREND
-
-        HH3
-       ╱
-      ╱    HH2
-     ╱    ╱
-    HL2  ╱
-     ╲  ╱    HH1
-      ╲╱    ╱
-       HL1 ╱
-        ╲ ╱
-         ╲╱
-
-Buyer নিয়ন্ত্রণে: প্রতিটি Push আগেরটির চেয়ে উচ্চ যায়
-প্রতিটি Pullback আগের Low-এর উপরে থাকে
-```
+| ধাপ           | Swing                                              | ভাঙন                                           |
+| ------------- | -------------------------------------------------- | ---------------------------------------------- |
+| **Uptrend**   | High 1.0850 → 1.0880 → 1.0910; Low 1.0825 → 1.0858 | 1.0850 আর 1.0880 এর উপরে Bullish **BOS**       |
+| **রেঞ্জ**     | High ≈ 1.0906–1.0910; Low ≈ 1.0884–1.0886          | নেই: নতুন High নেই, নতুন Low নেই               |
+| **পরিবর্তন**  | —                                                  | **CHOCH**: শেষ Higher Low 1.0884 এর নিচে Close |
+| **Downtrend** | Low 1.0862 → 1.0838 → 1.0812; High 1.0878 → 1.0856 | 1.0862 আর 1.0838 এর নিচে Bearish **BOS**       |
 
 ---
 
-## Bearish Market Structure
+## চারটি অবস্থা
 
-```
-Lower High (LH) ও Lower Low (LL) = DOWNTREND
-
-╲╱
- LH1 ╲
-      ╲    LL1
-       ╲  ╱
-    LH2 ╲╱
-         ╲    LL2
-          ╲  ╱
-       LH3 ╲╱
-              ╲ LL3
-
-Seller নিয়ন্ত্রণে: প্রতিটি Push আগেরটির চেয়ে নিচে যায়
-প্রতিটি Rally আগের High-এর নিচে থাকে
-```
+| অবস্থা        | প্যাটার্ন                  | Bias                                |
+| ------------- | -------------------------- | ----------------------------------- |
+| **Uptrend**   | Higher High + Higher Low   | পুলব্যাকে Buy খুঁজুন                |
+| **Downtrend** | Lower High + Lower Low     | পুলব্যাকে Sell খুঁজুন               |
+| **রেঞ্জ**     | একই রকম লেভেলে High আর Low | প্রান্তে ট্রেড, বা ভাঙনের অপেক্ষা   |
+| **রূপান্তর**  | সবেমাত্র CHOCH হয়েছে      | নতুন ট্রেন্ড নিশ্চিত হওয়ার অপেক্ষা |
 
 ---
 
-## Break of Structure (BOS)
+## BOS আর CHOCH
 
-BOS ঘটে যখন Price Trend-এর Direction-এ সাম্প্রতিক Swing Point ভাঙে — **Trend Continuation Confirm করে**।
+| ভাঙন                            | কী ভাঙে                                                                                | অর্থ                |
+| ------------------------------- | -------------------------------------------------------------------------------------- | ------------------- |
+| **BOS** (Break of Structure)    | **ট্রেন্ডের দিকের** শেষ Swing: Uptrend এ High, Downtrend এ Low                         | ট্রেন্ড চলছে        |
+| **CHOCH** (Change of Character) | **ট্রেন্ডের বিপরীতের** শেষ Swing: Uptrend এ শেষ Higher Low, Downtrend এ শেষ Lower High | ট্রেন্ড হয়তো ঘুরছে |
 
-| Trend   | BOS Condition                      | অর্থ                        |
-| ------- | ---------------------------------- | --------------------------- |
-| Bullish | সাম্প্রতিক Swing High-এর উপরে ভাঙে | নতুন HH = Uptrend অব্যাহত   |
-| Bearish | সাম্প্রতিক Swing Low-এর নিচে ভাঙে  | নতুন LL = Downtrend অব্যাহত |
+<Callout type="warning" title="Wick নয়, Body Close">
+  ক্যান্ডেল লেভেলের ওপারে **Close** করলেই শুধু ভাঙন গণ্য করুন। Wick দিয়ে পার হয়ে ভিতরে ফিরে Close করলে সেটা Sweep,
+  ভাঙন নয়। চার্টে প্রতিটি BOS আর CHOCH লেভেলের ওপারে প্রথম Close এ মার্ক করা।
+</Callout>
 
-**BOS-এর পর:** Pullback-এ Entry খুঁজুন (OB, FVG, Fib)
-
----
-
-## Change of Character (CHOCH)
-
-CHOCH ঘটে যখন Price Trend-এর **বিরুদ্ধে** সাম্প্রতিক Swing Point ভাঙে — **সম্ভাব্য Reversal Signal করে**।
-
-| Trend             | CHOCH Condition            | অর্থ                   |
-| ----------------- | -------------------------- | ---------------------- |
-| Bullish → Bearish | সাম্প্রতিক HL-এর নিচে ভাঙে | Uptrend শেষ হতে পারে   |
-| Bearish → Bullish | সাম্প্রতিক LH-এর উপরে ভাঙে | Downtrend শেষ হতে পারে |
-
-**CHOCH-এর পর:** নতুন Direction-এ Entry খুঁজুন
+CHOCH কে **MSS** (Market Structure Shift) ও বলা হয়। এটা সতর্কবার্তা, নিশ্চয়তা নয়: নতুন দিকে প্রথম BOS হলে নতুন ট্রেন্ড নিশ্চিত হয় (এখানে 1.0862 এর ভাঙন)।
 
 ---
 
-## Internal vs. External Structure
+## Internal বনাম External Structure
 
-| ধরন          | সংজ্ঞা                            | ব্যবহার          |
-| ------------ | --------------------------------- | ---------------- |
-| **External** | Major Swing Point (HTF দৃশ্যমান)  | Bias ও Direction |
-| **Internal** | Minor Swing (LTF, Range-এর ভিতরে) | Entry Timing     |
+| ধরন          | কী                                          | ব্যবহার                                |
+| ------------ | ------------------------------------------- | -------------------------------------- |
+| **External** | বিশ্লেষণের টাইমফ্রেমের (4H/Daily) বড় Swing | ট্রেন্ড নির্ধারণ                       |
+| **Internal** | প্রতিটি Leg এর ভিতরের ছোট Swing             | এন্ট্রির সময়; পুলব্যাকের আগাম সতর্কতা |
 
-```
-External Structure: ━━━━ HH ━━━━━━━━━━━━━━━ HH ━━━━
-                         ╲      ╱╲    ╱╲  ╱
-Internal Structure:       ╲    ╱  ╲  ╱  ╲╱ ← Minor swings
-                           ╲  ╱    ╲╱
-                    ━━━━ HL ━━━━━━━━━━━ HL ━━━━━━━━
-
-External Bullish (HH/HL) = Overall Bias Long
-Internal may be temporarily bearish (pullback) = Entry Zone
-```
+External Structure এর **সাথে** ট্রেড করুন আর এন্ট্রির সময় ঠিক করতে Internal Structure ব্যবহার করুন। External ট্রেন্ডের বিপরীতে Internal CHOCH সাধারণত শুধু পুলব্যাক শুরু হওয়া বোঝায়।
 
 ---
 
-## Structure-Based Trading
+## ধাপে ধাপে Structure ম্যাপিং
 
-### কীভাবে Structure ব্যবহার করবেন:
+1. **Daily / 4H:** স্পষ্ট Swing High আর Low মার্ক করুন (৫-ক্যান্ডেলের নিয়ম)।
+2. **লেবেল দিন:** HH, HL, LH, LL। অবস্থা ঠিক করুন: উপরে, নিচে বা রেঞ্জ।
+3. **সবশেষ ভাঙন খুঁজুন:** এটা কি BOS (Continuation) নাকি CHOCH (সম্ভাব্য মোড়)?
+4. **Key Level মার্ক করুন:** Uptrend এ শেষ HL (বা Downtrend এ LH) হলো সেই লেভেল যা Structure ঘুরিয়ে দেবে।
+5. **1H / 15m এ নামুন:** Internal Structure আবার External এর দিকে ঘোরার অপেক্ষা করুন, তারপর এন্ট্রি।
 
-1. **D1/H4-এ External Structure** চিহ্নিত করুন → Bias নির্ধারণ
-2. **BOS Confirm** করলে Trend অব্যাহত → Pullback Entry খুঁজুন
-3. **CHOCH দেখলে** → সতর্ক হন, নতুন Direction-এ Entry খুঁজুন
-4. **Entry-র জন্য Internal Structure** ব্যবহার করুন → LTF-এ CHOCH/BOS
-5. **Stop Placement** → শেষ Significant Swing Point-এর বাইরে
+---
+
+## উদাহরণ (চার্ট ছাড়া)
+
+### ১. EUR/USD, Higher Low তে Buy
+
+Daily Uptrend: HH **1.0950**, HL **1.0870**। 4H এ Price HL এলাকায় পুলব্যাক করে টিকে থাকে। 1H এ Internal Structure **1.0900** এর উপরে CHOCH দিয়ে আবার উপরে ভাঙে। **1.0905** এ Buy, HL এর নিচে **1.0865** এ Stop, HH এর উপরে **1.0980** টার্গেট: রিস্ক ৪০ পিপ, রিওয়ার্ড ৭৫ পিপ, **R:R ১ : ১.৯** (পরিকল্পিত)।
+
+### ২. Gold, Bearish CHOCH
+
+4H Uptrend: HH **2,450**, HL **2,410**। একটি শক্তিশালী ক্যান্ডেল 2,410 এর নিচে Close করে: CHOCH। Price নিচ থেকে ভাঙা HL রিটেস্ট করে। **2,405** এ Sell, Stop **2,420**, টার্গেট **2,370**: রিস্ক $15, রিওয়ার্ড $35, **R:R ১ : ২.৩** (পরিকল্পিত)।
+
+<Callout type="info" title="সরানো হয়েছে: ফলাফল">
+  মূল লেসনে ফলাফল দেওয়া ছিল ("+৭২ পিপ", "+৩৫ পয়েন্ট")। এগুলো শেখানোর উদাহরণ, তাই শুধু পরিকল্পনা দেখানো হয়েছে।
+</Callout>
 
 ---
 
 ## সাধারণ ভুল
 
-| ভুল                                    | সমাধান                                   |
-| -------------------------------------- | ---------------------------------------- |
-| প্রতিটি ছোট Swing-কে Structure মনে করা | শুধু Clear, Obvious Swing Count করুন     |
-| BOS ও CHOCH গুলিয়ে ফেলা               | BOS = Trend সাথে, CHOCH = Trend বিরুদ্ধে |
-| একটি TF-এ Structure দেখা               | HTF Structure-ই চূড়ান্ত সত্য            |
-| CHOCH-এ তাৎক্ষণিক Trade                | Confirmation ও Pullback অপেক্ষা          |
-| Ranging Market-এ Structure খোঁজা       | Range-এ Structure কম নির্ভরযোগ্য         |
+| ভুল                                        | সমাধান                                                 |
+| ------------------------------------------ | ------------------------------------------------------ |
+| প্রতিটি ছোট Swing মার্ক করা                | বিশ্লেষণের টাইমফ্রেমে ৫-ক্যান্ডেলের নিয়ম ব্যবহার করুন |
+| Wick কে ভাঙন ধরা                           | লেভেলের ওপারে Body Close এর অপেক্ষা করুন               |
+| একটা CHOCH কেই নতুন ট্রেন্ড ভাবা           | নতুন দিকে প্রথম BOS এর অপেক্ষা করুন                    |
+| ট্রেন্ডের বিপরীতে Internal CHOCH ট্রেড করা | এগুলো সাধারণত পুলব্যাক                                 |
+| রেঞ্জকে জোর করে ট্রেন্ড বানানো             | নতুন High বা Low নেই মানে রেঞ্জ                        |
+
+---
+
+## অনুশীলন
+
+1. একটি 4H চার্টে ৫-ক্যান্ডেলের নিয়মে ২০টি Swing পয়েন্ট মার্ক করে HH, HL, LH বা LL লেবেল দিন।
+2. প্রতিটি BOS আর CHOCH লেভেলের ওপারে প্রথম Close এ মার্ক করুন।
+3. কতবার CHOCH এর পর নতুন দিকে BOS হয়েছে লিখুন।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা          | মূল কথা                                                    |
+| -------------- | ---------------------------------------------------------- |
+| **Uptrend**    | HH + HL                                                    |
+| **Downtrend**  | LH + LL                                                    |
+| **রেঞ্জ**      | নতুন High বা Low নেই                                       |
+| **BOS**        | ট্রেন্ডের দিকের শেষ Swing এর ওপারে Close: Continuation     |
+| **CHOCH**      | ট্রেন্ডের বিপরীতের শেষ Swing এর ওপারে Close: সম্ভাব্য মোড় |
+| **নিশ্চিতকরণ** | Body Close; তারপর নতুন দিকে BOS                            |
 
 ---
 
 ## সম্পর্কিত বিষয়
 
-- [Swing High ও Low](/bn/price-action/swing-high-low) — Structure-এর Building Block
-- [Trend Analysis](/bn/price-action/trend-analysis) — Structure-ভিত্তিক Trend
-- [Reversal Concepts](/bn/price-action/reversal-concepts) — CHOCH ও Reversal
-- [Continuation](/bn/price-action/continuation) — BOS ও Continuation
-- [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — MTF Structure
+- [Swing Highs & Lows](/bn/price-action/swing-high-low) — Swing খোঁজা
+- [Trend Analysis](/bn/price-action/trend-analysis) — ট্রেন্ডের শক্তি আর ধাপ
+- [BOS](/bn/smc/bos) আর [CHOCH](/bn/smc/choch) — প্রতিটি ভাঙন নিয়ে SMC লেসন
+- [Multi-Timeframe Analysis](/bn/price-action/multi-timeframe-analysis) — বাস্তবে External বনাম Internal

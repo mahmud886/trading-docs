@@ -1,299 +1,156 @@
 ---
 title: "Market Structure — Complete Guide"
-description: "Master market structure analysis. Learn swing highs/lows, HH/HL/LH/LL patterns, BOS, CHOCH, and internal vs external structure for trend identification."
+description: "Read market structure from swing highs and lows: the 3- and 5-candle swing rules, uptrend (HH/HL), downtrend (LH/LL) and range, break of structure (BOS) and change of character (CHOCH), internal vs external structure, a step-by-step mapping process and two planned examples, with a chart and an animated walkthrough."
 level: beginner
 order: 4
-lastUpdated: "2026-05-11"
+lastUpdated: "2026-11-14"
 ---
 
-## What is Market Structure?
+## What Is Market Structure?
 
-Market Structure is the **backbone of Price Action trading**. It refers to the pattern of swing highs and swing lows that price creates as it moves through time. By analyzing these swing points, you can determine:
-
-- Whether the market is **trending** (bullish/bearish) or **ranging**
-- Where **momentum shifts** occur (CHOCH/BOS)
-- The **direction of least resistance** for your next trade
-
-<Callout type="info" title="Structure is Everything">
-  Without understanding market structure, you're trading blind. Structure tells you WHO is in control — buyers or
-  sellers — and WHEN control shifts. Every strategy in SMC, ICT, and Price Action relies on structure as the first
-  filter.
-</Callout>
+**Market structure** is the pattern of swing highs and swing lows that price leaves behind. Reading it answers the first question of every trade: **is price trending up, trending down, or ranging?**
 
 ---
 
 ## Swing Highs and Swing Lows
 
-A **swing high** is a candle high that is higher than the candles on both sides of it. A **swing low** is a candle low that is lower than the candles on both sides.
+| Rule                 | Swing high                               | Swing low                               |
+| -------------------- | ---------------------------------------- | --------------------------------------- |
+| **3-candle (minor)** | A high with a lower high on each side    | A low with a higher low on each side    |
+| **5-candle (major)** | A high with two lower highs on each side | A low with two higher lows on each side |
 
-```
-Swing High (SH):         Swing Low (SL):
-
-    ╱╲                        ╲╱
-   ╱  ╲                      ╱  ╲
-  ╱    ╲                    ╱    ╲
-```
-
-### Standard Definition (3-candle rule):
-
-- **Swing High**: A candle with at least 1 lower high on each side
-- **Swing Low**: A candle with at least 1 higher low on each side
-
-### Strong Swing Points (5-candle rule):
-
-For more significant swing points, look for candles with **2 lower highs** on each side (swing high) or **2 higher lows** on each side (swing low). These create stronger structural levels.
+Use the 5-candle rule on your analysis timeframe so only meaningful swings are marked. See [Swing Highs & Lows](/en/price-action/swing-high-low).
 
 ---
 
-## The Four Structure Patterns
+## One Full Cycle
 
-### 1. Higher High (HH) & Higher Low (HL) = UPTREND ✅
+![EUR/USD 4H: uptrend with HH/HL and bullish BOS, a range at 1.0884–1.0910, a CHOCH below 1.0884, then a downtrend with LH/LL and bearish BOS](/images/price-action/market-structure/market-structure-cycle-dark.png)
 
-```
-         HH₃
-        ╱
-    HH₂╱
-   ╱  ╲╱
-  ╱ HL₂
-HH₁╱
-╱ ╲╱
-  HL₁
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/market-structure-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-Buyers are in control. Each push higher exceeds the previous.
-Each pullback finds support HIGHER than the last.
-```
-
-### 2. Lower High (LH) & Lower Low (LL) = DOWNTREND ❌
-
-```
-LH₁╲
-╲  ╱╲
- ╲╱  ╲ LH₂
- LL₁  ╲╱╲
-       LL₂╲
-            ╲ LH₃
-             ╲╱
-             LL₃
-
-Sellers are in control. Each rally fails lower than the previous.
-Each drop creates a new lower low.
-```
-
-### 3. Higher High + Higher Low → Lower High = CHOCH (Change of Character)
-
-```
-      HH
-     ╱  ╲
-    ╱    ╲ LH ← First sign of weakness
-   ╱    ╱ ╲
-  HL   ╱   ╲
-      ╱     ╲ Break below HL = CHOCH confirmed
-     HL      ╲
-              LL ← Structure shift confirmed
-```
-
-### 4. Range / Consolidation
-
-```
-  ─────── Resistance ───────
-  ╱╲    ╱╲    ╱╲    ╱╲
- ╱  ╲  ╱  ╲  ╱  ╲  ╱  ╲
-╱    ╲╱    ╲╱    ╲╱    ╲
-  ─────── Support ─────────
-
-Equal highs and equal lows. No clear direction.
-Wait for a decisive break above or below.
-```
-
----
-
-## BOS — Break of Structure
-
-A **Break of Structure** occurs when price breaks a previous swing high (bullish BOS) or swing low (bearish BOS), **confirming** the continuation of the current trend.
-
-### Bullish BOS
-
-```
-      BOS! (price breaks above previous HH)
-       ↑
-    ──HH──────
-   ╱        ╲
-  ╱     HL   ╲  ← Price respects HL and pushes through HH
- ╱       ╲    ╲
-HL        ╲    New HH
-```
-
-**Interpretation**: Buyers remain in control. Trend continues up.
-
-### Bearish BOS
-
-```
-LL        ╱    New LL
- ╲       ╱    ╱
-  ╲     LH   ╱  ← Price respects LH and pushes through LL
-   ╲        ╱
-    ──LL──────
-       ↓
-      BOS! (price breaks below previous LL)
-```
-
-**Interpretation**: Sellers remain in control. Trend continues down.
-
----
-
-## CHOCH — Change of Character
-
-A **Change of Character** (also called **MSS — Market Structure Shift**) signals a potential **trend reversal**. It occurs when price breaks a key swing point in the OPPOSITE direction of the trend.
-
-### Bullish CHOCH (Downtrend → Uptrend)
-
-1. Price is making LH/LL (downtrend)
-2. Price sweeps a low (takes liquidity)
-3. Price then breaks above the most recent **LH**
-4. **CHOCH confirmed** — Buyers have taken control
-
-### Bearish CHOCH (Uptrend → Downtrend)
-
-1. Price is making HH/HL (uptrend)
-2. Price sweeps a high (takes liquidity)
-3. Price then breaks below the most recent **HL**
-4. **CHOCH confirmed** — Sellers have taken control
-
-<Callout type="warning" title="BOS vs CHOCH">
-  **BOS** = Structure break in the SAME direction as the trend (continuation). **CHOCH** = Structure break in the
-  OPPOSITE direction (potential reversal). Always wait for a **candle body close** beyond the level — wicks alone don't
-  confirm.
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**, built from the swing points in this lesson. They are not real prices.
 </Callout>
 
----
-
-## Internal vs. External Structure
-
-### External Structure (Macro)
-
-The **major** swing highs and lows visible on your analysis timeframe (4H/Daily). These define the overall trend direction.
-
-### Internal Structure (Micro)
-
-The **minor** swing points within each leg of external structure. Internal structure shows you the sub-waves within the larger move.
-
-```
-External Structure (Daily):
-HH ─────────────────── New HH
- ╲                    ╱
-  ╲                  ╱
-   HL ──────────── HL
-
-Internal Structure (1H, within the HL→HH leg):
-    int.HH    int.HH   int.HH
-   ╱    ╲    ╱    ╲   ╱
-  ╱  int.HL ╱ int.HL ╱
- ╱         ╱       ╱
-HL ────────────── → HH
-```
-
-### Why This Matters
-
-- **External BOS** = High-probability continuation signal
-- **Internal CHOCH** = Early warning of potential pullback
-- Trade **with** external structure, use internal structure for **entries**
+| Phase         | Swings                                               | Breaks                                               |
+| ------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| **Uptrend**   | Highs 1.0850 → 1.0880 → 1.0910; lows 1.0825 → 1.0858 | Bullish **BOS** above 1.0850 and 1.0880              |
+| **Range**     | Highs ≈ 1.0906–1.0910; lows ≈ 1.0884–1.0886          | None: no new high, no new low                        |
+| **Shift**     | —                                                    | **CHOCH**: a close below 1.0884, the last higher low |
+| **Downtrend** | Lows 1.0862 → 1.0838 → 1.0812; highs 1.0878 → 1.0856 | Bearish **BOS** below 1.0862 and 1.0838              |
 
 ---
 
-## How to Map Structure — Step by Step
+## The Four States
 
-### Step 1: Start with Higher Timeframe (Daily/4H)
-
-- Mark the **most obvious** swing highs and lows
-- Determine the trend: HH/HL or LH/LL?
-
-### Step 2: Identify the Most Recent BOS/CHOCH
-
-- Where did the last structure break occur?
-- Is the trend intact or shifting?
-
-### Step 3: Drop to Entry Timeframe (1H/15M)
-
-- Map internal structure within the HTF leg
-- Look for internal CHOCH as potential entry signal
-
-### Step 4: Mark Key Structural Levels
-
-- The swing point that was broken (BOS/CHOCH level)
-- The origin of the move (order block)
-- Equal highs/lows (liquidity targets)
+| State          | Pattern                          | Bias                                 |
+| -------------- | -------------------------------- | ------------------------------------ |
+| **Uptrend**    | Higher highs + higher lows       | Look for buys on pullbacks           |
+| **Downtrend**  | Lower highs + lower lows         | Look for sells on pullbacks          |
+| **Range**      | Highs and lows at similar levels | Trade the edges, or wait for a break |
+| **Transition** | A CHOCH has just happened        | Wait for the new trend to confirm    |
 
 ---
 
-## Real Trading Examples
+## BOS and CHOCH
 
-### Example 1: EUR/USD Bullish BOS
+| Break                           | What breaks                                                                                                 | Meaning                  |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------ |
+| **BOS** (break of structure)    | The last swing **in the trend's direction**: a high in an uptrend, a low in a downtrend                     | The trend continues      |
+| **CHOCH** (change of character) | The last swing **against the trend**: the last higher low in an uptrend, the last lower high in a downtrend | The trend may be turning |
 
-- **Daily**: Price in uptrend (HH at 1.0950, HL at 1.0870)
-- **4H**: Price pulls back to 1.0870 (HL) and bounces
-- **1H**: Internal structure shifts bullish (CHOCH above 1.0900)
-- **Entry**: Buy at 1.0905 (after CHOCH confirmation)
-- **Stop**: 1.0865 (below the HL) = 40 pips
-- **Target**: 1.0980 (above previous HH) = 75 pips
-- **R:R**: 1.9:1 | **Result**: +72 pips ✅
+<Callout type="warning" title="Body close, not a wick">
+  Count a break only when a candle **closes** beyond the level. A wick through it that closes back inside is a sweep,
+  not a break. In the chart, every BOS and the CHOCH are marked at the first close beyond the level.
+</Callout>
 
-### Example 2: Gold (XAU/USD) Bearish CHOCH
+A CHOCH is also called an **MSS** (market structure shift). It's a warning, not a guarantee: a new trend is confirmed when price makes its first BOS in the new direction (here, the break of 1.0862).
 
-- **4H**: Gold in uptrend, HH at $2,450, HL at $2,410
-- **Signal**: Price breaks below $2,410 HL with strong momentum candle
-- **CHOCH confirmed**: First HL broken = trend shift
-- **Entry**: Sell at $2,405 (retest of broken HL)
-- **Stop**: $2,420 | **Target**: $2,370
-- **R:R**: 2.3:1 | **Result**: +35 points ✅
+---
 
-### Example 3: NAS100 Structure Analysis (BD Time)
+## Internal vs External Structure
 
-- **Session**: NY Open at 7:30 PM Bangladesh Time
-- **4H**: Bullish structure (HH/HL)
-- **15M**: During London session (1:00 PM BD), price sweeps Asian low
-- **Internal CHOCH**: 15M breaks above London session high
-- **Entry**: At the 15M OB after CHOCH
-- **Result**: +180 points to previous 4H HH
+| Type         | What it is                                             | Use                                         |
+| ------------ | ------------------------------------------------------ | ------------------------------------------- |
+| **External** | The major swings on your analysis timeframe (4H/daily) | Defines the trend                           |
+| **Internal** | The smaller swings inside each leg                     | Timing entries; early warning of a pullback |
+
+Trade **with** external structure and use internal structure to time the entry. An internal CHOCH against the external trend usually just means a pullback is starting.
+
+---
+
+## Mapping Structure, Step by Step
+
+1. **Daily / 4H:** mark the obvious swing highs and lows (5-candle rule).
+2. **Label them:** HH, HL, LH, LL. Decide the state: up, down or range.
+3. **Find the most recent break:** was it a BOS (continuation) or a CHOCH (possible turn)?
+4. **Mark the key levels:** the last HL in an uptrend (or LH in a downtrend) is the level that would turn the structure.
+5. **Drop to 1H / 15m:** wait for internal structure to turn back in the external direction, then enter.
+
+---
+
+## Examples (No Chart)
+
+### 1. EUR/USD, buying a higher low
+
+Daily uptrend: HH at **1.0950**, HL at **1.0870**. On 4H, price pulls back to the HL area and holds. On 1H, internal structure breaks back up with a CHOCH above **1.0900**. Buy **1.0905**, stop **1.0865** below the HL, target **1.0980** above the HH: risk 40 pips, reward 75 pips, **R:R 1 : 1.9** (planned).
+
+### 2. Gold, bearish CHOCH
+
+4H uptrend: HH at **2,450**, HL at **2,410**. A strong candle closes below 2,410: a CHOCH. Price retests the broken HL from below. Sell **2,405**, stop **2,420**, target **2,370**: risk $15, reward $35, **R:R 1 : 2.3** (planned).
+
+<Callout type="info" title="Removed: results">
+  The original listed outcomes ("+72 pips", "+35 points"). These are teaching examples, so only the plan is shown.
+</Callout>
 
 ---
 
 ## Common Mistakes
 
-<Callout type="warning" title="Structure Mapping Errors">
+| Mistake                                   | Fix                                             |
+| ----------------------------------------- | ----------------------------------------------- |
+| Marking every tiny swing                  | Use the 5-candle rule on the analysis timeframe |
+| Counting a wick as a break                | Wait for a body close beyond the level          |
+| Treating one CHOCH as a new trend         | Wait for the first BOS in the new direction     |
+| Trading internal CHOCHs against the trend | They're usually pullbacks                       |
+| Forcing a trend onto a range              | No new highs or lows means range                |
 
-**❌ Too many swing points** — Don't mark every minor swing. Focus on the OBVIOUS ones that are visible from a distance.
+---
 
-**❌ Confusing BOS with CHOCH** — BOS continues the trend; CHOCH reverses it. Know the difference.
+## Practice
 
-**❌ Using wicks as confirmation** — A wick through a level is NOT a confirmed break. Wait for a **body close**.
-
-**❌ Ignoring HTF structure** — A 5M CHOCH is meaningless if the Daily trend is strongly in the opposite direction.
-
-**❌ Not updating structure** — Structure is dynamic. Update your swing points as new ones form.
-
-</Callout>
+1. On a 4H chart, mark 20 swing points with the 5-candle rule and label them HH, HL, LH or LL.
+2. Mark every BOS and CHOCH at the first close beyond the level.
+3. Note how often a CHOCH was followed by a BOS in the new direction.
+4. Log it in your [trading journal](/en/tools/journal-template).
 
 ---
 
 ## Summary
 
-| Concept                | Definition                                     |
-| ---------------------- | ---------------------------------------------- |
-| **Market Structure**   | Pattern of swing highs and lows defining trend |
-| **Uptrend**            | HH + HL pattern (buyers in control)            |
-| **Downtrend**          | LH + LL pattern (sellers in control)           |
-| **BOS**                | Break of Structure — trend continuation        |
-| **CHOCH**              | Change of Character — potential reversal       |
-| **External Structure** | Major swing points on HTF                      |
-| **Internal Structure** | Minor swing points within HTF legs             |
-| **Confirmation**       | Body close beyond the structural level         |
+| Concept       | Key point                                                    |
+| ------------- | ------------------------------------------------------------ |
+| **Uptrend**   | HH + HL                                                      |
+| **Downtrend** | LH + LL                                                      |
+| **Range**     | No new highs or lows                                         |
+| **BOS**       | Close beyond the last swing with the trend: continuation     |
+| **CHOCH**     | Close beyond the last swing against the trend: possible turn |
+| **Confirm**   | Body close; then a BOS in the new direction                  |
 
 ---
 
 ## Related Topics
 
-- [Swing Highs & Lows](/en/price-action/swing-high-low) — Building blocks of structure
-- [Trend Analysis](/en/price-action/trend-analysis) — Identifying trend direction
-- [Breakouts](/en/price-action/breakouts) — Structure break entries
-- [Multi-Timeframe Analysis](/en/price-action/multi-timeframe-analysis) — Combining timeframes
-- [SMC Break of Structure](/en/smc/break-of-structure) — SMC perspective on BOS
+- [Swing Highs & Lows](/en/price-action/swing-high-low) — finding the swings
+- [Trend Analysis](/en/price-action/trend-analysis) — trend strength and phases
+- [BOS](/en/smc/bos) and [CHOCH](/en/smc/choch) — the SMC lessons on each break
+- [Multi-Timeframe Analysis](/en/price-action/multi-timeframe-analysis) — external vs internal in practice
