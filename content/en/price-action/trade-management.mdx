@@ -1,93 +1,149 @@
 ---
 title: "Trade Management — Complete Guide"
-description: "Master active trade management. Learn when to move stops, take partials, trail positions, and handle different trade scenarios after entry."
+description: "Manage open trades with price action: the four phases from entry to exit, break-even and partial-profit rules, when to move the stop and when not to, how different management styles change results on the same price path, and a scenario table, with a chart and an animated walkthrough."
 level: intermediate
 order: 26
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## What is Trade Management?
+## What Is Trade Management?
 
-Trade management is everything that happens **between entry and exit** — moving stops, taking partials, trailing, and decision-making while in a live position.
-
----
-
-## Management Framework
-
-### Phase 1: Initial (After Entry)
-
-- Hands off — let the trade develop
-- Don't move stop for at least 1-2 candles
-- Trust your analysis
-
-### Phase 2: Break-Even
-
-- Move SL to entry price after gaining 1R
-- This makes the trade "risk-free"
-- Only do this if structure supports it
-
-### Phase 3: Lock Profit
-
-- Trail stop behind new swing points
-- Take 50% partial at 1:2 R:R
-- Let remainder run to full target
-
-### Phase 4: Final Exit
-
-- Hit take profit target
-- OR trailing stop triggered
-- OR thesis invalidated by new structure
+**Trade management** is everything between entry and exit: moving the stop, taking partial profit, trailing, and deciding what to do when something changes. The same entry can produce very different results depending on how it's managed.
 
 ---
 
-## Partial Profit Strategy
+## The Four Phases
 
-```
-Position: 1.0 lot
-
-At 1:1 R:R → Close 0.5 lot (50%) → Move SL to BE
-At 1:2 R:R → Close 0.3 lot (30%)
-At 1:3 R:R or target → Close 0.2 lot (20%)
-
-Result: Guaranteed some profit once 1:1 hit
-Psychological benefit: Huge pressure relief
-```
+| Phase              | What to do                                                                                |
+| ------------------ | ----------------------------------------------------------------------------------------- |
+| **1. Initial**     | Hands off. Don't touch the stop for the first candle or two                               |
+| **2. Protect**     | Optional: move the stop to break-even once the trade is about +1R and structure allows it |
+| **3. Lock profit** | Take part of the position; trail the stop behind new swings                               |
+| **4. Exit**        | Target reached, trailed stop hit, or the setup is invalidated                             |
 
 ---
 
-## When to Move Stop Loss
+## Same Path, Three Results
 
-| Move SL When...                   | Move SL To...      |
-| --------------------------------- | ------------------ |
-| Trade gained 1R                   | Entry (break-even) |
-| New swing forms in your direction | Behind new swing   |
-| Price creates new BOS             | Behind BOS candle  |
-| Approaching major opposing level  | Lock more profit   |
+![EUR/USD 1H long at 1.0850, stop 1.0830: price reaches 1.8R, pulls back to 1.0849, then runs to 3R; holding gives +3R, a break-even stop gives 0R, partials give +0.5R](/images/price-action/trade-management/trade-management-three-ways-dark.png)
 
-### NEVER move SL when:
+<video
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/price-action/trade-management-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-- Trade is in initial phase (first 1-2 candles)
-- Based on emotion (fear/greed)
-- Against your original plan
+<Callout type="info" title="About this chart">
+  The candles are **synthetic**. The three results are simulated on this one price path to show the trade-off. They are
+  not a track record, and on a different path the ranking changes.
+</Callout>
+
+Long **1.0850**, stop **1.0830** (1R = 20 pips), targets at **1R 1.0870**, **2R 1.0890**, **3R 1.0910**. Price climbs to about **1.8R**, pulls back to **1.0849**, then runs to **3R**.
+
+| Style                         | What happens                                                               | Result    |
+| ----------------------------- | -------------------------------------------------------------------------- | --------- |
+| **A · Hold to 3R**            | Rides the pullback; reaches the target                                     | **+3R**   |
+| **B · Break-even at 1R**      | Stop moved to 1.0850; the pullback hits it                                 | **0R**    |
+| **C · Partials 50 / 30 / 20** | 50% closed at 1R (+0.5R), stop to break-even; the rest is stopped at entry | **+0.5R** |
+
+On a path that reverses from 1.8R to the original stop, the order flips: A loses 1R, B scratches at 0R, and C keeps +0.5R. **No management style wins on every path**; each trades upside for protection.
+
+<Callout type="info" title="Clarified: 'risk-free' and 'guaranteed'">
+  The original called a break-even trade "risk-free" and said partials "guarantee some profit". A break-even stop can
+  still lose on slippage or a gap, and a partial only locks in what was actually closed. Both reduce risk; neither
+  removes it.
+</Callout>
 
 ---
 
-## Scenario Handling
+## Partial Profits
 
-| Scenario                         | Action                           |
-| -------------------------------- | -------------------------------- |
-| Price goes immediately to target | Great — take full profit         |
-| Price consolidates near entry    | Wait — give it time              |
-| Price goes against you           | Trust your stop — don't widen it |
-| Price hits 1R then stalls        | Take partial, trail rest         |
-| News event approaching           | Tighten stop or close before     |
-| Higher TF changes direction      | Close immediately                |
+The original's plan for a 1.0-lot position:
+
+| At  | Close         | Stop          |
+| --- | ------------- | ------------- |
+| 1R  | 0.5 lot (50%) | To break-even |
+| 2R  | 0.3 lot (30%) | Trail         |
+| 3R  | 0.2 lot (20%) | —             |
+
+If every level is hit, this plan makes **1.7R** (0.5 + 0.6 + 0.6) against **3R** for holding the whole position. You give up part of the best case in exchange for a smoother equity curve. Test both on your own trades.
+
+---
+
+## When to Move the Stop
+
+| Move it when…                                    | Move it to…                     |
+| ------------------------------------------------ | ------------------------------- |
+| The trade reaches about +1R and structure allows | Entry (break-even)              |
+| A new swing forms in your direction              | Just beyond that swing          |
+| Price makes a new BOS                            | Beyond the swing behind the BOS |
+| Price nears a major opposing level               | Tighter, to lock more profit    |
+
+### Never move it
+
+- In the first candle or two.
+- Because of fear or hope.
+- **Away** from price (widening the stop).
+- Against your written plan.
+
+---
+
+## Scenarios
+
+| Scenario                               | Action                                  |
+| -------------------------------------- | --------------------------------------- |
+| Price goes straight to target          | Take the profit                         |
+| Price chops around the entry           | Give it time, within your time limit    |
+| Price goes against you                 | Let the stop do its job; don't widen it |
+| Price reaches 1R, then stalls          | Take a partial; trail the rest          |
+| High-impact news is coming             | Reduce, tighten or close before it      |
+| The higher timeframe turns against you | Close or reduce                         |
+
+### Example (no chart) — GBP/USD with a time stop
+
+Long **1.2650**, stop **1.2630**, target **1.2710** (**R:R 1 : 3.0**, planned). Rule: if price hasn't reached +1R within six 1H candles, close at market. After six candles price is at 1.2656; the trade is closed for a small gain and the capital is free for the next setup.
+
+---
+
+## Common Mistakes
+
+| Mistake                        | Fix                                          |
+| ------------------------------ | -------------------------------------------- |
+| Moving to break-even too early | Wait for +1R and a new swing                 |
+| Widening the stop              | Never; close instead if the idea has changed |
+| Managing by feel               | Write the management rules before entry      |
+| Changing style trade to trade  | Pick one plan and test it over many trades   |
+
+---
+
+## Practice
+
+1. Take your last 20 trades and re-run each with styles A, B and C.
+2. Total the R for each style.
+3. Pick the style that suits your results and your nerves, and write it down.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Aspect         | Key point                                         |
+| -------------- | ------------------------------------------------- |
+| **Phases**     | Initial → protect → lock profit → exit            |
+| **Break-even** | Protects, but gets stopped by normal pullbacks    |
+| **Partials**   | Smoother results; smaller best case               |
+| **Stops**      | Move only toward profit, after structure confirms |
+| **Rule**       | Decide management before entering                 |
 
 ---
 
 ## Related Topics
 
-- [Exit Models](/en/price-action/exit-models) — Exit strategies
-- [Risk Management](/en/price-action/risk-management) — Stop placement
-- [Entry Models](/en/price-action/entry-models) — Initial setup
-- [Trading Psychology](/en/academy/trading-psychology) — Management emotions
+- [Exit Models](/en/price-action/exit-models) — exit strategies
+- [Risk Management](/en/price-action/risk-management) — stop placement and sizing
+- [Trend Trading](/en/price-action/trend-trading) — trailing behind structure
+- [Entry Models](/en/price-action/entry-models) — the starting point
