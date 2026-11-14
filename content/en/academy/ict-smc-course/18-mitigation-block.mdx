@@ -6,6 +6,12 @@ level: intermediate
 lastUpdated: "2026-06-09"
 ---
 
+<Callout type="info" title="Short course version">
+  This is the short course summary. Read the full guide with charts, worked examples and a planned risk-to-reward: [full
+  guide](/en/smc/mitigation-blocks). Everything here describes how some traders interpret price; none of it is a
+  guarantee.
+</Callout>
+
 ### Definition
 
 A Mitigation Block is an **Order Block that was previously tested (partially filled) and failed to hold completely, but where price returns to fill remaining institutional orders**. Unlike a Breaker Block (where the OB is completely broken through), a Mitigation Block is an OB that was "dipped into" without fully failing, leaving unfilled orders that the algorithm will return to.
@@ -94,11 +100,11 @@ A Mitigation Block is an **Order Block that was previously tested (partially fil
 
 ### Common Mistakes
 
-- ❌ **Trading an OB on the THIRD or FOURTH touch** — Mitigation is usually the second touch. Third+ = OB is spent
-- ❌ **Confusing Mitigation with Breaker** — If price CLOSES through the OB = Breaker. If it only wicks in = Mitigation
-- ❌ **Expecting same reaction strength** — Mitigation touch may have weaker initial reaction than fresh OB
-- ❌ **Not having HTF context** — Mitigation without trend alignment is unreliable
-- ❌ **Ignoring the reason for return** — Price returns to mitigate because there are UNFILLED orders. If the OB was fully filled first time, it won't come back
+- **Trading an OB on the THIRD or FOURTH touch** — Mitigation is usually the second touch. Third+ = OB is spent
+- **Confusing Mitigation with Breaker** — If price CLOSES through the OB = Breaker. If it only wicks in = Mitigation
+- **Expecting same reaction strength** — Mitigation touch may have weaker initial reaction than fresh OB
+- **Not having HTF context** — Mitigation without trend alignment is unreliable
+- **Ignoring the reason for return** — Price returns to mitigate because there are UNFILLED orders. If the OB was fully filled first time, it won't come back
 
 ### Advanced Notes
 

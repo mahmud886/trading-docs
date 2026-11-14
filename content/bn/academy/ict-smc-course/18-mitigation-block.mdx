@@ -6,6 +6,11 @@ level: intermediate
 lastUpdated: "2026-06-09"
 ---
 
+<Callout type="info" title="সংক্ষিপ্ত কোর্স সংস্করণ">
+  এটি সংক্ষিপ্ত কোর্স সারাংশ। চার্ট, উদাহরণ ও পরিকল্পিত রিস্ক-টু-রিওয়ার্ডসহ পূর্ণ গাইড পড়ুন: [পূর্ণ
+  গাইড](/bn/smc/mitigation-blocks)। এখানে যা আছে তা কিছু ট্রেডারের প্রাইস পড়ার ব্যাখ্যা; কোনোটিই নিশ্চয়তা নয়।
+</Callout>
+
 ### Definition
 
 Mitigation Block হলো একটি **Order Block যা আগে Test হয়েছে (আংশিকভাবে Fill) এবং সম্পূর্ণ Hold করতে ব্যর্থ হয়েছে, কিন্তু Remaining Institutional Order Fill করতে Price ফিরে আসে**। Breaker Block (যেখানে OB সম্পূর্ণ Break Through হয়) এর বিপরীতে, Mitigation Block এমন OB যাতে "Dip" হয়েছে সম্পূর্ণ Fail না করে, Unfilled Order রেখে যা Algorithm ফিরে Fill করবে।
@@ -94,11 +99,11 @@ Mitigation Block হলো একটি **Order Block যা আগে Test হ�
 
 ### Common Mistakes
 
-- ❌ **OB তে তৃতীয় বা চতুর্থ Touch এ Trade করা** — Mitigation সাধারণত দ্বিতীয় Touch। তৃতীয়+ = OB শেষ
-- ❌ **Mitigation আর Breaker গুলিয়ে ফেলা** — Price OB Close Through করলে = Breaker। শুধু Wick In করলে = Mitigation
-- ❌ **একই Reaction Strength আশা করা** — Mitigation Touch এ Fresh OB এর চেয়ে দুর্বল Initial Reaction হতে পারে
-- ❌ **HTF Context ছাড়া** — Trend Alignment ছাড়া Mitigation অনির্ভরযোগ্য
-- ❌ **Return এর কারণ উপেক্ষা করা** — Price Mitigate করতে ফেরে কারণ UNFILLED Order আছে। প্রথমবার সম্পূর্ণ Fill হলে, ফিরবে না
+- **OB তে তৃতীয় বা চতুর্থ Touch এ Trade করা** — Mitigation সাধারণত দ্বিতীয় Touch। তৃতীয়+ = OB শেষ
+- **Mitigation আর Breaker গুলিয়ে ফেলা** — Price OB Close Through করলে = Breaker। শুধু Wick In করলে = Mitigation
+- **একই Reaction Strength আশা করা** — Mitigation Touch এ Fresh OB এর চেয়ে দুর্বল Initial Reaction হতে পারে
+- **HTF Context ছাড়া** — Trend Alignment ছাড়া Mitigation অনির্ভরযোগ্য
+- **Return এর কারণ উপেক্ষা করা** — Price Mitigate করতে ফেরে কারণ UNFILLED Order আছে। প্রথমবার সম্পূর্ণ Fill হলে, ফিরবে না
 
 ### Advanced Notes
 
