@@ -1,84 +1,135 @@
 ---
-title: "ব্যালেন্সড vs ইমব্যালেন্সড মার্কেট"
-description: "ব্যালেন্সড মার্কেট (রেঞ্জ-বাউন্ড, মিন-রিভার্টিং) ও ইমব্যালেন্সড মার্কেট (ট্রেন্ডিং, ডিরেকশনাল) আলাদা করুন। প্রতিটি মার্কেট স্টেটের জন্য অপটিমাল স্ট্র্যাটেজি শিখুন।"
+title: "Balanced vs Imbalanced Markets"
+description: "Balanced মার্কেট (প্রাইস Point of Control ঘিরে ঘোরে) আর Imbalanced মার্কেট (প্রাইস এক দিকে চলে, লম্বা ও পাতলা Profile রেখে যায়) কীভাবে আলাদা করবেন, প্রতিটি অবস্থায় পরিকল্পনার জন্য কী ইঙ্গিত দেয়, দিন গঠনের সময়ই অবস্থা কীভাবে পড়বেন, আর শ্রেণিবিভাগ কোথায় ব্যর্থ হয় — পাশাপাশি দুটি TPO Profile ও অ্যানিমেটেড ওয়াকথ্রুসহ।"
 level: advanced
 order: 7
-lastUpdated: "2026-06-10"
+lastUpdated: "2026-11-14"
 ---
 
-## Balanced vs Imbalanced Markets
+## দুটি অবস্থা
 
-Distinguish between balanced markets (range-bound, mean-reverting) and imbalanced markets (trending, directional). Learn the optimal strategy for each market state.
+[Auction Market Theory](/bn/auction-market/introduction) এ মার্কেট হয় **Balanced** নয়তো **Imbalanced**:
 
-<Callout type="info" title="The Auction Process">
-  Markets exist for ONE purpose: to facilitate trade. Price moves UP to find sellers, DOWN to find buyers. When it finds
-  enough of both at a price = fair value (balance). When it can't find enough = price moves until it does (imbalance).
-  This is the entire basis of Auction Market Theory.
+| অবস্থা         | প্রাইস কী করে                                 | Profile এর আকৃতি                          |
+| -------------- | --------------------------------------------- | ----------------------------------------- |
+| **Balanced**   | রেঞ্জে ঘোরে; দুই পক্ষ একই দামগুলোতে ট্রেড করে | স্পষ্ট POC ঘিরে ফোলা অংশ                  |
+| **Imbalanced** | এক দিকে চলে; পিরিয়ডগুলোর মধ্যে ওভারল্যাপ কম  | লম্বা ও পাতলা; কোনো সারিতে বেশি অক্ষর নেই |
+
+অবস্থা বর্ণনা করে **এখন পর্যন্ত কী হয়েছে**। পরের পিরিয়ড এটি বদলে দিতে পারে।
+
+<Callout type="warning" title="সংশোধিত ও নরম করা হয়েছে">
+  মূল লেসনে Balance কে "Mean-reverting" আর Imbalance কে "Trending" ধরে প্রতিটির জন্য নির্দিষ্ট স্ট্র্যাটেজি দেওয়া
+  হয়েছিল। এগুলো প্রবণতা, নিয়ম নয়: Balanced দিনেও Breakout হয়, ট্রেন্ডেও বিরতি আসে। অবস্থা দিয়ে ঠিক করুন কোন
+  পরিকল্পনা **পরীক্ষা** করবেন, নিশ্চয়তা হিসেবে নয়।
 </Callout>
 
 ---
 
-## Core AMT Principles
+## পাশাপাশি দুই দিন
 
-### Price Discovery
+![১৩টি আধা-ঘণ্টার পিরিয়ডের দুটি সিন্থেটিক EUR/USD TPO দিন: একটি Balanced দিন যার Point of Control 1.0860 এ ১১টি অক্ষর ও ২০ পিপ রেঞ্জ, আর একটি Imbalanced দিন যেখানে প্রতিটি পিরিয়ড আগেরটির উপরে, কোনো সারিতে তিনটির বেশি অক্ষর নেই, রেঞ্জ ২৮ পিপ](/images/auction-market/balanced-imbalanced/balanced-vs-imbalanced-dark.webp)
 
-- Markets constantly "auction" to find prices where both buyers and sellers agree
-- Price moves in one direction until it finds opposing interest
-- The auction process creates predictable patterns
+<LessonVideo
+  controls
+  muted
+  playsInline
+  loop
+  preload="metadata"
+  src="/videos/auction-market/bi-explainer-dark.mp4"
+  className="mt-6 w-full rounded-xl border border-border"
+/>
 
-### Balance (Rotation)
-
-- When buyers and sellers are evenly matched
-- Price rotates within a range
-- Volume builds at "fair value" (POC)
-- Strategy: Mean reversion, fade extremes
-
-### Imbalance (Trend)
-
-- When one side dominates
-- Price moves directionally to find the opposing side
-- Low volume at intermediate levels (single prints)
-- Strategy: Follow the imbalance, buy pullbacks in trend
-
----
-
-## Practical Framework
-
-### Step 1: Identify Market State
-
-- **Balanced**: Price rotating, building volume in a range
-- **Imbalanced**: Price moving directionally with conviction
-- **Transitioning**: One state shifting to the other
-
-### Step 2: Apply Correct Strategy
-
-- Balance → Fade extremes, target POC
-- Imbalance → Trade with direction, enter on pullbacks
-- Transition → Look for breakout/breakdown confirmation
-
-### Step 3: Use AMT Reference Levels
-
-- Previous session POC, VAH, VAL
-- Initial Balance high/low
-- Single print zones
-- Excess tails (completed auctions)
-
----
-
-## AMT + ICT/SMC Integration
-
-| AMT Concept     | ICT/SMC Equivalent |
-| --------------- | ------------------ |
-| Value Area High | Premium zone       |
-| Value Area Low  | Discount zone      |
-| POC             | Equilibrium        |
-| Single Prints   | FVG / Imbalance    |
-| Excess          | Liquidity sweep    |
-| Poor High/Low   | Resting liquidity  |
-| IB Breakout     | Session expansion  |
-
-<Callout type="warning" title="Complementary Frameworks">
-  AMT tells you WHERE the market is in its auction process. ICT/SMC tells you WHO is driving it and WHEN they'll act.
-  Combining both creates a complete institutional framework — understanding both the mechanism (AMT) and the operator
-  (Smart Money).
+<Callout type="info" title="এই চার্ট সম্পর্কে">
+  দুই দিনই **সিন্থেটিক** আর স্পষ্ট করে বানানো। আসল দিন প্রায়ই মাঝামাঝি, বা দিনের মধ্যেই অবস্থা বদলায়।
 </Callout>
+
+| পরিমাপ                   | Balanced দিন                 | Imbalanced দিন                |
+| ------------------------ | ---------------------------- | ----------------------------- |
+| রেঞ্জ                    | 1.0850 – 1.0870 (২০ পিপ)     | 1.0852 – 1.0880 (২৮ পিপ)      |
+| এক সারিতে সর্বোচ্চ অক্ষর | ১১ (POC 1.0860)              | ৩                             |
+| পিরিয়ড থেকে পিরিয়ড     | ওভারল্যাপ, ধারাবাহিক ওঠা নেই | প্রতিটি পিরিয়ড আগেরটির উপরে  |
+| Value Area               | 1.0856 – 1.0862              | অর্থপূর্ণ নয়: স্পষ্ট POC নেই |
+
+---
+
+## গঠনের সময়ই অবস্থা পড়া
+
+| প্রমাণ                                                                          | Balanced এর দিকে   | Imbalanced এর দিকে                    |
+| ------------------------------------------------------------------------------- | ------------------ | ------------------------------------- |
+| পরপর পিরিয়ডের ওভারল্যাপ                                                        | বেশি               | কম                                    |
+| এক সারিতে অক্ষর জমা                                                             | হ্যাঁ              | না                                    |
+| প্রাইস রেঞ্জের মাঝখানে ফেরে                                                     | প্রায়ই            | কদাচিৎ                                |
+| প্রথম ঘণ্টার রেঞ্জ ভাঙা ([Initial Balance](/bn/auction-market/initial-balance)) | ব্যর্থ হয় বা থামে | টিকে থাকে ও বাড়ে                     |
+| Volume (থাকলে)                                                                  | POC ঘিরে ছড়ানো    | প্রতি দামে পাতলা, মুভ জুড়ে ধারাবাহিক |
+
+একটি যাচাই একা সিদ্ধান্ত দেয় না। একাধিক মিললে ভালো।
+
+---
+
+## প্রতিটি অবস্থার জন্য পরিকল্পনা
+
+| অবস্থা         | যে পরিকল্পনা পরীক্ষা করবেন                             | সতর্কতা                                             |
+| -------------- | ------------------------------------------------------ | --------------------------------------------------- |
+| **Balanced**   | কিনারায় POC এর দিকে Fade; মাঝখানে সরে থাকুন           | Breakout পরিকল্পনাকে লোকসানে বদলে দেয় — Stop রাখুন |
+| **Imbalanced** | মুভের দিকে পুলব্যাকে ট্রেড; Fade এড়ান                 | পুলব্যাক রিভার্সালে বদলাতে পারে                     |
+| **অস্পষ্ট**    | অপেক্ষা; ছোট সাইজে ট্রেড; পরের পিরিয়ডে স্পষ্ট হতে দিন | জোর করে মত চাপানোই সাধারণ ভুল                       |
+
+### উদাহরণ (চার্ট ছাড়া) — Balanced দিন
+
+প্রাইস ঘোরে আর Profile **1.0860** এ POC বানায়। পরিকল্পনা: উপরের এরিয়ার পরীক্ষায় **1.0868** এ Sell, Stop **1.0872** (দিনের High 1.0870 এর উপরে), টার্গেট **1.0860** (POC): রিস্ক ৪ পিপ, রিওয়ার্ড ৮, পরিকল্পিত **১ : ২.০**। প্রাইস **1.0871** এর উপরে Close করলে Balance ভাঙছে, পরিকল্পনা বাতিল।
+
+### উদাহরণ (চার্ট ছাড়া) — Imbalanced দিন
+
+প্রতিটি পিরিয়ড Higher High ও Higher Low করছে। পরিকল্পনা: **1.0872** এ পুলব্যাকে Buy, Stop **1.0868** (শেষ পিরিয়ডের Low এলাকার নিচে), টার্গেট **1.0884**: রিস্ক ৪ পিপ, রিওয়ার্ড ১২, পরিকল্পিত **১ : ৩.০**। চার্টে দিনের High 1.0880, তাই সেখানে এই টার্গেটে পৌঁছায় না। প্রাইস আবার **1.0868** এর নিচে Close করে সেখানে থাকলে মুভ দিক হারিয়েছে।
+
+---
+
+## শ্রেণিবিভাগ কোথায় ব্যর্থ হয়
+
+| ব্যর্থতা                      | দেখতে কেমন                                     |
+| ----------------------------- | ---------------------------------------------- |
+| দিনের মাঝে অবস্থা বদল         | Balanced সকাল ট্রেন্ড বিকেলে বদলায় (বা উল্টো) |
+| খুব তাড়াতাড়ি অবস্থা ঠিক করা | তিনটি পিরিয়ড জানার জন্য যথেষ্ট নয়            |
+| বিরতিকে Balance ভাবা          | ট্রেন্ড কনসোলিডেট করে আবার চলে                 |
+| নিউজ                          | রিলিজ মুহূর্তে Balance শেষ করতে পারে           |
+
+---
+
+## সাধারণ ভুল
+
+| ভুল                                 | সমাধান                                            |
+| ----------------------------------- | ------------------------------------------------- |
+| "ফিরতেই হবে" ভেবে ট্রেন্ড Fade করা  | ওভারল্যাপ দেখুন; Imbalanced দিন সারাদিন চলতে পারে |
+| স্পষ্ট Balance এ Breakout তাড়া করা | Close ও টিকে থাকা Retest এর অপেক্ষা করুন          |
+| একবার অবস্থা ঠিক করে আর না দেখা     | প্রতি পিরিয়ড বা ঘণ্টার পর আবার যাচাই করুন        |
+| দিনে দিনে ভিন্ন পিরিয়ড দৈর্ঘ্য     | একটি রাখুন যাতে Profile তুলনীয় থাকে              |
+| লেবেলকে ভবিষ্যদ্বাণী ভাবা           | এগুলো এখন পর্যন্ত কী হয়েছে তার বর্ণনা            |
+
+---
+
+## অনুশীলন
+
+1. দশ দিনের প্রতিটি Profile ক্লোজের পর শ্রেণিবদ্ধ করুন: Balanced, Imbalanced, বা মিশ্র।
+2. প্রতিদিনের প্রথম দুই ঘণ্টা কেমন ছিল লিখুন। আপনি কি আগে জানতে পারতেন?
+3. প্রতিটিতে কোন পরিকল্পনা কাজ করত লিখুন: কিনারায় Fade, নাকি পুলব্যাকে ট্রেড।
+4. আপনার [ট্রেডিং জার্নালে](/bn/tools/journal-template) লিখুন।
+
+---
+
+## সারাংশ
+
+| ধারণা      | বিস্তারিত                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------------ |
+| Balanced   | স্পষ্ট POC ঘিরে ঘোরা; ওভারল্যাপিং পিরিয়ড                                                  |
+| Imbalanced | একমুখী; লম্বা, পাতলা Profile                                                               |
+| ব্যবহার    | কোন পরিকল্পনা পরীক্ষা করবেন তা বাছুন; Balance এ কিনারায় Fade, Imbalance এ পুলব্যাক অনুসরণ |
+| সীমা       | দিনের মাঝে অবস্থা বদলাতে পারে; এটি অতীত বর্ণনা করে                                         |
+
+---
+
+## সম্পর্কিত বিষয়
+
+- [Introduction to Auction Market Theory](/bn/auction-market/introduction)
+- [Initial Balance](/bn/auction-market/initial-balance)
+- [Value Area Migration](/bn/auction-market/value-area)
+- [Market Profile](/bn/auction-market/market-profile)

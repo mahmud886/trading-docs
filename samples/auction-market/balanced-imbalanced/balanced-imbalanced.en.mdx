@@ -1,0 +1,127 @@
+---
+title: "Balanced vs Imbalanced Markets"
+description: "How to tell a balanced market (price rotates around a point of control) from an imbalanced one (price moves one way and leaves a long, thin profile), what each state suggests for planning, how to read the state while the day is still forming, and where classification fails — with two TPO profiles side by side and an animated walkthrough."
+level: advanced
+order: 7
+lastUpdated: "2026-11-14"
+---
+
+## Two States
+
+In [Auction Market Theory](/en/auction-market/introduction), a market is either **balanced** or **imbalanced**:
+
+| State          | What price does                                              | Profile shape                                      |
+| -------------- | ------------------------------------------------------------ | -------------------------------------------------- |
+| **Balanced**   | Rotates in a range; both sides trade at the same prices      | A bulge around a clear POC                         |
+| **Imbalanced** | Moves one way; little overlap between periods                | Long and thin; no row with many letters            |
+
+The state describes **what has happened so far**. The next period can change it.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original treated balance as "mean-reverting" and imbalance as "trending" and gave each a fixed strategy. Those are
+  tendencies, not rules: balanced days break out, and trends pause. Use the state to choose which plan to **test**, not
+  as a guarantee.
+</Callout>
+
+---
+
+## Two Days, Side by Side
+
+![Two synthetic EUR/USD TPO days of 13 half-hour periods: a balanced day with a point of control at 1.0860 holding 11 letters and a 20-pip range, and an imbalanced day where every period is higher than the last, no row holds more than three letters, and the range is 28 pips](/images/auction-market/balanced-imbalanced/balanced-vs-imbalanced-dark.png)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/auction-market/bi-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Both days are **synthetic** and built to be clear. Real days are often in between, or change state during the day.
+</Callout>
+
+| Measure                       | Balanced day                 | Imbalanced day                     |
+| ----------------------------- | ---------------------------- | ---------------------------------- |
+| Range                         | 1.0850 – 1.0870 (20 pips)    | 1.0852 – 1.0880 (28 pips)          |
+| Most letters in one row       | 11 (POC 1.0860)              | 3                                  |
+| Period-to-period              | Overlapping, no steady climb | Each period higher than the last   |
+| Value area                    | 1.0856 – 1.0862              | Not meaningful: no clear POC       |
+
+---
+
+## Reading the State While It Forms
+
+| Evidence                                         | Leans balanced                       | Leans imbalanced                          |
+| ------------------------------------------------ | ------------------------------------ | ----------------------------------------- |
+| Overlap of consecutive periods                   | High                                 | Low                                       |
+| Letters piling in one row                        | Yes                                  | No                                        |
+| Price returns to the middle of the range         | Often                                | Rarely                                    |
+| Breaks of the first-hour range ([Initial Balance](/en/auction-market/initial-balance)) | Fail or stall | Hold and extend |
+| Volume (if you have it)                          | Spread around the POC                | Thin per price, steady through the move   |
+
+No single check settles it. Several agreeing is better than one.
+
+---
+
+## Planning for Each State
+
+| State          | Plans to test                                                              | Cautions                                          |
+| -------------- | -------------------------------------------------------------------------- | ------------------------------------------------- |
+| **Balanced**   | Fade the edges back toward the POC; stand aside in the middle              | A breakout turns the plan into a loss — use a stop |
+| **Imbalanced** | Trade pullbacks in the direction of the move; avoid fading                 | Pullbacks can become reversals                    |
+| **Unclear**    | Wait; trade smaller; let the next periods clarify                          | Forcing a view is the usual error                 |
+
+### Example (no chart) — balanced day
+
+Price rotates and the profile builds a POC at **1.0860**. Plan: sell a test of the upper area at **1.0868**, stop **1.0872** (above the day's high of 1.0870), target **1.0860** (the POC): risk 4 pips, reward 8, **1 : 2.0** planned. If price closes above **1.0871** the balance is breaking and the plan is off.
+
+### Example (no chart) — imbalanced day
+
+Every period is making higher highs and higher lows. Plan: buy a pullback to **1.0872**, stop **1.0868** (below the last period's low area), target **1.0884**: risk 4 pips, reward 12, **1 : 3.0** planned. The day's high in the chart is 1.0880, so this target is not reached there. If price closes back below **1.0868** and stays below, the move has lost its direction.
+
+---
+
+## Where Classification Fails
+
+| Failure                                    | What it looks like                                          |
+| ------------------------------------------ | ----------------------------------------------------------- |
+| Switching state mid-day                    | A balanced morning turns into a trend afternoon (or reverse) |
+| Calling the state too early                | Three periods are too few to know                           |
+| Mistaking a pause for balance              | A trend consolidates, then resumes                          |
+| News                                       | A release can end balance instantly                         |
+
+---
+
+## Common Mistakes
+
+| Mistake                                          | Fix                                                        |
+| ------------------------------------------------ | ---------------------------------------------------------- |
+| Fading a trend because it "must" revert          | Check for overlap; imbalanced days can run all day         |
+| Chasing breakouts in a clear balance             | Wait for closes and a retest that holds                    |
+| Deciding the state once and never revisiting     | Re-check after each period or hour                         |
+| Using different period lengths between days      | Keep one so profiles stay comparable                       |
+| Treating the labels as predictions               | They describe what has happened so far                     |
+
+---
+
+## Practice
+
+1. For ten days, classify each profile after the close: balanced, imbalanced, or mixed.
+2. Write what the first two hours looked like on each day. Could you have known?
+3. Note which plan would have worked on each: fading the edges, or trading pullbacks.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea                | Detail                                                               |
+| ------------------- | -------------------------------------------------------------------- |
+| Balanced            | Rotation around a clear POC; overlapping periods                     |
+| Imbalanced          | One-directional; long, thin profile                                  |
+| Use                 | Choose which plan to test; fade edges in balance, follow pullbacks in imbalance |
+| Limits              | The state can change mid-day; it describes the past                  |
+
+---
+
+## Related Topics
+
+- [Introduction to Auction Market Theory](/en/auction-market/introduction)
+- [Initial Balance](/en/auction-market/initial-balance)
+- [Value Area Migration](/en/auction-market/value-area)
+- [Market Profile](/en/auction-market/market-profile)
