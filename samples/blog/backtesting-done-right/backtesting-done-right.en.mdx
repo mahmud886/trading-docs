@@ -1,0 +1,117 @@
+---
+title: "Backtesting Done Right: Test Your Strategy Without Fooling Yourself"
+description: "A backtest shows what rules would have done, not that they have an edge. The five biggest mistakes (overfitting, look-ahead, survivorship, ignored costs, short samples), a four-step protocol with out-of-sample and forward testing, and a demonstration where the best of 180 random rules looks great by luck."
+date: "2026-05-09"
+author: "Trading Docs"
+category: "Strategy Development"
+tags: ["backtesting", "validation", "strategy", "statistics"]
+readingTime: 8
+featured: true
+---
+
+A backtest applies fixed rules to past data. It can be a useful filter for bad ideas, but it is also very easy to **tune until it looks good**, and a good-looking backtest is not evidence of an edge. This guide covers the mistakes to avoid and a protocol that shrinks, though never removes, the problem.
+
+<Callout type="warning" title="Corrected and toned down">
+  The original gave fixed thresholds as if they were standards (a win rate above 70% "extremely rare", drawdowns of 15–30% "realistic", a win rate of 50–65% "realistic"). What is realistic depends on the strategy and market, so those numbers are removed. The rule of thumb that survives: **the more impressive the result, the harder you should look for the mistake**.
+</Callout>
+
+---
+
+## The Five Biggest Mistakes
+
+| Mistake                      | What goes wrong                                                                       | Defence                                                  |
+| ---------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| **Overfitting**              | Tuning rules and parameters to the exact past data until they fit its noise            | Few parameters; out-of-sample test; count every try      |
+| **Look-ahead bias**          | Using information not known at decision time (today's close to decide today's entry)   | Decide on bar *t*, trade on bar *t + 1*                  |
+| **Survivorship bias**        | Testing only instruments that still exist                                             | Use data that includes delisted or failed instruments    |
+| **Ignoring costs**           | Spread, commission, slippage, financing left out                                      | Charge realistic costs on every trade                    |
+| **Too short a sample**       | A few dozen trades in one market state                                                | Many trades, several regimes, report the uncertainty     |
+
+The overfitting problem is easy to underestimate. In the [Backtesting Methodology](/en/quantitative/backtesting-methodology) lesson, 180 moving-average rules were tested on pure random-walk prices (no edge by construction). The best one earned +50% on the data it was chosen from and +6% on the next 500 bars; the average rule made +5% then −3%. The best rule was simply the best of many draws.
+
+### The Chart
+
+![The best in-sample moving-average rule out of 180 on random-walk prices: +50% over the first 500 days and +6% over the next 500, with all 180 rules' in-sample and out-of-sample results](/images/quantitative/backtesting-methodology/backtest-overfitting-dark.webp)
+
+<LessonVideo controls muted playsInline loop preload="metadata" src="/videos/quantitative/bt-explainer-dark.mp4" className="mt-6 w-full rounded-xl border border-border" />
+
+<Callout type="info" title="About this chart">
+  Synthetic random-walk prices with no edge by construction; the best in-sample rule was selected because it was the best of many (From the lesson: [Statistical Backtesting Methodology](/en/quantitative/backtesting-methodology).)
+</Callout>
+
+---
+
+## A Four-Step Protocol
+
+| Step                          | What to do                                                                             |
+| ----------------------------- | -------------------------------------------------------------------------------------- |
+| 1. **Write the rules first**  | Entry, exit, stop, size and the number of parameters, before looking at any results    |
+| 2. **Build in-sample**        | Develop on one part of the data, and keep a log of every variant you try               |
+| 3. **Validate out-of-sample** | Run the chosen rules once on data they were never fitted to (see [Walk-Forward](/en/quantitative/walk-forward)) |
+| 4. **Forward test**           | Trade small, record every trade, compare with the backtest's expected behaviour        |
+
+A fifth habit: report the **uncertainty**. With a small number of trades, an expectancy of +0.30R can have an error bar that includes zero (see [Expectancy Formula](/en/quantitative/expectancy-formula)).
+
+---
+
+## Red Flags and Green Flags
+
+| Red flag                                          | Why                                                                |
+| ------------------------------------------------- | ------------------------------------------------------------------ |
+| Smooth equity curve with very small drawdowns     | Often overfitting or look-ahead; real strategies have rough patches |
+| Results change greatly with tiny parameter changes | The edge is fitted to noise                                       |
+| Works only in one market or one period            | It may be a regime, not a rule                                     |
+| No costs in the test                              | Net results are lower, sometimes negative                          |
+
+| Green flag                                        | Why                                                                |
+| ------------------------------------------------- | ------------------------------------------------------------------ |
+| Rules are simple and have a reason                | Fewer parameters to overfit                                        |
+| Neighbouring parameters give similar results      | The edge doesn't depend on one setting                             |
+| Out-of-sample results are in the same range       | The fit was not just noise                                         |
+| Results hold after costs                          | Edge is bigger than friction                                       |
+
+---
+
+## Example (no chart)
+
+A backtest of 150 trades shows an expectancy of **+0.30R** before costs. Costs are 0.10R per trade, so after costs it is **+0.20R**. You tried 30 variants to get there, so +0.30R is the *best of 30*, not an average, and deserves a discount. A plan to test it forward: buy EUR/USD at **1.0850**, stop **1.0830**, target **1.0890** (risk 20 pips, reward 40, **1 : 2.0** planned) at small size for 100 more trades. If live expectancy is within the backtest's uncertainty you continue; if it is near zero you stop.
+
+---
+
+## Common Mistakes
+
+| Mistake | Fix |
+| --- | --- |
+| Reporting only the best parameter set | Report how many were tried and the spread of results |
+| Re-using the same out-of-sample data after tuning on it | Once you tune on it, it is in-sample |
+| Trusting a smooth equity curve | Check sample size, drawdown and the number of trials |
+| Skipping the forward test | Trade small before trusting any backtest |
+
+---
+
+## Practice
+
+1. List every parameter you changed to get your best backtest result.
+2. Hold back the last 30% of the data and run the final rules on it once.
+3. Subtract realistic costs from every trade and recompute the expectancy.
+4. Log it in your [trading journal](/en/tools/journal-template).
+
+---
+
+## Summary
+
+| Idea | Detail |
+| --- | --- |
+| Backtest | Shows what rules would have done, not that they have an edge |
+| Biases | Overfitting, look-ahead, survivorship, costs, short samples |
+| Protocol | Rules first, in-sample, out-of-sample, forward test |
+| Rule of thumb | The better the result looks, the harder to look for the mistake |
+
+---
+
+## Related Topics
+
+- [Statistical Backtesting Methodology](/en/quantitative/backtesting-methodology)
+- [Walk-Forward Optimization](/en/quantitative/walk-forward)
+- [Expectancy Formula](/en/quantitative/expectancy-formula)
+- [Trading Journal Template](/en/blog/trading-journal-template)
